@@ -1,0 +1,1573 @@
+{
+  "_comment": "Shop-Katalog. category: ball | evolution | held | mega (Mega-Steine, siehe app/mega.py) | vitamin (EV-Items, siehe app/evs.py - ev_stat + ev_amount) | ... (weitere Kategorien, z.B. Halte-Items, einfach anhaengen). price in Pokédollar, wird noch mit der Einstellung shop_price_multiplier multipliziert. buyable=false: bekannt (Label im Beutel), aber nicht kaeuflich.",
+  "items": [
+    {
+      "key": "poke_ball",
+      "category": "ball",
+      "label": "Poké Ball",
+      "price": 100,
+      "description": "Standard ball (catch bonus ×1).",
+      "label_de": "Pokéball",
+      "description_de": "Standard-Ball (Fangbonus ×1)."
+    },
+    {
+      "key": "great_ball",
+      "category": "ball",
+      "label": "Great Ball",
+      "price": 300,
+      "description": "Better than the Poké Ball (catch bonus ×1.5).",
+      "label_de": "Superball",
+      "description_de": "Besser als der Pokéball (Fangbonus ×1,5)."
+    },
+    {
+      "key": "ultra_ball",
+      "category": "ball",
+      "label": "Ultra Ball",
+      "price": 600,
+      "description": "High catch chance (catch bonus ×2).",
+      "label_de": "Hyperball",
+      "description_de": "Hohe Fangchance (Fangbonus ×2)."
+    },
+    {
+      "key": "net_ball",
+      "category": "ball",
+      "label": "Net Ball",
+      "price": 1000,
+      "description": "Works especially well on Water- and Bug-type Pokémon (catch bonus ×3.5, otherwise ×1).",
+      "label_de": "Netzball",
+      "description_de": "Besonders wirksam gegen Wasser- und Käfer-Pokémon (Fangbonus ×3,5, sonst ×1)."
+    },
+    {
+      "key": "dive_ball",
+      "category": "ball",
+      "label": "Dive Ball",
+      "price": 1000,
+      "description": "Works especially well on Pokémon from a lake or beach location (catch bonus ×3.5, otherwise ×1).",
+      "label_de": "Tauchball",
+      "description_de": "Besonders wirksam gegen Pokémon von einem See- oder Strand-Ort (Fangbonus ×3,5, sonst ×1)."
+    },
+    {
+      "key": "nest_ball",
+      "category": "ball",
+      "label": "Nest Ball",
+      "price": 1000,
+      "description": "The lower the wild Pokémon's level, the better it works (up to ×4 at level 1, no bonus from level 30).",
+      "label_de": "Nestball",
+      "description_de": "Je niedriger das Level des wilden Pokémon, desto besser (bis ×4 bei Level 1, ab Level 30 kein Bonus)."
+    },
+    {
+      "key": "repeat_ball",
+      "category": "ball",
+      "label": "Repeat Ball",
+      "price": 1000,
+      "description": "Works especially well on species you have caught before (catch bonus ×3.5, otherwise ×1).",
+      "label_de": "Wiederball",
+      "description_de": "Besonders wirksam gegen Arten, die du schon einmal gefangen hast (Fangbonus ×3,5, sonst ×1)."
+    },
+    {
+      "key": "timer_ball",
+      "category": "ball",
+      "label": "Timer Ball",
+      "price": 1000,
+      "description": "The more turns the battle has lasted, the better it works (about +0.3 per turn, up to ×4).",
+      "label_de": "Timerball",
+      "description_de": "Je länger der Kampf schon dauert, desto besser (etwa +0,3 pro Runde, bis ×4)."
+    },
+    {
+      "key": "quick_ball",
+      "category": "ball",
+      "label": "Quick Ball",
+      "price": 1000,
+      "description": "Very effective if thrown right at the start, before any turn against the Pokémon (catch bonus ×5, otherwise ×1).",
+      "label_de": "Flottball",
+      "description_de": "Sehr wirksam, wenn er gleich zu Beginn geworfen wird, bevor gegen das Pokémon eine Runde gespielt wurde (Fangbonus ×5, sonst ×1)."
+    },
+    {
+      "key": "dusk_ball",
+      "category": "ball",
+      "label": "Dusk Ball",
+      "price": 1000,
+      "description": "Works especially well at night, 8 pm to 6 am local time (catch bonus ×3, otherwise ×1).",
+      "label_de": "Finsterball",
+      "description_de": "Besonders wirksam nachts, 20 bis 6 Uhr Ortszeit (Fangbonus ×3, sonst ×1)."
+    },
+    {
+      "key": "level_ball",
+      "category": "ball",
+      "label": "Level Ball",
+      "price": 1200,
+      "description": "Works better the higher your active Pokémon's level (outside battle: first team slot) is compared to the wild one (×2 if higher, ×4 if more than double, ×8 if at least four times).",
+      "label_de": "Levelball",
+      "description_de": "Je höher das Level deines aktiven Pokémon (außerhalb eines Kampfs: Team-Platz 1) im Vergleich zum wilden, desto besser (×2 wenn höher, ×4 bei mehr als doppelt, ×8 ab vierfach)."
+    },
+    {
+      "key": "fast_ball",
+      "category": "ball",
+      "label": "Fast Ball",
+      "price": 1000,
+      "description": "Works especially well on fast Pokémon with a base Speed of 100 or more (catch bonus ×4, otherwise ×1).",
+      "label_de": "Turboball",
+      "description_de": "Besonders wirksam gegen schnelle Pokémon mit einem Initiative-Basiswert ab 100 (Fangbonus ×4, sonst ×1)."
+    },
+    {
+      "key": "heal_ball",
+      "category": "ball",
+      "label": "Heal Ball",
+      "price": 300,
+      "description": "Catch bonus ×1, but the caught Pokémon arrives with full HP.",
+      "label_de": "Heilball",
+      "description_de": "Fangbonus ×1, aber das gefangene Pokémon kommt mit vollen KP an."
+    },
+    {
+      "key": "master_ball",
+      "category": "ball",
+      "label": "Master Ball",
+      "price": 0,
+      "buyable": false,
+      "description": "Catches any Pokémon. Not for sale.",
+      "label_de": "Meisterball",
+      "description_de": "Fängt jedes Pokémon. Nicht käuflich."
+    },
+    {
+      "key": "fire_stone",
+      "category": "evolution",
+      "label": "Fire Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Vulpix, Growlithe and Eevee.",
+      "label_de": "Feuerstein",
+      "description_de": "Entwickelt z. B. Vulpix, Fukano und Evoli."
+    },
+    {
+      "key": "water_stone",
+      "category": "evolution",
+      "label": "Water Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Poliwhirl, Shellder, Staryu and Eevee.",
+      "label_de": "Wasserstein",
+      "description_de": "Entwickelt z. B. Quaputzi, Muschas, Sterndu und Evoli."
+    },
+    {
+      "key": "thunder_stone",
+      "category": "evolution",
+      "label": "Thunder Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Pikachu, Eevee and Magneton.",
+      "label_de": "Donnerstein",
+      "description_de": "Entwickelt z. B. Pikachu, Evoli und Magneton."
+    },
+    {
+      "key": "leaf_stone",
+      "category": "evolution",
+      "label": "Leaf Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Gloom, Weepinbell, Exeggcute and Eevee.",
+      "label_de": "Blattstein",
+      "description_de": "Entwickelt z. B. Duflor, Ultrigaria, Owei und Evoli."
+    },
+    {
+      "key": "moon_stone",
+      "category": "evolution",
+      "label": "Moon Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Nidorina, Nidorino, Clefairy and Jigglypuff.",
+      "label_de": "Mondstein",
+      "description_de": "Entwickelt z. B. Nidorina, Nidorino, Piepi und Pummeluff."
+    },
+    {
+      "key": "sun_stone",
+      "category": "evolution",
+      "label": "Sun Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Gloom (into Bellossom) and Sunkern.",
+      "label_de": "Sonnenstein",
+      "description_de": "Entwickelt z. B. Duflor (zu Blubella) und Sonnkern."
+    },
+    {
+      "key": "shiny_stone",
+      "category": "evolution",
+      "label": "Shiny Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Togetic, Roselia and Minccino.",
+      "label_de": "Funkelstein",
+      "description_de": "Entwickelt z. B. Togetic, Roselia und Picochilla."
+    },
+    {
+      "key": "dusk_stone",
+      "category": "evolution",
+      "label": "Dusk Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Murkrow, Misdreavus and Lampent.",
+      "label_de": "Finsterstein",
+      "description_de": "Entwickelt z. B. Kramurx, Traunfugil und Laternecto."
+    },
+    {
+      "key": "dawn_stone",
+      "category": "evolution",
+      "label": "Dawn Stone",
+      "price": 100000,
+      "description": "Evolves male Kirlia and female Snorunt.",
+      "label_de": "Leuchtstein",
+      "description_de": "Entwickelt männliche Kirlia und weibliche Schneppke."
+    },
+    {
+      "key": "ice_stone",
+      "category": "evolution",
+      "label": "Ice Stone",
+      "price": 100000,
+      "description": "Evolves e.g. Eevee (into Glaceon) and Crabrawler.",
+      "label_de": "Eisstein",
+      "description_de": "Entwickelt z. B. Evoli (zu Glaziola) und Krabbox."
+    },
+    {
+      "key": "linking_cord",
+      "category": "evolution",
+      "label": "Linking Cord",
+      "price": 100000,
+      "description": "Replaces trading: evolves trade Pokémon like Kadabra, Machoke, Graveler and Haunter.",
+      "label_de": "Verbindungsschnur",
+      "description_de": "Ersetzt den Tausch: entwickelt Tausch-Pokémon wie Kadabra, Maschock, Georok und Alpollo."
+    },
+    {
+      "key": "metal_coat",
+      "category": "evolution",
+      "label": "Metal Coat",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead. Also held in battle: Steel-type moves deal 20% more damage.",
+      "label_de": "Metallmantel",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt. Auch im Kampf tragbar: Stahl-Attacken richten dann 20 % mehr Schaden an."
+    },
+    {
+      "key": "kings_rock",
+      "category": "evolution",
+      "label": "King's Rock",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "King-Stein",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "dragon_scale",
+      "category": "evolution",
+      "label": "Dragon Scale",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Drachenhaut",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "up_grade",
+      "category": "evolution",
+      "label": "Up-Grade",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Up-Grade",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "dubious_disc",
+      "category": "evolution",
+      "label": "Dubious Disc",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Dubiosdisc",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "protector",
+      "category": "evolution",
+      "label": "Protector",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Schützer",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "electirizer",
+      "category": "evolution",
+      "label": "Electirizer",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Stromisierer",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "magmarizer",
+      "category": "evolution",
+      "label": "Magmarizer",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Magmaisierer",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "reaper_cloth",
+      "category": "evolution",
+      "label": "Reaper Cloth",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Düsterumhang",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "deep_sea_tooth",
+      "category": "evolution",
+      "label": "Deep Sea Tooth",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Abysszahn",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "deep_sea_scale",
+      "category": "evolution",
+      "label": "Deep Sea Scale",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Abyssplatte",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "prism_scale",
+      "category": "evolution",
+      "label": "Prism Scale",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Schönschuppe",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "whipped_dream",
+      "category": "evolution",
+      "label": "Whipped Dream",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Sahnehäubchen",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "sachet",
+      "category": "evolution",
+      "label": "Sachet",
+      "price": 100000,
+      "description": "Replaces trading: Pokémon that evolve when traded while holding this item evolve directly instead.",
+      "label_de": "Duftbeutel",
+      "description_de": "Ersetzt einen Tausch: Pokémon, die sich beim Tausch mit diesem Item entwickeln, entwickeln sich direkt."
+    },
+    {
+      "key": "sweet_apple",
+      "category": "evolution",
+      "label": "Sweet Apple",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Süßer Apfel",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "tart_apple",
+      "category": "evolution",
+      "label": "Tart Apple",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Saurer Apfel",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "syrupy_apple",
+      "category": "evolution",
+      "label": "Syrupy Apple",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Saftiger Apfel",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "cracked_pot",
+      "category": "evolution",
+      "label": "Cracked Pot",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Rissige Kanne",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "chipped_pot",
+      "category": "evolution",
+      "label": "Chipped Pot",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Löchrige Kanne",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "black_augurite",
+      "category": "evolution",
+      "label": "Black Augurite",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Schwarzaugit",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "peat_block",
+      "category": "evolution",
+      "label": "Peat Block",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Torfblock",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "auspicious_armor",
+      "category": "evolution",
+      "label": "Auspicious Armor",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Glorienrüstung",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "malicious_armor",
+      "category": "evolution",
+      "label": "Malicious Armor",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Fluchrüstung",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "unremarkable_teacup",
+      "category": "evolution",
+      "label": "Unremarkable Teacup",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Simple Teeschale",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "masterpiece_teacup",
+      "category": "evolution",
+      "label": "Masterpiece Teacup",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Edle Teeschale",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "metal_alloy",
+      "category": "evolution",
+      "label": "Metal Alloy",
+      "price": 100000,
+      "description": "Evolution item for certain newer Pokémon.",
+      "label_de": "Legierungsmetall",
+      "description_de": "Entwicklungs-Item für einige neuere Pokémon."
+    },
+    {
+      "key": "leftovers",
+      "category": "held",
+      "label": "Leftovers",
+      "price": 50000,
+      "description": "Heals 1/16 of max HP at the end of each turn.",
+      "label_de": "Überreste",
+      "description_de": "Heilt am Ende jeder Runde 1/16 der maximalen KP."
+    },
+    {
+      "key": "life_orb",
+      "category": "held",
+      "label": "Life Orb",
+      "price": 50000,
+      "description": "Moves deal 30% more damage, but cost 1/10 of max HP each time.",
+      "label_de": "Leben-Orb",
+      "description_de": "Attacken richten 30 % mehr Schaden an, kosten aber jedes Mal 1/10 der maximalen KP."
+    },
+    {
+      "key": "choice_band",
+      "category": "held",
+      "label": "Choice Band",
+      "price": 50000,
+      "description": "Attack x1.5 – but only the first move chosen can be used until switching out.",
+      "label_de": "Wahlband",
+      "description_de": "Angriff x1,5 – aber nur die zuerst gewählte Attacke ist einsetzbar, bis ausgewechselt wird."
+    },
+    {
+      "key": "choice_specs",
+      "category": "held",
+      "label": "Choice Specs",
+      "price": 50000,
+      "description": "Sp. Atk x1.5 – but only the first move chosen can be used until switching out.",
+      "label_de": "Wahlglas",
+      "description_de": "Spezial-Angriff x1,5 – aber nur die zuerst gewählte Attacke ist einsetzbar, bis ausgewechselt wird."
+    },
+    {
+      "key": "choice_scarf",
+      "category": "held",
+      "label": "Choice Scarf",
+      "price": 50000,
+      "description": "Speed x1.5 – but only the first move chosen can be used until switching out.",
+      "label_de": "Wahlschal",
+      "description_de": "Initiative x1,5 – aber nur die zuerst gewählte Attacke ist einsetzbar, bis ausgewechselt wird."
+    },
+    {
+      "key": "focus_sash",
+      "category": "held",
+      "label": "Focus Sash",
+      "price": 50000,
+      "description": "Survives a KO hit with 1 HP if at full HP. Consumed in the process.",
+      "label_de": "Fokusgurt",
+      "description_de": "Übersteht bei vollen KP einen K.O.-Treffer mit 1 KP. Wird dabei verbraucht."
+    },
+    {
+      "key": "quick_claw",
+      "category": "held",
+      "label": "Quick Claw",
+      "price": 50000,
+      "description": "20% chance to move first despite lower Speed.",
+      "label_de": "Flinkklaue",
+      "description_de": "20 % Chance, trotz geringerer Initiative zuerst anzugreifen."
+    },
+    {
+      "key": "oran_berry",
+      "category": "held",
+      "label": "Oran Berry",
+      "price": 50000,
+      "description": "Heals 10 HP once, when HP falls to half.",
+      "label_de": "Sinelbeere",
+      "description_de": "Heilt einmalig 10 KP, sobald die KP auf die Hälfte fallen."
+    },
+    {
+      "key": "sitrus_berry",
+      "category": "held",
+      "label": "Sitrus Berry",
+      "price": 50000,
+      "description": "Heals 1/4 of max HP once, when HP falls to half.",
+      "label_de": "Tsitrubeere",
+      "description_de": "Heilt einmalig 1/4 der maximalen KP, sobald die KP auf die Hälfte fallen."
+    },
+    {
+      "key": "lucky_egg",
+      "category": "held",
+      "label": "Lucky Egg",
+      "price": 50000,
+      "description": "The holder gains 50% more experience points.",
+      "label_de": "Glücks-Ei",
+      "description_de": "Der Träger erhält 50 % mehr Erfahrungspunkte."
+    },
+    {
+      "key": "exp_share",
+      "category": "held",
+      "label": "Exp. Share",
+      "price": 0,
+      "buyable": false,
+      "description": "The holder gains the same EXP as a fighting team member, even without joining the battle. Not for sale - reward for the level-100 achievements.",
+      "label_de": "Erfahrungsteiler",
+      "description_de": "Der Träger erhält so viel EP wie ein kämpfendes Teammitglied, auch ohne selbst zu kämpfen. Nicht käuflich - Belohnung für die Level-100-Erfolge."
+    },
+    {
+      "key": "scope_lens",
+      "category": "held",
+      "label": "Scope Lens",
+      "price": 50000,
+      "description": "Raises the critical-hit rate by one stage.",
+      "label_de": "Scope-Linse",
+      "description_de": "Erhöht die Volltrefferquote um eine Stufe."
+    },
+    {
+      "key": "shell_bell",
+      "category": "held",
+      "label": "Shell Bell",
+      "price": 50000,
+      "description": "Heals 1/8 of the damage dealt.",
+      "label_de": "Seegesang",
+      "description_de": "Heilt 1/8 des angerichteten Schadens."
+    },
+    {
+      "key": "charcoal",
+      "category": "held",
+      "label": "Charcoal",
+      "price": 50000,
+      "description": "Fire-type moves deal 20% more damage.",
+      "label_de": "Holzkohle",
+      "description_de": "Feuer-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "mystic_water",
+      "category": "held",
+      "label": "Mystic Water",
+      "price": 50000,
+      "description": "Water-type moves deal 20% more damage.",
+      "label_de": "Zauberwasser",
+      "description_de": "Wasser-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "magnet",
+      "category": "held",
+      "label": "Magnet",
+      "price": 50000,
+      "description": "Electric-type moves deal 20% more damage.",
+      "label_de": "Magnet",
+      "description_de": "Elektro-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "miracle_seed",
+      "category": "held",
+      "label": "Miracle Seed",
+      "price": 50000,
+      "description": "Grass-type moves deal 20% more damage.",
+      "label_de": "Wundersaat",
+      "description_de": "Pflanzen-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "silk_scarf",
+      "category": "held",
+      "label": "Silk Scarf",
+      "price": 50000,
+      "description": "Normal-type moves deal 20% more damage.",
+      "label_de": "Seidenschal",
+      "description_de": "Normal-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "black_belt",
+      "category": "held",
+      "label": "Black Belt",
+      "price": 50000,
+      "description": "Fighting-type moves deal 20% more damage.",
+      "label_de": "Schwarzgurt",
+      "description_de": "Kampf-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "poison_barb",
+      "category": "held",
+      "label": "Poison Barb",
+      "price": 50000,
+      "description": "Poison-type moves deal 20% more damage.",
+      "label_de": "Giftstachel",
+      "description_de": "Gift-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "soft_sand",
+      "category": "held",
+      "label": "Soft Sand",
+      "price": 50000,
+      "description": "Ground-type moves deal 20% more damage.",
+      "label_de": "Softsand",
+      "description_de": "Boden-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "sharp_beak",
+      "category": "held",
+      "label": "Sharp Beak",
+      "price": 50000,
+      "description": "Flying-type moves deal 20% more damage.",
+      "label_de": "Scharfschnabel",
+      "description_de": "Flug-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "twisted_spoon",
+      "category": "held",
+      "label": "Twisted Spoon",
+      "price": 50000,
+      "description": "Psychic-type moves deal 20% more damage.",
+      "label_de": "Löffelknick",
+      "description_de": "Psycho-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "silver_powder",
+      "category": "held",
+      "label": "Silver Powder",
+      "price": 50000,
+      "description": "Bug-type moves deal 20% more damage.",
+      "label_de": "Silberpuder",
+      "description_de": "Käfer-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "hard_stone",
+      "category": "held",
+      "label": "Hard Stone",
+      "price": 50000,
+      "description": "Rock-type moves deal 20% more damage.",
+      "label_de": "Hartstein",
+      "description_de": "Gesteins-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "spell_tag",
+      "category": "held",
+      "label": "Spell Tag",
+      "price": 50000,
+      "description": "Ghost-type moves deal 20% more damage.",
+      "label_de": "Geisterkugel",
+      "description_de": "Geister-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "dragon_fang",
+      "category": "held",
+      "label": "Dragon Fang",
+      "price": 50000,
+      "description": "Dragon-type moves deal 20% more damage.",
+      "label_de": "Drachenzahn",
+      "description_de": "Drachen-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "black_glasses",
+      "category": "held",
+      "label": "Black Glasses",
+      "price": 50000,
+      "description": "Dark-type moves deal 20% more damage.",
+      "label_de": "Fiesbrille",
+      "description_de": "Unlicht-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "never_melt_ice",
+      "category": "held",
+      "label": "Never-Melt Ice",
+      "price": 50000,
+      "description": "Ice-type moves deal 20% more damage.",
+      "label_de": "Ewigeis",
+      "description_de": "Eis-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "fairy_feather",
+      "category": "held",
+      "label": "Fairy Feather",
+      "price": 50000,
+      "description": "Fairy-type moves deal 20% more damage.",
+      "label_de": "Feenfeder",
+      "description_de": "Feen-Attacken richten 20 % mehr Schaden an."
+    },
+    {
+      "key": "shiny_charm",
+      "category": "key",
+      "label": "Shiny Charm",
+      "price": 0,
+      "buyable": false,
+      "description": "Doubles the chance of shiny Pokémon (for the whole household). Reward for the „League Champion“ achievement.",
+      "label_de": "Schillerpin",
+      "description_de": "Verdoppelt die Chance auf schillernde Pokémon (für den ganzen Haushalt). Belohnung für den Erfolg „Liga-Meister“."
+    },
+    {
+      "key": "rare_candy",
+      "category": "misc",
+      "label": "Rare Candy",
+      "price": 0,
+      "buyable": false,
+      "description": "Raises a Pokémon's level by 1 when used. Reward for releasing a Pokémon (1 per 10 levels it had).",
+      "label_de": "Bonbon",
+      "description_de": "Erhöht beim Benutzen das Level eines Pokémon um 1. Belohnung fürs Freilassen eines Pokémon (1 pro 10 Level, die es hatte)."
+    },
+    {
+      "key": "potion",
+      "category": "medicine",
+      "label": "Potion",
+      "price": 200,
+      "heal": 20,
+      "description": "Restores 20 HP. Usable in battle (costs your turn) or from the Bag.",
+      "label_de": "Trank",
+      "description_de": "Stellt 20 KP wieder her. Im Kampf (kostet die Runde) oder im Beutel einsetzbar."
+    },
+    {
+      "key": "super_potion",
+      "category": "medicine",
+      "label": "Super Potion",
+      "price": 600,
+      "heal": 60,
+      "description": "Restores 60 HP.",
+      "label_de": "Supertrank",
+      "description_de": "Stellt 60 KP wieder her."
+    },
+    {
+      "key": "hyper_potion",
+      "category": "medicine",
+      "label": "Hyper Potion",
+      "price": 1200,
+      "heal": 120,
+      "description": "Restores 120 HP.",
+      "label_de": "Hypertrank",
+      "description_de": "Stellt 120 KP wieder her."
+    },
+    {
+      "key": "max_potion",
+      "category": "medicine",
+      "label": "Max Potion",
+      "price": 2500,
+      "heal": "full",
+      "description": "Fully restores HP.",
+      "label_de": "Top-Trank",
+      "description_de": "Stellt alle KP wieder her."
+    },
+    {
+      "key": "full_restore",
+      "category": "medicine",
+      "label": "Full Restore",
+      "price": 3000,
+      "heal": "full",
+      "cures": "all",
+      "description": "Fully restores HP and cures any status condition.",
+      "label_de": "Top-Genesung",
+      "description_de": "Stellt alle KP wieder her und heilt jede Statusveränderung."
+    },
+    {
+      "key": "revive",
+      "category": "medicine",
+      "label": "Revive",
+      "price": 2000,
+      "revive": 0.5,
+      "description": "Revives a fainted Pokémon with half its max HP.",
+      "label_de": "Beleber",
+      "description_de": "Belebt ein kampfunfähiges Pokémon mit der Hälfte seiner max. KP wieder."
+    },
+    {
+      "key": "max_revive",
+      "category": "medicine",
+      "label": "Max Revive",
+      "price": 4000,
+      "revive": 1.0,
+      "description": "Revives a fainted Pokémon with full HP.",
+      "label_de": "Top-Beleber",
+      "description_de": "Belebt ein kampfunfähiges Pokémon mit allen KP wieder."
+    },
+    {
+      "key": "antidote",
+      "category": "medicine",
+      "label": "Antidote",
+      "price": 200,
+      "cures": [
+        "poison",
+        "toxic"
+      ],
+      "description": "Cures poisoning. Status conditions only exist in battle.",
+      "label_de": "Gegengift",
+      "description_de": "Heilt Vergiftungen. Statusveränderungen gibt es nur im Kampf."
+    },
+    {
+      "key": "paralyze_heal",
+      "category": "medicine",
+      "label": "Paralyze Heal",
+      "price": 300,
+      "cures": [
+        "paralysis"
+      ],
+      "description": "Cures paralysis. Status conditions only exist in battle.",
+      "label_de": "Para-Heiler",
+      "description_de": "Heilt Paralyse. Statusveränderungen gibt es nur im Kampf."
+    },
+    {
+      "key": "awakening",
+      "category": "medicine",
+      "label": "Awakening",
+      "price": 300,
+      "cures": [
+        "sleep"
+      ],
+      "description": "Wakes up a sleeping Pokémon. Status conditions only exist in battle.",
+      "label_de": "Aufwecker",
+      "description_de": "Weckt ein schlafendes Pokémon auf. Statusveränderungen gibt es nur im Kampf."
+    },
+    {
+      "key": "burn_heal",
+      "category": "medicine",
+      "label": "Burn Heal",
+      "price": 300,
+      "cures": [
+        "burn"
+      ],
+      "description": "Heals a burn. Status conditions only exist in battle.",
+      "label_de": "Feuerheiler",
+      "description_de": "Heilt Verbrennungen. Statusveränderungen gibt es nur im Kampf."
+    },
+    {
+      "key": "ice_heal",
+      "category": "medicine",
+      "label": "Ice Heal",
+      "price": 300,
+      "cures": [
+        "freeze"
+      ],
+      "description": "Thaws out a frozen Pokémon. Status conditions only exist in battle.",
+      "label_de": "Eisheiler",
+      "description_de": "Taut ein eingefrorenes Pokémon auf. Statusveränderungen gibt es nur im Kampf."
+    },
+    {
+      "key": "full_heal",
+      "category": "medicine",
+      "label": "Full Heal",
+      "price": 600,
+      "cures": "all",
+      "description": "Cures any status condition. Status conditions only exist in battle.",
+      "label_de": "Hyperheiler",
+      "description_de": "Heilt jede Statusveränderung. Statusveränderungen gibt es nur im Kampf."
+    },
+    {
+      "key": "hp_up",
+      "category": "vitamin",
+      "label": "HP Up",
+      "price": 1500,
+      "ev_stat": "hp",
+      "ev_amount": 10,
+      "description": "+10 HP EVs. Every 4 EVs are worth one more point of HP at level 100.",
+      "label_de": "Protein",
+      "description_de": "+10 KP-EVs. Je 4 EVs sind auf Level 100 einen Punkt KP mehr wert."
+    },
+    {
+      "key": "protein",
+      "category": "vitamin",
+      "label": "Protein",
+      "price": 1500,
+      "ev_stat": "atk",
+      "ev_amount": 10,
+      "description": "+10 Attack EVs. Every 4 EVs are worth one more point of Attack at level 100.",
+      "label_de": "Eisen",
+      "description_de": "+10 Angriff-EVs. Je 4 EVs sind auf Level 100 einen Punkt Angriff mehr wert."
+    },
+    {
+      "key": "iron",
+      "category": "vitamin",
+      "label": "Iron",
+      "price": 1500,
+      "ev_stat": "def",
+      "ev_amount": 10,
+      "description": "+10 Defense EVs. Every 4 EVs are worth one more point of Defense at level 100.",
+      "label_de": "Kalzium",
+      "description_de": "+10 Verteidigung-EVs. Je 4 EVs sind auf Level 100 einen Punkt Verteidigung mehr wert."
+    },
+    {
+      "key": "calcium",
+      "category": "vitamin",
+      "label": "Calcium",
+      "price": 1500,
+      "ev_stat": "spa",
+      "ev_amount": 10,
+      "description": "+10 Sp. Atk EVs. Every 4 EVs are worth one more point of Sp. Atk at level 100.",
+      "label_de": "Sonderbonbon",
+      "description_de": "+10 Spezial-Angriff-EVs. Je 4 EVs sind auf Level 100 einen Punkt Spezial-Angriff mehr wert."
+    },
+    {
+      "key": "zinc",
+      "category": "vitamin",
+      "label": "Zinc",
+      "price": 1500,
+      "ev_stat": "spd",
+      "ev_amount": 10,
+      "description": "+10 Sp. Def EVs. Every 4 EVs are worth one more point of Sp. Def at level 100.",
+      "label_de": "Zink",
+      "description_de": "+10 Spezial-Verteidigung-EVs. Je 4 EVs sind auf Level 100 einen Punkt Spezial-Verteidigung mehr wert."
+    },
+    {
+      "key": "carbos",
+      "category": "vitamin",
+      "label": "Carbos",
+      "price": 1500,
+      "ev_stat": "spe",
+      "ev_amount": 10,
+      "description": "+10 Speed EVs. Every 4 EVs are worth one more point of Speed at level 100.",
+      "label_de": "Karbon",
+      "description_de": "+10 Initiative-EVs. Je 4 EVs sind auf Level 100 einen Punkt Initiative mehr wert."
+    },
+    {
+      "key": "health_wing",
+      "category": "vitamin",
+      "label": "Health Wing",
+      "price": 200,
+      "ev_stat": "hp",
+      "ev_amount": 1,
+      "description": "+1 HP EV - cheap fine-tuning for the last points below the cap.",
+      "label_de": "Kraftfeder",
+      "description_de": "+1 KP-EV - günstige Feinjustierung für die letzten Punkte unter dem Maximum."
+    },
+    {
+      "key": "muscle_wing",
+      "category": "vitamin",
+      "label": "Muscle Wing",
+      "price": 200,
+      "ev_stat": "atk",
+      "ev_amount": 1,
+      "description": "+1 Attack EV - cheap fine-tuning for the last points below the cap.",
+      "label_de": "Muskelfeder",
+      "description_de": "+1 Angriff-EV - günstige Feinjustierung für die letzten Punkte unter dem Maximum."
+    },
+    {
+      "key": "resist_wing",
+      "category": "vitamin",
+      "label": "Resist Wing",
+      "price": 200,
+      "ev_stat": "def",
+      "ev_amount": 1,
+      "description": "+1 Defense EV - cheap fine-tuning for the last points below the cap.",
+      "label_de": "Panzerfeder",
+      "description_de": "+1 Verteidigung-EV - günstige Feinjustierung für die letzten Punkte unter dem Maximum."
+    },
+    {
+      "key": "genius_wing",
+      "category": "vitamin",
+      "label": "Genius Wing",
+      "price": 200,
+      "ev_stat": "spa",
+      "ev_amount": 1,
+      "description": "+1 Sp. Atk EV - cheap fine-tuning for the last points below the cap.",
+      "label_de": "Geniefeder",
+      "description_de": "+1 Spezial-Angriff-EV - günstige Feinjustierung für die letzten Punkte unter dem Maximum."
+    },
+    {
+      "key": "clever_wing",
+      "category": "vitamin",
+      "label": "Clever Wing",
+      "price": 200,
+      "ev_stat": "spd",
+      "ev_amount": 1,
+      "description": "+1 Sp. Def EV - cheap fine-tuning for the last points below the cap.",
+      "label_de": "Wissensfeder",
+      "description_de": "+1 Spezial-Verteidigung-EV - günstige Feinjustierung für die letzten Punkte unter dem Maximum."
+    },
+    {
+      "key": "swift_wing",
+      "category": "vitamin",
+      "label": "Swift Wing",
+      "price": 200,
+      "ev_stat": "spe",
+      "ev_amount": 1,
+      "description": "+1 Speed EV - cheap fine-tuning for the last points below the cap.",
+      "label_de": "Flinkfeder",
+      "description_de": "+1 Initiative-EV - günstige Feinjustierung für die letzten Punkte unter dem Maximum."
+    },
+    {
+      "key": "pomeg_berry",
+      "category": "vitamin",
+      "label": "Pomeg Berry",
+      "price": 500,
+      "ev_stat": "hp",
+      "ev_amount": -10,
+      "description": "-10 HP EVs. Frees up part of the EV budget again.",
+      "label_de": "Granabeere",
+      "description_de": "-10 KP-EVs. Gibt einen Teil des EV-Budgets wieder frei."
+    },
+    {
+      "key": "kelpsy_berry",
+      "category": "vitamin",
+      "label": "Kelpsy Berry",
+      "price": 500,
+      "ev_stat": "atk",
+      "ev_amount": -10,
+      "description": "-10 Attack EVs. Frees up part of the EV budget again.",
+      "label_de": "Setangbeere",
+      "description_de": "-10 Angriff-EVs. Gibt einen Teil des EV-Budgets wieder frei."
+    },
+    {
+      "key": "qualot_berry",
+      "category": "vitamin",
+      "label": "Qualot Berry",
+      "price": 500,
+      "ev_stat": "def",
+      "ev_amount": -10,
+      "description": "-10 Defense EVs. Frees up part of the EV budget again.",
+      "label_de": "Qualotbeere",
+      "description_de": "-10 Verteidigung-EVs. Gibt einen Teil des EV-Budgets wieder frei."
+    },
+    {
+      "key": "hondew_berry",
+      "category": "vitamin",
+      "label": "Hondew Berry",
+      "price": 500,
+      "ev_stat": "spa",
+      "ev_amount": -10,
+      "description": "-10 Sp. Atk EVs. Frees up part of the EV budget again.",
+      "label_de": "Tsitrubeere",
+      "description_de": "-10 Spezial-Angriff-EVs. Gibt einen Teil des EV-Budgets wieder frei."
+    },
+    {
+      "key": "grepa_berry",
+      "category": "vitamin",
+      "label": "Grepa Berry",
+      "price": 500,
+      "ev_stat": "spd",
+      "ev_amount": -10,
+      "description": "-10 Sp. Def EVs. Frees up part of the EV budget again.",
+      "label_de": "Grargbeere",
+      "description_de": "-10 Spezial-Verteidigung-EVs. Gibt einen Teil des EV-Budgets wieder frei."
+    },
+    {
+      "key": "tamato_berry",
+      "category": "vitamin",
+      "label": "Tamato Berry",
+      "price": 500,
+      "ev_stat": "spe",
+      "ev_amount": -10,
+      "description": "-10 Speed EVs. Frees up part of the EV budget again.",
+      "label_de": "Tanigabeere",
+      "description_de": "-10 Initiative-EVs. Gibt einen Teil des EV-Budgets wieder frei."
+    },
+    {
+      "key": "incubator",
+      "category": "breeding",
+      "label": "Incubator",
+      "price": 10000,
+      "description": "Hatches an Egg without it taking up a team slot. Lasts for 3 Eggs.",
+      "label_de": "Inkubator",
+      "description_de": "Brütet ein Ei aus, ohne dass es einen Teamplatz belegt. Hält 3 Eier aus."
+    },
+    {
+      "key": "destiny_knot",
+      "category": "held",
+      "label": "Destiny Knot",
+      "price": 50000,
+      "description": "Held by a Day Care parent: the Egg inherits 5 instead of 3 IVs from its parents.",
+      "label_de": "Fatumknoten",
+      "description_de": "Von einem Elternteil in der Pension getragen: Das Ei erbt 5 statt 3 IVs von den Eltern."
+    },
+    {
+      "key": "everstone",
+      "category": "held",
+      "label": "Everstone",
+      "price": 50000,
+      "description": "Held by a Day Care parent: the Egg inherits this parent's nature.",
+      "label_de": "Ewigstein",
+      "description_de": "Von einem Elternteil in der Pension getragen: Das Ei erbt das Wesen dieses Elternteils."
+    },
+    {
+      "key": "amulet_coin",
+      "category": "held",
+      "label": "Amulet Coin",
+      "price": 150000,
+      "description": "Doubles the prize money earned from a won battle, if any team member holds it.",
+      "label_de": "Münzamulett",
+      "description_de": "Verdoppelt das Preisgeld aus einem gewonnenen Kampf, wenn es ein beliebiges Teammitglied trägt."
+    },
+    {
+      "key": "venusaurite",
+      "category": "mega",
+      "label": "Venusaurite",
+      "price": 250000,
+      "description": "Lets Venusaur mega evolve into Mega Venusaur in battle.",
+      "label_de": "Bisaflornit",
+      "description_de": "Lässt Bisaflor im Kampf zu Mega-Bisaflor megaentwickeln."
+    },
+    {
+      "key": "charizardite_x",
+      "category": "mega",
+      "label": "Charizardite X",
+      "price": 250000,
+      "description": "Lets Charizard mega evolve into Mega Charizard X in battle.",
+      "label_de": "Gluraknit X",
+      "description_de": "Lässt Glurak im Kampf zu Mega-Glurak X megaentwickeln."
+    },
+    {
+      "key": "charizardite_y",
+      "category": "mega",
+      "label": "Charizardite Y",
+      "price": 250000,
+      "description": "Lets Charizard mega evolve into Mega Charizard Y in battle.",
+      "label_de": "Gluraknit Y",
+      "description_de": "Lässt Glurak im Kampf zu Mega-Glurak Y megaentwickeln."
+    },
+    {
+      "key": "blastoisinite",
+      "category": "mega",
+      "label": "Blastoisinite",
+      "price": 250000,
+      "description": "Lets Blastoise mega evolve into Mega Blastoise in battle.",
+      "label_de": "Turtoknit",
+      "description_de": "Lässt Turtok im Kampf zu Mega-Turtok megaentwickeln."
+    },
+    {
+      "key": "beedrillite",
+      "category": "mega",
+      "label": "Beedrillite",
+      "price": 250000,
+      "description": "Lets Beedrill mega evolve into Mega Beedrill in battle.",
+      "label_de": "Bibornit",
+      "description_de": "Lässt Bibor im Kampf zu Mega-Bibor megaentwickeln."
+    },
+    {
+      "key": "pidgeotite",
+      "category": "mega",
+      "label": "Pidgeotite",
+      "price": 250000,
+      "description": "Lets Pidgeot mega evolve into Mega Pidgeot in battle.",
+      "label_de": "Taubossnit",
+      "description_de": "Lässt Tauboss im Kampf zu Mega-Tauboss megaentwickeln."
+    },
+    {
+      "key": "alakazite",
+      "category": "mega",
+      "label": "Alakazite",
+      "price": 250000,
+      "description": "Lets Alakazam mega evolve into Mega Alakazam in battle.",
+      "label_de": "Simsalanit",
+      "description_de": "Lässt Simsala im Kampf zu Mega-Simsala megaentwickeln."
+    },
+    {
+      "key": "slowbronite",
+      "category": "mega",
+      "label": "Slowbronite",
+      "price": 250000,
+      "description": "Lets Slowbro mega evolve into Mega Slowbro in battle.",
+      "label_de": "Lahmusnit",
+      "description_de": "Lässt Lahmus im Kampf zu Mega-Lahmus megaentwickeln."
+    },
+    {
+      "key": "gengarite",
+      "category": "mega",
+      "label": "Gengarite",
+      "price": 250000,
+      "description": "Lets Gengar mega evolve into Mega Gengar in battle.",
+      "label_de": "Gengarnit",
+      "description_de": "Lässt Gengar im Kampf zu Mega-Gengar megaentwickeln."
+    },
+    {
+      "key": "kangaskhanite",
+      "category": "mega",
+      "label": "Kangaskhanite",
+      "price": 250000,
+      "description": "Lets Kangaskhan mega evolve into Mega Kangaskhan in battle.",
+      "label_de": "Kangamanit",
+      "description_de": "Lässt Kangama im Kampf zu Mega-Kangama megaentwickeln."
+    },
+    {
+      "key": "pinsirite",
+      "category": "mega",
+      "label": "Pinsirite",
+      "price": 250000,
+      "description": "Lets Pinsir mega evolve into Mega Pinsir in battle.",
+      "label_de": "Pinsirnit",
+      "description_de": "Lässt Pinsir im Kampf zu Mega-Pinsir megaentwickeln."
+    },
+    {
+      "key": "gyaradosite",
+      "category": "mega",
+      "label": "Gyaradosite",
+      "price": 250000,
+      "description": "Lets Gyarados mega evolve into Mega Gyarados in battle.",
+      "label_de": "Garadosnit",
+      "description_de": "Lässt Garados im Kampf zu Mega-Garados megaentwickeln."
+    },
+    {
+      "key": "aerodactylite",
+      "category": "mega",
+      "label": "Aerodactylite",
+      "price": 250000,
+      "description": "Lets Aerodactyl mega evolve into Mega Aerodactyl in battle.",
+      "label_de": "Aerodactylonit",
+      "description_de": "Lässt Aerodactyl im Kampf zu Mega-Aerodactyl megaentwickeln."
+    },
+    {
+      "key": "mewtwonite_x",
+      "category": "mega",
+      "label": "Mewtwonite X",
+      "price": 250000,
+      "description": "Lets Mewtwo mega evolve into Mega Mewtwo X in battle.",
+      "label_de": "Mewtunit X",
+      "description_de": "Lässt Mewtu im Kampf zu Mega-Mewtu X megaentwickeln."
+    },
+    {
+      "key": "mewtwonite_y",
+      "category": "mega",
+      "label": "Mewtwonite Y",
+      "price": 250000,
+      "description": "Lets Mewtwo mega evolve into Mega Mewtwo Y in battle.",
+      "label_de": "Mewtunit Y",
+      "description_de": "Lässt Mewtu im Kampf zu Mega-Mewtu Y megaentwickeln."
+    },
+    {
+      "key": "ampharosite",
+      "category": "mega",
+      "label": "Ampharosite",
+      "price": 250000,
+      "description": "Lets Ampharos mega evolve into Mega Ampharos in battle.",
+      "label_de": "Ampharosnit",
+      "description_de": "Lässt Ampharos im Kampf zu Mega-Ampharos megaentwickeln."
+    },
+    {
+      "key": "steelixite",
+      "category": "mega",
+      "label": "Steelixite",
+      "price": 250000,
+      "description": "Lets Steelix mega evolve into Mega Steelix in battle.",
+      "label_de": "Stahlosnit",
+      "description_de": "Lässt Stahlos im Kampf zu Mega-Stahlos megaentwickeln."
+    },
+    {
+      "key": "scizorite",
+      "category": "mega",
+      "label": "Scizorite",
+      "price": 250000,
+      "description": "Lets Scizor mega evolve into Mega Scizor in battle.",
+      "label_de": "Scheroxnit",
+      "description_de": "Lässt Scherox im Kampf zu Mega-Scherox megaentwickeln."
+    },
+    {
+      "key": "heracronite",
+      "category": "mega",
+      "label": "Heracronite",
+      "price": 250000,
+      "description": "Lets Heracross mega evolve into Mega Heracross in battle.",
+      "label_de": "Skarabornit",
+      "description_de": "Lässt Skaraborn im Kampf zu Mega-Skaraborn megaentwickeln."
+    },
+    {
+      "key": "houndoominite",
+      "category": "mega",
+      "label": "Houndoominite",
+      "price": 250000,
+      "description": "Lets Houndoom mega evolve into Mega Houndoom in battle.",
+      "label_de": "Hundemonit",
+      "description_de": "Lässt Hundemon im Kampf zu Mega-Hundemon megaentwickeln."
+    },
+    {
+      "key": "tyranitarite",
+      "category": "mega",
+      "label": "Tyranitarite",
+      "price": 250000,
+      "description": "Lets Tyranitar mega evolve into Mega Tyranitar in battle.",
+      "label_de": "Despotarnit",
+      "description_de": "Lässt Despotar im Kampf zu Mega-Despotar megaentwickeln."
+    },
+    {
+      "key": "sceptilite",
+      "category": "mega",
+      "label": "Sceptilite",
+      "price": 250000,
+      "description": "Lets Sceptile mega evolve into Mega Sceptile in battle.",
+      "label_de": "Gewaldronit",
+      "description_de": "Lässt Gewaldro im Kampf zu Mega-Gewaldro megaentwickeln."
+    },
+    {
+      "key": "blazikenite",
+      "category": "mega",
+      "label": "Blazikenite",
+      "price": 250000,
+      "description": "Lets Blaziken mega evolve into Mega Blaziken in battle.",
+      "label_de": "Lohgocknit",
+      "description_de": "Lässt Lohgock im Kampf zu Mega-Lohgock megaentwickeln."
+    },
+    {
+      "key": "swampertite",
+      "category": "mega",
+      "label": "Swampertite",
+      "price": 250000,
+      "description": "Lets Swampert mega evolve into Mega Swampert in battle.",
+      "label_de": "Sumpexnit",
+      "description_de": "Lässt Sumpex im Kampf zu Mega-Sumpex megaentwickeln."
+    },
+    {
+      "key": "gardevoirite",
+      "category": "mega",
+      "label": "Gardevoirite",
+      "price": 250000,
+      "description": "Lets Gardevoir mega evolve into Mega Gardevoir in battle.",
+      "label_de": "Guardevoirnit",
+      "description_de": "Lässt Guardevoir im Kampf zu Mega-Guardevoir megaentwickeln."
+    },
+    {
+      "key": "sablenite",
+      "category": "mega",
+      "label": "Sablenite",
+      "price": 250000,
+      "description": "Lets Sableye mega evolve into Mega Sableye in battle.",
+      "label_de": "Zobirisnit",
+      "description_de": "Lässt Zobiris im Kampf zu Mega-Zobiris megaentwickeln."
+    },
+    {
+      "key": "mawilite",
+      "category": "mega",
+      "label": "Mawilite",
+      "price": 250000,
+      "description": "Lets Mawile mega evolve into Mega Mawile in battle.",
+      "label_de": "Flunkifernit",
+      "description_de": "Lässt Flunkifer im Kampf zu Mega-Flunkifer megaentwickeln."
+    },
+    {
+      "key": "aggronite",
+      "category": "mega",
+      "label": "Aggronite",
+      "price": 250000,
+      "description": "Lets Aggron mega evolve into Mega Aggron in battle.",
+      "label_de": "Stollossnit",
+      "description_de": "Lässt Stolloss im Kampf zu Mega-Stolloss megaentwickeln."
+    },
+    {
+      "key": "medichamite",
+      "category": "mega",
+      "label": "Medichamite",
+      "price": 250000,
+      "description": "Lets Medicham mega evolve into Mega Medicham in battle.",
+      "label_de": "Meditalisnit",
+      "description_de": "Lässt Meditalis im Kampf zu Mega-Meditalis megaentwickeln."
+    },
+    {
+      "key": "manectite",
+      "category": "mega",
+      "label": "Manectite",
+      "price": 250000,
+      "description": "Lets Manectric mega evolve into Mega Manectric in battle.",
+      "label_de": "Voltensonit",
+      "description_de": "Lässt Voltenso im Kampf zu Mega-Voltenso megaentwickeln."
+    },
+    {
+      "key": "sharpedonite",
+      "category": "mega",
+      "label": "Sharpedonite",
+      "price": 250000,
+      "description": "Lets Sharpedo mega evolve into Mega Sharpedo in battle.",
+      "label_de": "Tohaidonit",
+      "description_de": "Lässt Tohaido im Kampf zu Mega-Tohaido megaentwickeln."
+    },
+    {
+      "key": "cameruptite",
+      "category": "mega",
+      "label": "Cameruptite",
+      "price": 250000,
+      "description": "Lets Camerupt mega evolve into Mega Camerupt in battle.",
+      "label_de": "Cameruptnit",
+      "description_de": "Lässt Camerupt im Kampf zu Mega-Camerupt megaentwickeln."
+    },
+    {
+      "key": "altarianite",
+      "category": "mega",
+      "label": "Altarianite",
+      "price": 250000,
+      "description": "Lets Altaria mega evolve into Mega Altaria in battle.",
+      "label_de": "Altarianit",
+      "description_de": "Lässt Altaria im Kampf zu Mega-Altaria megaentwickeln."
+    },
+    {
+      "key": "banettite",
+      "category": "mega",
+      "label": "Banettite",
+      "price": 250000,
+      "description": "Lets Banette mega evolve into Mega Banette in battle.",
+      "label_de": "Banetteonit",
+      "description_de": "Lässt Banette im Kampf zu Mega-Banette megaentwickeln."
+    },
+    {
+      "key": "absolite",
+      "category": "mega",
+      "label": "Absolite",
+      "price": 250000,
+      "description": "Lets Absol mega evolve into Mega Absol in battle.",
+      "label_de": "Absolnit",
+      "description_de": "Lässt Absol im Kampf zu Mega-Absol megaentwickeln."
+    },
+    {
+      "key": "glalitite",
+      "category": "mega",
+      "label": "Glalitite",
+      "price": 250000,
+      "description": "Lets Glalie mega evolve into Mega Glalie in battle.",
+      "label_de": "Firnontornit",
+      "description_de": "Lässt Firnontor im Kampf zu Mega-Firnontor megaentwickeln."
+    },
+    {
+      "key": "salamencite",
+      "category": "mega",
+      "label": "Salamencite",
+      "price": 250000,
+      "description": "Lets Salamence mega evolve into Mega Salamence in battle.",
+      "label_de": "Brutalandanit",
+      "description_de": "Lässt Brutalanda im Kampf zu Mega-Brutalanda megaentwickeln."
+    },
+    {
+      "key": "metagrossite",
+      "category": "mega",
+      "label": "Metagrossite",
+      "price": 250000,
+      "description": "Lets Metagross mega evolve into Mega Metagross in battle.",
+      "label_de": "Metagrossnit",
+      "description_de": "Lässt Metagross im Kampf zu Mega-Metagross megaentwickeln."
+    },
+    {
+      "key": "latiasite",
+      "category": "mega",
+      "label": "Latiasite",
+      "price": 250000,
+      "description": "Lets Latias mega evolve into Mega Latias in battle.",
+      "label_de": "Latiasnit",
+      "description_de": "Lässt Latias im Kampf zu Mega-Latias megaentwickeln."
+    },
+    {
+      "key": "latiosite",
+      "category": "mega",
+      "label": "Latiosite",
+      "price": 250000,
+      "description": "Lets Latios mega evolve into Mega Latios in battle.",
+      "label_de": "Latiosnit",
+      "description_de": "Lässt Latios im Kampf zu Mega-Latios megaentwickeln."
+    },
+    {
+      "key": "blue_orb",
+      "category": "mega",
+      "label": "Blue Orb",
+      "price": 400000,
+      "description": "Lets Kyogre undergo Primal Reversion into Primal Kyogre in battle.",
+      "label_de": "Blauer Edelstein",
+      "description_de": "Lässt Kyogre im Kampf die Proto-Form Proto-Kyogre annehmen."
+    },
+    {
+      "key": "red_orb",
+      "category": "mega",
+      "label": "Red Orb",
+      "price": 400000,
+      "description": "Lets Groudon undergo Primal Reversion into Primal Groudon in battle.",
+      "label_de": "Roter Edelstein",
+      "description_de": "Lässt Groudon im Kampf die Proto-Form Proto-Groudon annehmen."
+    },
+    {
+      "key": "lopunnite",
+      "category": "mega",
+      "label": "Lopunnite",
+      "price": 250000,
+      "description": "Lets Lopunny mega evolve into Mega Lopunny in battle.",
+      "label_de": "Schlapornit",
+      "description_de": "Lässt Schlapor im Kampf zu Mega-Schlapor megaentwickeln."
+    },
+    {
+      "key": "garchompite",
+      "category": "mega",
+      "label": "Garchompite",
+      "price": 250000,
+      "description": "Lets Garchomp mega evolve into Mega Garchomp in battle.",
+      "label_de": "Knakracknit",
+      "description_de": "Lässt Knakrack im Kampf zu Mega-Knakrack megaentwickeln."
+    },
+    {
+      "key": "lucarionite",
+      "category": "mega",
+      "label": "Lucarionite",
+      "price": 250000,
+      "description": "Lets Lucario mega evolve into Mega Lucario in battle.",
+      "label_de": "Lucarionit",
+      "description_de": "Lässt Lucario im Kampf zu Mega-Lucario megaentwickeln."
+    },
+    {
+      "key": "abomasite",
+      "category": "mega",
+      "label": "Abomasite",
+      "price": 250000,
+      "description": "Lets Abomasnow mega evolve into Mega Abomasnow in battle.",
+      "label_de": "Rexblisarnit",
+      "description_de": "Lässt Rexblisar im Kampf zu Mega-Rexblisar megaentwickeln."
+    },
+    {
+      "key": "galladite",
+      "category": "mega",
+      "label": "Galladite",
+      "price": 250000,
+      "description": "Lets Gallade mega evolve into Mega Gallade in battle.",
+      "label_de": "Galagladinit",
+      "description_de": "Lässt Galagladi im Kampf zu Mega-Galagladi megaentwickeln."
+    },
+    {
+      "key": "audinite",
+      "category": "mega",
+      "label": "Audinite",
+      "price": 250000,
+      "description": "Lets Audino mega evolve into Mega Audino in battle.",
+      "label_de": "Ohrdochnit",
+      "description_de": "Lässt Ohrdoch im Kampf zu Mega-Ohrdoch megaentwickeln."
+    },
+    {
+      "key": "diancite",
+      "category": "mega",
+      "label": "Diancite",
+      "price": 250000,
+      "description": "Lets Diancie mega evolve into Mega Diancie in battle.",
+      "label_de": "Diancienit",
+      "description_de": "Lässt Diancie im Kampf zu Mega-Diancie megaentwickeln."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# macOS Finder metadata
+._*
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.claude/
+pokemon_encounter/data/
+agent.log
+agent.pid
+agent_finished
+agent_poll.log
+.run_agent.lock
+bak*
+# Local development notes, scratch scripts and drafts (not part of the add-on)
+dev/
+/data/
+
+# Local agent / task-queue tooling (not part of the add-on)
+/scripts/deploy.sh
+/scripts/install_cron.sh
+/scripts/uninstall_cron.sh
+/scripts/poll_agent.sh
+/scripts/run_agent.sh
+/scripts/next_task.py
+/scripts/mark_done.py
+/scripts/resolve_task.py
+/REQUIREMENTS.md
+/tests/test_poll_agent.py
+/tests/test_task_queue.py
+
+# Dev-only agent task-queue extension (loaded by app/main.py when present)
+/pokemon_encounter/app/api/agent_tasks.py
+/pokemon_encounter/www/agent.js
+/pokemon_encounter/app/data/i18n/ext/
+/tests/test_agent_tasks.py

@@ -1,0 +1,1164 @@
+{
+  "_comment": "TM catalog, the compatibility data and the gym leader that awards each TM. A TM teaches its move to a COMPATIBLE Pokemon from the move's min_level on (app/tms.py) - the way past the normal learnset, which only offers the species' level-up moves (app/moves.py, data/learnsets.json). Compatibility follows the games: if the move is a TM in the species' learnset generation (Scarlet/Violet, or the newest game the species was in), the species must learn it by TM there (data/learnsets.json `tm`). For a move that is no TM in that generation, PokeAPI decides: `species.tm_moves` lists every move a species learns from a TM/HM (learn method `machine`, any game), backfilled at startup (tms.backfill) and fetched together with new species (seed.py). Fallback `compatibility`, used while a species has no `tm_moves` yet (offline start, fallback Pokedex) and for every TM listed in `type_based`: the move's type must be one of the Pokemon's own types (already in its learnset) or listed in `type_affinity` for one of its types (a Pokemon takes the union over both types), and a damaging move additionally needs `min_offense` base stat in the stat the move uses (attack for physical, special attack for special), so a Magikarp never learns Earthquake. Mythical Pokemon learn every type-based TM. `type_based`: substitute TMs whose move is no TM in any main-series game (PokeAPI knows no species that learns it by `machine`), see `canonical` of the gyms awarding them - the item keys stay because they live in save data. Single use: teaching consumes the TM, so a TM awarded by several gyms (Rock Tomb) is worth having twice - or, for the ones below, worth buying again. `number` is display only (TM numbers differ per generation, the item key is the move). `canonical` documents the TM the gym leader hands out in the main games; where that move does not exist in data/moves.json, the entry uses the closest available move of the same type and damage class instead. Alola has no gyms (island trials), so it awards no TMs. Rewards per gym: app/rewards.py. Optional `price`: Pokedollar cost in the shop's TM section (app/tms.py catalog_entries, multiplied by shop_price_multiplier like every other item). The buyable set follows Scarlet/Violet, where every TM is obtainable: every SV TM whose move exists in data/moves.json (moves the battle engine lacks - Protect, weather, screens, Hyper Beam, U-turn, ... - are not sold), plus TMs older games sold in department stores/Poke Marts (Celadon, Goldenrod, Alola). A TM with a price may be shop-only (no gym awards it). Price = move power x 100; status moves: self-boosting/healing 10000, status-inflicting 4000, others 5000. TMs without a price stay gym-only rewards.",
+  "compatibility": {
+    "min_offense": 50,
+    "type_affinity": {
+      "normal": [
+        "dark",
+        "electric",
+        "fighting",
+        "fire",
+        "flying",
+        "ground",
+        "ice",
+        "psychic",
+        "rock",
+        "water"
+      ],
+      "fire": [
+        "dark",
+        "dragon",
+        "fighting",
+        "flying",
+        "ground",
+        "rock",
+        "steel"
+      ],
+      "water": [
+        "dark",
+        "dragon",
+        "fighting",
+        "ground",
+        "ice",
+        "psychic",
+        "rock"
+      ],
+      "electric": [
+        "dark",
+        "fairy",
+        "fighting",
+        "flying",
+        "psychic",
+        "steel"
+      ],
+      "grass": [
+        "bug",
+        "dark",
+        "fairy",
+        "fighting",
+        "ground",
+        "poison",
+        "psychic"
+      ],
+      "ice": [
+        "dark",
+        "fighting",
+        "ground",
+        "psychic",
+        "rock",
+        "water"
+      ],
+      "fighting": [
+        "dark",
+        "ghost",
+        "ground",
+        "psychic",
+        "rock",
+        "steel"
+      ],
+      "poison": [
+        "bug",
+        "dark",
+        "fire",
+        "ghost",
+        "grass",
+        "ground",
+        "rock"
+      ],
+      "ground": [
+        "dark",
+        "dragon",
+        "electric",
+        "fighting",
+        "fire",
+        "ice",
+        "poison",
+        "rock",
+        "steel"
+      ],
+      "flying": [
+        "dark",
+        "dragon",
+        "electric",
+        "fighting",
+        "fire",
+        "ground",
+        "ice",
+        "psychic",
+        "steel",
+        "water"
+      ],
+      "psychic": [
+        "dark",
+        "electric",
+        "fairy",
+        "fighting",
+        "fire",
+        "ghost",
+        "ice",
+        "water"
+      ],
+      "bug": [
+        "dark",
+        "fighting",
+        "flying",
+        "grass",
+        "ground",
+        "poison",
+        "rock",
+        "steel"
+      ],
+      "rock": [
+        "dark",
+        "dragon",
+        "electric",
+        "fighting",
+        "fire",
+        "ground",
+        "ice",
+        "steel",
+        "water"
+      ],
+      "ghost": [
+        "dark",
+        "electric",
+        "fairy",
+        "fighting",
+        "fire",
+        "ice",
+        "poison",
+        "psychic",
+        "water"
+      ],
+      "dragon": [
+        "dark",
+        "electric",
+        "fighting",
+        "fire",
+        "flying",
+        "ground",
+        "ice",
+        "psychic",
+        "rock",
+        "steel",
+        "water"
+      ],
+      "dark": [
+        "electric",
+        "fighting",
+        "fire",
+        "flying",
+        "ghost",
+        "ground",
+        "ice",
+        "poison",
+        "psychic",
+        "steel"
+      ],
+      "steel": [
+        "dark",
+        "dragon",
+        "electric",
+        "fighting",
+        "fire",
+        "flying",
+        "ground",
+        "ice",
+        "psychic",
+        "rock"
+      ],
+      "fairy": [
+        "dark",
+        "electric",
+        "fire",
+        "flying",
+        "ghost",
+        "grass",
+        "ice",
+        "psychic",
+        "water"
+      ]
+    }
+  },
+  "type_based": [
+    "tm_razor_leaf",
+    "tm_spark",
+    "tm_aurora_beam",
+    "tm_icicle_crash",
+    "tm_ancient_power",
+    "tm_dragon_rush"
+  ],
+  "tms": [
+    {
+      "key": "tm_swift",
+      "number": 1,
+      "move": "swift",
+      "price": 6000
+    },
+    {
+      "key": "tm_headbutt",
+      "number": 2,
+      "move": "headbutt",
+      "price": 7000
+    },
+    {
+      "key": "tm_body_slam",
+      "number": 3,
+      "move": "body_slam",
+      "price": 8500
+    },
+    {
+      "key": "tm_flamethrower",
+      "number": 4,
+      "move": "flamethrower",
+      "price": 9000
+    },
+    {
+      "key": "tm_fire_blast",
+      "number": 5,
+      "move": "fire_blast",
+      "price": 11000
+    },
+    {
+      "key": "tm_water_pulse",
+      "number": 6,
+      "move": "water_pulse",
+      "price": 6000
+    },
+    {
+      "key": "tm_waterfall",
+      "number": 7,
+      "move": "waterfall",
+      "price": 8000
+    },
+    {
+      "key": "tm_surf",
+      "number": 8,
+      "move": "surf",
+      "price": 9000
+    },
+    {
+      "key": "tm_razor_leaf",
+      "number": 9,
+      "move": "razor_leaf"
+    },
+    {
+      "key": "tm_giga_drain",
+      "number": 10,
+      "move": "giga_drain",
+      "price": 7500
+    },
+    {
+      "key": "tm_seed_bomb",
+      "number": 11,
+      "move": "seed_bomb",
+      "price": 8000
+    },
+    {
+      "key": "tm_energy_ball",
+      "number": 12,
+      "move": "energy_ball",
+      "price": 9000
+    },
+    {
+      "key": "tm_spark",
+      "number": 13,
+      "move": "spark"
+    },
+    {
+      "key": "tm_thunder_fang",
+      "number": 14,
+      "move": "thunder_fang",
+      "price": 6500
+    },
+    {
+      "key": "tm_thunderbolt",
+      "number": 15,
+      "move": "thunderbolt",
+      "price": 9000
+    },
+    {
+      "key": "tm_thunder",
+      "number": 16,
+      "move": "thunder",
+      "price": 11000
+    },
+    {
+      "key": "tm_aurora_beam",
+      "number": 17,
+      "move": "aurora_beam",
+      "price": 6500
+    },
+    {
+      "key": "tm_ice_beam",
+      "number": 18,
+      "move": "ice_beam",
+      "price": 9000
+    },
+    {
+      "key": "tm_icicle_crash",
+      "number": 19,
+      "move": "icicle_crash"
+    },
+    {
+      "key": "tm_blizzard",
+      "number": 20,
+      "move": "blizzard",
+      "price": 11000
+    },
+    {
+      "key": "tm_brick_break",
+      "number": 21,
+      "move": "brick_break",
+      "price": 7500
+    },
+    {
+      "key": "tm_aura_sphere",
+      "number": 22,
+      "move": "aura_sphere",
+      "price": 8000
+    },
+    {
+      "key": "tm_close_combat",
+      "number": 23,
+      "move": "close_combat",
+      "price": 12000
+    },
+    {
+      "key": "tm_bulldoze",
+      "number": 24,
+      "move": "bulldoze",
+      "price": 6000
+    },
+    {
+      "key": "tm_earthquake",
+      "number": 25,
+      "move": "earthquake",
+      "price": 10000
+    },
+    {
+      "key": "tm_aerial_ace",
+      "number": 26,
+      "move": "aerial_ace",
+      "price": 6000
+    },
+    {
+      "key": "tm_air_slash",
+      "number": 27,
+      "move": "air_slash",
+      "price": 7500
+    },
+    {
+      "key": "tm_psychic",
+      "number": 28,
+      "move": "psychic",
+      "price": 9000
+    },
+    {
+      "key": "tm_fury_cutter",
+      "number": 29,
+      "move": "fury_cutter"
+    },
+    {
+      "key": "tm_struggle_bug",
+      "number": 30,
+      "move": "struggle_bug",
+      "price": 5000
+    },
+    {
+      "key": "tm_bug_bite",
+      "number": 31,
+      "move": "bug_bite",
+      "price": 6000
+    },
+    {
+      "key": "tm_leech_life",
+      "number": 32,
+      "move": "leech_life",
+      "price": 8000
+    },
+    {
+      "key": "tm_rock_tomb",
+      "number": 33,
+      "move": "rock_tomb",
+      "price": 6000
+    },
+    {
+      "key": "tm_ancient_power",
+      "number": 34,
+      "move": "ancient_power"
+    },
+    {
+      "key": "tm_hex",
+      "number": 35,
+      "move": "hex",
+      "price": 6500
+    },
+    {
+      "key": "tm_shadow_claw",
+      "number": 36,
+      "move": "shadow_claw",
+      "price": 7000
+    },
+    {
+      "key": "tm_shadow_ball",
+      "number": 37,
+      "move": "shadow_ball",
+      "price": 8000
+    },
+    {
+      "key": "tm_dragon_claw",
+      "number": 38,
+      "move": "dragon_claw",
+      "price": 8000
+    },
+    {
+      "key": "tm_dragon_pulse",
+      "number": 39,
+      "move": "dragon_pulse",
+      "price": 8500
+    },
+    {
+      "key": "tm_dragon_rush",
+      "number": 40,
+      "move": "dragon_rush"
+    },
+    {
+      "key": "tm_dark_pulse",
+      "number": 41,
+      "move": "dark_pulse",
+      "price": 8000
+    },
+    {
+      "key": "tm_flash_cannon",
+      "number": 42,
+      "move": "flash_cannon",
+      "price": 8000
+    },
+    {
+      "key": "tm_iron_tail",
+      "number": 43,
+      "move": "iron_tail",
+      "price": 10000
+    },
+    {
+      "key": "tm_draining_kiss",
+      "number": 44,
+      "move": "draining_kiss",
+      "price": 5000
+    },
+    {
+      "key": "tm_dazzling_gleam",
+      "number": 45,
+      "move": "dazzling_gleam",
+      "price": 8000
+    },
+    {
+      "key": "tm_toxic",
+      "number": 46,
+      "move": "toxic",
+      "price": 4000
+    },
+    {
+      "key": "tm_will_o_wisp",
+      "number": 47,
+      "move": "will_o_wisp",
+      "price": 4000
+    },
+    {
+      "key": "tm_thunder_wave",
+      "number": 48,
+      "move": "thunder_wave",
+      "price": 4000
+    },
+    {
+      "key": "tm_charm",
+      "number": 49,
+      "move": "charm",
+      "price": 5000
+    },
+    {
+      "key": "tm_calm_mind",
+      "number": 50,
+      "move": "calm_mind",
+      "price": 10000
+    },
+    {
+      "key": "tm_bulk_up",
+      "number": 51,
+      "move": "bulk_up",
+      "price": 10000
+    },
+    {
+      "key": "tm_roost",
+      "number": 52,
+      "move": "roost"
+    },
+    {
+      "key": "tm_curse",
+      "number": 53,
+      "move": "curse",
+      "price": 10000
+    },
+    {
+      "key": "tm_take_down",
+      "number": 54,
+      "move": "take_down",
+      "price": 9000
+    },
+    {
+      "key": "tm_submission",
+      "number": 55,
+      "move": "submission",
+      "price": 8000
+    },
+    {
+      "key": "tm_rock_smash",
+      "number": 56,
+      "move": "rock_smash",
+      "price": 4000
+    },
+    {
+      "key": "tm_ice_punch",
+      "number": 57,
+      "move": "ice_punch",
+      "price": 7500
+    },
+    {
+      "key": "tm_thunder_punch",
+      "number": 58,
+      "move": "thunder_punch",
+      "price": 7500
+    },
+    {
+      "key": "tm_fire_punch",
+      "number": 59,
+      "move": "fire_punch",
+      "price": 7500
+    },
+    {
+      "key": "tm_sludge_wave",
+      "number": 60,
+      "move": "sludge_wave",
+      "price": 9500
+    },
+    {
+      "key": "tm_low_sweep",
+      "number": 61,
+      "move": "low_sweep",
+      "price": 6500
+    },
+    {
+      "key": "tm_steel_wing",
+      "number": 62,
+      "move": "steel_wing",
+      "price": 7000
+    },
+    {
+      "key": "tm_focus_blast",
+      "number": 63,
+      "move": "focus_blast",
+      "price": 12000
+    },
+    {
+      "key": "tm_stone_edge",
+      "number": 64,
+      "move": "stone_edge",
+      "price": 10000
+    },
+    {
+      "key": "tm_smack_down",
+      "number": 65,
+      "move": "smack_down",
+      "price": 5000
+    },
+    {
+      "key": "tm_swords_dance",
+      "number": 66,
+      "move": "swords_dance",
+      "price": 10000
+    },
+    {
+      "key": "tm_rock_polish",
+      "number": 67,
+      "move": "rock_polish",
+      "price": 10000
+    },
+    {
+      "key": "tm_agility",
+      "number": 68,
+      "move": "agility",
+      "price": 10000
+    },
+    {
+      "key": "tm_mud_slap",
+      "number": 69,
+      "move": "mud_slap",
+      "price": 2000
+    },
+    {
+      "key": "tm_scary_face",
+      "number": 70,
+      "move": "scary_face",
+      "price": 5000
+    },
+    {
+      "key": "tm_fire_fang",
+      "number": 71,
+      "move": "fire_fang",
+      "price": 6500
+    },
+    {
+      "key": "tm_ice_fang",
+      "number": 72,
+      "move": "ice_fang",
+      "price": 6500
+    },
+    {
+      "key": "tm_psybeam",
+      "number": 73,
+      "move": "psybeam",
+      "price": 6500
+    },
+    {
+      "key": "tm_disarming_voice",
+      "number": 74,
+      "move": "disarming_voice",
+      "price": 4000
+    },
+    {
+      "key": "tm_charge_beam",
+      "number": 75,
+      "move": "charge_beam",
+      "price": 5000
+    },
+    {
+      "key": "tm_snarl",
+      "number": 76,
+      "move": "snarl",
+      "price": 5500
+    },
+    {
+      "key": "tm_metal_claw",
+      "number": 77,
+      "move": "metal_claw",
+      "price": 5000
+    },
+    {
+      "key": "tm_icy_wind",
+      "number": 78,
+      "move": "icy_wind",
+      "price": 5500
+    },
+    {
+      "key": "tm_mud_shot",
+      "number": 79,
+      "move": "mud_shot",
+      "price": 5500
+    },
+    {
+      "key": "tm_air_cutter",
+      "number": 80,
+      "move": "air_cutter",
+      "price": 6000
+    },
+    {
+      "key": "tm_zen_headbutt",
+      "number": 81,
+      "move": "zen_headbutt",
+      "price": 8000
+    },
+    {
+      "key": "tm_drain_punch",
+      "number": 82,
+      "move": "drain_punch",
+      "price": 7500
+    },
+    {
+      "key": "tm_poison_jab",
+      "number": 83,
+      "move": "poison_jab",
+      "price": 8000
+    },
+    {
+      "key": "tm_rock_slide",
+      "number": 84,
+      "move": "rock_slide",
+      "price": 7500
+    },
+    {
+      "key": "tm_iron_head",
+      "number": 85,
+      "move": "iron_head",
+      "price": 8000
+    },
+    {
+      "key": "tm_dragon_dance",
+      "number": 86,
+      "move": "dragon_dance",
+      "price": 10000
+    },
+    {
+      "key": "tm_power_gem",
+      "number": 87,
+      "move": "power_gem",
+      "price": 8000
+    },
+    {
+      "key": "tm_gunk_shot",
+      "number": 88,
+      "move": "gunk_shot",
+      "price": 12000
+    },
+    {
+      "key": "tm_iron_defense",
+      "number": 89,
+      "move": "iron_defense",
+      "price": 10000
+    },
+    {
+      "key": "tm_x_scissor",
+      "number": 90,
+      "move": "x_scissor",
+      "price": 8000
+    },
+    {
+      "key": "tm_drill_run",
+      "number": 91,
+      "move": "drill_run",
+      "price": 8000
+    },
+    {
+      "key": "tm_crunch",
+      "number": 92,
+      "move": "crunch",
+      "price": 8000
+    },
+    {
+      "key": "tm_hyper_voice",
+      "number": 93,
+      "move": "hyper_voice",
+      "price": 9000
+    },
+    {
+      "key": "tm_heat_wave",
+      "number": 94,
+      "move": "heat_wave",
+      "price": 9500
+    },
+    {
+      "key": "tm_play_rough",
+      "number": 95,
+      "move": "play_rough",
+      "price": 9000
+    },
+    {
+      "key": "tm_amnesia",
+      "number": 96,
+      "move": "amnesia",
+      "price": 10000
+    },
+    {
+      "key": "tm_earth_power",
+      "number": 97,
+      "move": "earth_power",
+      "price": 9000
+    },
+    {
+      "key": "tm_nasty_plot",
+      "number": 98,
+      "move": "nasty_plot",
+      "price": 10000
+    },
+    {
+      "key": "tm_hydro_pump",
+      "number": 99,
+      "move": "hydro_pump",
+      "price": 11000
+    },
+    {
+      "key": "tm_wild_charge",
+      "number": 100,
+      "move": "wild_charge",
+      "price": 9000
+    },
+    {
+      "key": "tm_sludge_bomb",
+      "number": 101,
+      "move": "sludge_bomb",
+      "price": 9000
+    },
+    {
+      "key": "tm_overheat",
+      "number": 102,
+      "move": "overheat",
+      "price": 13000
+    },
+    {
+      "key": "tm_leaf_storm",
+      "number": 103,
+      "move": "leaf_storm",
+      "price": 13000
+    },
+    {
+      "key": "tm_hurricane",
+      "number": 104,
+      "move": "hurricane",
+      "price": 11000
+    },
+    {
+      "key": "tm_bug_buzz",
+      "number": 105,
+      "move": "bug_buzz",
+      "price": 9000
+    },
+    {
+      "key": "tm_brave_bird",
+      "number": 106,
+      "move": "brave_bird",
+      "price": 12000
+    },
+    {
+      "key": "tm_flare_blitz",
+      "number": 107,
+      "move": "flare_blitz",
+      "price": 12000
+    },
+    {
+      "key": "tm_draco_meteor",
+      "number": 108,
+      "move": "draco_meteor",
+      "price": 13000
+    },
+    {
+      "key": "tm_haze",
+      "number": 109,
+      "move": "haze",
+      "price": 5000
+    },
+    {
+      "key": "tm_knock_off",
+      "number": 110,
+      "move": "knock_off",
+      "price": 6500
+    },
+    {
+      "key": "tm_vacuum_wave",
+      "number": 111,
+      "move": "vacuum_wave",
+      "price": 4000
+    },
+    {
+      "key": "tm_scald",
+      "number": 112,
+      "move": "scald",
+      "price": 8000
+    },
+    {
+      "key": "tm_double_edge",
+      "number": 113,
+      "move": "double_edge",
+      "price": 12000
+    },
+    {
+      "key": "tm_muddy_water",
+      "number": 114,
+      "move": "muddy_water",
+      "price": 9000
+    },
+    {
+      "key": "tm_electroweb",
+      "number": 115,
+      "move": "electroweb",
+      "price": 5500
+    },
+    {
+      "key": "tm_feather_dance",
+      "number": 116,
+      "move": "feather_dance",
+      "price": 5000
+    },
+    {
+      "key": "tm_metal_sound",
+      "number": 117,
+      "move": "metal_sound",
+      "price": 5000
+    }
+  ],
+  "gym_tms": {
+    "kanto_brock": {
+      "tm": "tm_rock_tomb",
+      "canonical": "TM39 Rock Tomb (FireRed/LeafGreen)"
+    },
+    "kanto_misty": {
+      "tm": "tm_water_pulse",
+      "canonical": "TM03 Water Pulse (FireRed/LeafGreen)"
+    },
+    "kanto_surge": {
+      "tm": "tm_thunderbolt",
+      "canonical": "TM24 Thunderbolt (Red/Blue/Yellow)"
+    },
+    "kanto_erika": {
+      "tm": "tm_giga_drain",
+      "canonical": "TM19 Giga Drain (FireRed/LeafGreen)"
+    },
+    "kanto_koga": {
+      "tm": "tm_toxic",
+      "canonical": "TM06 Toxic"
+    },
+    "kanto_sabrina": {
+      "tm": "tm_calm_mind",
+      "canonical": "TM04 Calm Mind (FireRed/LeafGreen)"
+    },
+    "kanto_blaine": {
+      "tm": "tm_fire_blast",
+      "canonical": "TM38 Fire Blast"
+    },
+    "kanto_giovanni": {
+      "tm": "tm_earthquake",
+      "canonical": "TM26 Earthquake (FireRed/LeafGreen)"
+    },
+    "johto_falkner": {
+      "tm": "tm_roost",
+      "canonical": "TM51 Roost (HeartGold/SoulSilver)"
+    },
+    "johto_bugsy": {
+      "tm": "tm_fury_cutter",
+      "canonical": "TM49 Fury Cutter (Gold/Silver/Crystal)"
+    },
+    "johto_whitney": {
+      "tm": "tm_charm",
+      "canonical": "TM45 Attract"
+    },
+    "johto_morty": {
+      "tm": "tm_shadow_ball",
+      "canonical": "TM30 Shadow Ball"
+    },
+    "johto_chuck": {
+      "tm": "tm_brick_break",
+      "canonical": "TM01 DynamicPunch"
+    },
+    "johto_jasmine": {
+      "tm": "tm_iron_tail",
+      "canonical": "TM23 Iron Tail (HeartGold/SoulSilver)"
+    },
+    "johto_pryce": {
+      "tm": "tm_aurora_beam",
+      "canonical": "TM16 Icy Wind"
+    },
+    "johto_clair": {
+      "tm": "tm_dragon_pulse",
+      "canonical": "TM59 Dragon Pulse (HeartGold/SoulSilver)"
+    },
+    "hoenn_roxanne": {
+      "tm": "tm_rock_tomb",
+      "canonical": "TM39 Rock Tomb"
+    },
+    "hoenn_brawly": {
+      "tm": "tm_bulk_up",
+      "canonical": "TM08 Bulk Up"
+    },
+    "hoenn_wattson": {
+      "tm": "tm_spark",
+      "canonical": "TM34 Shock Wave"
+    },
+    "hoenn_flannery": {
+      "tm": "tm_flamethrower",
+      "canonical": "TM50 Overheat"
+    },
+    "hoenn_norman": {
+      "tm": "tm_body_slam",
+      "canonical": "TM42 Facade"
+    },
+    "hoenn_winona": {
+      "tm": "tm_aerial_ace",
+      "canonical": "TM40 Aerial Ace"
+    },
+    "hoenn_tate_liza": {
+      "tm": "tm_calm_mind",
+      "canonical": "TM04 Calm Mind"
+    },
+    "hoenn_juan": {
+      "tm": "tm_water_pulse",
+      "canonical": "TM03 Water Pulse"
+    },
+    "sinnoh_roark": {
+      "tm": "tm_ancient_power",
+      "canonical": "TM76 Stealth Rock"
+    },
+    "sinnoh_gardenia": {
+      "tm": "tm_energy_ball",
+      "canonical": "TM86 Grass Knot"
+    },
+    "sinnoh_fantina": {
+      "tm": "tm_shadow_claw",
+      "canonical": "TM65 Shadow Claw"
+    },
+    "sinnoh_maylene": {
+      "tm": "tm_aura_sphere",
+      "canonical": "TM60 Drain Punch"
+    },
+    "sinnoh_wake": {
+      "tm": "tm_surf",
+      "canonical": "TM55 Brine"
+    },
+    "sinnoh_byron": {
+      "tm": "tm_flash_cannon",
+      "canonical": "TM91 Flash Cannon"
+    },
+    "sinnoh_candice": {
+      "tm": "tm_icicle_crash",
+      "canonical": "TM72 Avalanche"
+    },
+    "sinnoh_volkner": {
+      "tm": "tm_thunder",
+      "canonical": "TM57 Charge Beam"
+    },
+    "unova_cilan": {
+      "tm": "tm_razor_leaf",
+      "canonical": "TM83 Work Up"
+    },
+    "unova_lenora": {
+      "tm": "tm_headbutt",
+      "canonical": "TM67 Retaliate"
+    },
+    "unova_burgh": {
+      "tm": "tm_struggle_bug",
+      "canonical": "TM76 Struggle Bug"
+    },
+    "unova_elesa": {
+      "tm": "tm_thunder_wave",
+      "canonical": "TM72 Volt Switch"
+    },
+    "unova_clay": {
+      "tm": "tm_bulldoze",
+      "canonical": "TM78 Bulldoze"
+    },
+    "unova_skyla": {
+      "tm": "tm_air_slash",
+      "canonical": "TM62 Acrobatics"
+    },
+    "unova_brycen": {
+      "tm": "tm_ice_beam",
+      "canonical": "TM79 Frost Breath"
+    },
+    "unova_drayden": {
+      "tm": "tm_dragon_claw",
+      "canonical": "TM82 Dragon Tail"
+    },
+    "kalos_viola": {
+      "tm": "tm_bug_bite",
+      "canonical": "TM83 Infestation"
+    },
+    "kalos_grant": {
+      "tm": "tm_rock_tomb",
+      "canonical": "TM39 Rock Tomb"
+    },
+    "kalos_korrina": {
+      "tm": "tm_brick_break",
+      "canonical": "TM98 Power-Up Punch"
+    },
+    "kalos_ramos": {
+      "tm": "tm_giga_drain",
+      "canonical": "TM86 Grass Knot"
+    },
+    "kalos_clemont": {
+      "tm": "tm_thunderbolt",
+      "canonical": "TM24 Thunderbolt"
+    },
+    "kalos_valerie": {
+      "tm": "tm_dazzling_gleam",
+      "canonical": "TM99 Dazzling Gleam"
+    },
+    "kalos_olympia": {
+      "tm": "tm_calm_mind",
+      "canonical": "TM04 Calm Mind"
+    },
+    "kalos_wulfric": {
+      "tm": "tm_ice_beam",
+      "canonical": "TM13 Ice Beam"
+    },
+    "galar_milo": {
+      "tm": "tm_razor_leaf",
+      "canonical": "TM10 Magical Leaf"
+    },
+    "galar_nessa": {
+      "tm": "tm_waterfall",
+      "canonical": "TM36 Whirlpool"
+    },
+    "galar_kabu": {
+      "tm": "tm_will_o_wisp",
+      "canonical": "TM38 Will-O-Wisp"
+    },
+    "galar_bea": {
+      "tm": "tm_close_combat",
+      "canonical": "TM42 Revenge"
+    },
+    "galar_allister": {
+      "tm": "tm_hex",
+      "canonical": "TM77 Hex"
+    },
+    "galar_opal": {
+      "tm": "tm_draining_kiss",
+      "canonical": "TM87 Draining Kiss"
+    },
+    "galar_gordie": {
+      "tm": "tm_rock_tomb",
+      "canonical": "TM48 Rock Tomb"
+    },
+    "galar_melony": {
+      "tm": "tm_blizzard",
+      "canonical": "TM27 Icy Wind"
+    },
+    "galar_piers": {
+      "tm": "tm_dark_pulse",
+      "canonical": "TM47 Fake Tears"
+    },
+    "galar_raihan": {
+      "tm": "tm_dragon_rush",
+      "canonical": "TM99 Breaking Swipe"
+    },
+    "paldea_katy": {
+      "tm": "tm_leech_life",
+      "canonical": "TM021 Pounce"
+    },
+    "paldea_brassius": {
+      "tm": "tm_seed_bomb",
+      "canonical": "TM020 Trailblaze"
+    },
+    "paldea_iono": {
+      "tm": "tm_thunder_fang",
+      "canonical": "TM048 Volt Switch"
+    },
+    "paldea_kofu": {
+      "tm": "tm_water_pulse",
+      "canonical": "TM022 Chilling Water"
+    },
+    "paldea_larry": {
+      "tm": "tm_swift",
+      "canonical": "TM088 Swift"
+    },
+    "paldea_ryme": {
+      "tm": "tm_curse",
+      "canonical": "TM103 Substitute"
+    },
+    "paldea_tulip": {
+      "tm": "tm_psychic",
+      "canonical": "TM120 Psychic"
+    },
+    "paldea_grusha": {
+      "tm": "tm_icicle_crash",
+      "canonical": "TM124 Ice Spinner"
+    }
+  }
+}

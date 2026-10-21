@@ -1,0 +1,3037 @@
+{
+  "_comment": "Arenaleiter, Top Vier und Champs (siehe app/trainer_battle.py). kind: gym_leader | elite_four | champion. team: [PokeAPI-Name, Level] - Namen mit Formzusatz (z. B. aegislash -> aegislash-shield) werden automatisch aufgeloest. f: weiblich (fuer den Titel). iv: optional, sonst 20/26/31 je nach kind. stage: optional (semifinal | finals) - Galar's Champion Cup rounds, which take the place of an Elite Four (kind stays elite_four). title: optional title key overriding the kind's (rival, gym_leader).",
+  "regions": [
+    {
+      "key": "kanto",
+      "label": "Kanto",
+      "label_de": "Kanto"
+    },
+    {
+      "key": "johto",
+      "label": "Johto",
+      "label_de": "Johto"
+    },
+    {
+      "key": "hoenn",
+      "label": "Hoenn",
+      "label_de": "Hoenn"
+    },
+    {
+      "key": "sinnoh",
+      "label": "Sinnoh",
+      "label_de": "Sinnoh"
+    },
+    {
+      "key": "unova",
+      "label": "Unova",
+      "label_de": "Einall"
+    },
+    {
+      "key": "kalos",
+      "label": "Kalos",
+      "label_de": "Kalos"
+    },
+    {
+      "key": "alola",
+      "label": "Alola",
+      "label_de": "Alola"
+    },
+    {
+      "key": "galar",
+      "label": "Galar",
+      "label_de": "Galar"
+    },
+    {
+      "key": "paldea",
+      "label": "Paldea",
+      "label_de": "Paldea"
+    }
+  ],
+  "trainers": [
+    {
+      "id": "kanto_brock",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Brock",
+      "type": "rock",
+      "team": [
+        [
+          "geodude",
+          12
+        ],
+        [
+          "onix",
+          14
+        ]
+      ],
+      "name_de": "Rocko"
+    },
+    {
+      "id": "kanto_misty",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Misty",
+      "f": 1,
+      "type": "water",
+      "team": [
+        [
+          "staryu",
+          18
+        ],
+        [
+          "starmie",
+          21
+        ]
+      ],
+      "name_de": "Misty"
+    },
+    {
+      "id": "kanto_surge",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Lt. Surge",
+      "type": "electric",
+      "team": [
+        [
+          "voltorb",
+          21
+        ],
+        [
+          "pikachu",
+          18
+        ],
+        [
+          "raichu",
+          24
+        ]
+      ],
+      "name_de": "Major Bob"
+    },
+    {
+      "id": "kanto_erika",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Erika",
+      "f": 1,
+      "type": "grass",
+      "team": [
+        [
+          "victreebel",
+          29
+        ],
+        [
+          "tangela",
+          24
+        ],
+        [
+          "vileplume",
+          29
+        ]
+      ],
+      "name_de": "Erika"
+    },
+    {
+      "id": "kanto_koga",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Koga",
+      "type": "poison",
+      "team": [
+        [
+          "koffing",
+          37
+        ],
+        [
+          "muk",
+          39
+        ],
+        [
+          "koffing",
+          37
+        ],
+        [
+          "weezing",
+          43
+        ]
+      ],
+      "name_de": "Koga"
+    },
+    {
+      "id": "kanto_sabrina",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Sabrina",
+      "f": 1,
+      "type": "psychic",
+      "team": [
+        [
+          "kadabra",
+          38
+        ],
+        [
+          "mr-mime",
+          37
+        ],
+        [
+          "venomoth",
+          38
+        ],
+        [
+          "alakazam",
+          43
+        ]
+      ],
+      "name_de": "Sabrina"
+    },
+    {
+      "id": "kanto_blaine",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Blaine",
+      "type": "fire",
+      "team": [
+        [
+          "growlithe",
+          42
+        ],
+        [
+          "ponyta",
+          40
+        ],
+        [
+          "rapidash",
+          42
+        ],
+        [
+          "arcanine",
+          47
+        ]
+      ],
+      "name_de": "Pyro"
+    },
+    {
+      "id": "kanto_giovanni",
+      "region": "kanto",
+      "kind": "gym_leader",
+      "name": "Giovanni",
+      "type": "ground",
+      "team": [
+        [
+          "rhyhorn",
+          45
+        ],
+        [
+          "dugtrio",
+          42
+        ],
+        [
+          "nidoqueen",
+          44
+        ],
+        [
+          "nidoking",
+          45
+        ],
+        [
+          "rhydon",
+          50
+        ]
+      ],
+      "name_de": "Giovanni"
+    },
+    {
+      "id": "kanto_lorelei",
+      "region": "kanto",
+      "kind": "elite_four",
+      "name": "Lorelei",
+      "f": 1,
+      "type": "ice",
+      "team": [
+        [
+          "dewgong",
+          52
+        ],
+        [
+          "cloyster",
+          51
+        ],
+        [
+          "slowbro",
+          52
+        ],
+        [
+          "jynx",
+          54
+        ],
+        [
+          "lapras",
+          54
+        ]
+      ],
+      "name_de": "Lorelei"
+    },
+    {
+      "id": "kanto_bruno",
+      "region": "kanto",
+      "kind": "elite_four",
+      "name": "Bruno",
+      "type": "fighting",
+      "team": [
+        [
+          "onix",
+          51
+        ],
+        [
+          "hitmonchan",
+          53
+        ],
+        [
+          "hitmonlee",
+          53
+        ],
+        [
+          "onix",
+          54
+        ],
+        [
+          "machamp",
+          56
+        ]
+      ],
+      "name_de": "Bruno"
+    },
+    {
+      "id": "kanto_agatha",
+      "region": "kanto",
+      "kind": "elite_four",
+      "name": "Agatha",
+      "f": 1,
+      "type": "ghost",
+      "team": [
+        [
+          "gengar",
+          54
+        ],
+        [
+          "golbat",
+          54
+        ],
+        [
+          "haunter",
+          53
+        ],
+        [
+          "arbok",
+          56
+        ],
+        [
+          "gengar",
+          58
+        ]
+      ],
+      "name_de": "Agathe"
+    },
+    {
+      "id": "kanto_lance",
+      "region": "kanto",
+      "kind": "elite_four",
+      "name": "Lance",
+      "type": "dragon",
+      "team": [
+        [
+          "gyarados",
+          56
+        ],
+        [
+          "dragonair",
+          54
+        ],
+        [
+          "dragonair",
+          54
+        ],
+        [
+          "aerodactyl",
+          58
+        ],
+        [
+          "dragonite",
+          60
+        ]
+      ],
+      "name_de": "Siegfried"
+    },
+    {
+      "id": "kanto_blue",
+      "region": "kanto",
+      "kind": "champion",
+      "name": "Blue",
+      "team": [
+        [
+          "pidgeot",
+          59
+        ],
+        [
+          "alakazam",
+          57
+        ],
+        [
+          "rhydon",
+          59
+        ],
+        [
+          "exeggutor",
+          59
+        ],
+        [
+          "arcanine",
+          61
+        ],
+        [
+          "blastoise",
+          63
+        ]
+      ],
+      "name_de": "Blau"
+    },
+    {
+      "id": "johto_falkner",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Falkner",
+      "type": "flying",
+      "team": [
+        [
+          "pidgey",
+          9
+        ],
+        [
+          "pidgeotto",
+          13
+        ]
+      ],
+      "name_de": "Falk"
+    },
+    {
+      "id": "johto_bugsy",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Bugsy",
+      "type": "bug",
+      "team": [
+        [
+          "metapod",
+          15
+        ],
+        [
+          "kakuna",
+          15
+        ],
+        [
+          "scyther",
+          17
+        ]
+      ],
+      "name_de": "Kai"
+    },
+    {
+      "id": "johto_whitney",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Whitney",
+      "f": 1,
+      "type": "normal",
+      "team": [
+        [
+          "clefairy",
+          17
+        ],
+        [
+          "miltank",
+          19
+        ]
+      ],
+      "name_de": "Bianka"
+    },
+    {
+      "id": "johto_morty",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Morty",
+      "type": "ghost",
+      "team": [
+        [
+          "gastly",
+          21
+        ],
+        [
+          "haunter",
+          21
+        ],
+        [
+          "haunter",
+          23
+        ],
+        [
+          "gengar",
+          25
+        ]
+      ],
+      "name_de": "Jens"
+    },
+    {
+      "id": "johto_chuck",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Chuck",
+      "type": "fighting",
+      "team": [
+        [
+          "primeape",
+          27
+        ],
+        [
+          "poliwrath",
+          30
+        ]
+      ],
+      "name_de": "Hartwig"
+    },
+    {
+      "id": "johto_jasmine",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Jasmine",
+      "f": 1,
+      "type": "steel",
+      "team": [
+        [
+          "magnemite",
+          30
+        ],
+        [
+          "magnemite",
+          30
+        ],
+        [
+          "steelix",
+          35
+        ]
+      ],
+      "name_de": "Jasmin"
+    },
+    {
+      "id": "johto_pryce",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Pryce",
+      "type": "ice",
+      "team": [
+        [
+          "seel",
+          30
+        ],
+        [
+          "dewgong",
+          32
+        ],
+        [
+          "piloswine",
+          34
+        ]
+      ],
+      "name_de": "Norbert"
+    },
+    {
+      "id": "johto_clair",
+      "region": "johto",
+      "kind": "gym_leader",
+      "name": "Clair",
+      "f": 1,
+      "type": "dragon",
+      "team": [
+        [
+          "gyarados",
+          38
+        ],
+        [
+          "dragonair",
+          38
+        ],
+        [
+          "dragonair",
+          38
+        ],
+        [
+          "kingdra",
+          41
+        ]
+      ],
+      "name_de": "Sandra"
+    },
+    {
+      "id": "johto_will",
+      "region": "johto",
+      "kind": "elite_four",
+      "name": "Will",
+      "type": "psychic",
+      "team": [
+        [
+          "xatu",
+          40
+        ],
+        [
+          "jynx",
+          41
+        ],
+        [
+          "exeggutor",
+          41
+        ],
+        [
+          "slowbro",
+          41
+        ],
+        [
+          "xatu",
+          42
+        ]
+      ],
+      "name_de": "Willi"
+    },
+    {
+      "id": "johto_koga",
+      "region": "johto",
+      "kind": "elite_four",
+      "name": "Koga",
+      "type": "poison",
+      "team": [
+        [
+          "ariados",
+          40
+        ],
+        [
+          "venomoth",
+          41
+        ],
+        [
+          "forretress",
+          43
+        ],
+        [
+          "muk",
+          42
+        ],
+        [
+          "crobat",
+          44
+        ]
+      ],
+      "name_de": "Koga"
+    },
+    {
+      "id": "johto_bruno",
+      "region": "johto",
+      "kind": "elite_four",
+      "name": "Bruno",
+      "type": "fighting",
+      "team": [
+        [
+          "hitmontop",
+          42
+        ],
+        [
+          "hitmonlee",
+          42
+        ],
+        [
+          "hitmonchan",
+          42
+        ],
+        [
+          "onix",
+          43
+        ],
+        [
+          "machamp",
+          46
+        ]
+      ],
+      "name_de": "Bruno"
+    },
+    {
+      "id": "johto_karen",
+      "region": "johto",
+      "kind": "elite_four",
+      "name": "Karen",
+      "f": 1,
+      "type": "dark",
+      "team": [
+        [
+          "umbreon",
+          42
+        ],
+        [
+          "vileplume",
+          42
+        ],
+        [
+          "murkrow",
+          44
+        ],
+        [
+          "gengar",
+          45
+        ],
+        [
+          "houndoom",
+          47
+        ]
+      ],
+      "name_de": "Melanie"
+    },
+    {
+      "id": "johto_lance",
+      "region": "johto",
+      "kind": "champion",
+      "name": "Lance",
+      "team": [
+        [
+          "gyarados",
+          44
+        ],
+        [
+          "dragonite",
+          47
+        ],
+        [
+          "dragonite",
+          47
+        ],
+        [
+          "aerodactyl",
+          46
+        ],
+        [
+          "charizard",
+          46
+        ],
+        [
+          "dragonite",
+          50
+        ]
+      ],
+      "name_de": "Siegfried"
+    },
+    {
+      "id": "hoenn_roxanne",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Roxanne",
+      "f": 1,
+      "type": "rock",
+      "team": [
+        [
+          "geodude",
+          12
+        ],
+        [
+          "geodude",
+          12
+        ],
+        [
+          "nosepass",
+          15
+        ]
+      ],
+      "name_de": "Felizia"
+    },
+    {
+      "id": "hoenn_brawly",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Brawly",
+      "type": "fighting",
+      "team": [
+        [
+          "machop",
+          16
+        ],
+        [
+          "meditite",
+          16
+        ],
+        [
+          "makuhita",
+          19
+        ]
+      ],
+      "name_de": "Kamillo"
+    },
+    {
+      "id": "hoenn_wattson",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Wattson",
+      "type": "electric",
+      "team": [
+        [
+          "voltorb",
+          20
+        ],
+        [
+          "electrike",
+          20
+        ],
+        [
+          "magneton",
+          22
+        ],
+        [
+          "manectric",
+          24
+        ]
+      ],
+      "name_de": "Walter"
+    },
+    {
+      "id": "hoenn_flannery",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Flannery",
+      "f": 1,
+      "type": "fire",
+      "team": [
+        [
+          "numel",
+          24
+        ],
+        [
+          "slugma",
+          24
+        ],
+        [
+          "camerupt",
+          26
+        ],
+        [
+          "torkoal",
+          29
+        ]
+      ],
+      "name_de": "Flavia"
+    },
+    {
+      "id": "hoenn_norman",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Norman",
+      "type": "normal",
+      "team": [
+        [
+          "spinda",
+          27
+        ],
+        [
+          "vigoroth",
+          27
+        ],
+        [
+          "linoone",
+          29
+        ],
+        [
+          "slaking",
+          31
+        ]
+      ],
+      "name_de": "Norman"
+    },
+    {
+      "id": "hoenn_winona",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Winona",
+      "f": 1,
+      "type": "flying",
+      "team": [
+        [
+          "swablu",
+          29
+        ],
+        [
+          "tropius",
+          29
+        ],
+        [
+          "pelipper",
+          30
+        ],
+        [
+          "skarmory",
+          31
+        ],
+        [
+          "altaria",
+          33
+        ]
+      ],
+      "name_de": "Wibke"
+    },
+    {
+      "id": "hoenn_tate_liza",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Tate & Liza",
+      "type": "psychic",
+      "team": [
+        [
+          "claydol",
+          41
+        ],
+        [
+          "xatu",
+          41
+        ],
+        [
+          "lunatone",
+          42
+        ],
+        [
+          "solrock",
+          42
+        ]
+      ],
+      "name_de": "Ben & Svenja"
+    },
+    {
+      "id": "hoenn_juan",
+      "region": "hoenn",
+      "kind": "gym_leader",
+      "name": "Juan",
+      "type": "water",
+      "team": [
+        [
+          "luvdisc",
+          41
+        ],
+        [
+          "whiscash",
+          41
+        ],
+        [
+          "sealeo",
+          43
+        ],
+        [
+          "crawdaunt",
+          43
+        ],
+        [
+          "kingdra",
+          46
+        ]
+      ],
+      "name_de": "Juan"
+    },
+    {
+      "id": "hoenn_sidney",
+      "region": "hoenn",
+      "kind": "elite_four",
+      "name": "Sidney",
+      "type": "dark",
+      "team": [
+        [
+          "mightyena",
+          46
+        ],
+        [
+          "shiftry",
+          48
+        ],
+        [
+          "cacturne",
+          46
+        ],
+        [
+          "crawdaunt",
+          48
+        ],
+        [
+          "absol",
+          49
+        ]
+      ],
+      "name_de": "Ulrich"
+    },
+    {
+      "id": "hoenn_phoebe",
+      "region": "hoenn",
+      "kind": "elite_four",
+      "name": "Phoebe",
+      "f": 1,
+      "type": "ghost",
+      "team": [
+        [
+          "dusclops",
+          48
+        ],
+        [
+          "banette",
+          49
+        ],
+        [
+          "sableye",
+          50
+        ],
+        [
+          "banette",
+          49
+        ],
+        [
+          "dusclops",
+          51
+        ]
+      ],
+      "name_de": "Antonia"
+    },
+    {
+      "id": "hoenn_glacia",
+      "region": "hoenn",
+      "kind": "elite_four",
+      "name": "Glacia",
+      "f": 1,
+      "type": "ice",
+      "team": [
+        [
+          "sealeo",
+          50
+        ],
+        [
+          "glalie",
+          50
+        ],
+        [
+          "sealeo",
+          52
+        ],
+        [
+          "glalie",
+          52
+        ],
+        [
+          "walrein",
+          53
+        ]
+      ],
+      "name_de": "Frosina"
+    },
+    {
+      "id": "hoenn_drake",
+      "region": "hoenn",
+      "kind": "elite_four",
+      "name": "Drake",
+      "type": "dragon",
+      "team": [
+        [
+          "shelgon",
+          52
+        ],
+        [
+          "altaria",
+          54
+        ],
+        [
+          "flygon",
+          53
+        ],
+        [
+          "flygon",
+          53
+        ],
+        [
+          "salamence",
+          55
+        ]
+      ],
+      "name_de": "Dragan"
+    },
+    {
+      "id": "hoenn_wallace",
+      "region": "hoenn",
+      "kind": "champion",
+      "name": "Wallace",
+      "team": [
+        [
+          "wailord",
+          57
+        ],
+        [
+          "tentacruel",
+          55
+        ],
+        [
+          "ludicolo",
+          56
+        ],
+        [
+          "whiscash",
+          56
+        ],
+        [
+          "gyarados",
+          56
+        ],
+        [
+          "milotic",
+          58
+        ]
+      ],
+      "name_de": "Wassili"
+    },
+    {
+      "id": "sinnoh_roark",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Roark",
+      "type": "rock",
+      "team": [
+        [
+          "geodude",
+          12
+        ],
+        [
+          "onix",
+          12
+        ],
+        [
+          "cranidos",
+          14
+        ]
+      ],
+      "name_de": "Veit"
+    },
+    {
+      "id": "sinnoh_gardenia",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Gardenia",
+      "f": 1,
+      "type": "grass",
+      "team": [
+        [
+          "cherubi",
+          20
+        ],
+        [
+          "turtwig",
+          20
+        ],
+        [
+          "roserade",
+          22
+        ]
+      ],
+      "name_de": "Silvana"
+    },
+    {
+      "id": "sinnoh_fantina",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Fantina",
+      "f": 1,
+      "type": "ghost",
+      "team": [
+        [
+          "duskull",
+          24
+        ],
+        [
+          "haunter",
+          24
+        ],
+        [
+          "mismagius",
+          26
+        ]
+      ],
+      "name_de": "Lamina"
+    },
+    {
+      "id": "sinnoh_maylene",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Maylene",
+      "f": 1,
+      "type": "fighting",
+      "team": [
+        [
+          "meditite",
+          28
+        ],
+        [
+          "machoke",
+          29
+        ],
+        [
+          "lucario",
+          32
+        ]
+      ],
+      "name_de": "Hilda"
+    },
+    {
+      "id": "sinnoh_wake",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Crasher Wake",
+      "type": "water",
+      "team": [
+        [
+          "gyarados",
+          33
+        ],
+        [
+          "quagsire",
+          34
+        ],
+        [
+          "floatzel",
+          37
+        ]
+      ],
+      "name_de": "Wellenbrecher Marinus"
+    },
+    {
+      "id": "sinnoh_byron",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Byron",
+      "type": "steel",
+      "team": [
+        [
+          "magneton",
+          37
+        ],
+        [
+          "steelix",
+          38
+        ],
+        [
+          "bastiodon",
+          41
+        ]
+      ],
+      "name_de": "Adam"
+    },
+    {
+      "id": "sinnoh_candice",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Candice",
+      "f": 1,
+      "type": "ice",
+      "team": [
+        [
+          "sneasel",
+          40
+        ],
+        [
+          "piloswine",
+          40
+        ],
+        [
+          "abomasnow",
+          42
+        ],
+        [
+          "froslass",
+          44
+        ]
+      ],
+      "name_de": "Frida"
+    },
+    {
+      "id": "sinnoh_volkner",
+      "region": "sinnoh",
+      "kind": "gym_leader",
+      "name": "Volkner",
+      "type": "electric",
+      "team": [
+        [
+          "jolteon",
+          46
+        ],
+        [
+          "raichu",
+          46
+        ],
+        [
+          "luxray",
+          48
+        ],
+        [
+          "electivire",
+          50
+        ]
+      ],
+      "name_de": "Volkner"
+    },
+    {
+      "id": "sinnoh_aaron",
+      "region": "sinnoh",
+      "kind": "elite_four",
+      "name": "Aaron",
+      "type": "bug",
+      "team": [
+        [
+          "dustox",
+          53
+        ],
+        [
+          "beautifly",
+          53
+        ],
+        [
+          "vespiquen",
+          54
+        ],
+        [
+          "heracross",
+          54
+        ],
+        [
+          "drapion",
+          57
+        ]
+      ],
+      "name_de": "Herbaro"
+    },
+    {
+      "id": "sinnoh_bertha",
+      "region": "sinnoh",
+      "kind": "elite_four",
+      "name": "Bertha",
+      "f": 1,
+      "type": "ground",
+      "team": [
+        [
+          "whiscash",
+          55
+        ],
+        [
+          "gliscor",
+          55
+        ],
+        [
+          "golem",
+          56
+        ],
+        [
+          "hippowdon",
+          57
+        ],
+        [
+          "rhyperior",
+          59
+        ]
+      ],
+      "name_de": "Teresa"
+    },
+    {
+      "id": "sinnoh_flint",
+      "region": "sinnoh",
+      "kind": "elite_four",
+      "name": "Flint",
+      "type": "fire",
+      "team": [
+        [
+          "rapidash",
+          58
+        ],
+        [
+          "steelix",
+          57
+        ],
+        [
+          "drifblim",
+          58
+        ],
+        [
+          "lopunny",
+          57
+        ],
+        [
+          "infernape",
+          61
+        ]
+      ],
+      "name_de": "Ignaz"
+    },
+    {
+      "id": "sinnoh_lucian",
+      "region": "sinnoh",
+      "kind": "elite_four",
+      "name": "Lucian",
+      "type": "psychic",
+      "team": [
+        [
+          "mr-mime",
+          59
+        ],
+        [
+          "espeon",
+          59
+        ],
+        [
+          "bronzong",
+          60
+        ],
+        [
+          "alakazam",
+          60
+        ],
+        [
+          "gallade",
+          63
+        ]
+      ],
+      "name_de": "Lucian"
+    },
+    {
+      "id": "sinnoh_cynthia",
+      "region": "sinnoh",
+      "kind": "champion",
+      "name": "Cynthia",
+      "f": 1,
+      "team": [
+        [
+          "spiritomb",
+          58
+        ],
+        [
+          "roserade",
+          58
+        ],
+        [
+          "togekiss",
+          60
+        ],
+        [
+          "lucario",
+          60
+        ],
+        [
+          "milotic",
+          58
+        ],
+        [
+          "garchomp",
+          62
+        ]
+      ],
+      "name_de": "Cynthia"
+    },
+    {
+      "id": "unova_cilan",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Cilan",
+      "type": "grass",
+      "team": [
+        [
+          "lillipup",
+          12
+        ],
+        [
+          "pansage",
+          14
+        ]
+      ],
+      "name_de": "Benny"
+    },
+    {
+      "id": "unova_lenora",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Lenora",
+      "f": 1,
+      "type": "normal",
+      "team": [
+        [
+          "herdier",
+          18
+        ],
+        [
+          "watchog",
+          20
+        ]
+      ],
+      "name_de": "Aloe"
+    },
+    {
+      "id": "unova_burgh",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Burgh",
+      "type": "bug",
+      "team": [
+        [
+          "whirlipede",
+          21
+        ],
+        [
+          "dwebble",
+          21
+        ],
+        [
+          "leavanny",
+          23
+        ]
+      ],
+      "name_de": "Artie"
+    },
+    {
+      "id": "unova_elesa",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Elesa",
+      "f": 1,
+      "type": "electric",
+      "team": [
+        [
+          "emolga",
+          25
+        ],
+        [
+          "emolga",
+          25
+        ],
+        [
+          "zebstrika",
+          27
+        ]
+      ],
+      "name_de": "Kamilla"
+    },
+    {
+      "id": "unova_clay",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Clay",
+      "type": "ground",
+      "team": [
+        [
+          "krokorok",
+          29
+        ],
+        [
+          "palpitoad",
+          29
+        ],
+        [
+          "excadrill",
+          31
+        ]
+      ],
+      "name_de": "Turner"
+    },
+    {
+      "id": "unova_skyla",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Skyla",
+      "f": 1,
+      "type": "flying",
+      "team": [
+        [
+          "swoobat",
+          33
+        ],
+        [
+          "unfezant",
+          33
+        ],
+        [
+          "swanna",
+          35
+        ]
+      ],
+      "name_de": "Géraldine"
+    },
+    {
+      "id": "unova_brycen",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Brycen",
+      "type": "ice",
+      "team": [
+        [
+          "vanillish",
+          37
+        ],
+        [
+          "cryogonal",
+          37
+        ],
+        [
+          "beartic",
+          39
+        ]
+      ],
+      "name_de": "Sandro"
+    },
+    {
+      "id": "unova_drayden",
+      "region": "unova",
+      "kind": "gym_leader",
+      "name": "Drayden",
+      "type": "dragon",
+      "team": [
+        [
+          "fraxure",
+          41
+        ],
+        [
+          "druddigon",
+          41
+        ],
+        [
+          "haxorus",
+          43
+        ]
+      ],
+      "name_de": "Lysander"
+    },
+    {
+      "id": "unova_shauntal",
+      "region": "unova",
+      "kind": "elite_four",
+      "name": "Shauntal",
+      "f": 1,
+      "type": "ghost",
+      "team": [
+        [
+          "cofagrigus",
+          48
+        ],
+        [
+          "jellicent",
+          48
+        ],
+        [
+          "golurk",
+          48
+        ],
+        [
+          "chandelure",
+          50
+        ]
+      ],
+      "name_de": "Anissa"
+    },
+    {
+      "id": "unova_grimsley",
+      "region": "unova",
+      "kind": "elite_four",
+      "name": "Grimsley",
+      "type": "dark",
+      "team": [
+        [
+          "scrafty",
+          48
+        ],
+        [
+          "liepard",
+          48
+        ],
+        [
+          "krookodile",
+          48
+        ],
+        [
+          "bisharp",
+          50
+        ]
+      ],
+      "name_de": "Astor"
+    },
+    {
+      "id": "unova_caitlin",
+      "region": "unova",
+      "kind": "elite_four",
+      "name": "Caitlin",
+      "f": 1,
+      "type": "psychic",
+      "team": [
+        [
+          "reuniclus",
+          48
+        ],
+        [
+          "musharna",
+          48
+        ],
+        [
+          "sigilyph",
+          48
+        ],
+        [
+          "gothitelle",
+          50
+        ]
+      ],
+      "name_de": "Kattlea"
+    },
+    {
+      "id": "unova_marshal",
+      "region": "unova",
+      "kind": "elite_four",
+      "name": "Marshal",
+      "type": "fighting",
+      "team": [
+        [
+          "throh",
+          48
+        ],
+        [
+          "sawk",
+          48
+        ],
+        [
+          "conkeldurr",
+          48
+        ],
+        [
+          "mienshao",
+          50
+        ]
+      ],
+      "name_de": "Eugen"
+    },
+    {
+      "id": "unova_alder",
+      "region": "unova",
+      "kind": "champion",
+      "name": "Alder",
+      "team": [
+        [
+          "accelgor",
+          75
+        ],
+        [
+          "bouffalant",
+          75
+        ],
+        [
+          "druddigon",
+          75
+        ],
+        [
+          "vanilluxe",
+          75
+        ],
+        [
+          "escavalier",
+          75
+        ],
+        [
+          "volcarona",
+          77
+        ]
+      ],
+      "name_de": "Lauro"
+    },
+    {
+      "id": "kalos_viola",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Viola",
+      "f": 1,
+      "type": "bug",
+      "team": [
+        [
+          "surskit",
+          10
+        ],
+        [
+          "vivillon",
+          12
+        ]
+      ],
+      "name_de": "Viola"
+    },
+    {
+      "id": "kalos_grant",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Grant",
+      "type": "rock",
+      "team": [
+        [
+          "amaura",
+          25
+        ],
+        [
+          "tyrunt",
+          25
+        ]
+      ],
+      "name_de": "Lino"
+    },
+    {
+      "id": "kalos_korrina",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Korrina",
+      "f": 1,
+      "type": "fighting",
+      "team": [
+        [
+          "mienfoo",
+          29
+        ],
+        [
+          "machoke",
+          28
+        ],
+        [
+          "hawlucha",
+          32
+        ]
+      ],
+      "name_de": "Connie"
+    },
+    {
+      "id": "kalos_ramos",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Ramos",
+      "type": "grass",
+      "team": [
+        [
+          "jumpluff",
+          30
+        ],
+        [
+          "weepinbell",
+          31
+        ],
+        [
+          "gogoat",
+          34
+        ]
+      ],
+      "name_de": "Amaro"
+    },
+    {
+      "id": "kalos_clemont",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Clemont",
+      "type": "electric",
+      "team": [
+        [
+          "emolga",
+          35
+        ],
+        [
+          "magneton",
+          35
+        ],
+        [
+          "heliolisk",
+          37
+        ]
+      ],
+      "name_de": "Citro"
+    },
+    {
+      "id": "kalos_valerie",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Valerie",
+      "f": 1,
+      "type": "fairy",
+      "team": [
+        [
+          "mawile",
+          38
+        ],
+        [
+          "mr-mime",
+          39
+        ],
+        [
+          "sylveon",
+          42
+        ]
+      ],
+      "name_de": "Valerie"
+    },
+    {
+      "id": "kalos_olympia",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Olympia",
+      "f": 1,
+      "type": "psychic",
+      "team": [
+        [
+          "sigilyph",
+          44
+        ],
+        [
+          "slowking",
+          45
+        ],
+        [
+          "meowstic",
+          48
+        ]
+      ],
+      "name_de": "Astrid"
+    },
+    {
+      "id": "kalos_wulfric",
+      "region": "kalos",
+      "kind": "gym_leader",
+      "name": "Wulfric",
+      "type": "ice",
+      "team": [
+        [
+          "abomasnow",
+          56
+        ],
+        [
+          "cryogonal",
+          55
+        ],
+        [
+          "avalugg",
+          59
+        ]
+      ],
+      "name_de": "Galantho"
+    },
+    {
+      "id": "kalos_malva",
+      "region": "kalos",
+      "kind": "elite_four",
+      "name": "Malva",
+      "f": 1,
+      "type": "fire",
+      "team": [
+        [
+          "pyroar",
+          63
+        ],
+        [
+          "torkoal",
+          63
+        ],
+        [
+          "chandelure",
+          63
+        ],
+        [
+          "talonflame",
+          65
+        ]
+      ],
+      "name_de": "Pachira"
+    },
+    {
+      "id": "kalos_siebold",
+      "region": "kalos",
+      "kind": "elite_four",
+      "name": "Siebold",
+      "type": "water",
+      "team": [
+        [
+          "clawitzer",
+          63
+        ],
+        [
+          "gyarados",
+          63
+        ],
+        [
+          "starmie",
+          63
+        ],
+        [
+          "barbaracle",
+          65
+        ]
+      ],
+      "name_de": "Narcisse"
+    },
+    {
+      "id": "kalos_wikstrom",
+      "region": "kalos",
+      "kind": "elite_four",
+      "name": "Wikstrom",
+      "type": "steel",
+      "team": [
+        [
+          "klefki",
+          63
+        ],
+        [
+          "probopass",
+          63
+        ],
+        [
+          "scizor",
+          63
+        ],
+        [
+          "aegislash",
+          65
+        ]
+      ],
+      "name_de": "Thymelot"
+    },
+    {
+      "id": "kalos_drasna",
+      "region": "kalos",
+      "kind": "elite_four",
+      "name": "Drasna",
+      "f": 1,
+      "type": "dragon",
+      "team": [
+        [
+          "dragalge",
+          63
+        ],
+        [
+          "druddigon",
+          63
+        ],
+        [
+          "altaria",
+          63
+        ],
+        [
+          "noivern",
+          65
+        ]
+      ],
+      "name_de": "Dracena"
+    },
+    {
+      "id": "kalos_diantha",
+      "region": "kalos",
+      "kind": "champion",
+      "name": "Diantha",
+      "f": 1,
+      "team": [
+        [
+          "hawlucha",
+          64
+        ],
+        [
+          "tyrantrum",
+          65
+        ],
+        [
+          "aurorus",
+          65
+        ],
+        [
+          "gourgeist",
+          65
+        ],
+        [
+          "goodra",
+          66
+        ],
+        [
+          "gardevoir",
+          68
+        ]
+      ],
+      "name_de": "Diantha"
+    },
+    {
+      "id": "alola_hala",
+      "region": "alola",
+      "kind": "elite_four",
+      "name": "Hala",
+      "type": "fighting",
+      "team": [
+        [
+          "hariyama",
+          54
+        ],
+        [
+          "primeape",
+          54
+        ],
+        [
+          "bewear",
+          54
+        ],
+        [
+          "poliwrath",
+          54
+        ],
+        [
+          "crabominable",
+          55
+        ]
+      ],
+      "name_de": "Hala"
+    },
+    {
+      "id": "alola_olivia",
+      "region": "alola",
+      "kind": "elite_four",
+      "name": "Olivia",
+      "f": 1,
+      "type": "rock",
+      "team": [
+        [
+          "relicanth",
+          54
+        ],
+        [
+          "carbink",
+          54
+        ],
+        [
+          "golem",
+          54
+        ],
+        [
+          "probopass",
+          54
+        ],
+        [
+          "lycanroc",
+          55
+        ]
+      ],
+      "name_de": "Mayla"
+    },
+    {
+      "id": "alola_acerola",
+      "region": "alola",
+      "kind": "elite_four",
+      "name": "Acerola",
+      "f": 1,
+      "type": "ghost",
+      "team": [
+        [
+          "sableye",
+          54
+        ],
+        [
+          "drifblim",
+          54
+        ],
+        [
+          "dhelmise",
+          54
+        ],
+        [
+          "froslass",
+          54
+        ],
+        [
+          "palossand",
+          55
+        ]
+      ],
+      "name_de": "Lola"
+    },
+    {
+      "id": "alola_kahili",
+      "region": "alola",
+      "kind": "elite_four",
+      "name": "Kahili",
+      "f": 1,
+      "type": "flying",
+      "team": [
+        [
+          "skarmory",
+          54
+        ],
+        [
+          "crobat",
+          54
+        ],
+        [
+          "oricorio",
+          54
+        ],
+        [
+          "mandibuzz",
+          54
+        ],
+        [
+          "toucannon",
+          55
+        ]
+      ],
+      "name_de": "Kahili"
+    },
+    {
+      "id": "alola_kukui",
+      "region": "alola",
+      "kind": "champion",
+      "name": "Professor Kukui",
+      "team": [
+        [
+          "lycanroc",
+          57
+        ],
+        [
+          "ninetales",
+          56
+        ],
+        [
+          "braviary",
+          56
+        ],
+        [
+          "magnezone",
+          56
+        ],
+        [
+          "snorlax",
+          56
+        ],
+        [
+          "primarina",
+          58
+        ]
+      ],
+      "name_de": "Prof. Kukui"
+    },
+    {
+      "id": "galar_milo",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Milo",
+      "type": "grass",
+      "team": [
+        [
+          "gossifleur",
+          19
+        ],
+        [
+          "eldegoss",
+          20
+        ]
+      ],
+      "name_de": "Yarro"
+    },
+    {
+      "id": "galar_nessa",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Nessa",
+      "f": 1,
+      "type": "water",
+      "team": [
+        [
+          "goldeen",
+          22
+        ],
+        [
+          "arrokuda",
+          23
+        ],
+        [
+          "drednaw",
+          24
+        ]
+      ],
+      "name_de": "Kate"
+    },
+    {
+      "id": "galar_kabu",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Kabu",
+      "type": "fire",
+      "team": [
+        [
+          "ninetales",
+          25
+        ],
+        [
+          "arcanine",
+          25
+        ],
+        [
+          "centiskorch",
+          27
+        ]
+      ],
+      "name_de": "Kabu"
+    },
+    {
+      "id": "galar_bea",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Bea",
+      "f": 1,
+      "type": "fighting",
+      "team": [
+        [
+          "hitmontop",
+          34
+        ],
+        [
+          "pangoro",
+          34
+        ],
+        [
+          "sirfetchd",
+          35
+        ],
+        [
+          "machamp",
+          36
+        ]
+      ],
+      "name_de": "Saida"
+    },
+    {
+      "id": "galar_allister",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Allister",
+      "type": "ghost",
+      "team": [
+        [
+          "yamask",
+          34
+        ],
+        [
+          "mimikyu",
+          34
+        ],
+        [
+          "cursola",
+          35
+        ],
+        [
+          "gengar",
+          36
+        ]
+      ],
+      "name_de": "Nio"
+    },
+    {
+      "id": "galar_opal",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Opal",
+      "f": 1,
+      "type": "fairy",
+      "team": [
+        [
+          "weezing",
+          36
+        ],
+        [
+          "mawile",
+          36
+        ],
+        [
+          "togekiss",
+          37
+        ],
+        [
+          "alcremie",
+          38
+        ]
+      ],
+      "name_de": "Papella"
+    },
+    {
+      "id": "galar_gordie",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Gordie",
+      "type": "rock",
+      "team": [
+        [
+          "barbaracle",
+          40
+        ],
+        [
+          "shuckle",
+          40
+        ],
+        [
+          "stonjourner",
+          41
+        ],
+        [
+          "coalossal",
+          42
+        ]
+      ],
+      "name_de": "Mac"
+    },
+    {
+      "id": "galar_melony",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Melony",
+      "f": 1,
+      "type": "ice",
+      "team": [
+        [
+          "frosmoth",
+          40
+        ],
+        [
+          "darmanitan",
+          40
+        ],
+        [
+          "eiscue",
+          41
+        ],
+        [
+          "lapras",
+          42
+        ]
+      ],
+      "name_de": "Mel"
+    },
+    {
+      "id": "galar_piers",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Piers",
+      "type": "dark",
+      "team": [
+        [
+          "scrafty",
+          44
+        ],
+        [
+          "malamar",
+          45
+        ],
+        [
+          "skuntank",
+          45
+        ],
+        [
+          "obstagoon",
+          46
+        ]
+      ],
+      "name_de": "Nezz"
+    },
+    {
+      "id": "galar_raihan",
+      "region": "galar",
+      "kind": "gym_leader",
+      "name": "Raihan",
+      "type": "dragon",
+      "team": [
+        [
+          "gigalith",
+          46
+        ],
+        [
+          "flygon",
+          47
+        ],
+        [
+          "sandaconda",
+          46
+        ],
+        [
+          "duraludon",
+          48
+        ]
+      ],
+      "name_de": "Roy"
+    },
+    {
+      "id": "galar_marnie",
+      "region": "galar",
+      "kind": "elite_four",
+      "stage": "semifinal",
+      "title": "rival",
+      "name": "Marnie",
+      "f": 1,
+      "type": "dark",
+      "team": [
+        [
+          "liepard",
+          47
+        ],
+        [
+          "toxicroak",
+          47
+        ],
+        [
+          "scrafty",
+          47
+        ],
+        [
+          "morpeko",
+          48
+        ],
+        [
+          "grimmsnarl",
+          49
+        ]
+      ],
+      "name_de": "Mary"
+    },
+    {
+      "id": "galar_hop",
+      "region": "galar",
+      "kind": "elite_four",
+      "stage": "semifinal",
+      "title": "rival",
+      "name": "Hop",
+      "team": [
+        [
+          "dubwool",
+          48
+        ],
+        [
+          "corviknight",
+          48
+        ],
+        [
+          "pincurchin",
+          47
+        ],
+        [
+          "snorlax",
+          47
+        ],
+        [
+          "inteleon",
+          49
+        ]
+      ],
+      "name_de": "Hop"
+    },
+    {
+      "id": "galar_bede",
+      "region": "galar",
+      "kind": "elite_four",
+      "stage": "finals",
+      "title": "rival",
+      "name": "Bede",
+      "type": "fairy",
+      "team": [
+        [
+          "mawile",
+          51
+        ],
+        [
+          "gardevoir",
+          51
+        ],
+        [
+          "rapidash",
+          52
+        ],
+        [
+          "hatterene",
+          53
+        ]
+      ],
+      "name_de": "Betys"
+    },
+    {
+      "id": "galar_nessa_finals",
+      "region": "galar",
+      "kind": "elite_four",
+      "stage": "finals",
+      "title": "gym_leader",
+      "name": "Nessa",
+      "f": 1,
+      "type": "water",
+      "team": [
+        [
+          "golisopod",
+          51
+        ],
+        [
+          "pelipper",
+          51
+        ],
+        [
+          "barraskewda",
+          52
+        ],
+        [
+          "seaking",
+          52
+        ],
+        [
+          "drednaw",
+          53
+        ]
+      ],
+      "name_de": "Kate"
+    },
+    {
+      "id": "galar_bea_finals",
+      "region": "galar",
+      "kind": "elite_four",
+      "stage": "finals",
+      "title": "gym_leader",
+      "name": "Bea",
+      "f": 1,
+      "type": "fighting",
+      "team": [
+        [
+          "hawlucha",
+          52
+        ],
+        [
+          "grapploct",
+          52
+        ],
+        [
+          "sirfetchd",
+          53
+        ],
+        [
+          "falinks",
+          53
+        ],
+        [
+          "machamp",
+          54
+        ]
+      ],
+      "name_de": "Saida"
+    },
+    {
+      "id": "galar_raihan_finals",
+      "region": "galar",
+      "kind": "elite_four",
+      "stage": "finals",
+      "title": "gym_leader",
+      "name": "Raihan",
+      "type": "dragon",
+      "team": [
+        [
+          "torkoal",
+          53
+        ],
+        [
+          "goodra",
+          54
+        ],
+        [
+          "turtonator",
+          54
+        ],
+        [
+          "flygon",
+          54
+        ],
+        [
+          "duraludon",
+          55
+        ]
+      ],
+      "name_de": "Roy"
+    },
+    {
+      "id": "galar_leon",
+      "region": "galar",
+      "kind": "champion",
+      "name": "Leon",
+      "team": [
+        [
+          "aegislash",
+          62
+        ],
+        [
+          "dragapult",
+          62
+        ],
+        [
+          "haxorus",
+          63
+        ],
+        [
+          "seismitoad",
+          64
+        ],
+        [
+          "cinderace",
+          64
+        ],
+        [
+          "charizard",
+          65
+        ]
+      ],
+      "name_de": "Delion"
+    },
+    {
+      "id": "paldea_katy",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Katy",
+      "f": 1,
+      "type": "bug",
+      "team": [
+        [
+          "nymble",
+          14
+        ],
+        [
+          "tarountula",
+          14
+        ],
+        [
+          "teddiursa",
+          15
+        ]
+      ],
+      "name_de": "Enja"
+    },
+    {
+      "id": "paldea_brassius",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Brassius",
+      "type": "grass",
+      "team": [
+        [
+          "petilil",
+          16
+        ],
+        [
+          "smoliv",
+          16
+        ],
+        [
+          "sudowoodo",
+          17
+        ]
+      ],
+      "name_de": "Colzo"
+    },
+    {
+      "id": "paldea_iono",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Iono",
+      "f": 1,
+      "type": "electric",
+      "team": [
+        [
+          "wattrel",
+          23
+        ],
+        [
+          "bellibolt",
+          23
+        ],
+        [
+          "luxio",
+          23
+        ],
+        [
+          "mismagius",
+          24
+        ]
+      ],
+      "name_de": "Enigmara"
+    },
+    {
+      "id": "paldea_kofu",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Kofu",
+      "type": "water",
+      "team": [
+        [
+          "veluza",
+          29
+        ],
+        [
+          "wugtrio",
+          29
+        ],
+        [
+          "crabominable",
+          30
+        ]
+      ],
+      "name_de": "Kofu"
+    },
+    {
+      "id": "paldea_larry",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Larry",
+      "type": "normal",
+      "team": [
+        [
+          "komala",
+          35
+        ],
+        [
+          "dudunsparce",
+          35
+        ],
+        [
+          "staraptor",
+          36
+        ]
+      ],
+      "name_de": "Aoki"
+    },
+    {
+      "id": "paldea_ryme",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Ryme",
+      "f": 1,
+      "type": "ghost",
+      "team": [
+        [
+          "banette",
+          41
+        ],
+        [
+          "mimikyu",
+          41
+        ],
+        [
+          "houndstone",
+          41
+        ],
+        [
+          "toxtricity",
+          42
+        ]
+      ],
+      "name_de": "Etta"
+    },
+    {
+      "id": "paldea_tulip",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Tulip",
+      "f": 1,
+      "type": "psychic",
+      "team": [
+        [
+          "farigiraf",
+          44
+        ],
+        [
+          "gardevoir",
+          44
+        ],
+        [
+          "espathra",
+          44
+        ],
+        [
+          "florges",
+          45
+        ]
+      ],
+      "name_de": "Tulia"
+    },
+    {
+      "id": "paldea_grusha",
+      "region": "paldea",
+      "kind": "gym_leader",
+      "name": "Grusha",
+      "type": "ice",
+      "team": [
+        [
+          "frosmoth",
+          47
+        ],
+        [
+          "beartic",
+          47
+        ],
+        [
+          "cetitan",
+          47
+        ],
+        [
+          "altaria",
+          48
+        ]
+      ],
+      "name_de": "Grusha"
+    },
+    {
+      "id": "paldea_rika",
+      "region": "paldea",
+      "kind": "elite_four",
+      "name": "Rika",
+      "f": 1,
+      "type": "ground",
+      "team": [
+        [
+          "whiscash",
+          57
+        ],
+        [
+          "camerupt",
+          57
+        ],
+        [
+          "donphan",
+          57
+        ],
+        [
+          "dugtrio",
+          57
+        ],
+        [
+          "clodsire",
+          58
+        ]
+      ],
+      "name_de": "Rika"
+    },
+    {
+      "id": "paldea_poppy",
+      "region": "paldea",
+      "kind": "elite_four",
+      "name": "Poppy",
+      "f": 1,
+      "type": "steel",
+      "team": [
+        [
+          "copperajah",
+          58
+        ],
+        [
+          "magnezone",
+          58
+        ],
+        [
+          "bronzong",
+          58
+        ],
+        [
+          "corviknight",
+          58
+        ],
+        [
+          "tinkaton",
+          59
+        ]
+      ],
+      "name_de": "Poppy"
+    },
+    {
+      "id": "paldea_larry_e4",
+      "region": "paldea",
+      "kind": "elite_four",
+      "name": "Larry",
+      "type": "flying",
+      "team": [
+        [
+          "tropius",
+          59
+        ],
+        [
+          "oricorio",
+          59
+        ],
+        [
+          "altaria",
+          59
+        ],
+        [
+          "staraptor",
+          59
+        ],
+        [
+          "flamigo",
+          60
+        ]
+      ],
+      "name_de": "Aoki"
+    },
+    {
+      "id": "paldea_hassel",
+      "region": "paldea",
+      "kind": "elite_four",
+      "name": "Hassel",
+      "type": "dragon",
+      "team": [
+        [
+          "noivern",
+          60
+        ],
+        [
+          "haxorus",
+          60
+        ],
+        [
+          "dragalge",
+          60
+        ],
+        [
+          "flapple",
+          60
+        ],
+        [
+          "baxcalibur",
+          61
+        ]
+      ],
+      "name_de": "Hassel"
+    },
+    {
+      "id": "paldea_geeta",
+      "region": "paldea",
+      "kind": "champion",
+      "name": "Geeta",
+      "f": 1,
+      "team": [
+        [
+          "espathra",
+          61
+        ],
+        [
+          "gogoat",
+          61
+        ],
+        [
+          "veluza",
+          61
+        ],
+        [
+          "avalugg",
+          61
+        ],
+        [
+          "kingambit",
+          61
+        ],
+        [
+          "glimmora",
+          62
+        ]
+      ],
+      "name_de": "Sagi"
+    }
+  ]
+}

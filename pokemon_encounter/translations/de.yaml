@@ -1,0 +1,29 @@
+configuration:
+  log_level:
+    name: Log-Level
+    description: Ausführlichkeit des Add-on-Logs.
+  poll_interval_minutes:
+    name: Abfrage-Intervall (Minuten)
+    description: Wie oft die Home-Assistant-History nach Trigger-Ereignissen durchsucht wird.
+  http_port:
+    name: HTTP-Port
+    description: Port der Web-App. Bei Nutzung über das Seitenleisten-Panel (Ingress) irrelevant.
+  trigger_categories:
+    name: Trigger-Kategorien
+    description: >-
+      Entity-Kategorien, die automatisch zu Encounter-Triggern werden.
+      motion = Bewegungs-/Anwesenheitsmelder, door_window = Tür-/Fenster-/Öffnungs-/Garagentorsensoren,
+      lights_switches = alle Lichter und Schalter. Optional: media_player, vacuum (Staubsauger),
+      climate (Heizung/Klima), cover (Rollos/Tore), lock (Schlösser), fan (Ventilatoren),
+      person (Zonenwechsel). Konfigurations-/Diagnose-, ausgeblendete, deaktivierte und
+      Gruppen-Entities werden übersprungen. Feintuning einzelner Trigger im Tab „Trigger“ der Web-App.
+  extra_entities:
+    name: Zusätzliche Entities
+    description: >-
+      Entity-IDs, die immer Trigger sein sollen, auch außerhalb der gewählten Kategorien
+      (z. B. sensor.waschmaschine_status). Sie umgehen die automatischen Filter.
+  exclude_entities:
+    name: Ausgeschlossene Entities
+    description: >-
+      Entity-IDs, die nie automatisch zu Triggern werden. Platzhalter erlaubt,
+      z. B. switch.*_container. Betrifft keine manuell in der Web-App angelegten Trigger.

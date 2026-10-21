@@ -1,0 +1,28 @@
+configuration:
+  log_level:
+    name: Log level
+    description: How verbose the add-on log is.
+  poll_interval_minutes:
+    name: Poll interval (minutes)
+    description: How often Home Assistant's history is checked for trigger events.
+  http_port:
+    name: HTTP port
+    description: Port of the web app. Irrelevant when using the sidebar panel (ingress).
+  trigger_categories:
+    name: Trigger categories
+    description: >-
+      Entity categories that automatically become encounter triggers.
+      motion = motion/occupancy/presence sensors, door_window = door/window/opening/garage door
+      sensors, lights_switches = all lights and switches. Optional: media_player, vacuum,
+      climate, cover, lock, fan, person (zone changes). Config/diagnostic, hidden, disabled
+      and group entities are skipped. Fine-tune individual triggers in the web app's Trigger tab.
+  extra_entities:
+    name: Additional entities
+    description: >-
+      Entity IDs that should always be triggers, even outside the selected categories
+      (e.g. sensor.washing_machine_status). They bypass the automatic filters.
+  exclude_entities:
+    name: Excluded entities
+    description: >-
+      Entity IDs that should never become automatic triggers. Wildcards are allowed,
+      e.g. switch.*_container. Does not affect triggers added manually in the web app.

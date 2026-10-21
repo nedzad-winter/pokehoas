@@ -1,0 +1,2200 @@
+{
+ "tackle": {
+  "name": "Tackle",
+  "name_de": "Tackle",
+  "type": "normal",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1
+ },
+ "scratch": {
+  "name": "Scratch",
+  "name_de": "Kratzer",
+  "type": "normal",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1
+ },
+ "quick_attack": {
+  "name": "Quick Attack",
+  "name_de": "Ruckzuckhieb",
+  "type": "normal",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 5,
+  "priority": 1
+ },
+ "swift": {
+  "name": "Swift",
+  "name_de": "Sternschauer",
+  "type": "normal",
+  "power": 60,
+  "accuracy": null,
+  "category": "special",
+  "min_level": 10
+ },
+ "headbutt": {
+  "name": "Headbutt",
+  "name_de": "Kopfnuss",
+  "type": "normal",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 15,
+  "flinch_chance": 30
+ },
+ "body_slam": {
+  "name": "Body Slam",
+  "name_de": "Bodyslam",
+  "type": "normal",
+  "power": 85,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25,
+  "status": "paralysis",
+  "status_chance": 30
+ },
+ "hyper_voice": {
+  "name": "Hyper Voice",
+  "name_de": "Schallwelle",
+  "type": "normal",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30
+ },
+ "double_edge": {
+  "name": "Double-Edge",
+  "name_de": "Risikotackle",
+  "type": "normal",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 40,
+  "recoil": 0.33
+ },
+ "ember": {
+  "name": "Ember",
+  "name_de": "Glut",
+  "type": "fire",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "flame_wheel": {
+  "name": "Flame Wheel",
+  "name_de": "Flammenrad",
+  "type": "fire",
+  "power": 60,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 10,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "fire_fang": {
+  "name": "Fire Fang",
+  "name_de": "Feuerzahn",
+  "type": "fire",
+  "power": 65,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 18
+ },
+ "flamethrower": {
+  "name": "Flamethrower",
+  "name_de": "Flammenwurf",
+  "type": "fire",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "fire_punch": {
+  "name": "Fire Punch",
+  "name_de": "Feuerschlag",
+  "type": "fire",
+  "power": 75,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "flare_blitz": {
+  "name": "Flare Blitz",
+  "name_de": "Flammenblitz",
+  "type": "fire",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 45,
+  "recoil": 0.33
+ },
+ "fire_blast": {
+  "name": "Fire Blast",
+  "name_de": "Feuersturm",
+  "type": "fire",
+  "power": 110,
+  "accuracy": 85,
+  "category": "special",
+  "min_level": 45,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "water_gun": {
+  "name": "Water Gun",
+  "name_de": "Aquaknarre",
+  "type": "water",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1
+ },
+ "aqua_jet": {
+  "name": "Aqua Jet",
+  "name_de": "Wasserdüse",
+  "type": "water",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 5,
+  "priority": 1
+ },
+ "water_pulse": {
+  "name": "Water Pulse",
+  "name_de": "Aquawelle",
+  "type": "water",
+  "power": 60,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 12
+ },
+ "waterfall": {
+  "name": "Waterfall",
+  "name_de": "Kaskade",
+  "type": "water",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25
+ },
+ "surf": {
+  "name": "Surf",
+  "name_de": "Surfer",
+  "type": "water",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30
+ },
+ "aqua_tail": {
+  "name": "Aqua Tail",
+  "name_de": "Nassschweif",
+  "type": "water",
+  "power": 90,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 35
+ },
+ "hydro_pump": {
+  "name": "Hydro Pump",
+  "name_de": "Hydropumpe",
+  "type": "water",
+  "power": 110,
+  "accuracy": 80,
+  "category": "special",
+  "min_level": 45
+ },
+ "vine_whip": {
+  "name": "Vine Whip",
+  "name_de": "Rankenhieb",
+  "type": "grass",
+  "power": 45,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1
+ },
+ "absorb": {
+  "name": "Absorb",
+  "name_de": "Absorber",
+  "type": "grass",
+  "power": 20,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "drain": 0.5
+ },
+ "mega_drain": {
+  "name": "Mega Drain",
+  "name_de": "Megasauger",
+  "type": "grass",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 10,
+  "drain": 0.5
+ },
+ "razor_leaf": {
+  "name": "Razor Leaf",
+  "name_de": "Rasierblatt",
+  "type": "grass",
+  "power": 55,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 12,
+  "high_crit": true
+ },
+ "giga_drain": {
+  "name": "Giga Drain",
+  "name_de": "Gigasauger",
+  "type": "grass",
+  "power": 75,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 25,
+  "drain": 0.5
+ },
+ "seed_bomb": {
+  "name": "Seed Bomb",
+  "name_de": "Samenbomben",
+  "type": "grass",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25
+ },
+ "energy_ball": {
+  "name": "Energy Ball",
+  "name_de": "Energieball",
+  "type": "grass",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 35,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "leaf_blade": {
+  "name": "Leaf Blade",
+  "name_de": "Laubklinge",
+  "type": "grass",
+  "power": 90,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 40,
+  "high_crit": true
+ },
+ "thunder_shock": {
+  "name": "Thunder Shock",
+  "name_de": "Donnerschock",
+  "type": "electric",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "status": "paralysis",
+  "status_chance": 10
+ },
+ "spark": {
+  "name": "Spark",
+  "name_de": "Funkensprung",
+  "type": "electric",
+  "power": 65,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 12,
+  "status": "paralysis",
+  "status_chance": 30
+ },
+ "thunder_fang": {
+  "name": "Thunder Fang",
+  "name_de": "Donnerzahn",
+  "type": "electric",
+  "power": 65,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 20
+ },
+ "thunderbolt": {
+  "name": "Thunderbolt",
+  "name_de": "Donnerblitz",
+  "type": "electric",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30,
+  "status": "paralysis",
+  "status_chance": 10
+ },
+ "wild_charge": {
+  "name": "Wild Charge",
+  "name_de": "Stromstoß",
+  "type": "electric",
+  "power": 90,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 35,
+  "recoil": 0.25
+ },
+ "thunder": {
+  "name": "Thunder",
+  "name_de": "Donner",
+  "type": "electric",
+  "power": 110,
+  "accuracy": 70,
+  "category": "special",
+  "min_level": 45,
+  "status": "paralysis",
+  "status_chance": 30
+ },
+ "powder_snow": {
+  "name": "Powder Snow",
+  "name_de": "Pulverschnee",
+  "type": "ice",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "status": "freeze",
+  "status_chance": 10
+ },
+ "ice_shard": {
+  "name": "Ice Shard",
+  "name_de": "Eissplitter",
+  "type": "ice",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 5,
+  "priority": 1
+ },
+ "aurora_beam": {
+  "name": "Aurora Beam",
+  "name_de": "Aurorastrahl",
+  "type": "ice",
+  "power": 65,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 15
+ },
+ "ice_fang": {
+  "name": "Ice Fang",
+  "name_de": "Eiszahn",
+  "type": "ice",
+  "power": 65,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 18,
+  "status": "freeze",
+  "status_chance": 10
+ },
+ "ice_beam": {
+  "name": "Ice Beam",
+  "name_de": "Eisstrahl",
+  "type": "ice",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 32,
+  "status": "freeze",
+  "status_chance": 10
+ },
+ "icicle_crash": {
+  "name": "Icicle Crash",
+  "name_de": "Eiszapfhagel",
+  "type": "ice",
+  "power": 85,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 38
+ },
+ "blizzard": {
+  "name": "Blizzard",
+  "name_de": "Blizzard",
+  "type": "ice",
+  "power": 110,
+  "accuracy": 70,
+  "category": "special",
+  "min_level": 48,
+  "status": "freeze",
+  "status_chance": 10
+ },
+ "rock_smash": {
+  "name": "Rock Smash",
+  "name_de": "Zertrümmerer",
+  "type": "fighting",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1
+ },
+ "vacuum_wave": {
+  "name": "Vacuum Wave",
+  "name_de": "Vakuumwelle",
+  "type": "fighting",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 5,
+  "priority": 1
+ },
+ "karate_chop": {
+  "name": "Karate Chop",
+  "name_de": "Karateschlag",
+  "type": "fighting",
+  "power": 50,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 8,
+  "high_crit": true
+ },
+ "brick_break": {
+  "name": "Brick Break",
+  "name_de": "Durchbruch",
+  "type": "fighting",
+  "power": 75,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 20
+ },
+ "aura_sphere": {
+  "name": "Aura Sphere",
+  "name_de": "Aurasphäre",
+  "type": "fighting",
+  "power": 80,
+  "accuracy": null,
+  "category": "special",
+  "min_level": 35
+ },
+ "close_combat": {
+  "name": "Close Combat",
+  "name_de": "Nahkampf",
+  "type": "fighting",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 45
+ },
+ "focus_blast": {
+  "name": "Focus Blast",
+  "name_de": "Fokusstoß",
+  "type": "fighting",
+  "power": 120,
+  "accuracy": 70,
+  "category": "special",
+  "min_level": 45
+ },
+ "poison_sting": {
+  "name": "Poison Sting",
+  "name_de": "Giftstachel",
+  "type": "poison",
+  "power": 15,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1,
+  "status": "poison",
+  "status_chance": 30
+ },
+ "acid": {
+  "name": "Acid",
+  "name_de": "Säure",
+  "type": "poison",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "poison_fang": {
+  "name": "Poison Fang",
+  "name_de": "Giftzahn",
+  "type": "poison",
+  "power": 50,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 12
+ },
+ "sludge": {
+  "name": "Sludge",
+  "name_de": "Schlammbad",
+  "type": "poison",
+  "power": 65,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 15,
+  "status": "poison",
+  "status_chance": 30
+ },
+ "poison_jab": {
+  "name": "Poison Jab",
+  "name_de": "Gifthieb",
+  "type": "poison",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 28,
+  "status": "poison",
+  "status_chance": 30
+ },
+ "sludge_bomb": {
+  "name": "Sludge Bomb",
+  "name_de": "Matschbombe",
+  "type": "poison",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 35,
+  "status": "poison",
+  "status_chance": 30
+ },
+ "gunk_shot": {
+  "name": "Gunk Shot",
+  "name_de": "Mülltreffer",
+  "type": "poison",
+  "power": 120,
+  "accuracy": 80,
+  "category": "physical",
+  "min_level": 45,
+  "status": "poison",
+  "status_chance": 30
+ },
+ "mud_slap": {
+  "name": "Mud-Slap",
+  "name_de": "Lehmschelle",
+  "type": "ground",
+  "power": 20,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1
+ },
+ "mud_shot": {
+  "name": "Mud Shot",
+  "name_de": "Lehmschuss",
+  "type": "ground",
+  "power": 55,
+  "accuracy": 95,
+  "category": "special",
+  "min_level": 10
+ },
+ "bulldoze": {
+  "name": "Bulldoze",
+  "name_de": "Dampfwalze",
+  "type": "ground",
+  "power": 60,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 12
+ },
+ "drill_run": {
+  "name": "Drill Run",
+  "name_de": "Schlagbohrer",
+  "type": "ground",
+  "power": 80,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 25,
+  "high_crit": true
+ },
+ "earth_power": {
+  "name": "Earth Power",
+  "name_de": "Erdkräfte",
+  "type": "ground",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 35,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "earthquake": {
+  "name": "Earthquake",
+  "name_de": "Erdbeben",
+  "type": "ground",
+  "power": 100,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 38
+ },
+ "peck": {
+  "name": "Peck",
+  "name_de": "Pikser",
+  "type": "flying",
+  "power": 35,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1
+ },
+ "gust": {
+  "name": "Gust",
+  "name_de": "Windstoß",
+  "type": "flying",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1
+ },
+ "wing_attack": {
+  "name": "Wing Attack",
+  "name_de": "Flügelschlag",
+  "type": "flying",
+  "power": 60,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 12
+ },
+ "air_cutter": {
+  "name": "Air Cutter",
+  "name_de": "Windschnitt",
+  "type": "flying",
+  "power": 60,
+  "accuracy": 95,
+  "category": "special",
+  "min_level": 15,
+  "high_crit": true
+ },
+ "aerial_ace": {
+  "name": "Aerial Ace",
+  "name_de": "Aero-Ass",
+  "type": "flying",
+  "power": 60,
+  "accuracy": null,
+  "category": "physical",
+  "min_level": 20
+ },
+ "air_slash": {
+  "name": "Air Slash",
+  "name_de": "Luftschnitt",
+  "type": "flying",
+  "power": 75,
+  "accuracy": 95,
+  "category": "special",
+  "min_level": 30,
+  "flinch_chance": 30
+ },
+ "drill_peck": {
+  "name": "Drill Peck",
+  "name_de": "Bohrschnabel",
+  "type": "flying",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 30
+ },
+ "brave_bird": {
+  "name": "Brave Bird",
+  "name_de": "Sturzflug",
+  "type": "flying",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 45,
+  "recoil": 0.33
+ },
+ "hurricane": {
+  "name": "Hurricane",
+  "name_de": "Orkan",
+  "type": "flying",
+  "power": 110,
+  "accuracy": 70,
+  "category": "special",
+  "min_level": 48
+ },
+ "confusion": {
+  "name": "Confusion",
+  "name_de": "Konfusion",
+  "type": "psychic",
+  "power": 50,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1
+ },
+ "psybeam": {
+  "name": "Psybeam",
+  "name_de": "Psystrahl",
+  "type": "psychic",
+  "power": 65,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 15
+ },
+ "psycho_cut": {
+  "name": "Psycho Cut",
+  "name_de": "Psychoklinge",
+  "type": "psychic",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 20,
+  "high_crit": true
+ },
+ "zen_headbutt": {
+  "name": "Zen Headbutt",
+  "name_de": "Zen-Kopfstoß",
+  "type": "psychic",
+  "power": 80,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 28,
+  "flinch_chance": 20
+ },
+ "psychic": {
+  "name": "Psychic",
+  "name_de": "Psychokinese",
+  "type": "psychic",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 35,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "fury_cutter": {
+  "name": "Fury Cutter",
+  "name_de": "Zornklinge",
+  "type": "bug",
+  "power": 40,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 1
+ },
+ "struggle_bug": {
+  "name": "Struggle Bug",
+  "name_de": "Käfertrutz",
+  "type": "bug",
+  "power": 50,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "stat_changes": [{"stat": "spa", "stages": -1, "target": "target"}],
+  "stat_chance": 100
+ },
+ "bug_bite": {
+  "name": "Bug Bite",
+  "name_de": "Käferbiss",
+  "type": "bug",
+  "power": 60,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 10
+ },
+ "leech_life": {
+  "name": "Leech Life",
+  "name_de": "Blutsauger",
+  "type": "bug",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 20,
+  "drain": 0.5
+ },
+ "signal_beam": {
+  "name": "Signal Beam",
+  "name_de": "Ampelleuchte",
+  "type": "bug",
+  "power": 75,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 25
+ },
+ "x_scissor": {
+  "name": "X-Scissor",
+  "name_de": "Kreuzschere",
+  "type": "bug",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 30
+ },
+ "bug_buzz": {
+  "name": "Bug Buzz",
+  "name_de": "Käfergebrumm",
+  "type": "bug",
+  "power": 90,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 38,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "megahorn": {
+  "name": "Megahorn",
+  "name_de": "Vielender",
+  "type": "bug",
+  "power": 120,
+  "accuracy": 85,
+  "category": "physical",
+  "min_level": 45
+ },
+ "rock_throw": {
+  "name": "Rock Throw",
+  "name_de": "Steinwurf",
+  "type": "rock",
+  "power": 50,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 1
+ },
+ "rock_tomb": {
+  "name": "Rock Tomb",
+  "name_de": "Felsgrab",
+  "type": "rock",
+  "power": 60,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 12
+ },
+ "ancient_power": {
+  "name": "Ancient Power",
+  "name_de": "Antik-Kraft",
+  "type": "rock",
+  "power": 60,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 15
+ },
+ "rock_slide": {
+  "name": "Rock Slide",
+  "name_de": "Steinhagel",
+  "type": "rock",
+  "power": 75,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 25,
+  "flinch_chance": 30
+ },
+ "power_gem": {
+  "name": "Power Gem",
+  "name_de": "Juwelenkraft",
+  "type": "rock",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30
+ },
+ "stone_edge": {
+  "name": "Stone Edge",
+  "name_de": "Steinkante",
+  "type": "rock",
+  "power": 100,
+  "accuracy": 80,
+  "category": "physical",
+  "min_level": 42,
+  "high_crit": true
+ },
+ "astonish": {
+  "name": "Astonish",
+  "name_de": "Erstauner",
+  "type": "ghost",
+  "power": 30,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1,
+  "flinch_chance": 30
+ },
+ "lick": {
+  "name": "Lick",
+  "name_de": "Schlecker",
+  "type": "ghost",
+  "power": 30,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1,
+  "status": "paralysis",
+  "status_chance": 30
+ },
+ "shadow_sneak": {
+  "name": "Shadow Sneak",
+  "name_de": "Schattenstoß",
+  "type": "ghost",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 8,
+  "priority": 1
+ },
+ "ominous_wind": {
+  "name": "Ominous Wind",
+  "name_de": "Unheilböen",
+  "type": "ghost",
+  "power": 60,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 5
+ },
+ "hex": {
+  "name": "Hex",
+  "name_de": "Bürde",
+  "type": "ghost",
+  "power": 65,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 15
+ },
+ "shadow_claw": {
+  "name": "Shadow Claw",
+  "name_de": "Dunkelklaue",
+  "type": "ghost",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25,
+  "high_crit": true
+ },
+ "shadow_ball": {
+  "name": "Shadow Ball",
+  "name_de": "Spukball",
+  "type": "ghost",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 32,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 20
+ },
+ "twister": {
+  "name": "Twister",
+  "name_de": "Windhose",
+  "type": "dragon",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1
+ },
+ "dragon_breath": {
+  "name": "Dragon Breath",
+  "name_de": "Feuerodem",
+  "type": "dragon",
+  "power": 60,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 10
+ },
+ "dragon_claw": {
+  "name": "Dragon Claw",
+  "name_de": "Drachenklaue",
+  "type": "dragon",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 28
+ },
+ "dragon_pulse": {
+  "name": "Dragon Pulse",
+  "name_de": "Drachenpuls",
+  "type": "dragon",
+  "power": 85,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 32
+ },
+ "dragon_rush": {
+  "name": "Dragon Rush",
+  "name_de": "Drachenstoß",
+  "type": "dragon",
+  "power": 100,
+  "accuracy": 75,
+  "category": "physical",
+  "min_level": 40
+ },
+ "bite": {
+  "name": "Bite",
+  "name_de": "Biss",
+  "type": "dark",
+  "power": 60,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 1,
+  "flinch_chance": 30
+ },
+ "snarl": {
+  "name": "Snarl",
+  "name_de": "Standpauke",
+  "type": "dark",
+  "power": 55,
+  "accuracy": 95,
+  "category": "special",
+  "min_level": 5,
+  "stat_changes": [{"stat": "spa", "stages": -1, "target": "target"}],
+  "stat_chance": 100
+ },
+ "feint_attack": {
+  "name": "Feint Attack",
+  "name_de": "Finte",
+  "type": "dark",
+  "power": 60,
+  "accuracy": null,
+  "category": "physical",
+  "min_level": 15
+ },
+ "night_slash": {
+  "name": "Night Slash",
+  "name_de": "Nachthieb",
+  "type": "dark",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25,
+  "high_crit": true
+ },
+ "crunch": {
+  "name": "Crunch",
+  "name_de": "Knirscher",
+  "type": "dark",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 28,
+  "stat_changes": [{"stat": "def", "stages": -1, "target": "target"}],
+  "stat_chance": 20
+ },
+ "dark_pulse": {
+  "name": "Dark Pulse",
+  "name_de": "Finsteraura",
+  "type": "dark",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 32
+ },
+ "metal_claw": {
+  "name": "Metal Claw",
+  "name_de": "Metallklaue",
+  "type": "steel",
+  "power": 50,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 1,
+  "stat_changes": [{"stat": "atk", "stages": 1, "target": "self"}],
+  "stat_chance": 10
+ },
+ "mirror_shot": {
+  "name": "Mirror Shot",
+  "name_de": "Spiegelsalve",
+  "type": "steel",
+  "power": 65,
+  "accuracy": 85,
+  "category": "special",
+  "min_level": 5
+ },
+ "bullet_punch": {
+  "name": "Bullet Punch",
+  "name_de": "Patronenhieb",
+  "type": "steel",
+  "power": 40,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 10,
+  "priority": 1
+ },
+ "iron_head": {
+  "name": "Iron Head",
+  "name_de": "Eisenschädel",
+  "type": "steel",
+  "power": 80,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 28,
+  "flinch_chance": 30
+ },
+ "flash_cannon": {
+  "name": "Flash Cannon",
+  "name_de": "Lichtkanone",
+  "type": "steel",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30,
+  "stat_changes": [{"stat": "spd", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "iron_tail": {
+  "name": "Iron Tail",
+  "name_de": "Eisenschweif",
+  "type": "steel",
+  "power": 100,
+  "accuracy": 75,
+  "category": "physical",
+  "min_level": 38,
+  "stat_changes": [{"stat": "def", "stages": -1, "target": "target"}],
+  "stat_chance": 30
+ },
+ "meteor_mash": {
+  "name": "Meteor Mash",
+  "name_de": "Sternenhieb",
+  "type": "steel",
+  "power": 90,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 45
+ },
+ "fairy_wind": {
+  "name": "Fairy Wind",
+  "name_de": "Feenbrise",
+  "type": "fairy",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1
+ },
+ "disarming_voice": {
+  "name": "Disarming Voice",
+  "name_de": "Säuselstimme",
+  "type": "fairy",
+  "power": 40,
+  "accuracy": null,
+  "category": "special",
+  "min_level": 5
+ },
+ "draining_kiss": {
+  "name": "Draining Kiss",
+  "name_de": "Diebeskuss",
+  "type": "fairy",
+  "power": 50,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 15,
+  "drain": 0.75
+ },
+ "dazzling_gleam": {
+  "name": "Dazzling Gleam",
+  "name_de": "Zauberschein",
+  "type": "fairy",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30
+ },
+ "play_rough": {
+  "name": "Play Rough",
+  "name_de": "Knuddler",
+  "type": "fairy",
+  "power": 90,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 32
+ },
+ "moonblast": {
+  "name": "Moonblast",
+  "name_de": "Mondgewalt",
+  "type": "fairy",
+  "power": 95,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 42
+ },
+ "stomp": {
+  "name": "Stomp",
+  "name_de": "Stampfer",
+  "type": "normal",
+  "power": 65,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 15,
+  "flinch_chance": 30
+ },
+ "slash": {
+  "name": "Slash",
+  "name_de": "Schlitzer",
+  "type": "normal",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 20,
+  "high_crit": true
+ },
+ "take_down": {
+  "name": "Take Down",
+  "name_de": "Bodycheck",
+  "type": "normal",
+  "power": 90,
+  "accuracy": 85,
+  "category": "physical",
+  "min_level": 20,
+  "recoil": 0.25
+ },
+ "bubble": {
+  "name": "Bubble",
+  "name_de": "Blubber",
+  "type": "water",
+  "power": 40,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 1,
+  "stat_changes": [{"stat": "spe", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "bubble_beam": {
+  "name": "Bubble Beam",
+  "name_de": "Blubbstrahl",
+  "type": "water",
+  "power": 65,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 12,
+  "stat_changes": [{"stat": "spe", "stages": -1, "target": "target"}],
+  "stat_chance": 10
+ },
+ "razor_shell": {
+  "name": "Razor Shell",
+  "name_de": "Muschelklinge",
+  "type": "water",
+  "power": 75,
+  "accuracy": 95,
+  "category": "physical",
+  "min_level": 30,
+  "stat_changes": [{"stat": "def", "stages": -1, "target": "target"}],
+  "stat_chance": 50
+ },
+ "scald": {
+  "name": "Scald",
+  "name_de": "Siedewasser",
+  "type": "water",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 30,
+  "status": "burn",
+  "status_chance": 30
+ },
+ "muddy_water": {
+  "name": "Muddy Water",
+  "name_de": "Lehmbrühe",
+  "type": "water",
+  "power": 90,
+  "accuracy": 85,
+  "category": "special",
+  "min_level": 35
+ },
+ "crabhammer": {
+  "name": "Crabhammer",
+  "name_de": "Krabbhammer",
+  "type": "water",
+  "power": 100,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 38,
+  "high_crit": true
+ },
+ "wave_crash": {
+  "name": "Wave Crash",
+  "name_de": "Wellentackle",
+  "type": "water",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 45,
+  "recoil": 0.33
+ },
+ "blaze_kick": {
+  "name": "Blaze Kick",
+  "name_de": "Feuertritt",
+  "type": "fire",
+  "power": 85,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 35,
+  "high_crit": true,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "heat_wave": {
+  "name": "Heat Wave",
+  "name_de": "Hitzewelle",
+  "type": "fire",
+  "power": 95,
+  "accuracy": 90,
+  "category": "special",
+  "min_level": 40,
+  "status": "burn",
+  "status_chance": 10
+ },
+ "overheat": {
+  "name": "Overheat",
+  "name_de": "Hitzekoller",
+  "type": "fire",
+  "power": 130,
+  "accuracy": 90,
+  "category": "special",
+  "min_level": 50,
+  "stat_changes": [{"stat": "spa", "stages": -2, "target": "self"}],
+  "stat_chance": 100
+ },
+ "trop_kick": {
+  "name": "Trop Kick",
+  "name_de": "Tropenhieb",
+  "type": "grass",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 28,
+  "stat_changes": [{"stat": "atk", "stages": -1, "target": "target"}],
+  "stat_chance": 100
+ },
+ "wood_hammer": {
+  "name": "Wood Hammer",
+  "name_de": "Holzhammer",
+  "type": "grass",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 42,
+  "recoil": 0.33
+ },
+ "leaf_storm": {
+  "name": "Leaf Storm",
+  "name_de": "Blättersturm",
+  "type": "grass",
+  "power": 130,
+  "accuracy": 90,
+  "category": "special",
+  "min_level": 50,
+  "stat_changes": [{"stat": "spa", "stages": -2, "target": "self"}],
+  "stat_chance": 100
+ },
+ "charge_beam": {
+  "name": "Charge Beam",
+  "name_de": "Ladestrahl",
+  "type": "electric",
+  "power": 50,
+  "accuracy": 90,
+  "category": "special",
+  "min_level": 15,
+  "stat_changes": [{"stat": "spa", "stages": 1, "target": "self"}],
+  "stat_chance": 70
+ },
+ "shock_wave": {
+  "name": "Shock Wave",
+  "name_de": "Schockwelle",
+  "type": "electric",
+  "power": 60,
+  "accuracy": null,
+  "category": "special",
+  "min_level": 20
+ },
+ "electroweb": {
+  "name": "Electroweb",
+  "name_de": "Elektronetz",
+  "type": "electric",
+  "power": 55,
+  "accuracy": 95,
+  "category": "special",
+  "min_level": 18,
+  "stat_changes": [{"stat": "spe", "stages": -1, "target": "target"}],
+  "stat_chance": 100
+ },
+ "thunder_punch": {
+  "name": "Thunder Punch",
+  "name_de": "Donnerschlag",
+  "type": "electric",
+  "power": 75,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25,
+  "status": "paralysis",
+  "status_chance": 10
+ },
+ "discharge": {
+  "name": "Discharge",
+  "name_de": "Ladungsstoß",
+  "type": "electric",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 35,
+  "status": "paralysis",
+  "status_chance": 30
+ },
+ "volt_tackle": {
+  "name": "Volt Tackle",
+  "name_de": "Volttackle",
+  "type": "electric",
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 45,
+  "recoil": 0.33
+ },
+ "zap_cannon": {
+  "name": "Zap Cannon",
+  "name_de": "Blitzkanone",
+  "type": "electric",
+  "power": 120,
+  "accuracy": 50,
+  "category": "special",
+  "min_level": 40,
+  "status": "paralysis",
+  "status_chance": 100
+ },
+ "icy_wind": {
+  "name": "Icy Wind",
+  "name_de": "Eissturm",
+  "type": "ice",
+  "power": 55,
+  "accuracy": 95,
+  "category": "special",
+  "min_level": 20,
+  "stat_changes": [{"stat": "spe", "stages": -1, "target": "target"}],
+  "stat_chance": 100
+ },
+ "frost_breath": {
+  "name": "Frost Breath",
+  "name_de": "Frostodem",
+  "type": "ice",
+  "power": 60,
+  "accuracy": 90,
+  "category": "special",
+  "min_level": 25,
+  "high_crit": true
+ },
+ "ice_punch": {
+  "name": "Ice Punch",
+  "name_de": "Eishieb",
+  "type": "ice",
+  "power": 75,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 25,
+  "status": "freeze",
+  "status_chance": 10
+ },
+ "low_sweep": {
+  "name": "Low Sweep",
+  "name_de": "Fußkick",
+  "type": "fighting",
+  "power": 65,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 18,
+  "stat_changes": [{"stat": "spe", "stages": -1, "target": "target"}],
+  "stat_chance": 100
+ },
+ "submission": {
+  "name": "Submission",
+  "name_de": "Überroller",
+  "type": "fighting",
+  "power": 80,
+  "accuracy": 80,
+  "category": "physical",
+  "min_level": 25,
+  "recoil": 0.25
+ },
+ "drain_punch": {
+  "name": "Drain Punch",
+  "name_de": "Saugfaust",
+  "type": "fighting",
+  "power": 75,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 30,
+  "drain": 0.5
+ },
+ "cross_chop": {
+  "name": "Cross Chop",
+  "name_de": "Kreuzhieb",
+  "type": "fighting",
+  "power": 100,
+  "accuracy": 80,
+  "category": "physical",
+  "min_level": 35,
+  "high_crit": true
+ },
+ "cross_poison": {
+  "name": "Cross Poison",
+  "name_de": "Giftstreich",
+  "type": "poison",
+  "power": 70,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 28,
+  "high_crit": true,
+  "status": "poison",
+  "status_chance": 10
+ },
+ "sludge_wave": {
+  "name": "Sludge Wave",
+  "name_de": "Schlammwoge",
+  "type": "poison",
+  "power": 95,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 42,
+  "status": "poison",
+  "status_chance": 10
+ },
+ "smack_down": {
+  "name": "Smack Down",
+  "name_de": "Katapult",
+  "type": "rock",
+  "power": 50,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 15
+ },
+ "silver_wind": {
+  "name": "Silver Wind",
+  "name_de": "Silberwind",
+  "type": "bug",
+  "power": 60,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 25,
+  "stat_changes": [
+   {"stat": "atk", "stages": 1, "target": "self"},
+   {"stat": "def", "stages": 1, "target": "self"},
+   {"stat": "spa", "stages": 1, "target": "self"},
+   {"stat": "spd", "stages": 1, "target": "self"},
+   {"stat": "spe", "stages": 1, "target": "self"}
+  ],
+  "stat_chance": 10
+ },
+ "shadow_punch": {
+  "name": "Shadow Punch",
+  "name_de": "Finsterfaust",
+  "type": "ghost",
+  "power": 60,
+  "accuracy": null,
+  "category": "physical",
+  "min_level": 18
+ },
+ "knock_off": {
+  "name": "Knock Off",
+  "name_de": "Abschlag",
+  "type": "dark",
+  "power": 65,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 20
+ },
+ "steel_wing": {
+  "name": "Steel Wing",
+  "name_de": "Stahlflügel",
+  "type": "steel",
+  "power": 70,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 20,
+  "stat_changes": [{"stat": "def", "stages": 1, "target": "self"}],
+  "stat_chance": 10
+ },
+ "draco_meteor": {
+  "name": "Draco Meteor",
+  "name_de": "Draco Meteor",
+  "type": "dragon",
+  "power": 130,
+  "accuracy": 90,
+  "category": "special",
+  "min_level": 50,
+  "stat_changes": [{"stat": "spa", "stages": -2, "target": "self"}],
+  "stat_chance": 100
+ },
+ "toxic": {
+  "name": "Toxic",
+  "name_de": "Toxin",
+  "type": "poison",
+  "power": null,
+  "accuracy": 90,
+  "category": "status",
+  "min_level": 20,
+  "status": "toxic",
+  "status_chance": 100
+ },
+ "will_o_wisp": {
+  "name": "Will-O-Wisp",
+  "name_de": "Irrlicht",
+  "type": "fire",
+  "power": null,
+  "accuracy": 85,
+  "category": "status",
+  "min_level": 18,
+  "status": "burn",
+  "status_chance": 100
+ },
+ "thunder_wave": {
+  "name": "Thunder Wave",
+  "name_de": "Donnerwelle",
+  "type": "electric",
+  "power": null,
+  "accuracy": 90,
+  "category": "status",
+  "min_level": 16,
+  "status": "paralysis",
+  "status_chance": 100
+ },
+ "sleep_powder": {
+  "name": "Sleep Powder",
+  "name_de": "Schlafpuder",
+  "type": "grass",
+  "power": null,
+  "accuracy": 75,
+  "category": "status",
+  "min_level": 15,
+  "status": "sleep",
+  "status_chance": 100
+ },
+ "growl": {
+  "name": "Growl",
+  "name_de": "Knurren",
+  "type": "normal",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 3,
+  "stat_changes": [{"stat": "atk", "stages": -1, "target": "target"}]
+ },
+ "tail_whip": {
+  "name": "Tail Whip",
+  "name_de": "Kussschnute",
+  "type": "normal",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 3,
+  "stat_changes": [{"stat": "def", "stages": -1, "target": "target"}]
+ },
+ "screech": {
+  "name": "Screech",
+  "name_de": "Kreischer",
+  "type": "normal",
+  "power": null,
+  "accuracy": 85,
+  "category": "status",
+  "min_level": 20,
+  "stat_changes": [{"stat": "def", "stages": -2, "target": "target"}]
+ },
+ "swords_dance": {
+  "name": "Swords Dance",
+  "name_de": "Schwerttanz",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 25,
+  "stat_changes": [{"stat": "atk", "stages": 2, "target": "self"}]
+ },
+ "charm": {
+  "name": "Charm",
+  "name_de": "Charmeur",
+  "type": "fairy",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 12,
+  "stat_changes": [{"stat": "atk", "stages": -2, "target": "target"}]
+ },
+ "cotton_spore": {
+  "name": "Cotton Spore",
+  "name_de": "Wattesporen",
+  "type": "grass",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 18,
+  "stat_changes": [{"stat": "spe", "stages": -2, "target": "target"}]
+ },
+ "agility": {
+  "name": "Agility",
+  "name_de": "Agilität",
+  "type": "psychic",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 22,
+  "stat_changes": [{"stat": "spe", "stages": 2, "target": "self"}]
+ },
+ "calm_mind": {
+  "name": "Calm Mind",
+  "name_de": "Ruhe Bewahren",
+  "type": "psychic",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 28,
+  "stat_changes": [
+   {"stat": "spa", "stages": 1, "target": "self"},
+   {"stat": "spd", "stages": 1, "target": "self"}
+  ]
+ },
+ "iron_defense": {
+  "name": "Iron Defense",
+  "name_de": "Eisenabwehr",
+  "type": "steel",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 24,
+  "stat_changes": [{"stat": "def", "stages": 2, "target": "self"}]
+ },
+ "nasty_plot": {
+  "name": "Nasty Plot",
+  "name_de": "Böser Plan",
+  "type": "dark",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 26,
+  "stat_changes": [{"stat": "spa", "stages": 2, "target": "self"}]
+ },
+ "dragon_dance": {
+  "name": "Dragon Dance",
+  "name_de": "Drachentanz",
+  "type": "dragon",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 30,
+  "stat_changes": [
+   {"stat": "atk", "stages": 1, "target": "self"},
+   {"stat": "spe", "stages": 1, "target": "self"}
+  ]
+ },
+ "bulk_up": {
+  "name": "Bulk Up",
+  "name_de": "Stärke",
+  "type": "fighting",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 27,
+  "stat_changes": [
+   {"stat": "atk", "stages": 1, "target": "self"},
+   {"stat": "def", "stages": 1, "target": "self"}
+  ]
+ },
+ "confide": {
+  "name": "Confide",
+  "name_de": "Vertrauen",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 8,
+  "stat_changes": [{"stat": "spa", "stages": -1, "target": "target"}]
+ },
+ "metal_sound": {
+  "name": "Metal Sound",
+  "name_de": "Metallsound",
+  "type": "steel",
+  "power": null,
+  "accuracy": 85,
+  "category": "status",
+  "min_level": 24,
+  "stat_changes": [{"stat": "spd", "stages": -2, "target": "target"}]
+ },
+ "recover": {
+  "name": "Recover",
+  "name_de": "Erholung",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 33,
+  "heal": 0.5
+ },
+ "roost": {
+  "name": "Roost",
+  "name_de": "Rastplatz",
+  "type": "flying",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 27,
+  "heal": 0.5
+ },
+ "synthesis": {
+  "name": "Synthesis",
+  "name_de": "Photosynthese",
+  "type": "grass",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 31,
+  "heal": 0.5
+ },
+ "withdraw": {
+  "name": "Withdraw",
+  "name_de": "Rückzug",
+  "type": "water",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 4,
+  "stat_changes": [{"stat": "def", "stages": 1, "target": "self"}]
+ },
+ "string_shot": {
+  "name": "String Shot",
+  "name_de": "Fadenschuss",
+  "type": "bug",
+  "power": null,
+  "accuracy": 95,
+  "category": "status",
+  "min_level": 1,
+  "stat_changes": [{"stat": "spe", "stages": -2, "target": "target"}]
+ },
+ "rock_polish": {
+  "name": "Rock Polish",
+  "name_de": "Politur",
+  "type": "rock",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 20,
+  "stat_changes": [{"stat": "spe", "stages": 2, "target": "self"}]
+ },
+ "shore_up": {
+  "name": "Shore Up",
+  "name_de": "Aufschüttung",
+  "type": "ground",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 29,
+  "heal": 0.5
+ },
+ "haze": {
+  "name": "Haze",
+  "name_de": "Vernebelung",
+  "type": "ice",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 20,
+  "reset_stats": true
+ },
+ "curse": {
+  "name": "Curse",
+  "name_de": "Fluch",
+  "type": "ghost",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 30,
+  "status": "curse",
+  "curse": true
+ },
+ "harden": {
+  "name": "Harden",
+  "name_de": "Härtner",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 5,
+  "stat_changes": [{"stat": "def", "stages": 1, "target": "self"}]
+ },
+ "defense_curl": {
+  "name": "Defense Curl",
+  "name_de": "Einigler",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 3,
+  "stat_changes": [{"stat": "def", "stages": 1, "target": "self"}]
+ },
+ "howl": {
+  "name": "Howl",
+  "name_de": "Heulen",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 8,
+  "stat_changes": [{"stat": "atk", "stages": 1, "target": "self"}]
+ },
+ "growth": {
+  "name": "Growth",
+  "name_de": "Wachstum",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 10,
+  "stat_changes": [
+   {"stat": "atk", "stages": 1, "target": "self"},
+   {"stat": "spa", "stages": 1, "target": "self"}
+  ]
+ },
+ "shell_smash": {
+  "name": "Shell Smash",
+  "name_de": "Panzerbruch",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 40,
+  "stat_changes": [
+   {"stat": "atk", "stages": 2, "target": "self"},
+   {"stat": "spa", "stages": 2, "target": "self"},
+   {"stat": "spe", "stages": 2, "target": "self"},
+   {"stat": "def", "stages": -1, "target": "self"},
+   {"stat": "spd", "stages": -1, "target": "self"}
+  ]
+ },
+ "leer": {
+  "name": "Leer",
+  "name_de": "Silberblick",
+  "type": "normal",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 5,
+  "stat_changes": [{"stat": "def", "stages": -1, "target": "target"}]
+ },
+ "scary_face": {
+  "name": "Scary Face",
+  "name_de": "Grimasse",
+  "type": "normal",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 10,
+  "stat_changes": [{"stat": "spe", "stages": -2, "target": "target"}]
+ },
+ "tickle": {
+  "name": "Tickle",
+  "name_de": "Kitzler",
+  "type": "normal",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 14,
+  "stat_changes": [
+   {"stat": "atk", "stages": -1, "target": "target"},
+   {"stat": "def", "stages": -1, "target": "target"}
+  ]
+ },
+ "glare": {
+  "name": "Glare",
+  "name_de": "Schlangenblick",
+  "type": "normal",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 14,
+  "status": "paralysis",
+  "status_chance": 100
+ },
+ "soft_boiled": {
+  "name": "Soft-Boiled",
+  "name_de": "Weichei",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 33,
+  "heal": 0.5
+ },
+ "slack_off": {
+  "name": "Slack Off",
+  "name_de": "Faulenzer",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 34,
+  "heal": 0.5
+ },
+ "morning_sun": {
+  "name": "Morning Sun",
+  "name_de": "Morgengrauen",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 29,
+  "heal": 0.5
+ },
+ "amnesia": {
+  "name": "Amnesia",
+  "name_de": "Amnesie",
+  "type": "psychic",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 24,
+  "stat_changes": [{"stat": "spd", "stages": 2, "target": "self"}]
+ },
+ "barrier": {
+  "name": "Barrier",
+  "name_de": "Barriere",
+  "type": "psychic",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 20,
+  "stat_changes": [{"stat": "def", "stages": 2, "target": "self"}]
+ },
+ "cosmic_power": {
+  "name": "Cosmic Power",
+  "name_de": "Kosmik-Kraft",
+  "type": "psychic",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 28,
+  "stat_changes": [
+   {"stat": "def", "stages": 1, "target": "self"},
+   {"stat": "spd", "stages": 1, "target": "self"}
+  ]
+ },
+ "hypnosis": {
+  "name": "Hypnosis",
+  "name_de": "Hypnose",
+  "type": "psychic",
+  "power": null,
+  "accuracy": 60,
+  "category": "status",
+  "min_level": 15,
+  "status": "sleep",
+  "status_chance": 100
+ },
+ "acid_armor": {
+  "name": "Acid Armor",
+  "name_de": "Säurepanzer",
+  "type": "poison",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 22,
+  "stat_changes": [{"stat": "def", "stages": 2, "target": "self"}]
+ },
+ "poison_gas": {
+  "name": "Poison Gas",
+  "name_de": "Giftgas",
+  "type": "poison",
+  "power": null,
+  "accuracy": 90,
+  "category": "status",
+  "min_level": 10,
+  "status": "poison",
+  "status_chance": 100
+ },
+ "poison_powder": {
+  "name": "Poison Powder",
+  "name_de": "Giftpuder",
+  "type": "poison",
+  "power": null,
+  "accuracy": 75,
+  "category": "status",
+  "min_level": 8,
+  "status": "poison",
+  "status_chance": 100
+ },
+ "stun_spore": {
+  "name": "Stun Spore",
+  "name_de": "Stachelspore",
+  "type": "grass",
+  "power": null,
+  "accuracy": 75,
+  "category": "status",
+  "min_level": 12,
+  "status": "paralysis",
+  "status_chance": 100
+ },
+ "spore": {
+  "name": "Spore",
+  "name_de": "Pilzsporen",
+  "type": "grass",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 30,
+  "status": "sleep",
+  "status_chance": 100
+ },
+ "quiver_dance": {
+  "name": "Quiver Dance",
+  "name_de": "Falterreigen",
+  "type": "bug",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 32,
+  "stat_changes": [
+   {"stat": "spa", "stages": 1, "target": "self"},
+   {"stat": "spd", "stages": 1, "target": "self"},
+   {"stat": "spe", "stages": 1, "target": "self"}
+  ]
+ },
+ "heal_order": {
+  "name": "Heal Order",
+  "name_de": "Heilbefehl",
+  "type": "bug",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 33,
+  "heal": 0.5
+ },
+ "feather_dance": {
+  "name": "Feather Dance",
+  "name_de": "Federtanz",
+  "type": "flying",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 16,
+  "stat_changes": [{"stat": "atk", "stages": -2, "target": "target"}]
+ },
+ "autotomize": {
+  "name": "Autotomize",
+  "name_de": "Autotomie",
+  "type": "steel",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 24,
+  "stat_changes": [{"stat": "spe", "stages": 2, "target": "self"}]
+ },
+ "baby_doll_eyes": {
+  "name": "Baby-Doll Eyes",
+  "name_de": "Kulleraugen",
+  "type": "fairy",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 10,
+  "priority": 1,
+  "stat_changes": [{"stat": "atk", "stages": -1, "target": "target"}]
+ },
+ "moonlight": {
+  "name": "Moonlight",
+  "name_de": "Mondschein",
+  "type": "fairy",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 29,
+  "heal": 0.5
+ },
+ "mean_look": {
+  "name": "Mean Look",
+  "name_de": "Fieser Blick",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 20,
+  "trap": true
+ },
+ "spider_web": {
+  "name": "Spider Web",
+  "name_de": "Spinnennetz",
+  "type": "bug",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 20,
+  "trap": true
+ }
+}

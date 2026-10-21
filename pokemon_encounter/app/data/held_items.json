@@ -1,0 +1,640 @@
+{
+  "leftovers": {
+    "name": "Leftovers",
+    "name_de": "Überreste",
+    "effect": "end_turn_heal",
+    "fraction": 0.0625,
+    "description": "Heals 1/16 of max HP at the end of each turn.",
+    "description_de": "Heilt am Ende jeder Runde 1/16 der maximalen KP."
+  },
+  "life_orb": {
+    "name": "Life Orb",
+    "name_de": "Leben-Orb",
+    "effect": "life_orb",
+    "multiplier": 1.3,
+    "recoil": 0.1,
+    "description": "Moves deal 30% more damage, but cost 1/10 of max HP each time.",
+    "description_de": "Attacken richten 30 % mehr Schaden an, kosten aber jedes Mal 1/10 der maximalen KP."
+  },
+  "choice_band": {
+    "name": "Choice Band",
+    "name_de": "Wahlband",
+    "effect": "choice",
+    "stat": "atk",
+    "multiplier": 1.5,
+    "description": "Attack x1.5 – but only the first move chosen can be used until switching out.",
+    "description_de": "Angriff x1,5 – aber nur die zuerst gewählte Attacke ist einsetzbar, bis ausgewechselt wird."
+  },
+  "choice_specs": {
+    "name": "Choice Specs",
+    "name_de": "Wahlglas",
+    "effect": "choice",
+    "stat": "spa",
+    "multiplier": 1.5,
+    "description": "Sp. Atk x1.5 – but only the first move chosen can be used until switching out.",
+    "description_de": "Spezial-Angriff x1,5 – aber nur die zuerst gewählte Attacke ist einsetzbar, bis ausgewechselt wird."
+  },
+  "choice_scarf": {
+    "name": "Choice Scarf",
+    "name_de": "Wahlschal",
+    "effect": "choice",
+    "stat": "spe",
+    "multiplier": 1.5,
+    "description": "Speed x1.5 – but only the first move chosen can be used until switching out.",
+    "description_de": "Initiative x1,5 – aber nur die zuerst gewählte Attacke ist einsetzbar, bis ausgewechselt wird."
+  },
+  "focus_sash": {
+    "name": "Focus Sash",
+    "name_de": "Fokusgurt",
+    "effect": "focus_sash",
+    "consumable": true,
+    "description": "Survives a KO hit with 1 HP if at full HP. Consumed in the process.",
+    "description_de": "Übersteht bei vollen KP einen K.O.-Treffer mit 1 KP. Wird dabei verbraucht."
+  },
+  "quick_claw": {
+    "name": "Quick Claw",
+    "name_de": "Flinkklaue",
+    "effect": "quick_claw",
+    "chance": 0.2,
+    "description": "20% chance to move first despite lower Speed.",
+    "description_de": "20 % Chance, trotz geringerer Initiative zuerst anzugreifen."
+  },
+  "oran_berry": {
+    "name": "Oran Berry",
+    "name_de": "Sinelbeere",
+    "effect": "berry_heal",
+    "threshold": 0.5,
+    "amount": 10,
+    "consumable": true,
+    "description": "Heals 10 HP once, when HP falls to half.",
+    "description_de": "Heilt einmalig 10 KP, sobald die KP auf die Hälfte fallen."
+  },
+  "sitrus_berry": {
+    "name": "Sitrus Berry",
+    "name_de": "Tsitrubeere",
+    "effect": "berry_heal",
+    "threshold": 0.5,
+    "fraction": 0.25,
+    "consumable": true,
+    "description": "Heals 1/4 of max HP once, when HP falls to half.",
+    "description_de": "Heilt einmalig 1/4 der maximalen KP, sobald die KP auf die Hälfte fallen."
+  },
+  "lucky_egg": {
+    "name": "Lucky Egg",
+    "name_de": "Glücks-Ei",
+    "effect": "exp_boost",
+    "multiplier": 1.5,
+    "description": "The holder gains 50% more experience points.",
+    "description_de": "Der Träger erhält 50 % mehr Erfahrungspunkte."
+  },
+  "exp_share": {
+    "name": "Exp. Share",
+    "name_de": "Erfahrungsteiler",
+    "effect": "exp_share",
+    "description": "The holder gains the same EXP as a fighting team member, even without joining the battle. Reward for the level-100 achievements.",
+    "description_de": "Der Träger erhält so viel EP wie ein kämpfendes Teammitglied, auch ohne selbst zu kämpfen. Belohnung für die Level-100-Erfolge."
+  },
+  "scope_lens": {
+    "name": "Scope Lens",
+    "name_de": "Scope-Linse",
+    "effect": "crit_stage",
+    "stages": 1,
+    "description": "Raises the critical-hit rate by one stage.",
+    "description_de": "Erhöht die Volltrefferquote um eine Stufe."
+  },
+  "shell_bell": {
+    "name": "Shell Bell",
+    "name_de": "Seegesang",
+    "effect": "shell_bell",
+    "fraction": 0.125,
+    "description": "Heals 1/8 of the damage dealt.",
+    "description_de": "Heilt 1/8 des angerichteten Schadens."
+  },
+  "charcoal": {
+    "name": "Charcoal",
+    "name_de": "Holzkohle",
+    "effect": "type_boost",
+    "type": "fire",
+    "multiplier": 1.2,
+    "description": "Fire-type moves deal 20% more damage.",
+    "description_de": "Feuer-Attacken richten 20 % mehr Schaden an."
+  },
+  "mystic_water": {
+    "name": "Mystic Water",
+    "name_de": "Zauberwasser",
+    "effect": "type_boost",
+    "type": "water",
+    "multiplier": 1.2,
+    "description": "Water-type moves deal 20% more damage.",
+    "description_de": "Wasser-Attacken richten 20 % mehr Schaden an."
+  },
+  "magnet": {
+    "name": "Magnet",
+    "name_de": "Magnet",
+    "effect": "type_boost",
+    "type": "electric",
+    "multiplier": 1.2,
+    "description": "Electric-type moves deal 20% more damage.",
+    "description_de": "Elektro-Attacken richten 20 % mehr Schaden an."
+  },
+  "miracle_seed": {
+    "name": "Miracle Seed",
+    "name_de": "Wundersaat",
+    "effect": "type_boost",
+    "type": "grass",
+    "multiplier": 1.2,
+    "description": "Grass-type moves deal 20% more damage.",
+    "description_de": "Pflanzen-Attacken richten 20 % mehr Schaden an."
+  },
+  "silk_scarf": {
+    "name": "Silk Scarf",
+    "name_de": "Seidenschal",
+    "effect": "type_boost",
+    "type": "normal",
+    "multiplier": 1.2,
+    "description": "Normal-type moves deal 20% more damage.",
+    "description_de": "Normal-Attacken richten 20 % mehr Schaden an."
+  },
+  "black_belt": {
+    "name": "Black Belt",
+    "name_de": "Schwarzgurt",
+    "effect": "type_boost",
+    "type": "fighting",
+    "multiplier": 1.2,
+    "description": "Fighting-type moves deal 20% more damage.",
+    "description_de": "Kampf-Attacken richten 20 % mehr Schaden an."
+  },
+  "poison_barb": {
+    "name": "Poison Barb",
+    "name_de": "Giftstachel",
+    "effect": "type_boost",
+    "type": "poison",
+    "multiplier": 1.2,
+    "description": "Poison-type moves deal 20% more damage.",
+    "description_de": "Gift-Attacken richten 20 % mehr Schaden an."
+  },
+  "soft_sand": {
+    "name": "Soft Sand",
+    "name_de": "Softsand",
+    "effect": "type_boost",
+    "type": "ground",
+    "multiplier": 1.2,
+    "description": "Ground-type moves deal 20% more damage.",
+    "description_de": "Boden-Attacken richten 20 % mehr Schaden an."
+  },
+  "sharp_beak": {
+    "name": "Sharp Beak",
+    "name_de": "Scharfschnabel",
+    "effect": "type_boost",
+    "type": "flying",
+    "multiplier": 1.2,
+    "description": "Flying-type moves deal 20% more damage.",
+    "description_de": "Flug-Attacken richten 20 % mehr Schaden an."
+  },
+  "twisted_spoon": {
+    "name": "Twisted Spoon",
+    "name_de": "Löffelknick",
+    "effect": "type_boost",
+    "type": "psychic",
+    "multiplier": 1.2,
+    "description": "Psychic-type moves deal 20% more damage.",
+    "description_de": "Psycho-Attacken richten 20 % mehr Schaden an."
+  },
+  "silver_powder": {
+    "name": "Silver Powder",
+    "name_de": "Silberpuder",
+    "effect": "type_boost",
+    "type": "bug",
+    "multiplier": 1.2,
+    "description": "Bug-type moves deal 20% more damage.",
+    "description_de": "Käfer-Attacken richten 20 % mehr Schaden an."
+  },
+  "hard_stone": {
+    "name": "Hard Stone",
+    "name_de": "Hartstein",
+    "effect": "type_boost",
+    "type": "rock",
+    "multiplier": 1.2,
+    "description": "Rock-type moves deal 20% more damage.",
+    "description_de": "Gesteins-Attacken richten 20 % mehr Schaden an."
+  },
+  "spell_tag": {
+    "name": "Spell Tag",
+    "name_de": "Geisterkugel",
+    "effect": "type_boost",
+    "type": "ghost",
+    "multiplier": 1.2,
+    "description": "Ghost-type moves deal 20% more damage.",
+    "description_de": "Geister-Attacken richten 20 % mehr Schaden an."
+  },
+  "dragon_fang": {
+    "name": "Dragon Fang",
+    "name_de": "Drachenzahn",
+    "effect": "type_boost",
+    "type": "dragon",
+    "multiplier": 1.2,
+    "description": "Dragon-type moves deal 20% more damage.",
+    "description_de": "Drachen-Attacken richten 20 % mehr Schaden an."
+  },
+  "black_glasses": {
+    "name": "Black Glasses",
+    "name_de": "Fiesbrille",
+    "effect": "type_boost",
+    "type": "dark",
+    "multiplier": 1.2,
+    "description": "Dark-type moves deal 20% more damage.",
+    "description_de": "Unlicht-Attacken richten 20 % mehr Schaden an."
+  },
+  "metal_coat": {
+    "name": "Metal Coat",
+    "name_de": "Metallmantel",
+    "effect": "type_boost",
+    "type": "steel",
+    "multiplier": 1.2,
+    "description": "Steel-type moves deal 20% more damage.",
+    "description_de": "Stahl-Attacken richten 20 % mehr Schaden an."
+  },
+  "never_melt_ice": {
+    "name": "Never-Melt Ice",
+    "name_de": "Ewigeis",
+    "effect": "type_boost",
+    "type": "ice",
+    "multiplier": 1.2,
+    "description": "Ice-type moves deal 20% more damage.",
+    "description_de": "Eis-Attacken richten 20 % mehr Schaden an."
+  },
+  "fairy_feather": {
+    "name": "Fairy Feather",
+    "name_de": "Feenfeder",
+    "effect": "type_boost",
+    "type": "fairy",
+    "multiplier": 1.2,
+    "description": "Fairy-type moves deal 20% more damage.",
+    "description_de": "Feen-Attacken richten 20 % mehr Schaden an."
+  },
+  "destiny_knot": {
+    "name": "Destiny Knot",
+    "name_de": "Fatumknoten",
+    "effect": "breeding",
+    "description": "Held by a Day Care parent: the Egg inherits 5 instead of 3 IVs from its parents. No effect in battle.",
+    "description_de": "Von einem Elternteil in der Pension getragen: Das Ei erbt 5 statt 3 IVs von den Eltern. Im Kampf ohne Wirkung."
+  },
+  "everstone": {
+    "name": "Everstone",
+    "name_de": "Ewigstein",
+    "effect": "breeding",
+    "description": "Held by a Day Care parent: the Egg inherits this parent's nature. No effect in battle.",
+    "description_de": "Von einem Elternteil in der Pension getragen: Das Ei erbt das Wesen dieses Elternteils. Im Kampf ohne Wirkung."
+  },
+  "amulet_coin": {
+    "name": "Amulet Coin",
+    "name_de": "Münzamulett",
+    "effect": "amulet_coin",
+    "multiplier": 2.0,
+    "description": "Doubles the prize money earned from a won battle, if any team member holds it.",
+    "description_de": "Verdoppelt das Preisgeld aus einem gewonnenen Kampf, wenn es ein beliebiges Teammitglied trägt."
+  },
+  "venusaurite": {
+    "name": "Venusaurite",
+    "name_de": "Bisaflornit",
+    "effect": "mega_stone",
+    "description": "Lets Venusaur mega evolve into Mega Venusaur in battle.",
+    "description_de": "Lässt Bisaflor im Kampf zu Mega-Bisaflor megaentwickeln."
+  },
+  "charizardite_x": {
+    "name": "Charizardite X",
+    "name_de": "Gluraknit X",
+    "effect": "mega_stone",
+    "description": "Lets Charizard mega evolve into Mega Charizard X in battle.",
+    "description_de": "Lässt Glurak im Kampf zu Mega-Glurak X megaentwickeln."
+  },
+  "charizardite_y": {
+    "name": "Charizardite Y",
+    "name_de": "Gluraknit Y",
+    "effect": "mega_stone",
+    "description": "Lets Charizard mega evolve into Mega Charizard Y in battle.",
+    "description_de": "Lässt Glurak im Kampf zu Mega-Glurak Y megaentwickeln."
+  },
+  "blastoisinite": {
+    "name": "Blastoisinite",
+    "name_de": "Turtoknit",
+    "effect": "mega_stone",
+    "description": "Lets Blastoise mega evolve into Mega Blastoise in battle.",
+    "description_de": "Lässt Turtok im Kampf zu Mega-Turtok megaentwickeln."
+  },
+  "beedrillite": {
+    "name": "Beedrillite",
+    "name_de": "Bibornit",
+    "effect": "mega_stone",
+    "description": "Lets Beedrill mega evolve into Mega Beedrill in battle.",
+    "description_de": "Lässt Bibor im Kampf zu Mega-Bibor megaentwickeln."
+  },
+  "pidgeotite": {
+    "name": "Pidgeotite",
+    "name_de": "Taubossnit",
+    "effect": "mega_stone",
+    "description": "Lets Pidgeot mega evolve into Mega Pidgeot in battle.",
+    "description_de": "Lässt Tauboss im Kampf zu Mega-Tauboss megaentwickeln."
+  },
+  "alakazite": {
+    "name": "Alakazite",
+    "name_de": "Simsalanit",
+    "effect": "mega_stone",
+    "description": "Lets Alakazam mega evolve into Mega Alakazam in battle.",
+    "description_de": "Lässt Simsala im Kampf zu Mega-Simsala megaentwickeln."
+  },
+  "slowbronite": {
+    "name": "Slowbronite",
+    "name_de": "Lahmusnit",
+    "effect": "mega_stone",
+    "description": "Lets Slowbro mega evolve into Mega Slowbro in battle.",
+    "description_de": "Lässt Lahmus im Kampf zu Mega-Lahmus megaentwickeln."
+  },
+  "gengarite": {
+    "name": "Gengarite",
+    "name_de": "Gengarnit",
+    "effect": "mega_stone",
+    "description": "Lets Gengar mega evolve into Mega Gengar in battle.",
+    "description_de": "Lässt Gengar im Kampf zu Mega-Gengar megaentwickeln."
+  },
+  "kangaskhanite": {
+    "name": "Kangaskhanite",
+    "name_de": "Kangamanit",
+    "effect": "mega_stone",
+    "description": "Lets Kangaskhan mega evolve into Mega Kangaskhan in battle.",
+    "description_de": "Lässt Kangama im Kampf zu Mega-Kangama megaentwickeln."
+  },
+  "pinsirite": {
+    "name": "Pinsirite",
+    "name_de": "Pinsirnit",
+    "effect": "mega_stone",
+    "description": "Lets Pinsir mega evolve into Mega Pinsir in battle.",
+    "description_de": "Lässt Pinsir im Kampf zu Mega-Pinsir megaentwickeln."
+  },
+  "gyaradosite": {
+    "name": "Gyaradosite",
+    "name_de": "Garadosnit",
+    "effect": "mega_stone",
+    "description": "Lets Gyarados mega evolve into Mega Gyarados in battle.",
+    "description_de": "Lässt Garados im Kampf zu Mega-Garados megaentwickeln."
+  },
+  "aerodactylite": {
+    "name": "Aerodactylite",
+    "name_de": "Aerodactylonit",
+    "effect": "mega_stone",
+    "description": "Lets Aerodactyl mega evolve into Mega Aerodactyl in battle.",
+    "description_de": "Lässt Aerodactyl im Kampf zu Mega-Aerodactyl megaentwickeln."
+  },
+  "mewtwonite_x": {
+    "name": "Mewtwonite X",
+    "name_de": "Mewtunit X",
+    "effect": "mega_stone",
+    "description": "Lets Mewtwo mega evolve into Mega Mewtwo X in battle.",
+    "description_de": "Lässt Mewtu im Kampf zu Mega-Mewtu X megaentwickeln."
+  },
+  "mewtwonite_y": {
+    "name": "Mewtwonite Y",
+    "name_de": "Mewtunit Y",
+    "effect": "mega_stone",
+    "description": "Lets Mewtwo mega evolve into Mega Mewtwo Y in battle.",
+    "description_de": "Lässt Mewtu im Kampf zu Mega-Mewtu Y megaentwickeln."
+  },
+  "ampharosite": {
+    "name": "Ampharosite",
+    "name_de": "Ampharosnit",
+    "effect": "mega_stone",
+    "description": "Lets Ampharos mega evolve into Mega Ampharos in battle.",
+    "description_de": "Lässt Ampharos im Kampf zu Mega-Ampharos megaentwickeln."
+  },
+  "steelixite": {
+    "name": "Steelixite",
+    "name_de": "Stahlosnit",
+    "effect": "mega_stone",
+    "description": "Lets Steelix mega evolve into Mega Steelix in battle.",
+    "description_de": "Lässt Stahlos im Kampf zu Mega-Stahlos megaentwickeln."
+  },
+  "scizorite": {
+    "name": "Scizorite",
+    "name_de": "Scheroxnit",
+    "effect": "mega_stone",
+    "description": "Lets Scizor mega evolve into Mega Scizor in battle.",
+    "description_de": "Lässt Scherox im Kampf zu Mega-Scherox megaentwickeln."
+  },
+  "heracronite": {
+    "name": "Heracronite",
+    "name_de": "Skarabornit",
+    "effect": "mega_stone",
+    "description": "Lets Heracross mega evolve into Mega Heracross in battle.",
+    "description_de": "Lässt Skaraborn im Kampf zu Mega-Skaraborn megaentwickeln."
+  },
+  "houndoominite": {
+    "name": "Houndoominite",
+    "name_de": "Hundemonit",
+    "effect": "mega_stone",
+    "description": "Lets Houndoom mega evolve into Mega Houndoom in battle.",
+    "description_de": "Lässt Hundemon im Kampf zu Mega-Hundemon megaentwickeln."
+  },
+  "tyranitarite": {
+    "name": "Tyranitarite",
+    "name_de": "Despotarnit",
+    "effect": "mega_stone",
+    "description": "Lets Tyranitar mega evolve into Mega Tyranitar in battle.",
+    "description_de": "Lässt Despotar im Kampf zu Mega-Despotar megaentwickeln."
+  },
+  "sceptilite": {
+    "name": "Sceptilite",
+    "name_de": "Gewaldronit",
+    "effect": "mega_stone",
+    "description": "Lets Sceptile mega evolve into Mega Sceptile in battle.",
+    "description_de": "Lässt Gewaldro im Kampf zu Mega-Gewaldro megaentwickeln."
+  },
+  "blazikenite": {
+    "name": "Blazikenite",
+    "name_de": "Lohgocknit",
+    "effect": "mega_stone",
+    "description": "Lets Blaziken mega evolve into Mega Blaziken in battle.",
+    "description_de": "Lässt Lohgock im Kampf zu Mega-Lohgock megaentwickeln."
+  },
+  "swampertite": {
+    "name": "Swampertite",
+    "name_de": "Sumpexnit",
+    "effect": "mega_stone",
+    "description": "Lets Swampert mega evolve into Mega Swampert in battle.",
+    "description_de": "Lässt Sumpex im Kampf zu Mega-Sumpex megaentwickeln."
+  },
+  "gardevoirite": {
+    "name": "Gardevoirite",
+    "name_de": "Guardevoirnit",
+    "effect": "mega_stone",
+    "description": "Lets Gardevoir mega evolve into Mega Gardevoir in battle.",
+    "description_de": "Lässt Guardevoir im Kampf zu Mega-Guardevoir megaentwickeln."
+  },
+  "sablenite": {
+    "name": "Sablenite",
+    "name_de": "Zobirisnit",
+    "effect": "mega_stone",
+    "description": "Lets Sableye mega evolve into Mega Sableye in battle.",
+    "description_de": "Lässt Zobiris im Kampf zu Mega-Zobiris megaentwickeln."
+  },
+  "mawilite": {
+    "name": "Mawilite",
+    "name_de": "Flunkifernit",
+    "effect": "mega_stone",
+    "description": "Lets Mawile mega evolve into Mega Mawile in battle.",
+    "description_de": "Lässt Flunkifer im Kampf zu Mega-Flunkifer megaentwickeln."
+  },
+  "aggronite": {
+    "name": "Aggronite",
+    "name_de": "Stollossnit",
+    "effect": "mega_stone",
+    "description": "Lets Aggron mega evolve into Mega Aggron in battle.",
+    "description_de": "Lässt Stolloss im Kampf zu Mega-Stolloss megaentwickeln."
+  },
+  "medichamite": {
+    "name": "Medichamite",
+    "name_de": "Meditalisnit",
+    "effect": "mega_stone",
+    "description": "Lets Medicham mega evolve into Mega Medicham in battle.",
+    "description_de": "Lässt Meditalis im Kampf zu Mega-Meditalis megaentwickeln."
+  },
+  "manectite": {
+    "name": "Manectite",
+    "name_de": "Voltensonit",
+    "effect": "mega_stone",
+    "description": "Lets Manectric mega evolve into Mega Manectric in battle.",
+    "description_de": "Lässt Voltenso im Kampf zu Mega-Voltenso megaentwickeln."
+  },
+  "sharpedonite": {
+    "name": "Sharpedonite",
+    "name_de": "Tohaidonit",
+    "effect": "mega_stone",
+    "description": "Lets Sharpedo mega evolve into Mega Sharpedo in battle.",
+    "description_de": "Lässt Tohaido im Kampf zu Mega-Tohaido megaentwickeln."
+  },
+  "cameruptite": {
+    "name": "Cameruptite",
+    "name_de": "Cameruptnit",
+    "effect": "mega_stone",
+    "description": "Lets Camerupt mega evolve into Mega Camerupt in battle.",
+    "description_de": "Lässt Camerupt im Kampf zu Mega-Camerupt megaentwickeln."
+  },
+  "altarianite": {
+    "name": "Altarianite",
+    "name_de": "Altarianit",
+    "effect": "mega_stone",
+    "description": "Lets Altaria mega evolve into Mega Altaria in battle.",
+    "description_de": "Lässt Altaria im Kampf zu Mega-Altaria megaentwickeln."
+  },
+  "banettite": {
+    "name": "Banettite",
+    "name_de": "Banetteonit",
+    "effect": "mega_stone",
+    "description": "Lets Banette mega evolve into Mega Banette in battle.",
+    "description_de": "Lässt Banette im Kampf zu Mega-Banette megaentwickeln."
+  },
+  "absolite": {
+    "name": "Absolite",
+    "name_de": "Absolnit",
+    "effect": "mega_stone",
+    "description": "Lets Absol mega evolve into Mega Absol in battle.",
+    "description_de": "Lässt Absol im Kampf zu Mega-Absol megaentwickeln."
+  },
+  "glalitite": {
+    "name": "Glalitite",
+    "name_de": "Firnontornit",
+    "effect": "mega_stone",
+    "description": "Lets Glalie mega evolve into Mega Glalie in battle.",
+    "description_de": "Lässt Firnontor im Kampf zu Mega-Firnontor megaentwickeln."
+  },
+  "salamencite": {
+    "name": "Salamencite",
+    "name_de": "Brutalandanit",
+    "effect": "mega_stone",
+    "description": "Lets Salamence mega evolve into Mega Salamence in battle.",
+    "description_de": "Lässt Brutalanda im Kampf zu Mega-Brutalanda megaentwickeln."
+  },
+  "metagrossite": {
+    "name": "Metagrossite",
+    "name_de": "Metagrossnit",
+    "effect": "mega_stone",
+    "description": "Lets Metagross mega evolve into Mega Metagross in battle.",
+    "description_de": "Lässt Metagross im Kampf zu Mega-Metagross megaentwickeln."
+  },
+  "latiasite": {
+    "name": "Latiasite",
+    "name_de": "Latiasnit",
+    "effect": "mega_stone",
+    "description": "Lets Latias mega evolve into Mega Latias in battle.",
+    "description_de": "Lässt Latias im Kampf zu Mega-Latias megaentwickeln."
+  },
+  "latiosite": {
+    "name": "Latiosite",
+    "name_de": "Latiosnit",
+    "effect": "mega_stone",
+    "description": "Lets Latios mega evolve into Mega Latios in battle.",
+    "description_de": "Lässt Latios im Kampf zu Mega-Latios megaentwickeln."
+  },
+  "blue_orb": {
+    "name": "Blue Orb",
+    "name_de": "Blauer Edelstein",
+    "effect": "mega_stone",
+    "description": "Lets Kyogre undergo Primal Reversion into Primal Kyogre in battle.",
+    "description_de": "Lässt Kyogre im Kampf die Proto-Form Proto-Kyogre annehmen."
+  },
+  "red_orb": {
+    "name": "Red Orb",
+    "name_de": "Roter Edelstein",
+    "effect": "mega_stone",
+    "description": "Lets Groudon undergo Primal Reversion into Primal Groudon in battle.",
+    "description_de": "Lässt Groudon im Kampf die Proto-Form Proto-Groudon annehmen."
+  },
+  "lopunnite": {
+    "name": "Lopunnite",
+    "name_de": "Schlapornit",
+    "effect": "mega_stone",
+    "description": "Lets Lopunny mega evolve into Mega Lopunny in battle.",
+    "description_de": "Lässt Schlapor im Kampf zu Mega-Schlapor megaentwickeln."
+  },
+  "garchompite": {
+    "name": "Garchompite",
+    "name_de": "Knakracknit",
+    "effect": "mega_stone",
+    "description": "Lets Garchomp mega evolve into Mega Garchomp in battle.",
+    "description_de": "Lässt Knakrack im Kampf zu Mega-Knakrack megaentwickeln."
+  },
+  "lucarionite": {
+    "name": "Lucarionite",
+    "name_de": "Lucarionit",
+    "effect": "mega_stone",
+    "description": "Lets Lucario mega evolve into Mega Lucario in battle.",
+    "description_de": "Lässt Lucario im Kampf zu Mega-Lucario megaentwickeln."
+  },
+  "abomasite": {
+    "name": "Abomasite",
+    "name_de": "Rexblisarnit",
+    "effect": "mega_stone",
+    "description": "Lets Abomasnow mega evolve into Mega Abomasnow in battle.",
+    "description_de": "Lässt Rexblisar im Kampf zu Mega-Rexblisar megaentwickeln."
+  },
+  "galladite": {
+    "name": "Galladite",
+    "name_de": "Galagladinit",
+    "effect": "mega_stone",
+    "description": "Lets Gallade mega evolve into Mega Gallade in battle.",
+    "description_de": "Lässt Galagladi im Kampf zu Mega-Galagladi megaentwickeln."
+  },
+  "audinite": {
+    "name": "Audinite",
+    "name_de": "Ohrdochnit",
+    "effect": "mega_stone",
+    "description": "Lets Audino mega evolve into Mega Audino in battle.",
+    "description_de": "Lässt Ohrdoch im Kampf zu Mega-Ohrdoch megaentwickeln."
+  },
+  "diancite": {
+    "name": "Diancite",
+    "name_de": "Diancienit",
+    "effect": "mega_stone",
+    "description": "Lets Diancie mega evolve into Mega Diancie in battle.",
+    "description_de": "Lässt Diancie im Kampf zu Mega-Diancie megaentwickeln."
+  }
+}

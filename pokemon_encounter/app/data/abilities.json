@@ -1,0 +1,2272 @@
+{
+  "adaptability": {
+    "name": "Adaptability",
+    "name_de": "Anpassungsfähigkeit",
+    "effect": "adaptability",
+    "description": "The STAB bonus for own-type moves increases from x1.5 to x2.",
+    "description_de": "Der Stab-Bonus für eigene Attacken-Typen steigt von x1,5 auf x2."
+  },
+  "aerilate": {
+    "name": "Aerilate",
+    "name_de": "Zenithaut",
+    "description": "Turns the bearer's Normal moves into Flying moves and strengthens them to 1.3× their power.",
+    "description_de": "Attacken vom Typ Normal nehmen den Typ Flug an und ihre Stärke erhöht sich ein wenig.",
+    "inactive": "todo"
+  },
+  "aftermath": {
+    "name": "Aftermath",
+    "name_de": "Finalschlag",
+    "description": "Damages the attacker for 1/4 its max HP when knocked out by a contact move.",
+    "description_de": "Wird das Pokémon durch eine direkte Attacke besiegt, fügt es dem Angreifer Schaden zu.",
+    "inactive": "todo"
+  },
+  "air_lock": {
+    "name": "Air Lock",
+    "name_de": "Klimaschutz",
+    "description": "Negates all effects of weather, but does not prevent the weather itself.",
+    "description_de": "Hebt alle Wetter-Effekte auf.",
+    "inactive": "weather"
+  },
+  "analytic": {
+    "name": "Analytic",
+    "name_de": "Analyse",
+    "description": "Strengthens moves to 1.3× their power when moving last.",
+    "description_de": "Greift das Pokémon zuletzt an, erhöht sich die Stärke der Attacke, die es einsetzt.",
+    "inactive": "todo"
+  },
+  "anger_point": {
+    "name": "Anger Point",
+    "name_de": "Kurzschluss",
+    "description": "Raises Attack to the maximum of six stages upon receiving a critical hit.",
+    "description_de": "Wird nach Einstecken eines Volltreffers wütend und maximiert dabei seinen Angriffs-Wert.",
+    "inactive": "todo"
+  },
+  "anger_shell": {
+    "name": "Anger Shell",
+    "name_de": "Wutpanzer",
+    "description": "When the Pokémon's HP drops below half, Anger Shell lowers its Defense and Special Defense but its Attack, Special Attack and Speed are raised.",
+    "description_de": "Sinken die KP unter die Hälfte, sinken Verteidigung und Spezial-Verteidigung, dafür steigen Angriff, Spezial-Angriff und Initiative.",
+    "inactive": "todo"
+  },
+  "anticipation": {
+    "name": "Anticipation",
+    "name_de": "Vorahnung",
+    "description": "Notifies all trainers upon entering battle if an opponent has a super-effective move, Self-Destruct, Explosion, or a one-hit KO move.",
+    "description_de": "Kann gefährliche gegnerische Attacken erahnen.",
+    "inactive": "todo"
+  },
+  "arena_trap": {
+    "name": "Arena Trap",
+    "name_de": "Ausweglos",
+    "description": "Prevents opponents from fleeing or switching out. Eluded by Flying-types and Pokémon in the air.",
+    "description_de": "Hindert Gegner im Kampf an der Flucht.",
+    "inactive": "mechanic"
+  },
+  "armor_tail": {
+    "name": "Armor Tail",
+    "name_de": "Schweifrüstung",
+    "description": "Prevents the opponent from using any moves that have priority, such as Quick Attack.",
+    "description_de": "Gegner können keine Attacken mit erhöhter Priorität wie Ruckzuckhieb einsetzen.",
+    "inactive": "todo"
+  },
+  "aroma_veil": {
+    "name": "Aroma Veil",
+    "name_de": "Dufthülle",
+    "description": "Protects allies against moves that affect their mental state.",
+    "description_de": "Kann alle Team-Pokémon vor mentalen Angriffen schützen.",
+    "inactive": "doubles"
+  },
+  "as_one_glastrier": {
+    "name": "As One",
+    "name_de": "Reitgespann",
+    "description": "Combines the effects of Unnerve and Chilling Neigh.",
+    "description_de": "Das Pokémon verfügt sowohl über Coronospas Fähigkeit Anspannung als auch über Polaross’ Fähigkeit Helles Wiehern.",
+    "inactive": "mechanic"
+  },
+  "as_one_spectrier": {
+    "name": "As One",
+    "name_de": "Reitgespann",
+    "description": "Combines the effects of Unnerve and Grim Neigh.",
+    "description_de": "Das Pokémon verfügt sowohl über Coronospas Fähigkeit Anspannung als auch über Phantoross’ Fähigkeit Dunkles Wiehern.",
+    "inactive": "mechanic"
+  },
+  "aura_break": {
+    "name": "Aura Break",
+    "name_de": "Aura-Umkehr",
+    "description": "Makes Dark Aura and Fairy Aura weaken moves of their respective types.",
+    "description_de": "Kehrt die Wirkung von Auren um und senkt so die Stärke bestimmter Attacken, anstatt sie zu erhöhen.",
+    "inactive": "todo"
+  },
+  "bad_dreams": {
+    "name": "Bad Dreams",
+    "name_de": "Alptraum",
+    "description": "Damages sleeping opponents for 1/8 their max HP after each turn.",
+    "description_de": "Fügt schlafenden Gegnern Schaden zu.",
+    "inactive": "todo"
+  },
+  "ball_fetch": {
+    "name": "Ball Fetch",
+    "name_de": "Apport",
+    "description": "If the Pokémon is not holding an item, it will fetch the Poké Ball from the first failed throw of the battle.",
+    "description_de": "Trägt das Pokémon kein Item bei sich, hebt es den Ball aus dem ersten gescheiterten Fangversuch des Kampfes wieder auf.",
+    "inactive": "overworld"
+  },
+  "battery": {
+    "name": "Battery",
+    "name_de": "Batterie",
+    "description": "Ally Pokémon's moves have their power increased to 1.3×.",
+    "description_de": "Erhöht die Stärke der Spezial-Attacken seiner Mitstreiter.",
+    "inactive": "doubles"
+  },
+  "battle_armor": {
+    "name": "Battle Armor",
+    "name_de": "Kampfpanzer",
+    "description": "Protects against critical hits.",
+    "description_de": "Wehrt gegnerische Volltreffer mit einem harten Panzer ab.",
+    "inactive": "todo"
+  },
+  "battle_bond": {
+    "name": "Battle Bond",
+    "name_de": "Freundschaftsakt",
+    "description": "Transforms this Pokémon into Ash-Greninja after fainting an opponent. Water Shuriken's power is 20 and always hits three times.",
+    "description_de": "Besiegt es ein Ziel, vertieft dies die Freundschaft zu seinem Trainer, wodurch es die Ash-Form annimmt und sein Wasser-Shuriken stärker wird.",
+    "inactive": "mechanic"
+  },
+  "beads_of_ruin": {
+    "name": "Beads of Ruin",
+    "name_de": "Unheilsjuwelen",
+    "description": "Lowers Special Defense of all Pokémon except itself.",
+    "description_de": "Senkt die Spezial-Verteidigung aller anderen Pokémon.",
+    "inactive": "todo"
+  },
+  "beast_boost": {
+    "name": "Beast Boost",
+    "name_de": "Bestien-Boost",
+    "description": "Raises this Pokémon's highest stat by one stage when it faints another Pokémon.",
+    "description_de": "Erhöht in jeder Runde, in der es ein anderes Pokémon besiegt, seinen höchsten Statuswert.",
+    "inactive": "todo"
+  },
+  "berserk": {
+    "name": "Berserk",
+    "name_de": "Wutausbruch",
+    "description": "Raises this Pokémon's Special Attack by one stage every time its HP drops below half.",
+    "description_de": "Fallen seine KP nach einem Angriff auf die Hälfte des Maximalwerts oder weniger, steigt sein Spezial-Angriff.",
+    "inactive": "todo"
+  },
+  "big_pecks": {
+    "name": "Big Pecks",
+    "name_de": "Brustbieter",
+    "effect": "stat_drop_immune",
+    "stats": [
+      "def"
+    ],
+    "description": "Opponents cannot lower this Pokémon's Defense.",
+    "description_de": "Gegner können die Verteidigung dieses Pokémon nicht senken."
+  },
+  "blaze": {
+    "name": "Blaze",
+    "name_de": "Großbrand",
+    "effect": "low_hp_stab_boost",
+    "type": "fire",
+    "threshold": 0.3333,
+    "multiplier": 1.5,
+    "description": "Fire-type moves deal 50% more damage below 1/3 max HP.",
+    "description_de": "Feuer-Attacken richten unter 1/3 der maximalen KP 50 % mehr Schaden an."
+  },
+  "bulletproof": {
+    "name": "Bulletproof",
+    "name_de": "Kugelsicher",
+    "description": "Protects against bullet, ball, and bomb-based moves.",
+    "description_de": "Kann das Pokémon vor geworfenen kugelförmigen Objekten, wie zum Beispiel Bomben, schützen.",
+    "inactive": "mechanic"
+  },
+  "cheek_pouch": {
+    "name": "Cheek Pouch",
+    "name_de": "Backentaschen",
+    "description": "Restores HP upon eating a Berry, in addition to the Berry's effect.",
+    "description_de": "Regeneriert beim Konsum von Beeren ungeachtet der Beerensorte KP.",
+    "inactive": "todo"
+  },
+  "chilling_neigh": {
+    "name": "Chilling Neigh",
+    "name_de": "Helles Wiehern",
+    "description": "Boosts Attack after knocking out a Pokémon.",
+    "description_de": "Besiegt es ein Pokémon, stößt es ein frostiges Wiehern aus und erhöht damit seinen Angriff.",
+    "inactive": "todo"
+  },
+  "chlorophyll": {
+    "name": "Chlorophyll",
+    "name_de": "Chlorophyll",
+    "description": "Doubles Speed during strong sunlight.",
+    "description_de": "Erhöht bei Sonnenschein die Initiative.",
+    "inactive": "weather"
+  },
+  "clear_body": {
+    "name": "Clear Body",
+    "name_de": "Neutraltorso",
+    "effect": "stat_drop_immune",
+    "description": "Opponents cannot lower this Pokémon's stats.",
+    "description_de": "Gegner können die Statuswerte dieses Pokémon nicht senken."
+  },
+  "cloud_nine": {
+    "name": "Cloud Nine",
+    "name_de": "Wolke Sieben",
+    "description": "Negates all effects of weather, but does not prevent the weather itself.",
+    "description_de": "Hebt alle Wetter-Effekte auf.",
+    "inactive": "weather"
+  },
+  "color_change": {
+    "name": "Color Change",
+    "name_de": "Farbwechsel",
+    "description": "Changes type to match when hit by a damaging move.",
+    "description_de": "Ändert seinen Typ zu dem der Attacke des Angreifers.",
+    "inactive": "todo"
+  },
+  "comatose": {
+    "name": "Comatose",
+    "name_de": "Dauerschlaf",
+    "description": "This Pokémon always acts as though it were Asleep.",
+    "description_de": "Das Pokémon befindet sich ununterbrochen im Halbschlaf und wacht nie vollständig auf. Es kann jedoch im Schlaf angreifen.",
+    "inactive": "mechanic"
+  },
+  "commander": {
+    "name": "Commander",
+    "name_de": "Kommandant",
+    "description": "Goes inside the mouth of an ally Dondozo if one is on the field.",
+    "description_de": "Schlüpft in das Maul eines verbündeten Heerashai, wenn eines auf dem Feld ist.",
+    "inactive": "doubles"
+  },
+  "competitive": {
+    "name": "Competitive",
+    "name_de": "Unbeugsamkeit",
+    "effect": "stat_drop_reaction",
+    "stat": "spa",
+    "stages": 2,
+    "description": "Raises Special Attack by two stages whenever an opponent lowers one of its stats.",
+    "description_de": "Erhöht den Spezial-Angriff um zwei Stufen, wenn ein Gegner einen seiner Statuswerte senkt."
+  },
+  "compound_eyes": {
+    "name": "Compound Eyes",
+    "name_de": "Facettenauge",
+    "description": "Increases moves' accuracy to 1.3×.",
+    "description_de": "Erhöht die Genauigkeit von Attacken.",
+    "inactive": "todo"
+  },
+  "contrary": {
+    "name": "Contrary",
+    "name_de": "Umkehrung",
+    "description": "Inverts stat changes.",
+    "description_de": "Statusveränderungen werden umgekehrt: Statuswerte, die eigentlich erhöht werden sollten, sinken und umgekehrt.",
+    "inactive": "todo"
+  },
+  "corrosion": {
+    "name": "Corrosion",
+    "name_de": "Korrosion",
+    "description": "This Pokémon can inflict poison on Poison and Steel Pokémon.",
+    "description_de": "Kann selbst Pokémon vom Typ Stahl oder Gift vergiften.",
+    "inactive": "todo"
+  },
+  "costar": {
+    "name": "Costar",
+    "name_de": "Synchronauftritt",
+    "description": "Copies ally's stat changes on entering battle.",
+    "description_de": "Übernimmt beim Kampfantritt die Statuswert-Veränderungen eines Mitstreiters.",
+    "inactive": "doubles"
+  },
+  "cotton_down": {
+    "name": "Cotton Down",
+    "name_de": "Wollflaum",
+    "description": "When Ignores moves and abilities that draw in moves.",
+    "description_de": "Wird es von einem Angriff getroffen, verstreut es Teile seines Wollflaums, wodurch die Initiative aller anderen Pokémon sinkt.",
+    "inactive": "todo"
+  },
+  "cud_chew": {
+    "name": "Cud Chew",
+    "name_de": "Wiederkäuer",
+    "description": "Causes the Pokémon to reuse an already consumed Berry at the end of the next turn.",
+    "description_de": "Isst am Ende der nächsten Runde eine bereits verzehrte Beere noch einmal.",
+    "inactive": "todo"
+  },
+  "curious_medicine": {
+    "name": "Curious Medicine",
+    "name_de": "Kuriose Arznei",
+    "description": "Resets all stat changes upon entering battlefield.",
+    "description_de": "Das Pokémon versprüht bei Kampfantritt Arznei aus seiner Muschel, die alle Statusveränderungen auf der Mitstreiterseite aufhebt.",
+    "inactive": "doubles"
+  },
+  "cursed_body": {
+    "name": "Cursed Body",
+    "name_de": "Tastfluch",
+    "description": "Has a 30% chance of Disabling any move that hits the Pokémon.",
+    "description_de": "Blockiert eventuell die Attacke, mit welcher der Angreifer es getroffen hat.",
+    "inactive": "mechanic"
+  },
+  "cute_charm": {
+    "name": "Cute Charm",
+    "name_de": "Charmebolzen",
+    "description": "Has a 30% chance of infatuating attacking Pokémon on contact.",
+    "description_de": "Wird dieses Pokémon durch eine direkte Attacke angegriffen, verliebt sich der Gegner eventuell in es.",
+    "inactive": "mechanic"
+  },
+  "damp": {
+    "name": "Damp",
+    "name_de": "Feuchtigkeit",
+    "description": "Prevents Self-Destruct, Explosion, and Aftermath from working while the Pokémon is in battle.",
+    "description_de": "Befeuchtet die Umgebung und verhindert so den Einsatz von Attacken wie Finale, die Explosionen auslösen.",
+    "inactive": "mechanic"
+  },
+  "dancer": {
+    "name": "Dancer",
+    "name_de": "Tänzer",
+    "description": "Whenever another Pokémon uses a dance move, this Pokémon will use the same move immediately afterwards.",
+    "description_de": "Kann direkt im Anschluss an die Tanz-Attacke eines anderen Pokémon ebenfalls eine solche einsetzen.",
+    "inactive": "doubles"
+  },
+  "dark_aura": {
+    "name": "Dark Aura",
+    "name_de": "Dunkelaura",
+    "description": "Strengthens Dark moves to 1.33× their power for all friendly and opposing Pokémon.",
+    "description_de": "Erhöht die Stärke aller Attacken des Typs Unlicht.",
+    "inactive": "todo"
+  },
+  "dauntless_shield": {
+    "name": "Dauntless Shield",
+    "name_de": "Wackerer Schild",
+    "description": "Boosts Defense in battle.",
+    "description_de": "Erhöht bei Kampfantritt die Verteidigung.",
+    "inactive": "todo"
+  },
+  "dazzling": {
+    "name": "Dazzling",
+    "name_de": "Buntkörper",
+    "description": "Opposing Pokémon cannot use priority attacks.",
+    "description_de": "Überrascht Gegner und hindert sie so daran, Erstschlag-Attacken gegen es einzusetzen.",
+    "inactive": "todo"
+  },
+  "defeatist": {
+    "name": "Defeatist",
+    "name_de": "Schwächling",
+    "description": "Halves Attack and Special Attack at 50% max HP or less.",
+    "description_de": "Fallen seine KP auf die Hälfte des Maximalwerts oder weniger, bekommt es Angst. Dadurch wird die Stärke seines Angriffs und Spezial-Angriffs halbiert.",
+    "inactive": "todo"
+  },
+  "defiant": {
+    "name": "Defiant",
+    "name_de": "Siegeswille",
+    "effect": "stat_drop_reaction",
+    "stat": "atk",
+    "stages": 2,
+    "description": "Raises Attack by two stages whenever an opponent lowers one of its stats.",
+    "description_de": "Erhöht den Angriff um zwei Stufen, wenn ein Gegner einen seiner Statuswerte senkt."
+  },
+  "delta_stream": {
+    "name": "Delta Stream",
+    "name_de": "Delta-Wind",
+    "description": "Creates a mysterious air current, which cannot be replaced and causes moves to never be super effective against Flying Pokémon.",
+    "description_de": "Ändert das Wetter, um die Schwächen des Typs Flug zu beseitigen.",
+    "inactive": "weather"
+  },
+  "desolate_land": {
+    "name": "Desolate Land",
+    "name_de": "Endland",
+    "description": "Creates extremely harsh sunlight, which has all the properties of Sunny Day, cannot be replaced, and causes damaging Water moves to fail.",
+    "description_de": "Ändert das Wetter, um Wasser-Attacken wirkungslos zu machen.",
+    "inactive": "weather"
+  },
+  "disguise": {
+    "name": "Disguise",
+    "name_de": "Kostümspuk",
+    "description": "Prevents the first instance of battle damage.",
+    "description_de": "Kann ein Mal pro Kampf mit seinem gruseligen Kostüm einen Angriff abwehren.",
+    "inactive": "mechanic"
+  },
+  "download": {
+    "name": "Download",
+    "name_de": "Download",
+    "effect": "download",
+    "description": "On entering battle, raises Attack by one stage if the opponent's Defense is lower than its Special Defense, otherwise Special Attack.",
+    "description_de": "Erhöht beim Kampfantritt den Angriff um eine Stufe, wenn die Verteidigung des Gegners niedriger ist als seine Spezial-Verteidigung, sonst den Spezial-Angriff."
+  },
+  "dragonize": {
+    "name": "Dragonize",
+    "name_de": "Drachenschicht",
+    "description": "The Pokémon's Normal-type moves become Dragon-type moves and their power is boosted by 20%.",
+    "description_de": "Normal-Attacken werden zu Drachen-Attacken und um 20 % stärker.",
+    "inactive": "todo"
+  },
+  "dragons_maw": {
+    "name": "Dragon’s Maw",
+    "name_de": "Drachenkiefer",
+    "description": "Powers up Dragon-type moves.",
+    "description_de": "Erhöht die Stärke von Drachen-Attacken.",
+    "inactive": "todo"
+  },
+  "drizzle": {
+    "name": "Drizzle",
+    "name_de": "Niesel",
+    "description": "Summons rain that lasts indefinitely upon entering battle.",
+    "description_de": "Ruft bei Kampfantritt Regen herbei.",
+    "inactive": "weather"
+  },
+  "drought": {
+    "name": "Drought",
+    "name_de": "Dürre",
+    "description": "Summons strong sunlight that lasts indefinitely upon entering battle.",
+    "description_de": "Erzeugt bei Kampfantritt gleißendes Sonnenlicht.",
+    "inactive": "weather"
+  },
+  "dry_skin": {
+    "name": "Dry Skin",
+    "name_de": "Trockenheit",
+    "effect": "absorb",
+    "type": "water",
+    "heal": 0.25,
+    "weak_to": {
+      "type": "fire",
+      "multiplier": 1.25
+    },
+    "description": "Water moves heal it by 1/4 of its max HP instead of dealing damage; Fire moves deal 1.25× damage. (Weather does not exist in this battle system.)",
+    "description_de": "Wasser-Attacken heilen es um 1/4 seiner max. KP, statt Schaden anzurichten; Feuer-Attacken richten 1,25× Schaden an. (Wetter gibt es in diesem Kampfsystem nicht.)"
+  },
+  "early_bird": {
+    "name": "Early Bird",
+    "name_de": "Frühwecker",
+    "description": "Makes sleep pass twice as quickly.",
+    "description_de": "Wenn es eingeschlafen ist, kann es doppelt so schnell wieder aufwachen wie andere Pokémon.",
+    "inactive": "todo"
+  },
+  "earth_eater": {
+    "name": "Earth Eater",
+    "name_de": "Bodenschmaus",
+    "effect": "absorb",
+    "type": "ground",
+    "heal": 0.25,
+    "description": "Ground moves heal it by 1/4 of its max HP instead of dealing damage.",
+    "description_de": "Boden-Attacken heilen es um 1/4 seiner max. KP, statt Schaden anzurichten."
+  },
+  "effect_spore": {
+    "name": "Effect Spore",
+    "name_de": "Sporenwolke",
+    "effect": "contact_status",
+    "statuses": [
+      "poison",
+      "paralysis",
+      "sleep"
+    ],
+    "chance": 30,
+    "description": "30% chance to poison, paralyze, or put the attacker to sleep on a physical hit.",
+    "description_de": "30 % Chance, den Angreifer bei einem physischen Treffer zu vergiften, zu paralysieren oder einzuschläfern."
+  },
+  "electric_surge": {
+    "name": "Electric Surge",
+    "name_de": "Elektro-Erzeuger",
+    "description": "When this Pokémon enters battle, it changes the terrain to Electric Terrain.",
+    "description_de": "Erzeugt bei Kampfantritt ein Elektrofeld.",
+    "inactive": "weather"
+  },
+  "electromorphosis": {
+    "name": "Electromorphosis",
+    "name_de": "Dynamo",
+    "description": "When hit by an attack, the power of the next Electric-type move it uses is doubled.",
+    "description_de": "Wird es von einer Attacke getroffen, verdoppelt sich die Stärke seiner nächsten Elektro-Attacke.",
+    "inactive": "todo"
+  },
+  "embody_aspect": {
+    "name": "Embody Aspect",
+    "name_de": "Erinnerungskraft",
+    "description": "Embody Aspect boosts a particular stat, depending on the form of a Terastallized Ogerpon",
+    "description_de": "Erhöht je nach Form des terakristallisierten Ogerpon einen bestimmten Statuswert.",
+    "inactive": "mechanic"
+  },
+  "emergency_exit": {
+    "name": "Emergency Exit",
+    "name_de": "Rückzug",
+    "description": "This Pokémon automatically switches out when its HP drops below half.",
+    "description_de": "Fallen seine KP auf die Hälfte des Maximalwerts oder weniger, bringt es sich in Sicherheit.",
+    "inactive": "mechanic"
+  },
+  "fairy_aura": {
+    "name": "Fairy Aura",
+    "name_de": "Feenaura",
+    "description": "Strengthens Fairy moves to 1.33× their power for all friendly and opposing Pokémon.",
+    "description_de": "Erhöht die Stärke aller Attacken des Typs Fee.",
+    "inactive": "todo"
+  },
+  "filter": {
+    "name": "Filter",
+    "name_de": "Filter",
+    "description": "Decreases damage taken from super-effective moves by 1/4.",
+    "description_de": "Reduziert die Stärke von sehr effektiven Attacken und verringert damit den Schaden, den das Pokémon durch sie erleidet.",
+    "inactive": "todo"
+  },
+  "flame_body": {
+    "name": "Flame Body",
+    "name_de": "Flammkörper",
+    "effect": "contact_status",
+    "statuses": [
+      "burn"
+    ],
+    "chance": 30,
+    "description": "30% chance to burn the attacker on a physical hit.",
+    "description_de": "30 % Chance, den Angreifer bei einem physischen Treffer zu verbrennen."
+  },
+  "flare_boost": {
+    "name": "Flare Boost",
+    "name_de": "Hitzewahn",
+    "description": "Increases Special Attack to 1.5× when burned.",
+    "description_de": "Erhöht bei Verbrennungen die Stärke von Spezial-Attacken.",
+    "inactive": "todo"
+  },
+  "flash_fire": {
+    "name": "Flash Fire",
+    "name_de": "Feuerfänger",
+    "effect": "flash_fire",
+    "type": "fire",
+    "multiplier": 1.5,
+    "description": "Immune to Fire moves; once hit by one, its own Fire moves deal 1.5× damage until it leaves the battle.",
+    "description_de": "Immun gegen Feuer-Attacken; nach einem Treffer richten seine eigenen Feuer-Attacken 1,5× Schaden an, bis es den Kampf verlässt."
+  },
+  "flower_gift": {
+    "name": "Flower Gift",
+    "name_de": "Pflanzengabe",
+    "description": "Increases friendly Pokémon's Attack and Special Defense to 1.5× during strong sunlight.",
+    "description_de": "Erhöht bei Sonnenschein den Angriff und die Spezial-Verteidigung aller Team-Pokémon.",
+    "inactive": "weather"
+  },
+  "flower_veil": {
+    "name": "Flower Veil",
+    "name_de": "Blütenhülle",
+    "description": "Protects friendly Grass Pokémon from having their stats lowered by other Pokémon.",
+    "description_de": "Schützt Mitstreiter vom Typ Pflanze vor dem Senken ihrer Statuswerte sowie vor Statusproblemen.",
+    "inactive": "doubles"
+  },
+  "fluffy": {
+    "name": "Fluffy",
+    "name_de": "Flauschigkeit",
+    "description": "Damage from contact moves is halved. Damage from Fire moves is doubled.",
+    "description_de": "Halbiert den Schaden, den es durch direkte Attacken nimmt, aber verdoppelt dafür den durch Feuer-Attacken erlittenen Schaden.",
+    "inactive": "todo"
+  },
+  "forecast": {
+    "name": "Forecast",
+    "name_de": "Prognose",
+    "description": "Changes Castform's type and form to match the weather.",
+    "description_de": "Nimmt je nach Wetter entweder den Typ Wasser, Feuer oder Eis an.",
+    "inactive": "weather"
+  },
+  "forewarn": {
+    "name": "Forewarn",
+    "name_de": "Vorwarnung",
+    "description": "Reveals the opponents' strongest move upon entering battle.",
+    "description_de": "Gibt bei Kampfantritt Auskunft über eine Attacke aus dem gegnerischen Repertoire.",
+    "inactive": "todo"
+  },
+  "friend_guard": {
+    "name": "Friend Guard",
+    "name_de": "Freundeshut",
+    "description": "Decreases all direct damage taken by friendly Pokémon to 0.75×.",
+    "description_de": "Kann den Schaden, den Mitstreiter erleiden, verringern.",
+    "inactive": "doubles"
+  },
+  "frisk": {
+    "name": "Frisk",
+    "name_de": "Schnüffler",
+    "description": "Reveals an opponent's held item upon entering battle.",
+    "description_de": "Kann bei Kampfantritt Auskunft über das vom Gegner getragene Item geben.",
+    "inactive": "todo"
+  },
+  "full_metal_body": {
+    "name": "Full Metal Body",
+    "name_de": "Metallprotektor",
+    "effect": "stat_drop_immune",
+    "description": "Opponents cannot lower this Pokémon's stats.",
+    "description_de": "Gegner können die Statuswerte dieses Pokémon nicht senken."
+  },
+  "fur_coat": {
+    "name": "Fur Coat",
+    "name_de": "Fellkleid",
+    "description": "Halves damage from physical attacks.",
+    "description_de": "Halbiert den Schaden, den das Pokémon durch physische Attacken erleidet.",
+    "inactive": "todo"
+  },
+  "gale_wings": {
+    "name": "Gale Wings",
+    "name_de": "Orkanschwingen",
+    "description": "Raises Flying moves' priority by one stage.",
+    "description_de": "Kann bei vollen KP einen Erstschlag mit Flug-Attacken ermöglichen.",
+    "inactive": "todo"
+  },
+  "galvanize": {
+    "name": "Galvanize",
+    "name_de": "Elektrohaut",
+    "description": "This Pokémon's Normal moves are Electric and have their power increased to 1.2×.",
+    "description_de": "Attacken vom Typ Normal nehmen den Typ Elektro an und ihre Stärke erhöht sich ein wenig.",
+    "inactive": "todo"
+  },
+  "gluttony": {
+    "name": "Gluttony",
+    "name_de": "Völlerei",
+    "description": "Makes the Pokémon eat any held Berry triggered by low HP below 1/2 its max HP.",
+    "description_de": "Setzt bestimmte Beeren nicht erst in einer Notlage ein, sondern bereits dann, wenn seine KP auf die Hälfte des Maximalwerts fallen.",
+    "inactive": "todo"
+  },
+  "good_as_gold": {
+    "name": "Good as Gold",
+    "name_de": "Goldkörper",
+    "description": "Gives immunity to status moves.",
+    "description_de": "Immun gegen Status-Attacken.",
+    "inactive": "todo"
+  },
+  "gooey": {
+    "name": "Gooey",
+    "name_de": "Viskosität",
+    "description": "Lowers attacking Pokémon's Speed by one stage on contact.",
+    "description_de": "Senkt bei Berührung im Zuge eines Angriffs die Initiative des Angreifers.",
+    "inactive": "todo"
+  },
+  "gorilla_tactics": {
+    "name": "Gorilla Tactics",
+    "name_de": "Affenfokus",
+    "description": "Boosts the Pokémon's Attack stat but only allows the use of the first selected move.",
+    "description_de": "Erhöht den Angriff, aber nur die zuerst gewählte Attacke kann eingesetzt werden.",
+    "inactive": "todo"
+  },
+  "grass_pelt": {
+    "name": "Grass Pelt",
+    "name_de": "Pflanzenpelz",
+    "description": "Boosts Defense while Grassy Terrain is in effect.",
+    "description_de": "Erhöht die Verteidigung, wenn Grasfeld aktiv ist.",
+    "inactive": "weather"
+  },
+  "grassy_surge": {
+    "name": "Grassy Surge",
+    "name_de": "Gras-Erzeuger",
+    "description": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+    "description_de": "Erzeugt bei Kampfantritt ein Grasfeld.",
+    "inactive": "weather"
+  },
+  "grim_neigh": {
+    "name": "Grim Neigh",
+    "name_de": "Dunkles Wiehern",
+    "description": "Boosts Special Attack after knocking out a Pokémon.",
+    "description_de": "Besiegt es ein Pokémon, stößt es ein furchteinflößendes Wiehern aus und erhöht damit seinen Spezial-Angriff.",
+    "inactive": "todo"
+  },
+  "guard_dog": {
+    "name": "Guard Dog",
+    "name_de": "Wachhund",
+    "effect": "guard_dog",
+    "description": "Intimidate raises its Attack by one stage instead of lowering it.",
+    "description_de": "Bedroher erhöht seinen Angriff um eine Stufe, statt ihn zu senken."
+  },
+  "gulp_missile": {
+    "name": "Gulp Missile",
+    "name_de": "Würggeschoss",
+    "description": "If a Cramorant with Gulp Missile uses Surf or Dive, it catches prey and changes its form depending on its remaining HP.",
+    "description_de": "Wenn das Pokémon Surfer oder Taucher einsetzt, fängt es sich dabei Beute. Erleidet es anschließend Schaden, greift es an, indem es die Beute wieder ausspuckt.",
+    "inactive": "mechanic"
+  },
+  "guts": {
+    "name": "Guts",
+    "name_de": "Adrenalin",
+    "effect": "guts",
+    "multiplier": 1.5,
+    "description": "Burn no longer halves Attack, and any status instead boosts it by 50%.",
+    "description_de": "Verbrennung halbiert den Angriffswert nicht mehr, und jeder Status erhöht ihn stattdessen um 50 %."
+  },
+  "hadron_engine": {
+    "name": "Hadron Engine",
+    "name_de": "Hadronen-Motor",
+    "description": "Creates an Electric Terrain when entering battle, and boosts Special Attack while active.",
+    "description_de": "Erzeugt beim Kampfantritt ein Elektrofeld und erhöht darauf den Spezial-Angriff.",
+    "inactive": "weather"
+  },
+  "harvest": {
+    "name": "Harvest",
+    "name_de": "Reiche Ernte",
+    "description": "Has a 50% chance of restoring a used Berry after each turn if the Pokémon has held no items in the meantime.",
+    "description_de": "Dieselbe Beere kann mehrmals verwendet werden.",
+    "inactive": "weather"
+  },
+  "healer": {
+    "name": "Healer",
+    "name_de": "Heilherz",
+    "description": "Has a 30% chance of curing each adjacent ally of any major status ailment after each turn.",
+    "description_de": "Befreit Mitstreiter gelegentlich von Statusproblemen.",
+    "inactive": "doubles"
+  },
+  "heatproof": {
+    "name": "Heatproof",
+    "name_de": "Hitzeschutz",
+    "description": "Halves damage from Fire moves and burns.",
+    "description_de": "Sein Hitze abweisender Körper halbiert den durch Feuer-Attacken erlittenen Schaden.",
+    "inactive": "todo"
+  },
+  "heavy_metal": {
+    "name": "Heavy Metal",
+    "name_de": "Schwermetall",
+    "description": "Doubles the Pokémon's weight.",
+    "description_de": "Verdoppelt das eigene Gewicht.",
+    "inactive": "mechanic"
+  },
+  "honey_gather": {
+    "name": "Honey Gather",
+    "name_de": "Honigmaul",
+    "description": "The Pokémon may pick up Honey after battle.",
+    "description_de": "Das Pokémon sammelt nach Kämpfen eventuell Honig auf.",
+    "inactive": "overworld"
+  },
+  "hospitality": {
+    "name": "Hospitality",
+    "name_de": "Gastlichkeit",
+    "description": "When a Pokémon with Hospitality enters a battle, it restores HP for an ally by 25%.",
+    "description_de": "Heilt beim Kampfantritt einen Mitstreiter um ein Viertel seiner KP.",
+    "inactive": "doubles"
+  },
+  "huge_power": {
+    "name": "Huge Power",
+    "name_de": "Kraftkoloss",
+    "description": "Doubles Attack in battle.",
+    "description_de": "Verdoppelt die Stärke von physischen Attacken.",
+    "inactive": "todo"
+  },
+  "hunger_switch": {
+    "name": "Hunger Switch",
+    "name_de": "Heißhunger",
+    "description": "Causes Morpeko to change its form each turn, alternating between Full Belly Mode and Hangry Mode",
+    "description_de": "Das Pokémon ändert zum Ende jeder Runde seine Form und wechselt somit zwischen dem Pappsatt- und dem Kohldampfmuster.",
+    "inactive": "mechanic"
+  },
+  "hustle": {
+    "name": "Hustle",
+    "name_de": "Übereifer",
+    "description": "Strengthens physical moves to inflict 1.5× damage, but decreases their accuracy to 0.8×.",
+    "description_de": "Erhöht den Angriffs-Wert, aber senkt die Genauigkeit.",
+    "inactive": "todo"
+  },
+  "hydration": {
+    "name": "Hydration",
+    "name_de": "Hydration",
+    "description": "Cures any major status ailment after each turn during rain.",
+    "description_de": "Heilt bei Regen Statusprobleme.",
+    "inactive": "weather"
+  },
+  "hyper_cutter": {
+    "name": "Hyper Cutter",
+    "name_de": "Scherenmacht",
+    "effect": "stat_drop_immune",
+    "stats": [
+      "atk"
+    ],
+    "description": "Opponents cannot lower this Pokémon's Attack.",
+    "description_de": "Gegner können den Angriff dieses Pokémon nicht senken."
+  },
+  "ice_body": {
+    "name": "Ice Body",
+    "name_de": "Eishaut",
+    "description": "Heals for 1/16 max HP after each turn during hail. Protects against hail damage.",
+    "description_de": "Regeneriert bei Hagel nach und nach KP.",
+    "inactive": "weather"
+  },
+  "ice_face": {
+    "name": "Ice Face",
+    "name_de": "Tiefkühlkopf",
+    "description": "The Pokémon’s ice head can take a physical attack as a substitute, but the attack also changes the Pokémon’s appearance. The ice will be restored when it snows.",
+    "description_de": "Der Eisblock um seinen Kopf blockt eine physische Attacke ab. Dies bewirkt jedoch einen Formwechsel. Durch Hagel wird der Eisblock wiederhergestellt.",
+    "inactive": "mechanic"
+  },
+  "ice_scales": {
+    "name": "Ice Scales",
+    "name_de": "Eisflügelstaub",
+    "description": "Halves damage from Special moves.",
+    "description_de": "Halbiert mithilfe von schützendem Eisflügelstaub den Schaden, den das Pokémon durch Spezial-Attacken erleidet.",
+    "inactive": "todo"
+  },
+  "illuminate": {
+    "name": "Illuminate",
+    "name_de": "Erleuchtung",
+    "description": "Doubles the wild encounter rate.",
+    "description_de": "Erhellt die Umgebung und erhöht dadurch die Wahrscheinlichkeit, wilden Pokémon zu begegnen.",
+    "inactive": "overworld"
+  },
+  "illusion": {
+    "name": "Illusion",
+    "name_de": "Trugbild",
+    "description": "Takes the appearance of the last conscious party Pokémon upon being sent out until hit by a damaging move.",
+    "description_de": "Führt den Gegner hinters Licht, indem es bei Kampfantritt die Gestalt des Pokémon an der letzten Stelle im Team annimmt.",
+    "inactive": "mechanic"
+  },
+  "immunity": {
+    "name": "Immunity",
+    "name_de": "Immunität",
+    "effect": "status_immune",
+    "statuses": [
+      "poison",
+      "toxic"
+    ],
+    "description": "Cannot be poisoned (not even badly).",
+    "description_de": "Kann nicht vergiftet werden (auch nicht schwer)."
+  },
+  "imposter": {
+    "name": "Imposter",
+    "name_de": "Doppelgänger",
+    "description": "Transforms upon entering battle.",
+    "description_de": "Kämpft als Kopie seines Gegenübers.",
+    "inactive": "mechanic"
+  },
+  "infiltrator": {
+    "name": "Infiltrator",
+    "name_de": "Schwebedurch",
+    "description": "Bypasses Light Screen, Reflect, and Safeguard.",
+    "description_de": "Überwindet gegnerische Schilde sowie Delegatoren und greift an.",
+    "inactive": "mechanic"
+  },
+  "innards_out": {
+    "name": "Innards Out",
+    "name_de": "Magenkrempler",
+    "description": "When this Pokémon faints from an opponent's move, that opponent takes damage equal to the HP this Pokémon had remaining.",
+    "description_de": "Wird es durch eine Attacke besiegt, fügt es dem Angreifer Schaden in Höhe des KP-Werts zu, den es besaß, bevor es kampfunfähig wurde.",
+    "inactive": "todo"
+  },
+  "inner_focus": {
+    "name": "Inner Focus",
+    "name_de": "Konzentrator",
+    "effect": "inner_focus",
+    "description": "Cannot flinch and is not affected by Intimidate.",
+    "description_de": "Kann nicht zurückschrecken und wird von Bedroher nicht beeinflusst."
+  },
+  "insomnia": {
+    "name": "Insomnia",
+    "name_de": "Insomnia",
+    "effect": "status_immune",
+    "statuses": [
+      "sleep"
+    ],
+    "description": "Cannot fall asleep.",
+    "description_de": "Kann nicht in Schlaf versetzt werden."
+  },
+  "intimidate": {
+    "name": "Intimidate",
+    "name_de": "Bedroher",
+    "effect": "intimidate",
+    "description": "Lowers the opponent's Attack by one stage when entering battle.",
+    "description_de": "Senkt beim Kampfantritt den Angriff des Gegners um eine Stufe."
+  },
+  "intrepid_sword": {
+    "name": "Intrepid Sword",
+    "name_de": "Kühnes Schwert",
+    "description": "Boosts Attack in battle.",
+    "description_de": "Erhöht bei Kampfantritt den Angriff.",
+    "inactive": "todo"
+  },
+  "iron_barbs": {
+    "name": "Iron Barbs",
+    "name_de": "Eisenstachel",
+    "description": "Damages attacking Pokémon for 1/8 their max HP on contact.",
+    "description_de": "Fügt dem Angreifer bei Berührung mit eisernen Stacheln Schaden zu.",
+    "inactive": "todo"
+  },
+  "iron_fist": {
+    "name": "Iron Fist",
+    "name_de": "Eisenfaust",
+    "description": "Strengthens punch-based moves to 1.2× their power.",
+    "description_de": "Erhöht die Stärke von Hieb-, Punch-, Faust- und Schlag-Attacken.",
+    "inactive": "mechanic"
+  },
+  "justified": {
+    "name": "Justified",
+    "name_de": "Redlichkeit",
+    "description": "Raises Attack one stage upon taking damage from a Dark move.",
+    "description_de": "Wird es von einer Unlicht-Attacke getroffen, meldet sich sein Sinn für Gerechtigkeit zu Wort und sein Angriff steigt.",
+    "inactive": "todo"
+  },
+  "keen_eye": {
+    "name": "Keen Eye",
+    "name_de": "Adlerauge",
+    "description": "Prevents accuracy from being lowered.",
+    "description_de": "Sein scharfer Blick hindert Angreifer daran, seine Genauigkeit zu senken.",
+    "inactive": "mechanic"
+  },
+  "klutz": {
+    "name": "Klutz",
+    "name_de": "Tollpatsch",
+    "description": "Prevents the Pokémon from using its held item in battle.",
+    "description_de": "Das Pokémon kann keine getragenen Items verwenden.",
+    "inactive": "todo"
+  },
+  "leaf_guard": {
+    "name": "Leaf Guard",
+    "name_de": "Floraschild",
+    "description": "Protects against major status ailments during strong sunlight.",
+    "description_de": "Verhindert bei Sonnenschein Statusprobleme.",
+    "inactive": "weather"
+  },
+  "levitate": {
+    "name": "Levitate",
+    "name_de": "Schwebe",
+    "effect": "type_immune",
+    "type": "ground",
+    "description": "Immune to Ground-type moves.",
+    "description_de": "Immun gegen Boden-Attacken."
+  },
+  "libero": {
+    "name": "Libero",
+    "name_de": "Libero",
+    "description": "Libero changes the Pokémon's type to that of its previously used attack.",
+    "description_de": "Das Pokémon nimmt bei Einsatz einer Attacke deren Typ an.",
+    "inactive": "mechanic"
+  },
+  "light_metal": {
+    "name": "Light Metal",
+    "name_de": "Leichtmetall",
+    "description": "Halves the Pokémon's weight.",
+    "description_de": "Halbiert das eigene Gewicht.",
+    "inactive": "mechanic"
+  },
+  "lightning_rod": {
+    "name": "Lightning Rod",
+    "name_de": "Blitzfänger",
+    "effect": "absorb",
+    "type": "electric",
+    "stat": "spa",
+    "stages": 1,
+    "description": "Electric moves raise its Special Attack by one stage instead of dealing damage.",
+    "description_de": "Elektro-Attacken erhöhen seinen Spezial-Angriff um eine Stufe, statt Schaden anzurichten."
+  },
+  "limber": {
+    "name": "Limber",
+    "name_de": "Flexibilität",
+    "effect": "status_immune",
+    "statuses": [
+      "paralysis"
+    ],
+    "description": "Cannot be paralyzed.",
+    "description_de": "Kann nicht paralysiert werden."
+  },
+  "lingering_aroma": {
+    "name": "Lingering Aroma",
+    "name_de": "Duftschwade",
+    "description": "Contact changes the attacker's Ability to Lingering Aroma.",
+    "description_de": "Berührt ein Angreifer das Pokémon, wird seine Fähigkeit zu Duftschwade.",
+    "inactive": "mechanic"
+  },
+  "liquid_ooze": {
+    "name": "Liquid Ooze",
+    "name_de": "Kloakensoße",
+    "description": "Damages opponents using leeching moves for as much as they would heal.",
+    "description_de": "Angreifer, die durch Saug-Attacken Kloakensoße in sich aufgenommen haben, nehmen durch deren widerwärtigen Gestank Schaden.",
+    "inactive": "todo"
+  },
+  "liquid_voice": {
+    "name": "Liquid Voice",
+    "name_de": "Plätscherstimme",
+    "description": "Sound-based moves become Water-type.",
+    "description_de": "Bewirkt, dass alle Lärm-Attacken des Pokémon den Typ Wasser annehmen.",
+    "inactive": "mechanic"
+  },
+  "long_reach": {
+    "name": "Long Reach",
+    "name_de": "Langstrecke",
+    "description": "This Pokémon's moves do not make contact.",
+    "description_de": "Ermöglicht dem Pokémon den Einsatz aller seiner Attacken, ohne das Ziel dabei direkt zu berühren.",
+    "inactive": "mechanic"
+  },
+  "magic_bounce": {
+    "name": "Magic Bounce",
+    "name_de": "Magiespiegel",
+    "description": "Reflects most non-damaging moves back at their user.",
+    "description_de": "Lenkt Status-Attacken auf den Angreifer um, ohne selbst von ihnen getroffen zu werden.",
+    "inactive": "todo"
+  },
+  "magic_guard": {
+    "name": "Magic Guard",
+    "name_de": "Magieschild",
+    "description": "Protects against damage not directly caused by a move.",
+    "description_de": "Das Pokémon nimmt nur durch Offensiv-Attacken Schaden.",
+    "inactive": "todo"
+  },
+  "magician": {
+    "name": "Magician",
+    "name_de": "Zauberer",
+    "description": "Steals the target's held item when the bearer uses a damaging move.",
+    "description_de": "Trifft das Pokémon ein Ziel mit einer Attacke, kann es ihm dabei sein Item stehlen.",
+    "inactive": "mechanic"
+  },
+  "magma_armor": {
+    "name": "Magma Armor",
+    "name_de": "Magmapanzer",
+    "effect": "status_immune",
+    "statuses": [
+      "freeze"
+    ],
+    "description": "Cannot be frozen.",
+    "description_de": "Kann nicht eingefroren werden."
+  },
+  "magnet_pull": {
+    "name": "Magnet Pull",
+    "name_de": "Magnetfalle",
+    "description": "Prevents Steel opponents from fleeing or switching out.",
+    "description_de": "Hindert Stahl-Pokémon durch Magnetismus an der Flucht.",
+    "inactive": "mechanic"
+  },
+  "marvel_scale": {
+    "name": "Marvel Scale",
+    "name_de": "Notschutz",
+    "description": "Increases Defense to 1.5× with a major status ailment.",
+    "description_de": "Bei Statusproblemen schützt es sich mit mysteriösen Schuppen und erhöht so seine Verteidigung.",
+    "inactive": "todo"
+  },
+  "mega_launcher": {
+    "name": "Mega Launcher",
+    "name_de": "Megawumme",
+    "description": "Strengthens aura and pulse moves to 1.5× their power.",
+    "description_de": "Erhöht die Stärke einiger Wellen-, Aura- und Puls-Attacken.",
+    "inactive": "mechanic"
+  },
+  "mega_sol": {
+    "name": "Mega Sol",
+    "name_de": "Mega-Solarladung",
+    "description": "The Pokémon can use its moves as if the weather were harsh sunlight.",
+    "description_de": "Setzt Attacken ein, als würde die Sonne grell scheinen.",
+    "inactive": "weather"
+  },
+  "merciless": {
+    "name": "Merciless",
+    "name_de": "Quälerei",
+    "description": "This Pokémon's moves critical hit against poisoned targets.",
+    "description_de": "Sorgt bei Angriffen auf vergiftete Ziele für Volltreffergarantie.",
+    "inactive": "todo"
+  },
+  "mimicry": {
+    "name": "Mimicry",
+    "name_de": "Mimese",
+    "description": "Changes type depending on the terrain.",
+    "description_de": "Der Typ des Pokémon ändert sich in Abhängigkeit vom Zustand des Feldes.",
+    "inactive": "weather"
+  },
+  "minds_eye": {
+    "name": "Mind’s Eye",
+    "name_de": "Geistiges Auge",
+    "description": "The Pokémon ignores changes to opponents' evasiveness, its accuracy can't be lowered, and it can hit Ghost types with Normal- and Fighting-type moves.",
+    "description_de": "Ignoriert Fluchtwert-Änderungen des Gegners, die eigene Genauigkeit kann nicht sinken, und Normal- und Kampf-Attacken treffen Geister-Pokémon.",
+    "inactive": "mechanic"
+  },
+  "minus": {
+    "name": "Minus",
+    "name_de": "Minus",
+    "description": "Increases Special Attack to 1.5× when a friendly Pokémon has Plus or Minus.",
+    "description_de": "Erhöht den Spezial-Angriff, wenn das Pokémon einen Mitstreiter mit der Fähigkeit Plus oder Minus hat.",
+    "inactive": "doubles"
+  },
+  "mirror_armor": {
+    "name": "Mirror Armor",
+    "name_de": "Spiegelrüstung",
+    "description": "Reflects any stat-lowering effects.",
+    "description_de": "Lenkt ausschließlich Effekte, welche die Statuswerte des Pokémon senken würden, auf den Angreifer um.",
+    "inactive": "todo"
+  },
+  "misty_surge": {
+    "name": "Misty Surge",
+    "name_de": "Nebel-Erzeuger",
+    "description": "When this Pokémon enters battle, it changes the terrain to Misty Terrain.",
+    "description_de": "Erzeugt bei Kampfantritt ein Nebelfeld.",
+    "inactive": "weather"
+  },
+  "mold_breaker": {
+    "name": "Mold Breaker",
+    "name_de": "Überbrückung",
+    "description": "Bypasses targets' abilities if they could hinder or prevent a move.",
+    "description_de": "Attacken können ungeachtet der Fähigkeiten des Zieles verwendet werden.",
+    "inactive": "todo"
+  },
+  "moody": {
+    "name": "Moody",
+    "name_de": "Gefühlswippe",
+    "description": "Raises a random stat two stages and lowers another one stage after each turn.",
+    "description_de": "Erhöht in jeder Runde aufs Neue einen Statuswert stark und senkt einen anderen.",
+    "inactive": "todo"
+  },
+  "motor_drive": {
+    "name": "Motor Drive",
+    "name_de": "Starthilfe",
+    "effect": "absorb",
+    "type": "electric",
+    "stat": "spe",
+    "stages": 1,
+    "description": "Electric moves raise its Speed by one stage instead of dealing damage.",
+    "description_de": "Elektro-Attacken erhöhen seine Initiative um eine Stufe, statt Schaden anzurichten."
+  },
+  "moxie": {
+    "name": "Moxie",
+    "name_de": "Hochmut",
+    "description": "Raises Attack one stage upon KOing a Pokémon.",
+    "description_de": "Besiegt es ein Pokémon, steigt sein Selbstvertrauen und somit auch sein Angriff.",
+    "inactive": "todo"
+  },
+  "multiscale": {
+    "name": "Multiscale",
+    "name_de": "Multischuppe",
+    "description": "Halves damage taken from full HP.",
+    "description_de": "Verringert den erlittenen Schaden bei vollen KP.",
+    "inactive": "todo"
+  },
+  "multitype": {
+    "name": "Multitype",
+    "name_de": "Variabilität",
+    "description": "Changes Arceus's type and form to match its held Plate.",
+    "description_de": "Das Pokémon passt seinen Typ dem der getragenen Tafel bzw. des getragenen Z-Kristalls an.",
+    "inactive": "mechanic"
+  },
+  "mummy": {
+    "name": "Mummy",
+    "name_de": "Mumie",
+    "description": "Changes attacking Pokémon's abilities to Mummy on contact.",
+    "description_de": "Überträgt bei Berührung die Fähigkeit Mumie auf den Angreifer.",
+    "inactive": "mechanic"
+  },
+  "mycelium_might": {
+    "name": "Mycelium Might",
+    "name_de": "Myzelienkraft",
+    "description": "Status moves go last, but are not affected by the opponent's ability.",
+    "description_de": "Status-Attacken werden zuletzt ausgeführt, ignorieren dafür aber die Fähigkeit des Ziels.",
+    "inactive": "todo"
+  },
+  "natural_cure": {
+    "name": "Natural Cure",
+    "name_de": "Innere Kraft",
+    "description": "Cures any major status ailment upon switching out.",
+    "description_de": "Wird das Pokémon ausgewechselt, werden seine Statusprobleme geheilt.",
+    "inactive": "todo"
+  },
+  "neuroforce": {
+    "name": "Neuroforce",
+    "name_de": "Zerebralmacht",
+    "description": "Increases super-effective damage dealt to 1.25×.",
+    "description_de": "Erhöht die Stärke von sehr effektiven Attacken.",
+    "inactive": "todo"
+  },
+  "neutralizing_gas": {
+    "name": "Neutralizing Gas",
+    "name_de": "Reaktionsgas",
+    "description": "Neutralizes abilities of all Pokémon in battle.",
+    "description_de": "Solange ein Pokémon mit der Fähigkeit Reaktionsgas am Kampf beteiligt ist, werden die Fähigkeiten aller anderen Pokémon unterdrückt oder aufgehoben.",
+    "inactive": "mechanic"
+  },
+  "no_guard": {
+    "name": "No Guard",
+    "name_de": "Schildlos",
+    "description": "Ensures all moves used by and against the Pokémon hit.",
+    "description_de": "Alle Attacken des oder auf das Pokémon gelingen aufgrund seiner deckungslosen Kampftaktik.",
+    "inactive": "todo"
+  },
+  "normalize": {
+    "name": "Normalize",
+    "name_de": "Regulierung",
+    "description": "Makes the Pokémon's moves all act Normal-type.",
+    "description_de": "Alle Attacken des Pokémon nehmen den Typ Normal an und ihre Stärke erhöht sich ein wenig.",
+    "inactive": "todo"
+  },
+  "oblivious": {
+    "name": "Oblivious",
+    "name_de": "Dösigkeit",
+    "effect": "intimidate_immune",
+    "description": "Not affected by Intimidate. (Infatuation and Taunt do not exist in this battle system.)",
+    "description_de": "Wird von Bedroher nicht beeinflusst. (Anziehung und Verhöhner gibt es in diesem Kampfsystem nicht.)"
+  },
+  "opportunist": {
+    "name": "Opportunist",
+    "name_de": "Profiteur",
+    "description": "Copies stat boosts by the opponent.",
+    "description_de": "Kopiert Statuswert-Erhöhungen des Gegners.",
+    "inactive": "todo"
+  },
+  "orichalcum_pulse": {
+    "name": "Orichalcum Pulse",
+    "name_de": "Orichalkum-Puls",
+    "description": "Turns the sunlight harsh when entering battle, and boosts Attack while active.",
+    "description_de": "Lässt beim Kampfantritt die Sonne grell scheinen und erhöht dabei den Angriff.",
+    "inactive": "weather"
+  },
+  "overcoat": {
+    "name": "Overcoat",
+    "name_de": "Partikelschutz",
+    "description": "Protects against damage from weather.",
+    "description_de": "Nimmt weder durch Wetterlagen wie Sandsturm oder Hagel noch durch Pulver oder Puder Schaden.",
+    "inactive": "weather"
+  },
+  "overgrow": {
+    "name": "Overgrow",
+    "name_de": "Überwuchs",
+    "effect": "low_hp_stab_boost",
+    "type": "grass",
+    "threshold": 0.3333,
+    "multiplier": 1.5,
+    "description": "Grass-type moves deal 50% more damage below 1/3 max HP.",
+    "description_de": "Pflanzen-Attacken richten unter 1/3 der maximalen KP 50 % mehr Schaden an."
+  },
+  "own_tempo": {
+    "name": "Own Tempo",
+    "name_de": "Tempomacher",
+    "effect": "intimidate_immune",
+    "description": "Not affected by Intimidate. (Confusion does not exist in this battle system.)",
+    "description_de": "Wird von Bedroher nicht beeinflusst. (Verwirrung gibt es in diesem Kampfsystem nicht.)"
+  },
+  "parental_bond": {
+    "name": "Parental Bond",
+    "name_de": "Familienbande",
+    "description": "Lets the bearer hit twice with damaging moves. The second hit has half power.",
+    "description_de": "Zwei Generationen setzen jeweils ein Mal zum Angriff an.",
+    "inactive": "mechanic"
+  },
+  "pastel_veil": {
+    "name": "Pastel Veil",
+    "name_de": "Pastellhülle",
+    "description": "Prevents the Pokémon and its allies from being poisoned.",
+    "description_de": "Schützt das Pokémon und seine Mitstreiter vor Vergiftung.",
+    "inactive": "doubles"
+  },
+  "perish_body": {
+    "name": "Perish Body",
+    "name_de": "Unheilskörper",
+    "description": "When hit by a move that makes direct contact, the Pokémon and the attacker will faint after three turns unless they switch out of battle.",
+    "description_de": "Erleidet es einen Treffer von einer direkten Attacke, wird es zusammen mit dem Angreifer nach drei Runden besiegt. Rettung ist durch Austausch möglich.",
+    "inactive": "mechanic"
+  },
+  "pickpocket": {
+    "name": "Pickpocket",
+    "name_de": "Langfinger",
+    "description": "Steals attacking Pokémon's held items on contact.",
+    "description_de": "Stiehlt das Item des Angreifers bei Berührung.",
+    "inactive": "mechanic"
+  },
+  "pickup": {
+    "name": "Pickup",
+    "name_de": "Mitnahme",
+    "description": "Picks up other Pokémon's used and Flung held items. May also pick up an item after battle.",
+    "description_de": "Hebt gelegentlich von Gegnern benutzte Items auf. Dies geschieht nicht nur während Kämpfen, sondern auch unterwegs.",
+    "inactive": "overworld"
+  },
+  "piercing_drill": {
+    "name": "Piercing Drill",
+    "name_de": "Stichbohrer",
+    "description": "When the Pokémon uses contact moves, it can hit even targets that are protecting themselves.",
+    "description_de": "Kontakt-Attacken treffen auch Ziele, die sich schützen.",
+    "inactive": "mechanic"
+  },
+  "pixilate": {
+    "name": "Pixilate",
+    "name_de": "Feenschicht",
+    "description": "Turns the bearer's Normal moves into Fairy moves and strengthens them to 1.3× their power.",
+    "description_de": "Attacken vom Typ Normal nehmen den Typ Fee an und ihre Stärke erhöht sich ein wenig.",
+    "inactive": "todo"
+  },
+  "plus": {
+    "name": "Plus",
+    "name_de": "Plus",
+    "description": "Increases Special Attack to 1.5× when a friendly Pokémon has Plus or Minus.",
+    "description_de": "Erhöht den Spezial-Angriff, wenn das Pokémon einen Mitstreiter mit der Fähigkeit Plus oder Minus hat.",
+    "inactive": "doubles"
+  },
+  "poison_heal": {
+    "name": "Poison Heal",
+    "name_de": "Aufheber",
+    "description": "Heals for 1/8 max HP after each turn when poisoned in place of damage.",
+    "description_de": "Das Pokémon erleidet keinen Schaden durch Vergiftung, sondern regeneriert KP.",
+    "inactive": "todo"
+  },
+  "poison_point": {
+    "name": "Poison Point",
+    "name_de": "Giftstachel",
+    "effect": "contact_status",
+    "statuses": [
+      "poison"
+    ],
+    "chance": 30,
+    "description": "30% chance to poison the attacker on a physical hit.",
+    "description_de": "30 % Chance, den Angreifer bei einem physischen Treffer zu vergiften."
+  },
+  "poison_puppeteer": {
+    "name": "Poison Puppeteer",
+    "name_de": "Giftpuppenspiel",
+    "description": "Pokémon poisoned by Pecharunt's moves will also become confused.",
+    "description_de": "Von seinen Attacken vergiftete Pokémon werden zusätzlich verwirrt.",
+    "inactive": "mechanic"
+  },
+  "poison_touch": {
+    "name": "Poison Touch",
+    "name_de": "Giftgriff",
+    "description": "Has a 30% chance of poisoning target Pokémon upon contact.",
+    "description_de": "Kann das Ziel durch bloßes Berühren vergiften.",
+    "inactive": "todo"
+  },
+  "power_construct": {
+    "name": "Power Construct",
+    "name_de": "Scharwandel",
+    "description": "Transforms 10% or 50% Zygarde into Complete Forme when its HP is below 50%.",
+    "description_de": "Fallen seine KP auf die Hälfte des Maximalwerts oder weniger, eilen ihm weitere Zellen zu Hilfe und es nimmt die Optimumform an.",
+    "inactive": "mechanic"
+  },
+  "power_of_alchemy": {
+    "name": "Power of Alchemy",
+    "name_de": "Chemiekraft",
+    "description": "When an ally faints, this Pokémon gains its Ability.",
+    "description_de": "Wechselt seine Fähigkeit zu der eines kampfunfähig gewordenen Mitstreiters.",
+    "inactive": "doubles"
+  },
+  "power_spot": {
+    "name": "Power Spot",
+    "name_de": "Kraftquelle",
+    "description": "Just being next to the Pokémon powers up moves.",
+    "description_de": "Erhöht bei direkt benachbarten Pokémon die Stärke von Attacken.",
+    "inactive": "doubles"
+  },
+  "prankster": {
+    "name": "Prankster",
+    "name_de": "Strolch",
+    "description": "Raises non-damaging moves' priority by one stage.",
+    "description_de": "Ermöglicht einen Erstschlag mit Status-Attacken.",
+    "inactive": "todo"
+  },
+  "pressure": {
+    "name": "Pressure",
+    "name_de": "Erzwinger",
+    "description": "Increases the PP cost of moves targetting the Pokémon by one.",
+    "description_de": "Zwingt Gegner dazu, beim Einsatz von Attacken mehr AP zu verbrauchen.",
+    "inactive": "mechanic"
+  },
+  "primordial_sea": {
+    "name": "Primordial Sea",
+    "name_de": "Urmeer",
+    "description": "Creates heavy rain, which has all the properties of Rain Dance, cannot be replaced, and causes damaging Fire moves to fail.",
+    "description_de": "Ändert das Wetter, um Feuer-Attacken wirkungslos zu machen.",
+    "inactive": "weather"
+  },
+  "prism_armor": {
+    "name": "Prism Armor",
+    "name_de": "Prismarüstung",
+    "description": "Reduces super-effective damage to 0.75×.",
+    "description_de": "Reduziert die Stärke von sehr effektiven Attacken und verringert damit den Schaden, den das Pokémon durch sie erleidet.",
+    "inactive": "todo"
+  },
+  "propeller_tail": {
+    "name": "Propeller Tail",
+    "name_de": "Schraubflosse",
+    "description": "Ignores moves and abilities that draw in moves.",
+    "description_de": "Ignoriert die Effekte von Fähigkeiten und Attacken anderer Pokémon, die Attacken auf sich lenken.",
+    "inactive": "doubles"
+  },
+  "protean": {
+    "name": "Protean",
+    "name_de": "Wandlungskunst",
+    "description": "Changes the bearer's type to match each move it uses.",
+    "description_de": "Das Pokémon nimmt bei Einsatz einer Attacke deren Typ an.",
+    "inactive": "mechanic"
+  },
+  "protosynthesis": {
+    "name": "Protosynthesis",
+    "name_de": "Paläosynthese",
+    "description": "Raises highest stat in harsh sunlight, or if holding Booster Energy.",
+    "description_de": "Erhöht bei Sonnenschein oder mit Energiekapsel den höchsten Statuswert.",
+    "inactive": "weather"
+  },
+  "psychic_surge": {
+    "name": "Psychic Surge",
+    "name_de": "Psycho-Erzeuger",
+    "description": "When this Pokémon enters battle, it changes the terrain to Psychic Terrain.",
+    "description_de": "Erzeugt bei Kampfantritt ein Psychofeld.",
+    "inactive": "weather"
+  },
+  "punk_rock": {
+    "name": "Punk Rock",
+    "name_de": "Punk Rock",
+    "description": "Boosts sound-based moves and halves damage from the same moves.",
+    "description_de": "Erhöht die Stärke von eigenen Lärm-Attacken und halbiert den Schaden, den das Pokémon selbst durch Lärm-Attacken erleidet.",
+    "inactive": "mechanic"
+  },
+  "pure_power": {
+    "name": "Pure Power",
+    "name_de": "Mentalkraft",
+    "description": "Doubles Attack in battle.",
+    "description_de": "Verdoppelt mit reiner Willenskraft die Stärke seiner physischen Attacken.",
+    "inactive": "todo"
+  },
+  "purifying_salt": {
+    "name": "Purifying Salt",
+    "name_de": "Läutersalz",
+    "description": "Protects from status conditions and halves damage from Ghost-type moves.",
+    "description_de": "Schützt vor Statusproblemen und halbiert den Schaden von Geister-Attacken.",
+    "inactive": "todo"
+  },
+  "quark_drive": {
+    "name": "Quark Drive",
+    "name_de": "Quantenantrieb",
+    "description": "Raises highest stat on Electric Terrain, or if holding Booster Energy.",
+    "description_de": "Erhöht auf Elektrofeld oder mit Energiekapsel den höchsten Statuswert.",
+    "inactive": "weather"
+  },
+  "queenly_majesty": {
+    "name": "Queenly Majesty",
+    "name_de": "Majestät",
+    "description": "Opposing Pokémon cannot use priority attacks.",
+    "description_de": "Schüchtert Gegner ein und hindert sie so daran, Erstschlag-Attacken gegen es einzusetzen.",
+    "inactive": "todo"
+  },
+  "quick_draw": {
+    "name": "Quick Draw",
+    "name_de": "Schnellschuss",
+    "description": "Enables the Pokémon to move first occasionally.",
+    "description_de": "Ermöglicht dem Pokémon gelegentlich den Erstschlag.",
+    "inactive": "todo"
+  },
+  "quick_feet": {
+    "name": "Quick Feet",
+    "name_de": "Rasanz",
+    "description": "Increases Speed to 1.5× with a major status ailment.",
+    "description_de": "Erhöht bei Statusproblemen die Initiative.",
+    "inactive": "todo"
+  },
+  "rain_dish": {
+    "name": "Rain Dish",
+    "name_de": "Regengenuss",
+    "description": "Heals for 1/16 max HP after each turn during rain.",
+    "description_de": "Regeneriert bei Regen nach und nach KP.",
+    "inactive": "weather"
+  },
+  "rattled": {
+    "name": "Rattled",
+    "name_de": "Hasenfuß",
+    "effect": "rattled",
+    "types": [
+      "bug",
+      "ghost",
+      "dark"
+    ],
+    "description": "Speed rises by one stage when hit by a Bug, Ghost or Dark move, or when affected by Intimidate.",
+    "description_de": "Die Initiative steigt um eine Stufe, wenn es von einer Käfer-, Geist- oder Unlicht-Attacke getroffen oder von Bedroher eingeschüchtert wird."
+  },
+  "receiver": {
+    "name": "Receiver",
+    "name_de": "Receiver",
+    "description": "When an ally faints, this Pokémon gains its Ability.",
+    "description_de": "Wird einer seiner Mitstreiter besiegt, erhält es dessen Fähigkeit.",
+    "inactive": "doubles"
+  },
+  "reckless": {
+    "name": "Reckless",
+    "name_de": "Achtlos",
+    "description": "Strengthens recoil moves to 1.2× their power.",
+    "description_de": "Erhöht die Stärke von Attacken mit Rückstoßschaden.",
+    "inactive": "todo"
+  },
+  "refrigerate": {
+    "name": "Refrigerate",
+    "name_de": "Frostschicht",
+    "description": "Turns the bearer's Normal moves into Ice moves and strengthens them to 1.3× their power.",
+    "description_de": "Attacken vom Typ Normal nehmen den Typ Eis an und ihre Stärke erhöht sich ein wenig.",
+    "inactive": "todo"
+  },
+  "regenerator": {
+    "name": "Regenerator",
+    "name_de": "Belebekraft",
+    "description": "Heals for 1/3 max HP upon switching out.",
+    "description_de": "Wird das Pokémon ausgewechselt, regeneriert es eine kleine Menge an KP.",
+    "inactive": "todo"
+  },
+  "ripen": {
+    "name": "Ripen",
+    "name_de": "Heranreifen",
+    "description": "Doubles the effect of berries.",
+    "description_de": "Verdoppelt den Effekt von Beeren, indem es sie heranreifen lässt.",
+    "inactive": "todo"
+  },
+  "rivalry": {
+    "name": "Rivalry",
+    "name_de": "Rivalität",
+    "description": "Increases damage inflicted to 1.25× against Pokémon of the same gender, but decreases damage to 0.75× against the opposite gender.",
+    "description_de": "Greift es einen Rivalen desselben Geschlechts an, wird es stärker. Greift es ein Ziel des anderen Geschlechts an, wird es schwächer.",
+    "inactive": "todo"
+  },
+  "rks_system": {
+    "name": "RKS System",
+    "name_de": "Alpha-System",
+    "description": "Changes this Pokémon's type to match its held Memory.",
+    "description_de": "Das Pokémon passt seinen Typ der getragenen Disc an.",
+    "inactive": "mechanic"
+  },
+  "rock_head": {
+    "name": "Rock Head",
+    "name_de": "Steinhaupt",
+    "description": "Protects against recoil damage.",
+    "description_de": "Verhindert Schaden, der durch Rückstoß entstehen würde.",
+    "inactive": "todo"
+  },
+  "rocky_payload": {
+    "name": "Rocky Payload",
+    "name_de": "Steinträger",
+    "description": "Powers up Rock-type moves.",
+    "description_de": "Erhöht die Stärke von Gestein-Attacken.",
+    "inactive": "todo"
+  },
+  "rough_skin": {
+    "name": "Rough Skin",
+    "name_de": "Rauhaut",
+    "description": "Damages attacking Pokémon for 1/8 their max HP on contact.",
+    "description_de": "Angreifer werden durch die raue Haut des Pokémon bei direkten Attacken verletzt.",
+    "inactive": "todo"
+  },
+  "run_away": {
+    "name": "Run Away",
+    "name_de": "Angsthase",
+    "description": "Ensures success fleeing from wild battles.",
+    "description_de": "Die Flucht vor wilden Pokémon gelingt immer.",
+    "inactive": "overworld"
+  },
+  "sand_force": {
+    "name": "Sand Force",
+    "name_de": "Sandgewalt",
+    "description": "Strengthens Rock, Ground, and Steel moves to 1.3× their power during a sandstorm. Protects against sandstorm damage.",
+    "description_de": "Erhöht in Sandstürmen die Stärke von Gesteins-, Boden- und Stahl-Attacken.",
+    "inactive": "weather"
+  },
+  "sand_rush": {
+    "name": "Sand Rush",
+    "name_de": "Sandscharrer",
+    "description": "Doubles Speed during a sandstorm. Protects against sandstorm damage.",
+    "description_de": "Erhöht in Sandstürmen die Initiative.",
+    "inactive": "weather"
+  },
+  "sand_spit": {
+    "name": "Sand Spit",
+    "name_de": "Sandspeier",
+    "description": "Creates a sandstorm when hit by an attack.",
+    "description_de": "Löst einen Sandsturm aus, wenn das Pokémon von einer Attacke erfasst wird.",
+    "inactive": "weather"
+  },
+  "sand_stream": {
+    "name": "Sand Stream",
+    "name_de": "Sandsturm",
+    "description": "Summons a sandstorm that lasts indefinitely upon entering battle.",
+    "description_de": "Erzeugt bei Kampfantritt Sandstürme.",
+    "inactive": "weather"
+  },
+  "sand_veil": {
+    "name": "Sand Veil",
+    "name_de": "Sandschleier",
+    "description": "Increases evasion to 1.25× during a sandstorm. Protects against sandstorm damage.",
+    "description_de": "Erhöht in Sandstürmen den Ausweichwert.",
+    "inactive": "weather"
+  },
+  "sap_sipper": {
+    "name": "Sap Sipper",
+    "name_de": "Vegetarier",
+    "effect": "absorb",
+    "type": "grass",
+    "stat": "atk",
+    "stages": 1,
+    "description": "Grass moves raise its Attack by one stage instead of dealing damage.",
+    "description_de": "Pflanzen-Attacken erhöhen seinen Angriff um eine Stufe, statt Schaden anzurichten."
+  },
+  "schooling": {
+    "name": "Schooling",
+    "name_de": "Fischschwarm",
+    "description": "Wishiwashi becomes Schooling Form when its HP is 25% or higher.",
+    "description_de": "Verfügt es über einen hohen KP-Wert, wird es zu einem Schwarm und gewinnt an Stärke. Ist der KP-Wert niedrig, löst sich der Schwarm wieder auf.",
+    "inactive": "mechanic"
+  },
+  "scrappy": {
+    "name": "Scrappy",
+    "name_de": "Rauflust",
+    "effect": "intimidate_immune",
+    "description": "Not affected by Intimidate. (Hitting Ghost types with Normal and Fighting moves is not active yet.)",
+    "description_de": "Wird von Bedroher nicht beeinflusst. (Geister-Pokémon mit Normal- und Kampf-Attacken treffen ist noch nicht aktiv.)"
+  },
+  "screen_cleaner": {
+    "name": "Screen Cleaner",
+    "name_de": "Hemmungslos",
+    "description": "Nullifies effects of Light Screen, Reflect, and Aurora Veil.",
+    "description_de": "Hebt bei Kampfantritt die Wirkung von Lichtschild, Reflektor und Auroraschleier auf Mitstreiter- und Gegnerseite auf.",
+    "inactive": "mechanic"
+  },
+  "seed_sower": {
+    "name": "Seed Sower",
+    "name_de": "Streusaat",
+    "description": "Turns the ground into Grassy Terrain when the Pokémon is hit by an attack.",
+    "description_de": "Erzeugt ein Grasfeld, wenn das Pokémon von einer Attacke getroffen wird.",
+    "inactive": "weather"
+  },
+  "serene_grace": {
+    "name": "Serene Grace",
+    "name_de": "Edelmut",
+    "description": "Doubles the chance of moves' extra effects occurring.",
+    "description_de": "Erhöht die Wahrscheinlichkeit, dass Zusatzeffekte von Attacken auftreten.",
+    "inactive": "todo"
+  },
+  "shadow_shield": {
+    "name": "Shadow Shield",
+    "name_de": "Phantomschutz",
+    "description": "When this Pokémon has full HP, regular damage from moves is halved.",
+    "description_de": "Verringert den erlittenen Schaden bei vollen KP.",
+    "inactive": "todo"
+  },
+  "shadow_tag": {
+    "name": "Shadow Tag",
+    "name_de": "Wegsperre",
+    "description": "Prevents opponents from fleeing or switching out.",
+    "description_de": "Hindert Gegner an der Flucht beziehungsweise am Auswechseln, indem es ihnen den Weg versperrt.",
+    "inactive": "mechanic"
+  },
+  "sharpness": {
+    "name": "Sharpness",
+    "name_de": "Scharfkantig",
+    "description": "Powers up slicing moves.",
+    "description_de": "Erhöht die Stärke von Schneide-Attacken.",
+    "inactive": "mechanic"
+  },
+  "shed_skin": {
+    "name": "Shed Skin",
+    "name_de": "Häutung",
+    "effect": "cure_status",
+    "chance": 30,
+    "description": "30% chance per turn to cure its own status condition.",
+    "description_de": "30 % Chance pro Runde, den eigenen Status selbst zu heilen."
+  },
+  "sheer_force": {
+    "name": "Sheer Force",
+    "name_de": "Rohe Gewalt",
+    "description": "Strengthens moves with extra effects to 1.3× their power, but prevents their extra effects.",
+    "description_de": "Erhöht die Stärke von Attacken, aber hebt dafür ihre Zusatzeffekte auf.",
+    "inactive": "todo"
+  },
+  "shell_armor": {
+    "name": "Shell Armor",
+    "name_de": "Panzerhaut",
+    "description": "Protects against critical hits.",
+    "description_de": "Wehrt gegnerische Volltreffer mit einem harten Panzer ab.",
+    "inactive": "todo"
+  },
+  "shield_dust": {
+    "name": "Shield Dust",
+    "name_de": "Puderabwehr",
+    "description": "Protects against incoming moves' extra effects.",
+    "description_de": "Blockiert durch Puder die Zusatzeffekte gegnerischer Angriffe.",
+    "inactive": "todo"
+  },
+  "shields_down": {
+    "name": "Shields Down",
+    "name_de": "Limitschild",
+    "description": "Transforms this Minior between Core Form and Meteor Form. Prevents major status ailments and drowsiness while in Meteor Form.",
+    "description_de": "Fallen seine KP auf die Hälfte des Maximalwerts oder weniger, zerbricht die Panzerung des Pokémon und es wird aggressiver.",
+    "inactive": "mechanic"
+  },
+  "simple": {
+    "name": "Simple",
+    "name_de": "Wankelmut",
+    "description": "Doubles the Pokémon's stat modifiers. These doubled modifiers are still capped at -6 or 6 stages.",
+    "description_de": "Verdoppelt die Wirkung eigener Statusveränderungen.",
+    "inactive": "todo"
+  },
+  "skill_link": {
+    "name": "Skill Link",
+    "name_de": "Wertelink",
+    "description": "Extends two-to-five-hit moves and Triple Kick to their full length every time.",
+    "description_de": "Landet mit Serien-Attacken immer die maximale Anzahl an Treffern.",
+    "inactive": "mechanic"
+  },
+  "slow_start": {
+    "name": "Slow Start",
+    "name_de": "Saumselig",
+    "description": "Halves Attack and Speed for five turns upon entering battle.",
+    "description_de": "Halbiert fünf Runden lang den Angriffs-Wert und die Initiative des Pokémon.",
+    "inactive": "todo"
+  },
+  "slush_rush": {
+    "name": "Slush Rush",
+    "name_de": "Schneescharrer",
+    "description": "During Hail, this Pokémon has double Speed.",
+    "description_de": "Erhöht bei Hagel die Initiative.",
+    "inactive": "weather"
+  },
+  "sniper": {
+    "name": "Sniper",
+    "name_de": "Superschütze",
+    "description": "Strengthens critical hits to inflict 3× damage rather than 2×.",
+    "description_de": "Erhöht bei Volltreffern die Stärke der Attacke noch weiter.",
+    "inactive": "todo"
+  },
+  "snow_cloak": {
+    "name": "Snow Cloak",
+    "name_de": "Schneemantel",
+    "description": "Increases evasion to 1.25× during hail. Protects against hail damage.",
+    "description_de": "Erhöht bei Hagel den Ausweichwert.",
+    "inactive": "weather"
+  },
+  "snow_warning": {
+    "name": "Snow Warning",
+    "name_de": "Hagelalarm",
+    "description": "Summons hail that lasts indefinitely upon entering battle.",
+    "description_de": "Löst bei Kampfantritt Hagel aus.",
+    "inactive": "weather"
+  },
+  "solar_power": {
+    "name": "Solar Power",
+    "name_de": "Solarkraft",
+    "description": "Increases Special Attack to 1.5× but costs 1/8 max HP after each turn during strong sunlight.",
+    "description_de": "Führt bei Sonnenschein in jeder Runde zu KP-Verlusten, erhöht aber den Spezial-Angriff.",
+    "inactive": "weather"
+  },
+  "solid_rock": {
+    "name": "Solid Rock",
+    "name_de": "Felskern",
+    "description": "Decreases damage taken from super-effective moves by 1/4.",
+    "description_de": "Reduziert die Stärke von sehr effektiven Attacken und verringert damit den Schaden, den das Pokémon durch sie erleidet.",
+    "inactive": "todo"
+  },
+  "soul_heart": {
+    "name": "Soul-Heart",
+    "name_de": "Seelenherz",
+    "description": "This Pokémon's Special Attack rises by one stage every time any Pokémon faints.",
+    "description_de": "Erhöht jedes Mal, wenn ein Pokémon besiegt wird, den eigenen Spezial-Angriff.",
+    "inactive": "todo"
+  },
+  "soundproof": {
+    "name": "Soundproof",
+    "name_de": "Lärmschutz",
+    "description": "Protects against sound-based moves.",
+    "description_de": "Bietet durch Schalldämmung volle Immunität gegen alle Lärm-Attacken.",
+    "inactive": "mechanic"
+  },
+  "speed_boost": {
+    "name": "Speed Boost",
+    "name_de": "Temposchub",
+    "description": "Raises Speed one stage after each turn.",
+    "description_de": "Erhöht in jeder Runde die Initiative.",
+    "inactive": "todo"
+  },
+  "spicy_spray": {
+    "name": "Spicy Spray",
+    "name_de": "Chilispritzer",
+    "description": "When the Pokémon takes damage from a move, it burns the attacker.",
+    "description_de": "Verbrennt den Angreifer, wenn es durch eine Attacke Schaden nimmt.",
+    "inactive": "todo"
+  },
+  "stakeout": {
+    "name": "Stakeout",
+    "name_de": "Beschattung",
+    "description": "This Pokémon's moves have double power against Pokémon that switched in this turn.",
+    "description_de": "Bewirkt bei Angriffen auf neu eingewechselte Ziele doppelten Schaden.",
+    "inactive": "todo"
+  },
+  "stall": {
+    "name": "Stall",
+    "name_de": "Zeitspiel",
+    "description": "Makes the Pokémon move last within its move's priority bracket.",
+    "description_de": "Handelt auch mit Initiative-Vorteil stets als Letztes.",
+    "inactive": "todo"
+  },
+  "stalwart": {
+    "name": "Stalwart",
+    "name_de": "Stahlrückgrat",
+    "description": "Ignores moves and abilities that draw in moves.",
+    "description_de": "Ignoriert die Effekte von Fähigkeiten und Attacken anderer Pokémon, die Attacken auf sich lenken.",
+    "inactive": "doubles"
+  },
+  "stamina": {
+    "name": "Stamina",
+    "name_de": "Zähigkeit",
+    "description": "Raises this Pokémon's Defense by one stage when it takes damage from a move.",
+    "description_de": "Wird es von einer Attacke getroffen, steigt seine Verteidigung.",
+    "inactive": "todo"
+  },
+  "stance_change": {
+    "name": "Stance Change",
+    "name_de": "Taktikwechsel",
+    "description": "Changes Aegislash to Blade Forme before using a damaging move, or Shield Forme before using King’s Shield.",
+    "description_de": "Setzt das Pokémon eine Offensiv-Attacke ein, nimmt es die Klingenform an. Setzt es danach die Attacke Königsschild ein, nimmt es die Schildform an.",
+    "inactive": "mechanic"
+  },
+  "static": {
+    "name": "Static",
+    "name_de": "Statik",
+    "effect": "contact_status",
+    "statuses": [
+      "paralysis"
+    ],
+    "chance": 30,
+    "description": "30% chance to paralyze the attacker on a physical hit.",
+    "description_de": "30 % Chance, den Angreifer bei einem physischen Treffer zu paralysieren."
+  },
+  "steadfast": {
+    "name": "Steadfast",
+    "name_de": "Felsenfest",
+    "description": "Raises Speed one stage upon flinching.",
+    "description_de": "Sein eiserner Wille erhöht die Initiative, wann immer das Pokémon zurückschreckt.",
+    "inactive": "todo"
+  },
+  "steam_engine": {
+    "name": "Steam Engine",
+    "name_de": "Dampfantrieb",
+    "description": "Boosts the Speed stat drastically when the Pokémon is hit by a Fire- or Water-type move.",
+    "description_de": "Wird es von einer Wasser- oder Feuer-Attacke getroffen, steigt seine Initiative drastisch.",
+    "inactive": "todo"
+  },
+  "steelworker": {
+    "name": "Steelworker",
+    "name_de": "Stahlprofi",
+    "description": "This Pokémon's Steel moves have 1.5× power.",
+    "description_de": "Erhöht die Stärke von Stahl-Attacken.",
+    "inactive": "todo"
+  },
+  "steely_spirit": {
+    "name": "Steely Spirit",
+    "name_de": "Stählerner Wille",
+    "description": "Powers up ally Pokémon's Steel-type moves.",
+    "description_de": "Erhöht die Stärke von Stahl-Attacken auf Mitstreiterseite.",
+    "inactive": "doubles"
+  },
+  "stench": {
+    "name": "Stench",
+    "name_de": "Duftnote",
+    "description": "Has a 10% chance of making target Pokémon flinch with each hit.",
+    "description_de": "Lässt das Ziel beim Angriff eventuell durch Gestank zurückschrecken.",
+    "inactive": "todo"
+  },
+  "sticky_hold": {
+    "name": "Sticky Hold",
+    "name_de": "Klebekörper",
+    "description": "Prevents a held item from being removed by other Pokémon.",
+    "description_de": "Trägt es ein Item, bleibt dieses an seinem klebrigen Körper haften, wodurch Item-Diebstahl verhindert wird.",
+    "inactive": "mechanic"
+  },
+  "storm_drain": {
+    "name": "Storm Drain",
+    "name_de": "Sturmsog",
+    "effect": "absorb",
+    "type": "water",
+    "stat": "spa",
+    "stages": 1,
+    "description": "Water moves raise its Special Attack by one stage instead of dealing damage.",
+    "description_de": "Wasser-Attacken erhöhen seinen Spezial-Angriff um eine Stufe, statt Schaden anzurichten."
+  },
+  "strong_jaw": {
+    "name": "Strong Jaw",
+    "name_de": "Titankiefer",
+    "description": "Strengthens biting moves to 1.5× their power.",
+    "description_de": "Der kräftige Kiefer des Pokémon erhöht die Stärke von Biss-Attacken.",
+    "inactive": "mechanic"
+  },
+  "sturdy": {
+    "name": "Sturdy",
+    "name_de": "Robustheit",
+    "effect": "sturdy",
+    "description": "At full HP it survives any single hit with 1 HP left.",
+    "description_de": "Bei vollen KP übersteht es jeden einzelnen Treffer mit 1 KP."
+  },
+  "suction_cups": {
+    "name": "Suction Cups",
+    "name_de": "Saugnapf",
+    "description": "Prevents being forced out of battle by other Pokémon's moves.",
+    "description_de": "Blockt Attacken und Items, die Pokémon austauschen, indem es sich mit einem Saugnapf am Boden verankert.",
+    "inactive": "mechanic"
+  },
+  "super_luck": {
+    "name": "Super Luck",
+    "name_de": "Glückspilz",
+    "description": "Raises moves' critical hit rates one stage.",
+    "description_de": "Großes Glück erhöht die Wahrscheinlichkeit, einen Volltreffer zu landen.",
+    "inactive": "todo"
+  },
+  "supersweet_syrup": {
+    "name": "Supersweet Syrup",
+    "name_de": "Süßer Nektar",
+    "description": "Once per battle, when a Pokémon with Supersweet Syrup enters the battle, it lowers the evasion stat of all adjacent opponents by one stage.",
+    "description_de": "Senkt beim ersten Kampfantritt den Fluchtwert aller angrenzenden Gegner um eine Stufe.",
+    "inactive": "mechanic"
+  },
+  "supreme_overlord": {
+    "name": "Supreme Overlord",
+    "name_de": "Feldherr",
+    "description": "Attack and Special Attack are boosted for each party Pokémon that has been defeated.",
+    "description_de": "Angriff und Spezial-Angriff steigen für jedes bereits besiegte Pokémon im eigenen Team.",
+    "inactive": "todo"
+  },
+  "surge_surfer": {
+    "name": "Surge Surfer",
+    "name_de": "Surf-Schweif",
+    "description": "Doubles this Pokémon's Speed on Electric Terrain.",
+    "description_de": "Verdoppelt die Initiative, wenn zuvor ein Elektrofeld erzeugt wurde.",
+    "inactive": "weather"
+  },
+  "swarm": {
+    "name": "Swarm",
+    "name_de": "Schwarmalarm",
+    "effect": "low_hp_stab_boost",
+    "type": "bug",
+    "threshold": 0.3333,
+    "multiplier": 1.5,
+    "description": "Bug-type moves deal 50% more damage below 1/3 max HP.",
+    "description_de": "Käfer-Attacken richten unter 1/3 der maximalen KP 50 % mehr Schaden an."
+  },
+  "sweet_veil": {
+    "name": "Sweet Veil",
+    "name_de": "Zuckerhülle",
+    "description": "Prevents friendly Pokémon from sleeping.",
+    "description_de": "Alle Team-Pokémon können nicht einschlafen.",
+    "inactive": "todo"
+  },
+  "swift_swim": {
+    "name": "Swift Swim",
+    "name_de": "Wassertempo",
+    "description": "Doubles Speed during rain.",
+    "description_de": "Erhöht bei Regen die Initiative.",
+    "inactive": "weather"
+  },
+  "sword_of_ruin": {
+    "name": "Sword of Ruin",
+    "name_de": "Unheilsschwert",
+    "description": "Lowers Defense of all Pokémon except itself.",
+    "description_de": "Senkt die Verteidigung aller anderen Pokémon.",
+    "inactive": "todo"
+  },
+  "symbiosis": {
+    "name": "Symbiosis",
+    "name_de": "Nutznießer",
+    "description": "Passes the bearer's held item to an ally when the ally uses up its item.",
+    "description_de": "Gibt Mitstreitern, die ihr Item aufgebraucht haben, sein eigenes Item.",
+    "inactive": "doubles"
+  },
+  "synchronize": {
+    "name": "Synchronize",
+    "name_de": "Synchro",
+    "description": "Copies burns, paralysis, and poison received onto the Pokémon that inflicted them.",
+    "description_de": "Erleidet das Pokémon Verbrennungen, Vergiftungen oder Paralyse, ereilt das jeweilige Statusproblem auch den Verursacher.",
+    "inactive": "todo"
+  },
+  "tablets_of_ruin": {
+    "name": "Tablets of Ruin",
+    "name_de": "Unheilstafeln",
+    "description": "Lowers Attack of all Pokémon except itself.",
+    "description_de": "Senkt den Angriff aller anderen Pokémon.",
+    "inactive": "todo"
+  },
+  "tangled_feet": {
+    "name": "Tangled Feet",
+    "name_de": "Fußangel",
+    "description": "Doubles evasion when confused.",
+    "description_de": "Erhöht den Ausweichwert, wenn das Pokémon verwirrt ist.",
+    "inactive": "mechanic"
+  },
+  "tangling_hair": {
+    "name": "Tangling Hair",
+    "name_de": "Lockenkopf",
+    "description": "When this Pokémon takes regular damage from a contact move, the attacking Pokémon's Speed lowers by one stage.",
+    "description_de": "Senkt bei Berührung im Zuge eines Angriffs die Initiative des Angreifers.",
+    "inactive": "todo"
+  },
+  "technician": {
+    "name": "Technician",
+    "name_de": "Techniker",
+    "description": "Strengthens moves of 60 base power or less to 1.5× their power.",
+    "description_de": "Erhöht die Stärke von schwächeren Attacken.",
+    "inactive": "todo"
+  },
+  "telepathy": {
+    "name": "Telepathy",
+    "name_de": "Telepathie",
+    "description": "Protects against friendly Pokémon's damaging moves.",
+    "description_de": "Erkennt und pariert Attacken von Mitstreitern.",
+    "inactive": "doubles"
+  },
+  "tera_shell": {
+    "name": "Tera Shell",
+    "name_de": "Tera-Panzer",
+    "description": "All damage-dealing moves that hit the Pokémon when its HP is full will not be very effective.",
+    "description_de": "Bei vollen KP sind alle Schadensattacken gegen das Pokémon nicht sehr effektiv.",
+    "inactive": "mechanic"
+  },
+  "tera_shift": {
+    "name": "Tera Shift",
+    "name_de": "Tera-Wandel",
+    "description": "When Terapagos enters the battle, it turns into its Terastal Form until the end of the battle.",
+    "description_de": "Nimmt beim Kampfantritt bis zum Kampfende seine Terakristall-Form an.",
+    "inactive": "mechanic"
+  },
+  "teraform_zero": {
+    "name": "Teraform Zero",
+    "name_de": "Teraforming Null",
+    "description": "As soon as Terapagos assumes its Stellar Form, it will immediately neutralize weather and terrain effects.",
+    "description_de": "Hebt Wetter und Felder auf, sobald Terapagos seine Stellarform annimmt.",
+    "inactive": "weather"
+  },
+  "teravolt": {
+    "name": "Teravolt",
+    "name_de": "Teravolt",
+    "description": "Bypasses targets' abilities if they could hinder or prevent moves.",
+    "description_de": "Attacken können ungeachtet der Fähigkeit des Zieles eingesetzt werden.",
+    "inactive": "todo"
+  },
+  "thermal_exchange": {
+    "name": "Thermal Exchange",
+    "name_de": "Thermowandel",
+    "description": "Raises Attack when hit by a Fire-type move. Cannot be burned.",
+    "description_de": "Wird es von einer Feuer-Attacke getroffen, steigt sein Angriff. Kann nicht verbrannt werden.",
+    "inactive": "todo"
+  },
+  "thick_fat": {
+    "name": "Thick Fat",
+    "name_de": "Speckschicht",
+    "description": "Halves damage from Fire and Ice moves.",
+    "description_de": "Das Pokémon wird von einer dicken Fettschicht geschützt, was den durch Feuer- und Eis-Attacken erlittenen Schaden halbiert.",
+    "inactive": "todo"
+  },
+  "tinted_lens": {
+    "name": "Tinted Lens",
+    "name_de": "Aufwertung",
+    "description": "Doubles damage inflicted with not-very-effective moves.",
+    "description_de": "Bewirkt, dass nicht sehr effektive Attacken dem Ziel trotz des Typennachteils normalen Schaden zufügen.",
+    "inactive": "todo"
+  },
+  "torrent": {
+    "name": "Torrent",
+    "name_de": "Trombe",
+    "effect": "low_hp_stab_boost",
+    "type": "water",
+    "threshold": 0.3333,
+    "multiplier": 1.5,
+    "description": "Water-type moves deal 50% more damage below 1/3 max HP.",
+    "description_de": "Wasser-Attacken richten unter 1/3 der maximalen KP 50 % mehr Schaden an."
+  },
+  "tough_claws": {
+    "name": "Tough Claws",
+    "name_de": "Krallenwucht",
+    "description": "Strengthens moves that make contact to 1.33× their power.",
+    "description_de": "Erhöht die Stärke von direkten Attacken.",
+    "inactive": "mechanic"
+  },
+  "toxic_boost": {
+    "name": "Toxic Boost",
+    "name_de": "Giftwahn",
+    "description": "Increases Attack to 1.5× when poisoned.",
+    "description_de": "Erhöht bei Vergiftungen die Stärke von physischen Attacken.",
+    "inactive": "todo"
+  },
+  "toxic_chain": {
+    "name": "Toxic Chain",
+    "name_de": "Giftkette",
+    "description": "May cause bad poisoning when the Pokémon hits an opponent with a move.",
+    "description_de": "Kann das Ziel bei einem Treffer schwer vergiften.",
+    "inactive": "todo"
+  },
+  "toxic_debris": {
+    "name": "Toxic Debris",
+    "name_de": "Giftbelag",
+    "description": "Scatters poison spikes at the feet of the opposing team when the Pokémon takes damage from physical moves.",
+    "description_de": "Streut Giftspitzen vor die Gegner, wenn es durch physische Attacken Schaden nimmt.",
+    "inactive": "todo"
+  },
+  "trace": {
+    "name": "Trace",
+    "name_de": "Erfassen",
+    "description": "Copies an opponent's ability upon entering battle.",
+    "description_de": "Kopiert bei Kampfantritt die Fähigkeit eines Gegners.",
+    "inactive": "mechanic"
+  },
+  "transistor": {
+    "name": "Transistor",
+    "name_de": "Transistor",
+    "description": "Powers up Electric-type moves.",
+    "description_de": "Erhöht die Stärke von Elektro-Attacken.",
+    "inactive": "todo"
+  },
+  "triage": {
+    "name": "Triage",
+    "name_de": "Heilwandel",
+    "description": "This Pokémon's healing moves have their priority increased by 3.",
+    "description_de": "Ermöglicht einen Erstschlag mit Attacken, welche die KP des Anwenders direkt regenerieren.",
+    "inactive": "todo"
+  },
+  "truant": {
+    "name": "Truant",
+    "name_de": "Schnarchnase",
+    "description": "Skips every second turn.",
+    "description_de": "Das Pokémon muss nach Einsatz einer Attacke eine Runde lang aussetzen.",
+    "inactive": "todo"
+  },
+  "turboblaze": {
+    "name": "Turboblaze",
+    "name_de": "Turbobrand",
+    "description": "Bypasses targets' abilities if they could hinder or prevent moves.",
+    "description_de": "Attacken können ungeachtet der Fähigkeit des Zieles eingesetzt werden.",
+    "inactive": "todo"
+  },
+  "unaware": {
+    "name": "Unaware",
+    "name_de": "Unkenntnis",
+    "description": "Ignores other Pokémon's stat modifiers for damage and accuracy calculation.",
+    "description_de": "Greift das Pokémon an, ignoriert es sämtliche Statusveränderungen des Zieles.",
+    "inactive": "todo"
+  },
+  "unburden": {
+    "name": "Unburden",
+    "name_de": "Entlastung",
+    "description": "Doubles Speed upon using or losing a held item.",
+    "description_de": "Wenn das von ihm getragene Item verwendet wird oder verloren geht, erhöht dies seine Initiative.",
+    "inactive": "todo"
+  },
+  "unnerve": {
+    "name": "Unnerve",
+    "name_de": "Anspannung",
+    "description": "Prevents opposing Pokémon from eating held Berries.",
+    "description_de": "Erzeugt bei Gegnern Stress und hindert sie so daran, Beeren zu konsumieren.",
+    "inactive": "todo"
+  },
+  "unseen_fist": {
+    "name": "Unseen Fist",
+    "name_de": "Verborgene Faust",
+    "description": "Contact moves can strike through Protect/Detect.",
+    "description_de": "Wenn das Pokémon eine direkte Attacke einsetzt, trifft diese auch dann, wenn sich das Ziel selbst schützt.",
+    "inactive": "mechanic"
+  },
+  "vessel_of_ruin": {
+    "name": "Vessel of Ruin",
+    "name_de": "Unheilsgefäß",
+    "description": "Lowers Special Attack of all Pokémon except itself.",
+    "description_de": "Senkt den Spezial-Angriff aller anderen Pokémon.",
+    "inactive": "todo"
+  },
+  "victory_star": {
+    "name": "Victory Star",
+    "name_de": "Triumphstern",
+    "description": "Increases moves' accuracy to 1.1× for friendly Pokémon.",
+    "description_de": "Erhöht die Genauigkeit aller Team-Pokémon.",
+    "inactive": "todo"
+  },
+  "vital_spirit": {
+    "name": "Vital Spirit",
+    "name_de": "Munterkeit",
+    "description": "Prevents sleep.",
+    "description_de": "Das Pokémon ist so munter, dass es nicht einschlafen kann.",
+    "inactive": "todo"
+  },
+  "volt_absorb": {
+    "name": "Volt Absorb",
+    "name_de": "Voltabsorber",
+    "effect": "absorb",
+    "type": "electric",
+    "heal": 0.25,
+    "description": "Electric moves heal it by 1/4 of its max HP instead of dealing damage.",
+    "description_de": "Elektro-Attacken heilen es um 1/4 seiner max. KP, statt Schaden anzurichten."
+  },
+  "wandering_spirit": {
+    "name": "Wandering Spirit",
+    "name_de": "Rastlose Seele",
+    "description": "Swaps abilities with opponents on contact.",
+    "description_de": "Wird das Pokémon von einer direkten Attacke getroffen, tauscht es seine Fähigkeit mit der des Angreifers.",
+    "inactive": "mechanic"
+  },
+  "water_absorb": {
+    "name": "Water Absorb",
+    "name_de": "H2O-Absorber",
+    "effect": "absorb",
+    "type": "water",
+    "heal": 0.25,
+    "description": "Water moves heal it by 1/4 of its max HP instead of dealing damage.",
+    "description_de": "Wasser-Attacken heilen es um 1/4 seiner max. KP, statt Schaden anzurichten."
+  },
+  "water_bubble": {
+    "name": "Water Bubble",
+    "name_de": "Wasserblase",
+    "description": "Halves damage from Fire moves, doubles damage of Water moves, and prevents burns.",
+    "description_de": "Feuer-Attacken fügen dem Pokémon weniger Schaden zu. Verhindert Verbrennungen.",
+    "inactive": "todo"
+  },
+  "water_compaction": {
+    "name": "Water Compaction",
+    "name_de": "Verklumpen",
+    "description": "Raises this Pokémon's Defense by two stages when it's hit by a Water move.",
+    "description_de": "Wird es von einer Wasser-Attacke getroffen, steigt seine Verteidigung stark.",
+    "inactive": "todo"
+  },
+  "water_veil": {
+    "name": "Water Veil",
+    "name_de": "Aquahülle",
+    "effect": "status_immune",
+    "statuses": [
+      "burn"
+    ],
+    "description": "Cannot be burned.",
+    "description_de": "Kann nicht verbrannt werden."
+  },
+  "weak_armor": {
+    "name": "Weak Armor",
+    "name_de": "Bruchrüstung",
+    "description": "Raises Speed and lowers Defense by one stage each upon being hit by a physical move.",
+    "description_de": "Senkt bei erlittenem Treffer durch eine physische Attacke die Verteidigung des Pokémon, aber erhöht dafür seine Initiative stark.",
+    "inactive": "todo"
+  },
+  "well_baked_body": {
+    "name": "Well-Baked Body",
+    "name_de": "Knusperkruste",
+    "effect": "absorb",
+    "type": "fire",
+    "stat": "def",
+    "stages": 2,
+    "description": "Fire moves sharply raise its Defense (two stages) instead of dealing damage.",
+    "description_de": "Feuer-Attacken erhöhen seine Verteidigung stark (zwei Stufen), statt Schaden anzurichten."
+  },
+  "white_smoke": {
+    "name": "White Smoke",
+    "name_de": "Pulverrauch",
+    "effect": "stat_drop_immune",
+    "description": "Opponents cannot lower this Pokémon's stats.",
+    "description_de": "Gegner können die Statuswerte dieses Pokémon nicht senken."
+  },
+  "wimp_out": {
+    "name": "Wimp Out",
+    "name_de": "Reißaus",
+    "description": "This Pokémon automatically switches out when its HP drops below half.",
+    "description_de": "Fallen seine KP auf die Hälfte des Maximalwerts oder weniger, zieht es sich ängstlich zurück.",
+    "inactive": "mechanic"
+  },
+  "wind_power": {
+    "name": "Wind Power",
+    "name_de": "Windkraft",
+    "description": "When hit by a wind move, the power of the next Electric-type move it uses is doubled.",
+    "description_de": "Wird es von einer Wind-Attacke getroffen, verdoppelt sich die Stärke seiner nächsten Elektro-Attacke.",
+    "inactive": "mechanic"
+  },
+  "wind_rider": {
+    "name": "Wind Rider",
+    "name_de": "Windreiter",
+    "description": "Gives immunity to wind moves, and causes the Pokémon's Attack to increase by one stage when hit by one.",
+    "description_de": "Immun gegen Wind-Attacken; wird es von einer getroffen, steigt sein Angriff um eine Stufe.",
+    "inactive": "mechanic"
+  },
+  "wonder_guard": {
+    "name": "Wonder Guard",
+    "name_de": "Wunderwache",
+    "description": "Protects against damaging moves that are not super effective.",
+    "description_de": "Wundersame Kräfte bewirken, dass nur sehr effektive Treffer bei ihm Schaden anrichten.",
+    "effect": "wonder_guard"
+  },
+  "wonder_skin": {
+    "name": "Wonder Skin",
+    "name_de": "Wunderhaut",
+    "description": "Lowers incoming non-damaging moves' base accuracy to exactly 50%.",
+    "description_de": "Wehrt mit robustem Körper viele Status-Attacken ab.",
+    "inactive": "todo"
+  },
+  "zen_mode": {
+    "name": "Zen Mode",
+    "name_de": "Trance-Modus",
+    "description": "Changes Darmanitan's form after each turn depending on its HP: Zen Mode below 50% max HP, and Standard Mode otherwise.",
+    "description_de": "Fallen seine KP auf die Hälfte des Maximalwerts oder weniger, wechselt es seine Gestalt.",
+    "inactive": "mechanic"
+  },
+  "zero_to_hero": {
+    "name": "Zero to Hero",
+    "name_de": "Superwechsel",
+    "description": "Transforms into its Hero Form when switching out.",
+    "description_de": "Nimmt beim Auswechseln seine Heldenform an.",
+    "inactive": "mechanic"
+  }
+}
