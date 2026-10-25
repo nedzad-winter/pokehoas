@@ -1,0 +1,76 @@
+# Runs every tests/test_*.py script as its own parallel job. The scripts are
+# plain Python (not pytest): each prints "[ok  ]" / "[FAIL]" lines and exits 1
+# on a failure, so a job fails on a non-zero exit OR any "[FAIL]" line.
+name: Tests
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    name: Find test scripts
+    runs-on: ubuntu-latest
+    outputs:
+      scripts: ${{ steps.list.outputs.scripts }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: list
+        shell: bash
+        run: |
+          scripts=$(python3 -c 'import glob, json; print(json.dumps(sorted(glob.glob("tests/test_*.py"))))')
+          echo "Found: $scripts"
+          echo "scripts=$scripts" >> "$GITHUB_OUTPUT"
+
+  test:
+    name: ${{ matrix.script }}
+    needs: discover
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        script: ${{ fromJSON(needs.discover.outputs.scripts) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          # Same Python as the add-on's base image (pokemon_encounter/build.yaml).
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pokemon_encounter/requirements.txt
+      - run: pip install -r pokemon_encounter/requirements.txt
+      - name: Run ${{ matrix.script }}
+        shell: bash
+        env:
+          SCRIPT: ${{ matrix.script }}
+        run: |
+          python "$SCRIPT" 2>&1 | tee test.log
+          if grep -q '\[FAIL\]' test.log; then
+            echo "::error file=$SCRIPT::$(grep -c '\[FAIL\]' test.log) check(s) failed"
+            exit 1
+          fi
+
+  # One stable check name for branch protection: green only if every script passed.
+  all-tests:
+    name: All tests
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        env:
+          RESULT: ${{ needs.test.result }}
+        run: |
+          echo "Test matrix result: $RESULT"
+          [ "$RESULT" = "success" ]
