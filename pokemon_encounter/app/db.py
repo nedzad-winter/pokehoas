@@ -1292,6 +1292,22 @@ def _migrate_auto_lock_shiny(conn: sqlite3.Connection) -> None:
     conn.commit()
 
 
+def _migrate_auto_lock_living_dex(conn: sqlite3.Connection) -> None:
+    """Toggle for auto-locking catches the living Pokedex still needs (see
+    api/encounters.py: `finalize_catch`, evolution.living_dex_need),
+    idempotent and additive.
+
+    `app_user.auto_lock_living_dex`: defaults to off (0) - opt-in like
+    `auto_lock_first_catch`, which it extends to the whole evolution line
+    (a second Eevee still locks while Eeveelutions are missing).
+    """
+    if "auto_lock_living_dex" not in _table_columns(conn, "app_user"):
+        conn.execute(
+            "ALTER TABLE app_user ADD COLUMN auto_lock_living_dex INTEGER NOT NULL DEFAULT 0"
+        )
+    conn.commit()
+
+
 def _migrate_god_mode(conn: sqlite3.Connection) -> None:
     """God mode switch per account (see app/god_mode.py), off for everyone -
     purely additive. Only an admin can turn it on, for an admin account."""
@@ -1459,6 +1475,7 @@ def init_db() -> None:
         _migrate_box_item_return(conn)
         _migrate_auto_lock_first_catch(conn)
         _migrate_auto_lock_shiny(conn)
+        _migrate_auto_lock_living_dex(conn)
         _migrate_god_mode(conn)
         _migrate_favorite(conn)
         _migrate_locked(conn)
@@ -1598,6 +1615,21 @@ def user_auto_lock_shiny(user_id: str) -> bool:
 
 def set_user_auto_lock_shiny(user_id: str, value: bool) -> dict[str, Any]:
     execute("UPDATE app_user SET auto_lock_shiny = ? WHERE id = ?", (int(value), user_id))
+    user = get_user(user_id)
+    assert user is not None
+    return user
+
+
+def user_auto_lock_living_dex(user_id: str) -> bool:
+    """Whether a catch the living Pokedex still needs should start locked (see
+    api/encounters.py: `finalize_catch`); unknown users and legacy rows
+    without the column default to off."""
+    user = get_user(user_id)
+    return False if user is None else bool(user.get("auto_lock_living_dex", 0))
+
+
+def set_user_auto_lock_living_dex(user_id: str, value: bool) -> dict[str, Any]:
+    execute("UPDATE app_user SET auto_lock_living_dex = ? WHERE id = ?", (int(value), user_id))
     user = get_user(user_id)
     assert user is not None
     return user

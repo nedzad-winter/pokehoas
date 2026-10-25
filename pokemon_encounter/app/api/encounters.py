@@ -22,7 +22,7 @@ from pydantic import BaseModel
 
 from .. import (battle, battle_session, db, encounter_state, i18n, rarity, roaming, spawn,
                 trainer_battle)
-from .. import achievements, breeding, economy
+from .. import achievements, breeding, economy, evolution
 from ..auth import get_current_user
 
 router = APIRouter(prefix="/api", tags=["encounters"])
@@ -195,7 +195,7 @@ def queue_catch_context(
 
 def finalize_catch(
     row: dict[str, Any], wild: battle.Combatant, user_id: str,
-    ball_key: str | None = None,
+    ball_key: str | None = None, lock: str | None = None,
 ) -> dict[str, Any]:
     """Common success path for ANY successful catch - ball from the
     queue (`throw`) as well as ball in manual battle (`battle_session._throw`):
@@ -209,6 +209,11 @@ def finalize_catch(
     (db.user_auto_lock_first_catch), same as legendary/mythical catches
     always do (rarity.auto_lock). Every shiny catch also starts locked unless
     the player switched `auto_lock_shiny` off (db.user_auto_lock_shiny).
+    With `auto_lock_living_dex` (db.user_auto_lock_living_dex) a catch also
+    starts locked while its evolution line still needs it for the living
+    Pokedex (evolution.living_dex_need). `lock` comes from an auto rule
+    (auto_rules.Actions.lock): "always" locks, "living_dex" applies that
+    living-dex check even with the setting off; it only ever adds a lock.
     """
     if ball_key and battle.BALLS.get(ball_key, {}).get("effect") == "heal":
         wild.current_hp = wild.max_hp
@@ -227,10 +232,13 @@ def finalize_catch(
         (row["species_id"], user_id),
     )
     first_catch = existing_dex is None or not existing_dex["caught_count"]
-    auto_lock = rarity.auto_lock(wild.species) or (
+    auto_lock = rarity.auto_lock(wild.species) or lock == "always" or (
         first_catch and db.user_auto_lock_first_catch(user_id)
     ) or (
         bool(row["shiny"]) and db.user_auto_lock_shiny(user_id)
+    ) or (
+        (lock == "living_dex" or db.user_auto_lock_living_dex(user_id))
+        and evolution.living_dex_need(user_id, row["species_id"], row.get("gender")) > 0
     )
     owned_id = db.execute(
         """

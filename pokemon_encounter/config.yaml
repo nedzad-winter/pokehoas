@@ -6,7 +6,7 @@
 # first start, plus the choice of which entity CATEGORIES automatically become
 # triggers (trigger_categories & co.).
 name: PokeHOAS
-version: "1.1-beta"
+version: "1.2-beta"
 slug: pokemon_encounter
 description: Random Pokémon encounters triggered by Home Assistant events. Battle and catch them in a built-in web app.
 url: https://github.com/nedzad-winter/pokehoas

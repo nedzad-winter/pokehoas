@@ -11,7 +11,7 @@ door, a light switch, a person arriving at a zone – can spawn a wild Pokémon.
 Home Assistant user gets their **own queue, team, Pokédex and bag** and handles the
 encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolve.
 
-**Status: public beta (v1.1-beta).** It is a hobby project and playable end to end;
+**Status: public beta (v1.2-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
 
 ## Features
@@ -259,7 +259,7 @@ without restart:
 |---|---|
 | Queue | waiting encounters, throw balls, auto-battle, flee, "Run rules" (auto rules) |
 | Settings | *General*: personal region lock, battle style, auto heal, whether the Team tab shows IVs and whether moving a Pokémon to the box returns its held item to the bag (every player). *Auto rules*: the player's own IF/DO rules (see below). Admins additionally get *Admin*, with sub-views: Pokémon lookup (base stats, rarity tier, spawn weight, evolutions, abilities), spawn, player editor (account incl. money and every player preference / team / box - every Pokémon field incl. EVs, EXP, ability, held item, any move and the species itself / items / Pokédex per species or in bulk / achievements and gym badges, granted with or without their reward) plus a **raw data** view that edits, adds and deletes the player's rows in every per-player database table (eggs, daycare, daily challenges, PvP records, auto rules, own encounter queue …; values are only type-checked), the grouped game settings (retention, cooldowns, daily limit, level range, rarity weights, economy, auto-battle …) with a reset to defaults (all or per group), **Triggers** (which entities can spawn, states, spawn chance, type bonus, cooldown, and a manual "Trigger now" button per entity that fires it immediately for testing, bypassing only that entity's own cooldown and `spawn_chance` roll - the daily cap and global cooldown still apply) and **Zones & Biomes** (mapping geolocation zone → biome) |
-| Team | team (slots 1–6) and box, moves, IVs, EVs, EXP, held items, heal team; the box is sorted by National Dex by default and can be filtered by type, evolution stage (1–3), rarity tier, "can evolve", shiny, favorites, locked-only and minimum level, with a checkbox to invert the whole filter; its select mode releases several box Pokémon at once (all or nothing, Rare Candy rewards added up) or evolves the selected ones at once (`POST /api/team/evolve-many` – only Pokémon with exactly one level evolution and no item needed, the rest is skipped). Any Pokémon can be locked (`PUT /api/team/{id}/locked`, shown with a small Klefki) to protect it from release – legendary and mythical catches arrive locked automatically, and so does every shiny catch unless the player switches `auto_lock_shiny` off (personal, `app_user.auto_lock_shiny`, default on; toggle: `PUT /api/users/me/auto-lock-shiny`); the select mode also locks/unlocks the selection at once (`POST /api/team/lock-many`), and "Release selected" leaves locked Pokémon out (the release endpoints reject them until unlocked) |
+| Team | team (slots 1–6) and box, moves, IVs, EVs, EXP, held items, heal team; the box is sorted by National Dex by default and can be filtered by type, evolution stage (1–3), rarity tier, "can evolve", shiny, favorites, locked-only and minimum level, with a checkbox to invert the whole filter; its select mode releases several box Pokémon at once (all or nothing, Rare Candy rewards added up) or evolves the selected ones at once (`POST /api/team/evolve-many` – only Pokémon with exactly one level evolution and no item needed, the rest is skipped). Any Pokémon can be locked (`PUT /api/team/{id}/locked`, shown with a small Klefki) to protect it from release – legendary and mythical catches arrive locked automatically, and so does every shiny catch unless the player switches `auto_lock_shiny` off (personal, `app_user.auto_lock_shiny`, default on; toggle: `PUT /api/users/me/auto-lock-shiny`); with `auto_lock_living_dex` (personal, `app_user.auto_lock_living_dex`, default off; toggle: `PUT /api/users/me/auto-lock-living-dex`) a catch also starts locked while its evolution line still needs it for the living Pokédex – `evolution.living_dex_need` matches the line's owned Pokémon to its species (they only evolve forward, gender-bound evolutions like Kirlia → Gallade count per gender, Shedinja comes along with Ninjask), so with 2 Eevee, a Flareon and an Umbreon another Eevee locks (5 still needed) while a second Flareon stays unlocked; the select mode also locks/unlocks the selection at once (`POST /api/team/lock-many`), and "Release selected" leaves locked Pokémon out (the release endpoints reject them until unlocked) |
 
 ### Type bonus
 
@@ -475,7 +475,8 @@ queue. Rules run on "Run rules" in the queue and - when the player turns on
 
 * **IF** (all set conditions must hold; a list matches any value): level range, shiny,
   generation, rarity tier, types (any/all), evolution stage, hidden ability, nature, species
-  only/never, caught before / caught at most N times, full IVs unlocked
+  only/never, caught before / caught at most N times, needed for the living Pokédex
+  (`evolution.living_dex_need`, see Team tab), full IVs unlocked
   (`economy.species_ivs_maxed`), IV % of this individual, IVs better than the best owned one of
   the species, catch chance ≥ N % with a given ball, trigger entity, biome, team HP ≥ N %, level
   advantage, super-effective move available, money ≥ N, balls in bag ≥ N, free team slot.
@@ -487,14 +488,16 @@ queue. Rules run on "Run rules" in the queue and - when the player turns on
   auto heal first below N % team HP (works without the Auto heal switch), ball strategy
   (specific, own order, cheapest reaching `chance_min`, best chance; never-use list), max. balls,
   what to do on a failed catch (leave in queue / let go / beat it), auto-buy a ball below N up
-  to M keeping a money reserve, send catches to the box, Home Assistant notification
+  to M keeping a money reserve, send catches to the box, lock the catch (`lock`: as in the player's settings, always, or if
+  the living Pokédex needs it – only ever adds a lock), Home Assistant notification
   (`persistent_notification.create`, sent by the poller).
 * **Guards:** shiny, legendary and mythical Pokémon are never let go and the Master Ball is
   never thrown unless the rule allows it (`allow_flee_special`, `allow_master_ball`); auto-buy
   respects the player's daily budget (`app_user.auto_rules_daily_cap`, 0 = none).
 * "Test against my queue" (`GET /api/auto-rules/preview`) is a dry run; every action is logged
   (`auto_rule_log`, last 200 per player) and battles carry the rule name in the history
-  (`battle_log.rule_name`). Templates: shiny hunter, catch new species, train on commons.
+  (`battle_log.rule_name`). Templates: shiny hunter, catch new species, fill the living Pokédex,
+  train on commons.
 * Migration: the retired switches `auto_battle_also_catches` / `auto_battle_only_known_species`
   became one "Auto-catch" rule per player for households that had auto-catch on.
 

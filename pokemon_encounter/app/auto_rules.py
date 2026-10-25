@@ -37,7 +37,7 @@ from typing import Any, Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from . import (achievements, battle, battle_history, breeding, db, economy, encounter_state,
-               healing, i18n, rarity, roaming, spawn)
+               evolution, healing, i18n, rarity, roaming, spawn)
 from . import moves as moves_mod
 
 log = logging.getLogger(__name__)
@@ -47,6 +47,9 @@ TEAM_STRATEGIES = ("current", "lineup", "type_matchup", "lowest_level")
 BALL_STRATEGIES = ("specific", "priority", "cheapest_chance", "best")
 ON_FAIL = ("leave", "flee", "defeat")
 EVO_STAGES = ("base", "middle", "final")
+# Extra lock on a rule's catch (see api/encounters.py: finalize_catch): only
+# the player's lock settings, always, or while the living Pokedex needs it.
+LOCK_MODES = ("settings", "always", "living_dex")
 ALL_TYPES = tuple(sorted(battle.TYPE_CHART))
 STAT_KEYS = ("hp", "atk", "def", "spa", "spd", "spe")
 IV_MAX_TOTAL = 31 * len(STAT_KEYS)
@@ -95,6 +98,7 @@ class Conditions(BaseModel):
     types_mode: Literal["any", "all"] = "any"
     caught_before: bool | None = None        # Pokedex: species caught at least once
     caught_count_max: int | None = Field(None, ge=0)
+    living_dex_needed: bool | None = None    # evolution line still needs one (evolution.living_dex_need)
     shiny: bool | None = None
     species_include: list[int] = []
     species_exclude: list[int] = []
@@ -164,6 +168,7 @@ class Actions(BaseModel):
     buy_up_to: int = Field(20, ge=1, le=economy.MAX_PURCHASE_QUANTITY)
     money_reserve: int = Field(0, ge=0)
     to_box: bool = False
+    lock: Literal["settings", "always", "living_dex"] = "settings"
     notify: bool = False
     allow_flee_special: bool = False
     allow_master_ball: bool = False
@@ -308,6 +313,12 @@ TEMPLATES: dict[str, dict[str, Any]] = {
                     "buy_ball": "poke_ball", "buy_below": 5, "buy_up_to": 20,
                     "money_reserve": 1000},
     },
+    "living_dex": {
+        "name": "auto_rules.template.living_dex",
+        "conditions": {"living_dex_needed": True},
+        "actions": {"mode": "catch", "ball": "cheapest_chance", "chance_min": 60, "max_balls": 5,
+                    "heal_below": 50, "on_fail": "leave", "lock": "living_dex"},
+    },
     "train_commons": {
         "name": "auto_rules.template.train_commons",
         "conditions": {"caught_before": True, "rarity": ["common"], "ivs_maxed": True},
@@ -399,6 +410,11 @@ class Facts:
     @property
     def caught_count(self) -> int:
         return int(self.dex.get("caught_count") or 0)
+
+    @cached_property
+    def living_dex_need(self) -> int:
+        return evolution.living_dex_need(self.user_id, self.encounter["species_id"],
+                                         self.encounter.get("gender"))
 
     @cached_property
     def iv_total(self) -> int:
@@ -524,6 +540,8 @@ def matches(cond: Conditions, facts: Facts) -> bool:
     if cond.caught_before is not None and (facts.caught_count > 0) != cond.caught_before:
         return False
     if cond.caught_count_max is not None and facts.caught_count > cond.caught_count_max:
+        return False
+    if cond.living_dex_needed is not None and (facts.living_dex_need > 0) != cond.living_dex_needed:
         return False
     if cond.ivs_maxed is not None and economy.species_ivs_maxed(species) != cond.ivs_maxed:
         return False
@@ -756,7 +774,8 @@ def _finish_catch(row: dict[str, Any], wild: battle.Combatant, user_id: str, bal
                   actions: Actions, result: dict[str, Any]) -> None:
     from .api import encounters as encounters_api
 
-    catch = encounters_api.finalize_catch(row, wild, user_id, ball)
+    catch = encounters_api.finalize_catch(
+        row, wild, user_id, ball, lock=None if actions.lock == "settings" else actions.lock)
     if actions.to_box:
         db.execute("UPDATE owned_pokemon SET party_slot = NULL WHERE id = ?", (catch["owned_id"],))
     result["outcome"] = "caught"
@@ -1138,7 +1157,7 @@ def catalog() -> dict[str, Any]:
     """Option lists for the rule editor."""
     return {
         "modes": MODES, "team_strategies": TEAM_STRATEGIES, "ball_strategies": BALL_STRATEGIES,
-        "on_fail": ON_FAIL, "evo_stages": EVO_STAGES, "types": ALL_TYPES,
+        "on_fail": ON_FAIL, "lock_modes": LOCK_MODES, "evo_stages": EVO_STAGES, "types": ALL_TYPES,
         "rarity": rarity.TIERS, "natures": spawn.NATURES,
         "generations": list(range(1, MAX_GENERATION + 1)),
         "balls": [{"key": key, "label": ball["label"], "label_de": ball.get("label_de"),

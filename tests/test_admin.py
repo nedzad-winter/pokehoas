@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -613,6 +614,17 @@ check("Nach dem Reset ist nichts mehr geaendert",
       not any(s["modified"] for g in r.json()["groups"] for s in g["settings"]))
 check("Reset (Nicht-Admin) -> 403", client.post(
     "/api/admin/settings/reset", headers=BOB, json={}).status_code == 403)
+
+# ------------------------------------------- Frontend: Admin-Ansichten
+# Jede Ansicht, die renderAdmin() fest einbindet, muss in index.html selbst
+# definiert sein - nicht nur in einer gitignorten Erweiterung (www/agent.js),
+# sonst bleibt der Admin-Tab im deployten Add-on leer (ReferenceError).
+html = (ROOT / "pokemon_encounter" / "www" / "index.html").read_text(encoding="utf-8")
+views = re.search(r"async function renderAdmin\(\) \{.*?const views = \{(.*?)\};", html, re.S)
+renderers = re.findall(r"\b\w+:\s*(\w+)", views.group(1)) if views else []
+check("Frontend: renderAdmin bindet die Admin-Ansichten ein", len(renderers) >= 6, ", ".join(renderers))
+missing = [name for name in renderers if not re.search(rf"function {name}\(", html)]
+check("Frontend: jede Admin-Ansicht ist in index.html definiert", not missing, ", ".join(missing))
 
 # -------------------------------------------------------------------- Ende
 print()

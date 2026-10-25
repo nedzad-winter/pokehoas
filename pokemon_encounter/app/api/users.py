@@ -107,6 +107,10 @@ class AutoLockShinyChoice(BaseModel):
     auto_lock_shiny: bool
 
 
+class AutoLockLivingDexChoice(BaseModel):
+    auto_lock_living_dex: bool
+
+
 class SpriteStyleChoice(BaseModel):
     # None = the normal sprites of that species; otherwise a generation whose
     # living Pokedex achievement the player has (achievements.living_generations).
@@ -153,6 +157,7 @@ def me(
         "box_item_return": db.user_box_item_return(current_user["id"]),
         "auto_lock_first_catch": db.user_auto_lock_first_catch(current_user["id"]),
         "auto_lock_shiny": db.user_auto_lock_shiny(current_user["id"]),
+        "auto_lock_living_dex": db.user_auto_lock_living_dex(current_user["id"]),
         **_sprite_style(current_user["id"]),
         **db.user_auto_heal(current_user["id"]),
         "available_languages": i18n.available_languages(),
@@ -315,6 +320,14 @@ def set_auto_lock_shiny(
 ) -> dict[str, Any]:
     user = db.set_user_auto_lock_shiny(current_user["id"], payload.auto_lock_shiny)
     return {"auto_lock_shiny": bool(user["auto_lock_shiny"])}
+
+
+@router.put("/users/me/auto-lock-living-dex")
+def set_auto_lock_living_dex(
+    payload: AutoLockLivingDexChoice, current_user: dict = Depends(get_current_user)
+) -> dict[str, Any]:
+    user = db.set_user_auto_lock_living_dex(current_user["id"], payload.auto_lock_living_dex)
+    return {"auto_lock_living_dex": bool(user["auto_lock_living_dex"])}
 
 
 @router.put("/users/me/auto-heal")

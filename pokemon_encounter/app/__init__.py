@@ -1,3 +1,3 @@
 """PokeHOAS - Home-Assistant-Add-on."""
 
-__version__ = "1.1-beta"
+__version__ = "1.2-beta"

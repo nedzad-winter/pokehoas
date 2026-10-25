@@ -1316,6 +1316,10 @@ async function renderGeneralSettings(me) {
       <label><input type="checkbox" id="autoLockShinyPick"${me.auto_lock_shiny ? ' checked' : ''}> ${tr('auto_lock_shiny.setting')}</label>
       <div class="muted">${tr('auto_lock_shiny.setting_hint')}</div>
     </div>
+    <div style="margin-top:14px">
+      <label><input type="checkbox" id="autoLockLivingDexPick"${me.auto_lock_living_dex ? ' checked' : ''}> ${tr('auto_lock_living_dex.setting')}</label>
+      <div class="muted">${tr('auto_lock_living_dex.setting_hint')}</div>
+    </div>
   </div>`;
   wireRegionLockSelect('regionLockPick', async mode => {
     try { await api('/api/users/me/region-lock', { method: 'PUT', body: JSON.stringify({ region_lock: mode }) }); }
@@ -1358,6 +1362,10 @@ async function renderGeneralSettings(me) {
     try { await api('/api/users/me/auto-lock-shiny', { method: 'PUT', body: JSON.stringify({ auto_lock_shiny: e.target.checked }) }); }
     catch (err) { alert(err.message); renderGeneralSettings(); }
   };
+  $('#autoLockLivingDexPick').onchange = async e => {
+    try { await api('/api/users/me/auto-lock-living-dex', { method: 'PUT', body: JSON.stringify({ auto_lock_living_dex: e.target.checked }) }); }
+    catch (err) { alert(err.message); renderGeneralSettings(); }
+  };
 }
 
 // ============================================================ Auto rules
@@ -1387,6 +1395,7 @@ const AR_COND_FIELDS = [
   { group: 'pokemon', key: 'species_exclude', kind: 'ids' },
   { group: 'dex', key: 'caught_before', kind: 'tri' },
   { group: 'dex', key: 'caught_count_max', kind: 'num', min: 0 },
+  { group: 'dex', key: 'living_dex_needed', kind: 'tri' },
   { group: 'dex', key: 'ivs_maxed', kind: 'tri' },
   { group: 'dex', key: 'iv_percent_min', kind: 'num', min: 0, max: 100, unit: '%' },
   { group: 'dex', key: 'iv_better_than_best', kind: 'tri' },
@@ -1419,6 +1428,8 @@ const AR_ACTION_FIELDS = [
   { key: 'buy_up_to', kind: 'num', min: 1, max: 99, modes: AR_BALL_MODES, show: a => a.buy_ball, required: true },
   { key: 'money_reserve', kind: 'num', min: 0, modes: AR_BALL_MODES, show: a => a.buy_ball, required: true },
   { key: 'to_box', kind: 'bool', modes: AR_BALL_MODES },
+  // `quiet`: the default value gets no summary pill (every rule would show it).
+  { key: 'lock', kind: 'select', options: c => c.lock_modes, label: m => tr('auto_rules.lock.' + m), modes: AR_BALL_MODES, quiet: 'settings' },
   { key: 'notify', kind: 'bool', modes: ['defeat', 'catch', 'throw', 'flee'] },
   { key: 'allow_flee_special', kind: 'bool', modes: ['catch', 'throw', 'flee'] },
   { key: 'allow_master_ball', kind: 'bool', modes: AR_BALL_MODES },
@@ -1461,7 +1472,7 @@ function arActionSummary(a) {
   AR_ACTION_FIELDS.forEach(f => {
     if (f.key === 'mode' || !arFieldVisible(f, a)) return;
     const v = a[f.key];
-    if (f.kind === 'bool' && !v) return;
+    if ((f.kind === 'bool' && !v) || (f.quiet !== undefined && v === f.quiet)) return;
     const text = arValueText(f, v);
     if (text === null) return;
     pills.push(`<span class="pill">${esc(`${tr('auto_rules.act.' + f.key)}: ${text}`)}</span>`);
@@ -2117,6 +2128,20 @@ async function admRenderGameSettings(box) {
   }
   $('#admSettingsResetAll').onclick = () => reset(null);
   box.querySelectorAll('.admGroupReset').forEach(btn => { btn.onclick = () => reset(btn.dataset.group); });
+}
+
+// Triggers/Zones views reuse the existing renderTriggers()/renderZones()
+// bodies (they and their inline handlers still target #tab-triggers /
+// #tab-zones, e.g. via render('triggers') after a save) - just mount that
+// section into the admin box first.
+async function admRenderTriggers(box) {
+  box.innerHTML = '<section id="tab-triggers"></section>';
+  await renderTriggers();
+}
+
+async function admRenderZones(box) {
+  box.innerHTML = '<section id="tab-zones"></section>';
+  await renderZones();
 }
 
 // {"poke_ball": 20, ...} -> "poke_ball ×20, ..." (starter inventory etc.)

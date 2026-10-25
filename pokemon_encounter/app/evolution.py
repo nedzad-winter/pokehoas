@@ -416,6 +416,86 @@ def line_for(species_id: int) -> dict[str, Any]:
     }
 
 
+def _reachable(start: int, gender: str | None,
+               edges: dict[int, list[tuple[int, str | None]]]) -> set[int]:
+    """`start` plus every species a Pokemon of it (with this gender) can still
+    evolve into - gender-bound edges (Kirlia -> Gallade) only for that gender."""
+    seen = {start}
+    stack = [start]
+    while stack:
+        for to_id, needs in edges.get(stack.pop(), []):
+            if to_id not in seen and (needs is None or needs == gender):
+                seen.add(to_id)
+                stack.append(to_id)
+    return seen
+
+
+def living_dex_need(user_id: str, species_id: int, gender: str | None = None) -> int:
+    """How many more Pokemon of this species (and gender) the user still needs
+    so that its whole evolution line (`line_for`) is owned at the same time in
+    team or box - the living Pokedex for that line. 0 = one more is surplus.
+
+    Pokemon only evolve forward, so an owned one fills its own species or one
+    it can still evolve into. The line's owned Pokemon are matched to its
+    species (one each, maximum bipartite matching); every additional one of
+    `species_id`/`gender` that still grows the matching counts. Eevee with two
+    Eevee, Flareon and Umbreon owned: six Eeveelutions missing, so 7 Eevee are
+    needed and 5 still missing. Shedinja is no target of its own: it only
+    comes along with Nincada -> Ninjask (`_spawn_shedinja`).
+    """
+    line = line_for(species_id)
+    edges: dict[int, list[tuple[int, str | None]]] = {}
+    for t in line["transitions"]:
+        if t["from_species_id"] == NINCADA_SPECIES_ID and t["to_species_id"] == SHEDINJA_SPECIES_ID:
+            continue
+        edges.setdefault(t["from_species_id"], []).append(
+            (t["to_species_id"], t["conditions"].get("gender")))
+    slot_ids = [row["id"] for row in line["species"]]
+    owned = db.query(
+        f"SELECT species_id, gender, COUNT(*) AS n FROM owned_pokemon "
+        f"WHERE user_id = ? AND species_id IN ({','.join('?' * len(slot_ids))}) "
+        f"GROUP BY species_id, gender",
+        (user_id, *slot_ids),
+    )
+
+    reach_cache: dict[tuple[int, str | None], set[int]] = {}
+
+    def reach(sid: int, g: str | None) -> set[int]:
+        if (sid, g) not in reach_cache:
+            reach_cache[(sid, g)] = _reachable(sid, g, edges)
+        return reach_cache[(sid, g)]
+
+    match: dict[int, int] = {}  # species slot -> index into `holders`
+    holders: list[set[int]] = []
+
+    def augment(idx: int, visited: set[int]) -> bool:
+        for slot in holders[idx]:
+            if slot in visited:
+                continue
+            visited.add(slot)
+            if slot not in match or augment(match[slot], visited):
+                match[slot] = idx
+                return True
+        return False
+
+    def add(targets: set[int]) -> bool:
+        holders.append(targets)
+        return augment(len(holders) - 1, set())
+
+    for row in owned:
+        targets = reach(row["species_id"], row["gender"])
+        # More of one kind than species it can reach never matters.
+        for _ in range(min(int(row["n"]), len(targets))):
+            add(targets)
+    targets = reach(species_id, gender)
+    need = 0
+    for _ in range(len(targets)):
+        if not add(targets):
+            break
+        need += 1
+    return need
+
+
 # Time of day for level evolutions with `time_of_day` (e.g. Eevee ->
 # Espeon/Umbreon day/night). Local time of the add-on; 6-18 = day.
 DAY_START_HOUR = 6

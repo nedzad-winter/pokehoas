@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.2-beta
+
+- New setting **Auto-lock catches the living Pokédex needs** (Settings → General, off by
+  default): a catch starts locked while its evolution line still needs it to be owned
+  complete at the same time in team or box. The line is worked out per evolution tree –
+  Pokémon only evolve forward, gender-bound evolutions (Kirlia → Gallade) count per gender –
+  so with two Eevee, a Flareon and an Umbreon another Eevee locks (five still needed),
+  while a second Flareon stays unlocked.
+- Auto rules: new condition **Needed for the living Pokédex**, new action **Lock the catch**
+  (as in my settings / always / if the living Pokédex needs it) and a new template
+  **Fill the living Pokédex**.
+- Fix: the Admin tab under Settings stayed blank (Triggers and Zones & Biomes views were
+  missing from the build).
+
 ## 1.1-beta – first public release
 
 - Home Assistant events (motion, door/window, lights & switches, zones, …) spawn wild

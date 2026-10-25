@@ -77,6 +77,7 @@ EDITABLE_USER_FIELDS: dict[str, dict[str, Any]] = {
     "box_item_return": {"type": "bool"},
     "auto_lock_first_catch": {"type": "bool"},
     "auto_lock_shiny": {"type": "bool"},
+    "auto_lock_living_dex": {"type": "bool"},
     "buddy_steps": {"type": "int", "min": 0, "max": 99_999_999},
     "buddy_steps_total": {"type": "int", "min": 0, "max": 99_999_999},
 }
