@@ -35,10 +35,11 @@ from datetime import datetime
 from typing import Any, Literal
 
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from .. import admin as admin_auth
-from .. import abilities, achievements, battle, breeding, db, economy, held_items, i18n, rarity, spawn
+from .. import abilities, achievements, backup, battle, breeding, db, economy, held_items, i18n, rarity, spawn
 from .. import evs as evs_mod
 from .. import moves as moves_mod
 
@@ -1402,3 +1403,17 @@ def release_pokemon(pokemon_id: int) -> dict[str, Any]:
     with db.cursor() as cur:
         _delete_owned(cur, "id = ?", (pokemon_id,))
     return {"ok": True}
+
+
+# ------------------------------------------------------------------ Backup
+
+@router.get("/backup")
+def download_backup() -> FileResponse:
+    """Fresh, consistent snapshot of the whole database as a download.
+
+    Mainly for the standalone Docker image, where no Supervisor backup exists.
+    """
+    path = backup.create_snapshot(backup.backup_dir() / "download", name="pokemon-download.sqlite3")
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    return FileResponse(path, media_type="application/vnd.sqlite3",
+                        filename=f"pokehoas-{stamp}.sqlite3")

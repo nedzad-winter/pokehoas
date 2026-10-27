@@ -12,9 +12,10 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from . import __version__, db, gifts, seed
+from . import __version__, backup, db, gifts, seed
 from .api import admin as admin_api
 from .api import auto_rules as auto_rules_api
+from .api import login as login_api
 from .api import abilitydex, battles, breeding as breeding_api, buddy as buddy_api, challenges as challenges_api, config_routes, encounters, i18n as i18n_api, league, movedex, pvp as pvp_api, shop, team, trading as trading_api, users
 from . import abilities, breeding, evolution, tms
 from .config import settings
@@ -89,10 +90,13 @@ async def lifespan(app: FastAPI):
     tms.start_background_backfill(after=species_seed_task)
 
     poller.start()
+    # Periodic DB snapshots (off in the add-on, on in the standalone image).
+    backup.start()
     try:
         yield
     finally:
         heartbeat_task.cancel()
+        await backup.stop()
         await poller.stop()
         await ha_client.close()
         log.info("PokeHOAS stopped")
@@ -106,6 +110,8 @@ app = FastAPI(
     openapi_url="/api/openapi.json",
 )
 
+# HA account login for auth mode ha_oauth (Docker without Supervisor).
+app.include_router(login_api.router)
 # Admin panel (all endpoints behind require_admin, see app/admin.py).
 app.include_router(admin_api.router)
 app.include_router(config_routes.router)

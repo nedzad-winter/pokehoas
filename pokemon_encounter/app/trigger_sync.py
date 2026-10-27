@@ -133,6 +133,13 @@ _known_categories: dict[str, str] = {}
 
 # ------------------------------------------------------------------ Optionen
 
+ENV_OVERRIDES = {
+    "trigger_categories": "POKEMON_TRIGGER_CATEGORIES",
+    "extra_entities": "POKEMON_EXTRA_ENTITIES",
+    "exclude_entities": "POKEMON_EXCLUDE_ENTITIES",
+}
+
+
 def options_path() -> Path:
     override = os.getenv("POKEMON_OPTIONS_FILE")
     if override:
@@ -174,6 +181,15 @@ def load_options() -> dict[str, Any]:
         pass
     except (OSError, ValueError) as exc:
         log.warning("Add-on-Optionen %s nicht lesbar: %s", path, exc)
+
+    # Standalone Docker (no Supervisor, no options.json): the same three options
+    # as comma/space separated env vars. A set env var wins over the file, an
+    # empty POKEMON_TRIGGER_CATEGORIES means "no automatic triggers".
+    for key, env_name in ENV_OVERRIDES.items():
+        value = os.getenv(env_name)
+        if value is not None:
+            raw[key] = [part for part in value.replace(",", " ").split() if part]
+            found = True
 
     if "trigger_categories" in raw:
         categories = [c for c in _clean_list(raw.get("trigger_categories")) if c in CATEGORIES]

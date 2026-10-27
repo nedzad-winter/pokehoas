@@ -17,12 +17,16 @@ instead of exploring the code from scratch.
     attempt/outcome on the shared queue; `spawn.py` spawn weighting;
     `economy.py` money + repeat-catch IVs; `evolution.py`; `medicine.py`; `healing.py`;
     `achievements.py` + `rewards.py` item rewards per achievement; `tms.py` TMs (gym rewards,
-    teach off-type moves); `trainers.py`; `auth.py` user detection (Ingress header)
+    teach off-type moves); `trainers.py`; `auth.py` user detection (`POKEMON_AUTH_MODE`: Ingress
+    header in the add-on, HA OAuth login / trusted proxy header in the standalone image,
+    `api/login.py`); `backup.py` DB snapshots
   - `api/` — REST routes, one module per area (`team.py`, `encounters.py`, `shop.py`, …)
   - `data/*.json` — static catalogs (shop, moves, TMs, trainers, held items, biomes)
   - `data/i18n/{en,de}.json` — ALL user-facing strings, flat `key → text`, alphabetically sorted
 - `pokemon_encounter/www/index.html` — the whole frontend (single file, vanilla JS)
 - `pokemon_encounter/config.yaml` — add-on manifest (`version`); `app/__init__.py` has `__version__`
+- `pokemon_encounter/entrypoint.py` — container start shared by the add-on (`run.sh` execs it) and the
+  standalone image (`Dockerfile.standalone`, docs in `DOCKER.md`); keep both paths working
 - `tests/test_*.py` — plain scripts, not pytest
 
 ## Commands

@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ ./app/
 COPY www/ ./www/
+COPY entrypoint.py ./
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 

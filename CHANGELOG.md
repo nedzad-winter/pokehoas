@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- PokeHOAS now also runs **without Supervisor** (Home Assistant Container): a standalone
+  Docker image (`ghcr.io/nedzad-winter/pokehoas`) configured with environment variables,
+  see [DOCKER.md](DOCKER.md). Users log in with their Home Assistant account; a reverse
+  proxy with forward auth (Authelia, Authentik, …) is supported as well.
+- Admins can download a consistent backup of the database (**Settings → Admin → Download
+  backup**). The standalone image additionally keeps daily snapshots.
+- Security: the identity source is now an explicit auth mode. Ingress headers are only
+  trusted in the add-on, and the no-login dev mode is never picked by accident.
+
 ## 1.2-beta
 
 - New setting **Auto-lock catches the living Pokédex needs** (Settings → General, off by
