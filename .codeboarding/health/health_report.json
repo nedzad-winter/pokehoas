@@ -1,0 +1,385 @@
+{
+  "repository_name": ".codeboarding-target",
+  "timestamp": "2026-10-28T13:03:04.028564+00:00",
+  "overall_score": 0.959825327510917,
+  "check_summaries": [
+    {
+      "check_name": "function_size",
+      "description": "Checks that functions/methods do not exceed line count thresholds",
+      "languages": [],
+      "check_type": "standard",
+      "total_entities_checked": 1099,
+      "findings_count": 0,
+      "warning_count": 0,
+      "score": 1.0,
+      "finding_groups": []
+    },
+    {
+      "check_name": "circular_dependencies",
+      "description": "Detects circular dependencies between packages",
+      "languages": [],
+      "check_type": "circular_dependencies",
+      "cycles": [
+        "pokemon_encounter.app.api -> pokemon_encounter.app -> pokemon_encounter.app.api"
+      ],
+      "packages_checked": 3,
+      "packages_in_cycles": 2
+    },
+    {
+      "check_name": "unused_code_diagnostics",
+      "description": "Detects unused imports, variables, functions, and dead code via LSP diagnostics",
+      "languages": [],
+      "check_type": "standard",
+      "total_entities_checked": 46,
+      "findings_count": 46,
+      "warning_count": 23,
+      "score": 0.0,
+      "finding_groups": [
+        {
+          "severity": "info",
+          "threshold": 0,
+          "description": "Variables declared but never used",
+          "entities": [
+            {
+              "entity_name": "[unused_variable] \"_type_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 29,
+              "line_end": 29,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_wonder_guard\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 36,
+              "line_end": 36,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_adaptability\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 47,
+              "line_end": 47,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_guts\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 54,
+              "line_end": 54,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_low_hp_type_boost\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 63,
+              "line_end": 63,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_status_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 76,
+              "line_end": 76,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_contact_status\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 87,
+              "line_end": 87,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_shed_skin\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 109,
+              "line_end": 109,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_intimidate\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 125,
+              "line_end": 125,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_download\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 136,
+              "line_end": 136,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_stat_drop_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 156,
+              "line_end": 156,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_intimidate_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 166,
+              "line_end": 166,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_inner_focus\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 173,
+              "line_end": 173,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_guard_dog\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 178,
+              "line_end": 178,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_stat_drop_reaction\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 188,
+              "line_end": 188,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_rattled_intimidated\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 203,
+              "line_end": 203,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_rattled_hit\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 209,
+              "line_end": 209,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_absorb_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 221,
+              "line_end": 221,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_absorb\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 229,
+              "line_end": 229,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_absorb_weakness\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 249,
+              "line_end": 249,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_flash_fire\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 257,
+              "line_end": 257,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_flash_fire_boost\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 270,
+              "line_end": 270,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_sturdy\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 279,
+              "line_end": 279,
+              "metric_value": 0.0
+            }
+          ]
+        },
+        {
+          "severity": "warning",
+          "threshold": 0,
+          "description": "Functions/methods defined but never called",
+          "entities": [
+            {
+              "entity_name": "[unused_function] Function \"_type_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 29,
+              "line_end": 29,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_wonder_guard\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 36,
+              "line_end": 36,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_adaptability\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 47,
+              "line_end": 47,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_guts\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 54,
+              "line_end": 54,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_low_hp_type_boost\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 63,
+              "line_end": 63,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_status_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 76,
+              "line_end": 76,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_contact_status\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 87,
+              "line_end": 87,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_shed_skin\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 109,
+              "line_end": 109,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_intimidate\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 125,
+              "line_end": 125,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_download\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 136,
+              "line_end": 136,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_stat_drop_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 156,
+              "line_end": 156,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_intimidate_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 166,
+              "line_end": 166,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_inner_focus\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 173,
+              "line_end": 173,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_guard_dog\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 178,
+              "line_end": 178,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_stat_drop_reaction\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 188,
+              "line_end": 188,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_rattled_intimidated\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 203,
+              "line_end": 203,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_rattled_hit\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 209,
+              "line_end": 209,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_absorb_immune\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 221,
+              "line_end": 221,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_absorb\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 229,
+              "line_end": 229,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_absorb_weakness\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 249,
+              "line_end": 249,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_flash_fire\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 257,
+              "line_end": 257,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_flash_fire_boost\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 270,
+              "line_end": 270,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_sturdy\" is not accessed",
+              "file_path": "pokemon_encounter/app/ability_effects.py",
+              "line_start": 279,
+              "line_end": 279,
+              "metric_value": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "file_summaries": [
+    {
+      "file_path": "pokemon_encounter/app/ability_effects.py",
+      "total_findings": 46,
+      "warning_findings": 23,
+      "composite_risk_score": 100.0
+    }
+  ]
+}
