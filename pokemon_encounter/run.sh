@@ -18,17 +18,11 @@ if bashio::config.has_value 'admin_users'; then
   export POKEMON_ADMIN_USERS="$(bashio::config 'admin_users')"
 fi
 
+# Im Add-on kommt die Identitaet immer ueber Ingress-Header (siehe app/auth.py).
+export POKEMON_AUTH_MODE="ingress"
+
 bashio::log.info "Starte PokeHOAS auf Port ${POKEMON_HTTP_PORT}"
 
-# uvicorn kennt weder "notice" noch "fatal" (HA-Log-Level) -> auf gueltige Werte abbilden.
-case "${POKEMON_LOG_LEVEL}" in
-  notice) UVICORN_LOG_LEVEL="info" ;;
-  fatal)  UVICORN_LOG_LEVEL="critical" ;;
-  *)      UVICORN_LOG_LEVEL="${POKEMON_LOG_LEVEL}" ;;
-esac
-
-cd /opt/pokemon
-exec python3 -m uvicorn app.main:app \
-  --host 0.0.0.0 \
-  --port "${POKEMON_HTTP_PORT}" \
-  --log-level "${UVICORN_LOG_LEVEL}"
+# Gemeinsamer Start fuer Add-on und Standalone-Image: prueft die Konfiguration,
+# bildet HA-Log-Level auf uvicorn ab und startet den Server.
+exec python3 /opt/pokemon/entrypoint.py

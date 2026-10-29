@@ -1,0 +1,28 @@
+# PokeHOAS without Supervisor (Home Assistant Container / plain Docker).
+# Copy to docker-compose.yml, fill in the values, then: docker compose up -d
+# All options are explained in DOCKER.md.
+services:
+  pokehoas:
+    image: ghcr.io/nedzad-winter/pokehoas:latest
+    container_name: pokehoas
+    restart: unless-stopped
+    ports:
+      - "8099:8099"
+    volumes:
+      # SQLite database, session secret and daily backups (./pokehoas/backups).
+      - ./pokehoas:/data
+    environment:
+      # How the container reaches Home Assistant.
+      POKEMON_HA_URL: http://192.168.1.10:8123
+      # Long-lived access token of an HA administrator (Profile -> Security).
+      POKEMON_HA_TOKEN: "paste-your-token-here"
+      # Users log in with their HA account. Alternatives: trusted_header (see DOCKER.md).
+      POKEMON_AUTH_MODE: ha_oauth
+      # The URL you open PokeHOAS with in the browser.
+      POKEMON_PUBLIC_URL: http://192.168.1.10:8099
+      # Only if the browser reaches HA under a different URL than the container:
+      # POKEMON_HA_EXTERNAL_URL: https://ha.example.com
+      # Automatic trigger categories (same as the add-on option trigger_categories):
+      # POKEMON_TRIGGER_CATEGORIES: motion,door_window,lights_switches
+      # POKEMON_EXCLUDE_ENTITIES: switch.*_container
+      # POKEMON_ADMIN_USERS: alice

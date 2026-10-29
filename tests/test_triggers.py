@@ -208,6 +208,22 @@ check("Unknown category is ignored", "bogus" not in opts["categories"])
 check("Invalid extra ID is ignored", opts["extra_entities"] == ["sensor.temperatur"])
 check("Exclusion pattern normalized", opts["exclude_entities"] == ["switch.*_container"])
 
+# Standalone Docker: env vars override options.json.
+os.environ["POKEMON_TRIGGER_CATEGORIES"] = "motion, vacuum"
+os.environ["POKEMON_EXTRA_ENTITIES"] = "sensor.a sensor.b"
+opts = trigger_sync.load_options()
+check("Env: categories override the file", opts["categories"] == ["motion", "vacuum"], str(opts["categories"]))
+check("Env: extra entities as space/comma list", opts["extra_entities"] == ["sensor.a", "sensor.b"])
+check("Env: unset keys still come from the file", opts["exclude_entities"] == ["switch.*_container"])
+os.environ["POKEMON_TRIGGER_CATEGORIES"] = ""
+check("Env: empty categories means no automatic triggers",
+      trigger_sync.load_options()["categories"] == [])
+os.environ.pop("POKEMON_TRIGGER_CATEGORIES")
+os.environ.pop("POKEMON_EXTRA_ENTITIES")
+write_options(trigger_categories=["motion", "door_window", "lights_switches", "bogus"],
+              extra_entities=["sensor.temperatur", "not_a_valid_name"],
+              exclude_entities=[" Switch.*_Container "])
+
 # ----------------------------------------------------------- First Sync
 result = sync(client)
 expected = {

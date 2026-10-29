@@ -235,6 +235,10 @@ as soon as the account is no longer an admin. Wiping the player's save data rese
 3. Open via the sidebar panel (Ingress, no port needed).
 4. As an admin, open **Settings → Admin → Triggers** and add entities.
 
+**No Supervisor?** On Home Assistant Container (plain Docker, Kubernetes) run PokeHOAS as
+its own container instead: see [DOCKER.md](DOCKER.md). Users log in with their HA account,
+everything else works the same.
+
 On first startup, the add-on loads the Pokédex from
 [PokeAPI](https://pokeapi.co) (~1025 species). If the API is unreachable,
 it starts with a small bundled dataset and can load more later.
@@ -243,7 +247,8 @@ it starts with a small bundled dataset and can load more later.
 
 The SQLite file is at `/data/pokemon.sqlite3`, in the
 add-on data directory. The Supervisor includes it in normal backups
-automatically – no separate database server, no extra configuration.
+automatically – no separate database server, no extra configuration. Admins can also
+download a snapshot at any time (**Settings → Admin → Download backup**).
 
 ---
 
@@ -878,8 +883,11 @@ API docs: `/api/docs`
 | `app/healing.py` | HP regeneration and "heal team" |
 | `app/autoheal.py` | Auto heal: cheapest potion combination per Pokémon, optional re-buy |
 | `app/evs.py` | effort values: battle yield of defeated opponents, vitamins, wings and berries |
-| `app/ha_client.py` | Core API via supervisor token |
-| `app/auth.py` | user detection via Ingress header (multi-user) |
+| `app/ha_client.py` | Core API via supervisor token (or a long-lived token outside the add-on) |
+| `app/auth.py` | user detection: Ingress header, HA login, trusted proxy header or dev (`POKEMON_AUTH_MODE`) |
+| `app/api/login.py` | login with an HA account (OAuth) for the standalone container |
+| `app/backup.py` | database snapshots (periodic in the container, download for admins) |
+| `entrypoint.py` | container start for add-on and standalone image: config check, uvicorn |
 | `app/db.py` | SQLite schema and access |
 | `app/seed.py` | Pokédex from PokeAPI, fallback dataset |
 | `app/api/` | REST endpoints (including `users.py`: profile & starter choice) |

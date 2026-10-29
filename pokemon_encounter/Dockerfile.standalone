@@ -1,0 +1,48 @@
+# Standalone image for Home Assistant installs WITHOUT Supervisor
+# ("Home Assistant Container", Docker, Kubernetes). The Supervisor add-on keeps
+# using ./Dockerfile; both run the same app and the same entrypoint.py.
+#
+# Build (context = this directory):
+#   docker build -f Dockerfile.standalone -t pokehoas .
+# Configuration is done with environment variables, see DOCKER.md in the
+# repository root.
+FROM python:3.12-alpine
+
+ENV LANG=C.UTF-8 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    POKEMON_STANDALONE=1 \
+    POKEMON_AUTH_MODE=ha_oauth \
+    POKEMON_DATA_DIR=/data \
+    POKEMON_WWW_DIR=/opt/pokemon/www \
+    POKEMON_HTTP_PORT=8099 \
+    POKEMON_LOG_LEVEL=info \
+    POKEMON_BACKUP_INTERVAL_HOURS=24 \
+    POKEMON_BACKUP_KEEP=7
+
+WORKDIR /opt/pokemon
+
+COPY requirements.txt ./
+# Build tools only for platforms without prebuilt musl wheels (e.g. armv7 for
+# uvloop/httptools); removed again in the same layer.
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev make libffi-dev \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apk del .build-deps
+
+COPY app/ ./app/
+COPY www/ ./www/
+COPY entrypoint.py ./
+
+# SQLite database, session secret and automatic backups live here.
+VOLUME /data
+EXPOSE 8099
+
+HEALTHCHECK --interval=60s --timeout=5s --start-period=30s --retries=3 \
+    CMD python3 -c "import os, urllib.request; urllib.request.urlopen('http://127.0.0.1:%s/healthz' % os.environ.get('POKEMON_HTTP_PORT', '8099'), timeout=4)"
+
+LABEL org.opencontainers.image.title="PokeHOAS" \
+      org.opencontainers.image.description="Random Pokémon encounters triggered by Home Assistant events" \
+      org.opencontainers.image.source="https://github.com/nedzad-winter/pokehoas" \
+      org.opencontainers.image.licenses="MIT"
+
+CMD ["python3", "/opt/pokemon/entrypoint.py"]

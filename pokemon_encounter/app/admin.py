@@ -9,12 +9,17 @@ allowed to call this command (checked in live add-on).
 Check order:
 1. Add-on option `admin_users` (HA username or user ID) -> always admin.
    Useful as emergency access if the HA query ever fails.
-2. Local development without SUPERVISOR_TOKEN: the dev fallback user is admin,
+2. Auth mode `dev` (local development): the dev fallback user is admin,
    unless `POKEMON_DEV_ADMIN=0`.
 3. HA user list (briefly cached): active and (`system-admin` or owner).
+4. Auth mode `ha_oauth` only: if the configured token may not list HA users,
+   the admin flag HA reported for this user at login (`auth/current_user`).
 
 If the HA query fails, a not-too-old list is reused; without any list: no admin
 (fail closed).
+
+Outside the add-on (`POKEMON_HA_TOKEN`, a long-lived token) the token must
+belong to an HA administrator for `config/auth/list` to work.
 """
 
 from __future__ import annotations
@@ -56,7 +61,7 @@ def _truthy(value: str | None, default: bool) -> bool:
 
 def dev_mode() -> bool:
     # Zur Laufzeit lesen (nicht beim Import), damit Tests umschalten koennen.
-    return not bool(os.getenv("SUPERVISOR_TOKEN"))
+    return auth.dev_mode()
 
 
 def _websocket_url() -> str:
@@ -161,6 +166,8 @@ async def is_admin(user: dict[str, Any]) -> bool:
         return _truthy(os.getenv("POKEMON_DEV_ADMIN"), True)
     users = await ha_users()
     if users is None:
+        if auth.auth_mode() == "ha_oauth":
+            return bool(auth.login_admin_flag(str(user.get("id") or "")))
         return False
     return ha_user_is_admin(users.get(user.get("id")))
 
@@ -176,6 +183,7 @@ async def require_admin(current_user: dict = Depends(get_current_user)) -> dict:
         raise HTTPException(
             status_code=403,
             detail="Nur fuer Administratoren. Admin ist, wer in Home Assistant "
-                   "Administrator ist oder in der Add-on-Option `admin_users` steht.",
+                   "Administrator ist oder in der Option `admin_users` "
+                   "(Docker: POKEMON_ADMIN_USERS) steht.",
         )
     return current_user
