@@ -235,13 +235,87 @@ as soon as the account is no longer an admin. Wiping the player's save data rese
 3. Open via the sidebar panel (Ingress, no port needed).
 4. As an admin, open **Settings → Admin → Triggers** and add entities.
 
-**No Supervisor?** On Home Assistant Container (plain Docker, Kubernetes) run PokeHOAS as
-its own container instead: see [DOCKER.md](DOCKER.md). Users log in with their HA account,
-everything else works the same.
-
 On first startup, the add-on loads the Pokédex from
 [PokeAPI](https://pokeapi.co) (~1025 species). If the API is unreachable,
 it starts with a small bundled dataset and can load more later.
+
+### Without Supervisor (standalone Docker)
+
+Running **Home Assistant Container** (plain Docker, Kubernetes, a VM without Supervisor)?
+Then there is no add-on store – run PokeHOAS as its own container next to Home Assistant.
+It is the same app; the only differences are that users log in with their HA account
+once, the configuration lives in environment variables and the container keeps its own
+backups. This walkthrough uses Docker Compose; every option is listed in
+[DOCKER.md](DOCKER.md).
+
+**1. Create an access token.** In Home Assistant, click your user name at the bottom of
+the sidebar → **Security** tab → **Long-lived access tokens** → **Create token**, name it
+`PokeHOAS` and copy it (it is shown only once). The user must be an **administrator**:
+PokeHOAS reads the entity registry and the user list with this token.
+
+**2. Get the compose file.** In a new folder:
+
+```bash
+mkdir pokehoas && cd pokehoas
+curl -o docker-compose.yml https://raw.githubusercontent.com/nedzad-winter/pokehoas/main/docker-compose.example.yml
+```
+
+**3. Fill in three values** in `docker-compose.yml`:
+
+```yaml
+    environment:
+      POKEMON_HA_URL: http://192.168.1.10:8123      # how the container reaches HA
+      POKEMON_HA_TOKEN: "eyJhbGciOi..."             # the token from step 1
+      POKEMON_AUTH_MODE: ha_oauth
+      POKEMON_PUBLIC_URL: http://192.168.1.10:8099  # the URL you will open in the browser
+```
+
+- `POKEMON_HA_URL`: use the LAN IP of your HA host, or `http://homeassistant:8123` if
+  both containers share a compose network.
+- `POKEMON_PUBLIC_URL`: exactly the address you type into the browser (scheme, host,
+  port), without a trailing slash. The HA login sends you back to it.
+- If the browser reaches HA under another address than the container does (e.g.
+  `https://ha.example.com`), also set `POKEMON_HA_EXTERNAL_URL` to that address.
+
+**4. Start it.**
+
+```bash
+docker compose up -d
+docker compose logs -f pokehoas
+```
+
+The log shows `[pokehoas] Starting on port 8099 (auth mode ha_oauth)`. If a value is
+missing or wrong, the container prints `[pokehoas] ERROR: …` with what to fix and stops.
+As with the add-on, the first start loads the Pokédex from PokeAPI, which takes a moment.
+Database, login key and backups are stored in the `./pokehoas` folder next to the compose
+file.
+
+**5. Log in.** Open `POKEMON_PUBLIC_URL` and click **Log in with Home Assistant**. You
+land on your normal HA login page and come back logged in. Every household member does
+this once with their own HA account (the session lasts 30 days) and gets their own team,
+Pokédex and bag. HA administrators are PokeHOAS admins, as in the add-on.
+
+**6. Add triggers.** As an admin, open **Settings → Admin → Triggers** and add entities,
+exactly like in step 4 of the add-on installation.
+
+**7. Optional: put it in the HA sidebar.** *Settings → Dashboards → Add dashboard →
+Webpage*, URL = `POKEMON_PUBLIC_URL`. In the sidebar the HA login opens in a small popup
+once – allow pop-ups if nothing happens. If HA runs on HTTPS, PokeHOAS must be served over
+HTTPS too (browsers block an `http://` page inside an `https://` one); see
+[DOCKER.md → Sidebar](DOCKER.md#sidebar) for setups where HA and PokeHOAS run on
+different domains.
+
+**Updating:** `docker compose pull && docker compose up -d`.
+**Backups:** the container writes a snapshot of the database to `./pokehoas/backups` once a
+day and keeps the last seven; admins can also download one at any time (**Settings →
+Admin → Download backup**). Restoring and moving an existing add-on save to the container
+are described in [DOCKER.md](DOCKER.md#backups-and-restore).
+
+| Problem | Fix |
+|---|---|
+| "Login with Home Assistant failed" | `POKEMON_PUBLIC_URL` must match the address in the browser exactly; if the browser reaches HA under a different URL, set `POKEMON_HA_EXTERNAL_URL`. |
+| No *Admin* tab for an HA administrator | The token from step 1 must belong to an HA administrator, or name the user in `POKEMON_ADMIN_USERS`. |
+| Already behind Authelia / Authentik | Use `POKEMON_AUTH_MODE: trusted_header` instead of the HA login, see [DOCKER.md → Auth modes](DOCKER.md#auth-modes). |
 
 ### Data & Backup
 
