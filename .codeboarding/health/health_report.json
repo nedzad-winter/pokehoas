@@ -1,38 +1,27 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-10-28T13:03:04.028564+00:00",
-  "overall_score": 0.959825327510917,
+  "timestamp": "2026-10-29T19:06:31.307665+00:00",
+  "overall_score": 0.9589958158995816,
   "check_summaries": [
     {
       "check_name": "function_size",
       "description": "Checks that functions/methods do not exceed line count thresholds",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 1099,
+      "total_entities_checked": 1146,
       "findings_count": 0,
       "warning_count": 0,
       "score": 1.0,
       "finding_groups": []
     },
     {
-      "check_name": "circular_dependencies",
-      "description": "Detects circular dependencies between packages",
-      "languages": [],
-      "check_type": "circular_dependencies",
-      "cycles": [
-        "pokemon_encounter.app.api -> pokemon_encounter.app -> pokemon_encounter.app.api"
-      ],
-      "packages_checked": 3,
-      "packages_in_cycles": 2
-    },
-    {
       "check_name": "unused_code_diagnostics",
       "description": "Detects unused imports, variables, functions, and dead code via LSP diagnostics",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 46,
-      "findings_count": 46,
-      "warning_count": 23,
+      "total_entities_checked": 49,
+      "findings_count": 49,
+      "warning_count": 24,
       "score": 0.0,
       "finding_groups": [
         {
@@ -199,6 +188,20 @@
               "file_path": "pokemon_encounter/app/ability_effects.py",
               "line_start": 279,
               "line_end": 279,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_dev_fallback_allowed\" is not accessed",
+              "file_path": "pokemon_encounter/app/auth.py",
+              "line_start": 76,
+              "line_end": 76,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"app\" is not accessed",
+              "file_path": "pokemon_encounter/app/main.py",
+              "line_start": 62,
+              "line_end": 62,
               "metric_value": 0.0
             }
           ]
@@ -368,6 +371,13 @@
               "line_start": 279,
               "line_end": 279,
               "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_function] Function \"_dev_fallback_allowed\" is not accessed",
+              "file_path": "pokemon_encounter/app/auth.py",
+              "line_start": 76,
+              "line_end": 76,
+              "metric_value": 0.0
             }
           ]
         }
@@ -380,6 +390,18 @@
       "total_findings": 46,
       "warning_findings": 23,
       "composite_risk_score": 100.0
+    },
+    {
+      "file_path": "pokemon_encounter/app/auth.py",
+      "total_findings": 2,
+      "warning_findings": 1,
+      "composite_risk_score": 25.0
+    },
+    {
+      "file_path": "pokemon_encounter/app/main.py",
+      "total_findings": 1,
+      "warning_findings": 0,
+      "composite_risk_score": 10.0
     }
   ]
 }
