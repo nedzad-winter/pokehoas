@@ -59,14 +59,15 @@
   /* Language picker: globe button, the native select is invisible on top of it. */
   header { position: relative; }
   .langwrap { position: relative; display: inline-flex; align-items: center; justify-content: center;
-    width: 38px; height: 34px; background: rgba(0,0,0,.18); border: 2px solid rgba(0,0,0,.35); }
+    width: 38px; height: 34px; background: rgba(0,0,0,.18); border: 2px solid rgba(0,0,0,.35);
+    border-radius: var(--radius); }
   .langwrap > span { font-size: 18px; line-height: 1; pointer-events: none; }
   #langPick { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; padding: 0; }
   #langPick option { color: #1d2027; background: #fff; }
   /* Toast centred in the red header; replaces blocking alert() dialogs. */
   .toast { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
     background: #fff; color: #1d2027; border: 2px solid var(--ink); font-weight: 700; font-size: 13px;
-    padding: 4px 12px; white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+    padding: 4px 12px; border-radius: var(--radius); white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
     opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 5; }
   .toast.show { opacity: 1; }
 
