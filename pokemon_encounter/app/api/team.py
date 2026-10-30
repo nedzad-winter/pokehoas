@@ -14,7 +14,7 @@ from typing import Any
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
-from .. import abilities, autoheal, battle, breeding, db, economy, evs, healing, held_items, i18n, mega, rarity, tms
+from .. import abilities, autoheal, battle, breeding, db, economy, evs, healing, held_items, i18n, mega, rarity, seed, tms
 from .. import evolution
 from ..economy import EconomyError
 from .. import moves as moves_mod
@@ -573,3 +573,11 @@ def release_many(payload: ReleaseIn, current_user: dict = Depends(get_current_us
         raise HTTPException(status_code=400, detail=i18n.t(lang, "error.release_none_selected"))
     released = _release(current_user["id"], lang, ids)
     return {"ok": True, "released": released, "rare_candy_awarded": sum(e["rare_candy_awarded"] for e in released)}
+
+@router.get("/species-names/{lang}")
+def species_names(lang: str) -> dict[str, Any]:
+    """Species names in `lang` (PokeAPI translations, see seed.NAME_LANGS).
+    English is already the default display name, so it returns nothing."""
+    if lang == "en" or lang not in seed.NAME_LANGS:
+        return {"names": {}, "by_en": {}}
+    return db.species_name_tables(lang)
