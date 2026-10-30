@@ -56,6 +56,20 @@
   .status { color: var(--muted); font-size: 13px; }
   header .status { color: rgba(255,255,255,.85); }
 
+  /* Language picker: globe button, the native select is invisible on top of it. */
+  header { position: relative; }
+  .langwrap { position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 34px; background: rgba(0,0,0,.18); border: 2px solid rgba(0,0,0,.35); }
+  .langwrap > span { font-size: 18px; line-height: 1; pointer-events: none; }
+  #langPick { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; padding: 0; }
+  #langPick option { color: #1d2027; background: #fff; }
+  /* Toast centred in the red header; replaces blocking alert() dialogs. */
+  .toast { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    background: #fff; color: #1d2027; border: 2px solid var(--ink); font-weight: 700; font-size: 13px;
+    padding: 4px 12px; white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+    opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 5; }
+  .toast.show { opacity: 1; }
+
   /* Menu bar: flat tabs with a solid underline for the active one. */
   nav {
     display: flex; gap: 0 2px; padding: 0 12px; flex-wrap: wrap;
@@ -485,7 +499,6 @@
 <body>
 <header>
   <h1><img id="brandLogo" alt="PokeHOAS"></h1>
-  <select id="langPick"></select>
   <span class="grow"></span>
   <button class="ghost action" id="userName" title="Profile"></button>
   <span class="pill hidden" id="money" title="Balance"></span>
@@ -493,6 +506,8 @@
   <span class="status" id="status"></span>
   <button class="ghost action" id="pollNow" data-i18n="header.poll_now">Poll now</button>
   <button class="ghost action hidden" id="logoutBtn" data-i18n="login.logout">Log out</button>
+  <span class="langwrap"><span aria-hidden="true">🌐</span><select id="langPick"></select></span>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </header>
 
 <section id="starterGate" class="hidden"></section>
@@ -614,10 +629,22 @@ function tr(key, vars) {
   return s;
 }
 
+var toastTimer;
+function toast(message) {
+  const el = $('#toast');
+  if (!el) return;
+  el.textContent = message;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+}
+
 function applyStaticTranslations() {
   document.documentElement.lang = LANG;
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = tr(el.dataset.i18n); });
   if ($('#langPick')) {
+    $('#langPick').title = tr('admin.field.language');
+    $('#langPick').setAttribute('aria-label', tr('admin.field.language'));
     $('#langPick').innerHTML = AVAILABLE_LANGS
       .map(l => `<option value="${l}" ${l === LANG ? 'selected' : ''}>${esc(tr('language.' + l))}</option>`)
       .join('');
@@ -708,7 +735,7 @@ function refreshStatus() {
 $('#pollNow').onclick = async () => {
   $('#pollNow').disabled = true;
   try { const r = await api('/api/poll', { method: 'POST' }); await refreshStatus(); render('queue');
-        if (!r.created) alert(tr('queue.poll_nothing')); }
+        if (!r.created) toast(tr('queue.poll_nothing')); }
   catch (e) { alert(e.message); }
   finally { $('#pollNow').disabled = false; }
 };

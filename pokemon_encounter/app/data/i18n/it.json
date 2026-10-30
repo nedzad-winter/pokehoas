@@ -1234,7 +1234,7 @@
   "queue.let_flee": "Lascia scappare",
   "queue.manage_rules": "Gestisci regole",
   "queue.no_balls": "nessuna ball",
-  "queue.poll_nothing": "Stavolta nessun nuovo incontro.",
+  "queue.poll_nothing": "Nessun nuovo incontro",
   "queue.result": "Risultato: {outcome}",
   "queue.rule_pill_hint": "Regola automatica che gestirebbe questo Pokémon",
   "queue.rules_hint": "Le regole automatiche corrispondono a {count} dei {total} Pokémon in attesa.",

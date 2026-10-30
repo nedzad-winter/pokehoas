@@ -1234,7 +1234,7 @@
   "queue.let_flee": "Let flee",
   "queue.manage_rules": "Manage rules",
   "queue.no_balls": "no balls",
-  "queue.poll_nothing": "No new encounters this time.",
+  "queue.poll_nothing": "No new encounters",
   "queue.result": "Result: {outcome}",
   "queue.rule_pill_hint": "Auto rule that would handle this Pokémon",
   "queue.rules_hint": "Auto rules match {count} of {total} waiting Pokémon.",

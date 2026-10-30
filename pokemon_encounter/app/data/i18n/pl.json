@@ -1234,7 +1234,7 @@
   "queue.let_flee": "Wypuść",
   "queue.manage_rules": "Zarządzaj regułami",
   "queue.no_balls": "brak kul",
-  "queue.poll_nothing": "Tym razem brak nowych spotkań.",
+  "queue.poll_nothing": "Brak nowych spotkań",
   "queue.result": "Wynik: {outcome}",
   "queue.rule_pill_hint": "Reguła automatyczna, która zająłby się tym Pokémonem",
   "queue.rules_hint": "Reguły automatyczne pasują do {count} z {total} czekających Pokémonów.",

@@ -1234,7 +1234,7 @@
   "queue.let_flee": "Fliehen lassen",
   "queue.manage_rules": "Regeln verwalten",
   "queue.no_balls": "keine Bälle",
-  "queue.poll_nothing": "Keine neuen Encounter in diesem Durchlauf.",
+  "queue.poll_nothing": "Keine neuen Encounter",
   "queue.result": "Ergebnis: {outcome}",
   "queue.rule_pill_hint": "Auto-Regel, die dieses Pokémon übernehmen würde",
   "queue.rules_hint": "Auto-Regeln treffen auf {count} von {total} wartenden Pokémon zu.",
