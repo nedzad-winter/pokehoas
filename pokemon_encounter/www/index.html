@@ -56,6 +56,13 @@
   .status { color: var(--muted); font-size: 13px; }
   header .status { color: rgba(255,255,255,.85); }
 
+  /* Queue: slim auto-rules bar above the encounter cards (full grid width). */
+  .queue-rules-bar { padding: 6px 12px; }
+  .queue-rules-bar .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  .queue-rules-bar .grow { flex: 1 1 240px; font-size: 13px; }
+  .queue-rules-bar button { padding: 4px 12px; font-size: 13px; white-space: nowrap; }
+  .queue-rules-bar .log:empty { display: none; }
+
   /* Menu bar: flat tabs with a solid underline for the active one. */
   nav {
     display: flex; gap: 0 2px; padding: 0 12px; flex-wrap: wrap;
@@ -744,7 +751,7 @@ async function renderQueue() {
   // Always shown (when the rules API answered) so the feature stays
   // discoverable; the household switch only disables "Run rules".
   const rulesOn = rules && rules.settings.household_enabled;
-  const toolbar = rules ? `<div class="card">
+  const toolbar = rules ? `<div class="card span-all queue-rules-bar">
     <div class="row">
       <span class="grow muted">${esc(rulesOn ? tr('queue.rules_hint', { count: matched, total: rules.encounters.length })
         : tr('queue.rules_off'))}</span>
