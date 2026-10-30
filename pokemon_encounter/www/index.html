@@ -629,6 +629,14 @@ async function loadStrings(lang) {
   STRINGS = data.strings;
   AVAILABLE_LANGS = data.available;
   LANG = data.language;
+  try {
+    const sn = await fetch(BASE + '/api/species-names/' + encodeURIComponent(LANG)).then(r => r.json());
+    SPECIES_NAMES = sn.names || {};
+    SPECIES_NAMES_BY_EN = sn.by_en || {};
+  } catch (e) {
+    SPECIES_NAMES = {};
+    SPECIES_NAMES_BY_EN = {};
+  }
   localStorage.setItem('poke_lang', LANG);
   applyStaticTranslations();
 }
@@ -638,10 +646,24 @@ async function loadStrings(lang) {
 // set up with English `name` in the catalog (see moves.json etc.), so "name"
 // alone suffices. Both fall back to name_de/name if the current language
 // (or English) is missing.
+var SPECIES_NAMES = {};
+var SPECIES_NAMES_BY_EN = {};
+
 function speciesName(sp) {
   if (!sp) return '?';
+  // Translated name (fr, es, it, ja, ko...) from /api/species-names, matched by
+  // English name first (robust: every species object carries it), then species_id.
+  const translated = (sp.name_en && SPECIES_NAMES_BY_EN[sp.name_en])
+    || (sp.species_id != null && SPECIES_NAMES[sp.species_id]);
+  if (translated) return translated;
   if (LANG === 'de') return sp.name_de || sp.name_en || sp.name || '?';
   return sp.name_en || sp.name_de || sp.name || '?';
+}
+// Name of an owned Pokemon: nickname if it has one, else the translated species name.
+function monName(p) {
+  const sp = p.species || {};
+  const isDefault = !p.name || [sp.name_en, sp.name_de, sp.name].includes(p.name);
+  return isDefault && sp.name_en ? speciesName(sp) : (p.name || speciesName(sp));
 }
 
 function localizedName(obj) {
@@ -2386,7 +2408,7 @@ function admSectionBox(box, d) {
   const drawList = () => {
     const q = adminState.boxQuery.trim().toLocaleLowerCase().replace(/^#/, '');
     let list = boxMons.filter(p => !q || [
-      p.nickname, p.species && p.species.name, p.species && p.species.name_en, p.species && p.species.name_de,
+      p.nickname, p.species && p.species.name, p.species && p.species.name_en, p.species && p.species.name_de, p.species && speciesName(p.species),
       String(p.species_id), String(p.id),
     ].some(v => v && String(v).toLocaleLowerCase().includes(q)));
     list = list.slice().sort(adminState.boxSort === 'level' ? (a, b) => b.level - a.level || a.id - b.id
@@ -2520,7 +2542,7 @@ async function admSectionDex(box, d) {
     const list = dex.entries.filter(e =>
       (!adminState.dexGen || String(e.generation) === adminState.dexGen) &&
       (!adminState.dexState || stateOf(e) === adminState.dexState) &&
-      (!q || [e.name, e.name_en, e.name_de, String(e.species_id)].some(v => v && String(v).toLocaleLowerCase().includes(q))));
+      (!q || [e.name, e.name_en, e.name_de, speciesName(e), String(e.species_id)].some(v => v && String(v).toLocaleLowerCase().includes(q))));
     const key = 'admin:dex:' + userId;
     const page = pageSlice(key, list, 20);
     const el = box.querySelector('#admDexList');
@@ -3582,7 +3604,7 @@ function battleConfirmCard(p, index, count) {
     <div class="row">
     ${sp.sprite_url ? `<img class="sprite" src="${esc(p.shiny && sp.shiny_sprite_url ? sp.shiny_sprite_url : sp.sprite_url)}" alt="">` : ''}
     <div class="grow">
-      <strong>${esc(p.name)}</strong> ${p.shiny ? shinyMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span><br>
+      <strong>${esc(monName(p))}</strong> ${p.shiny ? shinyMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span><br>
       ${[sp.type1, sp.type2].filter(Boolean).map(typePill).join('')}
       ${hpBar(p.current_hp, p.max_hp)}
       <span class="muted">${esc(p.current_hp)}/${esc(p.max_hp)} HP${p.fainted ? ' · ' + tr('team.fainted') : ''}</span>
@@ -5915,7 +5937,7 @@ function monCard(p, opts) {
       ${sp.sprite_url ? `<img class="sprite" src="${esc(p.shiny && sp.shiny_sprite_url ? sp.shiny_sprite_url : sp.sprite_url)}" alt="">` : ''}
       <div class="grow">
         <span class="pill">#${esc(p.party_slot)}</span>
-        <strong>${esc(p.name)}</strong> ${p.shiny ? shinyMark() : ''}${p.favorite ? favMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span>
+        <strong>${esc(monName(p))}</strong> ${p.shiny ? shinyMark() : ''}${p.favorite ? favMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span>
         ${(p.level_evolutions || []).length || (p.item_evolutions || []).length ? `<span class="pill evo-badge">${tr('evolution.badge')}</span>` : ''}<br>
         ${[sp.type1, sp.type2].filter(Boolean).map(typePill).join('')}${abilityPill(p.ability_info)}
         ${hpBar(p.current_hp, p.max_hp)}
@@ -5995,7 +6017,7 @@ function boxSorted(box, view = boxView) {
 function boxFilterMatches(p, view) {
   const sp = p.species || p;
   const q = (view.query || '').trim().toLocaleLowerCase().replace(/^#/, '');
-  const match = (!q || [p.nickname, p.name, sp.name, sp.name_de, sp.name_en, String(sp.id || p.species_id || '')]
+  const match = (!q || [p.nickname, p.name, sp.name, sp.name_de, sp.name_en, speciesName(sp), String(sp.id || p.species_id || '')]
       .some(v => v && String(v).toLocaleLowerCase().includes(q)))
     && (!view.type || sp.type1 === view.type || sp.type2 === view.type)
     && (!view.generation || String(sp.generation) === view.generation)

@@ -44,6 +44,27 @@ EV_KEYS = {
     "special-attack": "spa", "special-defense": "spd", "speed": "spe",
 }
 
+# Languages of the UI that PokeAPI has species names for. Polish ("pl") is
+# NOT in PokeAPI - it falls back to English at display time.
+NAME_LANGS = ("en", "de", "es", "fr", "it", "ja", "ko")
+
+
+def names_from_species_doc(species: dict) -> dict[str, str]:
+    """{lang: name} from a `/pokemon-species/{id}` document's `names`."""
+    by_lang = {n["language"]["name"]: n["name"] for n in species.get("names") or []}
+    result = {lang: by_lang[lang] for lang in NAME_LANGS if lang in by_lang}
+    if "ja" not in result and "ja-Hrkt" in by_lang:
+        result["ja"] = by_lang["ja-Hrkt"]
+    return result
+
+
+def _names_json(names: dict | str | None) -> str | None:
+    """JSON for `species.names`; None keeps a stored value (see _upsert)."""
+    if not names:
+        return None
+    if isinstance(names, str):
+        return names
+    return json.dumps(names, ensure_ascii=False)
 
 def generation_for(dex_id: int) -> int:
     for gen, lo, hi in GENERATION_BOUNDS:
@@ -64,8 +85,8 @@ def _upsert(record: dict) -> None:
             id, name, name_de, name_en, type1, type2, generation, catch_rate, base_exp,
             growth_rate, base_hp, base_atk, base_def, base_spa, base_spd,
             base_spe, is_legendary, is_mythical, evolves_from, sprite_url, tm_moves,
-            ev_yield
-        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ev_yield, names
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         ON CONFLICT(id) DO UPDATE SET
             name=excluded.name, name_de=excluded.name_de, name_en=excluded.name_en,
             type1=excluded.type1, type2=excluded.type2,
@@ -77,7 +98,8 @@ def _upsert(record: dict) -> None:
             is_legendary=excluded.is_legendary, is_mythical=excluded.is_mythical,
             evolves_from=excluded.evolves_from, sprite_url=excluded.sprite_url,
             tm_moves=COALESCE(excluded.tm_moves, species.tm_moves),
-            ev_yield=COALESCE(excluded.ev_yield, species.ev_yield)
+            ev_yield=COALESCE(excluded.ev_yield, species.ev_yield),
+            names=COALESCE(excluded.names, species.names)
         """,
         (
             record["id"], record["name"], record.get("name_de"), record.get("name_en"),
@@ -89,6 +111,7 @@ def _upsert(record: dict) -> None:
             record.get("evolves_from"), record.get("sprite_url"),
             record.get("tm_moves"),
             _ev_yield_json(record.get("ev_yield")),
+            _names_json(record.get("names")),
         ),
     )
 
@@ -165,6 +188,7 @@ async def _fetch_one(client: httpx.AsyncClient, dex_id: int) -> dict | None:
         # Same document already carries the learnset - no extra request.
         "tm_moves": json.dumps(tm_moves_from_pokemon_doc(pokemon)),
         "ev_yield": ev_yield_from_pokemon_doc(pokemon),
+        "names": names_from_species_doc(species),
     }
     for api_key, col in STAT_KEYS.items():
         record[col] = stats.get(api_key, 50)
@@ -251,7 +275,8 @@ def _species_missing_name_en() -> list[int]:
     """Species the background backfill has to re-fetch: no English name or no
     EV yield yet (rows from before those columns existed, offline fallback)."""
     return [row["id"] for row in db.query(
-        "SELECT id FROM species WHERE name_en IS NULL OR ev_yield IS NULL")]
+        "SELECT id FROM species WHERE name_en IS NULL OR ev_yield IS NULL "
+        "OR names IS NULL")]
 
 
 async def backfill_name_en(concurrency: int = 8) -> int:

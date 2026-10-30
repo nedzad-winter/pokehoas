@@ -1444,6 +1444,16 @@ def _migrate_real_learnsets(conn: sqlite3.Connection) -> None:
     conn.commit()
 
 
+def _migrate_species_names(conn: sqlite3.Connection) -> None:
+    """Names per language (see seed.names_from_species_doc), idempotent and
+    additive. `species.names` (JSON {"fr": "...", "de": "...", ...}): NULL =
+    not fetched yet, `seed.start_name_en_backfill()` fills it in the
+    background (same mechanism as `name_en` / `ev_yield`)."""
+    if "names" not in _table_columns(conn, "species"):
+        conn.execute("ALTER TABLE species ADD COLUMN names TEXT")
+    conn.commit()
+
+
 def init_db() -> None:
     conn = connect()
     with _lock:
@@ -1485,6 +1495,8 @@ def init_db() -> None:
         _migrate_species_sprite_style(conn)
         _migrate_egg_moves(conn)
         _migrate_real_learnsets(conn)
+        _migrate_ev_yield(conn)
+        _migrate_species_names(conn)
         # Create only AFTER the migration - on a freshly upgraded legacy DB
         # the referenced columns don't exist beforehand.
         conn.executescript(
@@ -1772,6 +1784,32 @@ def eligible_users(now: datetime | None = None) -> list[dict[str, Any]]:
         and _TEST_USER_MARKER not in (user.get("name") or "").casefold()
         and _TEST_USER_MARKER not in (user.get("display_name") or "").casefold()
     ]
+
+def species_display_name(species: dict[str, Any], lang: str) -> str:
+    """Name of a species row in `lang`; falls back to English, German, then
+    the PokeAPI slug."""
+    try:
+        names = json.loads(species.get("names") or "{}")
+    except ValueError:
+        names = {}
+    return (names.get(lang) or species.get("name_en")
+            or species.get("name_de") or species["name"])
+            
+def species_name_tables(lang: str) -> dict[str, dict]:
+    """Translated species names for the frontend: `names` {species_id: name}
+    and `by_en` {English name: name} (for objects that carry no id)."""
+    names: dict[int, str] = {}
+    by_en: dict[str, str] = {}
+    for row in query("SELECT id, name_en, names FROM species WHERE names IS NOT NULL"):
+        try:
+            value = json.loads(row["names"]).get(lang)
+        except ValueError:
+            continue
+        if value:
+            names[row["id"]] = value
+            if row["name_en"]:
+                by_en[row["name_en"]] = value
+    return {"names": names, "by_en": by_en}
 
 
 # ============================================================= Settings
