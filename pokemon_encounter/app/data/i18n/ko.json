@@ -1234,7 +1234,7 @@
   "queue.let_flee": "놓아주기",
   "queue.manage_rules": "규칙 관리",
   "queue.no_balls": "볼 없음",
-  "queue.poll_nothing": "이번에는 새로운 만남이 없습니다.",
+  "queue.poll_nothing": "새로운 만남이 없습니다",
   "queue.result": "결과: {outcome}",
   "queue.rule_pill_hint": "이 포켓몬을 처리할 자동 규칙",
   "queue.rules_hint": "자동 규칙이 대기 중인 포켓몬 {total}마리 중 {count}마리와 맞습니다.",
