@@ -666,6 +666,11 @@ function monName(p) {
   return isDefault && sp.name_en ? speciesName(sp) : (p.name || speciesName(sp));
 }
 
+// Search helper: lowercase and strip accents, so "salameche" finds "Salamèche".
+function fold(text) {
+  return String(text == null ? '' : text).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
+}
+
 function localizedName(obj) {
   if (!obj) return '?';
   if (LANG === 'de') return obj.name_de || obj.name || '?';
@@ -2406,11 +2411,11 @@ function admSectionBox(box, d) {
 
   const nameKey = p => (p.nickname || admName(p.species)).toLocaleLowerCase();
   const drawList = () => {
-    const q = adminState.boxQuery.trim().toLocaleLowerCase().replace(/^#/, '');
+    const q = fold(adminState.boxQuery.trim()).replace(/^#/, '');
     let list = boxMons.filter(p => !q || [
       p.nickname, p.species && p.species.name, p.species && p.species.name_en, p.species && p.species.name_de, p.species && speciesName(p.species),
       String(p.species_id), String(p.id),
-    ].some(v => v && String(v).toLocaleLowerCase().includes(q)));
+    ].some(v => v && fold(v).includes(q)));
     list = list.slice().sort(adminState.boxSort === 'level' ? (a, b) => b.level - a.level || a.id - b.id
       : adminState.boxSort === 'name' ? (a, b) => nameKey(a).localeCompare(nameKey(b))
       : (a, b) => a.species_id - b.species_id || a.id - b.id);
@@ -2466,10 +2471,10 @@ function admSectionItems(box, d) {
     admRenderUser();
   };
   const drawList = () => {
-    const q = adminState.itemQuery.trim().toLocaleLowerCase();
+    const q = fold(adminState.itemQuery.trim());
     const list = items
       .filter(i => (!adminState.itemCategory || i.category === adminState.itemCategory) &&
-        (!q || i.label.toLocaleLowerCase().includes(q) || i.item_key.includes(q)))
+        (!q || fold(i.label).includes(q) || i.item_key.includes(q)))
       .sort((a, b) => sectionRank(a.category) - sectionRank(b.category) ||
         a.category.localeCompare(b.category) || a.label.localeCompare(b.label));
     const key = 'admin:inventory:' + userId;
@@ -2538,11 +2543,11 @@ async function admSectionDex(box, d) {
     <div id="admDexList"></div>`;
 
   const drawList = () => {
-    const q = adminState.dexQuery.trim().toLocaleLowerCase().replace(/^#/, '');
+    const q = fold(adminState.dexQuery.trim()).replace(/^#/, '');
     const list = dex.entries.filter(e =>
       (!adminState.dexGen || String(e.generation) === adminState.dexGen) &&
       (!adminState.dexState || stateOf(e) === adminState.dexState) &&
-      (!q || [e.name, e.name_en, e.name_de, speciesName(e), String(e.species_id)].some(v => v && String(v).toLocaleLowerCase().includes(q))));
+      (!q || [e.name, e.name_en, e.name_de, speciesName(e), String(e.species_id)].some(v => v && fold(v).includes(q))));
     const key = 'admin:dex:' + userId;
     const page = pageSlice(key, list, 20);
     const el = box.querySelector('#admDexList');
@@ -2619,9 +2624,9 @@ async function admSectionAchievements(box, d) {
     <div id="admAchList"></div>`;
 
   const listed = () => {
-    const q = adminState.achQuery.trim().toLocaleLowerCase();
+    const q = fold(adminState.achQuery.trim());
     return all.filter(a => (!adminState.achGroup || a.group === adminState.achGroup) &&
-      (!q || [a.title, a.description, a.key].some(v => v && v.toLocaleLowerCase().includes(q))));
+      (!q || [a.title, a.description, a.key].some(v => v && fold(v).includes(q))));
   };
   const reward = () => box.querySelector('#admAchReward').checked;
   const send = async (url, body) => {
@@ -5111,8 +5116,8 @@ const speciesLearnsMove = (sp, move) => speciesLearnLabel(sp, move) != null;
 
 function attackDexMoveMatches(move) {
   const f = attackDexFilter;
-  const query = f.search.trim().toLowerCase();
-  if (query && ![move.name, move.name_de].some(n => n && n.toLowerCase().includes(query))) return false;
+  const query = fold(f.search.trim());
+  if (query && ![move.name, move.name_de].some(n => n && fold(n).includes(query))) return false;
   if (f.type && move.type !== f.type) return false;
   if (f.category && move.category !== f.category) return false;
   if (f.minPower && !(move.power != null && move.power >= Number(f.minPower))) return false;
@@ -5237,9 +5242,9 @@ const ABILITYDEX_SORT = {
 
 function abilityDexMatches(ability) {
   const f = abilityDexFilter;
-  const query = f.search.trim().toLowerCase();
+  const query = fold(f.search.trim());
   if (query && ![ability.name, ability.name_de, ability.description, ability.description_de]
-    .some(text => text && text.toLowerCase().includes(query))) return false;
+    .some(text => text && fold(text).includes(query))) return false;
   if (f.status === 'active' && !ability.active) return false;
   if (f.status === 'inactive' && ability.active) return false;
   if (ABILITY_INACTIVE_REASONS.includes(f.status) && ability.inactive !== f.status) return false;
@@ -6016,9 +6021,9 @@ function boxSorted(box, view = boxView) {
 // instance's own `shiny`/`level`.
 function boxFilterMatches(p, view) {
   const sp = p.species || p;
-  const q = (view.query || '').trim().toLocaleLowerCase().replace(/^#/, '');
+  const q = fold((view.query || '').trim()).replace(/^#/, '');
   const match = (!q || [p.nickname, p.name, sp.name, sp.name_de, sp.name_en, speciesName(sp), String(sp.id || p.species_id || '')]
-      .some(v => v && String(v).toLocaleLowerCase().includes(q)))
+      .some(v => v && fold(v).includes(q)))
     && (!view.type || sp.type1 === view.type || sp.type2 === view.type)
     && (!view.generation || String(sp.generation) === view.generation)
     && (!view.shiny || (p.shiny ?? p.shiny_caught))
