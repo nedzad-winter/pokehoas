@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-11-01T17:12:54.277997+00:00",
-    "source_tree_hash": "5100c358d82ddaec4d4d473cf4f5b6f4014e64b7dce8ea30be2e7a0ce6583bcc",
+    "generated_at": "2026-11-01T19:36:25.807069+00:00",
+    "source_tree_hash": "c04dbc7f2b54f8dac9d481589c2ff5f1bde190f31fb99e4a5809f72b1c9cd242",
     "repo_name": ".codeboarding-target",
     "depth_level": 2,
     "depth_cap": 2,
@@ -23713,313 +23713,6 @@
           ]
         },
         {
-          "relation": "calls",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Core Battle and Gameplay Mechanics",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/backup.py|pokemon_encounter.app.backup.start",
-              "call_sites": [
-                {
-                  "line": 94,
-                  "column": 12
-                }
-              ],
-              "description": "Manages backup tasks, background seeding, and auto-rule queues"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.1",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
-              "target": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules.drain_notifications",
-              "call_sites": [
-                {
-                  "line": 132,
-                  "column": 32
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/abilities.py|pokemon_encounter.app.abilities.start_background_seed",
-              "call_sites": [
-                {
-                  "line": 83,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/backup.py|pokemon_encounter.app.backup.start",
-              "call_sites": [
-                {
-                  "line": 94,
-                  "column": 12
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/backup.py|pokemon_encounter.app.backup.stop",
-              "call_sites": [
-                {
-                  "line": 99,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/breeding.py|pokemon_encounter.app.breeding.start_background_backfill",
-              "call_sites": [
-                {
-                  "line": 88,
-                  "column": 14
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/trigger_sync.py|pokemon_encounter.app.trigger_sync.sync",
-              "call_sites": [
-                {
-                  "line": 82,
-                  "column": 32
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "initializes and queries database state through",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Database Access Layer",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.init_db",
-              "call_sites": [
-                {
-                  "line": 64,
-                  "column": 8
-                }
-              ],
-              "description": "Initializes database tables and triggers schema migrations on startup"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.10",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
-              "call_sites": [
-                {
-                  "line": 106,
-                  "column": 20
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 97,
-                  "column": 23
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main._heartbeat",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-              "call_sites": [
-                {
-                  "line": 54,
-                  "column": 17
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.init_db",
-              "call_sites": [
-                {
-                  "line": 64,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "starts background evolution seeds in",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Economy and Evolution Management",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/evolution.py|pokemon_encounter.app.evolution.start_background_seed",
-              "call_sites": [
-                {
-                  "line": 77,
-                  "column": 15
-                }
-              ],
-              "description": "starts background evolution database seeding on application launch"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.3",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/evolution.py|pokemon_encounter.app.evolution.start_background_seed",
-              "call_sites": [
-                {
-                  "line": 77,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "drives encounter lifecycle and gift grants in",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Spawn and Encounter Generation",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
-              "call_sites": [
-                {
-                  "line": 118,
-                  "column": 25
-                }
-              ],
-              "description": "Expires stale encounters and processes spawn events"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.5",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.expire_stale_encounters",
-              "call_sites": [
-                {
-                  "line": 75,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
-              "call_sites": [
-                {
-                  "line": 118,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/gifts.py|pokemon_encounter.app.gifts.grant_pending",
-              "call_sites": [
-                {
-                  "line": 68,
-                  "column": 11
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "invokes seed routines in",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Data Seeding and Debugging",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
-              "call_sites": [
-                {
-                  "line": 75,
-                  "column": 50
-                }
-              ],
-              "description": "Ensures Pokédex species data is seeded and starts name backfills"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.6",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/tms.py|pokemon_encounter.app.tms.start_background_backfill",
-              "call_sites": [
-                {
-                  "line": 90,
-                  "column": 9
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
-              "call_sites": [
-                {
-                  "line": 75,
-                  "column": 50
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.start_name_en_backfill",
-              "call_sites": [
-                {
-                  "line": 86,
-                  "column": 10
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
           "relation": "authenticates and persists user credentials via",
           "src_name": "Authentication and Access Control",
           "dst_name": "Database Access Layer",
@@ -24410,6 +24103,313 @@
                 {
                   "line": 201,
                   "column": 35
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "calls",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Core Battle and Gameplay Mechanics",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/backup.py|pokemon_encounter.app.backup.start",
+              "call_sites": [
+                {
+                  "line": 94,
+                  "column": 12
+                }
+              ],
+              "description": "Manages backup tasks, background seeding, and auto-rule queues"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.1",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
+              "target": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules.drain_notifications",
+              "call_sites": [
+                {
+                  "line": 132,
+                  "column": 32
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/abilities.py|pokemon_encounter.app.abilities.start_background_seed",
+              "call_sites": [
+                {
+                  "line": 83,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/backup.py|pokemon_encounter.app.backup.start",
+              "call_sites": [
+                {
+                  "line": 94,
+                  "column": 12
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/backup.py|pokemon_encounter.app.backup.stop",
+              "call_sites": [
+                {
+                  "line": 99,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/breeding.py|pokemon_encounter.app.breeding.start_background_backfill",
+              "call_sites": [
+                {
+                  "line": 88,
+                  "column": 14
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/trigger_sync.py|pokemon_encounter.app.trigger_sync.sync",
+              "call_sites": [
+                {
+                  "line": 82,
+                  "column": 32
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "initializes and queries database state through",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Database Access Layer",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.init_db",
+              "call_sites": [
+                {
+                  "line": 64,
+                  "column": 8
+                }
+              ],
+              "description": "Initializes database tables and triggers schema migrations on startup"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.10",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
+              "call_sites": [
+                {
+                  "line": 106,
+                  "column": 20
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 97,
+                  "column": 23
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main._heartbeat",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+              "call_sites": [
+                {
+                  "line": 54,
+                  "column": 17
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.init_db",
+              "call_sites": [
+                {
+                  "line": 64,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "starts background evolution seeds in",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Economy and Evolution Management",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/evolution.py|pokemon_encounter.app.evolution.start_background_seed",
+              "call_sites": [
+                {
+                  "line": 77,
+                  "column": 15
+                }
+              ],
+              "description": "starts background evolution database seeding on application launch"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.3",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/evolution.py|pokemon_encounter.app.evolution.start_background_seed",
+              "call_sites": [
+                {
+                  "line": 77,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "drives encounter lifecycle and gift grants in",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Spawn and Encounter Generation",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
+              "call_sites": [
+                {
+                  "line": 118,
+                  "column": 25
+                }
+              ],
+              "description": "Expires stale encounters and processes spawn events"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.5",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.expire_stale_encounters",
+              "call_sites": [
+                {
+                  "line": 75,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
+              "call_sites": [
+                {
+                  "line": 118,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/gifts.py|pokemon_encounter.app.gifts.grant_pending",
+              "call_sites": [
+                {
+                  "line": 68,
+                  "column": 11
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "invokes seed routines in",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Data Seeding and Debugging",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
+              "call_sites": [
+                {
+                  "line": 75,
+                  "column": 50
+                }
+              ],
+              "description": "Ensures Pokédex species data is seeded and starts name backfills"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.6",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/tms.py|pokemon_encounter.app.tms.start_background_backfill",
+              "call_sites": [
+                {
+                  "line": 90,
+                  "column": 9
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
+              "call_sites": [
+                {
+                  "line": 75,
+                  "column": 50
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.start_name_en_backfill",
+              "call_sites": [
+                {
+                  "line": 86,
+                  "column": 10
                 }
               ],
               "description": ""
