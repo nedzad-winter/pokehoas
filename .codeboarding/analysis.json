@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-01T10:43:24.278000+00:00",
+    "generated_at": "2026-11-01T11:23:13.964978+00:00",
     "source_tree_hash": "52ed8f6366a343de32f4eafd93dec89807eeca29de51257544b60d553f770ae6",
     "repo_name": ".codeboarding-target",
     "depth_level": 2,
@@ -27795,17 +27795,6 @@
           "description": "Encounter catch and ball consumption actions triggered during automation and battle sessions"
         },
         {
-          "source": "pokemon_encounter/app/battle_session.py|pokemon_encounter.app.battle_session._throw",
-          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
-          "call_sites": [
-            {
-              "line": 410,
-              "column": 27
-            }
-          ],
-          "description": "Throws Pokéball during battle sessions"
-        },
-        {
           "source": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules._throw",
           "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
           "call_sites": [
@@ -27815,6 +27804,17 @@
             }
           ],
           "description": "Throws Pokéball during auto rules processing"
+        },
+        {
+          "source": "pokemon_encounter/app/battle_session.py|pokemon_encounter.app.battle_session._throw",
+          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
+          "call_sites": [
+            {
+              "line": 410,
+              "column": 27
+            }
+          ],
+          "description": "Throws Pokéball during battle sessions"
         }
       ],
       "src_id": "1.1",
