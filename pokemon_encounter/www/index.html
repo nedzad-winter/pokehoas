@@ -5675,7 +5675,7 @@ async function openPokemon(ownedId, notice) {
       <button class="ghost action" id="closePokemon">${tr('common.back')}</button>
       <div class="detail-head">
         ${sp.sprite_url ? `<img id="pokeDetailSprite" src="${esc(showingShiny && sp.shiny_sprite_url ? sp.shiny_sprite_url : sp.sprite_url)}" alt="">` : ''}
-        <div><span class="muted">#${esc(sp.id)}</span><h2>${esc(p.name)} ${p.gender ? `<span title="${esc(genderLabel(p.gender))}">${genderSymbol(p.gender)}</span>` : ''}${p.shiny ? shinyMark() : ''}${p.favorite ? favMark() : ''}${p.locked ? lockMark() : ''}</h2>
+        <div><span class="muted">#${esc(sp.id)}</span><h2>${esc(monName(p))} ${p.gender ? `<span title="${esc(genderLabel(p.gender))}">${genderSymbol(p.gender)}</span>` : ''}${p.shiny ? shinyMark() : ''}${p.favorite ? favMark() : ''}${p.locked ? lockMark() : ''}</h2>
           <strong>${tr('common.level_short', { level: p.level })}</strong> ${[sp.type1, sp.type2].filter(Boolean).map(typePill).join('')}${abilityPill(p.ability_info)}${isBuddy ? ` <span class="pill">${tr('buddy.badge')}</span>` : ''}
           ${canToggleShiny ? `<div><button class="ghost action" id="pokeShinyToggle" style="margin-top:6px">${showingShiny ? tr('pokedex.show_normal') : tr('pokedex.show_shiny')}</button></div>` : ''}
         </div>
