@@ -1,14 +1,14 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-11-01T19:36:24.023650+00:00",
-  "overall_score": 0.9560165975103735,
+  "timestamp": "2026-11-01T19:37:28.102193+00:00",
+  "overall_score": 0.9549180327868853,
   "check_summaries": [
     {
       "check_name": "function_size",
       "description": "Checks that functions/methods do not exceed line count thresholds",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 1152,
+      "total_entities_checked": 1165,
       "findings_count": 0,
       "warning_count": 0,
       "score": 1.0,
@@ -19,9 +19,9 @@
       "description": "Detects unused imports, variables, functions, and dead code via LSP diagnostics",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 53,
-      "findings_count": 53,
-      "warning_count": 25,
+      "total_entities_checked": 55,
+      "findings_count": 55,
+      "warning_count": 26,
       "score": 0.0,
       "finding_groups": [
         {
@@ -224,6 +224,13 @@
               "line_start": 76,
               "line_end": 76,
               "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"sys\" is not accessed",
+              "file_path": "scripts/build_ability_descriptions.py",
+              "line_start": 16,
+              "line_end": 16,
+              "metric_value": 0.0
             }
           ]
         },
@@ -413,6 +420,13 @@
               "line_start": 1789,
               "line_end": 1789,
               "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_import] Import \"sys\" is not accessed",
+              "file_path": "scripts/build_ability_descriptions.py",
+              "line_start": 16,
+              "line_end": 16,
+              "metric_value": 0.0
             }
           ]
         }
@@ -434,6 +448,12 @@
     },
     {
       "file_path": "pokemon_encounter/app/auth.py",
+      "total_findings": 2,
+      "warning_findings": 1,
+      "composite_risk_score": 25.0
+    },
+    {
+      "file_path": "scripts/build_ability_descriptions.py",
       "total_findings": 2,
       "warning_findings": 1,
       "composite_risk_score": 25.0

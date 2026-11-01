@@ -1,17 +1,17 @@
 {
   "metadata": {
-    "generated_at": "2026-11-01T19:36:25.807069+00:00",
-    "source_tree_hash": "c04dbc7f2b54f8dac9d481589c2ff5f1bde190f31fb99e4a5809f72b1c9cd242",
+    "generated_at": "2026-11-01T19:37:49.673502+00:00",
+    "source_tree_hash": "e80c27a62030a2097437d36598e718d8d797f695bedf7f6afc883f5ba11ed2ab",
     "repo_name": ".codeboarding-target",
     "depth_level": 2,
     "depth_cap": 2,
     "file_coverage_summary": {
-      "total_files": 169,
-      "analyzed": 71,
-      "not_analyzed": 98,
+      "total_files": 175,
+      "analyzed": 73,
+      "not_analyzed": 102,
       "not_analyzed_by_reason": {
-        "other": 36,
-        "codeboardingignore": 62
+        "other": 38,
+        "codeboardingignore": 64
       }
     },
     "tree_spec": {
@@ -2844,10 +2844,13 @@
         "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._release",
         "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.release",
         "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.release_many",
-        "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.species_names"
+        "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.species_names",
+        "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._name_tables",
+        "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.name_tables",
+        "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.ability_descriptions"
       ],
-      "content_hash": "0477268893502027",
-      "module_hash": "4c8a60c3d8051ec3"
+      "content_hash": "4bc1dbfc3faf86a0",
+      "module_hash": "e276227f9c548173"
     },
     "pokemon_encounter/app/api/trading.py": {
       "method_keys": [
@@ -2916,6 +2919,17 @@
       "content_hash": "70a2388f8916108d",
       "module_hash": "7d8accb82efa2f6a"
     },
+    "scripts/build_ability_descriptions.py": {
+      "method_keys": [
+        "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.fetch",
+        "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.clean",
+        "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.descriptions_of",
+        "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.main",
+        "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.main.one"
+      ],
+      "content_hash": "f8e11b8127c8eb36",
+      "module_hash": "d5a5534808bdeb11"
+    },
     "scripts/build_learnsets.py": {
       "method_keys": [
         "scripts/build_learnsets.py|scripts.build_learnsets._load",
@@ -2925,6 +2939,17 @@
       ],
       "content_hash": "12641a7a6e07e5f1",
       "module_hash": "b38bdfd3fd5c1a5c"
+    },
+    "scripts/build_name_translations.py": {
+      "method_keys": [
+        "scripts/build_name_translations.py|scripts.build_name_translations.fetch",
+        "scripts/build_name_translations.py|scripts.build_name_translations.names_of",
+        "scripts/build_name_translations.py|scripts.build_name_translations.collect",
+        "scripts/build_name_translations.py|scripts.build_name_translations.collect.one",
+        "scripts/build_name_translations.py|scripts.build_name_translations.main"
+      ],
+      "content_hash": "bc33a70dc66c5bf1",
+      "module_hash": "fdad29acec948e58"
     },
     "scripts/fetch_ui_icons.py": {
       "method_keys": [
@@ -12230,6 +12255,30 @@
       "type": "FUNCTION",
       "content_hash": "b34a35ed181a585f"
     },
+    "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._name_tables": {
+      "file_path": "pokemon_encounter/app/api/team.py",
+      "qualified_name": "pokemon_encounter.app.api.team._name_tables",
+      "start_line": 589,
+      "end_line": 597,
+      "type": "FUNCTION",
+      "content_hash": "aef029e8b4b0319a"
+    },
+    "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.name_tables": {
+      "file_path": "pokemon_encounter/app/api/team.py",
+      "qualified_name": "pokemon_encounter.app.api.team.name_tables",
+      "start_line": 601,
+      "end_line": 609,
+      "type": "FUNCTION",
+      "content_hash": "143044c620cca0df"
+    },
+    "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.ability_descriptions": {
+      "file_path": "pokemon_encounter/app/api/team.py",
+      "qualified_name": "pokemon_encounter.app.api.team.ability_descriptions",
+      "start_line": 616,
+      "end_line": 629,
+      "type": "FUNCTION",
+      "content_hash": "7723cb259ed06b78"
+    },
     "pokemon_encounter/app/api/trading.py|pokemon_encounter.app.api.trading.TradeRequestIn": {
       "file_path": "pokemon_encounter/app/api/trading.py",
       "qualified_name": "pokemon_encounter.app.api.trading.TradeRequestIn",
@@ -12622,6 +12671,46 @@
       "type": "FUNCTION",
       "content_hash": "c28f9e04ac8cd568"
     },
+    "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.fetch": {
+      "file_path": "scripts/build_ability_descriptions.py",
+      "qualified_name": "scripts.build_ability_descriptions.fetch",
+      "start_line": 28,
+      "end_line": 40,
+      "type": "FUNCTION",
+      "content_hash": "877d30a31ddfeaea"
+    },
+    "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.clean": {
+      "file_path": "scripts/build_ability_descriptions.py",
+      "qualified_name": "scripts.build_ability_descriptions.clean",
+      "start_line": 43,
+      "end_line": 44,
+      "type": "FUNCTION",
+      "content_hash": "25bbda23094ae168"
+    },
+    "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.descriptions_of": {
+      "file_path": "scripts/build_ability_descriptions.py",
+      "qualified_name": "scripts.build_ability_descriptions.descriptions_of",
+      "start_line": 47,
+      "end_line": 55,
+      "type": "FUNCTION",
+      "content_hash": "c1d54cba91566ad6"
+    },
+    "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.main": {
+      "file_path": "scripts/build_ability_descriptions.py",
+      "qualified_name": "scripts.build_ability_descriptions.main",
+      "start_line": 58,
+      "end_line": 82,
+      "type": "FUNCTION",
+      "content_hash": "960b6efdff124d7a"
+    },
+    "scripts/build_ability_descriptions.py|scripts.build_ability_descriptions.main.one": {
+      "file_path": "scripts/build_ability_descriptions.py",
+      "qualified_name": "scripts.build_ability_descriptions.main.one",
+      "start_line": 61,
+      "end_line": 63,
+      "type": "FUNCTION",
+      "content_hash": "a67e4f877cf030dd"
+    },
     "scripts/build_learnsets.py|scripts.build_learnsets._load": {
       "file_path": "scripts/build_learnsets.py",
       "qualified_name": "scripts.build_learnsets._load",
@@ -12653,6 +12742,46 @@
       "end_line": 114,
       "type": "FUNCTION",
       "content_hash": "77cf69e881987b03"
+    },
+    "scripts/build_name_translations.py|scripts.build_name_translations.fetch": {
+      "file_path": "scripts/build_name_translations.py",
+      "qualified_name": "scripts.build_name_translations.fetch",
+      "start_line": 27,
+      "end_line": 39,
+      "type": "FUNCTION",
+      "content_hash": "877d30a31ddfeaea"
+    },
+    "scripts/build_name_translations.py|scripts.build_name_translations.names_of": {
+      "file_path": "scripts/build_name_translations.py",
+      "qualified_name": "scripts.build_name_translations.names_of",
+      "start_line": 42,
+      "end_line": 47,
+      "type": "FUNCTION",
+      "content_hash": "b750cea94e4696b1"
+    },
+    "scripts/build_name_translations.py|scripts.build_name_translations.collect": {
+      "file_path": "scripts/build_name_translations.py",
+      "qualified_name": "scripts.build_name_translations.collect",
+      "start_line": 50,
+      "end_line": 63,
+      "type": "FUNCTION",
+      "content_hash": "6500abde4bc0a399"
+    },
+    "scripts/build_name_translations.py|scripts.build_name_translations.collect.one": {
+      "file_path": "scripts/build_name_translations.py",
+      "qualified_name": "scripts.build_name_translations.collect.one",
+      "start_line": 51,
+      "end_line": 53,
+      "type": "FUNCTION",
+      "content_hash": "f8f0c0ab85400262"
+    },
+    "scripts/build_name_translations.py|scripts.build_name_translations.main": {
+      "file_path": "scripts/build_name_translations.py",
+      "qualified_name": "scripts.build_name_translations.main",
+      "start_line": 66,
+      "end_line": 91,
+      "type": "FUNCTION",
+      "content_hash": "4c61fabd4e12f113"
     },
     "scripts/fetch_ui_icons.py|scripts.fetch_ui_icons.get": {
       "file_path": "scripts/fetch_ui_icons.py",
@@ -24554,8 +24683,26 @@
     },
     {
       "name": "REST API Routing",
-      "description": "Provides REST API routers and request handlers for encounters, battles, trading, user profiles, catalog dexes, and administration.",
+      "description": "Provides FastAPI REST endpoints and request handlers for player team management, box operations, dex browsing, battles, encounters, and trading.",
       "key_entities": [
+        {
+          "qualified_name": "pokemon_encounter.app.api.team.describe_owned",
+          "reference_file": "pokemon_encounter/app/api/team.py",
+          "reference_start_line": 75,
+          "reference_end_line": 141
+        },
+        {
+          "qualified_name": "pokemon_encounter.app.api.team.get_pokedex",
+          "reference_file": "pokemon_encounter/app/api/team.py",
+          "reference_start_line": 145,
+          "reference_end_line": 179
+        },
+        {
+          "qualified_name": "pokemon_encounter.app.api.team.evolve",
+          "reference_file": "pokemon_encounter/app/api/team.py",
+          "reference_start_line": 267,
+          "reference_end_line": 282
+        },
         {
           "qualified_name": "pokemon_encounter.app.api.encounters.finalize_catch",
           "reference_file": "pokemon_encounter/app/api/encounters.py",
@@ -24909,7 +25056,10 @@
             "pokemon_encounter.app.api.team._release",
             "pokemon_encounter.app.api.team.release",
             "pokemon_encounter.app.api.team.release_many",
-            "pokemon_encounter.app.api.team.species_names"
+            "pokemon_encounter.app.api.team.species_names",
+            "pokemon_encounter.app.api.team._name_tables",
+            "pokemon_encounter.app.api.team.name_tables",
+            "pokemon_encounter.app.api.team.ability_descriptions"
           ]
         },
         {
@@ -24973,8 +25123,20 @@
     },
     {
       "name": "Data Build and Sync Scripts",
-      "description": "Automates external data fetching from PokeAPI and asset building for ability catalogs, learnsets, and UI icons.",
+      "description": "Fetches multilingual descriptions, name translations, catalog data, learnsets, and icons from PokeAPI into static JSON datasets.",
       "key_entities": [
+        {
+          "qualified_name": "scripts.build_ability_descriptions.main",
+          "reference_file": "scripts/build_ability_descriptions.py",
+          "reference_start_line": 58,
+          "reference_end_line": 82
+        },
+        {
+          "qualified_name": "scripts.build_name_translations.main",
+          "reference_file": "scripts/build_name_translations.py",
+          "reference_start_line": 66,
+          "reference_end_line": 91
+        },
         {
           "qualified_name": "scripts.build_ability_catalog.build",
           "reference_file": "scripts/build_ability_catalog.py",
@@ -25000,12 +25162,32 @@
           ]
         },
         {
+          "file_path": "scripts/build_ability_descriptions.py",
+          "methods": [
+            "scripts.build_ability_descriptions.fetch",
+            "scripts.build_ability_descriptions.clean",
+            "scripts.build_ability_descriptions.descriptions_of",
+            "scripts.build_ability_descriptions.main",
+            "scripts.build_ability_descriptions.main.one"
+          ]
+        },
+        {
           "file_path": "scripts/build_learnsets.py",
           "methods": [
             "scripts.build_learnsets._load",
             "scripts.build_learnsets._showdown_id",
             "scripts.build_learnsets.build",
             "scripts.build_learnsets.main"
+          ]
+        },
+        {
+          "file_path": "scripts/build_name_translations.py",
+          "methods": [
+            "scripts.build_name_translations.fetch",
+            "scripts.build_name_translations.names_of",
+            "scripts.build_name_translations.collect",
+            "scripts.build_name_translations.collect.one",
+            "scripts.build_name_translations.main"
           ]
         },
         {
@@ -27795,17 +27977,6 @@
           "description": "Encounter catch and ball consumption actions triggered during automation and battle sessions"
         },
         {
-          "source": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules._throw",
-          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
-          "call_sites": [
-            {
-              "line": 757,
-              "column": 27
-            }
-          ],
-          "description": "Throws Pokéball during auto rules processing"
-        },
-        {
           "source": "pokemon_encounter/app/battle_session.py|pokemon_encounter.app.battle_session._throw",
           "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
           "call_sites": [
@@ -27815,6 +27986,17 @@
             }
           ],
           "description": "Throws Pokéball during battle sessions"
+        },
+        {
+          "source": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules._throw",
+          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
+          "call_sites": [
+            {
+              "line": 757,
+              "column": 27
+            }
+          ],
+          "description": "Throws Pokéball during auto rules processing"
         }
       ],
       "src_id": "1.1",
@@ -36442,208 +36624,6 @@
       "is_static": true,
       "all_edges": [
         {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._held_inventory",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-          "call_sites": [
-            {
-              "line": 325,
-              "column": 23
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._inventory_add",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-          "call_sites": [
-            {
-              "line": 405,
-              "column": 8
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._not_in_battle",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-          "call_sites": [
-            {
-              "line": 317,
-              "column": 30
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._own",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-          "call_sites": [
-            {
-              "line": 305,
-              "column": 14
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._own",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-          "call_sites": [
-            {
-              "line": 307,
-              "column": 63
-            },
-            {
-              "line": 309,
-              "column": 63
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._release",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-          "call_sites": [
-            {
-              "line": 542,
-              "column": 13
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._species",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-          "call_sites": [
-            {
-              "line": 59,
-              "column": 15
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.get_pokedex",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-          "call_sites": [
-            {
-              "line": 146,
-              "column": 15
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.get_pokedex_entry",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-          "call_sites": [
-            {
-              "line": 189,
-              "column": 14
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.get_team",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-          "call_sites": [
-            {
-              "line": 337,
-              "column": 15
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_favorite",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-          "call_sites": [
-            {
-              "line": 453,
-              "column": 8
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_held_item",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-          "call_sites": [
-            {
-              "line": 430,
-              "column": 13
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_locked",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-          "call_sites": [
-            {
-              "line": 470,
-              "column": 8
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_locked_many",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-          "call_sites": [
-            {
-              "line": 489,
-              "column": 13
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_moves",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-          "call_sites": [
-            {
-              "line": 262,
-              "column": 8
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_party",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-          "call_sites": [
-            {
-              "line": 381,
-              "column": 13
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_party",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_box_item_return",
-          "call_sites": [
-            {
-              "line": 379,
-              "column": 24
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.species_names",
-          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.species_name_tables",
-          "call_sites": [
-            {
-              "line": 583,
-              "column": 15
-            }
-          ],
-          "description": ""
-        },
-        {
           "source": "pokemon_encounter/app/api/abilitydex.py|pokemon_encounter.app.api.abilitydex.get_abilitydex",
           "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
           "call_sites": [
@@ -37999,6 +37979,208 @@
             {
               "line": 1246,
               "column": 13
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._held_inventory",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+          "call_sites": [
+            {
+              "line": 325,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._inventory_add",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+          "call_sites": [
+            {
+              "line": 405,
+              "column": 8
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._not_in_battle",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+          "call_sites": [
+            {
+              "line": 317,
+              "column": 30
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._own",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+          "call_sites": [
+            {
+              "line": 305,
+              "column": 14
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._own",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+          "call_sites": [
+            {
+              "line": 307,
+              "column": 63
+            },
+            {
+              "line": 309,
+              "column": 63
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._release",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+          "call_sites": [
+            {
+              "line": 542,
+              "column": 13
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team._species",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+          "call_sites": [
+            {
+              "line": 59,
+              "column": 15
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.get_pokedex",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+          "call_sites": [
+            {
+              "line": 146,
+              "column": 15
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.get_pokedex_entry",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+          "call_sites": [
+            {
+              "line": 189,
+              "column": 14
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.get_team",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+          "call_sites": [
+            {
+              "line": 337,
+              "column": 15
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_favorite",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+          "call_sites": [
+            {
+              "line": 453,
+              "column": 8
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_held_item",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+          "call_sites": [
+            {
+              "line": 430,
+              "column": 13
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_locked",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+          "call_sites": [
+            {
+              "line": 470,
+              "column": 8
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_locked_many",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+          "call_sites": [
+            {
+              "line": 489,
+              "column": 13
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_moves",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+          "call_sites": [
+            {
+              "line": 262,
+              "column": 8
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_party",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+          "call_sites": [
+            {
+              "line": 381,
+              "column": 13
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.set_party",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_box_item_return",
+          "call_sites": [
+            {
+              "line": 379,
+              "column": 24
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.species_names",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.species_name_tables",
+          "call_sites": [
+            {
+              "line": 583,
+              "column": 15
             }
           ],
           "description": ""
@@ -40208,6 +40390,160 @@
           "description": ""
         },
         {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.get_achievements",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 1006,
+              "column": 59
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.list_users",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
+          "call_sites": [
+            {
+              "line": 811,
+              "column": 44
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.patch_user",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
+          "call_sites": [
+            {
+              "line": 850,
+              "column": 65
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.spawn_encounter",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 712,
+              "column": 63
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.bulk_enable_triggers",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 145,
+              "column": 54
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_trigger",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 205,
+              "column": 63
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_zone_biome",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 253,
+              "column": 70
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.fire_trigger",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 184,
+              "column": 66
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.list_ha_entities",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 60,
+              "column": 51
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.patch_settings",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 275,
+              "column": 50
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.trigger_sync_now",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 135,
+              "column": 54
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_trigger",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 159,
+              "column": 60
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_zone_biome",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 238,
+              "column": 67
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/users.py|pokemon_encounter.app.api.users.me",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.current_user_is_admin",
+          "call_sites": [
+            {
+              "line": 133,
+              "column": 30
+            }
+          ],
+          "description": ""
+        },
+        {
           "source": "pokemon_encounter/app/api/team.py|pokemon_encounter.app.api.team.auto_heal",
           "target": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
           "call_sites": [
@@ -40379,160 +40715,6 @@
             {
               "line": 360,
               "column": 65
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.get_achievements",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 1006,
-              "column": 59
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.list_users",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
-          "call_sites": [
-            {
-              "line": 811,
-              "column": 44
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.patch_user",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
-          "call_sites": [
-            {
-              "line": 850,
-              "column": 65
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.spawn_encounter",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 712,
-              "column": 63
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.bulk_enable_triggers",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 145,
-              "column": 54
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_trigger",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 205,
-              "column": 63
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_zone_biome",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 253,
-              "column": 70
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.fire_trigger",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 184,
-              "column": 66
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.list_ha_entities",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 60,
-              "column": 51
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.patch_settings",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 275,
-              "column": 50
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.trigger_sync_now",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 135,
-              "column": 54
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_trigger",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 159,
-              "column": 60
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_zone_biome",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 238,
-              "column": 67
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/users.py|pokemon_encounter.app.api.users.me",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.current_user_is_admin",
-          "call_sites": [
-            {
-              "line": 133,
-              "column": 30
             }
           ],
           "description": ""

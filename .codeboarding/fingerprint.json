@@ -82,10 +82,11 @@
     "pokemon_encounter/app/api/login.py": "167f3e10ff91cade",
     "pokemon_encounter/app/api/shop.py": "63af39ac70ddea40",
     "pokemon_encounter/app/api/trading.py": "9ee0f4f16338a7d6",
-    "pokemon_encounter/app/api/team.py": "0477268893502027",
+    "pokemon_encounter/app/api/team.py": "4bc1dbfc3faf86a0",
     "pokemon_encounter/app/api/battles.py": "8f9d702072fa9eb6",
     "pokemon_encounter/app/data/held_items.json": "e11075b7f31edf4a",
     "pokemon_encounter/app/data/fallback_species.json": "606e2e8267cd5ba6",
+    "pokemon_encounter/app/data/ability_descriptions_i18n.json": "58520d6a84af9e2b",
     "pokemon_encounter/app/data/learnsets.json": "1f2ef9fb8d85ced9",
     "pokemon_encounter/app/data/abilities.json": "6a9422b0485e09d8",
     "pokemon_encounter/app/data/biomes.json": "54ec78934a4ab21c",
@@ -94,6 +95,7 @@
     "pokemon_encounter/app/data/trainers.json": "adbe144bad4ffc43",
     "pokemon_encounter/app/data/tms.json": "3d73495b8a861bd1",
     "pokemon_encounter/app/data/fallback_abilities.json": "f3e084c753dfdbff",
+    "pokemon_encounter/app/data/names_i18n.json": "39ef0b2be04caa67",
     "pokemon_encounter/app/data/shop.json": "e865a0d72fbc4187",
     "pokemon_encounter/app/data/fallback_evolutions.json": "41035479b73a0946",
     "pokemon_encounter/app/data/i18n/it.json": "33c4ac9b3683ea36",
@@ -104,7 +106,7 @@
     "pokemon_encounter/app/data/i18n/de.json": "3ce5c59821008d6d",
     "pokemon_encounter/app/data/i18n/ko.json": "37d16e781ca4341b",
     "pokemon_encounter/app/data/i18n/en.json": "64db2456fc600771",
-    "pokemon_encounter/www/index.html": "cd04b1351fb016e1",
+    "pokemon_encounter/www/index.html": "500e6d773d5622ef",
     "pokemon_encounter/www/img/banner.svg": "2a4267feab277873",
     "pokemon_encounter/www/img/klefki.png": "4bee0907de27a713",
     "pokemon_encounter/www/img/types/fairy.png": "b83f632463ce72c7",
@@ -195,6 +197,8 @@
     "pokemon_encounter/translations/de.yaml": "538edd2bd9d47285",
     "scripts/build_learnsets.py": "12641a7a6e07e5f1",
     "scripts/build_ability_catalog.py": "70a2388f8916108d",
-    "scripts/fetch_ui_icons.py": "71f1cacfa4931eb5"
+    "scripts/fetch_ui_icons.py": "71f1cacfa4931eb5",
+    "scripts/build_name_translations.py": "bc33a70dc66c5bf1",
+    "scripts/build_ability_descriptions.py": "f8e11b8127c8eb36"
   }
 }
