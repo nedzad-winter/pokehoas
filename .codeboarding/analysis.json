@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-11-01T11:24:26.891465+00:00",
-    "source_tree_hash": "6426f8f637b8252a87d78df67791958c7bdc2bd317ba3e9fc7516235f6f9ab6f",
+    "generated_at": "2026-11-01T17:12:54.277997+00:00",
+    "source_tree_hash": "5100c358d82ddaec4d4d473cf4f5b6f4014e64b7dce8ea30be2e7a0ce6583bcc",
     "repo_name": ".codeboarding-target",
     "depth_level": 2,
     "depth_cap": 2,
@@ -1315,7 +1315,7 @@
       }
     }
   },
-  "description": "Root scope of PokeHOAS, providing container startup configuration, a FastAPI web API layer, the underlying Pokémon battle and encounter mechanics engine, and offline data generation scripts.",
+  "description": "Root scope of PokeHOAS, coordinating container startup and environment validation, HTTP API routing, Pokémon encounter and battle mechanics, database persistence, and external data catalog compilation.",
   "files": {
     "pokemon_encounter/app/abilities.py": {
       "method_keys": [
@@ -1432,7 +1432,7 @@
         "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.current_user_is_admin",
         "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin"
       ],
-      "content_hash": "c43e09f9d93d04f5",
+      "content_hash": "2c39834f19840537",
       "module_hash": "2a3fd8b76aca35dd"
     },
     "pokemon_encounter/app/auth.py": {
@@ -2080,7 +2080,7 @@
         "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.utcnow",
         "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.minutes_ago"
       ],
-      "content_hash": "f30cf72a14035d5e",
+      "content_hash": "13c1dff280705f02",
       "module_hash": "5987c25e068d075c"
     },
     "pokemon_encounter/app/healing.py": {
@@ -3628,7 +3628,7 @@
       "start_line": 80,
       "end_line": 103,
       "type": "FUNCTION",
-      "content_hash": "67412f5a66dc621a"
+      "content_hash": "306d767acca12a9d"
     },
     "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin._fetch_ha_users.run": {
       "file_path": "pokemon_encounter/app/admin.py",
@@ -7740,7 +7740,7 @@
       "start_line": 47,
       "end_line": 232,
       "type": "CLASS",
-      "content_hash": "68ddcdc7b8529226"
+      "content_hash": "e0cfe588e355bac7"
     },
     "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.__init__": {
       "file_path": "pokemon_encounter/app/ha_client.py",
@@ -7852,7 +7852,7 @@
       "start_line": 155,
       "end_line": 177,
       "type": "METHOD",
-      "content_hash": "7534016d49ef1644"
+      "content_hash": "1abdcb7bdf2971e6"
     },
     "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.fetch_state_changes": {
       "file_path": "pokemon_encounter/app/ha_client.py",
@@ -12738,7 +12738,7 @@
   "components": [
     {
       "name": "Game Engine and Core Services",
-      "description": "Implements core game logic, battle mechanics, economy, training, database persistence, and background worker services.",
+      "description": "Implements core game mechanics, battle simulation, player progression, Home Assistant integration, database persistence, and background polling.",
       "key_entities": [
         {
           "qualified_name": "pokemon_encounter.app.battle.Battle",
@@ -15260,7 +15260,7 @@
         },
         {
           "name": "Authentication and Access Control",
-          "description": "Enforces authentication and Home Assistant admin role checks for secured application routes.",
+          "description": "Enforces authentication and Home Assistant administrator role verification for API access.",
           "key_entities": [
             {
               "qualified_name": "pokemon_encounter.app.auth.get_current_user",
@@ -15338,6 +15338,12 @@
           "description": "Communicates with Home Assistant to track buddy Pokémon step counts and award discovery items.",
           "key_entities": [
             {
+              "qualified_name": "pokemon_encounter.app.ha_client.HomeAssistantClient",
+              "reference_file": "pokemon_encounter/app/ha_client.py",
+              "reference_start_line": 47,
+              "reference_end_line": 232
+            },
+            {
               "qualified_name": "pokemon_encounter.app.buddy.apply_reading",
               "reference_file": "pokemon_encounter/app/buddy.py",
               "reference_start_line": 143,
@@ -15348,12 +15354,6 @@
               "reference_file": "pokemon_encounter/app/buddy.py",
               "reference_start_line": 317,
               "reference_end_line": 344
-            },
-            {
-              "qualified_name": "pokemon_encounter.app.ha_client.HomeAssistantClient",
-              "reference_file": "pokemon_encounter/app/ha_client.py",
-              "reference_start_line": 47,
-              "reference_end_line": 232
             }
           ],
           "source_cluster_ids": [
@@ -23713,403 +23713,6 @@
           ]
         },
         {
-          "relation": "authenticates and persists user credentials via",
-          "src_name": "Authentication and Access Control",
-          "dst_name": "Database Access Layer",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.upsert_user",
-              "call_sites": [
-                {
-                  "line": 236,
-                  "column": 19
-                },
-                {
-                  "line": 246,
-                  "column": 19
-                },
-                {
-                  "line": 273,
-                  "column": 15
-                }
-              ],
-              "description": "Creates or updates authenticated user profiles in the database"
-            }
-          ],
-          "src_id": "1.7",
-          "dst_id": "1.10",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.upsert_user",
-              "call_sites": [
-                {
-                  "line": 236,
-                  "column": 19
-                },
-                {
-                  "line": 246,
-                  "column": 19
-                },
-                {
-                  "line": 273,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "credits buddy and breeding steps to",
-          "src_name": "Home Assistant Integration and Buddy Tracking",
-          "dst_name": "Core Battle and Gameplay Mechanics",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
-              "target": "pokemon_encounter/app/breeding.py|pokemon_encounter.app.breeding.credit_steps",
-              "call_sites": [
-                {
-                  "line": 160,
-                  "column": 14
-                }
-              ],
-              "description": "Awards experience points and breeding step increments"
-            }
-          ],
-          "src_id": "1.8",
-          "dst_id": "1.1",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.exp_for_level",
-              "call_sites": [
-                {
-                  "line": 218,
-                  "column": 38
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
-              "target": "pokemon_encounter/app/breeding.py|pokemon_encounter.app.breeding.credit_steps",
-              "call_sites": [
-                {
-                  "line": 160,
-                  "column": 14
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.ha_state",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 284,
-                  "column": 31
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "persists buddy stats and step logs to",
-          "src_name": "Home Assistant Integration and Buddy Tracking",
-          "dst_name": "Database Access Layer",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 151,
-                  "column": 8
-                }
-              ],
-              "description": "Persists buddy step increments and encounters into the database"
-            }
-          ],
-          "src_id": "1.8",
-          "dst_id": "1.10",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._buddy_row",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 109,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 219,
-                  "column": 12
-                },
-                {
-                  "line": 223,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 217,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 151,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
-              "call_sites": [
-                {
-                  "line": 147,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.recent_finds",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 198,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 187,
-                  "column": 12
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
-              "call_sites": [
-                {
-                  "line": 174,
-                  "column": 23
-                },
-                {
-                  "line": 175,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_buddy",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 126,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_buddy",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
-              "call_sites": [
-                {
-                  "line": 123,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_buddy",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 120,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_sensor",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 137,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.status",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 254,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.steps_per_level",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
-              "call_sites": [
-                {
-                  "line": 101,
-                  "column": 26
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
-              "call_sites": [
-                {
-                  "line": 339,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 320,
-                  "column": 16
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "grants discovered rewards via",
-          "src_name": "Home Assistant Integration and Buddy Tracking",
-          "dst_name": "Trainer Progression and Achievements",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
-              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.grant",
-              "call_sites": [
-                {
-                  "line": 186,
-                  "column": 17
-                }
-              ],
-              "description": "grants discovered items and credits milestone achievements on buddy walking"
-            }
-          ],
-          "src_id": "1.8",
-          "dst_id": "1.2",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
-              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.check_level100",
-              "call_sites": [
-                {
-                  "line": 220,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
-              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.grant",
-              "call_sites": [
-                {
-                  "line": 186,
-                  "column": 17
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "resolves item metadata from",
-          "src_name": "Home Assistant Integration and Buddy Tracking",
-          "dst_name": "Economy and Evolution Management",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.recent_finds",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.item_label",
-              "call_sites": [
-                {
-                  "line": 201,
-                  "column": 35
-                }
-              ],
-              "description": "resolves item labels for buddy discoveries"
-            }
-          ],
-          "src_id": "1.8",
-          "dst_id": "1.3",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.recent_finds",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.item_label",
-              "call_sites": [
-                {
-                  "line": 201,
-                  "column": 35
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
           "relation": "calls",
           "src_name": "Application Lifecycle and Background Poller",
           "dst_name": "Core Battle and Gameplay Mechanics",
@@ -24417,6 +24020,403 @@
           ]
         },
         {
+          "relation": "authenticates and persists user credentials via",
+          "src_name": "Authentication and Access Control",
+          "dst_name": "Database Access Layer",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.upsert_user",
+              "call_sites": [
+                {
+                  "line": 236,
+                  "column": 19
+                },
+                {
+                  "line": 246,
+                  "column": 19
+                },
+                {
+                  "line": 273,
+                  "column": 15
+                }
+              ],
+              "description": "Authenticates incoming HTTP request user credentials and upserts user records"
+            }
+          ],
+          "src_id": "1.7",
+          "dst_id": "1.10",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.upsert_user",
+              "call_sites": [
+                {
+                  "line": 236,
+                  "column": 19
+                },
+                {
+                  "line": 246,
+                  "column": 19
+                },
+                {
+                  "line": 273,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "credits buddy and breeding steps to",
+          "src_name": "Home Assistant Integration and Buddy Tracking",
+          "dst_name": "Core Battle and Gameplay Mechanics",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
+              "target": "pokemon_encounter/app/breeding.py|pokemon_encounter.app.breeding.credit_steps",
+              "call_sites": [
+                {
+                  "line": 160,
+                  "column": 14
+                }
+              ],
+              "description": "Applies step counts to buddy leveling and breeding egg cycles"
+            }
+          ],
+          "src_id": "1.8",
+          "dst_id": "1.1",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.exp_for_level",
+              "call_sites": [
+                {
+                  "line": 218,
+                  "column": 38
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
+              "target": "pokemon_encounter/app/breeding.py|pokemon_encounter.app.breeding.credit_steps",
+              "call_sites": [
+                {
+                  "line": 160,
+                  "column": 14
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.ha_state",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 284,
+                  "column": 31
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "persists buddy stats and step logs to",
+          "src_name": "Home Assistant Integration and Buddy Tracking",
+          "dst_name": "Database Access Layer",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 151,
+                  "column": 8
+                }
+              ],
+              "description": "Queries and records buddy activity, step counts, and encounter state"
+            }
+          ],
+          "src_id": "1.8",
+          "dst_id": "1.10",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._buddy_row",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 109,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 219,
+                  "column": 12
+                },
+                {
+                  "line": 223,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 217,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 151,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.apply_reading",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 147,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.recent_finds",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 198,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 187,
+                  "column": 12
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
+              "call_sites": [
+                {
+                  "line": 174,
+                  "column": 23
+                },
+                {
+                  "line": 175,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_buddy",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 126,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_buddy",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 123,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_buddy",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 120,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.set_sensor",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 137,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.status",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 254,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.steps_per_level",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
+              "call_sites": [
+                {
+                  "line": 101,
+                  "column": 26
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 339,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 320,
+                  "column": 16
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "grants discovered rewards via",
+          "src_name": "Home Assistant Integration and Buddy Tracking",
+          "dst_name": "Trainer Progression and Achievements",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
+              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.grant",
+              "call_sites": [
+                {
+                  "line": 186,
+                  "column": 17
+                }
+              ],
+              "description": "Grants item rewards found by the buddy during walks"
+            }
+          ],
+          "src_id": "1.8",
+          "dst_id": "1.2",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy._credit_steps",
+              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.check_level100",
+              "call_sites": [
+                {
+                  "line": 220,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.roll_finds",
+              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.grant",
+              "call_sites": [
+                {
+                  "line": 186,
+                  "column": 17
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "resolves item metadata from",
+          "src_name": "Home Assistant Integration and Buddy Tracking",
+          "dst_name": "Economy and Evolution Management",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.recent_finds",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.item_label",
+              "call_sites": [
+                {
+                  "line": 201,
+                  "column": 35
+                }
+              ],
+              "description": "Resolves localized label names for items found by the buddy"
+            }
+          ],
+          "src_id": "1.8",
+          "dst_id": "1.3",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.recent_finds",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.item_label",
+              "call_sites": [
+                {
+                  "line": 201,
+                  "column": 35
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
           "relation": "synchronizes buddy sensors and client connections via",
           "src_name": "Application Lifecycle and Background Poller",
           "dst_name": "Home Assistant Integration and Buddy Tracking",
@@ -24431,13 +24431,24 @@
                   "column": 25
                 }
               ],
-              "description": "Initializes Home Assistant client and syncs buddy readings"
+              "description": "Initializes the Home Assistant client for background polling and syncs buddy sensor states"
             }
           ],
           "src_id": "1.9",
           "dst_id": "1.8",
           "is_static": true,
           "all_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
+              "call_sites": [
+                {
+                  "line": 89,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
             {
               "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
               "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
@@ -24456,17 +24467,6 @@
                 {
                   "line": 134,
                   "column": 35
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
-              "call_sites": [
-                {
-                  "line": 89,
-                  "column": 25
                 }
               ],
               "description": ""
@@ -34128,6 +34128,17 @@
       "is_static": true,
       "all_edges": [
         {
+          "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+          "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
+          "call_sites": [
+            {
+              "line": 89,
+              "column": 25
+            }
+          ],
+          "description": ""
+        },
+        {
           "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
           "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
           "call_sites": [
@@ -34145,17 +34156,6 @@
             {
               "line": 134,
               "column": 35
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-          "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
-          "call_sites": [
-            {
-              "line": 89,
-              "column": 25
             }
           ],
           "description": ""
@@ -39240,50 +39240,6 @@
       "is_static": true,
       "all_edges": [
         {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.get_achievements",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 1006,
-              "column": 59
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.list_users",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
-          "call_sites": [
-            {
-              "line": 811,
-              "column": 44
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.patch_user",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
-          "call_sites": [
-            {
-              "line": 850,
-              "column": 65
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.spawn_encounter",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 712,
-              "column": 63
-            }
-          ],
-          "description": ""
-        },
-        {
           "source": "pokemon_encounter/app/api/login.py|pokemon_encounter.app.api.login._require_oauth_mode",
           "target": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.auth_mode",
           "call_sites": [
@@ -39669,111 +39625,12 @@
           "description": ""
         },
         {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.bulk_enable_triggers",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 145,
-              "column": 54
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_trigger",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 205,
-              "column": 63
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_zone_biome",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 253,
-              "column": 70
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.fire_trigger",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 184,
-              "column": 66
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.list_ha_entities",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 60,
-              "column": 51
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.patch_settings",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 275,
-              "column": 50
-            }
-          ],
-          "description": ""
-        },
-        {
           "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.status",
           "target": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
           "call_sites": [
             {
               "line": 447,
               "column": 41
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.trigger_sync_now",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 135,
-              "column": 54
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_trigger",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 159,
-              "column": 60
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_zone_biome",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
-          "call_sites": [
-            {
-              "line": 238,
-              "column": 67
             }
           ],
           "description": ""
@@ -40198,17 +40055,6 @@
         },
         {
           "source": "pokemon_encounter/app/api/users.py|pokemon_encounter.app.api.users.me",
-          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.current_user_is_admin",
-          "call_sites": [
-            {
-              "line": 133,
-              "column": 30
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/users.py|pokemon_encounter.app.api.users.me",
           "target": "pokemon_encounter/app/auth.py|pokemon_encounter.app.auth.get_current_user",
           "call_sites": [
             {
@@ -40536,6 +40382,160 @@
             }
           ],
           "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.get_achievements",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 1006,
+              "column": 59
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.list_users",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
+          "call_sites": [
+            {
+              "line": 811,
+              "column": 44
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.patch_user",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.is_admin",
+          "call_sites": [
+            {
+              "line": 850,
+              "column": 65
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/admin.py|pokemon_encounter.app.api.admin.spawn_encounter",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 712,
+              "column": 63
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.bulk_enable_triggers",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 145,
+              "column": 54
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_trigger",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 205,
+              "column": 63
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.delete_zone_biome",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 253,
+              "column": 70
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.fire_trigger",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 184,
+              "column": 66
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.list_ha_entities",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 60,
+              "column": 51
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.patch_settings",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 275,
+              "column": 50
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.trigger_sync_now",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 135,
+              "column": 54
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_trigger",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 159,
+              "column": 60
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/config_routes.py|pokemon_encounter.app.api.config_routes.upsert_zone_biome",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.require_admin",
+          "call_sites": [
+            {
+              "line": 238,
+              "column": 67
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/users.py|pokemon_encounter.app.api.users.me",
+          "target": "pokemon_encounter/app/admin.py|pokemon_encounter.app.admin.current_user_is_admin",
+          "call_sites": [
+            {
+              "line": 133,
+              "column": 30
+            }
+          ],
+          "description": ""
         }
       ]
     },
@@ -40561,17 +40561,6 @@
           "description": ""
         },
         {
-          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy._push",
-          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantError",
-          "call_sites": [
-            {
-              "line": 38,
-              "column": 12
-            }
-          ],
-          "description": ""
-        },
-        {
           "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.get_buddy",
           "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.status",
           "call_sites": [
@@ -40589,39 +40578,6 @@
             {
               "line": 88,
               "column": 18
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.list_step_sensors",
-          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
-          "call_sites": [
-            {
-              "line": 77,
-              "column": 34
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.list_step_sensors",
-          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.list_states",
-          "call_sites": [
-            {
-              "line": 77,
-              "column": 34
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.list_step_sensors",
-          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantError",
-          "call_sites": [
-            {
-              "line": 78,
-              "column": 12
             }
           ],
           "description": ""
@@ -40666,6 +40622,50 @@
             {
               "line": 69,
               "column": 18
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy._push",
+          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantError",
+          "call_sites": [
+            {
+              "line": 38,
+              "column": 12
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.list_step_sensors",
+          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
+          "call_sites": [
+            {
+              "line": 77,
+              "column": 34
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.list_step_sensors",
+          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.list_states",
+          "call_sites": [
+            {
+              "line": 77,
+              "column": 34
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/api/buddy.py|pokemon_encounter.app.api.buddy.list_step_sensors",
+          "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantError",
+          "call_sites": [
+            {
+              "line": 78,
+              "column": 12
             }
           ],
           "description": ""
