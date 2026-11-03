@@ -1366,6 +1366,7 @@
   "team.box_all_rarities": "All rarities",
   "team.box_all_stages": "All evolution stages",
   "team.box_can_evolve": "Can evolve",
+  "team.box_duplicates_only": "Duplicates only",
   "team.box_empty": "The box is empty.",
   "team.box_evolve_selected": "Evolve selected ({count})",
   "team.box_evolve_selected_confirm": "Evolve {count} Pokémon now? Only Pokémon with exactly one level evolution (no item needed) are evolved.",

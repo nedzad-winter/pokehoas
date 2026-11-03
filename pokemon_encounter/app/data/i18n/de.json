@@ -1366,6 +1366,7 @@
   "team.box_all_rarities": "Alle Seltenheiten",
   "team.box_all_stages": "Alle Entwicklungsstufen",
   "team.box_can_evolve": "Kann sich entwickeln",
+  "team.box_duplicates_only": "Nur Duplikate",
   "team.box_empty": "Die Box ist leer.",
   "team.box_evolve_selected": "Auswahl entwickeln ({count})",
   "team.box_evolve_selected_confirm": "{count} Pokémon jetzt entwickeln? Entwickelt werden nur Pokémon mit genau einer Level-Entwicklung (ohne Item).",

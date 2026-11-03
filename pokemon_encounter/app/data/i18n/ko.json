@@ -1366,6 +1366,7 @@
   "team.box_all_rarities": "모든 희귀도",
   "team.box_all_stages": "모든 진화 단계",
   "team.box_can_evolve": "진화 가능",
+  "team.box_duplicates_only": "중복만",
   "team.box_empty": "박스가 비어 있습니다.",
   "team.box_evolve_selected": "선택한 포켓몬 진화 ({count})",
   "team.box_evolve_selected_confirm": "지금 {count}마리를 진화시킬까요? 레벨 진화가 정확히 하나뿐이고 아이템이 필요 없는 포켓몬만 진화합니다.",

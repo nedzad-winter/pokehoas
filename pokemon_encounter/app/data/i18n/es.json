@@ -1366,6 +1366,7 @@
   "team.box_all_rarities": "Todas las rarezas",
   "team.box_all_stages": "Todas las etapas de evolución",
   "team.box_can_evolve": "Puede evolucionar",
+  "team.box_duplicates_only": "Solo duplicados",
   "team.box_empty": "La caja está vacía.",
   "team.box_evolve_selected": "Evolucionar seleccionados ({count})",
   "team.box_evolve_selected_confirm": "¿Evolucionar {count} Pokémon ahora? Solo se evolucionan los Pokémon con exactamente una evolución por nivel (sin necesidad de objeto).",
