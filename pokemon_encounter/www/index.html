@@ -6069,13 +6069,13 @@ function boxSlotHtml(p, selectable, selectedIds = boxSelection) {
   const sp = p.species || {};
   const selected = selectable && selectedIds.has(p.id);
   return `<div class="card box-slot${p.fainted ? ' fainted' : ''}${selected ? ' selected' : ''}" data-id="${esc(p.id)}"
-      title="${esc(p.name)} · ${esc(tr('common.level_short', { level: p.level }))}${p.locked ? ' · ' + esc(tr('team.locked_hint')) : ''}">
-    ${selectable ? `<input type="checkbox" class="box-sel" aria-label="${esc(tr('team.box_select_one', { name: p.name }))}"${selected ? ' checked' : ''}>` : ''}
+      title="${esc(monName(p))} · ${esc(tr('common.level_short', { level: p.level }))}${p.locked ? ' · ' + esc(tr('team.locked_hint')) : ''}">
+    ${selectable ? `<input type="checkbox" class="box-sel" aria-label="${esc(tr('team.box_select_one', { name: monName(p) }))}"${selected ? ' checked' : ''}>` : ''}
     <span class="fav-star${p.favorite ? ' on' : ''}" data-fav-id="${esc(p.id)}"
       title="${esc(p.favorite ? tr('team.favorite_remove') : tr('team.favorite_add'))}">${p.favorite ? '★' : '☆'}</span>
     ${p.locked ? lockMark(`data-lock-id="${esc(p.id)}"`) : ''}
     ${sp.sprite_url ? `<img src="${esc(p.shiny && sp.shiny_sprite_url ? sp.shiny_sprite_url : sp.sprite_url)}" alt="">` : ''}
-    <div class="box-slot-name">${esc(p.name)}${p.shiny ? shinyMark() : ''}</div>
+    <div class="box-slot-name">${esc(monName(p))}${p.shiny ? shinyMark() : ''}</div>
     <div class="muted">${tr('common.level_short', { level: p.level })}</div>
     ${hpBar(p.current_hp, p.max_hp)}
   </div>`;
