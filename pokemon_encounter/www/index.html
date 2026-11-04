@@ -1229,7 +1229,7 @@ async function renderZones() {
   const [biomes, zones] = await Promise.all([api('/api/biomes'), api('/api/zones')]);
   const nameFor = id => (haZones.find(z => z.entity_id === id) || {}).friendly_name || id;
   const options = Object.entries(biomes)
-    .map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('');
+    .map(([k, v]) => `<option value="${k}">${esc(biomeLabel(k, v.label))}</option>`).join('');
   const assigned = new Set(zones.map(z => z.zone_entity_id));
   const zoneOptions = haZones
     .map(z => `<option value="${esc(z.entity_id)}">${esc(z.friendly_name)} (${esc(z.entity_id)})${assigned.has(z.entity_id) ? ' · ' + tr('zones.assigned') : ''}</option>`)
