@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Adds `nature.<key>` strings to data/i18n/{en,fr,es,it,ja,ko}.json from the official nature names
-in PokeAPI. German and Polish are left out on purpose: they inherit the English names from the
-catalog fallback (the frontend comment on natureLabel explains why).
+in PokeAPI. German and Polish get the English names on purpose (the frontend comment on natureLabel
+explains why), so that every language file has the same keys.
 
 Run from the repo root (needs network access to pokeapi.co):
 
@@ -48,7 +48,7 @@ def main() -> None:
         missing = [lang for lang in LANGS if lang not in names[key]]
         print(f"{key}: {names[key].get('fr')}" + (f"  (manque : {missing})" if missing else ""))
 
-    for lang in LANGS:
+    for lang in (*LANGS, "de", "pl"):
         path = APP / "data" / "i18n" / f"{lang}.json"
         text = path.read_text(encoding="utf-8", newline="")
         eol = "\r\n" if "\r\n" in text else "\n"
@@ -59,8 +59,8 @@ def main() -> None:
         match = re.search(r'  "nav\.achievements":[^\n]*\n', text)
         if not match:
             sys.exit(f"{lang}: repère nav.achievements introuvable")
-        lines = "".join(f'  "nature.{key}": {json.dumps(names[key][lang], ensure_ascii=False)},\n'
-                        for key in sorted(natures) if lang in names[key])
+        lines = "".join(f'  "nature.{key}": {json.dumps(names[key].get(lang) or names[key]["en"], ensure_ascii=False)},\n'
+                        for key in sorted(natures))
         text = text[:match.start()] + lines + text[match.start():]
         path.write_text(text.replace("\n", eol), encoding="utf-8", newline="")
         print("ok :", lang)
