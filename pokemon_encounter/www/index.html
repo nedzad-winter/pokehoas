@@ -897,7 +897,7 @@ async function renderQueue() {
           <span class="muted">${tr('common.level_short', { level: enc.level })}</span>
           ${ruleFor[enc.id] ? `<span class="pill" title="${esc(tr('queue.rule_pill_hint'))}">⚙ ${esc(ruleFor[enc.id].rule_name)} → ${esc(tr('auto_rules.mode.' + ruleFor[enc.id].mode))}</span>` : ''}<br>${types}
           <div class="muted" title="${esc(enc.source_entity || '')}">${tr('queue.source', {
-            source: esc(enc.source_label || enc.source_entity || tr('common.unknown')) })}${enc.biome ? ' · ' + esc(enc.biome) : ''}
+            source: esc(enc.source_label || enc.source_entity || tr('common.unknown')) })}${enc.biome ? ' · ' + esc(biomeLabel(enc.biome)) : ''}
             · ${tr('queue.expires', { date: new Date(enc.expires_at).toLocaleDateString(jsLocale()) })}</div>
         </div>
         ${hpBar(enc.current_hp, enc.max_hp)}
@@ -1253,7 +1253,7 @@ async function renderZones() {
         <div class="muted">${esc(z.zone_entity_id)}</div>
       </div>
       <select class="zBiome">${Object.entries(biomes).map(([k, v]) =>
-        `<option value="${k}" ${k === z.biome ? 'selected' : ''}>${esc(v.label)}</option>`).join('')}</select>
+        `<option value="${k}" ${k === z.biome ? 'selected' : ''}>${esc(biomeLabel(k, v.label))}</option>`).join('')}</select>
       <label class="muted">${tr('triggers.active')} <input type="checkbox" class="zEnabled" ${z.enabled ? 'checked' : ''}></label>
       <button class="ghost action zSave">${tr('common.save')}</button>
       <button class="ghost action zRemove">${tr('common.remove')}</button>
@@ -1547,6 +1547,8 @@ async function renderGeneralSettings(me) {
 const autoRulesView = { editing: null, draft: null, catalog: null, team: null, preview: null };
 const AR_BALL_MODES = ['catch', 'throw'];
 const AR_TEAM_MODES = ['defeat', 'catch'];
+// Biome name in the UI language; falls back to the catalog label, then to the raw key.
+const biomeLabel = (key, fallback) => (STRINGS['biome.' + key] || fallback || arPretty(key));
 const arPretty = s => String(s).replace(/_/g, ' ').replace(/^./, c => c.toUpperCase());
 const arBallLabel = key => {
   const b = (autoRulesView.catalog?.balls || []).find(x => x.key === key);
@@ -1573,7 +1575,7 @@ const AR_COND_FIELDS = [
   { group: 'dex', key: 'catch_chance_min', kind: 'num', min: 1, max: 100, unit: '%' },
   { group: 'dex', key: 'catch_chance_ball', kind: 'ball', summary: false },
   { group: 'where', key: 'sources', kind: 'text_list' },
-  { group: 'where', key: 'biomes', kind: 'chips', options: c => c.biomes, label: arPretty },
+  { group: 'where', key: 'biomes', kind: 'chips', options: c => c.biomes, label: k => biomeLabel(k) },
   { group: 'team', key: 'team_hp_min', kind: 'num', min: 0, max: 100, unit: '%' },
   { group: 'team', key: 'level_advantage_min', kind: 'num', min: -100, max: 100 },
   { group: 'team', key: 'type_advantage', kind: 'tri' },
@@ -2068,7 +2070,7 @@ function admLookupHtml(d) {
   const abilityRows = d.abilities.map(a => `<div>${esc(pick(a, 'name') || a.key)}
       ${a.hidden ? `<span class="pill">${tr('admin.ability_hidden')}</span>` : ''}
       <span class="muted">${esc(a.key)}</span></div>`).join('');
-  const biomes = d.biomes.map(b => `<span class="pill">${esc(b.biome)} ×${esc(b.weight)}</span>`).join('');
+  const biomes = d.biomes.map(b => `<span class="pill">${esc(biomeLabel(b.biome))} ×${esc(b.weight)}</span>`).join('');
   return `
     <div class="card">
       <div class="row">
