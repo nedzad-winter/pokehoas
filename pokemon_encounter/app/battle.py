@@ -792,7 +792,9 @@ def who(combatant: Combatant, lang: str = "en") -> str:
 
 
 def move_label(move: dict[str, Any], lang: str = "en") -> str:
-    return (move.get("name_de") if lang == "de" else None) or move["name"]
+    from . import name_tables  # local import, keeps the module import order untouched
+    return (name_tables.lookup("moves", move.get("key"), lang)
+            or (move.get("name_de") if lang == "de" else None) or move["name"])
 
 
 def available_moves(combatant: Combatant) -> list[str]:

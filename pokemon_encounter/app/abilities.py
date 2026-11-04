@@ -101,7 +101,9 @@ def label(key: str | None, lang: str = "en") -> str | None:
         return None
     ability = get(key)
     if ability:
-        return (ability.get("name_de") if lang == "de" else None) or ability["name"]
+        from . import name_tables
+        return (name_tables.lookup("abilities", key, lang)
+                or (ability.get("name_de") if lang == "de" else None) or ability["name"])
     return key.replace("_", " ").title()
 
 
