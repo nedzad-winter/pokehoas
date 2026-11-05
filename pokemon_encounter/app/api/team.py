@@ -601,7 +601,7 @@ def _name_tables() -> dict[str, Any]:
 def name_tables(lang: str) -> dict[str, Any]:
     """Ability, move and type names in `lang`, {kind: {key: name}}. English and German
     keep their catalog names, and PokeAPI has no Polish, so those return nothing."""
-    empty: dict[str, Any] = {"abilities": {}, "moves": {}, "types": {}}
+    empty: dict[str, Any] = {"abilities": {}, "moves": {}, "types": {}, "items": {}}
     if lang not in ("es", "fr", "it", "ja", "ko"):
         return empty
     tables = _name_tables()

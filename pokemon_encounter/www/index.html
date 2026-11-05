@@ -671,7 +671,7 @@ async function loadStrings(lang) {
   try {
     const sn = await fetch(BASE + '/api/species-names/' + encodeURIComponent(LANG)).then(r => r.json());
     NAME_TABLES = await fetch(BASE + '/api/name-tables/' + encodeURIComponent(LANG)).then(r => r.json())
-      .catch(() => ({ abilities: {}, moves: {}, types: {} }));
+      .catch(() => ({ abilities: {}, moves: {}, types: {}, items: {} }));
     ABILITY_DESCRIPTIONS = await fetch(BASE + '/api/ability-descriptions/' + encodeURIComponent(LANG))
       .then(r => r.json()).catch(() => ({}));
     SPECIES_NAMES = sn.names || {};
@@ -692,7 +692,7 @@ async function loadStrings(lang) {
 var SPECIES_NAMES = {};
 var SPECIES_NAMES_BY_EN = {};
 
-var NAME_TABLES = { abilities: {}, moves: {}, types: {} };
+var NAME_TABLES = { abilities: {}, moves: {}, types: {}, items: {} };
 var ABILITY_DESCRIPTIONS = {};
 
 function speciesName(sp) {
@@ -718,10 +718,11 @@ function fold(text) {
 }
 
 // Ability / move names from names_i18n.json (es, fr, it, ja, ko). Moves are told apart from
-// abilities by their `type`; items (which carry a sprite) never use these tables.
+// abilities by their `type`; items are told apart by their sprite and use the `items` table.
 function catalogName(obj) {
-  if (!obj || !obj.key || obj.sprite_url) return null;
-  const table = typeof obj.type === 'string' ? NAME_TABLES.moves : NAME_TABLES.abilities;
+  if (!obj || !obj.key) return null;
+  const table = obj.sprite_url ? NAME_TABLES.items
+    : (typeof obj.type === 'string' ? NAME_TABLES.moves : NAME_TABLES.abilities);
   return (table && table[obj.key]) || null;
 }
 
@@ -741,6 +742,11 @@ function baseLocalizedName(obj) {
 // bilingual fields don't need their own helper each time.
 function pick(obj, field) {
   if (!obj) return '';
+  // Shop / bag / ball labels: translated item name (names_i18n.json), when there is one.
+  if (field === 'label' && obj.key) {
+    const translated = (NAME_TABLES.items || {})[obj.key];
+    if (translated) return translated;
+  }
   const en = obj[field], de = obj[field + '_de'];
   return (LANG === 'de' ? (de || en) : (en || de)) || '';
 }

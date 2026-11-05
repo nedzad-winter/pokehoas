@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds pokemon_encounter/app/data/names_i18n.json: ability, move and type names in the
+"""Builds pokemon_encounter/app/data/names_i18n.json: ability, move, type and item names in the
 PokeAPI languages the UI supports (English stays in abilities.json / moves.json as `name`).
 PokeAPI has no Polish names, so Polish falls back to English in the frontend.
 
@@ -70,11 +70,15 @@ def main() -> None:
     if not type_list:
         sys.exit("PokeAPI is not reachable.")
     types = [t["name"] for t in type_list["results"] if t["name"] not in ("unknown", "shadow")]
+    shop = json.loads((DATA / "shop.json").read_text(encoding="utf-8"))["items"]
+    held = json.loads((DATA / "held_items.json").read_text(encoding="utf-8"))
+    items = sorted({item["key"] for item in shop} | {key for key in held if not key.startswith("_")})
 
     out: dict[str, dict[str, dict[str, str]]] = {}
     for kind, label, keys in (("ability", "abilities", abilities),
                               ("move", "moves", moves),
-                              ("type", "types", types)):
+                              ("type", "types", types),
+                              ("item", "items", items)):
         print(f"{label}: fetching {len(keys)} ...", flush=True)
         names, missing = collect(kind, keys)
         out[label] = names
