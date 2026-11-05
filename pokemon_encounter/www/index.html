@@ -674,6 +674,8 @@ async function loadStrings(lang) {
       .catch(() => ({ abilities: {}, moves: {}, types: {}, items: {} }));
     ABILITY_DESCRIPTIONS = await fetch(BASE + '/api/ability-descriptions/' + encodeURIComponent(LANG))
       .then(r => r.json()).catch(() => ({}));
+    ITEM_DESCRIPTIONS = await fetch(BASE + '/api/item-descriptions/' + encodeURIComponent(LANG))
+      .then(r => r.json()).catch(() => ({}));
     SPECIES_NAMES = sn.names || {};
     SPECIES_NAMES_BY_EN = sn.by_en || {};
   } catch (e) {
@@ -694,6 +696,7 @@ var SPECIES_NAMES_BY_EN = {};
 
 var NAME_TABLES = { abilities: {}, moves: {}, types: {}, items: {} };
 var ABILITY_DESCRIPTIONS = {};
+var ITEM_DESCRIPTIONS = {};
 
 function speciesName(sp) {
   if (!sp) return '?';
@@ -742,6 +745,11 @@ function baseLocalizedName(obj) {
 // bilingual fields don't need their own helper each time.
 function pick(obj, field) {
   if (!obj) return '';
+  // Item descriptions: official in-game text (item_descriptions_i18n.json). Items carry a `label`
+  // or a sprite, which tells them apart from abilities (same `key` field, no label).
+  if (field === 'description' && obj.key && (obj.sprite_url || obj.label) && ITEM_DESCRIPTIONS[obj.key]) {
+    return ITEM_DESCRIPTIONS[obj.key];
+  }
   // Shop / bag / ball labels: translated item name (names_i18n.json), when there is one.
   if (field === 'label' && obj.key) {
     const translated = (NAME_TABLES.items || {})[obj.key];
