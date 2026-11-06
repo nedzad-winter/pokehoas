@@ -6085,7 +6085,7 @@ function boxSlotHtml(p, selectable, selectedIds = boxSelection) {
 // Box sort/filter state (kept across re-renders, not persisted). Default
 // order is the National Dex.
 const boxView = { sort: 'dex_asc', type: '', shiny: false, favorite: false, minLevel: '',
-  stage: '', rarity: '', canEvolve: false, select: false,
+  stage: '', rarity: '', canEvolve: false, select: false, duplicates: false,
   generation: '', locked: false, invert: false };
 const BOX_RARITY_TIERS = ['common', 'rare', 'pseudo_legendary', 'paradox', 'legendary', 'mythical'];
 // Level evolution without item and with exactly one target - those can be
@@ -6137,7 +6137,7 @@ function boxFilterMatches(p, view) {
     && (!view.generation || String(sp.generation) === view.generation)
     && (!view.shiny || (p.shiny ?? p.shiny_caught))
     && (!view.favorite || p.favorite)
-    && (!view.locked || p.locked)
+    && (!view.locked || p.locked) && (!view.duplicates || ((view.dupCounts || {})[sp.id ?? p.species_id] || 0) > 1)
     && (!view.minLevel || (p.level ?? p.max_level ?? -1) >= Number(view.minLevel))
     && (!view.stage || sp.stage === Number(view.stage))
     && (!view.rarity || sp.rarity_tier === view.rarity)
@@ -6171,7 +6171,7 @@ function boxFilterControlsHtml(view, prefix, opts = {}) {
       </select>` : ''}
       <label><input type="checkbox" id="${prefix}FShiny" ${view.shiny ? 'checked' : ''}> ${tr('pokedex.shiny_only')}</label>
       ${opts.favorite !== false ? `<label><input type="checkbox" id="${prefix}FFavorite" ${view.favorite ? 'checked' : ''}> ${tr('team.favorites_only')}</label>` : ''}
-      ${opts.locked ? `<label><input type="checkbox" id="${prefix}FLocked" ${view.locked ? 'checked' : ''}> ${tr('team.box_locked_only')}</label>` : ''}
+      ${opts.locked ? `<label><input type="checkbox" id="${prefix}FLocked" ${view.locked ? 'checked' : ''}> ${tr('team.box_locked_only')}</label>` : ''} ${opts.duplicates ? `<label><input type="checkbox" id="${prefix}FDuplicates" ${view.duplicates ? 'checked' : ''}> ${tr('team.box_duplicates_only')}</label>` : ''}
       <select id="${prefix}FStage"><option value="">${tr('team.box_all_stages')}</option>${[1, 2, 3]
         .map(n => `<option value="${n}" ${view.stage === String(n) ? 'selected' : ''}>${esc(tr('team.box_stage', { stage: n }))}</option>`).join('')}</select>
       <select id="${prefix}FRarity"><option value="">${tr('team.box_all_rarities')}</option>${BOX_RARITY_TIERS
@@ -6190,13 +6190,13 @@ function wireBoxFilters(root, view, prefix, onChange) {
   bind('Sort', 'sort'); bind('FType', 'type'); bind('FGen', 'generation'); bind('FStatus', 'status');
   bind('FShiny', 'shiny', true); bind('FFavorite', 'favorite', true); bind('FLevel', 'minLevel');
   bind('FStage', 'stage'); bind('FRarity', 'rarity'); bind('FEvolve', 'canEvolve', true);
-  bind('FLocked', 'locked', true); bind('FInvert', 'invert', true);
+  bind('FLocked', 'locked', true); bind('FInvert', 'invert', true); bind('FDuplicates', 'duplicates', true);
   const query = root.querySelector('#' + prefix + 'FQuery');
   if (query) query.oninput = () => { view.query = query.value; onChange(); };
 }
 function boxGridHtml(box, locked) {
   if (!box.length) return `<div class="card muted">${tr('team.box_empty')}</div>`;
-  const shown = boxSorted(box.filter(p => boxFilterMatches(p, boxView)));
+  boxView.dupCounts = box.reduce((acc, p) => { const k = (p.species || {}).id ?? p.species_id; acc[k] = (acc[k] || 0) + 1; return acc; }, {}); const shown = boxSorted(box.filter(p => boxFilterMatches(p, boxView)));
   // Only visible Pokémon can be released: a selection hidden by a filter is dropped.
   for (const id of [...boxSelection]) if (!shown.some(p => p.id === id)) boxSelection.delete(id);
   const selectTools = boxView.select ? `
@@ -6207,7 +6207,7 @@ function boxGridHtml(box, locked) {
       <button class="ghost action" id="boxUnlockSel" disabled>${tr('team.box_unlock_selected', { count: 0 })}</button>
       <button class="action" id="boxReleaseSel" data-locked="${locked ? 1 : 0}" disabled>${tr('team.box_release_selected', { count: 0 })}</button>` : '';
   return `<div class="row card span-all" style="margin-bottom:10px">
-      ${boxFilterControlsHtml(boxView, 'box', { evolve: true, locked: true })}
+      ${boxFilterControlsHtml(boxView, 'box', { evolve: true, locked: true, duplicates: true })}
       <span class="muted">${shown.length}/${box.length}</span>
       <button class="ghost action" id="boxSelToggle">${tr(boxView.select ? 'team.box_select_stop' : 'team.box_select_start')}</button>${selectTools}
     </div>

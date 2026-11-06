@@ -1400,6 +1400,7 @@
   "team.box_all_rarities": "すべてのレアリティ",
   "team.box_all_stages": "すべての進化段階",
   "team.box_can_evolve": "進化できる",
+  "team.box_duplicates_only": "重複のみ",
   "team.box_empty": "ボックスは空です。",
   "team.box_evolve_selected": "選択を進化（{count}）",
   "team.box_evolve_selected_confirm": "今すぐ{count}匹を進化させますか？ レベルによる進化が1つだけで、アイテムが不要なポケモンだけが進化します。",

@@ -1400,6 +1400,7 @@
   "team.box_all_rarities": "Wszystkie rzadkości",
   "team.box_all_stages": "Wszystkie etapy ewolucji",
   "team.box_can_evolve": "Może ewoluować",
+  "team.box_duplicates_only": "Tylko duplikaty",
   "team.box_empty": "Pudełko jest puste.",
   "team.box_evolve_selected": "Ewoluuj wybrane ({count})",
   "team.box_evolve_selected_confirm": "Ewoluować teraz {count} Pokémonów? Ewoluują tylko te z dokładnie jedną ewolucją za poziom (bez przedmiotu).",

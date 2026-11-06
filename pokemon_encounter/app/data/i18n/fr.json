@@ -1400,6 +1400,7 @@
   "team.box_all_rarities": "Toutes les raretés",
   "team.box_all_stages": "Tous les stades d'évolution",
   "team.box_can_evolve": "Peut évoluer",
+  "team.box_duplicates_only": "Doublons uniquement",
   "team.box_empty": "La boîte est vide.",
   "team.box_evolve_selected": "Faire évoluer la sélection ({count})",
   "team.box_evolve_selected_confirm": "Faire évoluer {count} Pokémon maintenant ? Seuls les Pokémon ayant exactement une évolution par niveau (sans objet nécessaire) évoluent.",
