@@ -152,7 +152,7 @@ def use_out_of_battle(user_id: str, owned_id: int, item_key: str) -> dict[str, A
     owned = db.query_one("SELECT * FROM owned_pokemon WHERE id = ? AND user_id = ?",
                          (owned_id, user_id))
     combatant = battle.combatant_from_owned(owned)
-    name = owned.get("nickname") or combatant.name
+    name = owned.get("nickname") or combatant.name_in(lang)
     old_hp = owned["current_hp"]
     current = combatant.max_hp if old_hp is None else min(int(old_hp), combatant.max_hp)
 
@@ -198,6 +198,7 @@ def targets_for(user_id: str, item_key: str) -> list[dict[str, Any]]:
         "ORDER BY party_slot IS NULL, party_slot, level DESC, id",
         (user_id,),
     )
+    lang = db.user_language(user_id)
     result = []
     for row in rows:
         c = battle.combatant_from_owned(row)
@@ -205,7 +206,7 @@ def targets_for(user_id: str, item_key: str) -> list[dict[str, Any]]:
         if isinstance(compute_effect(item, current, c.max_hp, None), str):
             continue
         result.append({
-            "owned_id": row["id"], "name": row.get("nickname") or c.name, "level": row["level"],
+            "owned_id": row["id"], "name": row.get("nickname") or c.name_in(lang), "level": row["level"],
             "current_hp": current, "max_hp": c.max_hp, "fainted": current <= 0,
             "in_party": row["party_slot"] is not None,
         })
@@ -254,7 +255,7 @@ def use_in_battle(b: battle.Battle, user_id: str, item_key: str | None,
     item_name = label(item, b.lang)
     effect = compute_effect(item, member.current_hp, member.max_hp, member.status)
     if isinstance(effect, str):
-        raise ValueError(i18n.t(b.lang, effect, name=member.name, item=item_name))
+        raise ValueError(i18n.t(b.lang, effect, name=member.name_in(b.lang), item=item_name))
     if not _consume(user_id, item["key"]):
         raise ValueError(i18n.t(b.lang, "error.item_not_in_bag", item=item_name))
 
@@ -262,6 +263,6 @@ def use_in_battle(b: battle.Battle, user_id: str, item_key: str | None,
     member.status = effect.new_status
     if effect.new_status is None:
         member.status_counter = 0
-    b.log.append(i18n.t(b.lang, "medicine.log.used", item=item_name, name=member.name))
-    b.log.append(_summary(b.lang, member.name, effect))
+    b.log.append(i18n.t(b.lang, "medicine.log.used", item=item_name, name=member.name_in(b.lang)))
+    b.log.append(_summary(b.lang, member.name_in(b.lang), effect))
     battle.run_turn(b, None)  # Item costs the turn

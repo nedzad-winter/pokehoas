@@ -421,7 +421,7 @@ def _throw(b: battle.Battle, state: dict[str, Any], encounter: dict[str, Any],
     if result.critical:
         b.log.append(i18n.t(b.lang, "battle.log.critical_catch"))
     if result.caught:
-        b.log.append(i18n.t(b.lang, "battle.log.caught", name=b.wild.name))
+        b.log.append(i18n.t(b.lang, "battle.log.caught", name=b.wild.name_in(b.lang)))
         # Like in the main games: a catch gives as much EXP as a win,
         # as long as at least one move has been used.
         exp_by_owned = battle.award_battle_exp(b, user_id) if b.fought else {}

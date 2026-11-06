@@ -454,8 +454,8 @@ def start(trainer_id: str, user_id: str, owned_id: int | None = None,
                        else "battle.log.gym_difficulty_restricted")
             b.log.append(i18n.t(lang, log_key, generation=trainer_gen))
         b.log.append(i18n.t(lang, "battle.log.trainer_sends_out",
-                             trainer=info["name"], name=b.wild.name, level=b.wild.level))
-        b.log.append(i18n.t(lang, "battle.log.send_out", name=b.active_mon.name))
+                             trainer=info["name"], name=b.wild.name_in(lang), level=b.wild.level))
+        b.log.append(i18n.t(lang, "battle.log.send_out", name=b.active_mon.name_in(lang)))
         battle.battle_start_effects(b)
 
         base = {"trainer_id": trainer_id, "team": team_meta, "shift_mode": shift}

@@ -321,6 +321,10 @@ class Combatant:
     def name(self) -> str:
         return self.species.get("name_en") or self.species.get("name_de") or self.species["name"]
 
+    def name_in(self, lang: str = "en") -> str:
+        """Species name in the player's language (PokeAPI translations), for battle log text."""
+        return db.species_display_name(self.species, lang)
+
     def stat(self, key: str) -> int:
         base = self.species[f"base_{key}"]
         return stat_other(base, self.ivs.get(key, 15), self.level, self.evs.get(key, 0))
@@ -782,13 +786,15 @@ def possessive(name: str, lang: str = "en") -> str:
 
 def who(combatant: Combatant, lang: str = "en") -> str:
     if combatant.trainer:
-        return f"{possessive(combatant.trainer, lang)} {combatant.name}"
+        return f"{possessive(combatant.trainer, lang)} {combatant.name_in(lang)}"
     key = "battle.log.who_wild" if combatant.is_wild else "battle.log.who_yours"
-    return i18n.t(lang, key, name=combatant.name)
+    return i18n.t(lang, key, name=combatant.name_in(lang))
 
 
 def move_label(move: dict[str, Any], lang: str = "en") -> str:
-    return (move.get("name_de") if lang == "de" else None) or move["name"]
+    from . import name_tables  # local import, keeps the module import order untouched
+    return (name_tables.lookup("moves", move.get("key"), lang)
+            or (move.get("name_de") if lang == "de" else None) or move["name"])
 
 
 def available_moves(combatant: Combatant) -> list[str]:
@@ -1287,7 +1293,7 @@ def _check_faints(b: Battle) -> None:
             b.wild = b.bench.pop(0)
             b.participants = set() if player.fainted else {b.active}
             b.log.append(i18n.t(b.lang, "battle.log.trainer_sends_out",
-                                 trainer=wild.trainer, name=b.wild.name, level=b.wild.level))
+                                 trainer=wild.trainer, name=b.wild.name_in(b.lang), level=b.wild.level))
             enter_field(b, b.wild)
             if b.shift_mode and not player.fainted and len(b.alive_indexes()) > 1:
                 b.shift_offer = True
@@ -1395,12 +1401,12 @@ def switch_to(b: Battle, index: int, forced: bool = False) -> None:
     old.flinched = False
     old.volatile = {}
     if not old.fainted:
-        b.log.append(i18n.t(b.lang, "battle.log.recall", name=old.name))
+        b.log.append(i18n.t(b.lang, "battle.log.recall", name=old.name_in(b.lang)))
     b.active = index
     b.participants.add(index)
     b.needs_switch = False
     b.shift_offer = False
-    b.log.append(i18n.t(b.lang, "battle.log.send_out", name=b.active_mon.name))
+    b.log.append(i18n.t(b.lang, "battle.log.send_out", name=b.active_mon.name_in(b.lang)))
     enter_field(b, b.active_mon)
 
 
@@ -1549,8 +1555,8 @@ def describe(member: Combatant, usable: list[str] | None = None) -> dict[str, An
 
 
 def start_log(b: Battle) -> None:
-    b.log.append(i18n.t(b.lang, "battle.log.wild_appears", name=b.wild.name, level=b.wild.level))
-    b.log.append(i18n.t(b.lang, "battle.log.send_out", name=b.active_mon.name))
+    b.log.append(i18n.t(b.lang, "battle.log.wild_appears", name=b.wild.name_in(b.lang), level=b.wild.level))
+    b.log.append(i18n.t(b.lang, "battle.log.send_out", name=b.active_mon.name_in(b.lang)))
     battle_start_effects(b)
 
 
@@ -1629,16 +1635,16 @@ def grant_exp(
                 "level_to": member.level,
                 "level_ups": len(levels),
             })
-        log.append(i18n.t(lang, "battle.log.exp_gained", name=member.name, amount=amount))
+        log.append(i18n.t(lang, "battle.log.exp_gained", name=member.name_in(lang), amount=amount))
         if levels:
-            log.append(i18n.t(lang, "battle.log.level_up", name=member.name, level=levels[-1]))
+            log.append(i18n.t(lang, "battle.log.level_up", name=member.name_in(lang), level=levels[-1]))
             for move_key in member.refresh_after_level():
-                log.append(i18n.t(lang, "battle.log.move_learned", name=member.name,
+                log.append(i18n.t(lang, "battle.log.move_learned", name=member.name_in(lang),
                                    move=move_label(moves_mod.get(move_key), lang)))
             if member.owned_id is not None:
                 row = db.query_one("SELECT * FROM owned_pokemon WHERE id = ?", (member.owned_id,))
                 if row is not None and evolution.level_evolutions(row):
-                    log.append(i18n.t(lang, "battle.log.can_evolve", name=member.name))
+                    log.append(i18n.t(lang, "battle.log.can_evolve", name=member.name_in(lang)))
     return exp_by_owned
 
 

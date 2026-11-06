@@ -400,8 +400,8 @@ def _start(user_id: str, mons: list[dict[str, Any]], opponent_user_id: str | Non
         else:
             b.log.append(i18n.t(lang, "battle.log.pvp_challenge", name=opponent_name))
         b.log.append(i18n.t(lang, "battle.log.trainer_sends_out", trainer=opponent_name,
-                             name=b.wild.name, level=b.wild.level))
-        b.log.append(i18n.t(lang, "battle.log.send_out", name=b.active_mon.name))
+                             name=b.wild.name_in(lang), level=b.wild.level))
+        b.log.append(i18n.t(lang, "battle.log.send_out", name=b.active_mon.name_in(lang)))
         battle.battle_start_effects(b)
 
         base = {"snapshot": mons, "shift_mode": shift}
