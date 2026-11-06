@@ -753,7 +753,7 @@ const outcomeLabel = outcome => tr(OUTCOME_KEY[outcome] || outcome);
 // Natures are a vanilla Pokémon concept with 25 fixed values from spawn.py -
 // deliberately only prettified here (capitalization), not translated: a wrong
 // German nature translation would be worse than the raw English name.
-const natureLabel = n => n ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+const natureLabel = n => n ? (STRINGS['nature.' + n] || n.charAt(0).toUpperCase() + n.slice(1)) : n;
 const genderLabel = g => g === 'male' ? tr('gender.male') : g === 'female' ? tr('gender.female') : tr('gender.genderless');
 
 // The Master Ball is a one-off league/region reward and can never be bought
