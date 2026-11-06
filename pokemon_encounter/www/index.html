@@ -5682,7 +5682,7 @@ function evoReadyHtml(p) {
       <button class="action evoBtn" data-to="${esc(e.to_species_id)}">${e.to_sprite_url ? `<img src="${esc(e.to_sprite_url)}" alt="">` : ''}${tr('evolution.evolve_into', { to: esc(evoTargetName(e)) })}</button>`).join('');
   const itemBtns = itemTargets.map(e => `
       <button class="action evoItemBtn" data-item="${esc(e.item_key)}" data-to="${esc(e.to_species_id)}">${e.to_sprite_url ? `<img src="${esc(e.to_sprite_url)}" alt="">` : ''}${tr('evolution.evolve_with_item', {
-        item: esc(pick({ label: e.item_label, label_de: e.item_label_de }, 'label')), to: esc(evoTargetName(e)),
+        item: esc(pick({ key: e.item_key, label: e.item_label, label_de: e.item_label_de }, 'label')), to: esc(evoTargetName(e)),
       })}</button>`).join('');
   return `<div class="card evo-ready">
     <strong>${tr('evolution.ready', { name: esc(p.name) })}</strong>

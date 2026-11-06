@@ -94,9 +94,11 @@ def unit_price(item: dict[str, Any], multiplier: float | None = None) -> int:
 
 
 def item_label(item_key: str, lang: str = "en") -> str:
+    from . import name_tables  # local import, keeps the module import order untouched
     item = catalog_by_key().get(item_key)
     if item:
-        return (item.get("label_de") if lang == "de" else None) or item["label"]
+        return (name_tables.lookup("items", item_key, lang)
+                or (item.get("label_de") if lang == "de" else None) or item["label"])
     if item_key in battle.BALLS:
         return battle.ball_label(item_key, lang)
     return item_key

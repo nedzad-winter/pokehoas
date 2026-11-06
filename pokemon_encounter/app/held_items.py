@@ -83,7 +83,9 @@ def label(key: str | None, lang: str = "en") -> str | None:
     (`get()`/`catalog()`), der `name`+`name_de` traegt - `lang` ist fuer
     serverseitig gebauten Text (Kampf-Log-Zeilen), der schon vor der Antwort
     an das Frontend die richtige Sprache braucht."""
+    from . import name_tables  # local import, keeps the module import order untouched
     item = get(key)
     if not item:
         return None
-    return (item.get("name_de") if lang == "de" else None) or item["name"]
+    return (name_tables.lookup("items", key, lang)
+            or (item.get("name_de") if lang == "de" else None) or item["name"])
