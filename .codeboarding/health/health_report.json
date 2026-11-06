@@ -1,14 +1,14 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-11-06T20:50:05.421643+00:00",
-  "overall_score": 0.9550286181520851,
+  "timestamp": "2026-11-06T20:51:31.999773+00:00",
+  "overall_score": 0.9559183673469388,
   "check_summaries": [
     {
       "check_name": "function_size",
       "description": "Checks that functions/methods do not exceed line count thresholds",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 1168,
+      "total_entities_checked": 1171,
       "findings_count": 0,
       "warning_count": 0,
       "score": 1.0,
@@ -19,8 +19,8 @@
       "description": "Detects unused imports, variables, functions, and dead code via LSP diagnostics",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 55,
-      "findings_count": 55,
+      "total_entities_checked": 54,
+      "findings_count": 54,
       "warning_count": 26,
       "score": 0.0,
       "finding_groups": [
@@ -191,34 +191,6 @@
               "metric_value": 0.0
             },
             {
-              "entity_name": "[unused_variable] \"ability_effects\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1789,
-              "line_end": 1789,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"winner\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 562,
-              "line_end": 562,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"encounter\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle_session.py",
-              "line_start": 449,
-              "line_end": 449,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"_level\" is not accessed",
-              "file_path": "pokemon_encounter/app/challenge.py",
-              "line_start": 119,
-              "line_end": 119,
-              "metric_value": 0.0
-            },
-            {
               "entity_name": "[unused_variable] \"_dev_fallback_allowed\" is not accessed",
               "file_path": "pokemon_encounter/app/auth.py",
               "line_start": 76,
@@ -230,6 +202,27 @@
               "file_path": "scripts/build_ability_descriptions.py",
               "line_start": 16,
               "line_end": 16,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"ability_effects\" is not accessed",
+              "file_path": "pokemon_encounter/app/battle.py",
+              "line_start": 1795,
+              "line_end": 1795,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"winner\" is not accessed",
+              "file_path": "pokemon_encounter/app/battle.py",
+              "line_start": 566,
+              "line_end": 566,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"encounter\" is not accessed",
+              "file_path": "pokemon_encounter/app/battle_session.py",
+              "line_start": 449,
+              "line_end": 449,
               "metric_value": 0.0
             }
           ]
@@ -415,17 +408,17 @@
           "description": "Unused import statements that should be removed",
           "entities": [
             {
-              "entity_name": "[unused_import] Import \"ability_effects\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1789,
-              "line_end": 1789,
-              "metric_value": 0.0
-            },
-            {
               "entity_name": "[unused_import] Import \"sys\" is not accessed",
               "file_path": "scripts/build_ability_descriptions.py",
               "line_start": 16,
               "line_end": 16,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_import] Import \"ability_effects\" is not accessed",
+              "file_path": "pokemon_encounter/app/battle.py",
+              "line_start": 1795,
+              "line_end": 1795,
               "metric_value": 0.0
             }
           ]
@@ -460,12 +453,6 @@
     },
     {
       "file_path": "pokemon_encounter/app/battle_session.py",
-      "total_findings": 1,
-      "warning_findings": 0,
-      "composite_risk_score": 10.0
-    },
-    {
-      "file_path": "pokemon_encounter/app/challenge.py",
       "total_findings": 1,
       "warning_findings": 0,
       "composite_risk_score": 10.0
