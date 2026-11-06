@@ -1,7 +1,8 @@
 """Tests fuer die Living-Dex-Sperre: wie viele Pokémon einer Evolutionslinie
 noch fuer den Living Dex fehlen (evolution.living_dex_need), die persoenliche
 Option `auto_lock_living_dex` beim Fang und die Auto-Regel-Teile (Bedingung
-`living_dex_needed`, Aktion `lock`, Vorlage).
+`living_dex_needed`, Aktion `lock`, Vorlage). Ebenso: dieselben Auto-Lock-Regeln
+beim Schluepfen eines Eies (breeding.hatch), nicht nur beim Fang.
 
 Aufruf:  python3 tests/test_living_dex_lock.py
 """
@@ -25,7 +26,7 @@ os.environ["SUPERVISOR_TOKEN"] = "dummy"
 
 from pydantic import ValidationError  # noqa: E402
 
-from app import auto_rules, battle, db, evolution, seed, spawn  # noqa: E402
+from app import auto_rules, battle, breeding, db, evolution, seed, spawn  # noqa: E402
 from app.api import encounters as encounters_api  # noqa: E402
 from app.api import users as users_api  # noqa: E402
 
@@ -227,6 +228,65 @@ check("Regel-Fang mit lock='settings' laesst ueberzaehliges Flamara offen (Optio
 tmpl = auto_rules.create_from_template("carol", "living_dex")
 check("Vorlage 'Living Dex auffuellen' setzt Bedingung und Sperre",
       tmpl["conditions"].get("living_dex_needed") is True and tmpl["actions"].get("lock") == "living_dex")
+
+# ------------------------------------------------- Schluepfen: dieselbe Sperre
+# breeding.hatch muss dieselben Auto-Lock-Regeln anwenden wie der Fang
+# (api/encounters.py.finalize_catch) - sonst bleiben ausgebrütete Pokémon, die
+# der Living Dex noch braucht, ungesperrt und koennen versehentlich freigelassen
+# werden (siehe Fehlerbericht).
+MEWTWO = 150
+add_species(MEWTWO, "mewtwo", "psychic")
+db.execute("UPDATE species SET is_legendary = 1 WHERE id = ?", (MEWTWO,))
+db.upsert_user("dave", "Dave")
+
+
+def make_egg(user_id: str, species_id: int, shiny: bool = False, gender: str | None = "female") -> int:
+    db.execute(
+        "INSERT INTO pokemon_egg (user_id, species_id, shiny, ivs, nature, gender, ability, "
+        "steps_total, steps_done, location, parent_species_a, parent_species_b, created_at) "
+        "VALUES (?,?,?,?,'hardy',?,NULL,1,1,'box',?,?,?)",
+        (user_id, species_id, int(shiny), json.dumps(IVS), gender, species_id, species_id, NOW),
+    )
+    return db.query_one(
+        "SELECT id FROM pokemon_egg WHERE user_id = ? ORDER BY id DESC LIMIT 1", (user_id,))["id"]
+
+
+def hatch_locked(user_id: str, species_id: int, shiny: bool = False, gender: str | None = "female") -> bool:
+    egg_id = make_egg(user_id, species_id, shiny, gender)
+    owned_id = breeding.hatch(user_id, egg_id)["owned_id"]
+    return is_locked(owned_id)
+
+
+check("Schluepfen: legendaere Art startet immer gesperrt (ohne jede Option)",
+      hatch_locked("dave", MEWTWO))
+
+# Erzwungene Zuordnung (Flamara/Nachtara sind Endformen, koennen nur ihren
+# eigenen Slot fuellen): Aquana fehlt noch (need=1), ein zweites Flamara ist
+# ab jetzt immer ueberzaehlig (need=0) - unabhaengig von Evolis Zuordnung.
+add_owned("dave", EEVEE)
+add_owned("dave", FLAREON)
+add_owned("dave", UMBREON)
+check("Schluepfen: auto_lock_living_dex aus (Standard) -> benoetigtes Aquana bleibt offen",
+      db.user_auto_lock_living_dex("dave") is False and not hatch_locked("dave", VAPOREON))
+db.set_user_auto_lock_living_dex("dave", True)
+check("Schluepfen: auto_lock_living_dex an -> benoetigtes Glaziola wird gesperrt",
+      hatch_locked("dave", GLACEON))
+check("Schluepfen: auto_lock_living_dex an -> ueberzaehliges Flamara bleibt offen",
+      not hatch_locked("dave", FLAREON))
+
+db.set_user_auto_lock_living_dex("dave", False)
+check("auto_lock_shiny: Standard ist an", db.user_auto_lock_shiny("dave") is True)
+check("Schluepfen: auto_lock_shiny an (Standard) -> schluepfendes Shiny wird gesperrt",
+      hatch_locked("dave", SYLVEON, shiny=True))
+db.set_user_auto_lock_shiny("dave", False)
+check("Schluepfen: auto_lock_shiny aus -> schluepfendes Shiny bleibt offen",
+      not hatch_locked("dave", SYLVEON, shiny=True))
+
+db.set_user_auto_lock_first_catch("dave", True)
+check("Schluepfen: auto_lock_first_catch an -> erste eigene Art wird gesperrt",
+      hatch_locked("dave", JOLTEON))
+check("Schluepfen: auto_lock_first_catch an -> zweites Exemplar bleibt offen",
+      not hatch_locked("dave", JOLTEON))
 
 # ----------------------------------------------------- Migration / i18n
 cols = {r["name"] for r in db.query("PRAGMA table_info(app_user)")}

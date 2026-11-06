@@ -112,8 +112,9 @@ check("Upsert ohne ev_yield behaelt den gespeicherten Ertrag",
 db.execute("UPDATE species SET ev_yield = NULL WHERE name = 'magikarp'")
 check("Spezies ohne Ertrag landen im Hintergrund-Nachtrag",
       KARP["id"] in seed._species_missing_name_en())
-db.execute("UPDATE species SET ev_yield = ?, names = ? WHERE name = 'magikarp'",
-           (KARP["ev_yield"], json.dumps({"en": "Magikarp", "de": "Karpador"})))
+db.execute("UPDATE species SET ev_yield = ? WHERE name = 'magikarp'", (KARP["ev_yield"],))
+# Offline-Fallback hat keine uebersetzten Namen - erst mit ihnen ist die Spezies vollstaendig.
+db.execute("UPDATE species SET names = ? WHERE name = 'magikarp'", (json.dumps({"de": "Karpador"}),))
 check("Vollstaendige Spezies nicht im Nachtrag",
       KARP["id"] not in seed._species_missing_name_en())
 

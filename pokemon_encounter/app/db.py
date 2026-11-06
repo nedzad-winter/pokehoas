@@ -1495,7 +1495,6 @@ def init_db() -> None:
         _migrate_species_sprite_style(conn)
         _migrate_egg_moves(conn)
         _migrate_real_learnsets(conn)
-        _migrate_ev_yield(conn)
         _migrate_species_names(conn)
         # Create only AFTER the migration - on a freshly upgraded legacy DB
         # the referenced columns don't exist beforehand.
@@ -1573,8 +1572,15 @@ def set_user_show_team_ivs(user_id: str, show: bool) -> dict[str, Any]:
 def user_species_sprite_styles(user_id: str) -> dict[int, int]:
     """species_id -> generation whose game sprites this player sees for that
     species (www/index.html SPRITE_STYLES); species not listed use the normal
-    sprites."""
-    rows = query("SELECT species_id, style FROM species_sprite_style WHERE user_id = ?", (user_id,))
+    sprites. A stored style older than the species' own generation (saved
+    before that check existed) is ignored - that generation's games never
+    drew a species that debuted later."""
+    rows = query(
+        "SELECT t.species_id, t.style FROM species_sprite_style t "
+        "LEFT JOIN species s ON s.id = t.species_id "
+        "WHERE t.user_id = ? AND (s.generation IS NULL OR t.style >= s.generation)",
+        (user_id,),
+    )
     return {int(r["species_id"]): int(r["style"]) for r in rows}
 
 
@@ -1794,7 +1800,8 @@ def species_display_name(species: dict[str, Any], lang: str) -> str:
         names = {}
     return (names.get(lang) or species.get("name_en")
             or species.get("name_de") or species["name"])
-            
+
+
 def species_name_tables(lang: str) -> dict[str, dict]:
     """Translated species names for the frontend: `names` {species_id: name}
     and `by_en` {English name: name} (for objects that carry no id)."""
@@ -1837,6 +1844,34 @@ def all_settings() -> dict[str, Any]:
         cur.execute("SELECT key, value FROM setting")
         rows = cur.fetchall()
     return {row["key"]: json.loads(row["value"]) for row in rows}
+
+
+# ======================================================= Battle sessions
+
+def has_fresh_ongoing_session(table: str, user_id: str) -> bool:
+    """True if `table` (battle_session / trainer_battle_session /
+    pvp_battle_session) has an 'ongoing' row for this user that hasn't expired
+    yet (`battle_timeout_minutes`).
+
+    Only wild, gym/league and PvP battles each sweep their OWN table's stale
+    rows into `status = 'abandoned'` (see the `release_stale_battles` of
+    battle_session.py / trainer_battle.py / pvp.py - releasing a stale wild
+    battle also frees its claimed encounter, so it stays its own module's job).
+    When one of those `start()` functions checks whether a DIFFERENT battle
+    type is blocking it, it must not treat a merely-not-yet-swept stale row as
+    still ongoing - otherwise a battle abandoned by, say, a dropped connection
+    would lock the player out of every other battle type for the rest of the
+    timeout window instead of just its own. Table name is always one of the
+    three literals above, never user input.
+    """
+    minutes = float(get_setting("battle_timeout_minutes", 30) or 0)
+    query_str = f"SELECT 1 FROM {table} WHERE user_id = ? AND status = 'ongoing'"
+    params: tuple = (user_id,)
+    if minutes > 0:
+        cutoff = (datetime.now().astimezone() - timedelta(minutes=minutes)).isoformat()
+        query_str += " AND updated_at >= ?"
+        params = (user_id, cutoff)
+    return query_one(query_str, params) is not None
 
 
 # ================================================================ Misc

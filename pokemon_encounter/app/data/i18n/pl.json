@@ -866,6 +866,7 @@
   "error.release_only_from_box": "W ten sposób można wypuścić tylko Pokémony z pudełka – najpierw przenieś go z drużyny.",
   "error.someone_else_faster": "Ktoś inny był szybszy.",
   "error.sprite_style_locked": "Ten styl sprite'ów nie jest jeszcze odblokowany.",
+  "error.sprite_style_too_old": "Ten Pokémon jeszcze nie istniał w grach tej generacji.",
   "error.starter_already_chosen": "Startowy Pokémon został już wybrany.",
   "error.team_changed": "Twoja drużyna się zmieniła – walka przerwana.",
   "error.team_fainted": "Twoja drużyna nie może walczyć – ulecz ją w zakładce Drużyna lub poczekaj chwilę.",

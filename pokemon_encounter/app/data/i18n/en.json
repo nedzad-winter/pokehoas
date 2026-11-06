@@ -866,6 +866,7 @@
   "error.release_only_from_box": "Only Pokémon in the box can be released this way – move it out of the team first.",
   "error.someone_else_faster": "Someone else was faster.",
   "error.sprite_style_locked": "You haven't unlocked this sprite style yet.",
+  "error.sprite_style_too_old": "This Pokémon didn't exist yet in that generation's games.",
   "error.starter_already_chosen": "A starter has already been chosen.",
   "error.team_changed": "Your team has changed – battle aborted.",
   "error.team_fainted": "Your team is unable to battle – heal it in the Team tab or wait a while.",

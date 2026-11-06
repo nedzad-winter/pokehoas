@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.4-beta
+
+A big thank you to **@vicdilou**, who contributed most of this release: PokeHOAS now speaks
+your language far beyond the menus. Merci beaucoup!
+
+- Translations (by @vicdilou): species, ability, move, type, nature and biome names, plus
+  ability descriptions, now appear in the player's language (es, fr, it, ja, ko, and German
+  nature names). This covers team and box cards, the Pokémon detail sheet, search filters,
+  the zone form and the battle log. Search ignores accents and upper/lower case.
+- Header (by @vicdilou): a globe language picker on the right that lists every language in
+  its own language. **Poll now** shows a short toast instead of a blocking message.
+- Queue (by @vicdilou): the auto-rules now sit in a slim full-width bar above the encounter cards.
+- Box (by @vicdilou): new **Duplicates only** filter.
+- Fix: a battle left behind by a dropped connection or a closed tab no longer blocks starting
+  a different battle type (gym/league, PvP, wild) until it times out.
+- Fix: hatched Pokémon follow the same auto-lock rules as caught ones (living dex, first
+  catch, shiny, legendary), so a hatchling the living dex still needs can't be released by
+  accident.
+- Fix: catches thrown straight from the queue now show up in the History tab.
+- Fix: locked Pokémon show the lock badge in the Team tab's party list too.
+- Fix: the Pokédex sprite-style picker only offers games from the species' own generation
+  onward.
+- Fix: the standalone Docker image builds for armv7 again.
+
 ## 1.3-beta
 
 - PokeHOAS now also runs **without Supervisor** (Home Assistant Container): a standalone

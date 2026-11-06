@@ -5551,6 +5551,9 @@ async function openSpeciesDex(speciesId) {
   try {
     const d = await api(`/api/pokedex/${encodeURIComponent(speciesId)}`);
     const sp = d.species;
+    // Only generations the species itself could appear in - its own game
+    // never drew a Pokémon that didn't exist yet.
+    const applicableSpriteStyles = availableSpriteStyles.filter(g => g >= sp.generation);
     let showingShiny = false;
     overlay.innerHTML = `<div class="pokemon-detail">
       <button class="ghost action" id="closeSpeciesDex">${tr('common.back')}</button>
@@ -5562,9 +5565,9 @@ async function openSpeciesDex(speciesId) {
           ${d.shiny_caught ? `<button class="ghost action" id="speciesShinyToggle" style="margin-top:6px">${tr('pokedex.show_shiny')}</button>` : ''}
           <div style="margin-top:8px">
             <label class="muted" for="speciesSpriteStyle">${tr('sprite_style.title')}</label>
-            <select id="speciesSpriteStyle"${availableSpriteStyles.length ? '' : ' disabled'} title="${esc(tr(availableSpriteStyles.length ? 'sprite_style.hint' : 'sprite_style.locked_hint'))}">
+            <select id="speciesSpriteStyle"${applicableSpriteStyles.length ? '' : ' disabled'} title="${esc(tr(applicableSpriteStyles.length ? 'sprite_style.hint' : 'sprite_style.locked_hint'))}">
               <option value="">${esc(tr('sprite_style.normal'))}</option>
-              ${availableSpriteStyles.map(g => `<option value="${g}"${g === speciesSpriteStyles[sp.id] ? ' selected' : ''}>${esc(tr('sprite_style.option', { gen: g, game: tr('sprite_style.game.' + g) }))}</option>`).join('')}
+              ${applicableSpriteStyles.map(g => `<option value="${g}"${g === speciesSpriteStyles[sp.id] ? ' selected' : ''}>${esc(tr('sprite_style.option', { gen: g, game: tr('sprite_style.game.' + g) }))}</option>`).join('')}
             </select>
           </div>
         </div>
@@ -6049,7 +6052,7 @@ function monCard(p, opts) {
       ${sp.sprite_url ? `<img class="sprite" src="${esc(p.shiny && sp.shiny_sprite_url ? sp.shiny_sprite_url : sp.sprite_url)}" alt="">` : ''}
       <div class="grow">
         <span class="pill">#${esc(p.party_slot)}</span>
-        <strong>${esc(monName(p))}</strong> ${p.shiny ? shinyMark() : ''}${p.favorite ? favMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span>
+        <strong>${esc(monName(p))}</strong> ${p.shiny ? shinyMark() : ''}${p.favorite ? favMark() : ''}${p.locked ? lockMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span>
         ${(p.level_evolutions || []).length || (p.item_evolutions || []).length ? `<span class="pill evo-badge">${tr('evolution.badge')}</span>` : ''}<br>
         ${[sp.type1, sp.type2].filter(Boolean).map(typePill).join('')}${abilityPill(p.ability_info)}
         ${hpBar(p.current_hp, p.max_hp)}

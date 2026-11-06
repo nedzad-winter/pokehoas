@@ -370,9 +370,7 @@ def _start(user_id: str, mons: list[dict[str, Any]], opponent_user_id: str | Non
         if trainer_battle.ongoing_for_user(user_id) is not None:
             raise HTTPException(status_code=409,
                                  detail=i18n.t(lang, "error.already_fighting_other_trainer"))
-        if db.query_one(
-            "SELECT 1 FROM battle_session WHERE user_id = ? AND status = 'ongoing'", (user_id,)
-        ):
+        if db.has_fresh_ongoing_session("battle_session", user_id):
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.finish_wild_battle_first"))
         if not mons:
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.pvp_opponent_no_team"))

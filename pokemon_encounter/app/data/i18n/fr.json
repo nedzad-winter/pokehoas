@@ -866,6 +866,7 @@
   "error.release_only_from_box": "Seuls les Pokémon de la boîte peuvent être relâchés ainsi – sortez-le d'abord de l'équipe.",
   "error.someone_else_faster": "Quelqu'un d'autre a été plus rapide.",
   "error.sprite_style_locked": "Vous n'avez pas encore débloqué ce style de sprite.",
+  "error.sprite_style_too_old": "Ce Pokémon n'existait pas encore dans les jeux de cette génération.",
   "error.starter_already_chosen": "Un starter a déjà été choisi.",
   "error.team_changed": "Votre équipe a changé – combat annulé.",
   "error.team_fainted": "Votre équipe ne peut plus combattre – soignez-la dans l'onglet Équipe ou attendez un peu.",

@@ -40,8 +40,7 @@ from typing import Any
 
 from fastapi import HTTPException
 
-from . import (achievements, battle, battle_history, db, encounter_state, i18n, medicine, roaming,
-               trainer_battle)
+from . import achievements, battle, battle_history, db, encounter_state, i18n, medicine, roaming
 
 # One process, multiple threads (FastAPI thread pool): actions processed
 # serially so double-clicks or two users don't interfere.
@@ -338,10 +337,9 @@ def start(encounter_id: int, user_id: str,
                 return get_view(own["id"], user_id)  # fortsetzen
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.already_fighting_other"))
         ensure_free(encounter_id, user_id)
-        if trainer_battle.ongoing_for_user(user_id) is not None:
+        if db.has_fresh_ongoing_session("trainer_battle_session", user_id):
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.finish_gym_battle_first"))
-        if db.query_one("SELECT 1 FROM pvp_battle_session WHERE user_id = ? AND status = 'ongoing'",
-                        (user_id,)):
+        if db.has_fresh_ongoing_session("pvp_battle_session", user_id):
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.finish_pvp_battle_first"))
         if encounter["status"] != "waiting":
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.encounter_unavailable"))

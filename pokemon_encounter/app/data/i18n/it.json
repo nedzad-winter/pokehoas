@@ -866,6 +866,7 @@
   "error.release_only_from_box": "In questo modo si possono rilasciare solo i Pokémon del box – spostalo prima fuori dalla squadra.",
   "error.someone_else_faster": "Qualcun altro è stato più veloce.",
   "error.sprite_style_locked": "Non hai ancora sbloccato questo stile di sprite.",
+  "error.sprite_style_too_old": "Questo Pokémon non esisteva ancora nei giochi di quella generazione.",
   "error.starter_already_chosen": "Uno starter è già stato scelto.",
   "error.team_changed": "La tua squadra è cambiata – lotta annullata.",
   "error.team_fainted": "La tua squadra non può combattere – curala nella scheda Squadra o aspetta un po'.",

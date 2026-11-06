@@ -11,7 +11,7 @@ door, a light switch, a person arriving at a zone – can spawn a wild Pokémon.
 Home Assistant user gets their **own queue, team, Pokédex and bag** and handles the
 encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolve.
 
-**Status: public beta (v1.3-beta).** It is a hobby project and playable end to end;
+**Status: public beta (v1.4-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
 
 ## Features
@@ -503,7 +503,11 @@ Progress per generation: `achievements.generation_progress`.
   sprites of that generation's games (Red/Blue, Crystal, Emerald, Platinum, Black/White animated, X/Y,
   Ultra Sun/Ultra Moon, Sword/Shield, Scarlet/Violet – `SPRITE_STYLES` in `www/index.html`). A
   MutationObserver rewrites every PokeAPI sprite `<img>`; species newer than that game, Gen-1 shinies
-  (no shiny sprites back then) and missing files keep the normal sprite.
+  (no shiny sprites back then) and missing files keep the normal sprite. Only generations the
+  species' own generation or later are offered (a species can't wear the sprite of a game released
+  before it existed): filtered client-side in the Pokédex entry's picker and rejected server-side
+  (`error.sprite_style_too_old`); a style stored before this check existed is likewise ignored when
+  read back (`db.user_species_sprite_styles`).
 
 **Level-100 achievements** (group "Level 100" in the Achievements tab, `achievements.LEVEL100_KEYS`):
 raising your 1st, 10th, 20th and 35th own Pokémon EVER to level 100 each reward an Exp. Share

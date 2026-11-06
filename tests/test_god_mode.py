@@ -153,6 +153,22 @@ check("Every sprite style available", me["sprite_styles"] == achievements.genera
 check("Others only get earned styles",
       client.get("/api/users/me", headers=BOB).json()["sprite_styles"] == [])
 
+# Turtwig (387) is generation 4 - it can't wear a generation 1-3 sprite,
+# even with every style unlocked (god mode): that game never drew it.
+r = client.put("/api/users/me/sprite-style/387", headers=ALICE, json={"sprite_style": 3})
+check("Older-generation sprite on a newer species is rejected", r.status_code == 400, r.text)
+r = client.put("/api/users/me/sprite-style/387", headers=ALICE, json={"sprite_style": 4})
+check("Its own generation's sprite is accepted",
+      r.status_code == 200 and r.json()["species_sprite_styles"].get("387") == 4, r.text)
+
+# A row saved before this check existed (style 2 on a generation-4 species)
+# must not resurface either.
+db.execute("INSERT OR REPLACE INTO species_sprite_style (user_id, species_id, style) "
+           "VALUES ('alice', 387, 2)")
+check("A stale too-old style from before the check is ignored on read-back",
+      db.user_species_sprite_styles("alice").get(387) != 2,
+      db.user_species_sprite_styles("alice"))
+
 # -------------------------------------- Losing admin rights ends it
 HA_USERS[0]["group_ids"] = ["system-users"]
 admin.clear_cache()

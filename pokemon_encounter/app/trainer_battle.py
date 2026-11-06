@@ -348,12 +348,9 @@ def start(trainer_id: str, user_id: str, owned_id: int | None = None,
             if own["trainer_id"] == trainer_id:
                 return get_view(own["id"], user_id)
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.already_fighting_other_trainer"))
-        if db.query_one(
-            "SELECT 1 FROM battle_session WHERE user_id = ? AND status = 'ongoing'", (user_id,)
-        ):
+        if db.has_fresh_ongoing_session("battle_session", user_id):
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.finish_wild_battle_first"))
-        if db.query_one("SELECT 1 FROM pvp_battle_session WHERE user_id = ? AND status = 'ongoing'",
-                        (user_id,)):
+        if db.has_fresh_ongoing_session("pvp_battle_session", user_id):
             raise HTTPException(status_code=409, detail=i18n.t(lang, "error.finish_pvp_battle_first"))
 
         cap = trainer["max_level"]

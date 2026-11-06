@@ -664,7 +664,7 @@ def _spawn_shedinja(owned: dict[str, Any]) -> dict[str, Any] | None:
     bookkeeping (Pokedex entry) for the new Pokemon, but never touches an
     item and never fails the evolution itself - no free slot simply means no
     Shedinja, same as in the main games."""
-    from . import breeding  # local import: breeding does not import evolution (avoids a cycle)
+    from . import breeding  # local import: avoids a cycle (breeding imports evolution at module level)
     from . import spawn  # local import: spawn does not import evolution either
 
     user_id = owned["user_id"]

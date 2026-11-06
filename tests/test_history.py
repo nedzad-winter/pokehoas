@@ -171,6 +171,19 @@ check("Autokampf mit Fang wird als gefangen protokolliert", catch_entry["caught"
 check("Fang-Eintrag nennt die Regel", catch_entry["rule_name"] == "Fang", catch_entry)
 auto_rules.delete_rule("alice", catch_rule["id"])
 
+# Fang direkt aus der Warteschlange (Ballwurf ohne Kampf) muss ebenfalls in
+# der Historie landen - das war der eigentliche Bug: nur der Wurf waehrend
+# eines manuellen oder automatischen Kampfes wurde protokolliert.
+e_direct = make_encounter(KARP, 2)
+direct = encounters_api.throw(e_direct, encounters_api.BallThrow(ball="master_ball"), alice)
+check("Fang direkt aus der Warteschlange gelingt", direct["caught"] is True, direct)
+direct_entry = battle_history.recent("alice")[0]
+check("Fang ohne Kampf landet ebenfalls in der Historie",
+      direct_entry["kind"] == battle_history.KIND_WILD and direct_entry["outcome"] == "caught"
+      and direct_entry["caught"] is True, direct_entry)
+check("Historie-Eintrag ohne Kampf nennt Gegner und Fang-Geld",
+      direct_entry["opponent"] == "Magikarp" and direct_entry["money_earned"], direct_entry)
+
 
 # ------------------------------------------- EXP-Aufschluesselung mit Level-Ups
 low = battle.Combatant(species=PIKA, level=5, ivs=dict(IVS),

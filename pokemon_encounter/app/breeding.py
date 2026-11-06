@@ -43,7 +43,7 @@ from typing import Any
 
 import httpx
 
-from . import battle, db, economy, i18n, moves as moves_mod, rarity, seed, spawn
+from . import battle, db, economy, evolution, i18n, moves as moves_mod, rarity, seed, spawn
 
 log = logging.getLogger(__name__)
 
@@ -529,7 +529,12 @@ def move_egg(user_id: str, egg_id: int, location: str, now: datetime | None = No
 
 def hatch(user_id: str, egg_id: int, now: datetime | None = None) -> dict[str, Any]:
     """Fertiges Ei schluepfen lassen. Das Pokemon uebernimmt den Teamplatz
-    des Eies; aus Inkubator/Box kommt es ins Team, falls Platz ist."""
+    des Eies; aus Inkubator/Box kommt es ins Team, falls Platz ist.
+
+    Startet gesperrt unter denselben Regeln wie ein Fang (siehe
+    api/encounters.py.finalize_catch): legendaer/mythisch immer, sonst je
+    nach Opt-in (db.user_auto_lock_first_catch/_shiny/_living_dex) und bei
+    der Living-Dex-Pruefung (evolution.living_dex_need)."""
     now = now or _now()
     advance(user_id, now)
     row = _egg(user_id, egg_id)
@@ -554,13 +559,28 @@ def hatch(user_id: str, egg_id: int, now: datetime | None = None) -> dict[str, A
         for key in moves_mod.moveset_for(species, HATCH_LEVEL):
             if len(selected) < moves_mod.MAX_MOVES and key not in selected:
                 selected.append(key)
+    # Same auto-lock rules as a catch (api/encounters.py.finalize_catch): must be
+    # read BEFORE the dex_entry upsert below creates/bumps the row.
+    existing_dex = db.query_one(
+        "SELECT caught_count FROM dex_entry WHERE species_id = ? AND user_id = ?",
+        (species["id"], user_id),
+    )
+    first_catch = existing_dex is None or not existing_dex["caught_count"]
+    auto_lock = rarity.auto_lock(species) or (
+        first_catch and db.user_auto_lock_first_catch(user_id)
+    ) or (
+        bool(row["shiny"]) and db.user_auto_lock_shiny(user_id)
+    ) or (
+        db.user_auto_lock_living_dex(user_id)
+        and evolution.living_dex_need(user_id, species["id"], row["gender"]) > 0
+    )
     owned_id = db.execute(
         """
         INSERT INTO owned_pokemon (
             user_id, species_id, level, exp, shiny, ivs, nature, gender, ability,
             current_hp, party_slot, caught_at, caught_from, hp_updated_at,
-            egg_moves, selected_moves
-        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,NULL,?,?,?)
+            egg_moves, selected_moves, locked
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,NULL,?,?,?,?)
         """,
         (
             user_id, species["id"], HATCH_LEVEL,
@@ -570,6 +590,7 @@ def hatch(user_id: str, egg_id: int, now: datetime | None = None) -> dict[str, A
             slot, now.isoformat(), now.isoformat(),
             json.dumps(egg_moves) if egg_moves else None,
             json.dumps(selected) if selected else None,
+            int(auto_lock),
         ),
     )
     # Schluepfen gibt dieselben IV-Belohnungen wie ein Fang (economy.on_hatch).

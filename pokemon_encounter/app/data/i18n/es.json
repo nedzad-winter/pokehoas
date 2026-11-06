@@ -866,6 +866,7 @@
   "error.release_only_from_box": "Solo se pueden liberar así los Pokémon de la caja: sácalo antes del equipo.",
   "error.someone_else_faster": "Otro fue más rápido.",
   "error.sprite_style_locked": "Todavía no has desbloqueado este estilo de sprite.",
+  "error.sprite_style_too_old": "Este Pokémon todavía no existía en los juegos de esa generación.",
   "error.starter_already_chosen": "Ya se ha elegido un inicial.",
   "error.team_changed": "Tu equipo ha cambiado: combate cancelado.",
   "error.team_fainted": "Tu equipo no puede combatir: cúralo en la pestaña Equipo o espera un poco.",

@@ -28,7 +28,7 @@ TMP = tempfile.mkdtemp(prefix="pokemon-roaming-test-")
 os.environ["POKEMON_DATA_DIR"] = TMP
 os.environ["SUPERVISOR_TOKEN"] = "dummy"
 
-from app import auto_rules, battle, db, encounter_state, roaming, seed, spawn  # noqa: E402
+from app import auto_rules, battle, battle_history, db, encounter_state, roaming, seed, spawn  # noqa: E402
 from app.api import battles as battles_api  # noqa: E402
 from app.api import encounters as encounters_api  # noqa: E402
 
@@ -217,6 +217,10 @@ check("Queue: Fehlwurf auf Roamer meldet Flucht", result.get("fled") is True, st
 check("Queue: Flucht schliesst den Encounter fuer den Besitzer", result.get("closed") is True)
 check("Queue: Encounter-Status ist fled", enc(roamer_queue)["status"] == "fled", enc(roamer_queue)["status"])
 check("Queue: Roamer verschwindet aus der Warteschlange", roamer_queue not in queue_ids(alice))
+fled_entry = battle_history.recent(alice["id"])[0]
+check("Queue: Flucht nach Fehlwurf landet in der Historie",
+      fled_entry["kind"] == battle_history.KIND_WILD and fled_entry["outcome"] == "fled"
+      and fled_entry["caught"] is False, str(fled_entry))
 
 # Queue: Fehlwurf auf ein normales Pokemon bleibt in der Warteschlange.
 normal_queue = encounter_of(CHAR, 20, alice["id"])

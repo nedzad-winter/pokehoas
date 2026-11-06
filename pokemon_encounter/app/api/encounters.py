@@ -20,8 +20,8 @@ from typing import Any
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
-from .. import (battle, battle_session, db, encounter_state, i18n, rarity, roaming, spawn,
-                trainer_battle)
+from .. import (battle, battle_history, battle_session, db, encounter_state, i18n, rarity,
+                roaming, spawn, trainer_battle)
 from .. import achievements, breeding, economy, evolution
 from ..auth import get_current_user
 
@@ -164,6 +164,10 @@ def throw(
             # A roaming legendary runs off after a missed throw (see roaming.py).
             response["fled"] = True
             response["closed"] = roaming.escape(encounter_id, user_id, wild)
+            battle_history.record(
+                user_id, battle_history.KIND_WILD, "fled",
+                encounter_id=encounter_id, opponent=wild.name,
+            )
             return response
         # Miss outside battle: there's no team on the field for the opponent
         # to attack - the encounter stays in the queue. (In manual battle, the
@@ -172,6 +176,14 @@ def throw(
         return response
 
     caught = finalize_catch(row, wild, user_id, payload.ball)
+    # Unlike a catch mid-battle (battle_session._finish), a ball thrown
+    # straight from the queue never goes through a history write - add it
+    # here so these catches show up in the History tab too.
+    battle_history.record(
+        user_id, battle_history.KIND_WILD, "caught",
+        encounter_id=encounter_id, opponent=wild.name,
+        money_earned=caught.get("money_earned"), caught=True,
+    )
     return {
         "caught": True,
         "critical": result.critical,

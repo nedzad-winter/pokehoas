@@ -288,12 +288,20 @@ def _sprite_style(user_id: str) -> dict[str, Any]:
 def set_sprite_style(
     species_id: int, payload: SpriteStyleChoice, current_user: dict = Depends(get_current_user)
 ) -> dict[str, Any]:
-    if (payload.sprite_style is not None
-            and payload.sprite_style not in _sprite_style(current_user["id"])["sprite_styles"]):
-        raise HTTPException(
-            status_code=400,
-            detail=i18n.t(current_user["language"], "error.sprite_style_locked"),
-        )
+    if payload.sprite_style is not None:
+        if payload.sprite_style not in _sprite_style(current_user["id"])["sprite_styles"]:
+            raise HTTPException(
+                status_code=400,
+                detail=i18n.t(current_user["language"], "error.sprite_style_locked"),
+            )
+        # A species can't wear the sprite of a generation older than its own
+        # debut - that game never drew it.
+        species = db.query_one("SELECT generation FROM species WHERE id = ?", (species_id,))
+        if species is not None and payload.sprite_style < species["generation"]:
+            raise HTTPException(
+                status_code=400,
+                detail=i18n.t(current_user["language"], "error.sprite_style_too_old"),
+            )
     db.set_species_sprite_style(current_user["id"], species_id, payload.sprite_style)
     return _sprite_style(current_user["id"])
 

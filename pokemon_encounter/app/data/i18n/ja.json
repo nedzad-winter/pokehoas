@@ -866,6 +866,7 @@
   "error.release_only_from_box": "この方法でにがせるのはボックスのポケモンだけです － 先に手持ちから出してください。",
   "error.someone_else_faster": "ほかの人のほうが早かった。",
   "error.sprite_style_locked": "このスプライトスタイルはまだ解放されていません。",
+  "error.sprite_style_too_old": "このポケモンはその世代のゲームにはまだ存在していませんでした。",
   "error.starter_already_chosen": "最初のポケモンはすでに選ばれています。",
   "error.team_changed": "手持ちが変わりました － バトルを中止しました。",
   "error.team_fainted": "手持ちが戦えません － 手持ちタブで回復するか、しばらく待ってください。",
