@@ -747,6 +747,9 @@ function pick(obj, field) {
   if (!obj) return '';
   // Item descriptions: official in-game text (item_descriptions_i18n.json). Items carry a `label`
   // or a sprite, which tells them apart from abilities (same `key` field, no label).
+  // TM descriptions are built from the move, so they follow the translated move names.
+  const tmMove = field === 'description' && obj.move && obj.move_level != null && (NAME_TABLES.moves || {})[obj.move];
+  if (tmMove) return tr('item.tm_description', { move: tmMove, level: obj.move_level });
   if (field === 'description' && obj.key && (obj.sprite_url || obj.label) && ITEM_DESCRIPTIONS[obj.key]) {
     return ITEM_DESCRIPTIONS[obj.key];
   }
@@ -754,6 +757,9 @@ function pick(obj, field) {
   if (field === 'label' && obj.key) {
     const translated = (NAME_TABLES.items || {})[obj.key];
     if (translated) return translated;
+    // TMs: "TM33 Rock Tomb" is built from the move, so it follows the translated move names.
+    const moveName = obj.move && obj.number != null && (NAME_TABLES.moves || {})[obj.move];
+    if (moveName) return tr('item.tm_label', { number: String(obj.number).padStart(2, '0'), move: moveName });
   }
   const en = obj[field], de = obj[field + '_de'];
   return (LANG === 'de' ? (de || en) : (en || de)) || '';
