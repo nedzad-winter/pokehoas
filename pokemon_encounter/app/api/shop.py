@@ -61,7 +61,9 @@ def shop(current_user: dict = Depends(get_current_user)) -> dict[str, Any]:
             "sprite_url": item.get("sprite_url"),
             "price": 0 if free else economy.unit_price(item, multiplier),
             "move": item.get("move"),
+            "number": item.get("number"),
             "move_type": moves.all_moves().get(item["move"], {}).get("type") if item.get("move") else None,
+            "move_level": moves.all_moves().get(item["move"], {}).get("min_level") if item.get("move") else None,
             "owned": owned.get(item["key"], 0),
             # How many own Pokémon could use this item (evolution items only).
             "usable_count": len(usable.get(item["key"], [])),
@@ -107,6 +109,8 @@ def bag(current_user: dict = Depends(get_current_user)) -> dict[str, Any]:
             "description_de": item.get("description_de"),
             "sprite_url": item.get("sprite_url") or held_items.sprite_url_for(key),
             "move": item.get("move"),
+            "number": item.get("number"),
+            "move_level": moves.all_moves().get(item["move"], {}).get("min_level") if item.get("move") else None,
             "quantity": row["quantity"],
             # Only for sorting in bag (same categories as shop);
             # items outside the catalog have no price.

@@ -53,7 +53,8 @@ def cures_of(item: dict[str, Any]) -> frozenset[str]:
 
 
 def label(item: dict[str, Any], lang: str) -> str:
-    return (item.get("label_de") if lang == "de" else None) or item["label"]
+    from . import economy  # local import: economy imports this module
+    return economy.item_label(item["key"], lang)
 
 
 # --------------------------------------------------------------- Effect

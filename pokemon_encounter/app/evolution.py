@@ -741,7 +741,9 @@ def use_item(user_id: str, owned_id: int, item_key: str) -> dict[str, Any]:
     item = catalog_by_key().get(item_key)
     if item is None or item["category"] != "evolution":
         raise EconomyError(400, i18n.t(lang, "error.evolution_item_not_usable"))
-    item_label = (item.get("label_de") if lang == "de" else None) or item["label"]
+    from . import name_tables  # local import, keeps the module import order untouched
+    item_label = (name_tables.lookup("items", item_key, lang)
+                  or (item.get("label_de") if lang == "de" else None) or item["label"])
 
     candidates = [
         row for row in _item_evolutions(owned["species_id"], item_key)

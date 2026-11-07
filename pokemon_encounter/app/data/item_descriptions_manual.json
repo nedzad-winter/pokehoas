@@ -1,0 +1,215 @@
+{
+ "auspicious_armor": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "black_augurite": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "black_belt": {
+  "fr": "Les attaques de type Combat infligent 20 % de dégâts en plus."
+ },
+ "black_glasses": {
+  "fr": "Les attaques de type Ténèbres infligent 20 % de dégâts en plus."
+ },
+ "calcium": {
+  "fr": "+10 EV en Attaque Spéciale. Tous les 4 EV rapportent 1 point de plus en Attaque Spéciale au niveau 100."
+ },
+ "carbos": {
+  "fr": "+10 EV en Vitesse. Tous les 4 EV rapportent 1 point de plus en Vitesse au niveau 100."
+ },
+ "charcoal": {
+  "fr": "Les attaques de type Feu infligent 20 % de dégâts en plus."
+ },
+ "choice_band": {
+  "fr": "Attaque ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon."
+ },
+ "choice_scarf": {
+  "fr": "Vitesse ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon."
+ },
+ "choice_specs": {
+  "fr": "Attaque Spéciale ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon."
+ },
+ "clever_wing": {
+  "fr": "+1 EV en Défense Spéciale – pour ajuster finement les derniers points sous le plafond."
+ },
+ "destiny_knot": {
+  "fr": "Tenu par un parent de la Pension : l'Œuf hérite de 5 IV de ses parents au lieu de 3."
+ },
+ "dive_ball": {
+  "fr": "Particulièrement efficace sur les Pokémon d'un lac ou d'une plage (bonus de capture ×3,5, sinon ×1)."
+ },
+ "dragon_fang": {
+  "fr": "Les attaques de type Dragon infligent 20 % de dégâts en plus."
+ },
+ "dusk_ball": {
+  "fr": "Particulièrement efficace la nuit, de 20 h à 6 h, heure locale (bonus de capture ×3, sinon ×1)."
+ },
+ "exp_share": {
+  "fr": "Le porteur gagne la même EXP qu'un membre de l'équipe qui combat, même sans participer au combat. Non vendu – récompense des succès de niveau 100."
+ },
+ "fairy_feather": {
+  "fr": "Les attaques de type Fée infligent 20 % de dégâts en plus."
+ },
+ "fast_ball": {
+  "fr": "Particulièrement efficace sur les Pokémon rapides, avec une Vitesse de base de 100 ou plus (bonus de capture ×4, sinon ×1)."
+ },
+ "focus_sash": {
+  "fr": "Survit avec 1 PV à un coup qui mettrait K.O., à condition d'avoir tous ses PV. Consommée."
+ },
+ "genius_wing": {
+  "fr": "+1 EV en Attaque Spéciale – pour ajuster finement les derniers points sous le plafond."
+ },
+ "great_ball": {
+  "fr": "Meilleure que la Poké Ball (bonus de capture ×1,5)."
+ },
+ "grepa_berry": {
+  "fr": "−10 EV en Défense Spéciale. Libère à nouveau une partie du budget d'EV."
+ },
+ "hard_stone": {
+  "fr": "Les attaques de type Roche infligent 20 % de dégâts en plus."
+ },
+ "heal_ball": {
+  "fr": "Bonus de capture ×1, mais le Pokémon capturé arrive avec tous ses PV."
+ },
+ "health_wing": {
+  "fr": "+1 EV en PV – pour ajuster finement les derniers points sous le plafond."
+ },
+ "hondew_berry": {
+  "fr": "−10 EV en Attaque Spéciale. Libère à nouveau une partie du budget d'EV."
+ },
+ "hp_up": {
+  "fr": "+10 EV en PV. Tous les 4 EV rapportent 1 point de plus en PV au niveau 100."
+ },
+ "incubator": {
+  "fr": "Fait éclore un Œuf sans occuper d'emplacement d'équipe. Dure pour 3 Œufs."
+ },
+ "iron": {
+  "fr": "+10 EV en Défense. Tous les 4 EV rapportent 1 point de plus en Défense au niveau 100."
+ },
+ "kelpsy_berry": {
+  "fr": "−10 EV en Attaque. Libère à nouveau une partie du budget d'EV."
+ },
+ "leftovers": {
+  "fr": "Rend 1/16 des PV max à la fin de chaque tour."
+ },
+ "level_ball": {
+  "fr": "Fonctionne mieux quand le niveau de votre Pokémon actif (hors combat : premier emplacement de l'équipe) dépasse celui du Pokémon sauvage (×2 s'il est plus élevé, ×4 s'il est plus du double, ×8 s'il est au moins quatre fois plus élevé)."
+ },
+ "life_orb": {
+  "fr": "Les attaques infligent 30 % de dégâts en plus, mais coûtent 1/10 des PV max à chaque fois."
+ },
+ "linking_cord": {
+  "fr": "Remplace l'échange : fait évoluer les Pokémon d'échange comme Kadabra, Machopeur, Gravalanch et Spectrum."
+ },
+ "lucky_egg": {
+  "fr": "Le porteur gagne 50 % de points d'expérience en plus."
+ },
+ "magnet": {
+  "fr": "Les attaques de type Électrik infligent 20 % de dégâts en plus."
+ },
+ "malicious_armor": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "masterpiece_teacup": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "metal_alloy": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "miracle_seed": {
+  "fr": "Les attaques de type Plante infligent 20 % de dégâts en plus."
+ },
+ "muscle_wing": {
+  "fr": "+1 EV en Attaque – pour ajuster finement les derniers points sous le plafond."
+ },
+ "mystic_water": {
+  "fr": "Les attaques de type Eau infligent 20 % de dégâts en plus."
+ },
+ "nest_ball": {
+  "fr": "Plus le niveau du Pokémon sauvage est bas, mieux elle fonctionne (jusqu'à ×4 au niveau 1, aucun bonus à partir du niveau 30)."
+ },
+ "net_ball": {
+  "fr": "Particulièrement efficace sur les Pokémon de type Eau et Insecte (bonus de capture ×3,5, sinon ×1)."
+ },
+ "never_melt_ice": {
+  "fr": "Les attaques de type Glace infligent 20 % de dégâts en plus."
+ },
+ "oran_berry": {
+  "fr": "Rend 10 PV une fois, quand les PV tombent à la moitié."
+ },
+ "peat_block": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "poison_barb": {
+  "fr": "Les attaques de type Poison infligent 20 % de dégâts en plus."
+ },
+ "poke_ball": {
+  "fr": "Ball standard (bonus de capture ×1)."
+ },
+ "pomeg_berry": {
+  "fr": "−10 EV en PV. Libère à nouveau une partie du budget d'EV."
+ },
+ "protein": {
+  "fr": "+10 EV en Attaque. Tous les 4 EV rapportent 1 point de plus en Attaque au niveau 100."
+ },
+ "qualot_berry": {
+  "fr": "−10 EV en Défense. Libère à nouveau une partie du budget d'EV."
+ },
+ "quick_ball": {
+  "fr": "Très efficace si elle est lancée dès le début, avant tout tour contre le Pokémon (bonus de capture ×5, sinon ×1)."
+ },
+ "quick_claw": {
+  "fr": "20 % de chances d'attaquer en premier malgré une Vitesse inférieure."
+ },
+ "repeat_ball": {
+  "fr": "Particulièrement efficace sur les espèces déjà capturées (bonus de capture ×3,5, sinon ×1)."
+ },
+ "resist_wing": {
+  "fr": "+1 EV en Défense – pour ajuster finement les derniers points sous le plafond."
+ },
+ "sharp_beak": {
+  "fr": "Les attaques de type Vol infligent 20 % de dégâts en plus."
+ },
+ "shell_bell": {
+  "fr": "Rend 1/8 des dégâts infligés."
+ },
+ "silk_scarf": {
+  "fr": "Les attaques de type Normal infligent 20 % de dégâts en plus."
+ },
+ "silver_powder": {
+  "fr": "Les attaques de type Insecte infligent 20 % de dégâts en plus."
+ },
+ "sitrus_berry": {
+  "fr": "Rend 1/4 des PV max une fois, quand les PV tombent à la moitié."
+ },
+ "soft_sand": {
+  "fr": "Les attaques de type Sol infligent 20 % de dégâts en plus."
+ },
+ "spell_tag": {
+  "fr": "Les attaques de type Spectre infligent 20 % de dégâts en plus."
+ },
+ "swift_wing": {
+  "fr": "+1 EV en Vitesse – pour ajuster finement les derniers points sous le plafond."
+ },
+ "syrupy_apple": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "tamato_berry": {
+  "fr": "−10 EV en Vitesse. Libère à nouveau une partie du budget d'EV."
+ },
+ "timer_ball": {
+  "fr": "Plus le combat dure, mieux elle fonctionne (environ +0,3 par tour, jusqu'à ×4)."
+ },
+ "twisted_spoon": {
+  "fr": "Les attaques de type Psy infligent 20 % de dégâts en plus."
+ },
+ "ultra_ball": {
+  "fr": "Grande chance de capture (bonus de capture ×2)."
+ },
+ "unremarkable_teacup": {
+  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+ },
+ "zinc": {
+  "fr": "+10 EV en Défense Spéciale. Tous les 4 EV rapportent 1 point de plus en Défense Spéciale au niveau 100."
+ }
+}
