@@ -22,6 +22,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "pokemon_encounter" / "app" / "data"
 POKEAPI = "https://pokeapi.co/api/v2"
 LANGS = ("de", "es", "fr", "it", "ja", "ko")
+# Items that exist only in this game, so PokeAPI has no names for them.
+MANUAL_ITEM_NAMES = {"incubator": "Incubateur"}
 
 
 def fetch(url: str) -> dict | None:
@@ -81,6 +83,10 @@ def main() -> None:
                               ("item", "items", items)):
         print(f"{label}: fetching {len(keys)} ...", flush=True)
         names, missing = collect(kind, keys)
+        if label == "items":
+            for key, fr in MANUAL_ITEM_NAMES.items():
+                names.setdefault(key, {}).setdefault("fr", fr)
+            missing = [k for k in missing if k not in names]
         out[label] = names
         note = f" - not found: {', '.join(missing[:15])}{' ...' if len(missing) > 15 else ''}" if missing else ""
         print(f"  ok {len(names)}, missing {len(missing)}{note}", flush=True)

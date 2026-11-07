@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import concurrent.futures
 import json
+import re
 import time
 import urllib.error
 import urllib.request
@@ -74,6 +75,18 @@ def main() -> None:
             else:
                 missing.append(key)
     print(f"  ok {len(result)}, missing {len(missing)}: {', '.join(missing[:20])}")
+    manual_path = DATA / "item_descriptions_manual.json"
+    manual = json.loads(manual_path.read_text(encoding="utf-8")) if manual_path.exists() else {}
+    own = {item["key"]: item.get("description", "") for item in shop}
+    own.update({key: value.get("description", "") for key, value in held.items() if not key.startswith("_")})
+    # An item whose own description holds a number (catch bonus, +20% damage, EVs) keeps it, unless a
+    # hand-written translation exists in item_descriptions_manual.json: the official text would drop
+    # that game-specific rule.
+    for key in [k for k in result if re.search(r"\d", own.get(k, ""))]:
+        del result[key]
+    for key, texts in manual.items():
+        result.setdefault(key, {}).update(texts)
+    print(f"  manual: {len(manual)} item(s), {len(result)} item(s) in total")
     for lang in LANGS:
         print(f"  {lang}: {sum(1 for t in result.values() if lang in t)}")
 

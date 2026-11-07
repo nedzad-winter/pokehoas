@@ -624,6 +624,7 @@
   "hyper_potion": {"de": "Hypertrank", "es": "Hiperpoción", "fr": "Hyper Potion", "it": "Iperpozione", "ja": "すごいキズぐすり", "ko": "고급상처약"},
   "ice_heal": {"de": "Eisheiler", "es": "Antihielo", "fr": "Antigel", "it": "Antigelo", "ja": "こおりなおし", "ko": "얼음상태치료제"},
   "ice_stone": {"de": "Eisstein", "es": "Piedra Hielo", "fr": "Pierre Glace", "it": "Pietragelo", "ja": "こおりのいし", "ko": "얼음의돌"},
+  "incubator": {"fr": "Incubateur"},
   "iron": {"de": "Eisen", "es": "Hierro", "fr": "Fer", "it": "Ferro", "ja": "ブロムヘキシン", "ko": "사포닌"},
   "kangaskhanite": {"de": "Kangamanit", "es": "Kangaskhanita", "fr": "Kangourexite", "it": "Kangaskhanite", "ja": "ガルーラナイト", "ko": "캥카나이트"},
   "kelpsy_berry": {"de": "Setangbeere", "es": "Baya Algama", "fr": "Baie Alga", "it": "Baccalga", "ja": "ネコブのみ", "ko": "시마열매"},
