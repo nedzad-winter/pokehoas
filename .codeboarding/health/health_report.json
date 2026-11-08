@@ -1,14 +1,14 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-11-08T17:18:58.575672+00:00",
-  "overall_score": 0.9522267206477733,
+  "timestamp": "2026-11-08T17:21:10.771710+00:00",
+  "overall_score": 0.9524576954069299,
   "check_summaries": [
     {
       "check_name": "function_size",
       "description": "Checks that functions/methods do not exceed line count thresholds",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 1176,
+      "total_entities_checked": 1182,
       "findings_count": 0,
       "warning_count": 0,
       "score": 1.0,
@@ -233,24 +233,24 @@
               "metric_value": 0.0
             },
             {
+              "entity_name": "[unused_variable] \"encounter\" is not accessed",
+              "file_path": "pokemon_encounter/app/battle_session.py",
+              "line_start": 447,
+              "line_end": 447,
+              "metric_value": 0.0
+            },
+            {
               "entity_name": "[unused_variable] \"ability_effects\" is not accessed",
               "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1795,
-              "line_end": 1795,
+              "line_start": 1797,
+              "line_end": 1797,
               "metric_value": 0.0
             },
             {
               "entity_name": "[unused_variable] \"winner\" is not accessed",
               "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 566,
-              "line_end": 566,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"encounter\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle_session.py",
-              "line_start": 447,
-              "line_end": 447,
+              "line_start": 568,
+              "line_end": 568,
               "metric_value": 0.0
             }
           ]
@@ -452,8 +452,8 @@
             {
               "entity_name": "[unused_import] Import \"ability_effects\" is not accessed",
               "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1795,
-              "line_end": 1795,
+              "line_start": 1797,
+              "line_end": 1797,
               "metric_value": 0.0
             }
           ]
