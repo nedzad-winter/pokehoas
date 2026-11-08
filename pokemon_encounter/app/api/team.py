@@ -601,7 +601,7 @@ def _name_tables() -> dict[str, Any]:
 def name_tables(lang: str) -> dict[str, Any]:
     """Ability, move and type names in `lang`, {kind: {key: name}}. English and German
     keep their catalog names, and PokeAPI has no Polish, so those return nothing."""
-    empty: dict[str, Any] = {"abilities": {}, "moves": {}, "types": {}}
+    empty: dict[str, Any] = {"abilities": {}, "moves": {}, "types": {}, "items": {}}
     if lang not in ("es", "fr", "it", "ja", "ko"):
         return empty
     tables = _name_tables()
@@ -627,3 +627,23 @@ def ability_descriptions(lang: str) -> dict[str, str]:
     if lang not in ("es", "fr", "it", "ja", "ko"):
         return {}
     return {key: texts[lang] for key, texts in _ABILITY_DESCRIPTIONS.items() if lang in texts}
+
+
+_ITEM_DESCRIPTIONS: dict[str, Any] | None = None
+
+
+@router.get("/item-descriptions/{lang}")
+def item_descriptions(lang: str) -> dict[str, str]:
+    """Official item descriptions in `lang` ({key: text}), from item_descriptions_i18n.json
+    (see scripts/build_item_descriptions.py). English and German stay in the catalogs; PokeAPI
+    has no Polish, so those return nothing."""
+    global _ITEM_DESCRIPTIONS
+    if _ITEM_DESCRIPTIONS is None:
+        try:
+            _ITEM_DESCRIPTIONS = json.loads(
+                (seed.DATA_DIR / "item_descriptions_i18n.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            _ITEM_DESCRIPTIONS = {}
+    if lang not in ("es", "fr", "it", "ja", "ko"):
+        return {}
+    return {key: texts[lang] for key, texts in _ITEM_DESCRIPTIONS.items() if lang in texts}

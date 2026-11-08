@@ -76,8 +76,10 @@ def min_level(tm_key: str) -> int:
 
 
 def move_name(tm_key: str, lang: str = "en") -> str:
+    from . import name_tables  # local import, keeps the module import order untouched
     move = moves_mod.get(move_key(tm_key))
-    return (move.get("name_de") if lang == "de" else None) or move["name"]
+    return (name_tables.lookup("moves", move.get("key"), lang)
+            or (move.get("name_de") if lang == "de" else None) or move["name"])
 
 
 def label(tm_key: str, lang: str = "en") -> str:

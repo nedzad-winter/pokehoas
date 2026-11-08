@@ -71,8 +71,10 @@ FAST_BALL_MIN_SPEED = 100
 
 
 def ball_label(key: str, lang: str = "en") -> str:
+    from . import name_tables  # local import, keeps the module import order untouched
     ball = BALLS.get(key, BALLS["poke_ball"])
-    return (ball.get("label_de") if lang == "de" else None) or ball["label"]
+    return (name_tables.lookup("items", key, lang)
+            or (ball.get("label_de") if lang == "de" else None) or ball["label"])
 
 
 @dataclass
