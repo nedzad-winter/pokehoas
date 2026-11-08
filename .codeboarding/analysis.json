@@ -1,17 +1,17 @@
 {
   "metadata": {
-    "generated_at": "2026-11-06T21:08:27.955772+00:00",
-    "source_tree_hash": "3b2c01b4396d7aee99a4c5012354d24fb1eac97d780d170f35674d1d79b56cad",
+    "generated_at": "2026-11-08T17:19:40.990847+00:00",
+    "source_tree_hash": "693689f04c53682da8338415efedbdd761feb9053969a21a0ada93e27ae328a1",
     "repo_name": ".codeboarding-target",
     "depth_level": 2,
     "depth_cap": 2,
     "file_coverage_summary": {
-      "total_files": 182,
+      "total_files": 183,
       "analyzed": 75,
-      "not_analyzed": 107,
+      "not_analyzed": 108,
       "not_analyzed_by_reason": {
         "other": 38,
-        "codeboardingignore": 69
+        "codeboardingignore": 70
       }
     },
     "tree_spec": {
@@ -1315,7 +1315,7 @@
       }
     }
   },
-  "description": "Root scope of PokeHOAS, coordinating container startup and environment validation, HTTP API routing, Pokémon encounter and battle mechanics, database persistence, and external data catalog compilation.",
+  "description": "Root scope of PokeHOAS, coordinating container startup and environment validation, HTTP API routing, Pokémon encounter and battle mechanics, database persistence, team encoding/decoding, and external data catalog compilation.",
   "files": {
     "pokemon_encounter/app/abilities.py": {
       "method_keys": [
@@ -2376,12 +2376,16 @@
         "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code.encode",
         "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._decode_payload",
         "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._species_name",
+        "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_label",
+        "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._ability_label",
+        "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._item_label",
+        "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_allowed",
         "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._int_in_range",
         "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
         "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code.decode"
       ],
-      "content_hash": "9b6a3be07ec30e48",
-      "module_hash": "df70287f0d3c77b7"
+      "content_hash": "25b4d3843c9e5ee7",
+      "module_hash": "d634cb48dd7ad3be"
     },
     "pokemon_encounter/app/tms.py": {
       "method_keys": [
@@ -9528,29 +9532,61 @@
       "start_line": 104,
       "end_line": 108,
       "type": "FUNCTION",
-      "content_hash": "b3faefafec3bc97a"
+      "content_hash": "e477e07772a07814"
+    },
+    "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_label": {
+      "file_path": "pokemon_encounter/app/team_code.py",
+      "qualified_name": "pokemon_encounter.app.team_code._move_label",
+      "start_line": 111,
+      "end_line": 118,
+      "type": "FUNCTION",
+      "content_hash": "a95e72c84d845ef8"
+    },
+    "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._ability_label": {
+      "file_path": "pokemon_encounter/app/team_code.py",
+      "qualified_name": "pokemon_encounter.app.team_code._ability_label",
+      "start_line": 121,
+      "end_line": 123,
+      "type": "FUNCTION",
+      "content_hash": "ab244a5882cd4f66"
+    },
+    "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._item_label": {
+      "file_path": "pokemon_encounter/app/team_code.py",
+      "qualified_name": "pokemon_encounter.app.team_code._item_label",
+      "start_line": 126,
+      "end_line": 127,
+      "type": "FUNCTION",
+      "content_hash": "695ba85cd2cf1e5f"
+    },
+    "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_allowed": {
+      "file_path": "pokemon_encounter/app/team_code.py",
+      "qualified_name": "pokemon_encounter.app.team_code._move_allowed",
+      "start_line": 130,
+      "end_line": 139,
+      "type": "FUNCTION",
+      "content_hash": "1fbcce05abdc56a6"
     },
     "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._int_in_range": {
       "file_path": "pokemon_encounter/app/team_code.py",
       "qualified_name": "pokemon_encounter.app.team_code._int_in_range",
-      "start_line": 111,
-      "end_line": 114,
+      "start_line": 142,
+      "end_line": 145,
       "type": "FUNCTION",
       "content_hash": "b7b15abbf4057a9b"
     },
     "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry": {
       "file_path": "pokemon_encounter/app/team_code.py",
       "qualified_name": "pokemon_encounter.app.team_code._mon_from_entry",
-      "start_line": 117,
-      "end_line": 170,
+      "start_line": 148,
+      "end_line": 201,
       "type": "FUNCTION",
-      "content_hash": "6dde97a8b91c8463"
+      "content_hash": "e1c896a42b2163fb"
     },
     "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code.decode": {
       "file_path": "pokemon_encounter/app/team_code.py",
       "qualified_name": "pokemon_encounter.app.team_code.decode",
-      "start_line": 173,
-      "end_line": 186,
+      "start_line": 204,
+      "end_line": 217,
       "type": "FUNCTION",
       "content_hash": "db1215a1c360e94c"
     },
@@ -12942,7 +12978,7 @@
   "components": [
     {
       "name": "Game Engine and Core Services",
-      "description": "Executes core Pokémon battle simulations, encounter mechanics, player progression, database persistence, and background polling.",
+      "description": "Executes core Pokémon battle simulations, encounter mechanics, team serialization, player progression, database persistence, and background polling.",
       "key_entities": [
         {
           "qualified_name": "pokemon_encounter.app.battle.Battle",
@@ -12967,6 +13003,18 @@
           "reference_file": "pokemon_encounter/app/auth.py",
           "reference_start_line": 222,
           "reference_end_line": 273
+        },
+        {
+          "qualified_name": "pokemon_encounter.app.team_code.encode",
+          "reference_file": "pokemon_encounter/app/team_code.py",
+          "reference_start_line": 61,
+          "reference_end_line": 76
+        },
+        {
+          "qualified_name": "pokemon_encounter.app.team_code.decode",
+          "reference_file": "pokemon_encounter/app/team_code.py",
+          "reference_start_line": 204,
+          "reference_end_line": 217
         }
       ],
       "source_cluster_ids": [
@@ -14037,6 +14085,10 @@
             "pokemon_encounter.app.team_code.encode",
             "pokemon_encounter.app.team_code._decode_payload",
             "pokemon_encounter.app.team_code._species_name",
+            "pokemon_encounter.app.team_code._move_label",
+            "pokemon_encounter.app.team_code._ability_label",
+            "pokemon_encounter.app.team_code._item_label",
+            "pokemon_encounter.app.team_code._move_allowed",
             "pokemon_encounter.app.team_code._int_in_range",
             "pokemon_encounter.app.team_code._mon_from_entry",
             "pokemon_encounter.app.team_code.decode"
@@ -15127,7 +15179,7 @@
         },
         {
           "name": "PvP and Challenge Arena",
-          "description": "Coordinates competitive player-versus-player matches, AI and gym challenges, and team code imports and exports.",
+          "description": "Coordinates competitive player-versus-player matches, AI trainer challenges, and team code serialization and verification.",
           "key_entities": [
             {
               "qualified_name": "pokemon_encounter.app.challenge.start",
@@ -15152,6 +15204,18 @@
               "reference_file": "pokemon_encounter/app/pvp.py",
               "reference_start_line": 177,
               "reference_end_line": 185
+            },
+            {
+              "qualified_name": "pokemon_encounter.app.team_code.encode",
+              "reference_file": "pokemon_encounter/app/team_code.py",
+              "reference_start_line": 61,
+              "reference_end_line": 76
+            },
+            {
+              "qualified_name": "pokemon_encounter.app.team_code.decode",
+              "reference_file": "pokemon_encounter/app/team_code.py",
+              "reference_start_line": 204,
+              "reference_end_line": 217
             }
           ],
           "source_cluster_ids": [
@@ -15224,6 +15288,10 @@
                 "pokemon_encounter.app.team_code.encode",
                 "pokemon_encounter.app.team_code._decode_payload",
                 "pokemon_encounter.app.team_code._species_name",
+                "pokemon_encounter.app.team_code._move_label",
+                "pokemon_encounter.app.team_code._ability_label",
+                "pokemon_encounter.app.team_code._item_label",
+                "pokemon_encounter.app.team_code._move_allowed",
                 "pokemon_encounter.app.team_code._int_in_range",
                 "pokemon_encounter.app.team_code._mon_from_entry",
                 "pokemon_encounter.app.team_code.decode"
@@ -15808,254 +15876,6 @@
         }
       ],
       "components_relations": [
-        {
-          "relation": "drives encounter lifecycle and gift grants in",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Spawn and Encounter Generation",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
-              "call_sites": [
-                {
-                  "line": 118,
-                  "column": 25
-                }
-              ],
-              "description": "Expires stale encounters and processes spawn events"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.5",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.expire_stale_encounters",
-              "call_sites": [
-                {
-                  "line": 75,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
-              "call_sites": [
-                {
-                  "line": 118,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/gifts.py|pokemon_encounter.app.gifts.grant_pending",
-              "call_sites": [
-                {
-                  "line": 68,
-                  "column": 11
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "invokes seed routines in",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Data Seeding and Debugging",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
-              "call_sites": [
-                {
-                  "line": 75,
-                  "column": 50
-                }
-              ],
-              "description": "Ensures Pokédex species data is seeded and starts name backfills"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.6",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/tms.py|pokemon_encounter.app.tms.start_background_backfill",
-              "call_sites": [
-                {
-                  "line": 90,
-                  "column": 9
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
-              "call_sites": [
-                {
-                  "line": 75,
-                  "column": 50
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.start_name_en_backfill",
-              "call_sites": [
-                {
-                  "line": 86,
-                  "column": 10
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "synchronizes buddy sensors and client connections via",
-          "src_name": "Application Lifecycle and Background Poller",
-          "dst_name": "Home Assistant Integration and Buddy Tracking",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
-              "call_sites": [
-                {
-                  "line": 89,
-                  "column": 25
-                }
-              ],
-              "description": "Initializes the Home Assistant client for background polling and syncs buddy sensor states"
-            }
-          ],
-          "src_id": "1.9",
-          "dst_id": "1.8",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
-              "call_sites": [
-                {
-                  "line": 89,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
-              "call_sites": [
-                {
-                  "line": 134,
-                  "column": 35
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.call_service",
-              "call_sites": [
-                {
-                  "line": 134,
-                  "column": 35
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
-              "call_sites": [
-                {
-                  "line": 111,
-                  "column": 40
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.fetch_state_changes",
-              "call_sites": [
-                {
-                  "line": 111,
-                  "column": 40
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantError",
-              "call_sites": [
-                {
-                  "line": 112,
-                  "column": 16
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.minutes_ago",
-              "call_sites": [
-                {
-                  "line": 105,
-                  "column": 33
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.utcnow",
-              "call_sites": [
-                {
-                  "line": 72,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
-              "call_sites": [
-                {
-                  "line": 101,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
-              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.close",
-              "call_sites": [
-                {
-                  "line": 101,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
         {
           "relation": "persists battle state, abilities, and rule evaluations in",
           "src_name": "Core Battle and Gameplay Mechanics",
@@ -20459,41 +20279,6 @@
           ]
         },
         {
-          "relation": "inspects competitive records from",
-          "src_name": "Trainer Progression and Achievements",
-          "dst_name": "PvP and Challenge Arena",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/profiles.py|pokemon_encounter.app.profiles.build",
-              "target": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.record_of",
-              "call_sites": [
-                {
-                  "line": 149,
-                  "column": 27
-                }
-              ],
-              "description": "profile builder queries competitive PvP win-loss records"
-            }
-          ],
-          "src_id": "1.2",
-          "dst_id": "1.4",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/profiles.py|pokemon_encounter.app.profiles.build",
-              "target": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.record_of",
-              "call_sites": [
-                {
-                  "line": 149,
-                  "column": 27
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
           "relation": "configures encounter pools in",
           "src_name": "Trainer Progression and Achievements",
           "dst_name": "Spawn and Encounter Generation",
@@ -21820,1612 +21605,6 @@
                 {
                   "line": 535,
                   "column": 21
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "builds combatants and validates moves using",
-          "src_name": "PvP and Challenge Arena",
-          "dst_name": "Core Battle and Gameplay Mechanics",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._fill_moves",
-              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.moveset_for",
-              "call_sites": [
-                {
-                  "line": 103,
-                  "column": 26
-                }
-              ],
-              "description": "challenge move filling constructs move sets from moves catalog"
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-              "call_sites": [
-                {
-                  "line": 169,
-                  "column": 19
-                }
-              ],
-              "description": "PvP challenge participant builds Combatant instance from owned Pokémon"
-            }
-          ],
-          "src_id": "1.4",
-          "dst_id": "1.1",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._fill_moves",
-              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.moveset_for",
-              "call_sites": [
-                {
-                  "line": 103,
-                  "column": 26
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 272,
-                  "column": 23
-                },
-                {
-                  "line": 273,
-                  "column": 23
-                },
-                {
-                  "line": 279,
-                  "column": 27
-                },
-                {
-                  "line": 281,
-                  "column": 31
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.start",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 233,
-                  "column": 58
-                },
-                {
-                  "line": 241,
-                  "column": 62
-                },
-                {
-                  "line": 243,
-                  "column": 62
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._fail",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 46,
-                  "column": 27
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
-              "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.get",
-              "call_sites": [
-                {
-                  "line": 146,
-                  "column": 80
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
-              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.all_moves",
-              "call_sites": [
-                {
-                  "line": 157,
-                  "column": 23
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._challenge_member",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
-              "call_sites": [
-                {
-                  "line": 181,
-                  "column": 21
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-              "call_sites": [
-                {
-                  "line": 169,
-                  "column": 19
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-              "call_sites": [
-                {
-                  "line": 507,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.exp_shares",
-              "call_sites": [
-                {
-                  "line": 509,
-                  "column": 35
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.grant_exp",
-              "call_sites": [
-                {
-                  "line": 513,
-                  "column": 27
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.save_team",
-              "call_sites": [
-                {
-                  "line": 524,
-                  "column": 12
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/battle_history.py|pokemon_encounter.app.battle_history.record",
-              "call_sites": [
-                {
-                  "line": 494,
-                  "column": 24
-                },
-                {
-                  "line": 541,
-                  "column": 20
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.any_holds",
-              "call_sites": [
-                {
-                  "line": 530,
-                  "column": 34
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 486,
-                  "column": 23
-                },
-                {
-                  "line": 517,
-                  "column": 27
-                },
-                {
-                  "line": 519,
-                  "column": 31
-                },
-                {
-                  "line": 525,
-                  "column": 23
-                },
-                {
-                  "line": 534,
-                  "column": 31
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
-              "call_sites": [
-                {
-                  "line": 257,
-                  "column": 16
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
-              "call_sites": [
-                {
-                  "line": 252,
-                  "column": 79
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 251,
-                  "column": 62
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._session",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 327,
-                  "column": 42
-                },
-                {
-                  "line": 330,
-                  "column": 42
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
-              "call_sites": [
-                {
-                  "line": 393,
-                  "column": 20
-                },
-                {
-                  "line": 402,
-                  "column": 65
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle.active_mon",
-              "call_sites": [
-                {
-                  "line": 402,
-                  "column": 65
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-              "call_sites": [
-                {
-                  "line": 401,
-                  "column": 42
-                },
-                {
-                  "line": 402,
-                  "column": 76
-                },
-                {
-                  "line": 387,
-                  "column": 71
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.fainted",
-              "call_sites": [
-                {
-                  "line": 387,
-                  "column": 71
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.name_in",
-              "call_sites": [
-                {
-                  "line": 401,
-                  "column": 42
-                },
-                {
-                  "line": 402,
-                  "column": 76
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.battle_start_effects",
-              "call_sites": [
-                {
-                  "line": 403,
-                  "column": 16
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
-              "call_sites": [
-                {
-                  "line": 386,
-                  "column": 28
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.owned_selection",
-              "call_sites": [
-                {
-                  "line": 379,
-                  "column": 23
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.party",
-              "call_sites": [
-                {
-                  "line": 379,
-                  "column": 82
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 368,
-                  "column": 62
-                },
-                {
-                  "line": 372,
-                  "column": 46
-                },
-                {
-                  "line": 374,
-                  "column": 62
-                },
-                {
-                  "line": 376,
-                  "column": 62
-                },
-                {
-                  "line": 381,
-                  "column": 62
-                },
-                {
-                  "line": 389,
-                  "column": 62
-                },
-                {
-                  "line": 396,
-                  "column": 31
-                },
-                {
-                  "line": 399,
-                  "column": 31
-                },
-                {
-                  "line": 400,
-                  "column": 27
-                },
-                {
-                  "line": 402,
-                  "column": 27
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
-              "call_sites": [
-                {
-                  "line": 309,
-                  "column": 21
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle.active_mon",
-              "call_sites": [
-                {
-                  "line": 309,
-                  "column": 21
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-              "call_sites": [
-                {
-                  "line": 308,
-                  "column": 37
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.fainted",
-              "call_sites": [
-                {
-                  "line": 308,
-                  "column": 37
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.available_moves",
-              "call_sites": [
-                {
-                  "line": 311,
-                  "column": 49
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.describe",
-              "call_sites": [
-                {
-                  "line": 289,
-                  "column": 18
-                },
-                {
-                  "line": 311,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.mega_view",
-              "call_sites": [
-                {
-                  "line": 314,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
-              "target": "pokemon_encounter/app/medicine.py|pokemon_encounter.app.medicine.battle_inventory",
-              "call_sites": [
-                {
-                  "line": 316,
-                  "column": 30
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
-              "call_sites": [
-                {
-                  "line": 580,
-                  "column": 41
-                },
-                {
-                  "line": 566,
-                  "column": 38
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle.active_mon",
-              "call_sites": [
-                {
-                  "line": 580,
-                  "column": 41
-                },
-                {
-                  "line": 566,
-                  "column": 38
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.mega_evolve",
-              "call_sites": [
-                {
-                  "line": 580,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.run_turn",
-              "call_sites": [
-                {
-                  "line": 568,
-                  "column": 24
-                },
-                {
-                  "line": 577,
-                  "column": 28
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.switch_is_free",
-              "call_sites": [
-                {
-                  "line": 574,
-                  "column": 31
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.switch_to",
-              "call_sites": [
-                {
-                  "line": 575,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 558,
-                  "column": 46
-                },
-                {
-                  "line": 567,
-                  "column": 43
-                },
-                {
-                  "line": 582,
-                  "column": 35
-                },
-                {
-                  "line": 585,
-                  "column": 39
-                },
-                {
-                  "line": 590,
-                  "column": 50
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/medicine.py|pokemon_encounter.app.medicine.use_in_battle",
-              "call_sites": [
-                {
-                  "line": 587,
-                  "column": 26
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-              "call_sites": [
-                {
-                  "line": 148,
-                  "column": 59
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.stat",
-              "call_sites": [
-                {
-                  "line": 148,
-                  "column": 59
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
-              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.describe",
-              "call_sites": [
-                {
-                  "line": 149,
-                  "column": 33
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.snapshot_for_user",
-              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
-              "call_sites": [
-                {
-                  "line": 59,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_code",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 439,
-                  "column": 54
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_user",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 423,
-                  "column": 58
-                },
-                {
-                  "line": 426,
-                  "column": 58
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.team_code_for_user",
-              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-              "call_sites": [
-                {
-                  "line": 101,
-                  "column": 58
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "persists challenge state and user rankings via",
-          "src_name": "PvP and Challenge Arena",
-          "dst_name": "Database Access Layer",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
-              "call_sites": [
-                {
-                  "line": 145,
-                  "column": 20
-                }
-              ],
-              "description": "challenge pool queries eligible users from the database"
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 213,
-                  "column": 15
-                }
-              ],
-              "description": "challenge overview queries match records from the database"
-            }
-          ],
-          "src_id": "1.4",
-          "dst_id": "1.10",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._bump_record",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 462,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._close",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 270,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 166,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._exportable",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 85,
-                  "column": 46
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
-              "call_sites": [
-                {
-                  "line": 502,
-                  "column": 27
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 506,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 245,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 235,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._prize_money",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
-              "call_sites": [
-                {
-                  "line": 446,
-                  "column": 26
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._save",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 278,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._session",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 324,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._session",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 327,
-                  "column": 47
-                },
-                {
-                  "line": 330,
-                  "column": 47
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 409,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.has_fresh_ongoing_session",
-              "call_sites": [
-                {
-                  "line": 373,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 415,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_battle_style",
-              "call_sites": [
-                {
-                  "line": 392,
-                  "column": 20
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 357,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 597,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 558,
-                  "column": 51
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.decode_preview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 155,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 136,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.ongoing_for_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 189,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.opponents_overview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
-              "call_sites": [
-                {
-                  "line": 608,
-                  "column": 20
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.preview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 111,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.record_of",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 452,
-                  "column": 14
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.release_stale_battles",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-              "call_sites": [
-                {
-                  "line": 202,
-                  "column": 20
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.release_stale_battles",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
-              "call_sites": [
-                {
-                  "line": 198,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.snapshot_for_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 52,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_code",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 434,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
-              "call_sites": [
-                {
-                  "line": 424,
-                  "column": 19
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 421,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.team_code_for_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
-              "call_sites": [
-                {
-                  "line": 102,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.team_code_for_user",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 98,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
-              "call_sites": [
-                {
-                  "line": 189,
-                  "column": 19
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
-              "call_sites": [
-                {
-                  "line": 145,
-                  "column": 20
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._user_team",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 133,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 213,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 208,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 173,
-                  "column": 12
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 153,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
-              "call_sites": [
-                {
-                  "line": 260,
-                  "column": 13
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
-              "call_sites": [
-                {
-                  "line": 256,
-                  "column": 8
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 237,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.start",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
-              "call_sites": [
-                {
-                  "line": 231,
-                  "column": 15
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
-              "call_sites": [
-                {
-                  "line": 140,
-                  "column": 16
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
-              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
-              "call_sites": [
-                {
-                  "line": 124,
-                  "column": 18
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "resolves opponents and rewards from",
-          "src_name": "PvP and Challenge Arena",
-          "dst_name": "Trainer Progression and Achievements",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
-              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.resolve_team",
-              "call_sites": [
-                {
-                  "line": 115,
-                  "column": 23
-                }
-              ],
-              "description": "challenge trainer team resolution fetches preconfigured trainer rosters"
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
-              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.trainer_info",
-              "call_sites": [
-                {
-                  "line": 186,
-                  "column": 35
-                }
-              ],
-              "description": "challenge opponent resolution queries NPC trainer info"
-            }
-          ],
-          "src_id": "1.4",
-          "dst_id": "1.2",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
-              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.get",
-              "call_sites": [
-                {
-                  "line": 184,
-                  "column": 28
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
-              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.all_trainers",
-              "call_sites": [
-                {
-                  "line": 144,
-                  "column": 63
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
-              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.resolve_team",
-              "call_sites": [
-                {
-                  "line": 115,
-                  "column": 23
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.reward_view",
-              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.label",
-              "call_sites": [
-                {
-                  "line": 80,
-                  "column": 30
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
-              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.get",
-              "call_sites": [
-                {
-                  "line": 166,
-                  "column": 47
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
-              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.species_index",
-              "call_sites": [
-                {
-                  "line": 158,
-                  "column": 22
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.sync_milestones",
-              "call_sites": [
-                {
-                  "line": 277,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.grant",
-              "call_sites": [
-                {
-                  "line": 270,
-                  "column": 13
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.label",
-              "call_sites": [
-                {
-                  "line": 271,
-                  "column": 21
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.check_level100",
-              "call_sites": [
-                {
-                  "line": 515,
-                  "column": 37
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.share_all_exp",
-              "call_sites": [
-                {
-                  "line": 503,
-                  "column": 30
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
-              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.apply_mon_state",
-              "call_sites": [
-                {
-                  "line": 240,
-                  "column": 24
-                },
-                {
-                  "line": 253,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.ongoing_for_user",
-              "call_sites": [
-                {
-                  "line": 370,
-                  "column": 27
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
-              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.release_stale_battles",
-              "call_sites": [
-                {
-                  "line": 360,
-                  "column": 24
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._to_state",
-              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.mon_state",
-              "call_sites": [
-                {
-                  "line": 215,
-                  "column": 60
-                },
-                {
-                  "line": 216,
-                  "column": 38
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
-              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.trainer_info",
-              "call_sites": [
-                {
-                  "line": 186,
-                  "column": 35
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "settles rewards and fees with",
-          "src_name": "PvP and Challenge Arena",
-          "dst_name": "Economy and Evolution Management",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
-              "call_sites": [
-                {
-                  "line": 269,
-                  "column": 21
-                }
-              ],
-              "description": "challenge settlement credits victory prize money to the winner"
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
-              "call_sites": [
-                {
-                  "line": 532,
-                  "column": 25
-                }
-              ],
-              "description": "PvP match finish credits winnings to the victor"
-            }
-          ],
-          "src_id": "1.4",
-          "dst_id": "1.3",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
-              "call_sites": [
-                {
-                  "line": 269,
-                  "column": 21
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.balance",
-              "call_sites": [
-                {
-                  "line": 532,
-                  "column": 72
-                }
-              ],
-              "description": ""
-            },
-            {
-              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
-              "call_sites": [
-                {
-                  "line": 532,
-                  "column": 25
-                }
-              ],
-              "description": ""
-            }
-          ]
-        },
-        {
-          "relation": "rolls abilities via",
-          "src_name": "PvP and Challenge Arena",
-          "dst_name": "Spawn and Encounter Generation",
-          "evidence": "",
-          "key_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.roll_ability",
-              "call_sites": [
-                {
-                  "line": 123,
-                  "column": 30
-                }
-              ],
-              "description": "trainer challenge team resolution rolls abilities for roster members"
-            }
-          ],
-          "src_id": "1.4",
-          "dst_id": "1.5",
-          "is_static": true,
-          "all_edges": [
-            {
-              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
-              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.roll_ability",
-              "call_sites": [
-                {
-                  "line": 123,
-                  "column": 30
                 }
               ],
               "description": ""
@@ -25067,6 +23246,2005 @@
                 {
                   "line": 77,
                   "column": 15
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "drives encounter lifecycle and gift grants in",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Spawn and Encounter Generation",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
+              "call_sites": [
+                {
+                  "line": 118,
+                  "column": 25
+                }
+              ],
+              "description": "Expires stale encounters and processes spawn events"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.5",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.expire_stale_encounters",
+              "call_sites": [
+                {
+                  "line": 75,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.process_events",
+              "call_sites": [
+                {
+                  "line": 118,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/gifts.py|pokemon_encounter.app.gifts.grant_pending",
+              "call_sites": [
+                {
+                  "line": 68,
+                  "column": 11
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "invokes seed routines in",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Data Seeding and Debugging",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
+              "call_sites": [
+                {
+                  "line": 75,
+                  "column": 50
+                }
+              ],
+              "description": "Ensures Pokédex species data is seeded and starts name backfills"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.6",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/tms.py|pokemon_encounter.app.tms.start_background_backfill",
+              "call_sites": [
+                {
+                  "line": 90,
+                  "column": 9
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.ensure_seeded",
+              "call_sites": [
+                {
+                  "line": 75,
+                  "column": 50
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/seed.py|pokemon_encounter.app.seed.start_name_en_backfill",
+              "call_sites": [
+                {
+                  "line": 86,
+                  "column": 10
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "synchronizes buddy sensors and client connections via",
+          "src_name": "Application Lifecycle and Background Poller",
+          "dst_name": "Home Assistant Integration and Buddy Tracking",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
+              "call_sites": [
+                {
+                  "line": 89,
+                  "column": 25
+                }
+              ],
+              "description": "Initializes the Home Assistant client for background polling and syncs buddy sensor states"
+            }
+          ],
+          "src_id": "1.9",
+          "dst_id": "1.8",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/buddy.py|pokemon_encounter.app.buddy.sync",
+              "call_sites": [
+                {
+                  "line": 89,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
+              "call_sites": [
+                {
+                  "line": 134,
+                  "column": 35
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller._push_rule_notifications",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.call_service",
+              "call_sites": [
+                {
+                  "line": 134,
+                  "column": 35
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
+              "call_sites": [
+                {
+                  "line": 111,
+                  "column": 40
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.fetch_state_changes",
+              "call_sites": [
+                {
+                  "line": 111,
+                  "column": 40
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantError",
+              "call_sites": [
+                {
+                  "line": 112,
+                  "column": 16
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.minutes_ago",
+              "call_sites": [
+                {
+                  "line": 105,
+                  "column": 33
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/poller.py|pokemon_encounter.app.poller.EncounterPoller.run_once",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.utcnow",
+              "call_sites": [
+                {
+                  "line": 72,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient",
+              "call_sites": [
+                {
+                  "line": 101,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/main.py|pokemon_encounter.app.main.lifespan",
+              "target": "pokemon_encounter/app/ha_client.py|pokemon_encounter.app.ha_client.HomeAssistantClient.close",
+              "call_sites": [
+                {
+                  "line": 101,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "resolves combatants, movesets, and localized text from",
+          "src_name": "PvP and Challenge Arena",
+          "dst_name": "Core Battle and Gameplay Mechanics",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._fill_moves",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.moveset_for",
+              "call_sites": [
+                {
+                  "line": 103,
+                  "column": 26
+                }
+              ],
+              "description": "Populates movesets for challenge combatants based on level and species data."
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._challenge_member",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
+              "call_sites": [
+                {
+                  "line": 181,
+                  "column": 21
+                }
+              ],
+              "description": "Builds team combatants and resolves moves for competitive and challenge rosters."
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+              "call_sites": [
+                {
+                  "line": 169,
+                  "column": 19
+                }
+              ],
+              "description": "Instantiates combatants for PvP rosters."
+            }
+          ],
+          "src_id": "1.4",
+          "dst_id": "1.1",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._fill_moves",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.moveset_for",
+              "call_sites": [
+                {
+                  "line": 103,
+                  "column": 26
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 272,
+                  "column": 23
+                },
+                {
+                  "line": 273,
+                  "column": 23
+                },
+                {
+                  "line": 279,
+                  "column": 27
+                },
+                {
+                  "line": 281,
+                  "column": 31
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.start",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 233,
+                  "column": 58
+                },
+                {
+                  "line": 241,
+                  "column": 62
+                },
+                {
+                  "line": 243,
+                  "column": 62
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._challenge_member",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
+              "call_sites": [
+                {
+                  "line": 181,
+                  "column": 21
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+              "call_sites": [
+                {
+                  "line": 169,
+                  "column": 19
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+              "call_sites": [
+                {
+                  "line": 507,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.exp_shares",
+              "call_sites": [
+                {
+                  "line": 509,
+                  "column": 35
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.grant_exp",
+              "call_sites": [
+                {
+                  "line": 513,
+                  "column": 27
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.save_team",
+              "call_sites": [
+                {
+                  "line": 524,
+                  "column": 12
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/battle_history.py|pokemon_encounter.app.battle_history.record",
+              "call_sites": [
+                {
+                  "line": 494,
+                  "column": 24
+                },
+                {
+                  "line": 541,
+                  "column": 20
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.any_holds",
+              "call_sites": [
+                {
+                  "line": 530,
+                  "column": 34
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 486,
+                  "column": 23
+                },
+                {
+                  "line": 517,
+                  "column": 27
+                },
+                {
+                  "line": 519,
+                  "column": 31
+                },
+                {
+                  "line": 525,
+                  "column": 23
+                },
+                {
+                  "line": 534,
+                  "column": 31
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
+              "call_sites": [
+                {
+                  "line": 257,
+                  "column": 16
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
+              "call_sites": [
+                {
+                  "line": 252,
+                  "column": 79
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 251,
+                  "column": 62
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._session",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 327,
+                  "column": 42
+                },
+                {
+                  "line": 330,
+                  "column": 42
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
+              "call_sites": [
+                {
+                  "line": 393,
+                  "column": 20
+                },
+                {
+                  "line": 402,
+                  "column": 65
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle.active_mon",
+              "call_sites": [
+                {
+                  "line": 402,
+                  "column": 65
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+              "call_sites": [
+                {
+                  "line": 401,
+                  "column": 42
+                },
+                {
+                  "line": 402,
+                  "column": 76
+                },
+                {
+                  "line": 387,
+                  "column": 71
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.fainted",
+              "call_sites": [
+                {
+                  "line": 387,
+                  "column": 71
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.name_in",
+              "call_sites": [
+                {
+                  "line": 401,
+                  "column": 42
+                },
+                {
+                  "line": 402,
+                  "column": 76
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.battle_start_effects",
+              "call_sites": [
+                {
+                  "line": 403,
+                  "column": 16
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
+              "call_sites": [
+                {
+                  "line": 386,
+                  "column": 28
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.owned_selection",
+              "call_sites": [
+                {
+                  "line": 379,
+                  "column": 23
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.party",
+              "call_sites": [
+                {
+                  "line": 379,
+                  "column": 82
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 368,
+                  "column": 62
+                },
+                {
+                  "line": 372,
+                  "column": 46
+                },
+                {
+                  "line": 374,
+                  "column": 62
+                },
+                {
+                  "line": 376,
+                  "column": 62
+                },
+                {
+                  "line": 381,
+                  "column": 62
+                },
+                {
+                  "line": 389,
+                  "column": 62
+                },
+                {
+                  "line": 396,
+                  "column": 31
+                },
+                {
+                  "line": 399,
+                  "column": 31
+                },
+                {
+                  "line": 400,
+                  "column": 27
+                },
+                {
+                  "line": 402,
+                  "column": 27
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
+              "call_sites": [
+                {
+                  "line": 309,
+                  "column": 21
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle.active_mon",
+              "call_sites": [
+                {
+                  "line": 309,
+                  "column": 21
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+              "call_sites": [
+                {
+                  "line": 308,
+                  "column": 37
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.fainted",
+              "call_sites": [
+                {
+                  "line": 308,
+                  "column": 37
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.available_moves",
+              "call_sites": [
+                {
+                  "line": 311,
+                  "column": 49
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.describe",
+              "call_sites": [
+                {
+                  "line": 289,
+                  "column": 18
+                },
+                {
+                  "line": 311,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.mega_view",
+              "call_sites": [
+                {
+                  "line": 314,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._view",
+              "target": "pokemon_encounter/app/medicine.py|pokemon_encounter.app.medicine.battle_inventory",
+              "call_sites": [
+                {
+                  "line": 316,
+                  "column": 30
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle",
+              "call_sites": [
+                {
+                  "line": 580,
+                  "column": 41
+                },
+                {
+                  "line": 566,
+                  "column": 38
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Battle.active_mon",
+              "call_sites": [
+                {
+                  "line": 580,
+                  "column": 41
+                },
+                {
+                  "line": 566,
+                  "column": 38
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.mega_evolve",
+              "call_sites": [
+                {
+                  "line": 580,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.run_turn",
+              "call_sites": [
+                {
+                  "line": 568,
+                  "column": 24
+                },
+                {
+                  "line": 577,
+                  "column": 28
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.switch_is_free",
+              "call_sites": [
+                {
+                  "line": 574,
+                  "column": 31
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.switch_to",
+              "call_sites": [
+                {
+                  "line": 575,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 558,
+                  "column": 46
+                },
+                {
+                  "line": 567,
+                  "column": 43
+                },
+                {
+                  "line": 582,
+                  "column": 35
+                },
+                {
+                  "line": 585,
+                  "column": 39
+                },
+                {
+                  "line": 590,
+                  "column": 50
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/medicine.py|pokemon_encounter.app.medicine.use_in_battle",
+              "call_sites": [
+                {
+                  "line": 587,
+                  "column": 26
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+              "call_sites": [
+                {
+                  "line": 148,
+                  "column": 59
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant.stat",
+              "call_sites": [
+                {
+                  "line": 148,
+                  "column": 59
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.describe",
+              "call_sites": [
+                {
+                  "line": 149,
+                  "column": 33
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.snapshot_for_user",
+              "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.combatant_from_owned",
+              "call_sites": [
+                {
+                  "line": 59,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_code",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 439,
+                  "column": 54
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_user",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 423,
+                  "column": 58
+                },
+                {
+                  "line": 426,
+                  "column": 58
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.team_code_for_user",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 101,
+                  "column": 58
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._ability_label",
+              "target": "pokemon_encounter/app/abilities.py|pokemon_encounter.app.abilities.label",
+              "call_sites": [
+                {
+                  "line": 123,
+                  "column": 23
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._fail",
+              "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+              "call_sites": [
+                {
+                  "line": 46,
+                  "column": 27
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._item_label",
+              "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.label",
+              "call_sites": [
+                {
+                  "line": 127,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
+              "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.get",
+              "call_sites": [
+                {
+                  "line": 177,
+                  "column": 80
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.all_moves",
+              "call_sites": [
+                {
+                  "line": 188,
+                  "column": 23
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_allowed",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.learn_level",
+              "call_sites": [
+                {
+                  "line": 133,
+                  "column": 28
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_allowed",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.learnset",
+              "call_sites": [
+                {
+                  "line": 136,
+                  "column": 23
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_label",
+              "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.all_moves",
+              "call_sites": [
+                {
+                  "line": 114,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_label",
+              "target": "pokemon_encounter/app/name_tables.py|pokemon_encounter.app.name_tables.lookup",
+              "call_sites": [
+                {
+                  "line": 117,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "queries user teams, eligible opponents, and match records via",
+          "src_name": "PvP and Challenge Arena",
+          "dst_name": "Database Access Layer",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 189,
+                  "column": 19
+                }
+              ],
+              "description": "Fetches opponent usernames and profiles for challenge overview and matches."
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
+              "call_sites": [
+                {
+                  "line": 145,
+                  "column": 20
+                }
+              ],
+              "description": "Queries eligible registered user IDs for the challenge pool."
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 213,
+                  "column": 15
+                }
+              ],
+              "description": "Queries user challenge history and stats for overview display."
+            }
+          ],
+          "src_id": "1.4",
+          "dst_id": "1.10",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._bump_record",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 462,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._close",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 270,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 166,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._exportable",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 85,
+                  "column": 46
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
+              "call_sites": [
+                {
+                  "line": 502,
+                  "column": 27
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 506,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 245,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 235,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._prize_money",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
+              "call_sites": [
+                {
+                  "line": 446,
+                  "column": 26
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._save",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 278,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._session",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 324,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._session",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 327,
+                  "column": 47
+                },
+                {
+                  "line": 330,
+                  "column": 47
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 409,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.has_fresh_ongoing_session",
+              "call_sites": [
+                {
+                  "line": 373,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 415,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_battle_style",
+              "call_sites": [
+                {
+                  "line": 392,
+                  "column": 20
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 357,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 597,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.act",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 558,
+                  "column": 51
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.decode_preview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 155,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.full_preview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 136,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.ongoing_for_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 189,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.opponents_overview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
+              "call_sites": [
+                {
+                  "line": 608,
+                  "column": 20
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.preview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 111,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.record_of",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 452,
+                  "column": 14
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.release_stale_battles",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+              "call_sites": [
+                {
+                  "line": 202,
+                  "column": 20
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.release_stale_battles",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_setting",
+              "call_sites": [
+                {
+                  "line": 198,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.snapshot_for_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 52,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_code",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 434,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 424,
+                  "column": 19
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.start_vs_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 421,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.team_code_for_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 102,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.team_code_for_user",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 98,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+              "call_sites": [
+                {
+                  "line": 189,
+                  "column": 19
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
+              "call_sites": [
+                {
+                  "line": 145,
+                  "column": 20
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._user_team",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 133,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 213,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 208,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 173,
+                  "column": 12
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 153,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.cursor",
+              "call_sites": [
+                {
+                  "line": 260,
+                  "column": 13
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.execute",
+              "call_sites": [
+                {
+                  "line": 256,
+                  "column": 8
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 237,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.start",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.user_language",
+              "call_sites": [
+                {
+                  "line": 231,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
+              "call_sites": [
+                {
+                  "line": 171,
+                  "column": 16
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
+              "call_sites": [
+                {
+                  "line": 155,
+                  "column": 18
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._species_name",
+              "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.species_display_name",
+              "call_sites": [
+                {
+                  "line": 108,
+                  "column": 15
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "resolves opponent trainers and victory rewards from",
+          "src_name": "PvP and Challenge Arena",
+          "dst_name": "Trainer Progression and Achievements",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.all_trainers",
+              "call_sites": [
+                {
+                  "line": 144,
+                  "column": 63
+                }
+              ],
+              "description": "Retrieves trainer specifications and roster definitions for AI challenges."
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.resolve_team",
+              "call_sites": [
+                {
+                  "line": 115,
+                  "column": 23
+                }
+              ],
+              "description": "Instantiates combatant teams for NPC trainers in challenges."
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.reward_view",
+              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.label",
+              "call_sites": [
+                {
+                  "line": 80,
+                  "column": 30
+                }
+              ],
+              "description": "Formats reward labels for challenge victory summaries."
+            }
+          ],
+          "src_id": "1.4",
+          "dst_id": "1.2",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.get",
+              "call_sites": [
+                {
+                  "line": 184,
+                  "column": 28
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.all_trainers",
+              "call_sites": [
+                {
+                  "line": 144,
+                  "column": 63
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.resolve_team",
+              "call_sites": [
+                {
+                  "line": 115,
+                  "column": 23
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.reward_view",
+              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.label",
+              "call_sites": [
+                {
+                  "line": 80,
+                  "column": 30
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.get",
+              "call_sites": [
+                {
+                  "line": 166,
+                  "column": 47
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.roll",
+              "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.species_index",
+              "call_sites": [
+                {
+                  "line": 158,
+                  "column": 22
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.sync_milestones",
+              "call_sites": [
+                {
+                  "line": 277,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.grant",
+              "call_sites": [
+                {
+                  "line": 270,
+                  "column": 13
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.label",
+              "call_sites": [
+                {
+                  "line": 271,
+                  "column": 21
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.check_level100",
+              "call_sites": [
+                {
+                  "line": 515,
+                  "column": 37
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/achievements.py|pokemon_encounter.app.achievements.share_all_exp",
+              "call_sites": [
+                {
+                  "line": 503,
+                  "column": 30
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._load",
+              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.apply_mon_state",
+              "call_sites": [
+                {
+                  "line": 240,
+                  "column": 24
+                },
+                {
+                  "line": 253,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.ongoing_for_user",
+              "call_sites": [
+                {
+                  "line": 370,
+                  "column": 27
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._start",
+              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.release_stale_battles",
+              "call_sites": [
+                {
+                  "line": 360,
+                  "column": 24
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._to_state",
+              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.mon_state",
+              "call_sites": [
+                {
+                  "line": 215,
+                  "column": 60
+                },
+                {
+                  "line": 216,
+                  "column": 38
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
+              "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.trainer_info",
+              "call_sites": [
+                {
+                  "line": 186,
+                  "column": 35
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "settles rewards and fees with",
+          "src_name": "PvP and Challenge Arena",
+          "dst_name": "Economy and Evolution Management",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
+              "call_sites": [
+                {
+                  "line": 269,
+                  "column": 21
+                }
+              ],
+              "description": "Credits currency rewards to players upon winning challenge matches."
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.balance",
+              "call_sites": [
+                {
+                  "line": 532,
+                  "column": 72
+                }
+              ],
+              "description": "Verifies and updates player account balances when completing PvP matches."
+            }
+          ],
+          "src_id": "1.4",
+          "dst_id": "1.3",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.settle",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
+              "call_sites": [
+                {
+                  "line": 269,
+                  "column": 21
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.balance",
+              "call_sites": [
+                {
+                  "line": 532,
+                  "column": 72
+                }
+              ],
+              "description": ""
+            },
+            {
+              "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+              "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
+              "call_sites": [
+                {
+                  "line": 532,
+                  "column": 25
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "rolls abilities for generated challenge teams via",
+          "src_name": "PvP and Challenge Arena",
+          "dst_name": "Spawn and Encounter Generation",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.roll_ability",
+              "call_sites": [
+                {
+                  "line": 123,
+                  "column": 30
+                }
+              ],
+              "description": "Rolls abilities when constructing generated trainer challenge teams."
+            }
+          ],
+          "src_id": "1.4",
+          "dst_id": "1.5",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
+              "target": "pokemon_encounter/app/spawn.py|pokemon_encounter.app.spawn.roll_ability",
+              "call_sites": [
+                {
+                  "line": 123,
+                  "column": 30
+                }
+              ],
+              "description": ""
+            }
+          ]
+        },
+        {
+          "relation": "inspects competitive records from",
+          "src_name": "Trainer Progression and Achievements",
+          "dst_name": "PvP and Challenge Arena",
+          "evidence": "",
+          "key_edges": [
+            {
+              "source": "pokemon_encounter/app/profiles.py|pokemon_encounter.app.profiles.build",
+              "target": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.record_of",
+              "call_sites": [
+                {
+                  "line": 149,
+                  "column": 27
+                }
+              ],
+              "description": "Retrieves win-loss PvP records for player profile summaries."
+            }
+          ],
+          "src_id": "1.2",
+          "dst_id": "1.4",
+          "is_static": true,
+          "all_edges": [
+            {
+              "source": "pokemon_encounter/app/profiles.py|pokemon_encounter.app.profiles.build",
+              "target": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp.record_of",
+              "call_sites": [
+                {
+                  "line": 149,
+                  "column": 27
                 }
               ],
               "description": ""
@@ -28429,14 +28607,14 @@
       "key_edges": [
         {
           "source": "pokemon_encounter/app/battle_session.py|pokemon_encounter.app.battle_session._throw",
-          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.finalize_catch",
+          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
           "call_sites": [
             {
-              "line": 431,
-              "column": 32
+              "line": 408,
+              "column": 27
             }
           ],
-          "description": "Battle session throws balls and finalizes catches using encounter API logic."
+          "description": "Throws Pokéball during battle sessions"
         },
         {
           "source": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules._finish_catch",
@@ -28450,6 +28628,17 @@
           "description": "Encounter catch and ball consumption actions triggered during automation and battle sessions"
         },
         {
+          "source": "pokemon_encounter/app/battle_session.py|pokemon_encounter.app.battle_session._throw",
+          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.finalize_catch",
+          "call_sites": [
+            {
+              "line": 431,
+              "column": 32
+            }
+          ],
+          "description": "Battle session throws balls and finalizes catches using encounter API logic."
+        },
+        {
           "source": "pokemon_encounter/app/auto_rules.py|pokemon_encounter.app.auto_rules._throw",
           "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
           "call_sites": [
@@ -28459,17 +28648,6 @@
             }
           ],
           "description": "Throws Pokéball during auto rules processing"
-        },
-        {
-          "source": "pokemon_encounter/app/battle_session.py|pokemon_encounter.app.battle_session._throw",
-          "target": "pokemon_encounter/app/api/encounters.py|pokemon_encounter.app.api.encounters.consume_ball",
-          "call_sites": [
-            {
-              "line": 408,
-              "column": 27
-            }
-          ],
-          "description": "Throws Pokéball during battle sessions"
         }
       ],
       "src_id": "1.1",
@@ -31642,7 +31820,7 @@
       ]
     },
     {
-      "relation": "builds combatants and validates moves using",
+      "relation": "resolves combatants, movesets, and localized text from",
       "src_name": "PvP and Challenge Arena",
       "dst_name": "Core Battle and Gameplay Mechanics",
       "evidence": "",
@@ -31656,18 +31834,7 @@
               "column": 26
             }
           ],
-          "description": "Populates valid movesets for challenge team members"
-        },
-        {
-          "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
-          "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
-          "call_sites": [
-            {
-              "line": 169,
-              "column": 19
-            }
-          ],
-          "description": "PvP challenge participant builds Combatant instance from owned Pokémon"
+          "description": "Populates movesets for challenge combatants based on level and species data."
         },
         {
           "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._challenge_member",
@@ -31678,7 +31845,18 @@
               "column": 21
             }
           ],
-          "description": "Builds combatant entities from player party for PvP matches"
+          "description": "Builds team combatants and resolves moves for competitive and challenge rosters."
+        },
+        {
+          "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._combatant",
+          "target": "pokemon_encounter/app/battle.py|pokemon_encounter.app.battle.Combatant",
+          "call_sites": [
+            {
+              "line": 169,
+              "column": 19
+            }
+          ],
+          "description": "Instantiates combatants for PvP rosters."
         }
       ],
       "src_id": "1.4",
@@ -31734,39 +31912,6 @@
             {
               "line": 243,
               "column": 62
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._fail",
-          "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
-          "call_sites": [
-            {
-              "line": 46,
-              "column": 27
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
-          "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.get",
-          "call_sites": [
-            {
-              "line": 146,
-              "column": 80
-            }
-          ],
-          "description": ""
-        },
-        {
-          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
-          "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.all_moves",
-          "call_sites": [
-            {
-              "line": 157,
-              "column": 23
             }
           ],
           "description": ""
@@ -32388,15 +32533,125 @@
             }
           ],
           "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._ability_label",
+          "target": "pokemon_encounter/app/abilities.py|pokemon_encounter.app.abilities.label",
+          "call_sites": [
+            {
+              "line": 123,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._fail",
+          "target": "pokemon_encounter/app/i18n.py|pokemon_encounter.app.i18n.t",
+          "call_sites": [
+            {
+              "line": 46,
+              "column": 27
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._item_label",
+          "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.label",
+          "call_sites": [
+            {
+              "line": 127,
+              "column": 24
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
+          "target": "pokemon_encounter/app/held_items.py|pokemon_encounter.app.held_items.get",
+          "call_sites": [
+            {
+              "line": 177,
+              "column": 80
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._mon_from_entry",
+          "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.all_moves",
+          "call_sites": [
+            {
+              "line": 188,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_allowed",
+          "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.learn_level",
+          "call_sites": [
+            {
+              "line": 133,
+              "column": 28
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_allowed",
+          "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.learnset",
+          "call_sites": [
+            {
+              "line": 136,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_label",
+          "target": "pokemon_encounter/app/moves.py|pokemon_encounter.app.moves.all_moves",
+          "call_sites": [
+            {
+              "line": 114,
+              "column": 22
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._move_label",
+          "target": "pokemon_encounter/app/name_tables.py|pokemon_encounter.app.name_tables.lookup",
+          "call_sites": [
+            {
+              "line": 117,
+              "column": 25
+            }
+          ],
+          "description": ""
         }
       ]
     },
     {
-      "relation": "persists challenge state and user rankings via",
+      "relation": "queries user teams, eligible opponents, and match records via",
       "src_name": "PvP and Challenge Arena",
       "dst_name": "Database Access Layer",
       "evidence": "",
       "key_edges": [
+        {
+          "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.get_user",
+          "call_sites": [
+            {
+              "line": 189,
+              "column": 19
+            }
+          ],
+          "description": "Fetches opponent usernames and profiles for challenge overview and matches."
+        },
         {
           "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
           "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.eligible_users",
@@ -32406,7 +32661,7 @@
               "column": 20
             }
           ],
-          "description": "challenge pool queries eligible users from the database"
+          "description": "Queries eligible registered user IDs for the challenge pool."
         },
         {
           "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.overview",
@@ -32417,7 +32672,7 @@
               "column": 15
             }
           ],
-          "description": "challenge overview queries match records from the database"
+          "description": "Queries user challenge history and stats for overview display."
         }
       ],
       "src_id": "1.4",
@@ -32917,7 +33172,7 @@
           "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query",
           "call_sites": [
             {
-              "line": 140,
+              "line": 171,
               "column": 16
             }
           ],
@@ -32928,8 +33183,19 @@
           "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.query_one",
           "call_sites": [
             {
-              "line": 124,
+              "line": 155,
               "column": 18
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "pokemon_encounter/app/team_code.py|pokemon_encounter.app.team_code._species_name",
+          "target": "pokemon_encounter/app/db.py|pokemon_encounter.app.db.species_display_name",
+          "call_sites": [
+            {
+              "line": 108,
+              "column": 15
             }
           ],
           "description": ""
@@ -32943,6 +33209,17 @@
       "evidence": "",
       "key_edges": [
         {
+          "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._pool",
+          "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.all_trainers",
+          "call_sites": [
+            {
+              "line": 144,
+              "column": 63
+            }
+          ],
+          "description": "Retrieves trainer specifications and roster definitions for AI challenges."
+        },
+        {
           "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._trainer_team",
           "target": "pokemon_encounter/app/trainers.py|pokemon_encounter.app.trainers.resolve_team",
           "call_sites": [
@@ -32954,15 +33231,15 @@
           "description": "resolves gym and challenge trainer teams"
         },
         {
-          "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
-          "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.trainer_info",
+          "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge.reward_view",
+          "target": "pokemon_encounter/app/rewards.py|pokemon_encounter.app.rewards.label",
           "call_sites": [
             {
-              "line": 186,
-              "column": 35
+              "line": 80,
+              "column": 30
             }
           ],
-          "description": "Fetches trainer display labels and descriptions for challenges"
+          "description": "Formats reward labels for challenge victory summaries."
         },
         {
           "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
@@ -32974,6 +33251,17 @@
             }
           ],
           "description": "Challenge matchmaking loads opponent trainer profiles and reward descriptions."
+        },
+        {
+          "source": "pokemon_encounter/app/challenge.py|pokemon_encounter.app.challenge._opponent_name",
+          "target": "pokemon_encounter/app/trainer_battle.py|pokemon_encounter.app.trainer_battle.trainer_info",
+          "call_sites": [
+            {
+              "line": 186,
+              "column": 35
+            }
+          ],
+          "description": "Fetches trainer display labels and descriptions for challenges"
         }
       ],
       "src_id": "1.4",
@@ -33185,17 +33473,6 @@
         },
         {
           "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
-          "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
-          "call_sites": [
-            {
-              "line": 532,
-              "column": 25
-            }
-          ],
-          "description": "PvP match finish credits winnings to the victor"
-        },
-        {
-          "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
           "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.balance",
           "call_sites": [
             {
@@ -33204,6 +33481,17 @@
             }
           ],
           "description": "Queries and updates player currency balance upon match completion"
+        },
+        {
+          "source": "pokemon_encounter/app/pvp.py|pokemon_encounter.app.pvp._finish",
+          "target": "pokemon_encounter/app/economy.py|pokemon_encounter.app.economy.credit",
+          "call_sites": [
+            {
+              "line": 532,
+              "column": 25
+            }
+          ],
+          "description": "PvP match finish credits winnings to the victor"
         }
       ],
       "src_id": "1.4",

@@ -152,7 +152,7 @@
     "pokemon_encounter/app/trainer_battle.py": "85b3a06d928da41b",
     "pokemon_encounter/app/evs.py": "308e42bccb739035",
     "pokemon_encounter/app/trigger_sync.py": "3fdedc0e47094a11",
-    "pokemon_encounter/app/team_code.py": "9b6a3be07ec30e48",
+    "pokemon_encounter/app/team_code.py": "25b4d3843c9e5ee7",
     "pokemon_encounter/app/roaming.py": "9eb5ef8869a4cbd5",
     "pokemon_encounter/app/auto_rules.py": "55d4650a275062b0",
     "pokemon_encounter/app/seed.py": "5a32c93acb8201fb",
