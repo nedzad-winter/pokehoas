@@ -4192,7 +4192,7 @@ function renderBattle() {
   on('.bBall', async btn => {
     const ball = btn.dataset.ball;
     const held = ((v.balls || []).find(b => b.key === ball) || {}).count || 0;
-    if (!await confirmMasterBall(ball, battleName(w), held)) return;
+    if (!await confirmMasterBall(ball, w.name, held)) return;
     battleAct({ action: 'ball', ball });
   });
   const medTarget = el.querySelector('#bMedTarget');
