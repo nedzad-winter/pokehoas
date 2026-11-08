@@ -213,21 +213,21 @@ def _now() -> str:
 def _species_or_404(species_id: int) -> dict[str, Any]:
     species = db.query_one("SELECT * FROM species WHERE id = ?", (species_id,))
     if species is None:
-        raise HTTPException(status_code=404, detail=f"Species #{species_id} not in the Pokédex")
+        raise HTTPException(status_code=404, detail=i18n.t_request("admin.error.species_not_found", id=species_id))
     return species
 
 
 def _user_or_404(user_id: str) -> dict[str, Any]:
     user = db.get_user(user_id)
     if user is None:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=404, detail=i18n.t_request("error.user_not_found"))
     return user
 
 
 def _pokemon_or_404(pokemon_id: int) -> dict[str, Any]:
     row = db.query_one("SELECT * FROM owned_pokemon WHERE id = ?", (pokemon_id,))
     if row is None:
-        raise HTTPException(status_code=404, detail="Pokémon not found")
+        raise HTTPException(status_code=404, detail=i18n.t_request("error.pokemon_not_found"))
     return row
 
 
@@ -244,7 +244,7 @@ def _wild_spawnable_ids() -> set[int]:
 
 def _check_nature(nature: str | None) -> None:
     if nature is not None and nature not in spawn.NATURES:
-        raise HTTPException(status_code=400, detail=f"Unknown nature: {nature}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_nature", value=nature))
 
 
 def _gender_for(species_id: int, requested: str | None, fallback: str | None) -> str | None:
@@ -256,16 +256,16 @@ def _gender_for(species_id: int, requested: str | None, fallback: str | None) ->
 
 def _check_gender(gender: str | None) -> None:
     if gender is not None and gender not in GENDERS:
-        raise HTTPException(status_code=400, detail=f"Unknown gender: {gender}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_gender", value=gender))
 
 
 def _merge_ivs(base: dict[str, int], patch: dict[str, int] | None) -> dict[str, int]:
     merged = {key: int(base.get(key, 0)) for key in spawn.STAT_KEYS}
     for key, value in (patch or {}).items():
         if key not in spawn.STAT_KEYS:
-            raise HTTPException(status_code=400, detail=f"Unknown IV stat: {key}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_iv", stat=key))
         if not isinstance(value, int) or not 0 <= value <= 31:
-            raise HTTPException(status_code=400, detail=f"IV {key} must be between 0 and 31")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.iv_range", stat=key))
         merged[key] = value
     return merged
 
@@ -299,9 +299,9 @@ def _check_evs(base: dict[str, int], patch: dict[str, int]) -> dict[str, int]:
     merged = dict(base)
     for key, value in patch.items():
         if key not in evs_mod.STAT_KEYS:
-            raise HTTPException(status_code=400, detail=f"Unknown EV stat: {key}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_ev", stat=key))
         if not isinstance(value, int) or not 0 <= value <= per_stat:
-            raise HTTPException(status_code=400, detail=f"EV {key} must be between 0 and {per_stat}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.ev_range", stat=key, max=per_stat))
         merged[key] = value
     return merged
 
@@ -364,7 +364,7 @@ def _coerce_field(key: str, spec: dict[str, Any], value: Any) -> Any:
     if value is None:
         if spec.get("nullable"):
             return None
-        raise HTTPException(status_code=400, detail=f"{key} must not be empty")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.not_empty", field=key))
     kind = spec.get("type", "str")
     try:
         if kind == "int":
@@ -374,7 +374,7 @@ def _coerce_field(key: str, spec: dict[str, Any], value: Any) -> Any:
             if "min" in spec and value < spec["min"] or "max" in spec and value > spec["max"]:
                 raise HTTPException(
                     status_code=400,
-                    detail=f"{key} must be between {spec.get('min')} and {spec.get('max')}",
+                    detail=i18n.t_request("admin.error.field_range", field=key, min=spec.get("min"), max=spec.get("max")),
                 )
         elif kind == "bool":
             if not isinstance(value, bool):
@@ -382,11 +382,11 @@ def _coerce_field(key: str, spec: dict[str, Any], value: Any) -> Any:
             value = int(value)
         elif kind == "choice":
             if value not in spec.get("options", ()):
-                raise HTTPException(status_code=400, detail=f"Invalid value for {key}: {value}")
+                raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.invalid_value_detail", field=key, value=value))
         else:
             value = str(value)
     except (TypeError, ValueError) as exc:
-        raise HTTPException(status_code=400, detail=f"Invalid value for {key}") from exc
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.invalid_value", field=key)) from exc
     return value
 
 
@@ -546,7 +546,7 @@ def random_species() -> dict[str, Any]:
     /species/{species_id} so "random" isn't swallowed as a bad id."""
     species = spawn.pick_species(user_id=None)
     if species is None:
-        raise HTTPException(status_code=404, detail="No wild-spawnable species available yet")
+        raise HTTPException(status_code=404, detail=i18n.t_request("admin.error.no_wild_species"))
     columns = ("id", "name", "name_de", "name_en", "type1", "type2",
                "generation", "growth_rate", "sprite_url")
     return {key: species[key] for key in columns}
@@ -696,7 +696,7 @@ def reset_settings(payload: SettingsResetIn) -> dict[str, Any]:
     else:
         selected = [group for group in groups if group["key"] == payload.group]
         if not selected:
-            raise HTTPException(status_code=400, detail=f"Unknown settings group: {payload.group}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_settings_group", group=payload.group))
     reset = []
     for group in selected:
         for entry in group["settings"]:
@@ -728,11 +728,7 @@ def spawn_encounter(
     if species["id"] not in _wild_spawnable_ids():
         raise HTTPException(
             status_code=422,
-            detail=(
-                "This species can't appear in the wild (it's an evolution, or its "
-                "generation isn't unlocked for any player yet) - use the direct "
-                "give instead."
-            ),
+            detail=i18n.t_request("admin.error.species_not_wild"),
         )
     _check_nature(payload.nature)
     _check_gender(payload.gender)
@@ -848,12 +844,12 @@ async def patch_user(user_id: str, payload: dict[str, Any]) -> dict[str, Any]:
     can only be switched on for an admin account."""
     user = _user_or_404(user_id)
     if payload.get("god_mode") is True and not await admin_auth.is_admin(user):
-        raise HTTPException(status_code=400, detail="God mode is only available to admins")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.god_mode_admin"))
     editable = _editable_fields()
     unknown = set(payload) - set(editable)
     if unknown:
         raise HTTPException(
-            status_code=400, detail=f"Non-editable fields: {sorted(unknown)}"
+            status_code=400, detail=i18n.t_request("admin.error.non_editable", fields=", ".join(sorted(unknown)))
         )
     if not payload:
         return {"ok": True, "user": db.get_user(user_id)}
@@ -894,7 +890,7 @@ def set_inventory(user_id: str, item_key: str, payload: InventoryIn) -> dict[str
     _user_or_404(user_id)
     if not ITEM_KEY_RE.match(item_key):
         raise HTTPException(
-            status_code=400, detail="item_key: only a-z, 0-9, _ and - (max. 64 characters)"
+            status_code=400, detail=i18n.t_request("admin.error.item_key_format")
         )
     if payload.quantity == 0:
         db.execute(
@@ -1020,7 +1016,7 @@ def _set_achievements(user_id: str, keys: list[str], unlocked: bool, reward: boo
     by_key = {d["key"]: d for d in achievements.definitions(db.user_language(user_id))}
     unknown = [key for key in keys if key not in by_key]
     if unknown:
-        raise HTTPException(status_code=400, detail=f"Unknown achievements: {unknown[:5]}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_achievements", keys=", ".join(unknown[:5])))
     changed = 0
     for key in keys:
         if unlocked:
@@ -1086,7 +1082,7 @@ def _raw_tables() -> dict[str, tuple[str, ...]]:
 def _raw_table_or_404(table: str) -> tuple[str, ...]:
     owners = _raw_tables().get(table)
     if owners is None:
-        raise HTTPException(status_code=404, detail=f"No per-player table {table!r}")
+        raise HTTPException(status_code=404, detail=i18n.t_request("admin.error.no_player_table", table=table))
     return owners
 
 
@@ -1106,7 +1102,7 @@ def _coerce_raw(column: dict[str, Any], value: Any) -> Any:
     """Convert an editor value to the column's type affinity."""
     if value is None or (value == "" and not column["type"].startswith("TEXT")):
         if column["notnull"]:
-            raise HTTPException(status_code=400, detail=f"{column['name']} must not be empty")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.not_empty", field=column["name"]))
         return None
     if value == "" and not column["notnull"]:
         return None
@@ -1122,7 +1118,7 @@ def _coerce_raw(column: dict[str, Any], value: Any) -> Any:
             return float(str(value).strip())
     except (TypeError, ValueError) as exc:
         raise HTTPException(
-            status_code=400, detail=f"{column['name']}: {value!r} is not a valid {kind or 'value'}"
+            status_code=400, detail=i18n.t_request("admin.error.invalid_cell", field=column["name"], value=repr(value), kind=kind or "TEXT")
         ) from exc
     return value if isinstance(value, str) else json.dumps(value)
 
@@ -1131,10 +1127,10 @@ def _raw_values(table: str, owners: tuple[str, ...], values: dict[str, Any]) -> 
     columns = {c["name"]: c for c in _raw_columns(table)}
     unknown = [key for key in values if key not in columns]
     if unknown:
-        raise HTTPException(status_code=400, detail=f"Unknown columns: {unknown}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_columns", fields=", ".join(map(str, unknown))))
     fixed = [key for key in values if key in owners]
     if fixed:
-        raise HTTPException(status_code=400, detail=f"Owner columns can't be changed: {fixed}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.owner_columns", fields=", ".join(map(str, fixed))))
     return {key: _coerce_raw(columns[key], value) for key, value in values.items()}
 
 
@@ -1144,7 +1140,7 @@ def _raw_write(sql: str, params: tuple) -> int:
             cur.execute(sql, params)
             return cur.lastrowid if sql.startswith("INSERT") else cur.rowcount
     except sqlite3.IntegrityError as exc:
-        raise HTTPException(status_code=400, detail=f"Rejected by the database: {exc}") from exc
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.db_rejected", error=str(exc))) from exc
 
 
 @router.get("/users/{user_id}/tables")
@@ -1194,7 +1190,7 @@ def raw_update(user_id: str, table: str, rowid: int, payload: RawRowIn) -> dict[
         (*values.values(), rowid, *(user_id,) * len(owners)),
     )
     if not changed:
-        raise HTTPException(status_code=404, detail="Row not found")
+        raise HTTPException(status_code=404, detail=i18n.t_request("admin.error.row_not_found"))
     return {"ok": True, "changed": changed}
 
 
@@ -1204,7 +1200,7 @@ def raw_insert(user_id: str, table: str, payload: RawRowIn) -> dict[str, Any]:
     _user_or_404(user_id)
     owners = _raw_table_or_404(table)
     if table in RAW_FIXED_TABLES:
-        raise HTTPException(status_code=400, detail=f"Rows of {table} can't be added here")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.rows_no_add", table=table))
     values = {owners[0]: user_id, **_raw_values(table, owners, payload.values)}
     columns = ", ".join(f'"{key}"' for key in values)
     marks = ", ".join("?" for _ in values)
@@ -1219,12 +1215,12 @@ def raw_delete(user_id: str, table: str, rowid: int) -> dict[str, Any]:
     _user_or_404(user_id)
     owners = _raw_table_or_404(table)
     if table in RAW_FIXED_TABLES:
-        raise HTTPException(status_code=400, detail=f"Rows of {table} can't be deleted here")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.rows_no_delete", table=table))
     with db.cursor() as cur:
         deleted = _delete_rows(cur, table, f"rowid = ? AND {_owner_where(owners)}",
                                (rowid, *(user_id,) * len(owners)))
     if not deleted:
-        raise HTTPException(status_code=404, detail="Row not found")
+        raise HTTPException(status_code=404, detail=i18n.t_request("admin.error.row_not_found"))
     return {"ok": True}
 
 
@@ -1334,20 +1330,20 @@ def patch_pokemon(pokemon_id: int, payload: PokemonPatch) -> dict[str, Any]:
     if "ability" in fields:
         ability = (payload.ability or "").strip() or None
         if ability is not None and not _known_ability(ability):
-            raise HTTPException(status_code=400, detail=f"Unknown ability: {ability}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_ability", value=ability))
         updates["ability"] = ability
     if "held_item" in fields:
         held = (payload.held_item or "").strip() or None
         if held is not None and held_items.get(held) is None:
-            raise HTTPException(status_code=400, detail=f"Unknown held item: {held}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_held", value=held))
         updates["held_item"] = held
     if "moves" in fields and payload.moves is not None:
         keys = payload.moves
         unknown = [key for key in keys if key not in moves_mod.all_moves()]
         if unknown:
-            raise HTTPException(status_code=400, detail=f"Unknown moves: {unknown}")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_moves", fields=", ".join(map(str, unknown))))
         if len(set(keys)) != len(keys):
-            raise HTTPException(status_code=400, detail="Moves must not repeat")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.moves_repeat"))
         updates["selected_moves"] = json.dumps(keys) if keys else None
         # Learn pool as it will be AFTER this patch (species / level may change too).
         egg = _grant_moves({**row, "species_id": species["id"], "level": level}, species, keys)

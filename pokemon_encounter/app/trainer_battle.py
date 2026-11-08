@@ -139,13 +139,14 @@ def _generation_eligible(mode: str, trainer_gen: int, species_gen: int) -> bool:
 
 
 def _opponent(
-    trainer: dict[str, Any], species: dict[str, Any], level: int, ability: str | None
+    trainer: dict[str, Any], species: dict[str, Any], level: int, ability: str | None,
+    lang: str = "en",
 ) -> battle.Combatant:
     iv = trainer["iv"]
     opp = battle.Combatant(
         species=species, level=level,
         ivs={key: iv for key in ("hp", "atk", "def", "spa", "spd", "spe")},
-        trainer=trainer["name"], ability=ability,
+        trainer=trainers.display_name(trainer, lang), ability=ability,
     )
     if trainer.get("moves"):
         opp.moves = list(trainer["moves"])
@@ -200,7 +201,8 @@ def _load(
     opponents = []
     for entry in state["opponents"]:
         species = db.query_one("SELECT * FROM species WHERE id = ?", (entry["species_id"],))
-        opp = _opponent(trainer, species, entry["level"], entry.get("ability"))
+        opp = _opponent(trainer, species, entry["level"], entry.get("ability"),
+                        db.user_language(session["user_id"]))
         apply_mon_state(opp, entry)
         opponents.append(opp)
 
@@ -252,7 +254,7 @@ def _save(session: dict[str, Any], b: battle.Battle, opponents: list[battle.Comb
 def trainer_info(trainer: dict[str, Any], lang: str = "en") -> dict[str, Any]:
     return {
         "id": trainer["id"],
-        "name": (trainer.get("name_de") if lang == "de" else None) or trainer["name"],
+        "name": trainers.display_name(trainer, lang),
         "title": trainers.title_for(trainer, lang),
         "sprite_url": trainer.get("sprite_url"),
         "kind": trainer["kind"], "stage": trainer.get("stage"), "type": trainer.get("type"),
@@ -423,7 +425,7 @@ def start(trainer_id: str, user_id: str, owned_id: int | None = None,
             # Sparring partners have no ability - Levitate & co. would undo
             # the weakness to the member's moves they were picked for.
             _opponent(trainer, species, level,
-                      None if is_training else spawn.roll_ability(species["id"]))
+                      None if is_training else spawn.roll_ability(species["id"]), lang)
             for species, level in roster
         ]
         # Every Pokemon of the trainer's team counts as seen for the Pokedex -
@@ -498,7 +500,7 @@ def _finish(b: battle.Battle, state: dict[str, Any], trainer: dict[str, Any],
     ev_knockouts: list[tuple[dict[str, Any], set[int]]] = []
     for ko in b.knockouts:
         species = db.query_one("SELECT * FROM species WHERE id = ?", (ko["species_id"],))
-        loser = _opponent(trainer, species, ko["level"], None)
+        loser = _opponent(trainer, species, ko["level"], None, b.lang)
         participants = {index_map[i] for i in ko["participants"] if i in index_map}
         # Standing at the KO (see `_check_faints`); sessions started before
         # that field existed fall back to the still-standing members now.

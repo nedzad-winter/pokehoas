@@ -1,6 +1,7 @@
 """Ability / move / type names in the PokeAPI languages the UI supports (es, fr, it, ja, ko),
 read from data/names_i18n.json (see scripts/build_name_translations.py). English and German keep
-their catalog names, and PokeAPI has no Polish, so those languages always return None."""
+their catalog names. The games have no Polish release, so Polish players use the English game
+terms and those languages always return None."""
 
 from __future__ import annotations
 

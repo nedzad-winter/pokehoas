@@ -528,7 +528,7 @@ def _release(user_id: str, lang: str, owned_ids: list[int]) -> list[dict[str, An
         if row["party_slot"] is not None:
             raise HTTPException(status_code=400, detail=i18n.t(lang, "error.release_only_from_box"))
         species = _species(row["species_id"])
-        name = row.get("nickname") or species.get("name_en") or species.get("name_de") or species["name"]
+        name = row.get("nickname") or db.species_display_name(species, lang)
         if row.get("locked"):
             raise HTTPException(status_code=400, detail=i18n.t(lang, "error.release_locked", name=name))
         released.append({
@@ -609,6 +609,19 @@ def name_tables(lang: str) -> dict[str, Any]:
             for kind in empty}
 
 
+def _merged_descriptions(stem: str) -> dict[str, dict[str, str]]:
+    """<stem>_i18n.json (generated from PokeAPI) overlaid with <stem>_manual.json (hand-written)."""
+    merged: dict[str, dict[str, str]] = {}
+    for suffix in ("i18n", "manual"):
+        try:
+            data = json.loads((seed.DATA_DIR / f"{stem}_{suffix}.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for key, texts in data.items():
+            merged.setdefault(key, {}).update(texts)
+    return merged
+
+
 _ABILITY_DESCRIPTIONS: dict[str, Any] | None = None
 
 
@@ -616,16 +629,11 @@ _ABILITY_DESCRIPTIONS: dict[str, Any] | None = None
 def ability_descriptions(lang: str) -> dict[str, str]:
     """Official ability descriptions in `lang` ({key: text}), from
     ability_descriptions_i18n.json (see scripts/build_ability_descriptions.py). English and
-    German stay in abilities.json; PokeAPI has no Polish, so those return nothing."""
+    German stay in abilities.json. Texts PokeAPI lacks (all of Polish, the newest abilities)
+    come from ability_descriptions_manual.json."""
     global _ABILITY_DESCRIPTIONS
     if _ABILITY_DESCRIPTIONS is None:
-        try:
-            _ABILITY_DESCRIPTIONS = json.loads(
-                (seed.DATA_DIR / "ability_descriptions_i18n.json").read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            _ABILITY_DESCRIPTIONS = {}
-    if lang not in ("es", "fr", "it", "ja", "ko"):
-        return {}
+        _ABILITY_DESCRIPTIONS = _merged_descriptions("ability_descriptions")
     return {key: texts[lang] for key, texts in _ABILITY_DESCRIPTIONS.items() if lang in texts}
 
 
@@ -635,15 +643,9 @@ _ITEM_DESCRIPTIONS: dict[str, Any] | None = None
 @router.get("/item-descriptions/{lang}")
 def item_descriptions(lang: str) -> dict[str, str]:
     """Official item descriptions in `lang` ({key: text}), from item_descriptions_i18n.json
-    (see scripts/build_item_descriptions.py). English and German stay in the catalogs; PokeAPI
-    has no Polish, so those return nothing."""
+    (see scripts/build_item_descriptions.py). English and German stay in the catalogs. Texts
+    PokeAPI lacks (all of Polish, game-specific items) come from item_descriptions_manual.json."""
     global _ITEM_DESCRIPTIONS
     if _ITEM_DESCRIPTIONS is None:
-        try:
-            _ITEM_DESCRIPTIONS = json.loads(
-                (seed.DATA_DIR / "item_descriptions_i18n.json").read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            _ITEM_DESCRIPTIONS = {}
-    if lang not in ("es", "fr", "it", "ja", "ko"):
-        return {}
+        _ITEM_DESCRIPTIONS = _merged_descriptions("item_descriptions")
     return {key: texts[lang] for key, texts in _ITEM_DESCRIPTIONS.items() if lang in texts}

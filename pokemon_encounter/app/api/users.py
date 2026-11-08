@@ -209,7 +209,7 @@ def set_language(
     payload: LanguageChoice, current_user: dict = Depends(get_current_user)
 ) -> dict[str, Any]:
     if payload.language not in i18n.available_languages():
-        raise HTTPException(status_code=400, detail=f"Unknown language: {payload.language}")
+        raise HTTPException(status_code=400, detail=i18n.t(current_user["language"], "error.unknown_language", code=payload.language))
     user = db.set_user_language(current_user["id"], payload.language)
     return {"language": user["language"]}
 

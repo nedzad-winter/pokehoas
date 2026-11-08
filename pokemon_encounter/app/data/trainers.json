@@ -64,7 +64,8 @@
           14
         ]
       ],
-      "name_de": "Rocko"
+      "name_de": "Rocko",
+      "names": {"es": "Brock", "fr": "Pierre", "it": "Brock", "ja": "タケシ", "ko": "웅"}
     },
     {
       "id": "kanto_misty",
@@ -83,7 +84,8 @@
           21
         ]
       ],
-      "name_de": "Misty"
+      "name_de": "Misty",
+      "names": {"es": "Misty", "fr": "Ondine", "it": "Misty", "ja": "カスミ", "ko": "이슬"}
     },
     {
       "id": "kanto_surge",
@@ -105,7 +107,8 @@
           24
         ]
       ],
-      "name_de": "Major Bob"
+      "name_de": "Major Bob",
+      "names": {"es": "Teniente Surge", "fr": "Major Bob", "it": "Lt. Surge", "ja": "マチス", "ko": "마티스"}
     },
     {
       "id": "kanto_erika",
@@ -128,7 +131,8 @@
           29
         ]
       ],
-      "name_de": "Erika"
+      "name_de": "Erika",
+      "names": {"es": "Erika", "fr": "Erika", "it": "Erika", "ja": "エリカ", "ko": "민화"}
     },
     {
       "id": "kanto_koga",
@@ -154,7 +158,8 @@
           43
         ]
       ],
-      "name_de": "Koga"
+      "name_de": "Koga",
+      "names": {"es": "Koga", "fr": "Koga", "it": "Koga", "ja": "キョウ", "ko": "독수"}
     },
     {
       "id": "kanto_sabrina",
@@ -181,7 +186,8 @@
           43
         ]
       ],
-      "name_de": "Sabrina"
+      "name_de": "Sabrina",
+      "names": {"es": "Sabrina", "fr": "Morgane", "it": "Sabrina", "ja": "ナツメ", "ko": "초련"}
     },
     {
       "id": "kanto_blaine",
@@ -207,7 +213,8 @@
           47
         ]
       ],
-      "name_de": "Pyro"
+      "name_de": "Pyro",
+      "names": {"es": "Blaine", "fr": "Auguste", "it": "Blaine", "ja": "カツラ", "ko": "강연"}
     },
     {
       "id": "kanto_giovanni",
@@ -237,7 +244,8 @@
           50
         ]
       ],
-      "name_de": "Giovanni"
+      "name_de": "Giovanni",
+      "names": {"es": "Giovanni", "fr": "Giovanni", "it": "Giovanni", "ja": "サカキ", "ko": "비주기"}
     },
     {
       "id": "kanto_lorelei",
@@ -268,7 +276,8 @@
           54
         ]
       ],
-      "name_de": "Lorelei"
+      "name_de": "Lorelei",
+      "names": {"es": "Lorelei", "fr": "Olga", "it": "Lorelei", "ja": "カンナ", "ko": "칸나"}
     },
     {
       "id": "kanto_bruno",
@@ -298,7 +307,8 @@
           56
         ]
       ],
-      "name_de": "Bruno"
+      "name_de": "Bruno",
+      "names": {"es": "Bruno", "fr": "Aldo", "it": "Bruno", "ja": "シバ", "ko": "시바"}
     },
     {
       "id": "kanto_agatha",
@@ -329,7 +339,8 @@
           58
         ]
       ],
-      "name_de": "Agathe"
+      "name_de": "Agathe",
+      "names": {"es": "Agatha", "fr": "Agatha", "it": "Agatha", "ja": "キクコ", "ko": "국화"}
     },
     {
       "id": "kanto_lance",
@@ -359,7 +370,8 @@
           60
         ]
       ],
-      "name_de": "Siegfried"
+      "name_de": "Siegfried",
+      "names": {"es": "Lance", "fr": "Peter", "it": "Lance", "ja": "ワタル", "ko": "목호"}
     },
     {
       "id": "kanto_blue",
@@ -392,7 +404,8 @@
           63
         ]
       ],
-      "name_de": "Blau"
+      "name_de": "Blau",
+      "names": {"es": "Azul", "fr": "Blue", "it": "Blu", "ja": "グリーン", "ko": "그린"}
     },
     {
       "id": "johto_falkner",
@@ -410,7 +423,8 @@
           13
         ]
       ],
-      "name_de": "Falk"
+      "name_de": "Falk",
+      "names": {"es": "Pegaso", "fr": "Albert", "it": "Valerio", "ja": "ハヤト", "ko": "비상"}
     },
     {
       "id": "johto_bugsy",
@@ -432,7 +446,8 @@
           17
         ]
       ],
-      "name_de": "Kai"
+      "name_de": "Kai",
+      "names": {"es": "Antón", "fr": "Hector", "it": "Raffaello", "ja": "ツクシ", "ko": "호일"}
     },
     {
       "id": "johto_whitney",
@@ -451,7 +466,8 @@
           19
         ]
       ],
-      "name_de": "Bianka"
+      "name_de": "Bianka",
+      "names": {"es": "Blanca", "fr": "Blanche", "it": "Chiara", "ja": "アカネ", "ko": "꼭두"}
     },
     {
       "id": "johto_morty",
@@ -477,7 +493,8 @@
           25
         ]
       ],
-      "name_de": "Jens"
+      "name_de": "Jens",
+      "names": {"es": "Morti", "fr": "Mortimer", "it": "Angelo", "ja": "マツバ", "ko": "유빈"}
     },
     {
       "id": "johto_chuck",
@@ -495,7 +512,8 @@
           30
         ]
       ],
-      "name_de": "Hartwig"
+      "name_de": "Hartwig",
+      "names": {"es": "Aníbal", "fr": "Chuck", "it": "Furio", "ja": "シジマ", "ko": "사도"}
     },
     {
       "id": "johto_jasmine",
@@ -518,7 +536,8 @@
           35
         ]
       ],
-      "name_de": "Jasmin"
+      "name_de": "Jasmin",
+      "names": {"es": "Yasmina", "fr": "Jasmine", "it": "Jasmine", "ja": "ミカン", "ko": "규리"}
     },
     {
       "id": "johto_pryce",
@@ -540,7 +559,8 @@
           34
         ]
       ],
-      "name_de": "Norbert"
+      "name_de": "Norbert",
+      "names": {"es": "Fredo", "fr": "Frédo", "it": "Alfredo", "ja": "ヤナギ", "ko": "류옹"}
     },
     {
       "id": "johto_clair",
@@ -567,7 +587,8 @@
           41
         ]
       ],
-      "name_de": "Sandra"
+      "name_de": "Sandra",
+      "names": {"es": "Débora", "fr": "Sandra", "it": "Sandra", "ja": "イブキ", "ko": "이향"}
     },
     {
       "id": "johto_will",
@@ -597,7 +618,8 @@
           42
         ]
       ],
-      "name_de": "Willi"
+      "name_de": "Willi",
+      "names": {"es": "Mento", "fr": "Clément", "it": "Pino", "ja": "イツキ", "ko": "일목"}
     },
     {
       "id": "johto_koga",
@@ -627,7 +649,8 @@
           44
         ]
       ],
-      "name_de": "Koga"
+      "name_de": "Koga",
+      "names": {"es": "Koga", "fr": "Koga", "it": "Koga", "ja": "キョウ", "ko": "독수"}
     },
     {
       "id": "johto_bruno",
@@ -657,7 +680,8 @@
           46
         ]
       ],
-      "name_de": "Bruno"
+      "name_de": "Bruno",
+      "names": {"es": "Bruno", "fr": "Aldo", "it": "Bruno", "ja": "シバ", "ko": "시바"}
     },
     {
       "id": "johto_karen",
@@ -688,7 +712,8 @@
           47
         ]
       ],
-      "name_de": "Melanie"
+      "name_de": "Melanie",
+      "names": {"es": "Karen", "fr": "Marion", "it": "Karen", "ja": "カリン", "ko": "카렌"}
     },
     {
       "id": "johto_lance",
@@ -721,7 +746,8 @@
           50
         ]
       ],
-      "name_de": "Siegfried"
+      "name_de": "Siegfried",
+      "names": {"es": "Lance", "fr": "Peter", "it": "Lance", "ja": "ワタル", "ko": "목호"}
     },
     {
       "id": "hoenn_roxanne",
@@ -744,7 +770,8 @@
           15
         ]
       ],
-      "name_de": "Felizia"
+      "name_de": "Felizia",
+      "names": {"es": "Petra", "fr": "Roxanne", "it": "Petra", "ja": "ツツジ", "ko": "원규"}
     },
     {
       "id": "hoenn_brawly",
@@ -766,7 +793,8 @@
           19
         ]
       ],
-      "name_de": "Kamillo"
+      "name_de": "Kamillo",
+      "names": {"es": "Marcial", "fr": "Bastien", "it": "Rudi", "ja": "トウキ", "ko": "철구"}
     },
     {
       "id": "hoenn_wattson",
@@ -792,7 +820,8 @@
           24
         ]
       ],
-      "name_de": "Walter"
+      "name_de": "Walter",
+      "names": {"es": "Erico", "fr": "Voltere", "it": "Walter", "ja": "テッセン", "ko": "암페어"}
     },
     {
       "id": "hoenn_flannery",
@@ -819,7 +848,8 @@
           29
         ]
       ],
-      "name_de": "Flavia"
+      "name_de": "Flavia",
+      "names": {"es": "Candela", "fr": "Adriane", "it": "Fiammetta", "ja": "アスナ", "ko": "민지"}
     },
     {
       "id": "hoenn_norman",
@@ -845,7 +875,8 @@
           31
         ]
       ],
-      "name_de": "Norman"
+      "name_de": "Norman",
+      "names": {"es": "Norman", "fr": "Norman", "it": "Norman", "ja": "センリ", "ko": "종길"}
     },
     {
       "id": "hoenn_winona",
@@ -876,7 +907,8 @@
           33
         ]
       ],
-      "name_de": "Wibke"
+      "name_de": "Wibke",
+      "names": {"es": "Alana", "fr": "Alizée", "it": "Alice", "ja": "ナギ", "ko": "은송"}
     },
     {
       "id": "hoenn_tate_liza",
@@ -902,7 +934,8 @@
           42
         ]
       ],
-      "name_de": "Ben & Svenja"
+      "name_de": "Ben & Svenja",
+      "names": {"es": "Vito & Leti", "fr": "Lévy & Tatia", "it": "Tell & Pat", "ja": "フウ & ラン", "ko": "풍 & 란"}
     },
     {
       "id": "hoenn_juan",
@@ -932,7 +965,8 @@
           46
         ]
       ],
-      "name_de": "Juan"
+      "name_de": "Juan",
+      "names": {"es": "Galano", "fr": "Juan", "it": "Rodolfo", "ja": "アダン", "ko": "아단"}
     },
     {
       "id": "hoenn_sidney",
@@ -962,7 +996,8 @@
           49
         ]
       ],
-      "name_de": "Ulrich"
+      "name_de": "Ulrich",
+      "names": {"es": "Sixto", "fr": "Damien", "it": "Fosco", "ja": "カゲツ", "ko": "혁진"}
     },
     {
       "id": "hoenn_phoebe",
@@ -993,7 +1028,8 @@
           51
         ]
       ],
-      "name_de": "Antonia"
+      "name_de": "Antonia",
+      "names": {"es": "Fátima", "fr": "Spectra", "it": "Ester", "ja": "フヨウ", "ko": "회연"}
     },
     {
       "id": "hoenn_glacia",
@@ -1024,7 +1060,8 @@
           53
         ]
       ],
-      "name_de": "Frosina"
+      "name_de": "Frosina",
+      "names": {"es": "Nívea", "fr": "Glacia", "it": "Frida", "ja": "プリム", "ko": "미혜"}
     },
     {
       "id": "hoenn_drake",
@@ -1054,7 +1091,8 @@
           55
         ]
       ],
-      "name_de": "Dragan"
+      "name_de": "Dragan",
+      "names": {"es": "Dracón", "fr": "Aragon", "it": "Drake", "ja": "ゲンジ", "ko": "권수"}
     },
     {
       "id": "hoenn_wallace",
@@ -1087,7 +1125,8 @@
           58
         ]
       ],
-      "name_de": "Wassili"
+      "name_de": "Wassili",
+      "names": {"es": "Plubio", "fr": "Marc", "it": "Adriano", "ja": "ミクリ", "ko": "윤진"}
     },
     {
       "id": "sinnoh_roark",
@@ -1109,7 +1148,8 @@
           14
         ]
       ],
-      "name_de": "Veit"
+      "name_de": "Veit",
+      "names": {"es": "Roco", "fr": "Pierrick", "it": "Pedro", "ja": "ヒョウタ", "ko": "강석"}
     },
     {
       "id": "sinnoh_gardenia",
@@ -1132,7 +1172,8 @@
           22
         ]
       ],
-      "name_de": "Silvana"
+      "name_de": "Silvana",
+      "names": {"es": "Gardenia", "fr": "Flo", "it": "Gardenia", "ja": "ナタネ", "ko": "유채"}
     },
     {
       "id": "sinnoh_fantina",
@@ -1155,7 +1196,8 @@
           26
         ]
       ],
-      "name_de": "Lamina"
+      "name_de": "Lamina",
+      "names": {"es": "Fantina", "fr": "Kiméra", "it": "Fannie", "ja": "メリッサ", "ko": "멜리사"}
     },
     {
       "id": "sinnoh_maylene",
@@ -1178,7 +1220,8 @@
           32
         ]
       ],
-      "name_de": "Hilda"
+      "name_de": "Hilda",
+      "names": {"es": "Brega", "fr": "Mélina", "it": "Marzia", "ja": "スモモ", "ko": "자두"}
     },
     {
       "id": "sinnoh_wake",
@@ -1200,7 +1243,8 @@
           37
         ]
       ],
-      "name_de": "Wellenbrecher Marinus"
+      "name_de": "Wellenbrecher Marinus",
+      "names": {"es": "Mananti el Destructor", "fr": "Lovis le Teigneux", "it": "Omar il Distruttore", "ja": "マキシ", "ko": "맥실러"}
     },
     {
       "id": "sinnoh_byron",
@@ -1222,7 +1266,8 @@
           41
         ]
       ],
-      "name_de": "Adam"
+      "name_de": "Adam",
+      "names": {"es": "Acerón", "fr": "Charles", "it": "Ferruccio", "ja": "トウガン", "ko": "동관"}
     },
     {
       "id": "sinnoh_candice",
@@ -1249,7 +1294,8 @@
           44
         ]
       ],
-      "name_de": "Frida"
+      "name_de": "Frida",
+      "names": {"es": "Inverna", "fr": "Gladys", "it": "Bianca", "ja": "スズナ", "ko": "무청"}
     },
     {
       "id": "sinnoh_volkner",
@@ -1275,7 +1321,8 @@
           50
         ]
       ],
-      "name_de": "Volkner"
+      "name_de": "Volkner",
+      "names": {"es": "Lectro", "fr": "Tanguy", "it": "Corrado", "ja": "デンジ", "ko": "전진"}
     },
     {
       "id": "sinnoh_aaron",
@@ -1305,7 +1352,8 @@
           57
         ]
       ],
-      "name_de": "Herbaro"
+      "name_de": "Herbaro",
+      "names": {"es": "Alecrán", "fr": "Aaron", "it": "Aaron", "ja": "リョウ", "ko": "충호"}
     },
     {
       "id": "sinnoh_bertha",
@@ -1336,7 +1384,8 @@
           59
         ]
       ],
-      "name_de": "Teresa"
+      "name_de": "Teresa",
+      "names": {"es": "Gaia", "fr": "Terry", "it": "Terrie", "ja": "キクノ", "ko": "들국화"}
     },
     {
       "id": "sinnoh_flint",
@@ -1366,7 +1415,8 @@
           61
         ]
       ],
-      "name_de": "Ignaz"
+      "name_de": "Ignaz",
+      "names": {"es": "Fausto", "fr": "Adrien", "it": "Vulcano", "ja": "オーバ", "ko": "대엽"}
     },
     {
       "id": "sinnoh_lucian",
@@ -1396,7 +1446,8 @@
           63
         ]
       ],
-      "name_de": "Lucian"
+      "name_de": "Lucian",
+      "names": {"es": "Delos", "fr": "Lucio", "it": "Luciano", "ja": "ゴヨウ", "ko": "오엽"}
     },
     {
       "id": "sinnoh_cynthia",
@@ -1430,7 +1481,8 @@
           62
         ]
       ],
-      "name_de": "Cynthia"
+      "name_de": "Cynthia",
+      "names": {"es": "Cintia", "fr": "Cynthia", "it": "Camilla", "ja": "シロナ", "ko": "난천"}
     },
     {
       "id": "unova_cilan",
@@ -1448,7 +1500,8 @@
           14
         ]
       ],
-      "name_de": "Benny"
+      "name_de": "Benny",
+      "names": {"es": "Millo", "fr": "Rachid", "it": "Spighetto", "ja": "デント", "ko": "덴트"}
     },
     {
       "id": "unova_lenora",
@@ -1467,7 +1520,8 @@
           20
         ]
       ],
-      "name_de": "Aloe"
+      "name_de": "Aloe",
+      "names": {"es": "Aloe", "fr": "Aloé", "it": "Aloé", "ja": "アロエ", "ko": "알로에"}
     },
     {
       "id": "unova_burgh",
@@ -1489,7 +1543,8 @@
           23
         ]
       ],
-      "name_de": "Artie"
+      "name_de": "Artie",
+      "names": {"es": "Camus", "fr": "Artie", "it": "Artemisio", "ja": "アーティ", "ko": "아티"}
     },
     {
       "id": "unova_elesa",
@@ -1512,7 +1567,8 @@
           27
         ]
       ],
-      "name_de": "Kamilla"
+      "name_de": "Kamilla",
+      "names": {"es": "Camila", "fr": "Inezia", "it": "Camelia", "ja": "カミツレ", "ko": "카밀레"}
     },
     {
       "id": "unova_clay",
@@ -1534,7 +1590,8 @@
           31
         ]
       ],
-      "name_de": "Turner"
+      "name_de": "Turner",
+      "names": {"es": "Yakón", "fr": "Bardane", "it": "Rafan", "ja": "ヤーコン", "ko": "야콘"}
     },
     {
       "id": "unova_skyla",
@@ -1557,7 +1614,8 @@
           35
         ]
       ],
-      "name_de": "Géraldine"
+      "name_de": "Géraldine",
+      "names": {"es": "Gerania", "fr": "Carolina", "it": "Anemone", "ja": "フウロ", "ko": "풍란"}
     },
     {
       "id": "unova_brycen",
@@ -1579,7 +1637,8 @@
           39
         ]
       ],
-      "name_de": "Sandro"
+      "name_de": "Sandro",
+      "names": {"es": "Junco", "fr": "Zhu", "it": "Silvestro", "ja": "ハチク", "ko": "담죽"}
     },
     {
       "id": "unova_drayden",
@@ -1601,7 +1660,8 @@
           43
         ]
       ],
-      "name_de": "Lysander"
+      "name_de": "Lysander",
+      "names": {"es": "Lirio", "fr": "Watson", "it": "Aristide", "ja": "シャガ", "ko": "사간"}
     },
     {
       "id": "unova_shauntal",
@@ -1628,7 +1688,8 @@
           50
         ]
       ],
-      "name_de": "Anissa"
+      "name_de": "Anissa",
+      "names": {"es": "Anís", "fr": "Anis", "it": "Antemia", "ja": "シキミ", "ko": "망초"}
     },
     {
       "id": "unova_grimsley",
@@ -1654,7 +1715,8 @@
           50
         ]
       ],
-      "name_de": "Astor"
+      "name_de": "Astor",
+      "names": {"es": "Aza", "fr": "Pieris", "it": "Mirton", "ja": "ギーマ", "ko": "블래리"}
     },
     {
       "id": "unova_caitlin",
@@ -1681,7 +1743,8 @@
           50
         ]
       ],
-      "name_de": "Kattlea"
+      "name_de": "Kattlea",
+      "names": {"es": "Catleya", "fr": "Percila", "it": "Catlina", "ja": "カトレア", "ko": "카틀레야"}
     },
     {
       "id": "unova_marshal",
@@ -1707,7 +1770,8 @@
           50
         ]
       ],
-      "name_de": "Eugen"
+      "name_de": "Eugen",
+      "names": {"es": "Lotto", "fr": "Kunz", "it": "Marzio", "ja": "レンブ", "ko": "연무"}
     },
     {
       "id": "unova_alder",
@@ -1740,7 +1804,8 @@
           77
         ]
       ],
-      "name_de": "Lauro"
+      "name_de": "Lauro",
+      "names": {"es": "Mirto", "fr": "Goyah", "it": "Nardo", "ja": "アデク", "ko": "노간주"}
     },
     {
       "id": "kalos_viola",
@@ -1759,7 +1824,8 @@
           12
         ]
       ],
-      "name_de": "Viola"
+      "name_de": "Viola",
+      "names": {"es": "Violeta", "fr": "Violette", "it": "Violetta", "ja": "ビオラ", "ko": "비올라"}
     },
     {
       "id": "kalos_grant",
@@ -1777,7 +1843,8 @@
           25
         ]
       ],
-      "name_de": "Lino"
+      "name_de": "Lino",
+      "names": {"es": "Lino", "fr": "Lino", "it": "Lino", "ja": "ザクロ", "ko": "자크로"}
     },
     {
       "id": "kalos_korrina",
@@ -1800,7 +1867,8 @@
           32
         ]
       ],
-      "name_de": "Connie"
+      "name_de": "Connie",
+      "names": {"es": "Corelia", "fr": "Cornélia", "it": "Ornella", "ja": "コルニ", "ko": "코르니"}
     },
     {
       "id": "kalos_ramos",
@@ -1822,7 +1890,8 @@
           34
         ]
       ],
-      "name_de": "Amaro"
+      "name_de": "Amaro",
+      "names": {"es": "Amaro", "fr": "Amaro", "it": "Amur", "ja": "フクジ", "ko": "후쿠지"}
     },
     {
       "id": "kalos_clemont",
@@ -1844,7 +1913,8 @@
           37
         ]
       ],
-      "name_de": "Citro"
+      "name_de": "Citro",
+      "names": {"es": "Lem", "fr": "Lem", "it": "Lem", "ja": "シトロン", "ko": "시트론"}
     },
     {
       "id": "kalos_valerie",
@@ -1867,7 +1937,8 @@
           42
         ]
       ],
-      "name_de": "Valerie"
+      "name_de": "Valerie",
+      "names": {"es": "Valeria", "fr": "Valériane", "it": "Valérie", "ja": "マーシュ", "ko": "마슈"}
     },
     {
       "id": "kalos_olympia",
@@ -1890,7 +1961,8 @@
           48
         ]
       ],
-      "name_de": "Astrid"
+      "name_de": "Astrid",
+      "names": {"es": "Ástrid", "fr": "Astera", "it": "Astra", "ja": "ゴジカ", "ko": "고지카"}
     },
     {
       "id": "kalos_wulfric",
@@ -1912,7 +1984,8 @@
           59
         ]
       ],
-      "name_de": "Galantho"
+      "name_de": "Galantho",
+      "names": {"es": "Édel", "fr": "Urup", "it": "Edel", "ja": "ウルップ", "ko": "우르프"}
     },
     {
       "id": "kalos_malva",
@@ -1939,7 +2012,8 @@
           65
         ]
       ],
-      "name_de": "Pachira"
+      "name_de": "Pachira",
+      "names": {"es": "Malva", "fr": "Malva", "it": "Malva", "ja": "パキラ", "ko": "파키라"}
     },
     {
       "id": "kalos_siebold",
@@ -1965,7 +2039,8 @@
           65
         ]
       ],
-      "name_de": "Narcisse"
+      "name_de": "Narcisse",
+      "names": {"es": "Narciso", "fr": "Narcisse", "it": "Narciso", "ja": "ズミ", "ko": "즈미"}
     },
     {
       "id": "kalos_wikstrom",
@@ -1991,7 +2066,8 @@
           65
         ]
       ],
-      "name_de": "Thymelot"
+      "name_de": "Thymelot",
+      "names": {"es": "Tileo", "fr": "Thyméo", "it": "Timeus", "ja": "ガンピ", "ko": "간피"}
     },
     {
       "id": "kalos_drasna",
@@ -2018,7 +2094,8 @@
           65
         ]
       ],
-      "name_de": "Dracena"
+      "name_de": "Dracena",
+      "names": {"es": "Drácena", "fr": "Dracéna", "it": "Lilia", "ja": "ドラセナ", "ko": "드라세나"}
     },
     {
       "id": "kalos_diantha",
@@ -2052,7 +2129,8 @@
           68
         ]
       ],
-      "name_de": "Diantha"
+      "name_de": "Diantha",
+      "names": {"es": "Dianta", "fr": "Dianthéa", "it": "Diantha", "ja": "カルネ", "ko": "카르네"}
     },
     {
       "id": "alola_hala",
@@ -2082,7 +2160,8 @@
           55
         ]
       ],
-      "name_de": "Hala"
+      "name_de": "Hala",
+      "names": {"es": "Kaudan", "fr": "Pectorius", "it": "Hala", "ja": "ハラ", "ko": "할라"}
     },
     {
       "id": "alola_olivia",
@@ -2113,7 +2192,8 @@
           55
         ]
       ],
-      "name_de": "Mayla"
+      "name_de": "Mayla",
+      "names": {"es": "Mayla", "fr": "Alyxia", "it": "Alyxia", "ja": "ライチ", "ko": "라이치"}
     },
     {
       "id": "alola_acerola",
@@ -2144,7 +2224,8 @@
           55
         ]
       ],
-      "name_de": "Lola"
+      "name_de": "Lola",
+      "names": {"es": "Zarala", "fr": "Margie", "it": "Malpi", "ja": "アセロラ", "ko": "아세로라"}
     },
     {
       "id": "alola_kahili",
@@ -2175,7 +2256,8 @@
           55
         ]
       ],
-      "name_de": "Kahili"
+      "name_de": "Kahili",
+      "names": {"es": "Kahili", "fr": "Kahili", "it": "Kahili", "ja": "カヒリ", "ko": "카일리"}
     },
     {
       "id": "alola_kukui",
@@ -2208,7 +2290,8 @@
           58
         ]
       ],
-      "name_de": "Prof. Kukui"
+      "name_de": "Prof. Kukui",
+      "names": {"es": "Profesor Kukui", "fr": "Professeur Euphorbe", "it": "Professor Kukui", "ja": "ククイ博士", "ko": "쿠쿠이박사"}
     },
     {
       "id": "galar_milo",
@@ -2226,7 +2309,8 @@
           20
         ]
       ],
-      "name_de": "Yarro"
+      "name_de": "Yarro",
+      "names": {"es": "Percy", "fr": "Percy", "it": "Yarrow", "ja": "ヤロー", "ko": "아킬"}
     },
     {
       "id": "galar_nessa",
@@ -2249,7 +2333,8 @@
           24
         ]
       ],
-      "name_de": "Kate"
+      "name_de": "Kate",
+      "names": {"es": "Cathy", "fr": "Donna", "it": "Azzurra", "ja": "ルリナ", "ko": "야청"}
     },
     {
       "id": "galar_kabu",
@@ -2271,7 +2356,8 @@
           27
         ]
       ],
-      "name_de": "Kabu"
+      "name_de": "Kabu",
+      "names": {"es": "Naboru", "fr": "Kabu", "it": "Kabu", "ja": "カブ", "ko": "순무"}
     },
     {
       "id": "galar_bea",
@@ -2298,7 +2384,8 @@
           36
         ]
       ],
-      "name_de": "Saida"
+      "name_de": "Saida",
+      "names": {"es": "Judith", "fr": "Faïza", "it": "Fabia", "ja": "サイトウ", "ko": "채두"}
     },
     {
       "id": "galar_allister",
@@ -2324,7 +2411,8 @@
           36
         ]
       ],
-      "name_de": "Nio"
+      "name_de": "Nio",
+      "names": {"es": "Alistair", "fr": "Alistair", "it": "Onion", "ja": "オニオン", "ko": "어니언"}
     },
     {
       "id": "galar_opal",
@@ -2351,7 +2439,8 @@
           38
         ]
       ],
-      "name_de": "Papella"
+      "name_de": "Papella",
+      "names": {"es": "Sally", "fr": "Sally", "it": "Poppy", "ja": "ポプラ", "ko": "포플러"}
     },
     {
       "id": "galar_gordie",
@@ -2377,7 +2466,8 @@
           42
         ]
       ],
-      "name_de": "Mac"
+      "name_de": "Mac",
+      "names": {"es": "Morris", "fr": "Chaz", "it": "Milo", "ja": "マクワ", "ko": "마쿠와"}
     },
     {
       "id": "galar_melony",
@@ -2404,7 +2494,8 @@
           42
         ]
       ],
-      "name_de": "Mel"
+      "name_de": "Mel",
+      "names": {"es": "Mel", "fr": "Lona", "it": "Melania", "ja": "メロン", "ko": "멜론"}
     },
     {
       "id": "galar_piers",
@@ -2430,7 +2521,8 @@
           46
         ]
       ],
-      "name_de": "Nezz"
+      "name_de": "Nezz",
+      "names": {"es": "Nerio", "fr": "Peterson", "it": "Ginepro", "ja": "ネズ", "ko": "두송"}
     },
     {
       "id": "galar_raihan",
@@ -2456,7 +2548,8 @@
           48
         ]
       ],
-      "name_de": "Roy"
+      "name_de": "Roy",
+      "names": {"es": "Roy", "fr": "Roy", "it": "Laburno", "ja": "キバナ", "ko": "금랑"}
     },
     {
       "id": "galar_marnie",
@@ -2489,7 +2582,8 @@
           49
         ]
       ],
-      "name_de": "Mary"
+      "name_de": "Mary",
+      "names": {"es": "Roxy", "fr": "Rosemary", "it": "Mary", "ja": "マリィ", "ko": "마리"}
     },
     {
       "id": "galar_hop",
@@ -2520,7 +2614,8 @@
           49
         ]
       ],
-      "name_de": "Hop"
+      "name_de": "Hop",
+      "names": {"es": "Paul", "fr": "Nabil", "it": "Hop", "ja": "ホップ", "ko": "호브"}
     },
     {
       "id": "galar_bede",
@@ -2548,7 +2643,8 @@
           53
         ]
       ],
-      "name_de": "Betys"
+      "name_de": "Betys",
+      "names": {"es": "Berto", "fr": "Travis", "it": "Beet", "ja": "ビート", "ko": "비트"}
     },
     {
       "id": "galar_nessa_finals",
@@ -2581,7 +2677,8 @@
           53
         ]
       ],
-      "name_de": "Kate"
+      "name_de": "Kate",
+      "names": {"es": "Cathy", "fr": "Donna", "it": "Azzurra", "ja": "ルリナ", "ko": "야청"}
     },
     {
       "id": "galar_bea_finals",
@@ -2614,7 +2711,8 @@
           54
         ]
       ],
-      "name_de": "Saida"
+      "name_de": "Saida",
+      "names": {"es": "Judith", "fr": "Faïza", "it": "Fabia", "ja": "サイトウ", "ko": "채두"}
     },
     {
       "id": "galar_raihan_finals",
@@ -2646,7 +2744,8 @@
           55
         ]
       ],
-      "name_de": "Roy"
+      "name_de": "Roy",
+      "names": {"es": "Roy", "fr": "Roy", "it": "Laburno", "ja": "キバナ", "ko": "금랑"}
     },
     {
       "id": "galar_leon",
@@ -2679,7 +2778,8 @@
           65
         ]
       ],
-      "name_de": "Delion"
+      "name_de": "Delion",
+      "names": {"es": "Lionel", "fr": "Tarak", "it": "Dandel", "ja": "ダンデ", "ko": "단델"}
     },
     {
       "id": "paldea_katy",
@@ -2702,7 +2802,8 @@
           15
         ]
       ],
-      "name_de": "Enja"
+      "name_de": "Ronah",
+      "names": {"es": "Araceli", "fr": "Éra", "it": "Aceria", "ja": "カエデ", "ko": "단풍"}
     },
     {
       "id": "paldea_brassius",
@@ -2724,7 +2825,8 @@
           17
         ]
       ],
-      "name_de": "Colzo"
+      "name_de": "Colzo",
+      "names": {"es": "Brais", "fr": "Colza", "it": "Brassius", "ja": "コルサ", "ko": "콜사"}
     },
     {
       "id": "paldea_iono",
@@ -2751,7 +2853,8 @@
           24
         ]
       ],
-      "name_de": "Enigmara"
+      "name_de": "Enigmara",
+      "names": {"es": "e-Nigma", "fr": "Mashynn", "it": "Kissara", "ja": "ナンジャモ", "ko": "모야모"}
     },
     {
       "id": "paldea_kofu",
@@ -2773,7 +2876,8 @@
           30
         ]
       ],
-      "name_de": "Kofu"
+      "name_de": "Kombu",
+      "names": {"es": "Fuco", "fr": "Kombu", "it": "Algaro", "ja": "ハイダイ", "ko": "곤포"}
     },
     {
       "id": "paldea_larry",
@@ -2795,7 +2899,8 @@
           36
         ]
       ],
-      "name_de": "Aoki"
+      "name_de": "Aoki",
+      "names": {"es": "Laureano", "fr": "Okuba", "it": "Ubaldo", "ja": "アオキ", "ko": "청목"}
     },
     {
       "id": "paldea_ryme",
@@ -2822,7 +2927,8 @@
           42
         ]
       ],
-      "name_de": "Etta"
+      "name_de": "Etta",
+      "names": {"es": "Lima", "fr": "Laïm", "it": "Lima", "ja": "ライム", "ko": "라임"}
     },
     {
       "id": "paldea_tulip",
@@ -2849,7 +2955,8 @@
           45
         ]
       ],
-      "name_de": "Tulia"
+      "name_de": "Tulia",
+      "names": {"es": "Tuli", "fr": "Tully", "it": "Tulipa", "ja": "リップ", "ko": "리파"}
     },
     {
       "id": "paldea_grusha",
@@ -2875,7 +2982,8 @@
           48
         ]
       ],
-      "name_de": "Grusha"
+      "name_de": "Grusha",
+      "names": {"es": "Grusha", "fr": "Grusha", "it": "Grusha", "ja": "グルーシャ", "ko": "그루샤"}
     },
     {
       "id": "paldea_rika",
@@ -2906,7 +3014,8 @@
           58
         ]
       ],
-      "name_de": "Rika"
+      "name_de": "Cay",
+      "names": {"es": "Cayena", "fr": "Cayenn", "it": "Capsi", "ja": "チリ", "ko": "칠리"}
     },
     {
       "id": "paldea_poppy",
@@ -2937,7 +3046,8 @@
           59
         ]
       ],
-      "name_de": "Poppy"
+      "name_de": "Poppy",
+      "names": {"es": "Pola", "fr": "Popi", "it": "Verina", "ja": "ポピー", "ko": "뽀삐"}
     },
     {
       "id": "paldea_larry_e4",
@@ -2967,7 +3077,8 @@
           60
         ]
       ],
-      "name_de": "Aoki"
+      "name_de": "Aoki",
+      "names": {"es": "Laureano", "fr": "Okuba", "it": "Ubaldo", "ja": "アオキ", "ko": "청목"}
     },
     {
       "id": "paldea_hassel",
@@ -2997,7 +3108,8 @@
           61
         ]
       ],
-      "name_de": "Hassel"
+      "name_de": "Sinius",
+      "names": {"es": "Hesperio", "fr": "Hassa", "it": "Oranzio", "ja": "ハッサク", "ko": "팔자크"}
     },
     {
       "id": "paldea_geeta",
@@ -3031,7 +3143,8 @@
           62
         ]
       ],
-      "name_de": "Sagi"
+      "name_de": "Sagaria",
+      "names": {"es": "Ságita", "fr": "Alisma", "it": "Alisma", "ja": "オモダカ", "ko": "테사"}
     }
   ]
 }

@@ -1,215 +1,883 @@
 {
+ "abomasite": {
+  "pl": "Pozwala Pokémonowi Abomasnow mega-ewoluować w formę Mega Abomasnow w walce."
+ },
+ "absolite": {
+  "pl": "Pozwala Pokémonowi Absol mega-ewoluować w formę Mega Absol w walce."
+ },
+ "aerodactylite": {
+  "pl": "Pozwala Pokémonowi Aerodactyl mega-ewoluować w formę Mega Aerodactyl w walce."
+ },
+ "aggronite": {
+  "pl": "Pozwala Pokémonowi Aggron mega-ewoluować w formę Mega Aggron w walce."
+ },
+ "alakazite": {
+  "pl": "Pozwala Pokémonowi Alakazam mega-ewoluować w formę Mega Alakazam w walce."
+ },
+ "altarianite": {
+  "pl": "Pozwala Pokémonowi Altaria mega-ewoluować w formę Mega Altaria w walce."
+ },
+ "ampharosite": {
+  "pl": "Pozwala Pokémonowi Ampharos mega-ewoluować w formę Mega Ampharos w walce."
+ },
+ "amulet_coin": {
+  "pl": "Podwaja nagrodę pieniężną za wygraną walkę, jeśli trzyma go członek drużyny."
+ },
+ "antidote": {
+  "pl": "Leczy zatrucie. Statusy istnieją tylko w walce."
+ },
+ "audinite": {
+  "pl": "Pozwala Pokémonowi Audino mega-ewoluować w formę Mega Audino w walce."
+ },
  "auspicious_armor": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "awakening": {
+  "pl": "Budzi śpiącego Pokémona. Statusy istnieją tylko w walce."
+ },
+ "banettite": {
+  "pl": "Pozwala Pokémonowi Banette mega-ewoluować w formę Mega Banette w walce."
+ },
+ "beedrillite": {
+  "pl": "Pozwala Pokémonowi Beedrill mega-ewoluować w formę Mega Beedrill w walce."
  },
  "black_augurite": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
  },
  "black_belt": {
-  "fr": "Les attaques de type Combat infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Combat infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Lucha causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Lotta infliggono il 20% di danni in più.",
+  "ja": "かくとうタイプの技のダメージが20%増える。",
+  "ko": "격투 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Fighting zadają o 20% więcej obrażeń."
  },
  "black_glasses": {
-  "fr": "Les attaques de type Ténèbres infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Ténèbres infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Siniestro causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Buio infliggono il 20% di danni in più.",
+  "ja": "あくタイプの技のダメージが20%増える。",
+  "ko": "악 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Dark zadają o 20% więcej obrażeń."
+ },
+ "blastoisinite": {
+  "pl": "Pozwala Pokémonowi Blastoise mega-ewoluować w formę Mega Blastoise w walce."
+ },
+ "blazikenite": {
+  "pl": "Pozwala Pokémonowi Blaziken mega-ewoluować w formę Mega Blaziken w walce."
+ },
+ "blue_orb": {
+  "pl": "Pozwala Pokémonowi Kyogre przejść Prymalną Rewersję w formę Primal Kyogre w walce."
+ },
+ "burn_heal": {
+  "pl": "Leczy oparzenie. Statusy istnieją tylko w walce."
  },
  "calcium": {
-  "fr": "+10 EV en Attaque Spéciale. Tous les 4 EV rapportent 1 point de plus en Attaque Spéciale au niveau 100."
+  "fr": "+10 EV en Attaque Spéciale. Tous les 4 EV rapportent 1 point de plus en Attaque Spéciale au niveau 100.",
+  "es": "+10 EV de At. Esp.. Cada 4 EV valen un punto más de At. Esp. a nivel 100.",
+  "it": "+10 EV di Att. Sp.. Ogni 4 EV valgono un punto in più di Att. Sp. al livello 100.",
+  "ja": "とくこうの努力値+10。努力値4ごとにレベル100でとくこうが1上がる。",
+  "ko": "특수공격 노력치 +10. 노력치 4마다 레벨 100에서 특수공격이(가) 1 오릅니다.",
+  "pl": "+10 EV: Sp. Atak. Każde 4 EV to jeden punkt więcej (Sp. Atak) na poziomie 100."
+ },
+ "cameruptite": {
+  "pl": "Pozwala Pokémonowi Camerupt mega-ewoluować w formę Mega Camerupt w walce."
  },
  "carbos": {
-  "fr": "+10 EV en Vitesse. Tous les 4 EV rapportent 1 point de plus en Vitesse au niveau 100."
+  "fr": "+10 EV en Vitesse. Tous les 4 EV rapportent 1 point de plus en Vitesse au niveau 100.",
+  "es": "+10 EV de Velocidad. Cada 4 EV valen un punto más de Velocidad a nivel 100.",
+  "it": "+10 EV di Velocità. Ogni 4 EV valgono un punto in più di Velocità al livello 100.",
+  "ja": "すばやさの努力値+10。努力値4ごとにレベル100ですばやさが1上がる。",
+  "ko": "스피드 노력치 +10. 노력치 4마다 레벨 100에서 스피드이(가) 1 오릅니다.",
+  "pl": "+10 EV: Szybkość. Każde 4 EV to jeden punkt więcej (Szybkość) na poziomie 100."
  },
  "charcoal": {
-  "fr": "Les attaques de type Feu infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Feu infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Fuego causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Fuoco infliggono il 20% di danni in più.",
+  "ja": "ほのおタイプの技のダメージが20%増える。",
+  "ko": "불꽃 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Fire zadają o 20% więcej obrażeń."
+ },
+ "charizardite_x": {
+  "pl": "Pozwala Pokémonowi Charizard mega-ewoluować w formę Mega Charizard X w walce."
+ },
+ "charizardite_y": {
+  "pl": "Pozwala Pokémonowi Charizard mega-ewoluować w formę Mega Charizard Y w walce."
+ },
+ "chipped_pot": {
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
  },
  "choice_band": {
-  "fr": "Attaque ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon."
+  "fr": "Attaque ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon.",
+  "es": "Ataque ×1,5, pero solo se puede usar el primer movimiento elegido hasta cambiar.",
+  "it": "Attacco ×1,5, ma si può usare solo la prima mossa scelta fino al cambio.",
+  "ja": "こうげきが1.5倍になるが、交代するまで最初に選んだ技しか使えない。",
+  "ko": "공격이(가) 1.5배가 되지만, 교체할 때까지 처음 고른 기술만 쓸 수 있습니다.",
+  "pl": "Atak ×1,5, ale do zmiany można używać tylko pierwszego wybranego ruchu."
  },
  "choice_scarf": {
-  "fr": "Vitesse ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon."
+  "fr": "Vitesse ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon.",
+  "es": "Velocidad ×1,5, pero solo se puede usar el primer movimiento elegido hasta cambiar.",
+  "it": "Velocità ×1,5, ma si può usare solo la prima mossa scelta fino al cambio.",
+  "ja": "すばやさが1.5倍になるが、交代するまで最初に選んだ技しか使えない。",
+  "ko": "스피드이(가) 1.5배가 되지만, 교체할 때까지 처음 고른 기술만 쓸 수 있습니다.",
+  "pl": "Szybkość ×1,5, ale do zmiany można używać tylko pierwszego wybranego ruchu."
  },
  "choice_specs": {
-  "fr": "Attaque Spéciale ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon."
+  "fr": "Attaque Spéciale ×1,5, mais seule la première attaque choisie peut être utilisée jusqu'au changement de Pokémon.",
+  "es": "At. Esp. ×1,5, pero solo se puede usar el primer movimiento elegido hasta cambiar.",
+  "it": "Att. Sp. ×1,5, ma si può usare solo la prima mossa scelta fino al cambio.",
+  "ja": "とくこうが1.5倍になるが、交代するまで最初に選んだ技しか使えない。",
+  "ko": "특수공격이(가) 1.5배가 되지만, 교체할 때까지 처음 고른 기술만 쓸 수 있습니다.",
+  "pl": "Sp. Atak ×1,5, ale do zmiany można używać tylko pierwszego wybranego ruchu."
  },
  "clever_wing": {
-  "fr": "+1 EV en Défense Spéciale – pour ajuster finement les derniers points sous le plafond."
+  "fr": "+1 EV en Défense Spéciale – pour ajuster finement les derniers points sous le plafond.",
+  "es": "+1 EV de Def. Esp.: ajuste fino barato para los últimos puntos antes del límite.",
+  "it": "+1 EV di Dif. Sp.: rifinitura economica per gli ultimi punti prima del limite.",
+  "ja": "とくぼうの努力値+1。上限までの微調整に手頃。",
+  "ko": "특수방어 노력치 +1. 상한까지 미세 조정에 저렴합니다.",
+  "pl": "+1 EV: Sp. Obrona. Tanie dopracowanie ostatnich punktów przed limitem."
+ },
+ "cracked_pot": {
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "dawn_stone": {
+  "pl": "Ewoluuje samca Kirlia i samicę Snorunt."
+ },
+ "deep_sea_scale": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "deep_sea_tooth": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
  },
  "destiny_knot": {
-  "fr": "Tenu par un parent de la Pension : l'Œuf hérite de 5 IV de ses parents au lieu de 3."
+  "fr": "Tenu par un parent de la Pension : l'Œuf hérite de 5 IV de ses parents au lieu de 3.",
+  "es": "Equipado a un progenitor en la Guardería: el Huevo hereda 5 IV en vez de 3.",
+  "it": "Tenuto da un genitore alla Pensione: l'Uovo eredita 5 IV invece di 3.",
+  "ja": "育て屋の親に持たせると、タマゴが親から受け継ぐ個体値が3つから5つになる。",
+  "ko": "키우미집 부모에게 지니게 하면 알이 부모에게서 물려받는 개체값이 3개에서 5개가 됩니다.",
+  "pl": "Trzymany przez rodzica w Żłobku: Jajo dziedziczy 5 zamiast 3 IV od rodziców."
+ },
+ "diancite": {
+  "pl": "Pozwala Pokémonowi Diancie mega-ewoluować w formę Mega Diancie w walce."
  },
  "dive_ball": {
-  "fr": "Particulièrement efficace sur les Pokémon d'un lac ou d'une plage (bonus de capture ×3,5, sinon ×1)."
+  "fr": "Particulièrement efficace sur les Pokémon d'un lac ou d'une plage (bonus de capture ×3,5, sinon ×1).",
+  "es": "Funciona especialmente bien con Pokémon de un lago o una playa (bonus ×3,5; si no, ×1).",
+  "it": "Funziona particolarmente bene con i Pokémon di un lago o di una spiaggia (bonus ×3,5, altrimenti ×1).",
+  "ja": "湖や砂浜の場所のポケモンに特に有効(捕獲ボーナス×3.5、それ以外は×1)。",
+  "ko": "호수나 해변 지역의 포켓몬에게 특히 효과적입니다(포획 보너스 ×3.5, 그 외 ×1).",
+  "pl": "Szczególnie skuteczny na Pokémony z jeziora lub plaży (premia ×3,5, w innym razie ×1)."
  },
  "dragon_fang": {
-  "fr": "Les attaques de type Dragon infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Dragon infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Dragón causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Drago infliggono il 20% di danni in più.",
+  "ja": "ドラゴンタイプの技のダメージが20%増える。",
+  "ko": "드래곤 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Dragon zadają o 20% więcej obrażeń."
+ },
+ "dragon_scale": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "dubious_disc": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
  },
  "dusk_ball": {
-  "fr": "Particulièrement efficace la nuit, de 20 h à 6 h, heure locale (bonus de capture ×3, sinon ×1)."
+  "fr": "Particulièrement efficace la nuit, de 20 h à 6 h, heure locale (bonus de capture ×3, sinon ×1).",
+  "es": "Funciona especialmente bien de noche, de 20:00 a 6:00 hora local (bonus ×3; si no, ×1).",
+  "it": "Funziona particolarmente bene di notte, dalle 20:00 alle 6:00 ora locale (bonus ×3, altrimenti ×1).",
+  "ja": "夜間(現地時間20時〜6時)に特に有効(捕獲ボーナス×3、それ以外は×1)。",
+  "ko": "밤(현지 시각 20시~6시)에 특히 효과적입니다(포획 보너스 ×3, 그 외 ×1).",
+  "pl": "Szczególnie skuteczny nocą, od 20:00 do 6:00 czasu lokalnego (premia ×3, w innym razie ×1)."
+ },
+ "dusk_stone": {
+  "pl": "Ewoluuje np. Murkrow, Misdreavus i Lampent."
+ },
+ "electirizer": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "everstone": {
+  "pl": "Trzymany przez rodzica w Żłobku: Jajo dziedziczy naturę tego rodzica."
  },
  "exp_share": {
-  "fr": "Le porteur gagne la même EXP qu'un membre de l'équipe qui combat, même sans participer au combat. Non vendu – récompense des succès de niveau 100."
+  "fr": "Le porteur gagne la même EXP qu'un membre de l'équipe qui combat, même sans participer au combat. Non vendu – récompense des succès de niveau 100.",
+  "es": "El portador gana la misma EXP que un miembro que combate, aunque no participe. No está a la venta: recompensa de los logros de nivel 100.",
+  "it": "Chi lo tiene ottiene la stessa Esp. di un membro in lotta, anche senza parteciparvi. Non in vendita: ricompensa degli obiettivi di livello 100.",
+  "ja": "バトルに出なくても、戦ったメンバーと同じ経験値を得る。非売品:レベル100の実績の報酬。",
+  "ko": "배틀에 나가지 않아도 싸운 멤버와 같은 경험치를 얻습니다. 비매품: 레벨 100 업적 보상.",
+  "pl": "Posiadacz zdobywa tyle EXP co walczący członek drużyny, nawet bez udziału w walce. Nie na sprzedaż: nagroda za osiągnięcia poziomu 100."
  },
  "fairy_feather": {
-  "fr": "Les attaques de type Fée infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Fée infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Hada causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Folletto infliggono il 20% di danni in più.",
+  "ja": "フェアリータイプの技のダメージが20%増える。",
+  "ko": "페어리 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Fairy zadają o 20% więcej obrażeń."
  },
  "fast_ball": {
-  "fr": "Particulièrement efficace sur les Pokémon rapides, avec une Vitesse de base de 100 ou plus (bonus de capture ×4, sinon ×1)."
+  "fr": "Particulièrement efficace sur les Pokémon rapides, avec une Vitesse de base de 100 ou plus (bonus de capture ×4, sinon ×1).",
+  "es": "Funciona especialmente bien con Pokémon rápidos con Velocidad base de 100 o más (bonus ×4; si no, ×1).",
+  "it": "Funziona particolarmente bene con i Pokémon veloci con Velocità base di 100 o più (bonus ×4, altrimenti ×1).",
+  "ja": "すばやさの種族値が100以上のポケモンに特に有効(捕獲ボーナス×4、それ以外は×1)。",
+  "ko": "스피드 종족값이 100 이상인 빠른 포켓몬에게 특히 효과적입니다(포획 보너스 ×4, 그 외 ×1).",
+  "pl": "Szczególnie skuteczny na szybkie Pokémony z bazową Szybkością 100 lub więcej (premia ×4, w innym razie ×1)."
+ },
+ "fire_stone": {
+  "pl": "Ewoluuje np. Vulpix, Growlithe i Eevee."
  },
  "focus_sash": {
-  "fr": "Survit avec 1 PV à un coup qui mettrait K.O., à condition d'avoir tous ses PV. Consommée."
+  "fr": "Survit avec 1 PV à un coup qui mettrait K.O., à condition d'avoir tous ses PV. Consommée.",
+  "es": "Con todos los PS, sobrevive a un golpe de KO con 1 PS. Se consume.",
+  "it": "Con tutti i PS, sopravvive a un colpo KO con 1 PS. Si consuma.",
+  "ja": "HPが満タンのとき、一撃で倒される攻撃をHP1で耐える。使うとなくなる。",
+  "ko": "HP가 가득할 때 일격에 쓰러지는 공격을 HP 1로 버팁니다. 사용하면 사라집니다.",
+  "pl": "Przy pełnym HP przetrwa cios nokautujący z 1 HP. Zużywa się."
+ },
+ "full_heal": {
+  "pl": "Leczy każdy status. Statusy istnieją tylko w walce."
+ },
+ "full_restore": {
+  "pl": "W pełni przywraca HP i leczy każdy status."
+ },
+ "galladite": {
+  "pl": "Pozwala Pokémonowi Gallade mega-ewoluować w formę Mega Gallade w walce."
+ },
+ "garchompite": {
+  "pl": "Pozwala Pokémonowi Garchomp mega-ewoluować w formę Mega Garchomp w walce."
+ },
+ "gardevoirite": {
+  "pl": "Pozwala Pokémonowi Gardevoir mega-ewoluować w formę Mega Gardevoir w walce."
+ },
+ "gengarite": {
+  "pl": "Pozwala Pokémonowi Gengar mega-ewoluować w formę Mega Gengar w walce."
  },
  "genius_wing": {
-  "fr": "+1 EV en Attaque Spéciale – pour ajuster finement les derniers points sous le plafond."
+  "fr": "+1 EV en Attaque Spéciale – pour ajuster finement les derniers points sous le plafond.",
+  "es": "+1 EV de At. Esp.: ajuste fino barato para los últimos puntos antes del límite.",
+  "it": "+1 EV di Att. Sp.: rifinitura economica per gli ultimi punti prima del limite.",
+  "ja": "とくこうの努力値+1。上限までの微調整に手頃。",
+  "ko": "특수공격 노력치 +1. 상한까지 미세 조정에 저렴합니다.",
+  "pl": "+1 EV: Sp. Atak. Tanie dopracowanie ostatnich punktów przed limitem."
+ },
+ "glalitite": {
+  "pl": "Pozwala Pokémonowi Glalie mega-ewoluować w formę Mega Glalie w walce."
  },
  "great_ball": {
-  "fr": "Meilleure que la Poké Ball (bonus de capture ×1,5)."
+  "fr": "Meilleure que la Poké Ball (bonus de capture ×1,5).",
+  "es": "Mejor que la Poké Ball (bonus de captura ×1,5).",
+  "it": "Migliore della Poké Ball (bonus di cattura ×1,5).",
+  "ja": "モンスターボールより高性能(捕獲ボーナス×1.5)。",
+  "ko": "몬스터볼보다 성능이 좋습니다(포획 보너스 ×1.5).",
+  "pl": "Lepszy niż Poké Ball (premia do łapania ×1,5)."
  },
  "grepa_berry": {
-  "fr": "−10 EV en Défense Spéciale. Libère à nouveau une partie du budget d'EV."
+  "fr": "−10 EV en Défense Spéciale. Libère à nouveau une partie du budget d'EV.",
+  "es": "-10 EV de Def. Esp.. Libera parte del presupuesto de EV.",
+  "it": "-10 EV di Dif. Sp.. Libera parte del budget di EV.",
+  "ja": "とくぼうの努力値-10。努力値の枠を空ける。",
+  "ko": "특수방어 노력치 -10. 노력치 여유를 다시 확보합니다.",
+  "pl": "-10 EV: Sp. Obrona. Zwalnia część budżetu EV."
+ },
+ "gyaradosite": {
+  "pl": "Pozwala Pokémonowi Gyarados mega-ewoluować w formę Mega Gyarados w walce."
  },
  "hard_stone": {
-  "fr": "Les attaques de type Roche infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Roche infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Roca causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Roccia infliggono il 20% di danni in più.",
+  "ja": "いわタイプの技のダメージが20%増える。",
+  "ko": "바위 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Rock zadają o 20% więcej obrażeń."
  },
  "heal_ball": {
-  "fr": "Bonus de capture ×1, mais le Pokémon capturé arrive avec tous ses PV."
+  "fr": "Bonus de capture ×1, mais le Pokémon capturé arrive avec tous ses PV.",
+  "es": "Bonus de captura ×1, pero el Pokémon capturado llega con todos sus PS.",
+  "it": "Bonus di cattura ×1, ma il Pokémon catturato arriva con tutti i PS.",
+  "ja": "捕獲ボーナス×1だが、捕まえたポケモンのHPが満タンになる。",
+  "ko": "포획 보너스 ×1이지만, 잡은 포켓몬의 HP가 가득 찹니다.",
+  "pl": "Premia do łapania ×1, ale złapany Pokémon ma pełne HP."
  },
  "health_wing": {
-  "fr": "+1 EV en PV – pour ajuster finement les derniers points sous le plafond."
+  "fr": "+1 EV en PV – pour ajuster finement les derniers points sous le plafond.",
+  "es": "+1 EV de PS: ajuste fino barato para los últimos puntos antes del límite.",
+  "it": "+1 EV di PS: rifinitura economica per gli ultimi punti prima del limite.",
+  "ja": "HPの努力値+1。上限までの微調整に手頃。",
+  "ko": "HP 노력치 +1. 상한까지 미세 조정에 저렴합니다.",
+  "pl": "+1 EV: HP. Tanie dopracowanie ostatnich punktów przed limitem."
+ },
+ "heracronite": {
+  "pl": "Pozwala Pokémonowi Heracross mega-ewoluować w formę Mega Heracross w walce."
  },
  "hondew_berry": {
-  "fr": "−10 EV en Attaque Spéciale. Libère à nouveau une partie du budget d'EV."
+  "fr": "−10 EV en Attaque Spéciale. Libère à nouveau une partie du budget d'EV.",
+  "es": "-10 EV de At. Esp.. Libera parte del presupuesto de EV.",
+  "it": "-10 EV di Att. Sp.. Libera parte del budget di EV.",
+  "ja": "とくこうの努力値-10。努力値の枠を空ける。",
+  "ko": "특수공격 노력치 -10. 노력치 여유를 다시 확보합니다.",
+  "pl": "-10 EV: Sp. Atak. Zwalnia część budżetu EV."
+ },
+ "houndoominite": {
+  "pl": "Pozwala Pokémonowi Houndoom mega-ewoluować w formę Mega Houndoom w walce."
  },
  "hp_up": {
-  "fr": "+10 EV en PV. Tous les 4 EV rapportent 1 point de plus en PV au niveau 100."
+  "fr": "+10 EV en PV. Tous les 4 EV rapportent 1 point de plus en PV au niveau 100.",
+  "es": "+10 EV de PS. Cada 4 EV valen un punto más de PS a nivel 100.",
+  "it": "+10 EV di PS. Ogni 4 EV valgono un punto in più di PS al livello 100.",
+  "ja": "HPの努力値+10。努力値4ごとにレベル100でHPが1上がる。",
+  "ko": "HP 노력치 +10. 노력치 4마다 레벨 100에서 HP이(가) 1 오릅니다.",
+  "pl": "+10 EV: HP. Każde 4 EV to jeden punkt więcej (HP) na poziomie 100."
+ },
+ "hyper_potion": {
+  "es": "Restaura 120 PS.",
+  "it": "Ripristina 120 PS.",
+  "ja": "HPを120回復する。",
+  "ko": "HP를 120 회복합니다.",
+  "pl": "Przywraca 120 HP.",
+  "fr": "Restaure 120 PV."
+ },
+ "ice_heal": {
+  "pl": "Rozmraża zamrożonego Pokémona. Statusy istnieją tylko w walce."
+ },
+ "ice_stone": {
+  "pl": "Ewoluuje np. Eevee (w Glaceona) i Crabrawlera."
  },
  "incubator": {
-  "fr": "Fait éclore un Œuf sans occuper d'emplacement d'équipe. Dure pour 3 Œufs."
+  "fr": "Fait éclore un Œuf sans occuper d'emplacement d'équipe. Dure pour 3 Œufs.",
+  "es": "Hace eclosionar un Huevo sin ocupar un puesto del equipo. Dura 3 Huevos.",
+  "it": "Fa schiudere un Uovo senza occupare un posto in squadra. Dura per 3 Uova.",
+  "ja": "チームの枠を使わずにタマゴをかえす。タマゴ3個分使える。",
+  "ko": "팀 슬롯을 차지하지 않고 알을 부화시킵니다. 알 3개까지 사용할 수 있습니다.",
+  "pl": "Wykluwa Jajo bez zajmowania miejsca w drużynie. Wystarcza na 3 Jaja."
  },
  "iron": {
-  "fr": "+10 EV en Défense. Tous les 4 EV rapportent 1 point de plus en Défense au niveau 100."
+  "fr": "+10 EV en Défense. Tous les 4 EV rapportent 1 point de plus en Défense au niveau 100.",
+  "es": "+10 EV de Defensa. Cada 4 EV valen un punto más de Defensa a nivel 100.",
+  "it": "+10 EV di Difesa. Ogni 4 EV valgono un punto in più di Difesa al livello 100.",
+  "ja": "ぼうぎょの努力値+10。努力値4ごとにレベル100でぼうぎょが1上がる。",
+  "ko": "방어 노력치 +10. 노력치 4마다 레벨 100에서 방어이(가) 1 오릅니다.",
+  "pl": "+10 EV: Obrona. Każde 4 EV to jeden punkt więcej (Obrona) na poziomie 100."
+ },
+ "kangaskhanite": {
+  "pl": "Pozwala Pokémonowi Kangaskhan mega-ewoluować w formę Mega Kangaskhan w walce."
  },
  "kelpsy_berry": {
-  "fr": "−10 EV en Attaque. Libère à nouveau une partie du budget d'EV."
+  "fr": "−10 EV en Attaque. Libère à nouveau une partie du budget d'EV.",
+  "es": "-10 EV de Ataque. Libera parte del presupuesto de EV.",
+  "it": "-10 EV di Attacco. Libera parte del budget di EV.",
+  "ja": "こうげきの努力値-10。努力値の枠を空ける。",
+  "ko": "공격 노력치 -10. 노력치 여유를 다시 확보합니다.",
+  "pl": "-10 EV: Atak. Zwalnia część budżetu EV."
+ },
+ "kings_rock": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "latiasite": {
+  "pl": "Pozwala Pokémonowi Latias mega-ewoluować w formę Mega Latias w walce."
+ },
+ "latiosite": {
+  "pl": "Pozwala Pokémonowi Latios mega-ewoluować w formę Mega Latios w walce."
+ },
+ "leaf_stone": {
+  "pl": "Ewoluuje np. Gloom, Weepinbell, Exeggcute i Eevee."
  },
  "leftovers": {
-  "fr": "Rend 1/16 des PV max à la fin de chaque tour."
+  "fr": "Rend 1/16 des PV max à la fin de chaque tour.",
+  "es": "Cura 1/16 de los PS máx. al final de cada turno.",
+  "it": "Ripristina 1/16 dei PS massimi alla fine di ogni turno.",
+  "ja": "毎ターン終了時に最大HPの1/16を回復する。",
+  "ko": "매 턴 종료 시 최대 HP의 1/16을 회복합니다.",
+  "pl": "Leczy 1/16 maks. HP na koniec każdej tury."
  },
  "level_ball": {
-  "fr": "Fonctionne mieux quand le niveau de votre Pokémon actif (hors combat : premier emplacement de l'équipe) dépasse celui du Pokémon sauvage (×2 s'il est plus élevé, ×4 s'il est plus du double, ×8 s'il est au moins quatre fois plus élevé)."
+  "fr": "Fonctionne mieux quand le niveau de votre Pokémon actif (hors combat : premier emplacement de l'équipe) dépasse celui du Pokémon sauvage (×2 s'il est plus élevé, ×4 s'il est plus du double, ×8 s'il est au moins quatre fois plus élevé).",
+  "es": "Funciona mejor cuanto mayor sea el nivel de tu Pokémon activo (fuera de combate: el primero del equipo) respecto al salvaje (×2 si es mayor, ×4 si es más del doble, ×8 si es al menos el cuádruple).",
+  "it": "Funziona meglio quanto più alto è il livello del tuo Pokémon attivo (fuori dalla lotta: il primo della squadra) rispetto a quello selvatico (×2 se più alto, ×4 se più del doppio, ×8 se almeno il quadruplo).",
+  "ja": "場に出ているポケモン(戦闘外ではチームの先頭)のレベルが野生より高いほど有効(高ければ×2、2倍超で×4、4倍以上で×8)。",
+  "ko": "내 활동 포켓몬(전투 밖에서는 팀 첫 번째)의 레벨이 야생보다 높을수록 효과적입니다(높으면 ×2, 2배 초과 ×4, 4배 이상 ×8).",
+  "pl": "Działa tym lepiej, im wyższy poziom ma twój aktywny Pokémon (poza walką: pierwszy w drużynie) względem dzikiego (×2 gdy wyższy, ×4 gdy ponad dwukrotnie, ×8 gdy co najmniej czterokrotnie)."
  },
  "life_orb": {
-  "fr": "Les attaques infligent 30 % de dégâts en plus, mais coûtent 1/10 des PV max à chaque fois."
+  "fr": "Les attaques infligent 30 % de dégâts en plus, mais coûtent 1/10 des PV max à chaque fois.",
+  "es": "Los movimientos causan un 30 % más de daño, pero cuestan 1/10 de los PS máx. cada vez.",
+  "it": "Le mosse infliggono il 30% di danni in più, ma costano ogni volta 1/10 dei PS massimi.",
+  "ja": "技のダメージが30%増えるが、使うたびに最大HPの1/10を失う。",
+  "ko": "기술의 대미지가 30% 증가하지만, 사용할 때마다 최대 HP의 1/10을 잃습니다.",
+  "pl": "Ruchy zadają o 30% więcej obrażeń, ale każdy kosztuje 1/10 maks. HP."
  },
  "linking_cord": {
-  "fr": "Remplace l'échange : fait évoluer les Pokémon d'échange comme Kadabra, Machopeur, Gravalanch et Spectrum."
+  "fr": "Remplace l'échange : fait évoluer les Pokémon d'échange comme Kadabra, Machopeur, Gravalanch et Spectrum.",
+  "es": "Sustituye al intercambio: hace evolucionar a Pokémon de intercambio como Kadabra, Machoke, Graveler y Haunter.",
+  "it": "Sostituisce lo scambio: fa evolvere i Pokémon da scambio come Kadabra, Machoke, Graveler e Haunter.",
+  "ja": "通信交換の代わりに、ユンゲラー、ゴーリキー、ゴローン、ゴーストなどを進化させる。",
+  "ko": "통신교환을 대신해 윤겔라, 근육몬, 데구리, 고우스트 등을 진화시킵니다.",
+  "pl": "Zastępuje wymianę: ewoluuje Pokémony wymienne, takie jak Kadabra, Machoke, Graveler i Haunter."
+ },
+ "lopunnite": {
+  "pl": "Pozwala Pokémonowi Lopunny mega-ewoluować w formę Mega Lopunny w walce."
+ },
+ "lucarionite": {
+  "pl": "Pozwala Pokémonowi Lucario mega-ewoluować w formę Mega Lucario w walce."
  },
  "lucky_egg": {
-  "fr": "Le porteur gagne 50 % de points d'expérience en plus."
+  "fr": "Le porteur gagne 50 % de points d'expérience en plus.",
+  "es": "El portador gana un 50 % más de puntos de experiencia.",
+  "it": "Chi lo tiene ottiene il 50% di punti esperienza in più.",
+  "ja": "持たせたポケモンの経験値が50%増える。",
+  "ko": "지닌 포켓몬의 경험치가 50% 증가합니다.",
+  "pl": "Posiadacz zdobywa o 50% więcej punktów doświadczenia."
+ },
+ "magmarizer": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
  },
  "magnet": {
-  "fr": "Les attaques de type Électrik infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Électrik infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Eléctrico causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Elettro infliggono il 20% di danni in più.",
+  "ja": "でんきタイプの技のダメージが20%増える。",
+  "ko": "전기 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Electric zadają o 20% więcej obrażeń."
  },
  "malicious_armor": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "manectite": {
+  "pl": "Pozwala Pokémonowi Manectric mega-ewoluować w formę Mega Manectric w walce."
+ },
+ "master_ball": {
+  "pl": "Łapie każdego Pokémona. Nie na sprzedaż."
  },
  "masterpiece_teacup": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "mawilite": {
+  "pl": "Pozwala Pokémonowi Mawile mega-ewoluować w formę Mega Mawile w walce."
+ },
+ "max_potion": {
+  "pl": "W pełni przywraca HP."
+ },
+ "max_revive": {
+  "pl": "Ożywia omdlałego Pokémona z pełnym HP."
+ },
+ "medichamite": {
+  "pl": "Pozwala Pokémonowi Medicham mega-ewoluować w formę Mega Medicham w walce."
+ },
+ "metagrossite": {
+  "pl": "Pozwala Pokémonowi Metagross mega-ewoluować w formę Mega Metagross w walce."
  },
  "metal_alloy": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "metal_coat": {
+  "es": "Sustituye al intercambio: los Pokémon que evolucionan al intercambiarse con este objeto evolucionan directamente. En combate: los movimientos de tipo Acero causan un 20 % más de daño.",
+  "it": "Sostituisce lo scambio: i Pokémon che si evolvono se scambiati tenendo questo strumento si evolvono direttamente. In lotta: le mosse di tipo Acciaio infliggono il 20% di danni in più.",
+  "ja": "通信交換の代わりに、このアイテムを持たせて交換すると進化するポケモンを直接進化させる。バトルで持たせると、はがねタイプの技のダメージが20%増える。",
+  "ko": "통신교환을 대신해, 이 도구를 지니고 교환하면 진화하는 포켓몬을 바로 진화시킵니다. 배틀에서 지니면 강철 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu. W walce: ruchy typu Steel zadają o 20% więcej obrażeń.",
+  "fr": "Remplace l'échange : les Pokémon qui évoluent échangés en tenant cet objet évoluent directement. En combat : les capacités de type Acier infligent 20 % de dégâts en plus."
+ },
+ "mewtwonite_x": {
+  "pl": "Pozwala Pokémonowi Mewtwo mega-ewoluować w formę Mega Mewtwo X w walce."
+ },
+ "mewtwonite_y": {
+  "pl": "Pozwala Pokémonowi Mewtwo mega-ewoluować w formę Mega Mewtwo Y w walce."
  },
  "miracle_seed": {
-  "fr": "Les attaques de type Plante infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Plante infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Planta causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Erba infliggono il 20% di danni in più.",
+  "ja": "くさタイプの技のダメージが20%増える。",
+  "ko": "풀 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Grass zadają o 20% więcej obrażeń."
+ },
+ "moon_stone": {
+  "pl": "Ewoluuje np. Nidorina, Nidorino, Clefairy i Jigglypuff."
  },
  "muscle_wing": {
-  "fr": "+1 EV en Attaque – pour ajuster finement les derniers points sous le plafond."
+  "fr": "+1 EV en Attaque – pour ajuster finement les derniers points sous le plafond.",
+  "es": "+1 EV de Ataque: ajuste fino barato para los últimos puntos antes del límite.",
+  "it": "+1 EV di Attacco: rifinitura economica per gli ultimi punti prima del limite.",
+  "ja": "こうげきの努力値+1。上限までの微調整に手頃。",
+  "ko": "공격 노력치 +1. 상한까지 미세 조정에 저렴합니다.",
+  "pl": "+1 EV: Atak. Tanie dopracowanie ostatnich punktów przed limitem."
  },
  "mystic_water": {
-  "fr": "Les attaques de type Eau infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Eau infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Agua causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Acqua infliggono il 20% di danni in più.",
+  "ja": "みずタイプの技のダメージが20%増える。",
+  "ko": "물 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Water zadają o 20% więcej obrażeń."
  },
  "nest_ball": {
-  "fr": "Plus le niveau du Pokémon sauvage est bas, mieux elle fonctionne (jusqu'à ×4 au niveau 1, aucun bonus à partir du niveau 30)."
+  "fr": "Plus le niveau du Pokémon sauvage est bas, mieux elle fonctionne (jusqu'à ×4 au niveau 1, aucun bonus à partir du niveau 30).",
+  "es": "Cuanto más bajo sea el nivel del Pokémon salvaje, mejor funciona (hasta ×4 a nivel 1, sin bonus desde el nivel 30).",
+  "it": "Più basso è il livello del Pokémon selvatico, meglio funziona (fino a ×4 al livello 1, nessun bonus dal livello 30).",
+  "ja": "野生のポケモンのレベルが低いほど有効(レベル1で最大×4、レベル30以上はボーナスなし)。",
+  "ko": "야생 포켓몬의 레벨이 낮을수록 효과적입니다(레벨 1에서 최대 ×4, 레벨 30부터 보너스 없음).",
+  "pl": "Im niższy poziom dzikiego Pokémona, tym lepiej działa (do ×4 na poziomie 1, bez premii od poziomu 30)."
  },
  "net_ball": {
-  "fr": "Particulièrement efficace sur les Pokémon de type Eau et Insecte (bonus de capture ×3,5, sinon ×1)."
+  "fr": "Particulièrement efficace sur les Pokémon de type Eau et Insecte (bonus de capture ×3,5, sinon ×1).",
+  "es": "Funciona especialmente bien con Pokémon de tipo Agua y Bicho (bonus ×3,5; si no, ×1).",
+  "it": "Funziona particolarmente bene con i Pokémon di tipo Acqua e Coleottero (bonus ×3,5, altrimenti ×1).",
+  "ja": "みずタイプとむしタイプのポケモンに特に有効(捕獲ボーナス×3.5、それ以外は×1)。",
+  "ko": "물·벌레 타입 포켓몬에게 특히 효과적입니다(포획 보너스 ×3.5, 그 외 ×1).",
+  "pl": "Szczególnie skuteczny na Pokémony typu Water i Bug (premia ×3,5, w innym razie ×1)."
  },
  "never_melt_ice": {
-  "fr": "Les attaques de type Glace infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Glace infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Hielo causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Ghiaccio infliggono il 20% di danni in più.",
+  "ja": "こおりタイプの技のダメージが20%増える。",
+  "ko": "얼음 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Ice zadają o 20% więcej obrażeń."
  },
  "oran_berry": {
-  "fr": "Rend 10 PV une fois, quand les PV tombent à la moitié."
+  "fr": "Rend 10 PV une fois, quand les PV tombent à la moitié.",
+  "es": "Cura 10 PS una vez, cuando los PS caen a la mitad.",
+  "it": "Ripristina 10 PS una volta, quando i PS scendono alla metà.",
+  "ja": "HPが半分になると一度だけHPを10回復する。",
+  "ko": "HP가 절반이 되면 한 번 HP를 10 회복합니다.",
+  "pl": "Leczy 10 HP jednorazowo, gdy HP spadnie do połowy."
+ },
+ "paralyze_heal": {
+  "pl": "Leczy paraliż. Statusy istnieją tylko w walce."
  },
  "peat_block": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "pidgeotite": {
+  "pl": "Pozwala Pokémonowi Pidgeot mega-ewoluować w formę Mega Pidgeot w walce."
+ },
+ "pinsirite": {
+  "pl": "Pozwala Pokémonowi Pinsir mega-ewoluować w formę Mega Pinsir w walce."
  },
  "poison_barb": {
-  "fr": "Les attaques de type Poison infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Poison infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Veneno causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Veleno infliggono il 20% di danni in più.",
+  "ja": "どくタイプの技のダメージが20%増える。",
+  "ko": "독 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Poison zadają o 20% więcej obrażeń."
  },
  "poke_ball": {
-  "fr": "Ball standard (bonus de capture ×1)."
+  "fr": "Ball standard (bonus de capture ×1).",
+  "es": "Ball estándar (bonus de captura ×1).",
+  "it": "Ball standard (bonus di cattura ×1).",
+  "ja": "標準のボール(捕獲ボーナス×1)。",
+  "ko": "기본 볼(포획 보너스 ×1).",
+  "pl": "Standardowy ball (premia do łapania ×1)."
  },
  "pomeg_berry": {
-  "fr": "−10 EV en PV. Libère à nouveau une partie du budget d'EV."
+  "fr": "−10 EV en PV. Libère à nouveau une partie du budget d'EV.",
+  "es": "-10 EV de PS. Libera parte del presupuesto de EV.",
+  "it": "-10 EV di PS. Libera parte del budget di EV.",
+  "ja": "HPの努力値-10。努力値の枠を空ける。",
+  "ko": "HP 노력치 -10. 노력치 여유를 다시 확보합니다.",
+  "pl": "-10 EV: HP. Zwalnia część budżetu EV."
+ },
+ "potion": {
+  "es": "Restaura 20 PS. Se puede usar en combate (gasta tu turno) o desde la Mochila.",
+  "it": "Ripristina 20 PS. Utilizzabile in lotta (costa il turno) o dalla Borsa.",
+  "ja": "HPを20回復する。バトル中(ターンを消費)またはバッグから使える。",
+  "ko": "HP를 20 회복합니다. 배틀 중(턴 소모) 또는 가방에서 사용할 수 있습니다.",
+  "pl": "Przywraca 20 HP. Można użyć w walce (kosztuje turę) lub z plecaka.",
+  "fr": "Restaure 20 PV. Utilisable en combat (coûte le tour) ou depuis le Sac."
+ },
+ "prism_scale": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "protector": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
  },
  "protein": {
-  "fr": "+10 EV en Attaque. Tous les 4 EV rapportent 1 point de plus en Attaque au niveau 100."
+  "fr": "+10 EV en Attaque. Tous les 4 EV rapportent 1 point de plus en Attaque au niveau 100.",
+  "es": "+10 EV de Ataque. Cada 4 EV valen un punto más de Ataque a nivel 100.",
+  "it": "+10 EV di Attacco. Ogni 4 EV valgono un punto in più di Attacco al livello 100.",
+  "ja": "こうげきの努力値+10。努力値4ごとにレベル100でこうげきが1上がる。",
+  "ko": "공격 노력치 +10. 노력치 4마다 레벨 100에서 공격이(가) 1 오릅니다.",
+  "pl": "+10 EV: Atak. Każde 4 EV to jeden punkt więcej (Atak) na poziomie 100."
  },
  "qualot_berry": {
-  "fr": "−10 EV en Défense. Libère à nouveau une partie du budget d'EV."
+  "fr": "−10 EV en Défense. Libère à nouveau une partie du budget d'EV.",
+  "es": "-10 EV de Defensa. Libera parte del presupuesto de EV.",
+  "it": "-10 EV di Difesa. Libera parte del budget di EV.",
+  "ja": "ぼうぎょの努力値-10。努力値の枠を空ける。",
+  "ko": "방어 노력치 -10. 노력치 여유를 다시 확보합니다.",
+  "pl": "-10 EV: Obrona. Zwalnia część budżetu EV."
  },
  "quick_ball": {
-  "fr": "Très efficace si elle est lancée dès le début, avant tout tour contre le Pokémon (bonus de capture ×5, sinon ×1)."
+  "fr": "Très efficace si elle est lancée dès le début, avant tout tour contre le Pokémon (bonus de capture ×5, sinon ×1).",
+  "es": "Muy eficaz si se lanza justo al principio, antes de cualquier turno contra el Pokémon (bonus ×5; si no, ×1).",
+  "it": "Molto efficace se lanciata subito, prima di qualsiasi turno contro il Pokémon (bonus ×5, altrimenti ×1).",
+  "ja": "戦闘開始直後、ターンが進む前に投げると非常に有効(捕獲ボーナス×5、それ以外は×1)。",
+  "ko": "전투 시작 직후 턴이 지나기 전에 던지면 매우 효과적입니다(포획 보너스 ×5, 그 외 ×1).",
+  "pl": "Bardzo skuteczny, jeśli rzucony na samym początku, przed jakąkolwiek turą (premia ×5, w innym razie ×1)."
  },
  "quick_claw": {
-  "fr": "20 % de chances d'attaquer en premier malgré une Vitesse inférieure."
+  "fr": "20 % de chances d'attaquer en premier malgré une Vitesse inférieure.",
+  "es": "20 % de probabilidad de actuar primero pese a tener menos Velocidad.",
+  "it": "20% di probabilità di agire per primo nonostante la Velocità inferiore.",
+  "ja": "20%の確率で、すばやさが低くても先に行動する。",
+  "ko": "20% 확률로 스피드가 낮아도 먼저 행동합니다.",
+  "pl": "20% szans na ruch jako pierwszy mimo niższej Szybkości."
+ },
+ "rare_candy": {
+  "es": "Sube 1 nivel a un Pokémon al usarlo. Recompensa por liberar un Pokémon (1 por cada 10 niveles que tenía).",
+  "it": "Aumenta di 1 il livello di un Pokémon. Ricompensa per la liberazione di un Pokémon (1 ogni 10 livelli che aveva).",
+  "ja": "ポケモンのレベルを1上げる。ポケモンを逃がすともらえる(レベル10ごとに1個)。",
+  "ko": "포켓몬의 레벨을 1 올립니다. 포켓몬을 놓아주면 받을 수 있습니다(레벨 10마다 1개).",
+  "pl": "Podnosi poziom Pokémona o 1. Nagroda za wypuszczenie Pokémona (1 za każde 10 poziomów).",
+  "fr": "Augmente le niveau d'un Pokémon de 1. Récompense pour la libération d'un Pokémon (1 par tranche de 10 niveaux)."
+ },
+ "reaper_cloth": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "red_orb": {
+  "pl": "Pozwala Pokémonowi Groudon przejść Prymalną Rewersję w formę Primal Groudon w walce."
  },
  "repeat_ball": {
-  "fr": "Particulièrement efficace sur les espèces déjà capturées (bonus de capture ×3,5, sinon ×1)."
+  "fr": "Particulièrement efficace sur les espèces déjà capturées (bonus de capture ×3,5, sinon ×1).",
+  "es": "Funciona especialmente bien con especies que ya has capturado (bonus ×3,5; si no, ×1).",
+  "it": "Funziona particolarmente bene con le specie già catturate (bonus ×3,5, altrimenti ×1).",
+  "ja": "捕まえたことのある種族に特に有効(捕獲ボーナス×3.5、それ以外は×1)。",
+  "ko": "잡은 적 있는 종에게 특히 효과적입니다(포획 보너스 ×3.5, 그 외 ×1).",
+  "pl": "Szczególnie skuteczny na gatunki, które już złapano (premia ×3,5, w innym razie ×1)."
  },
  "resist_wing": {
-  "fr": "+1 EV en Défense – pour ajuster finement les derniers points sous le plafond."
+  "fr": "+1 EV en Défense – pour ajuster finement les derniers points sous le plafond.",
+  "es": "+1 EV de Defensa: ajuste fino barato para los últimos puntos antes del límite.",
+  "it": "+1 EV di Difesa: rifinitura economica per gli ultimi punti prima del limite.",
+  "ja": "ぼうぎょの努力値+1。上限までの微調整に手頃。",
+  "ko": "방어 노력치 +1. 상한까지 미세 조정에 저렴합니다.",
+  "pl": "+1 EV: Obrona. Tanie dopracowanie ostatnich punktów przed limitem."
+ },
+ "revive": {
+  "pl": "Ożywia omdlałego Pokémona z połową maks. HP."
+ },
+ "sablenite": {
+  "pl": "Pozwala Pokémonowi Sableye mega-ewoluować w formę Mega Sableye w walce."
+ },
+ "sachet": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "salamencite": {
+  "pl": "Pozwala Pokémonowi Salamence mega-ewoluować w formę Mega Salamence w walce."
+ },
+ "sceptilite": {
+  "pl": "Pozwala Pokémonowi Sceptile mega-ewoluować w formę Mega Sceptile w walce."
+ },
+ "scizorite": {
+  "pl": "Pozwala Pokémonowi Scizor mega-ewoluować w formę Mega Scizor w walce."
+ },
+ "scope_lens": {
+  "pl": "Zwiększa szansę na trafienie krytyczne o jeden stopień."
  },
  "sharp_beak": {
-  "fr": "Les attaques de type Vol infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Vol infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Volador causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Volante infliggono il 20% di danni in più.",
+  "ja": "ひこうタイプの技のダメージが20%増える。",
+  "ko": "비행 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Flying zadają o 20% więcej obrażeń."
+ },
+ "sharpedonite": {
+  "pl": "Pozwala Pokémonowi Sharpedo mega-ewoluować w formę Mega Sharpedo w walce."
  },
  "shell_bell": {
-  "fr": "Rend 1/8 des dégâts infligés."
+  "fr": "Rend 1/8 des dégâts infligés.",
+  "es": "Cura 1/8 del daño causado.",
+  "it": "Ripristina 1/8 dei danni inflitti.",
+  "ja": "与えたダメージの1/8を回復する。",
+  "ko": "준 대미지의 1/8을 회복합니다.",
+  "pl": "Leczy 1/8 zadanych obrażeń."
+ },
+ "shiny_charm": {
+  "pl": "Podwaja szansę na shiny Pokémony (dla całego domu). Nagroda za osiągnięcie „Mistrz Ligi”."
+ },
+ "shiny_stone": {
+  "pl": "Ewoluuje np. Togetic, Roselia i Minccino."
  },
  "silk_scarf": {
-  "fr": "Les attaques de type Normal infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Normal infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Normal causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Normale infliggono il 20% di danni in più.",
+  "ja": "ノーマルタイプの技のダメージが20%増える。",
+  "ko": "노말 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Normal zadają o 20% więcej obrażeń."
  },
  "silver_powder": {
-  "fr": "Les attaques de type Insecte infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Insecte infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Bicho causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Coleottero infliggono il 20% di danni in più.",
+  "ja": "むしタイプの技のダメージが20%増える。",
+  "ko": "벌레 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Bug zadają o 20% więcej obrażeń."
  },
  "sitrus_berry": {
-  "fr": "Rend 1/4 des PV max une fois, quand les PV tombent à la moitié."
+  "fr": "Rend 1/4 des PV max une fois, quand les PV tombent à la moitié.",
+  "es": "Cura 1/4 de los PS máx. una vez, cuando los PS caen a la mitad.",
+  "it": "Ripristina 1/4 dei PS massimi una volta, quando i PS scendono alla metà.",
+  "ja": "HPが半分になると一度だけ最大HPの1/4を回復する。",
+  "ko": "HP가 절반이 되면 한 번 최대 HP의 1/4을 회복합니다.",
+  "pl": "Leczy 1/4 maks. HP jednorazowo, gdy HP spadnie do połowy."
+ },
+ "slowbronite": {
+  "pl": "Pozwala Pokémonowi Slowbro mega-ewoluować w formę Mega Slowbro w walce."
  },
  "soft_sand": {
-  "fr": "Les attaques de type Sol infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Sol infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Tierra causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Terra infliggono il 20% di danni in più.",
+  "ja": "じめんタイプの技のダメージが20%増える。",
+  "ko": "땅 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Ground zadają o 20% więcej obrażeń."
  },
  "spell_tag": {
-  "fr": "Les attaques de type Spectre infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Spectre infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Fantasma causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Spettro infliggono il 20% di danni in più.",
+  "ja": "ゴーストタイプの技のダメージが20%増える。",
+  "ko": "고스트 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Ghost zadają o 20% więcej obrażeń."
+ },
+ "steelixite": {
+  "pl": "Pozwala Pokémonowi Steelix mega-ewoluować w formę Mega Steelix w walce."
+ },
+ "sun_stone": {
+  "pl": "Ewoluuje np. Gloom (w Bellossoma) i Sunkerna."
+ },
+ "super_potion": {
+  "es": "Restaura 60 PS.",
+  "it": "Ripristina 60 PS.",
+  "ja": "HPを60回復する。",
+  "ko": "HP를 60 회복합니다.",
+  "pl": "Przywraca 60 HP.",
+  "fr": "Restaure 60 PV."
+ },
+ "swampertite": {
+  "pl": "Pozwala Pokémonowi Swampert mega-ewoluować w formę Mega Swampert w walce."
+ },
+ "sweet_apple": {
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
  },
  "swift_wing": {
-  "fr": "+1 EV en Vitesse – pour ajuster finement les derniers points sous le plafond."
+  "fr": "+1 EV en Vitesse – pour ajuster finement les derniers points sous le plafond.",
+  "es": "+1 EV de Velocidad: ajuste fino barato para los últimos puntos antes del límite.",
+  "it": "+1 EV di Velocità: rifinitura economica per gli ultimi punti prima del limite.",
+  "ja": "すばやさの努力値+1。上限までの微調整に手頃。",
+  "ko": "스피드 노력치 +1. 상한까지 미세 조정에 저렴합니다.",
+  "pl": "+1 EV: Szybkość. Tanie dopracowanie ostatnich punktów przed limitem."
  },
  "syrupy_apple": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
  },
  "tamato_berry": {
-  "fr": "−10 EV en Vitesse. Libère à nouveau une partie du budget d'EV."
+  "fr": "−10 EV en Vitesse. Libère à nouveau une partie du budget d'EV.",
+  "es": "-10 EV de Velocidad. Libera parte del presupuesto de EV.",
+  "it": "-10 EV di Velocità. Libera parte del budget di EV.",
+  "ja": "すばやさの努力値-10。努力値の枠を空ける。",
+  "ko": "스피드 노력치 -10. 노력치 여유를 다시 확보합니다.",
+  "pl": "-10 EV: Szybkość. Zwalnia część budżetu EV."
+ },
+ "tart_apple": {
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "thunder_stone": {
+  "pl": "Ewoluuje np. Pikachu, Eevee i Magneton."
  },
  "timer_ball": {
-  "fr": "Plus le combat dure, mieux elle fonctionne (environ +0,3 par tour, jusqu'à ×4)."
+  "fr": "Plus le combat dure, mieux elle fonctionne (environ +0,3 par tour, jusqu'à ×4).",
+  "es": "Cuantos más turnos dure el combate, mejor funciona (aprox. +0,3 por turno, hasta ×4).",
+  "it": "Più turni dura la lotta, meglio funziona (circa +0,3 per turno, fino a ×4).",
+  "ja": "ターンが経過するほど有効(1ターンごとに約+0.3、最大×4)。",
+  "ko": "턴이 지날수록 효과적입니다(턴당 약 +0.3, 최대 ×4).",
+  "pl": "Im dłużej trwa walka, tym lepiej działa (ok. +0,3 na turę, do ×4)."
  },
  "twisted_spoon": {
-  "fr": "Les attaques de type Psy infligent 20 % de dégâts en plus."
+  "fr": "Les attaques de type Psy infligent 20 % de dégâts en plus.",
+  "es": "Los movimientos de tipo Psíquico causan un 20 % más de daño.",
+  "it": "Le mosse di tipo Psico infliggono il 20% di danni in più.",
+  "ja": "エスパータイプの技のダメージが20%増える。",
+  "ko": "에스퍼 타입 기술의 대미지가 20% 증가합니다.",
+  "pl": "Ruchy typu Psychic zadają o 20% więcej obrażeń."
+ },
+ "tyranitarite": {
+  "pl": "Pozwala Pokémonowi Tyranitar mega-ewoluować w formę Mega Tyranitar w walce."
  },
  "ultra_ball": {
-  "fr": "Grande chance de capture (bonus de capture ×2)."
+  "fr": "Grande chance de capture (bonus de capture ×2).",
+  "es": "Alta probabilidad de captura (bonus ×2).",
+  "it": "Alta probabilità di cattura (bonus ×2).",
+  "ja": "捕獲率が高い(捕獲ボーナス×2)。",
+  "ko": "포획률이 높습니다(포획 보너스 ×2).",
+  "pl": "Wysoka szansa złapania (premia ×2)."
  },
  "unremarkable_teacup": {
-  "fr": "Objet d'évolution pour certains Pokémon plus récents."
+  "fr": "Objet d'évolution pour certains Pokémon plus récents.",
+  "es": "Objeto evolutivo para ciertos Pokémon más recientes.",
+  "it": "Strumento evolutivo per alcuni Pokémon più recenti.",
+  "ja": "一部の新しいポケモンを進化させるアイテム。",
+  "ko": "일부 새로운 포켓몬을 진화시키는 도구입니다.",
+  "pl": "Przedmiot ewolucyjny dla niektórych nowszych Pokémonów."
+ },
+ "up_grade": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
+ },
+ "venusaurite": {
+  "pl": "Pozwala Pokémonowi Venusaur mega-ewoluować w formę Mega Venusaur w walce."
+ },
+ "water_stone": {
+  "pl": "Ewoluuje np. Poliwhirl, Shellder, Staryu i Eevee."
+ },
+ "whipped_dream": {
+  "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."
  },
  "zinc": {
-  "fr": "+10 EV en Défense Spéciale. Tous les 4 EV rapportent 1 point de plus en Défense Spéciale au niveau 100."
+  "fr": "+10 EV en Défense Spéciale. Tous les 4 EV rapportent 1 point de plus en Défense Spéciale au niveau 100.",
+  "es": "+10 EV de Def. Esp.. Cada 4 EV valen un punto más de Def. Esp. a nivel 100.",
+  "it": "+10 EV di Dif. Sp.. Ogni 4 EV valgono un punto in più di Dif. Sp. al livello 100.",
+  "ja": "とくぼうの努力値+10。努力値4ごとにレベル100でとくぼうが1上がる。",
+  "ko": "특수방어 노력치 +10. 노력치 4마다 레벨 100에서 특수방어이(가) 1 오릅니다.",
+  "pl": "+10 EV: Sp. Obrona. Każde 4 EV to jeden punkt więcej (Sp. Obrona) na poziomie 100."
  }
 }

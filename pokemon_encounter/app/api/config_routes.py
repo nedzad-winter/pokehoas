@@ -20,7 +20,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..admin import require_admin
-from .. import battle, db, economy, rarity, spawn, trigger_sync
+from .. import battle, db, economy, i18n, rarity, spawn, trigger_sync
 from ..auth import get_current_user
 from ..ha_client import HomeAssistantError
 from ..runtime import ha_client, poller
@@ -138,7 +138,7 @@ async def trigger_sync_now() -> dict[str, Any]:
     try:
         result = await trigger_sync.sync(ha_client)
     except Exception as exc:  # noqa: BLE001
-        raise HTTPException(status_code=502, detail=f"Sync failed: {exc}") from exc
+        raise HTTPException(status_code=502, detail=i18n.t_request("admin.error.sync_failed", error=str(exc))) from exc
     return result
 
 
@@ -190,9 +190,9 @@ def fire_trigger(entity_id: str) -> dict[str, Any]:
     global cooldown still apply, same as a real event (see process_events)."""
     trigger = db.query_one("SELECT * FROM trigger_entity WHERE entity_id = ?", (entity_id,))
     if trigger is None:
-        raise HTTPException(status_code=404, detail="Unknown trigger")
+        raise HTTPException(status_code=404, detail=i18n.t_request("admin.error.unknown_trigger"))
     if not trigger["enabled"]:
-        raise HTTPException(status_code=409, detail="Trigger is disabled")
+        raise HTTPException(status_code=409, detail=i18n.t_request("admin.error.trigger_disabled"))
 
     wanted_states = json.loads(trigger.get("trigger_states") or '["on"]')
     state = wanted_states[0] if wanted_states else "on"
@@ -209,11 +209,7 @@ def delete_trigger(entity_id: str) -> dict[str, Any]:
         # Wuerde beim naechsten Abgleich ohnehin wieder angelegt.
         raise HTTPException(
             status_code=409,
-            detail=(
-                "This trigger comes from the add-on configuration. Disable it "
-                "here, or add it to exclude_entities in the add-on configuration "
-                "to remove it permanently."
-            ),
+            detail=i18n.t_request("admin.error.trigger_from_config"),
         )
     db.execute("DELETE FROM trigger_entity WHERE entity_id = ?", (entity_id,))
     return {"ok": True}
@@ -238,7 +234,7 @@ def list_zone_biomes() -> list[dict[str, Any]]:
 @router.put("/zones/{zone_entity_id:path}", dependencies=[Depends(require_admin)])
 def upsert_zone_biome(zone_entity_id: str, payload: ZoneBiomeIn) -> dict[str, Any]:
     if payload.biome not in spawn.biome_data()["biomes"]:
-        raise HTTPException(status_code=400, detail=f"Unknown biome: {payload.biome}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_biome", biome=payload.biome))
     db.execute(
         """
         INSERT INTO zone_biome (zone_entity_id, biome, enabled) VALUES (?,?,?)
@@ -277,13 +273,14 @@ def patch_settings(payload: dict[str, Any]) -> dict[str, Any]:
     known = set(db.DEFAULT_SETTINGS)
     unknown = set(payload) - known
     if unknown:
-        raise HTTPException(status_code=400, detail=f"Unknown settings: {sorted(unknown)}")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.unknown_settings", fields=", ".join(sorted(unknown))))
     for key, value in payload.items():
         if not _same_setting_type(db.DEFAULT_SETTINGS[key], value):
             raise HTTPException(
                 status_code=400,
-                detail=f"Invalid value for {key}: expected "
-                       f"{type(db.DEFAULT_SETTINGS[key]).__name__}, got {type(value).__name__}",
+                detail=i18n.t_request("admin.error.invalid_type", field=key,
+                                        expected=type(db.DEFAULT_SETTINGS[key]).__name__,
+                                        got=type(value).__name__),
             )
     _validate_iv_repeat_catch(payload)
     _validate_rarity_weights(payload)
@@ -311,11 +308,11 @@ def _validate_rarity_weights(payload: dict[str, Any]) -> None:
     for key, value in merged.items():
         if float(value) < 0 or float(value) > 100:
             raise HTTPException(status_code=400,
-                                detail=f"Invalid value for {key}: must be between 0 and 100")
+                                detail=i18n.t_request("admin.error.setting_range", field=key, min=0, max=100))
     if not any(float(value) > 0 for value in merged.values()):
         raise HTTPException(
             status_code=400,
-            detail="At least one rarity weight must be greater than 0",
+            detail=i18n.t_request("admin.error.rarity_weights"),
         )
 
 
@@ -324,7 +321,7 @@ def _validate_maxed_ivs_spawn_weight_factor(payload: dict[str, Any]) -> None:
     key = "maxed_ivs_spawn_weight_factor"
     if key in payload and not 0 <= float(payload[key]) <= 1:
         raise HTTPException(status_code=400,
-                            detail=f"Invalid value for {key}: must be between 0 and 1")
+                            detail=i18n.t_request("admin.error.setting_range", field=key, min=0, max=1))
 
 
 def _validate_generation_perks(payload: dict[str, Any]) -> None:
@@ -332,7 +329,7 @@ def _validate_generation_perks(payload: dict[str, Any]) -> None:
     factor must not lower the chance (>= 1)."""
     key = "gen_caught_shiny_factor"
     if key in payload and float(payload[key]) < 1:
-        raise HTTPException(status_code=400, detail=f"Invalid value for {key}: must be >= 1")
+        raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.setting_min", field=key, min=1))
 
 
 def _validate_pvp_money(payload: dict[str, Any]) -> None:
@@ -340,7 +337,7 @@ def _validate_pvp_money(payload: dict[str, Any]) -> None:
     key = "pvp_money_per_level"
     if key in payload and float(payload[key]) < 0:
         raise HTTPException(status_code=400,
-                            detail=f"Invalid value for {key}: must be >= 0")
+                            detail=i18n.t_request("admin.error.setting_min", field=key, min=0))
 
 
 def _validate_buddy_steps(payload: dict[str, Any]) -> None:
@@ -350,7 +347,7 @@ def _validate_buddy_steps(payload: dict[str, Any]) -> None:
         value = payload[key]
         if float(value) != int(value) or not 100 <= int(value) <= 1_000_000:
             raise HTTPException(status_code=400,
-                                detail=f"Invalid value for {key}: must be a whole number 100-1000000")
+                                detail=i18n.t_request("admin.error.setting_whole", field=key, min=100, max=1000000))
 
 
 def _validate_buddy_finds(payload: dict[str, Any]) -> None:
@@ -359,7 +356,7 @@ def _validate_buddy_finds(payload: dict[str, Any]) -> None:
         value = payload["buddy_find_chance"]
         if isinstance(value, bool) or not 0 <= float(value) <= 1:
             raise HTTPException(status_code=400,
-                                detail="Invalid value for buddy_find_chance: must be between 0 and 1")
+                                detail=i18n.t_request("admin.error.setting_range", field="buddy_find_chance", min=0, max=1))
     if "buddy_find_pool" in payload:
         pool = payload["buddy_find_pool"]
         known = set(battle.BALLS) | set(economy.catalog_by_key())
@@ -369,7 +366,7 @@ def _validate_buddy_finds(payload: dict[str, Any]) -> None:
             and all(i in known for i in t["items"])
             for t in pool.values())
         if not ok:
-            raise HTTPException(status_code=400, detail="Invalid value for buddy_find_pool")
+            raise HTTPException(status_code=400, detail=i18n.t_request("admin.error.invalid_value", field="buddy_find_pool"))
 
 
 def _validate_wild_levels(payload: dict[str, Any]) -> None:
@@ -384,10 +381,10 @@ def _validate_wild_levels(payload: dict[str, Any]) -> None:
                 or not 1 <= int(value) <= battle.MAX_LEVEL:
             raise HTTPException(
                 status_code=400,
-                detail=f"Invalid value for {key}: must be a whole number 1-{battle.MAX_LEVEL}")
+                detail=i18n.t_request("admin.error.setting_whole", field=key, min=1, max=battle.MAX_LEVEL))
     if int(merged[keys[0]]) > int(merged[keys[1]]):
         raise HTTPException(status_code=400,
-                            detail="wild_level_min must not be greater than wild_level_max")
+                            detail=i18n.t_request("admin.error.not_greater", low="wild_level_min", high="wild_level_max"))
 
 
 def _validate_breeding(payload: dict[str, Any]) -> None:
@@ -399,7 +396,7 @@ def _validate_breeding(payload: dict[str, Any]) -> None:
             if isinstance(value, bool) or float(value) != int(value) \
                     or not low <= int(value) <= 100_000:
                 raise HTTPException(status_code=400,
-                                    detail=f"Invalid value for {key}: must be a whole number {low}-100000")
+                                    detail=i18n.t_request("admin.error.setting_whole", field=key, min=low, max=100000))
 
 
 def _validate_ev_limits(payload: dict[str, Any]) -> None:
@@ -415,11 +412,11 @@ def _validate_ev_limits(payload: dict[str, Any]) -> None:
         if isinstance(value, bool) or float(value) != int(value) or not 0 <= int(value) <= 1530:
             raise HTTPException(
                 status_code=400,
-                detail=f"Invalid value for {key}: must be a whole number 0-1530")
+                detail=i18n.t_request("admin.error.setting_whole", field=key, min=0, max=1530))
     if int(merged[keys[0]]) > int(merged[keys[1]]):
         raise HTTPException(
             status_code=400,
-            detail="ev_max_per_stat must not be greater than ev_max_total",
+            detail=i18n.t_request("admin.error.not_greater", low="ev_max_per_stat", high="ev_max_total"),
         )
 
 
@@ -433,11 +430,11 @@ def _validate_iv_repeat_catch(payload: dict[str, Any]) -> None:
     for key, value in merged.items():
         if float(value) != int(value) or not 1 <= int(value) <= 31:
             raise HTTPException(status_code=400,
-                                detail=f"Invalid value for {key}: must be a whole number 1-31")
+                                detail=i18n.t_request("admin.error.setting_whole", field=key, min=1, max=31))
     if int(merged[keys[0]]) > int(merged[keys[1]]):
         raise HTTPException(
             status_code=400,
-            detail="iv_repeat_catch_min_gain must not be greater than iv_repeat_catch_max_gain",
+            detail=i18n.t_request("admin.error.not_greater", low="iv_repeat_catch_min_gain", high="iv_repeat_catch_max_gain"),
         )
 
 

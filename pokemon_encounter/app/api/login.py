@@ -78,12 +78,7 @@ def _require_oauth_mode() -> None:
 
 
 def _language(request: Request) -> str:
-    header = request.headers.get("accept-language", "")
-    for part in header.split(","):
-        code = part.split(";")[0].strip().lower()[:2]
-        if code in i18n.available_languages():
-            return code
-    return i18n.DEFAULT_LANGUAGE
+    return i18n.language_from_accept(request.headers.get("accept-language"))
 
 
 def _message_page(request: Request, key: str, *, popup: bool, ok: bool) -> HTMLResponse:

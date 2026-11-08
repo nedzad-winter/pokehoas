@@ -79,8 +79,7 @@ def region_items(region_key: str) -> list[dict[str, Any]]:
 
 def money_label(amount: int, lang: str = "en") -> str:
     """"₽200,000" (en) / "₽200.000" (de)."""
-    grouped = f"{int(amount):,}".replace(",", "." if lang == "de" else ",")
-    return i18n.t(lang, "reward.money", amount=grouped)
+    return i18n.t(lang, "reward.money", amount=i18n.group_digits(amount, lang))
 
 
 def label(items: list[dict[str, Any]], lang: str = "en", money: int = 0) -> str:

@@ -511,8 +511,8 @@
 <header>
   <h1><img id="brandLogo" alt="PokeHOAS"></h1>
   <span class="grow"></span>
-  <button class="ghost action" id="userName" title="Profile"></button>
-  <span class="pill hidden" id="money" title="Balance"></span>
+  <button class="ghost action" id="userName" data-i18n-title="profile.title"></button>
+  <span class="pill hidden" id="money" data-i18n-title="profile.money"></span>
   <span class="pill hidden" id="godMode" data-i18n="header.god_mode">God mode</span>
   <span class="status" id="status"></span>
   <button class="ghost action" id="pollNow" data-i18n="header.poll_now">Poll now</button>
@@ -654,6 +654,7 @@ function toast(message) {
 function applyStaticTranslations() {
   document.documentElement.lang = LANG;
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = tr(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => { el.title = tr(el.dataset.i18nTitle); });
   if ($('#langPick')) {
     $('#langPick').title = tr('admin.field.language');
     $('#langPick').setAttribute('aria-label', tr('admin.field.language'));
@@ -730,7 +731,10 @@ function catalogName(obj) {
 }
 
 // Species name of a battle view entry (it carries `species_id` and the English `name`).
-const battleName = m => (m && SPECIES_NAMES[m.species_id]) || (m && m.name) || '?';
+const battleName = m => (m && m.mega_info && localizedName(m.mega_info))
+  || (m && SPECIES_NAMES[m.species_id]) || (m && m.name) || '?';
+// For server fields that hold a nickname or the English species name (lists without a language).
+const nameFromEnglish = n => speciesName({ name_en: n, name: n });
 
 function localizedName(obj) {
   const translated = catalogName(obj);
@@ -740,6 +744,7 @@ function localizedName(obj) {
 
 function baseLocalizedName(obj) {
   if (!obj) return '?';
+  if (obj.names && obj.names[LANG]) return obj.names[LANG];
   if (LANG === 'de') return obj.name_de || obj.name || '?';
   return obj.name || obj.name_de || '?';
 }
@@ -777,6 +782,8 @@ const outcomeLabel = outcome => tr(OUTCOME_KEY[outcome] || outcome);
 // deliberately only prettified here (capitalization), not translated: a wrong
 // German nature translation would be worse than the raw English name.
 const natureLabel = n => n ? (STRINGS['nature.' + n] || n.charAt(0).toUpperCase() + n.slice(1)) : n;
+// Trigger groups: `key` is trigger_sync's category, unknown/none means "other".
+const triggerCategoryLabel = key => STRINGS[`triggers.category.${key}`] || tr('triggers.category.other');
 const genderLabel = g => g === 'male' ? tr('gender.male') : g === 'female' ? tr('gender.female') : tr('gender.genderless');
 
 // The Master Ball is a one-off league/region reward and can never be bought
@@ -1024,7 +1031,7 @@ async function renderTriggers() {
     <div class="card">
       <strong>${tr('triggers.auto_title')}</strong>
       <div style="margin-top:6px">${active.length
-        ? active.map(c => `<span class="pill">${esc(c.label)}</span>`).join('')
+        ? active.map(c => `<span class="pill">${esc(triggerCategoryLabel(c.key))}</span>`).join('')
         : `<span class="muted">${tr('triggers.no_category_active')}</span>`}</div>
       ${tcfg.extra_entities.length ? `<div class="muted">${tr('triggers.extra')} ${tcfg.extra_entities.map(esc).join(', ')}</div>` : ''}
       ${tcfg.exclude_entities.length ? `<div class="muted">${tr('triggers.excluded')} ${tcfg.exclude_entities.map(esc).join(', ')}</div>` : ''}
@@ -1150,7 +1157,7 @@ function drawTriggerGroups(triggers, tcfg) {
 
   box.innerHTML = keys.map(key => {
     const list = groups[key];
-    const label = list[0].category_label || key;
+    const label = triggerCategoryLabel(key);
     // Beim Textfilter alle Treffer aufgeklappt zeigen.
     const open = q || triggerView.open.has(key);
     return `<details class="card" data-group="${esc(key)}" ${open ? 'open' : ''}>
@@ -1264,7 +1271,7 @@ async function renderZones() {
       <div class="row" style="margin-top:10px">
         ${zoneOptions
           ? `<select class="grow" id="zoneId">${zoneOptions}</select>`
-          : `<input class="grow" id="zoneId" placeholder="zone.home or person.ash">`}
+          : `<input class="grow" id="zoneId" placeholder="${esc(tr('settings.zone_id_placeholder'))}">`}
         <select id="zoneBiome">${options}</select>
         <button class="action" id="zoneAdd">${tr('zones.assign')}</button>
       </div>
@@ -2993,8 +3000,8 @@ function admPokemonRow(p, meta) {
       <div class="grow">
         <strong>${esc(title)}</strong> ${p.shiny ? shinyMark() : ''}
         <span class="pill">${p.party_slot ? tr('admin.team_pill', { slot: p.party_slot }) : tr('admin.box')}</span>
-        <div class="muted">${tr('common.level_short', { level: p.level })} · ${tr('admin.exp')} ${esc(p.exp)} · HP ${esc(hp)}/${esc(p.max_hp)}
-          · ${esc(natureLabel(p.nature))} · ${esc(genderLabel(p.gender))} · IVs ${esc(ivs)}</div>
+        <div class="muted">${tr('common.level_short', { level: p.level })} · ${tr('admin.exp')} ${esc(p.exp)} · ${tr('iv.hp')} ${esc(hp)}/${esc(p.max_hp)}
+          · ${esc(natureLabel(p.nature))} · ${esc(genderLabel(p.gender))} · ${tr('common.ivs')} ${esc(ivs)}</div>
         <div class="muted">${p.locked ? '🔒 ' : ''}${p.favorite ? '★ ' : ''}${tr('admin.ability')} ${esc(admCatalogName(meta.abilities, p.ability))}
           · ${tr('admin.held_item')} ${esc(admCatalogName(meta.held_items, p.held_item))}
           · ${tr('admin.moves')} ${esc((p.moves || []).length ? p.moves.map(k => admCatalogName(meta.moves, k)).join(', ') : tr('admin.moves_auto'))}</div>
@@ -3044,7 +3051,7 @@ function admPokemonEditor(p, meta) {
       <label class="muted">${tr('admin.gender')} <select class="admGender">${genders}</select></label>
       <label class="muted">${tr('admin.shiny')} <input type="checkbox" class="admShinyP"${p.shiny ? ' checked' : ''}></label>
       <label class="muted">${tr('admin.slot')} <select class="admSlot">${slots}</select></label>
-      <label class="muted">HP <input type="number" class="admHp" min="0" max="${esc(p.max_hp)}" step="1"
+      <label class="muted">${tr('iv.hp')} <input type="number" class="admHp" min="0" max="${esc(p.max_hp)}" step="1"
         value="${esc(hp)}" data-orig="${esc(hp)}" style="width:5.5em"> / ${esc(p.max_hp)}</label>
     </div>
     <div class="row" style="margin-top:8px"><span class="muted">${tr('admin.ivs_hint')}</span> ${ivs}</div>
@@ -3094,7 +3101,7 @@ function economyNote(r) {
   if (earned) lines.push(`+${fmtMoney(earned)}`);
   (r.iv_gains || []).forEach(g => {
     lines.push(tr('economy.iv_gain', {
-      name: g.name, changes: g.changes.map(c => `${ivLabel(c.stat)} ${c.from}→${c.to}`).join(', '),
+      name: nameFromEnglish(g.name), changes: g.changes.map(c => `${ivLabel(c.stat)} ${c.from}→${c.to}`).join(', '),
     }));
   });
   return lines.join('\n');
@@ -3301,7 +3308,7 @@ async function renderBag() {
         use = it.targets.length
           ? `<div class="row" style="margin-top:8px">
                <select class="bagTarget grow">${it.targets.map(t => `<option value="${esc(t.owned_id)}">${
-                 esc(t.name)} (${tr('common.level_short', { level: t.level })}${t.in_party ? ', ' + tr('bag.in_team') : ''}) → ${esc(t.to_name)}</option>`).join('')}</select>
+                 esc(nameFromEnglish(t.name))} (${tr('common.level_short', { level: t.level })}${t.in_party ? ', ' + tr('bag.in_team') : ''}) → ${esc(nameFromEnglish(t.to_name))}</option>`).join('')}</select>
                <button class="action bagUse">${tr('bag.apply')}</button>
              </div>`
           : `<div class="muted" style="margin-top:6px">${tr('bag.none_can_evolve')}</div>`;
@@ -3309,7 +3316,7 @@ async function renderBag() {
         use = it.targets.length
           ? `<div class="row" style="margin-top:8px">
                <select class="bagTarget grow">${it.targets.map(t => `<option value="${esc(t.owned_id)}">${
-                 esc(t.name)} (${tr('common.level_short', { level: t.level })}, ${esc(t.current_hp)}/${esc(t.max_hp)} HP${
+                 esc(nameFromEnglish(t.name))} (${tr('common.level_short', { level: t.level })}, ${esc(t.current_hp)}/${esc(t.max_hp)} ${tr('iv.hp')}${
                  t.in_party ? ', ' + tr('bag.in_team') : ''})</option>`).join('')}</select>
                <button class="action bagUse">${tr('bag.apply')}</button>
              </div>`
@@ -3319,7 +3326,7 @@ async function renderBag() {
         use = it.targets.length
           ? `<div class="row" style="margin-top:8px">
                <select class="bagTarget grow">${it.targets.map(t => `<option value="${esc(t.owned_id)}">${
-                 esc(t.name)} (${tr('common.level_short', { level: t.level })}${
+                 esc(nameFromEnglish(t.name))} (${tr('common.level_short', { level: t.level })}${
                  t.in_party ? ', ' + tr('bag.in_team') : ''})</option>`).join('')}</select>
                <button class="action bagUse">${tr('bag.apply')}</button>
              </div>`
@@ -3330,7 +3337,7 @@ async function renderBag() {
         use = it.targets.length
           ? `<div class="row" style="margin-top:8px">
                <select class="bagTarget grow">${it.targets.map(t => `<option value="${esc(t.owned_id)}">${
-                 esc(t.name)} (${tr('common.level_short', { level: t.level })}, ${esc(ivLabel(t.stat))} ${
+                 esc(nameFromEnglish(t.name))} (${tr('common.level_short', { level: t.level })}, ${esc(ivLabel(t.stat))} ${
                  esc(t.ev)}/${esc(t.max_per_stat)}${t.in_party ? ', ' + tr('bag.in_team') : ''})</option>`).join('')}</select>
                <input type="number" class="bagQty" min="1" max="${esc(it.quantity)}" value="1" style="width:70px">
                <button class="bagMax" type="button">${tr('bag.candy_max')}</button>
@@ -3341,7 +3348,7 @@ async function renderBag() {
         use = it.targets.length
           ? `<div class="row" style="margin-top:8px">
                <select class="bagTarget grow">${it.targets.map(t => `<option value="${esc(t.owned_id)}">${
-                 esc(t.name)} (${tr('common.level_short', { level: t.level })}${
+                 esc(nameFromEnglish(t.name))} (${tr('common.level_short', { level: t.level })}${
                  t.in_party ? ', ' + tr('bag.in_team') : ''})</option>`).join('')}</select>
                <input type="number" class="bagQty" min="1" max="${esc(it.quantity)}" value="1" style="width:70px">
                <button class="bagMax" type="button">${tr('bag.candy_max')}</button>
@@ -3396,7 +3403,7 @@ async function renderBag() {
         });
         // Heil-Items (app/medicine.py) liefern ihre Meldung fertig lokalisiert.
         out.textContent = r.message !== undefined ? r.message : tr('bag.evolved', {
-          name: r.nickname || r.from.name, to: r.to.name, hp: r.current_hp, max: r.max_hp,
+          name: r.nickname || nameFromEnglish(r.from.name), to: nameFromEnglish(r.to.name), hp: r.current_hp, max: r.max_hp,
         });
         setTimeout(() => render('bag'), r.message !== undefined ? 1500 : 2500);
       } catch (e) {
@@ -3742,7 +3749,7 @@ function battleConfirmCard(p, index, count) {
       <strong>${esc(monName(p))}</strong> ${p.shiny ? shinyMark() : ''} <span class="muted">${tr('common.level_short', { level: p.level })}</span><br>
       ${[sp.type1, sp.type2].filter(Boolean).map(typePill).join('')}
       ${hpBar(p.current_hp, p.max_hp)}
-      <span class="muted">${esc(p.current_hp)}/${esc(p.max_hp)} HP${p.fainted ? ' · ' + tr('team.fainted') : ''}</span>
+      <span class="muted">${esc(p.current_hp)}/${esc(p.max_hp)} ${tr('iv.hp')}${p.fainted ? ' · ' + tr('team.fainted') : ''}</span>
     </div>
     <div class="row" style="gap:6px">
       <button class="ghost action bConfirmUp" data-id="${esc(p.id)}" title="${tr('team.move_up')}" ${index === 0 ? 'disabled' : ''}>↑</button>
@@ -4041,7 +4048,7 @@ function battleActionsHtml(v, me) {
       <div class="row" style="padding:6px 0;border-top:1px solid var(--line)">
         ${m.sprite_url ? `<img class="sprite" style="width:58px;height:58px" src="${esc(m.sprite_url)}" alt="">` : ''}
         <div class="grow"><strong>${esc(battleName(m))}</strong> <span class="muted">${esc(lvLabel(m))}</span> ${statusPill(m.status)}
-          ${hpBar(m.current_hp, m.max_hp)}<span class="muted">${esc(m.current_hp)}/${esc(m.max_hp)} HP</span></div>
+          ${hpBar(m.current_hp, m.max_hp)}<span class="muted">${esc(m.current_hp)}/${esc(m.max_hp)} ${tr('iv.hp')}</span></div>
         <button class="ghost action bSwitch" data-target="${esc(m.owned_id)}"
           ${m.active || m.fainted ? 'disabled' : ''}>${m.fainted ? tr('battle.fainted') : m.active ? tr('battle.in_battle') : tr('battle.switch_in')}</button>
       </div>`).join('') + (v.needs_switch ? '' : `<div class="muted">${tr(v.shift_offer ? 'battle.switch_free_shift' : 'battle.switch_costs_turn')}</div>`);
@@ -4073,7 +4080,7 @@ function battleMedicineHtml(v) {
   return `<div class="row" style="margin-top:10px">
       <label class="muted" for="bMedTarget">${tr('medicine.battle.target')}</label>
       <select id="bMedTarget" class="grow">${v.team.map(m => `<option value="${esc(m.owned_id)}" ${
-        m.owned_id === current ? 'selected' : ''}>${esc(battleName(m))} (${esc(m.current_hp)}/${esc(m.max_hp)} HP${
+        m.owned_id === current ? 'selected' : ''}>${esc(battleName(m))} (${esc(m.current_hp)}/${esc(m.max_hp)} ${tr('iv.hp')}${
         m.status ? ', ' + esc(statusLabel(m.status)) : ''}${m.fainted ? ', ' + tr('battle.fainted') : ''})</option>`).join('')}</select>
     </div>
     <div class="row" style="margin-top:6px">${meds.map(it => `
@@ -4171,7 +4178,7 @@ function renderBattle() {
               ? `<span class="pill" title="${tr('battle.held_item_title')}">${esc(localizedName(me.held_item_info))}</span>` : ''}</div>
             <div>${statStagePills(me.stat_stages)}</div>
             <div style="display:flex;justify-content:flex-end">${hpBar(me.current_hp, me.max_hp, true)}</div>
-            <div class="muted">${esc(me.current_hp)}/${esc(me.max_hp)} HP</div>
+            <div class="muted">${esc(me.current_hp)}/${esc(me.max_hp)} ${tr('iv.hp')}</div>
           </div>
         </div>
       </div>
@@ -5761,7 +5768,7 @@ async function openPokemon(ownedId, notice) {
       </div>` : ''}
       <div class="card"><h3>${tr('type_matchup.title')}</h3>${typeMatchupHtml([sp.type1, sp.type2])}</div>
       <div class="detail-grid">
-        <div class="card"><h3>IVs</h3><canvas id="ivChart" class="iv-chart" width="300" height="300"></canvas>
+        <div class="card"><h3>${tr('common.ivs')}</h3><canvas id="ivChart" class="iv-chart" width="300" height="300"></canvas>
           <div class="muted" style="margin-top:6px">${tr('team.iv_floor_legend')}</div>
         </div>
         <div class="card"><h3>${tr('team.own_stats')}</h3>${statBarsHtml(p.stats || {})}${evBarsHtml(p.evs)}</div>
@@ -6051,7 +6058,7 @@ function monCard(p, opts) {
   const span = p.exp_next_level ? (p.exp_next_level - p.exp_level_start) : 0;
   const expPct = span > 0 ? Math.max(0, Math.min(100, Math.round(100 * (p.exp - p.exp_level_start) / span))) : 100;
   const ivs = Object.entries(p.ivs || {}).map(([k, v]) => `${esc(ivLabel(k))} ${esc(v)}`).join(' · ');
-  const ivsLine = opts.showIvs ? `<div class="muted">IVs: ${ivs}</div>` : '';
+  const ivsLine = opts.showIvs ? `<div class="muted">${tr('common.ivs')}: ${ivs}</div>` : '';
   const moves = (p.moves || []).map(m =>
     `<span class="pill type-pill move-pill" data-move-key="${esc(m.key)}" style="background:${typeColor(m.type)};cursor:pointer" title="${esc(moveInfo(m))}">${esc(localizedName(m))}</span>`
   ).join('');
@@ -6079,7 +6086,7 @@ function monCard(p, opts) {
         ${(p.level_evolutions || []).length || (p.item_evolutions || []).length ? `<span class="pill evo-badge">${tr('evolution.badge')}</span>` : ''}<br>
         ${[sp.type1, sp.type2].filter(Boolean).map(typePill).join('')}${abilityPill(p.ability_info)}
         ${hpBar(p.current_hp, p.max_hp)}
-        <span class="muted">${esc(p.current_hp)}/${esc(p.max_hp)} HP${p.fainted ? ' · ' + tr('team.fainted') : ''}</span>
+        <span class="muted">${esc(p.current_hp)}/${esc(p.max_hp)} ${tr('iv.hp')}${p.fainted ? ' · ' + tr('team.fainted') : ''}</span>
         <div class="exp-bar" title="${tr('team.exp_title', { exp: esc(p.exp), next: p.exp_next_level ? ' / ' + esc(p.exp_next_level) : '' })}"><span style="width:${expPct}%"></span></div>
         ${ivsLine}
       </div>

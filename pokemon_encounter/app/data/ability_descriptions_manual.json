@@ -1,0 +1,1071 @@
+{
+ "adaptability": {
+  "pl": "Premia STAB za ruchy własnego typu rośnie z x1,5 do x2."
+ },
+ "aerilate": {
+  "pl": "Zmienia ruchy Normal w ruchy Flying i zwiększa ich moc do 1,3×."
+ },
+ "aftermath": {
+  "pl": "Zadaje atakującemu 1/4 jego maks. HP, gdy zostanie znokautowany ruchem kontaktowym."
+ },
+ "air_lock": {
+  "pl": "Znosi wszystkie efekty pogody, ale nie zapobiega samej pogodzie."
+ },
+ "analytic": {
+  "pl": "Zwiększa moc ruchów do 1,3×, gdy działa jako ostatni."
+ },
+ "anger_point": {
+  "pl": "Podnosi Atak do maksimum sześciu stopni po otrzymaniu trafienia krytycznego."
+ },
+ "anger_shell": {
+  "es": "Cuando sus PS bajan de la mitad, baja su Defensa y Defensa Especial, pero sube su Ataque, Ataque Especial y Velocidad.",
+  "it": "Quando i PS scendono sotto la metà, riduce Difesa e Difesa Speciale ma aumenta Attacco, Attacco Speciale e Velocità.",
+  "ko": "HP가 절반 아래로 떨어지면 방어와 특수방어가 내려가지만 공격, 특수공격, 스피드가 올라갑니다.",
+  "pl": "Gdy HP spadnie poniżej połowy, obniża Obronę i Sp. Obronę, ale podnosi Atak, Sp. Atak i Szybkość."
+ },
+ "anticipation": {
+  "pl": "Po wejściu do walki ostrzega, jeśli przeciwnik ma ruch superefektywny, Self-Destruct, Explosion lub ruch nokautujący jednym ciosem."
+ },
+ "arena_trap": {
+  "pl": "Uniemożliwia przeciwnikom ucieczkę i zmianę. Nie działa na typ Flying i Pokémony w powietrzu."
+ },
+ "armor_tail": {
+  "es": "Impide que el rival use movimientos con prioridad, como Ataque Rápido.",
+  "it": "Impedisce all'avversario di usare mosse con priorità, come Attacco Rapido.",
+  "ko": "상대가 전광석화처럼 우선도가 있는 기술을 쓰지 못하게 합니다.",
+  "pl": "Uniemożliwia przeciwnikowi używanie ruchów z priorytetem, takich jak Quick Attack."
+ },
+ "aroma_veil": {
+  "pl": "Chroni sojuszników przed ruchami wpływającymi na ich stan psychiczny."
+ },
+ "as_one_glastrier": {
+  "pl": "Łączy efekty Unnerve i Chilling Neigh."
+ },
+ "as_one_spectrier": {
+  "pl": "Łączy efekty Unnerve i Grim Neigh."
+ },
+ "aura_break": {
+  "pl": "Sprawia, że Dark Aura i Fairy Aura osłabiają ruchy swoich typów."
+ },
+ "bad_dreams": {
+  "pl": "Zadaje śpiącym przeciwnikom 1/8 ich maks. HP po każdej turze."
+ },
+ "ball_fetch": {
+  "pl": "Jeśli Pokémon nie trzyma przedmiotu, przynosi Poké Ball z pierwszego nieudanego rzutu w walce."
+ },
+ "battery": {
+  "pl": "Moc ruchów sojuszników rośnie do 1,3×."
+ },
+ "battle_armor": {
+  "pl": "Chroni przed trafieniami krytycznymi."
+ },
+ "battle_bond": {
+  "pl": "Po znokautowaniu przeciwnika zmienia Pokémona w Ash-Greninję. Water Shuriken ma moc 20 i zawsze trafia trzy razy."
+ },
+ "beads_of_ruin": {
+  "es": "Baja la Defensa Especial de todos los Pokémon excepto la suya.",
+  "it": "Riduce la Difesa Speciale di tutti i Pokémon tranne la propria.",
+  "ko": "자신을 제외한 모든 포켓몬의 특수방어를 낮춥니다.",
+  "pl": "Obniża Sp. Obronę wszystkich Pokémonów oprócz siebie."
+ },
+ "beast_boost": {
+  "pl": "Podnosi najwyższą statystykę o jeden stopień po znokautowaniu innego Pokémona."
+ },
+ "berserk": {
+  "pl": "Podnosi Sp. Atak o jeden stopień za każdym razem, gdy HP spadnie poniżej połowy."
+ },
+ "big_pecks": {
+  "pl": "Przeciwnicy nie mogą obniżyć Obrony tego Pokémona."
+ },
+ "blaze": {
+  "pl": "Ruchy typu Fire zadają o 50% więcej obrażeń poniżej 1/3 maks. HP."
+ },
+ "bulletproof": {
+  "pl": "Chroni przed ruchami opartymi na pociskach, kulach i bombach."
+ },
+ "cheek_pouch": {
+  "pl": "Po zjedzeniu jagody przywraca HP niezależnie od jej efektu."
+ },
+ "chilling_neigh": {
+  "pl": "Podnosi Atak po znokautowaniu Pokémona."
+ },
+ "chlorophyll": {
+  "pl": "Podwaja Szybkość w silnym słońcu."
+ },
+ "clear_body": {
+  "pl": "Przeciwnicy nie mogą obniżyć statystyk tego Pokémona."
+ },
+ "cloud_nine": {
+  "pl": "Znosi wszystkie efekty pogody, ale nie zapobiega samej pogodzie."
+ },
+ "color_change": {
+  "pl": "Zmienia typ na typ ruchu, który zadał mu obrażenia."
+ },
+ "comatose": {
+  "pl": "Pokémon zawsze zachowuje się, jakby spał."
+ },
+ "commander": {
+  "es": "Se mete en la boca de un Dondozo aliado si hay uno en el campo.",
+  "it": "Entra nella bocca di un Dondozo alleato se ce n’è uno in campo.",
+  "ko": "아군 어써러셔가 필드에 있으면 그 입속으로 들어갑니다.",
+  "pl": "Wchodzi do pyska sojuszniczego Dondozo, jeśli jest na polu."
+ },
+ "competitive": {
+  "pl": "Podnosi Sp. Atak o dwa stopnie, gdy przeciwnik obniży którąś z jego statystyk."
+ },
+ "compound_eyes": {
+  "pl": "Zwiększa celność ruchów do 1,3×."
+ },
+ "contrary": {
+  "pl": "Odwraca zmiany statystyk."
+ },
+ "corrosion": {
+  "pl": "Może zatruwać Pokémony typu Poison i Steel."
+ },
+ "costar": {
+  "es": "Copia los cambios de estadísticas de un aliado al entrar en combate.",
+  "it": "Copia le modifiche alle statistiche di un alleato entrando in lotta.",
+  "ko": "배틀에 나올 때 아군의 능력 변화를 복사합니다.",
+  "pl": "Po wejściu do walki kopiuje zmiany statystyk sojusznika."
+ },
+ "cotton_down": {
+  "pl": "Ignoruje ruchy i zdolności przyciągające ruchy."
+ },
+ "cud_chew": {
+  "es": "Vuelve a usar una Baya ya consumida al final del turno siguiente.",
+  "it": "Riusa una bacca già consumata alla fine del turno successivo.",
+  "ko": "이미 먹은 나무열매를 다음 턴 끝에 다시 사용합니다.",
+  "pl": "Pod koniec następnej tury ponownie wykorzystuje zjedzoną jagodę."
+ },
+ "curious_medicine": {
+  "pl": "Po wejściu na pole resetuje wszystkie zmiany statystyk."
+ },
+ "cursed_body": {
+  "pl": "30% szans na zablokowanie ruchu, który trafił tego Pokémona."
+ },
+ "cute_charm": {
+  "pl": "30% szans na zauroczenie atakującego przy kontakcie."
+ },
+ "damp": {
+  "pl": "Blokuje Self-Destruct, Explosion i Aftermath, dopóki Pokémon jest w walce."
+ },
+ "dancer": {
+  "pl": "Gdy inny Pokémon użyje ruchu tanecznego, ten Pokémon od razu używa tego samego ruchu."
+ },
+ "dark_aura": {
+  "pl": "Zwiększa moc ruchów Dark do 1,33× dla wszystkich Pokémonów."
+ },
+ "dauntless_shield": {
+  "pl": "Podnosi Obronę w walce."
+ },
+ "dazzling": {
+  "pl": "Przeciwnicy nie mogą używać ruchów z priorytetem."
+ },
+ "defeatist": {
+  "pl": "Przy 50% maks. HP lub mniej zmniejsza o połowę Atak i Sp. Atak."
+ },
+ "defiant": {
+  "pl": "Podnosi Atak o dwa stopnie, gdy przeciwnik obniży którąś z jego statystyk."
+ },
+ "delta_stream": {
+  "pl": "Tworzy tajemniczy prąd powietrza, którego nie można zastąpić; ruchy nie są superefektywne przeciw typowi Flying."
+ },
+ "desolate_land": {
+  "pl": "Tworzy ekstremalne słońce o właściwościach Sunny Day, którego nie można zastąpić; ruchy Water zadające obrażenia zawodzą."
+ },
+ "disguise": {
+  "pl": "Zapobiega pierwszym obrażeniom w walce."
+ },
+ "download": {
+  "pl": "Po wejściu do walki podnosi o jeden stopień Atak, jeśli Obrona przeciwnika jest niższa niż jego Sp. Obrona, w przeciwnym razie Sp. Atak."
+ },
+ "dragonize": {
+  "es": "Los movimientos de tipo Normal pasan a ser de tipo Dragón y su potencia aumenta un 20 %.",
+  "it": "Le mosse di tipo Normale diventano di tipo Drago e la loro potenza aumenta del 20%.",
+  "ko": "노말 타입 기술이 드래곤 타입이 되고 위력이 20% 올라갑니다.",
+  "fr": "Les capacités de type Normal deviennent de type Dragon et leur puissance augmente de 20 %.",
+  "pl": "Ruchy Normal stają się ruchami Dragon, a ich moc rośnie o 20%."
+ },
+ "dragons_maw": {
+  "pl": "Wzmacnia ruchy typu Dragon."
+ },
+ "drizzle": {
+  "pl": "Po wejściu do walki przywołuje deszcz na czas nieokreślony."
+ },
+ "drought": {
+  "pl": "Po wejściu do walki przywołuje silne słońce na czas nieokreślony."
+ },
+ "dry_skin": {
+  "pl": "Ruchy Water leczą 1/4 maks. HP zamiast zadawać obrażenia; ruchy Fire zadają obrażenia ×1,25. (W tym systemie walki nie ma pogody.)"
+ },
+ "early_bird": {
+  "pl": "Sen mija dwa razy szybciej."
+ },
+ "earth_eater": {
+  "es": "Los movimientos de tipo Tierra lo curan 1/4 de sus PS máx. en lugar de dañarlo.",
+  "it": "Le mosse di tipo Terra ripristinano 1/4 dei PS massimi invece di infliggere danni.",
+  "ko": "땅 타입 기술을 맞으면 대미지 대신 최대 HP의 1/4을 회복합니다.",
+  "pl": "Ruchy Ground leczą 1/4 maks. HP zamiast zadawać obrażenia."
+ },
+ "effect_spore": {
+  "pl": "30% szans na zatrucie, paraliż lub uśpienie atakującego przy trafieniu fizycznym."
+ },
+ "electric_surge": {
+  "pl": "Po wejściu do walki zmienia teren na Electric Terrain."
+ },
+ "electromorphosis": {
+  "es": "Al recibir un ataque, duplica la potencia de su siguiente movimiento de tipo Eléctrico.",
+  "it": "Quando viene colpito, raddoppia la potenza della sua prossima mossa di tipo Elettro.",
+  "ko": "공격을 받으면 다음에 쓰는 전기 타입 기술의 위력이 2배가 됩니다.",
+  "pl": "Po otrzymaniu ciosu moc następnego ruchu Electric jest podwojona."
+ },
+ "embody_aspect": {
+  "es": "Aumenta una estadística concreta según la forma de Ogerpon Teracristalizado.",
+  "it": "Aumenta una statistica specifica in base alla forma di Ogerpon teracristallizzato.",
+  "ko": "테라스탈한 오거폰의 폼에 따라 특정 능력치를 올립니다.",
+  "pl": "Podnosi określoną statystykę zależnie od formy Terastalizowanego Ogerpona."
+ },
+ "emergency_exit": {
+  "pl": "Pokémon automatycznie się wycofuje, gdy HP spadnie poniżej połowy."
+ },
+ "fairy_aura": {
+  "pl": "Zwiększa moc ruchów Fairy do 1,33× dla wszystkich Pokémonów."
+ },
+ "filter": {
+  "pl": "Zmniejsza obrażenia od ruchów superefektywnych o 1/4."
+ },
+ "flame_body": {
+  "pl": "30% szans na podpalenie atakującego przy trafieniu fizycznym."
+ },
+ "flare_boost": {
+  "pl": "Zwiększa Sp. Atak do 1,5× przy oparzeniu."
+ },
+ "flash_fire": {
+  "pl": "Odporność na ruchy Fire; po trafieniu jednym własne ruchy Fire zadają obrażenia ×1,5 do opuszczenia walki."
+ },
+ "flower_gift": {
+  "pl": "Zwiększa Atak i Sp. Obronę sojuszników do 1,5× w silnym słońcu."
+ },
+ "flower_veil": {
+  "pl": "Chroni sojusznicze Pokémony typu Grass przed obniżeniem statystyk przez inne Pokémony."
+ },
+ "fluffy": {
+  "pl": "Obrażenia od ruchów kontaktowych są o połowę mniejsze, a od ruchów Fire podwojone."
+ },
+ "forecast": {
+  "pl": "Zmienia typ i formę Castforma zgodnie z pogodą."
+ },
+ "forewarn": {
+  "pl": "Po wejściu do walki ujawnia najsilniejszy ruch przeciwników."
+ },
+ "friend_guard": {
+  "pl": "Zmniejsza wszystkie bezpośrednie obrażenia sojuszników do 0,75×."
+ },
+ "frisk": {
+  "pl": "Po wejściu do walki ujawnia przedmiot trzymany przez przeciwnika."
+ },
+ "full_metal_body": {
+  "pl": "Przeciwnicy nie mogą obniżyć statystyk tego Pokémona."
+ },
+ "fur_coat": {
+  "pl": "Zmniejsza o połowę obrażenia od ataków fizycznych."
+ },
+ "gale_wings": {
+  "pl": "Podnosi priorytet ruchów Flying o jeden stopień."
+ },
+ "galvanize": {
+  "pl": "Ruchy Normal stają się ruchami Electric, a ich moc rośnie do 1,2×."
+ },
+ "gluttony": {
+  "pl": "Pokémon zjada jagody aktywowane przy niskim HP już poniżej połowy maks. HP."
+ },
+ "good_as_gold": {
+  "es": "Otorga inmunidad a los movimientos de estado.",
+  "it": "Conferisce immunità alle mosse di stato.",
+  "ko": "변화 기술에 면역이 됩니다.",
+  "pl": "Daje odporność na ruchy statusowe."
+ },
+ "gooey": {
+  "pl": "Przy kontakcie obniża Szybkość atakującego o jeden stopień."
+ },
+ "gorilla_tactics": {
+  "pl": "Podnosi Atak, ale pozwala używać tylko pierwszego wybranego ruchu."
+ },
+ "grass_pelt": {
+  "pl": "Podnosi Obronę, gdy działa Grassy Terrain."
+ },
+ "grassy_surge": {
+  "pl": "Po wejściu do walki zmienia teren na Grassy Terrain."
+ },
+ "grim_neigh": {
+  "pl": "Podnosi Sp. Atak po znokautowaniu Pokémona."
+ },
+ "guard_dog": {
+  "es": "Intimidación sube su Ataque un nivel en lugar de bajarlo.",
+  "it": "Prepotenza aumenta il suo Attacco di un livello invece di ridurlo.",
+  "ko": "위협을 받으면 공격이 내려가는 대신 1랭크 올라갑니다.",
+  "pl": "Intimidate podnosi jego Atak o jeden stopień zamiast go obniżać."
+ },
+ "gulp_missile": {
+  "pl": "Cramorant używający Surf lub Dive łapie zdobycz i zmienia formę zależnie od pozostałego HP."
+ },
+ "guts": {
+  "pl": "Oparzenie nie zmniejsza już Ataku o połowę, a każdy status podnosi go o 50%."
+ },
+ "hadron_engine": {
+  "es": "Crea Campo Eléctrico al entrar en combate y aumenta el Ataque Especial mientras esté activo.",
+  "it": "Crea Campo Elettrico entrando in lotta e aumenta l’Attacco Speciale finché è attivo.",
+  "ko": "배틀에 나올 때 일렉트릭필드를 만들고 필드가 있는 동안 특수공격이 올라갑니다.",
+  "pl": "Po wejściu do walki tworzy Electric Terrain i podnosi Sp. Atak, dopóki teren działa."
+ },
+ "harvest": {
+  "pl": "50% szans na odzyskanie zużytej jagody po każdej turze, jeśli Pokémon w międzyczasie nie trzymał przedmiotu."
+ },
+ "healer": {
+  "pl": "30% szans po każdej turze na wyleczenie sąsiedniego sojusznika z poważnego statusu."
+ },
+ "heatproof": {
+  "pl": "Zmniejsza o połowę obrażenia od ruchów Fire i oparzeń."
+ },
+ "heavy_metal": {
+  "pl": "Podwaja wagę Pokémona."
+ },
+ "honey_gather": {
+  "pl": "Pokémon może podnieść Honey po walce."
+ },
+ "hospitality": {
+  "es": "Al entrar en combate, restaura un 25 % de los PS de un aliado.",
+  "it": "Entrando in lotta, ripristina il 25% dei PS di un alleato.",
+  "ko": "배틀에 나올 때 아군의 HP를 25% 회복시킵니다.",
+  "pl": "Po wejściu do walki przywraca sojusznikowi 25% HP."
+ },
+ "huge_power": {
+  "pl": "Podwaja Atak w walce."
+ },
+ "hunger_switch": {
+  "pl": "Morpeko co turę zmienia formę, na przemian Full Belly Mode i Hangry Mode."
+ },
+ "hustle": {
+  "pl": "Ruchy fizyczne zadają obrażenia ×1,5, ale ich celność spada do 0,8×."
+ },
+ "hydration": {
+  "pl": "Po każdej turze w deszczu leczy każdy poważny status."
+ },
+ "hyper_cutter": {
+  "pl": "Przeciwnicy nie mogą obniżyć Ataku tego Pokémona."
+ },
+ "ice_body": {
+  "pl": "Leczy 1/16 maks. HP po każdej turze podczas gradu. Chroni przed obrażeniami od gradu."
+ },
+ "ice_face": {
+  "pl": "Lodowa głowa może przyjąć atak fizyczny, ale zmienia to wygląd Pokémona. Lód odnawia się, gdy pada śnieg."
+ },
+ "ice_scales": {
+  "pl": "Zmniejsza o połowę obrażenia od ruchów specjalnych."
+ },
+ "illuminate": {
+  "pl": "Podwaja częstość spotkań z dzikimi Pokémonami."
+ },
+ "illusion": {
+  "pl": "Po wysłaniu przyjmuje wygląd ostatniego przytomnego Pokémona z drużyny, dopóki nie zostanie trafiony ruchem zadającym obrażenia."
+ },
+ "immunity": {
+  "pl": "Nie może zostać zatruty (także ciężko)."
+ },
+ "imposter": {
+  "pl": "Przemienia się po wejściu do walki."
+ },
+ "infiltrator": {
+  "pl": "Omija Light Screen, Reflect i Safeguard."
+ },
+ "innards_out": {
+  "pl": "Gdy ten Pokémon zostanie znokautowany ruchem, przeciwnik otrzymuje obrażenia równe pozostałemu HP."
+ },
+ "inner_focus": {
+  "pl": "Nie można go przestraszyć i nie działa na niego Intimidate."
+ },
+ "insomnia": {
+  "pl": "Nie może zasnąć."
+ },
+ "intimidate": {
+  "pl": "Po wejściu do walki obniża Atak przeciwnika o jeden stopień."
+ },
+ "intrepid_sword": {
+  "pl": "Podnosi Atak w walce."
+ },
+ "iron_barbs": {
+  "pl": "Przy kontakcie zadaje atakującemu 1/8 jego maks. HP."
+ },
+ "iron_fist": {
+  "pl": "Zwiększa moc ruchów opartych na pięściach do 1,2×."
+ },
+ "justified": {
+  "pl": "Podnosi Atak o jeden stopień po obrażeniach od ruchu Dark."
+ },
+ "keen_eye": {
+  "pl": "Zapobiega obniżeniu celności."
+ },
+ "klutz": {
+  "pl": "Pokémon nie może używać trzymanego przedmiotu w walce."
+ },
+ "leaf_guard": {
+  "pl": "Chroni przed poważnymi statusami w silnym słońcu."
+ },
+ "levitate": {
+  "pl": "Odporność na ruchy typu Ground."
+ },
+ "libero": {
+  "pl": "Zmienia typ Pokémona na typ ostatnio użytego ruchu."
+ },
+ "light_metal": {
+  "pl": "Zmniejsza wagę Pokémona o połowę."
+ },
+ "lightning_rod": {
+  "pl": "Ruchy Electric podnoszą jego Sp. Atak o jeden stopień zamiast zadawać obrażenia."
+ },
+ "limber": {
+  "pl": "Nie może zostać sparaliżowany."
+ },
+ "lingering_aroma": {
+  "es": "El contacto cambia la habilidad del atacante a Olor Persistente.",
+  "it": "Il contatto cambia l'abilità dell'attaccante in Odore Persistente.",
+  "ko": "접촉하면 공격자의 특성을 가시지않는향기로 바꿉니다.",
+  "pl": "Kontakt zmienia zdolność atakującego na Lingering Aroma."
+ },
+ "liquid_ooze": {
+  "pl": "Przeciwnicy używający ruchów wysysających tracą tyle HP, ile by odzyskali."
+ },
+ "liquid_voice": {
+  "pl": "Ruchy dźwiękowe stają się typu Water."
+ },
+ "long_reach": {
+  "pl": "Ruchy tego Pokémona nie są kontaktowe."
+ },
+ "magic_bounce": {
+  "pl": "Odbija większość ruchów niezadających obrażeń do ich użytkownika."
+ },
+ "magic_guard": {
+  "pl": "Chroni przed obrażeniami niepochodzącymi bezpośrednio od ruchu."
+ },
+ "magician": {
+  "pl": "Kradnie przedmiot celu, gdy użyje ruchu zadającego obrażenia."
+ },
+ "magma_armor": {
+  "pl": "Nie może zostać zamrożony."
+ },
+ "magnet_pull": {
+  "pl": "Uniemożliwia przeciwnikom typu Steel ucieczkę i zmianę."
+ },
+ "marvel_scale": {
+  "pl": "Zwiększa Obronę do 1,5× przy poważnym statusie."
+ },
+ "mega_launcher": {
+  "pl": "Zwiększa moc ruchów aury i pulsu do 1,5×."
+ },
+ "mega_sol": {
+  "es": "Puede usar sus movimientos como si hubiera sol intenso.",
+  "it": "Può usare le sue mosse come se ci fosse sole intenso.",
+  "ko": "햇살이 강한 날씨인 것처럼 기술을 쓸 수 있습니다.",
+  "fr": "Le Pokémon peut utiliser ses capacités comme si le soleil brillait fort.",
+  "pl": "Pokémon może używać ruchów tak, jakby świeciło silne słońce."
+ },
+ "merciless": {
+  "pl": "Ruchy tego Pokémona zawsze trafiają krytycznie zatrute cele."
+ },
+ "mimicry": {
+  "pl": "Zmienia typ zależnie od terenu."
+ },
+ "minds_eye": {
+  "es": "Ignora los cambios de evasión del rival, su precisión no puede bajar y puede golpear a tipos Fantasma con movimientos Normal y Lucha.",
+  "it": "Ignora le modifiche all’elusione degli avversari, la sua precisione non può calare e può colpire i tipi Spettro con mosse Normale e Lotta.",
+  "ko": "상대의 회피 변화를 무시하고, 명중률이 내려가지 않으며, 노말·격투 기술로 고스트 타입을 맞힐 수 있습니다.",
+  "pl": "Ignoruje zmiany uników przeciwników, jego celności nie można obniżyć, a ruchami Normal i Fighting może trafiać typ Ghost."
+ },
+ "minus": {
+  "pl": "Zwiększa Sp. Atak do 1,5×, gdy sojusznik ma Plus lub Minus."
+ },
+ "mirror_armor": {
+  "pl": "Odbija efekty obniżające statystyki."
+ },
+ "misty_surge": {
+  "pl": "Po wejściu do walki zmienia teren na Misty Terrain."
+ },
+ "mold_breaker": {
+  "pl": "Omija zdolności celów, które mogłyby utrudnić lub zablokować ruch."
+ },
+ "moody": {
+  "pl": "Po każdej turze podnosi losową statystykę o dwa stopnie i obniża inną o jeden."
+ },
+ "motor_drive": {
+  "pl": "Ruchy Electric podnoszą jego Szybkość o jeden stopień zamiast zadawać obrażenia."
+ },
+ "moxie": {
+  "pl": "Podnosi Atak o jeden stopień po znokautowaniu Pokémona."
+ },
+ "multiscale": {
+  "pl": "Przy pełnym HP zmniejsza otrzymywane obrażenia o połowę."
+ },
+ "multitype": {
+  "pl": "Zmienia typ i formę Arceusa zgodnie z trzymaną Płytą."
+ },
+ "mummy": {
+  "pl": "Przy kontakcie zmienia zdolność atakującego na Mummy."
+ },
+ "mycelium_might": {
+  "es": "Los movimientos de estado van los últimos, pero no les afecta la habilidad del rival.",
+  "it": "Le mosse di stato agiscono per ultime, ma non sono influenzate dall'abilità avversaria.",
+  "ko": "변화 기술은 마지막에 나가지만 상대의 특성에 영향을 받지 않습니다.",
+  "pl": "Ruchy statusowe działają jako ostatnie, ale nie wpływa na nie zdolność przeciwnika."
+ },
+ "natural_cure": {
+  "pl": "Leczy każdy poważny status przy zmianie."
+ },
+ "neuroforce": {
+  "pl": "Zwiększa obrażenia superefektywne do 1,25×."
+ },
+ "neutralizing_gas": {
+  "pl": "Neutralizuje zdolności wszystkich Pokémonów w walce."
+ },
+ "no_guard": {
+  "pl": "Wszystkie ruchy używane przez i przeciw temu Pokémonowi trafiają."
+ },
+ "normalize": {
+  "pl": "Wszystkie ruchy Pokémona działają jak typ Normal."
+ },
+ "oblivious": {
+  "pl": "Nie działa na niego Intimidate. (W tym systemie walki nie ma zauroczenia ani Taunt.)"
+ },
+ "opportunist": {
+  "es": "Copia las mejoras de estadísticas del rival.",
+  "it": "Copia i potenziamenti alle statistiche dell'avversario.",
+  "ko": "상대의 능력 상승을 복사합니다.",
+  "pl": "Kopiuje podniesienia statystyk przeciwnika."
+ },
+ "orichalcum_pulse": {
+  "es": "Hace que el sol pegue fuerte al entrar en combate y aumenta el Ataque mientras esté activo.",
+  "it": "Rende il sole intenso entrando in lotta e aumenta l'Attacco finché è attivo.",
+  "ko": "배틀에 나올 때 햇살을 강하게 하고 그동안 공격이 올라갑니다.",
+  "pl": "Po wejściu do walki włącza silne słońce i podnosi Atak, dopóki ono trwa."
+ },
+ "overcoat": {
+  "pl": "Chroni przed obrażeniami od pogody."
+ },
+ "overgrow": {
+  "pl": "Ruchy typu Grass zadają o 50% więcej obrażeń poniżej 1/3 maks. HP."
+ },
+ "own_tempo": {
+  "pl": "Nie działa na niego Intimidate. (W tym systemie walki nie ma dezorientacji.)"
+ },
+ "parental_bond": {
+  "pl": "Ruchy zadające obrażenia trafiają dwa razy. Drugie trafienie ma połowę mocy."
+ },
+ "pastel_veil": {
+  "pl": "Chroni Pokémona i sojuszników przed zatruciem."
+ },
+ "perish_body": {
+  "pl": "Po trafieniu ruchem kontaktowym ten Pokémon i atakujący omdleją po trzech turach, chyba że się wycofają."
+ },
+ "pickpocket": {
+  "pl": "Przy kontakcie kradnie przedmiot atakującego."
+ },
+ "pickup": {
+  "pl": "Podnosi zużyte i rzucone przedmioty innych Pokémonów. Może też podnieść przedmiot po walce."
+ },
+ "piercing_drill": {
+  "es": "Sus movimientos de contacto golpean incluso a objetivos que se protegen.",
+  "it": "Le sue mosse di contatto colpiscono anche i bersagli che si proteggono.",
+  "ko": "접촉 기술이 방어 중인 상대에게도 맞습니다.",
+  "fr": "Ses capacités de contact touchent même les cibles qui se protègent.",
+  "pl": "Ruchy kontaktowe trafiają nawet cele, które się chronią."
+ },
+ "pixilate": {
+  "pl": "Zmienia ruchy Normal w ruchy Fairy i zwiększa ich moc do 1,3×."
+ },
+ "plus": {
+  "pl": "Zwiększa Sp. Atak do 1,5×, gdy sojusznik ma Plus lub Minus."
+ },
+ "poison_heal": {
+  "pl": "Zatruty leczy 1/8 maks. HP po każdej turze zamiast otrzymywać obrażenia."
+ },
+ "poison_point": {
+  "pl": "30% szans na zatrucie atakującego przy trafieniu fizycznym."
+ },
+ "poison_puppeteer": {
+  "es": "Los Pokémon envenenados por los movimientos de Pecharunt también quedan confusos.",
+  "it": "I Pokémon avvelenati dalle mosse di Pecharunt diventano anche confusi.",
+  "ko": "복숭악동의 기술로 독에 걸린 포켓몬은 혼란에도 빠집니다.",
+  "pl": "Pokémony zatrute ruchami Pecharunta stają się także zdezorientowane."
+ },
+ "poison_touch": {
+  "pl": "30% szans na zatrucie celu przy kontakcie."
+ },
+ "power_construct": {
+  "pl": "Zmienia Zygarde 10% lub 50% w Complete Forme, gdy HP spadnie poniżej 50%."
+ },
+ "power_of_alchemy": {
+  "pl": "Gdy sojusznik omdleje, ten Pokémon przejmuje jego zdolność."
+ },
+ "power_spot": {
+  "pl": "Samo sąsiedztwo tego Pokémona wzmacnia ruchy."
+ },
+ "prankster": {
+  "pl": "Podnosi priorytet ruchów niezadających obrażeń o jeden stopień."
+ },
+ "pressure": {
+  "pl": "Zwiększa o jeden koszt PP ruchów wymierzonych w tego Pokémona."
+ },
+ "primordial_sea": {
+  "pl": "Tworzy ulewę o właściwościach Rain Dance, której nie można zastąpić; ruchy Fire zadające obrażenia zawodzą."
+ },
+ "prism_armor": {
+  "pl": "Zmniejsza obrażenia superefektywne do 0,75×."
+ },
+ "propeller_tail": {
+  "pl": "Ignoruje ruchy i zdolności przyciągające ruchy."
+ },
+ "protean": {
+  "pl": "Zmienia typ na typ każdego używanego ruchu."
+ },
+ "protosynthesis": {
+  "es": "Sube su mejor estadística con sol intenso o si lleva Energía Potenciadora.",
+  "it": "Aumenta la statistica più alta con sole intenso o se tiene Energia Rinforzante.",
+  "ko": "햇살이 강하거나 부스트에너지를 지니면 가장 높은 능력치가 올라갑니다.",
+  "pl": "Podnosi najwyższą statystykę w silnym słońcu lub przy trzymaniu Booster Energy."
+ },
+ "psychic_surge": {
+  "pl": "Po wejściu do walki zmienia teren na Psychic Terrain."
+ },
+ "punk_rock": {
+  "pl": "Wzmacnia ruchy dźwiękowe i zmniejsza o połowę obrażenia od nich."
+ },
+ "pure_power": {
+  "pl": "Podwaja Atak w walce."
+ },
+ "purifying_salt": {
+  "es": "Protege de los problemas de estado y reduce a la mitad el daño de movimientos de tipo Fantasma.",
+  "it": "Protegge dai problemi di stato e dimezza i danni delle mosse di tipo Spettro.",
+  "ko": "상태 이상을 막고 고스트 타입 기술의 대미지를 절반으로 줄입니다.",
+  "pl": "Chroni przed statusami i zmniejsza o połowę obrażenia od ruchów Ghost."
+ },
+ "quark_drive": {
+  "es": "Sube su mejor estadística en Campo Eléctrico o si lleva Energía Potenciadora.",
+  "it": "Aumenta la statistica più alta su Campo Elettrico o se tiene Energia Rinforzante.",
+  "ko": "일렉트릭필드에 있거나 부스트에너지를 지니면 가장 높은 능력치가 올라갑니다.",
+  "pl": "Podnosi najwyższą statystykę na Electric Terrain lub przy trzymaniu Booster Energy."
+ },
+ "queenly_majesty": {
+  "pl": "Przeciwnicy nie mogą używać ruchów z priorytetem."
+ },
+ "quick_draw": {
+  "pl": "Pozwala Pokémonowi czasem działać jako pierwszy."
+ },
+ "quick_feet": {
+  "pl": "Zwiększa Szybkość do 1,5× przy poważnym statusie."
+ },
+ "rain_dish": {
+  "pl": "Leczy 1/16 maks. HP po każdej turze w deszczu."
+ },
+ "rattled": {
+  "pl": "Szybkość rośnie o jeden stopień po trafieniu ruchem Bug, Ghost lub Dark albo pod wpływem Intimidate."
+ },
+ "receiver": {
+  "pl": "Gdy sojusznik omdleje, ten Pokémon przejmuje jego zdolność."
+ },
+ "reckless": {
+  "pl": "Zwiększa moc ruchów z odrzutem do 1,2×."
+ },
+ "refrigerate": {
+  "pl": "Zmienia ruchy Normal w ruchy Ice i zwiększa ich moc do 1,3×."
+ },
+ "regenerator": {
+  "pl": "Leczy 1/3 maks. HP przy zmianie."
+ },
+ "ripen": {
+  "pl": "Podwaja efekt jagód."
+ },
+ "rivalry": {
+  "pl": "Zwiększa obrażenia do 1,25× przeciw tej samej płci, a zmniejsza do 0,75× przeciw przeciwnej."
+ },
+ "rks_system": {
+  "pl": "Zmienia typ zgodnie z trzymanym Memory."
+ },
+ "rock_head": {
+  "pl": "Chroni przed obrażeniami od odrzutu."
+ },
+ "rocky_payload": {
+  "es": "Potencia los movimientos de tipo Roca.",
+  "it": "Potenzia le mosse di tipo Roccia.",
+  "ko": "바위 타입 기술의 위력을 올립니다.",
+  "pl": "Wzmacnia ruchy typu Rock."
+ },
+ "rough_skin": {
+  "pl": "Przy kontakcie zadaje atakującemu 1/8 jego maks. HP."
+ },
+ "run_away": {
+  "pl": "Gwarantuje ucieczkę z walk z dzikimi Pokémonami."
+ },
+ "sand_force": {
+  "pl": "Zwiększa moc ruchów Rock, Ground i Steel do 1,3× podczas burzy piaskowej. Chroni przed jej obrażeniami."
+ },
+ "sand_rush": {
+  "pl": "Podwaja Szybkość podczas burzy piaskowej. Chroni przed jej obrażeniami."
+ },
+ "sand_spit": {
+  "pl": "Wywołuje burzę piaskową po otrzymaniu ciosu."
+ },
+ "sand_stream": {
+  "pl": "Po wejściu do walki przywołuje burzę piaskową na czas nieokreślony."
+ },
+ "sand_veil": {
+  "pl": "Zwiększa unik do 1,25× podczas burzy piaskowej. Chroni przed jej obrażeniami."
+ },
+ "sap_sipper": {
+  "pl": "Ruchy Grass podnoszą jego Atak o jeden stopień zamiast zadawać obrażenia."
+ },
+ "schooling": {
+  "pl": "Wishiwashi przyjmuje School Form, gdy ma co najmniej 25% HP."
+ },
+ "scrappy": {
+  "pl": "Nie działa na niego Intimidate. (Trafianie typu Ghost ruchami Normal i Fighting nie jest jeszcze aktywne.)"
+ },
+ "screen_cleaner": {
+  "pl": "Znosi efekty Light Screen, Reflect i Aurora Veil."
+ },
+ "seed_sower": {
+  "es": "Convierte el suelo en Campo de Hierba al recibir un ataque.",
+  "it": "Trasforma il terreno in Campo Erboso quando viene colpito.",
+  "ko": "공격을 받으면 그래스필드를 만듭니다.",
+  "pl": "Po otrzymaniu ciosu zmienia teren na Grassy Terrain."
+ },
+ "serene_grace": {
+  "pl": "Podwaja szansę na dodatkowe efekty ruchów."
+ },
+ "shadow_shield": {
+  "pl": "Przy pełnym HP zwykłe obrażenia od ruchów są o połowę mniejsze."
+ },
+ "shadow_tag": {
+  "pl": "Uniemożliwia przeciwnikom ucieczkę i zmianę."
+ },
+ "sharpness": {
+  "es": "Potencia los movimientos cortantes.",
+  "it": "Potenzia le mosse taglienti.",
+  "ko": "베는 기술의 위력을 올립니다.",
+  "pl": "Wzmacnia ruchy tnące."
+ },
+ "shed_skin": {
+  "pl": "30% szans na turę na wyleczenie własnego statusu."
+ },
+ "sheer_force": {
+  "pl": "Zwiększa moc ruchów z dodatkowymi efektami do 1,3×, ale usuwa te efekty."
+ },
+ "shell_armor": {
+  "pl": "Chroni przed trafieniami krytycznymi."
+ },
+ "shield_dust": {
+  "pl": "Chroni przed dodatkowymi efektami otrzymywanych ruchów."
+ },
+ "shields_down": {
+  "pl": "Zmienia Miniora między Core Form i Meteor Form. W Meteor Form zapobiega poważnym statusom i senności."
+ },
+ "simple": {
+  "pl": "Podwaja modyfikatory statystyk Pokémona, nadal w granicach od -6 do 6 stopni."
+ },
+ "skill_link": {
+  "pl": "Ruchy trafiające 2–5 razy i Triple Kick zawsze trafiają maksymalną liczbę razy."
+ },
+ "slow_start": {
+  "pl": "Zmniejsza o połowę Atak i Szybkość przez pięć tur po wejściu do walki."
+ },
+ "slush_rush": {
+  "pl": "Podczas gradu Szybkość jest podwojona."
+ },
+ "sniper": {
+  "pl": "Trafienia krytyczne zadają obrażenia ×3 zamiast ×2."
+ },
+ "snow_cloak": {
+  "pl": "Zwiększa unik do 1,25× podczas gradu. Chroni przed jego obrażeniami."
+ },
+ "snow_warning": {
+  "pl": "Po wejściu do walki przywołuje grad na czas nieokreślony."
+ },
+ "solar_power": {
+  "pl": "W silnym słońcu zwiększa Sp. Atak do 1,5×, ale po każdej turze kosztuje 1/8 maks. HP."
+ },
+ "solid_rock": {
+  "pl": "Zmniejsza obrażenia od ruchów superefektywnych o 1/4."
+ },
+ "soul_heart": {
+  "pl": "Sp. Atak rośnie o jeden stopień za każdym razem, gdy jakiś Pokémon omdleje."
+ },
+ "soundproof": {
+  "pl": "Chroni przed ruchami dźwiękowymi."
+ },
+ "speed_boost": {
+  "pl": "Podnosi Szybkość o jeden stopień po każdej turze."
+ },
+ "spicy_spray": {
+  "es": "Al recibir daño de un movimiento, quema al atacante.",
+  "it": "Quando subisce danni da una mossa, scotta l'attaccante.",
+  "ko": "기술로 대미지를 받으면 공격자를 화상 상태로 만듭니다.",
+  "fr": "Lorsqu'il subit des dégâts d'une capacité, le Pokémon brûle l'attaquant.",
+  "pl": "Po otrzymaniu obrażeń od ruchu podpala atakującego."
+ },
+ "stakeout": {
+  "pl": "Ruchy mają podwójną moc przeciw Pokémonom, które weszły w tej turze."
+ },
+ "stall": {
+  "pl": "Pokémon działa jako ostatni w swoim przedziale priorytetu."
+ },
+ "stalwart": {
+  "pl": "Ignoruje ruchy i zdolności przyciągające ruchy."
+ },
+ "stamina": {
+  "pl": "Podnosi Obronę o jeden stopień po otrzymaniu obrażeń od ruchu."
+ },
+ "stance_change": {
+  "pl": "Zmienia Aegislasha w Blade Forme przed ruchem zadającym obrażenia, a w Shield Forme przed King’s Shield."
+ },
+ "static": {
+  "pl": "30% szans na sparaliżowanie atakującego przy trafieniu fizycznym."
+ },
+ "steadfast": {
+  "pl": "Podnosi Szybkość o jeden stopień po przestraszeniu."
+ },
+ "steam_engine": {
+  "pl": "Drastycznie podnosi Szybkość po trafieniu ruchem Fire lub Water."
+ },
+ "steelworker": {
+  "pl": "Ruchy Steel tego Pokémona mają moc ×1,5."
+ },
+ "steely_spirit": {
+  "pl": "Wzmacnia ruchy Steel sojuszników."
+ },
+ "stench": {
+  "pl": "10% szans na przestraszenie celu przy każdym trafieniu."
+ },
+ "sticky_hold": {
+  "pl": "Inne Pokémony nie mogą zabrać trzymanego przedmiotu."
+ },
+ "storm_drain": {
+  "pl": "Ruchy Water podnoszą jego Sp. Atak o jeden stopień zamiast zadawać obrażenia."
+ },
+ "strong_jaw": {
+  "pl": "Zwiększa moc ruchów gryzących do 1,5×."
+ },
+ "sturdy": {
+  "pl": "Przy pełnym HP przetrwa każdy pojedynczy cios z 1 HP."
+ },
+ "suction_cups": {
+  "pl": "Zapobiega wypchnięciu z walki przez ruchy innych Pokémonów."
+ },
+ "super_luck": {
+  "pl": "Podnosi szansę na trafienie krytyczne o jeden stopień."
+ },
+ "supersweet_syrup": {
+  "es": "Una vez por combate, al entrar baja un nivel la evasión de los rivales adyacentes.",
+  "it": "Una volta per lotta, entrando riduce di un livello l'elusione degli avversari adiacenti.",
+  "ko": "배틀마다 한 번, 나올 때 인접한 상대의 회피율을 1랭크 낮춥니다.",
+  "pl": "Raz na walkę, po wejściu, obniża unik sąsiednich przeciwników o jeden stopień."
+ },
+ "supreme_overlord": {
+  "es": "Aumenta el Ataque y el Ataque Especial por cada Pokémon del equipo derrotado.",
+  "it": "Aumenta Attacco e Attacco Speciale per ogni Pokémon della squadra sconfitto.",
+  "ko": "쓰러진 파티 포켓몬 수만큼 공격과 특수공격이 올라갑니다.",
+  "pl": "Atak i Sp. Atak rosną za każdego pokonanego członka drużyny."
+ },
+ "surge_surfer": {
+  "pl": "Podwaja Szybkość na Electric Terrain."
+ },
+ "swarm": {
+  "pl": "Ruchy typu Bug zadają o 50% więcej obrażeń poniżej 1/3 maks. HP."
+ },
+ "sweet_veil": {
+  "pl": "Chroni sojuszników przed zaśnięciem."
+ },
+ "swift_swim": {
+  "pl": "Podwaja Szybkość w deszczu."
+ },
+ "sword_of_ruin": {
+  "es": "Baja la Defensa de todos los Pokémon excepto la suya.",
+  "it": "Riduce la Difesa di tutti i Pokémon tranne la propria.",
+  "ko": "자신을 제외한 모든 포켓몬의 방어를 낮춥니다.",
+  "pl": "Obniża Obronę wszystkich Pokémonów oprócz siebie."
+ },
+ "symbiosis": {
+  "pl": "Przekazuje swój przedmiot sojusznikowi, gdy ten zużyje własny."
+ },
+ "synchronize": {
+  "pl": "Przenosi oparzenie, paraliż i zatrucie na Pokémona, który je zadał."
+ },
+ "tablets_of_ruin": {
+  "es": "Baja el Ataque de todos los Pokémon excepto el suyo.",
+  "it": "Riduce l'Attacco di tutti i Pokémon tranne il proprio.",
+  "ko": "자신을 제외한 모든 포켓몬의 공격을 낮춥니다.",
+  "pl": "Obniża Atak wszystkich Pokémonów oprócz siebie."
+ },
+ "tangled_feet": {
+  "pl": "Podwaja unik podczas dezorientacji."
+ },
+ "tangling_hair": {
+  "pl": "Po zwykłych obrażeniach od ruchu kontaktowego obniża Szybkość atakującego o jeden stopień."
+ },
+ "technician": {
+  "pl": "Zwiększa moc ruchów o mocy bazowej do 60 do 1,5×."
+ },
+ "telepathy": {
+  "pl": "Chroni przed ruchami sojuszników zadającymi obrażenia."
+ },
+ "tera_shell": {
+  "es": "Con los PS al máximo, todos los movimientos que causan daño serán poco eficaces contra él.",
+  "it": "A PS pieni, tutte le mosse che infliggono danni risultano poco efficaci.",
+  "ko": "HP가 가득할 때 받는 공격 기술은 모두 효과가 별로입니다.",
+  "pl": "Przy pełnym HP wszystkie ruchy zadające obrażenia są mało efektywne."
+ },
+ "tera_shift": {
+  "es": "Al entrar en combate, Terapagos adopta su Forma Teracristal hasta el final del combate.",
+  "it": "Entrando in lotta, Terapagos assume la Forma Teracristal fino alla fine della lotta.",
+  "ko": "테라파고스가 배틀에 나오면 배틀이 끝날 때까지 테라스탈폼이 됩니다.",
+  "pl": "Po wejściu do walki Terapagos przyjmuje Terastal Form do końca walki."
+ },
+ "teraform_zero": {
+  "es": "Al adoptar su Forma Astral, Terapagos neutraliza al instante los efectos del clima y del campo.",
+  "it": "Assumendo la Forma Astrale, Terapagos neutralizza subito gli effetti di meteo e campo.",
+  "ko": "테라파고스가 스텔라폼이 되면 즉시 날씨와 필드 효과를 없앱니다.",
+  "pl": "Gdy Terapagos przyjmie Stellar Form, natychmiast neutralizuje efekty pogody i terenu."
+ },
+ "teravolt": {
+  "pl": "Omija zdolności celów, które mogłyby utrudnić lub zablokować ruchy."
+ },
+ "thermal_exchange": {
+  "es": "Sube el Ataque al recibir un movimiento de tipo Fuego. No puede quemarse.",
+  "it": "Aumenta l'Attacco se colpito da una mossa di tipo Fuoco. Non può scottarsi.",
+  "ko": "불꽃 타입 기술을 맞으면 공격이 올라갑니다. 화상을 입지 않습니다.",
+  "pl": "Podnosi Atak po trafieniu ruchem Fire. Nie może zostać oparzony."
+ },
+ "thick_fat": {
+  "pl": "Zmniejsza o połowę obrażenia od ruchów Fire i Ice."
+ },
+ "tinted_lens": {
+  "pl": "Podwaja obrażenia ruchów mało efektywnych."
+ },
+ "torrent": {
+  "pl": "Ruchy typu Water zadają o 50% więcej obrażeń poniżej 1/3 maks. HP."
+ },
+ "tough_claws": {
+  "pl": "Zwiększa moc ruchów kontaktowych do 1,33×."
+ },
+ "toxic_boost": {
+  "pl": "Zwiększa Atak do 1,5× przy zatruciu."
+ },
+ "toxic_chain": {
+  "es": "Puede envenenar gravemente al golpear a un rival con un movimiento.",
+  "it": "Può avvelenare gravemente quando colpisce un avversario con una mossa.",
+  "ko": "기술로 상대를 맞히면 맹독에 빠뜨릴 수 있습니다.",
+  "pl": "Trafienie ruchem może ciężko zatruć przeciwnika."
+ },
+ "toxic_debris": {
+  "es": "Esparce púas venenosas a los pies del equipo rival al recibir daño de movimientos físicos.",
+  "it": "Sparge punte velenose ai piedi della squadra avversaria quando subisce danni da mosse fisiche.",
+  "ko": "물리 기술로 대미지를 받으면 상대 팀 발밑에 독압정을 뿌립니다.",
+  "pl": "Po otrzymaniu obrażeń od ruchów fizycznych rozrzuca trujące kolce pod drużyną przeciwnika."
+ },
+ "trace": {
+  "pl": "Po wejściu do walki kopiuje zdolność przeciwnika."
+ },
+ "transistor": {
+  "pl": "Wzmacnia ruchy typu Electric."
+ },
+ "triage": {
+  "pl": "Ruchy leczące tego Pokémona mają priorytet wyższy o 3."
+ },
+ "truant": {
+  "pl": "Opuszcza co drugą turę."
+ },
+ "turboblaze": {
+  "pl": "Omija zdolności celów, które mogłyby utrudnić lub zablokować ruchy."
+ },
+ "unaware": {
+  "pl": "Ignoruje modyfikatory statystyk innych Pokémonów przy liczeniu obrażeń i celności."
+ },
+ "unburden": {
+  "pl": "Podwaja Szybkość po użyciu lub utracie trzymanego przedmiotu."
+ },
+ "unnerve": {
+  "pl": "Uniemożliwia przeciwnikom jedzenie trzymanych jagód."
+ },
+ "unseen_fist": {
+  "pl": "Ruchy kontaktowe przebijają Protect i Detect."
+ },
+ "vessel_of_ruin": {
+  "es": "Baja el Ataque Especial de todos los Pokémon excepto el suyo.",
+  "it": "Riduce l'Attacco Speciale di tutti i Pokémon tranne il proprio.",
+  "ko": "자신을 제외한 모든 포켓몬의 특수공격을 낮춥니다.",
+  "pl": "Obniża Sp. Atak wszystkich Pokémonów oprócz siebie."
+ },
+ "victory_star": {
+  "pl": "Zwiększa celność ruchów sojuszników do 1,1×."
+ },
+ "vital_spirit": {
+  "pl": "Zapobiega zaśnięciu."
+ },
+ "volt_absorb": {
+  "pl": "Ruchy Electric leczą 1/4 maks. HP zamiast zadawać obrażenia."
+ },
+ "wandering_spirit": {
+  "pl": "Przy kontakcie zamienia się zdolnościami z przeciwnikiem."
+ },
+ "water_absorb": {
+  "pl": "Ruchy Water leczą 1/4 maks. HP zamiast zadawać obrażenia."
+ },
+ "water_bubble": {
+  "pl": "Zmniejsza o połowę obrażenia od ruchów Fire, podwaja moc ruchów Water i zapobiega oparzeniom."
+ },
+ "water_compaction": {
+  "pl": "Podnosi Obronę o dwa stopnie po trafieniu ruchem Water."
+ },
+ "water_veil": {
+  "pl": "Nie może zostać oparzony."
+ },
+ "weak_armor": {
+  "pl": "Po trafieniu ruchem fizycznym podnosi Szybkość i obniża Obronę o jeden stopień."
+ },
+ "well_baked_body": {
+  "es": "Los movimientos de tipo Fuego suben mucho su Defensa (dos niveles) en lugar de dañarlo.",
+  "it": "Le mosse di tipo Fuoco aumentano molto la sua Difesa (due livelli) invece di infliggere danni.",
+  "ko": "불꽃 타입 기술을 맞으면 대미지 대신 방어가 2랭크 올라갑니다.",
+  "pl": "Ruchy Fire mocno podnoszą jego Obronę (o dwa stopnie) zamiast zadawać obrażenia."
+ },
+ "white_smoke": {
+  "pl": "Przeciwnicy nie mogą obniżyć statystyk tego Pokémona."
+ },
+ "wimp_out": {
+  "pl": "Pokémon automatycznie się wycofuje, gdy HP spadnie poniżej połowy."
+ },
+ "wind_power": {
+  "es": "Al recibir un movimiento de viento, duplica la potencia de su siguiente movimiento de tipo Eléctrico.",
+  "it": "Quando viene colpito da una mossa di vento, raddoppia la potenza della sua prossima mossa di tipo Elettro.",
+  "ko": "바람 기술을 맞으면 다음에 쓰는 전기 타입 기술의 위력이 2배가 됩니다.",
+  "pl": "Po trafieniu ruchem wiatru moc następnego ruchu Electric jest podwojona."
+ },
+ "wind_rider": {
+  "es": "Otorga inmunidad a los movimientos de viento y sube un nivel el Ataque al recibir uno.",
+  "it": "Conferisce immunità alle mosse di vento e aumenta l'Attacco di un livello quando ne riceve una.",
+  "ko": "바람 기술에 면역이 되고, 맞으면 공격이 1랭크 올라갑니다.",
+  "pl": "Daje odporność na ruchy wiatru i podnosi Atak o jeden stopień po trafieniu jednym z nich."
+ },
+ "wonder_guard": {
+  "pl": "Chroni przed ruchami zadającymi obrażenia, które nie są superefektywne."
+ },
+ "wonder_skin": {
+  "pl": "Obniża bazową celność otrzymywanych ruchów niezadających obrażeń do dokładnie 50%."
+ },
+ "zen_mode": {
+  "pl": "Po każdej turze zmienia formę Darmanitana zależnie od HP: Zen Mode poniżej 50% maks. HP, w przeciwnym razie Standard Mode."
+ },
+ "zero_to_hero": {
+  "es": "Se transforma en su Forma Heroica al cambiar.",
+  "it": "Si trasforma nella Forma Possente quando viene sostituito.",
+  "ko": "교체되면 마이티폼으로 변합니다.",
+  "pl": "Przy zmianie przyjmuje Hero Form."
+ }
+}

@@ -7,7 +7,7 @@ from app.api import team
 def test_descriptions():
     fr = team.item_descriptions("fr")
     assert fr["great_ball"] and fr["leftovers"]
-    assert team.item_descriptions("pl") == {}
+    assert team.item_descriptions("pl")["great_ball"]
     assert team.item_descriptions("de") == {}
 
 

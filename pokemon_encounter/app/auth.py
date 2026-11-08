@@ -35,7 +35,7 @@ from pathlib import Path
 
 from fastapi import HTTPException, Request
 
-from . import db
+from . import db, i18n
 from .config import settings
 
 log = logging.getLogger(__name__)
@@ -238,7 +238,8 @@ async def get_current_user(request: Request) -> dict:
     if mode == "trusted_header":
         found = _header_user(request)
         if not found:
-            raise HTTPException(status_code=401, detail="No authenticated user from the reverse proxy.")
+            raise HTTPException(status_code=401, detail=i18n.t(
+                i18n.language_from_accept(request.headers.get("accept-language")), "error.no_proxy_user"))
         username, name, display_name = found
         from . import admin  # local import: admin imports this module
 
@@ -264,10 +265,8 @@ async def get_current_user(request: Request) -> dict:
         else:
             raise HTTPException(
                 status_code=401,
-                detail=(
-                    "Kein Home-Assistant-Nutzer erkannt. Bitte die App ueber das "
-                    "Pokémon-Panel in der Home-Assistant-Seitenleiste oeffnen."
-                ),
+                detail=i18n.t(i18n.language_from_accept(request.headers.get("accept-language")),
+                              "error.no_ha_user"),
             )
 
     return db.upsert_user(user_id, name or user_id, display_name or name or user_id)

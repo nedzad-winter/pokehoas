@@ -780,15 +780,14 @@ class Battle:
         return [idx for idx, member in enumerate(self.team) if not member.fainted]
 
 
-def possessive(name: str, lang: str = "en") -> str:
-    if lang == "de":
-        return f"{name}'" if name[-1:].lower() in ("s", "x", "z", "ß") else f"{name}s"
-    return f"{name}'s"
+def _german_genitive(name: str) -> str:
+    return f"{name}'" if name[-1:].lower() in ("s", "x", "z", "ß") else f"{name}s"
 
 
 def who(combatant: Combatant, lang: str = "en") -> str:
     if combatant.trainer:
-        return f"{possessive(combatant.trainer, lang)} {combatant.name_in(lang)}"
+        owner = _german_genitive(combatant.trainer) if lang == "de" else combatant.trainer
+        return i18n.t(lang, "battle.log.who_trainer", owner=owner, name=combatant.name_in(lang))
     key = "battle.log.who_wild" if combatant.is_wild else "battle.log.who_yours"
     return i18n.t(lang, key, name=combatant.name_in(lang))
 

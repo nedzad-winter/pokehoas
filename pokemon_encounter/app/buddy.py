@@ -230,9 +230,7 @@ def _credit_steps(user: dict[str, Any], row: dict[str, Any], steps: int) -> list
 # --------------------------------------------------------- Darstellung
 
 def _species_name(species: dict[str, Any], lang: str) -> str:
-    if lang == "de" and species.get("name_de"):
-        return species["name_de"]
-    return species.get("name_en") or species.get("name_de") or species["name"]
+    return db.species_display_name(species, lang)
 
 
 def status(user: dict[str, Any]) -> dict[str, Any]:

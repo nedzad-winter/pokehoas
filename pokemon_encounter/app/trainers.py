@@ -54,6 +54,19 @@ def sprite_url_for(trainer: dict[str, Any]) -> str:
     return f"{SPRITE_BASE_URL}/{slug}.png"
 
 
+def display_name(trainer: dict[str, Any], lang: str = "en") -> str:
+    """Trainer name in `lang`; generated trainers name an i18n key instead."""
+    if trainer.get("name_key"):
+        return i18n.t(lang, trainer["name_key"])
+    # `names`: official localized names; the games have no Polish release, so pl keeps English.
+    return ((trainer.get("names") or {}).get(lang)
+            or (trainer.get("name_de") if lang == "de" else None) or trainer["name"])
+
+
+def region_name(region_key: str, lang: str = "en") -> str:
+    return i18n.t(lang, f"region.{region_key}")
+
+
 def title_for(trainer: dict[str, Any], lang: str = "en") -> str:
     key = KIND_TITLE_KEYS[trainer.get("title") or trainer["kind"]][1 if trainer.get("f") else 0]
     return i18n.t(lang, key)

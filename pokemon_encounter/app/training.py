@@ -47,8 +47,8 @@ MOVES = ["splash"]
 TRAINER: dict[str, Any] = {
     "id": TRAINER_ID,
     "kind": KIND,
-    "name": "Sparring partner",
-    "name_de": "Trainingspartner",
+    "name": "sparring_partner",
+    "name_key": "training.partner_name",
     "f": False,
     "type": None,
     "region": None,

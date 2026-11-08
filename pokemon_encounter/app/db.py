@@ -1792,13 +1792,15 @@ def eligible_users(now: datetime | None = None) -> list[dict[str, Any]]:
     ]
 
 def species_display_name(species: dict[str, Any], lang: str) -> str:
-    """Name of a species row in `lang`; falls back to English, German, then
-    the PokeAPI slug."""
+    """Name of a species row in `lang`; falls back to the German column (for
+    German, while `names` isn't backfilled yet), English, German, then the
+    PokeAPI slug."""
     try:
         names = json.loads(species.get("names") or "{}")
     except ValueError:
         names = {}
-    return (names.get(lang) or species.get("name_en")
+    return (names.get(lang) or (species.get("name_de") if lang == "de" else None)
+            or species.get("name_en")
             or species.get("name_de") or species["name"])
 
 

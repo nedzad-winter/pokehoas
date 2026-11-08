@@ -93,7 +93,7 @@ def _league(user_id: str, lang: str) -> tuple[list[dict[str, Any]], list[dict[st
         badges = [
             {
                 "trainer_id": t["id"],
-                "name": t["name"],
+                "name": trainers.display_name(t, lang),
                 "title": trainers.title_for(t, lang),
                 "earned": achievements.trainer_key(t["id"]) in done,
                 "earned_at": done.get(achievements.trainer_key(t["id"])),
@@ -102,7 +102,7 @@ def _league(user_id: str, lang: str) -> tuple[list[dict[str, Any]], list[dict[st
         ]
         regions.append({
             "key": region["key"],
-            "label": region["label"],
+            "label": trainers.region_name(region["key"], lang),
             "badges": badges,
             "earned": sum(1 for b in badges if b["earned"]),
             "total": len(badges),
@@ -110,7 +110,7 @@ def _league(user_id: str, lang: str) -> tuple[list[dict[str, Any]], list[dict[st
         })
         # "Champion" means: completely cleared the league of this region.
         if achievements.region_cleared(user_id, region["key"]) and gyms:
-            champion_titles.append({"region": region["key"], "label": region["label"]})
+            champion_titles.append({"region": region["key"], "label": trainers.region_name(region["key"], lang)})
     return regions, champion_titles
 
 

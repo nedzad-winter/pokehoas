@@ -33,7 +33,7 @@ from typing import Any
 
 from fastapi import Depends, HTTPException
 
-from . import auth
+from . import auth, i18n
 from .auth import get_current_user
 from .config import settings
 
@@ -179,11 +179,7 @@ async def current_user_is_admin(current_user: dict = Depends(get_current_user)) 
 
 async def require_admin(current_user: dict = Depends(get_current_user)) -> dict:
     """Dependency fuer alle /api/admin/...-Endpunkte: 403 fuer Nicht-Admins."""
+    i18n.set_request_language(current_user["language"])
     if not await is_admin(current_user):
-        raise HTTPException(
-            status_code=403,
-            detail="Nur fuer Administratoren. Admin ist, wer in Home Assistant "
-                   "Administrator ist oder in der Option `admin_users` "
-                   "(Docker: POKEMON_ADMIN_USERS) steht.",
-        )
+        raise HTTPException(status_code=403, detail=i18n.t_request("error.admin_only"))
     return current_user

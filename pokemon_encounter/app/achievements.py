@@ -148,10 +148,10 @@ def generations() -> list[int]:
     return list(range(1, len(trainers.regions()) + 1))
 
 
-def generation_region_label(generation: int) -> str:
+def generation_region_label(generation: int, lang: str = "en") -> str:
     for region in trainers.regions():
         if trainers.generation_for_region(region["key"]) == generation:
-            return region["label"]
+            return trainers.region_name(region["key"], lang)
     return str(generation)
 
 
@@ -183,17 +183,20 @@ def unlock_generation(region_key: str, mode: str) -> int | None:
 def definitions(lang: str = "en", mode: str = db.DEFAULT_REGION_LOCK) -> list[dict[str, Any]]:
     """All achievements, with the items they pay out (`reward`, see rewards.py).
     `lang` affects the reward LABEL and the region achievements' description
-    (which depends on the player's region lock `mode`); trainer titles and
-    descriptions are the catalog's own English texts."""
+    (which depends on the player's region lock `mode`); titles and
+    descriptions are in `lang`."""
     defs = [
         {
             "key": trainer_key(t["id"]),
             "group": GROUP_BATTLES,
             "category": t["kind"],
             "region": t["region"],
-            "region_label": t["region_label"],
-            "title": f"Defeated {trainers.title_for(t)} {t['name']}",
-            "description": f"Defeat {trainers.title_for(t)} {t['name']} ({t['region_label']}).",
+            "region_label": trainers.region_name(t["region"], lang),
+            "title": i18n.t(lang, "achievements.trainer_title", title=trainers.title_for(t, lang),
+                            name=trainers.display_name(t, lang)),
+            "description": i18n.t(lang, "achievements.trainer_desc", title=trainers.title_for(t, lang),
+                                  name=trainers.display_name(t, lang),
+                                  region=trainers.region_name(t["region"], lang)),
             "trainer_id": t["id"],
             "tier": TRAINER_TIER[t["kind"]],
             "reward": rewards.build(rewards.gym_items(t["id"]), lang),
@@ -213,15 +216,15 @@ def definitions(lang: str = "en", mode: str = db.DEFAULT_REGION_LOCK) -> list[di
             lang,
             "achievements.region_desc_unlocks" if unlocks is not None
             else "achievements.region_desc",
-            region=region["label"], gen=unlocks,
+            region=trainers.region_name(region["key"], lang), gen=unlocks,
         )
         defs.append({
             "key": region_key(region["key"]),
             "group": GROUP_BATTLES,
             "category": "region",
             "region": region["key"],
-            "region_label": region["label"],
-            "title": f"{region['label']} League Cleared",
+            "region_label": trainers.region_name(region["key"], lang),
+            "title": i18n.t(lang, "achievements.region_title", region=trainers.region_name(region["key"], lang)),
             "description": description,
             "generation": gen,
             "unlocks_generation": unlocks,
@@ -233,8 +236,8 @@ def definitions(lang: str = "en", mode: str = db.DEFAULT_REGION_LOCK) -> list[di
         "group": GROUP_BATTLES,
         "category": "special",
         "region": None,
-        "title": "League Champion",
-        "description": "Defeat every Gym Leader, Elite Four member and Champion.",
+        "title": i18n.t(lang, "achievements.league_master_title"),
+        "description": i18n.t(lang, "achievements.league_master_desc"),
         "tier": TIER_GOLD,
         "reward": rewards.build([{"key": SHINY_CHARM, "quantity": 1}], lang),
     })
@@ -280,7 +283,6 @@ def _generation_definitions(lang: str) -> list[dict[str, Any]]:
     """`gen_caught_<n>` / `gen_living_<n>` for every generation, see
     GEN_CAUGHT_PREFIX. The living one's reward carries no items, only a label
     naming the mythical Pokemon it spawns (`event_mythicals`)."""
-    name_col = "name_de" if lang == "de" else "name_en"
     caught_reward = rewards.build(
         [{"key": k, "quantity": n} for k, n in GEN_CAUGHT_ITEMS.items()], lang,
         money=GEN_CAUGHT_MONEY)
@@ -288,9 +290,9 @@ def _generation_definitions(lang: str) -> list[dict[str, Any]]:
                                   db.DEFAULT_SETTINGS["gen_caught_shiny_factor"]))
     defs: list[dict[str, Any]] = []
     for gen in generations():
-        region = generation_region_label(gen)
+        region = generation_region_label(gen, lang)
         params = {"gen": gen, "region": region, "factor": f"{factor:g}"}
-        mythicals = [m.get(name_col) or m["name"] for m in event_mythicals(gen)]
+        mythicals = [db.species_display_name(m, lang) for m in event_mythicals(gen)]
         common = {"group": GROUP_GENERATIONS, "category": "generation", "region": None,
                   "generation": gen, "region_label": region}
         defs.append({

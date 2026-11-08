@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Builds pokemon_encounter/app/data/ability_descriptions_i18n.json: the official in-game
 description of every ability in abilities.json, in the PokeAPI languages the UI supports.
-German stays in abilities.json (`description_de`); PokeAPI has no Polish, so Polish falls
-back to English in the frontend.
+German stays in abilities.json (`description_de`); PokeAPI has no Polish: those texts live
+in ability_descriptions_manual.json.
 
 Run from the repo root (needs network access to pokeapi.co):
 

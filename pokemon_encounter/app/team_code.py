@@ -103,8 +103,6 @@ def _decode_payload(code: str, lang: str) -> dict[str, Any]:
 
 def _species_name(species: dict[str, Any], lang: str) -> str:
     """Anzeigename fuer Fehlermeldungen (die `name`-Spalte ist der interne Slug)."""
-    if lang == "de" and species.get("name_de"):
-        return species["name_de"]
     return db.species_display_name(species, lang)
 
 

@@ -498,8 +498,8 @@ RARE_CANDY = "rare_candy"
 MAX_LEVEL = battle.MAX_LEVEL
 
 
-def _owned_name(owned: dict[str, Any], species: dict[str, Any]) -> str:
-    return owned.get("nickname") or species.get("name_en") or species.get("name_de") or species["name"]
+def _owned_name(owned: dict[str, Any], species: dict[str, Any], lang: str = "en") -> str:
+    return owned.get("nickname") or db.species_display_name(species, lang)
 
 
 def rare_candy_targets(user_id: str) -> list[dict[str, Any]]:
@@ -572,7 +572,7 @@ def use_rare_candy(user_id: str, owned_id: int, count: int = 1) -> dict[str, Any
     new_achievements = achievements.check_level100(
         user_id, [{"owned_id": owned_id, "level_to": new_level}], lang,
     )
-    name = _owned_name(owned, species)
+    name = _owned_name(owned, species, lang)
     message = (i18n.t(lang, "rare_candy.result_multi", name=name, count=used, level=new_level)
                if used > 1 else i18n.t(lang, "rare_candy.result", name=name, level=new_level))
     for ach in new_achievements:

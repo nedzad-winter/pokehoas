@@ -27,7 +27,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from . import db, held_items
+from . import db, held_items, i18n
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -70,8 +70,36 @@ def forms_for_species(species_id: int) -> list[dict[str, Any]]:
     return [form for form in catalog().values() if form["species_id"] == species_id]
 
 
+def _template_name(form: dict[str, Any], species_name: str, lang: str) -> str:
+    """Form name built from the translated species name ("Méga-Dracaufeu X")."""
+    if form["kind"] == "primal":
+        return i18n.t(lang, "battle.form_primal", name=species_name)
+    suffix = form["name"].rsplit(" ", 1)[-1]
+    if suffix in ("X", "Y"):
+        return i18n.t(lang, "battle.form_mega_xy", name=species_name, suffix=suffix)
+    return i18n.t(lang, "battle.form_mega", name=species_name)
+
+
+def _form_names(form: dict[str, Any], base_names: dict[str, str]) -> dict[str, str]:
+    """{lang: form name}: the catalog's en/de, the others built from `base_names`."""
+    names = {lang: _template_name(form, species, lang)
+             for lang, species in base_names.items() if lang not in ("en", "de")}
+    names["en"] = form["name"]
+    if form.get("name_de"):
+        names["de"] = form["name_de"]
+    return names
+
+
+def _species_names(species_id: int) -> dict[str, str]:
+    row = db.query_one("SELECT names FROM species WHERE id = ?", (species_id,)) or {}
+    try:
+        return json.loads(row.get("names") or "{}")
+    except ValueError:
+        return {}
+
+
 def name(form: dict[str, Any], lang: str = "en") -> str:
-    return (form.get("name_de") if lang == "de" else None) or form["name"]
+    return _form_names(form, _species_names(form["species_id"])).get(lang) or form["name"]
 
 
 def stone_label(form: dict[str, Any], lang: str = "en") -> str | None:
@@ -87,6 +115,7 @@ def describe(form: dict[str, Any] | None) -> dict[str, Any] | None:
         "kind": form["kind"],
         "name": form["name"],
         "name_de": form.get("name_de"),
+        "names": _form_names(form, _species_names(form["species_id"])),
         "sprite_url": form.get("sprite_url"),
         "item_name": held_items.label(form["stone"], "en"),
         "item_name_de": (held_items.get(form["stone"]) or {}).get("name_de"),
@@ -97,11 +126,16 @@ def species_for(base: dict[str, Any], form: dict[str, Any]) -> dict[str, Any]:
     """Abgeleitete species-Zeile fuer die Kampfdauer: Basiswerte, Typen, Name
     und Sprite der Mega-Form, alles andere (id, base_exp, catch_rate,
     growth_rate, ...) bleibt die Grundform."""
+    try:
+        base_names = json.loads(base.get("names") or "{}")
+    except ValueError:
+        base_names = {}
     return {
         **base,
         "name": form["name"],
         "name_en": form["name"],
         "name_de": form.get("name_de"),
+        "names": json.dumps(_form_names(form, base_names)),
         "type1": form["type1"],
         "type2": form.get("type2"),
         "base_hp": form["base_hp"],

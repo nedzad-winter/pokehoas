@@ -611,8 +611,7 @@ def hatch(user_id: str, egg_id: int, now: datetime | None = None) -> dict[str, A
         (species["id"], user_id, int(row["shiny"]), now.isoformat(), now.isoformat()),
     )
     lang = db.user_language(user_id)
-    name = species.get("name_de") if lang == "de" and species.get("name_de") else (
-        species.get("name_en") or species.get("name_de") or species["name"])
+    name = db.species_display_name(species, lang)
     return {"owned_id": owned_id, "species_id": species["id"], "name": name,
             "shiny": bool(row["shiny"]), "in_party": slot is not None,
             "iv_gains": iv_rewards["iv_gains"], "iv_floor": iv_rewards["iv_floor"],
