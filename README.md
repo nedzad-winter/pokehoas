@@ -11,7 +11,7 @@ door, a light switch, a person arriving at a zone – can spawn a wild Pokémon.
 Home Assistant user gets their **own queue, team, Pokédex and bag** and handles the
 encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolve.
 
-**Status: public beta (v1.4-beta).** It is a hobby project and playable end to end;
+**Status: public beta (v1.4.1-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
 
 ## Features

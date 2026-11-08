@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.4.1-beta
+
+Another big thank you to **@vicdilou** for the item and battle translations. Merci !
+
+- Translations (by @vicdilou): item names and descriptions in es, fr, it, ja and ko, also in the
+  battle log, rewards and error messages. The battle window shows species names in your language.
+- Team codes (by @vicdilou): codes now accept level-up and egg moves, and their error messages
+  are translated.
+- Every supported language now gets the full game: text that was still English or German only
+  (admin and settings messages, login errors, achievement titles, trigger categories, HP and IV
+  labels) follows the player's language.
+- Trainers have their official names in es, fr, it, ja and ko. Polish keeps the English game
+  names, as the games have no Polish release.
+- Item and ability descriptions are complete in every language, including Polish.
+- Mega and Primal forms, region names and prize money follow the player's language in battle
+  logs and rewards.
+- Fix: five German Paldea trainer names now match the games (Ronah, Kombu, Cay, Sinius, Sagaria).
+
 ## 1.4-beta
 
 A big thank you to **@vicdilou**, who contributed most of this release: PokeHOAS now speaks
