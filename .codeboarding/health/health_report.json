@@ -1,14 +1,14 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-11-08T17:21:10.771710+00:00",
-  "overall_score": 0.9524576954069299,
+  "timestamp": "2026-11-08T18:10:12.064281+00:00",
+  "overall_score": 0.9551282051282052,
   "check_summaries": [
     {
       "check_name": "function_size",
       "description": "Checks that functions/methods do not exceed line count thresholds",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 1182,
+      "total_entities_checked": 1192,
       "findings_count": 0,
       "warning_count": 0,
       "score": 1.0,
@@ -19,9 +19,9 @@
       "description": "Detects unused imports, variables, functions, and dead code via LSP diagnostics",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 59,
-      "findings_count": 59,
-      "warning_count": 27,
+      "total_entities_checked": 56,
+      "findings_count": 56,
+      "warning_count": 25,
       "score": 0.0,
       "finding_groups": [
         {
@@ -191,31 +191,10 @@
               "metric_value": 0.0
             },
             {
-              "entity_name": "[unused_variable] \"region_key\" is not accessed",
-              "file_path": "pokemon_encounter/app/rewards.py",
-              "line_start": 73,
-              "line_end": 73,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"math\" is not accessed",
-              "file_path": "pokemon_encounter/app/spawn.py",
-              "line_start": 21,
-              "line_end": 21,
-              "metric_value": 0.0
-            },
-            {
               "entity_name": "[unused_variable] \"_level\" is not accessed",
               "file_path": "pokemon_encounter/app/challenge.py",
               "line_start": 119,
               "line_end": 119,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"_dev_fallback_allowed\" is not accessed",
-              "file_path": "pokemon_encounter/app/auth.py",
-              "line_start": 76,
-              "line_end": 76,
               "metric_value": 0.0
             },
             {
@@ -226,13 +205,6 @@
               "metric_value": 0.0
             },
             {
-              "entity_name": "[unused_variable] \"sys\" is not accessed",
-              "file_path": "scripts/build_ability_descriptions.py",
-              "line_start": 16,
-              "line_end": 16,
-              "metric_value": 0.0
-            },
-            {
               "entity_name": "[unused_variable] \"encounter\" is not accessed",
               "file_path": "pokemon_encounter/app/battle_session.py",
               "line_start": 447,
@@ -240,10 +212,24 @@
               "metric_value": 0.0
             },
             {
+              "entity_name": "[unused_variable] \"region_key\" is not accessed",
+              "file_path": "pokemon_encounter/app/rewards.py",
+              "line_start": 73,
+              "line_end": 73,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_dev_fallback_allowed\" is not accessed",
+              "file_path": "pokemon_encounter/app/auth.py",
+              "line_start": 76,
+              "line_end": 76,
+              "metric_value": 0.0
+            },
+            {
               "entity_name": "[unused_variable] \"ability_effects\" is not accessed",
               "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1797,
-              "line_end": 1797,
+              "line_start": 1796,
+              "line_end": 1796,
               "metric_value": 0.0
             },
             {
@@ -251,6 +237,13 @@
               "file_path": "pokemon_encounter/app/battle.py",
               "line_start": 568,
               "line_end": 568,
+              "metric_value": 0.0
+            },
+            {
+              "entity_name": "[unused_variable] \"_level\" is not accessed",
+              "file_path": "pokemon_encounter/app/trainer_battle.py",
+              "line_start": 433,
+              "line_end": 433,
               "metric_value": 0.0
             }
           ]
@@ -436,24 +429,10 @@
           "description": "Unused import statements that should be removed",
           "entities": [
             {
-              "entity_name": "[unused_import] Import \"math\" is not accessed",
-              "file_path": "pokemon_encounter/app/spawn.py",
-              "line_start": 21,
-              "line_end": 21,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_import] Import \"sys\" is not accessed",
-              "file_path": "scripts/build_ability_descriptions.py",
-              "line_start": 16,
-              "line_end": 16,
-              "metric_value": 0.0
-            },
-            {
               "entity_name": "[unused_import] Import \"ability_effects\" is not accessed",
               "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1797,
-              "line_end": 1797,
+              "line_start": 1796,
+              "line_end": 1796,
               "metric_value": 0.0
             }
           ]
@@ -475,28 +454,10 @@
       "composite_risk_score": 35.0
     },
     {
-      "file_path": "pokemon_encounter/app/spawn.py",
-      "total_findings": 2,
-      "warning_findings": 1,
-      "composite_risk_score": 25.0
-    },
-    {
       "file_path": "pokemon_encounter/app/auth.py",
       "total_findings": 2,
       "warning_findings": 1,
       "composite_risk_score": 25.0
-    },
-    {
-      "file_path": "scripts/build_ability_descriptions.py",
-      "total_findings": 2,
-      "warning_findings": 1,
-      "composite_risk_score": 25.0
-    },
-    {
-      "file_path": "pokemon_encounter/app/rewards.py",
-      "total_findings": 1,
-      "warning_findings": 0,
-      "composite_risk_score": 10.0
     },
     {
       "file_path": "pokemon_encounter/app/challenge.py",
@@ -512,6 +473,18 @@
     },
     {
       "file_path": "pokemon_encounter/app/battle_session.py",
+      "total_findings": 1,
+      "warning_findings": 0,
+      "composite_risk_score": 10.0
+    },
+    {
+      "file_path": "pokemon_encounter/app/rewards.py",
+      "total_findings": 1,
+      "warning_findings": 0,
+      "composite_risk_score": 10.0
+    },
+    {
+      "file_path": "pokemon_encounter/app/trainer_battle.py",
       "total_findings": 1,
       "warning_findings": 0,
       "composite_risk_score": 10.0
