@@ -725,6 +725,9 @@ function catalogName(obj) {
   return (table && table[obj.key]) || null;
 }
 
+// Species name of a battle view entry (it carries `species_id` and the English `name`).
+const battleName = m => (m && SPECIES_NAMES[m.species_id]) || (m && m.name) || '?';
+
 function localizedName(obj) {
   const translated = catalogName(obj);
   if (translated) return translated;
@@ -3940,7 +3943,7 @@ function battleResultText(v) {
     return tr('battle.trainer_lost', { title: trainerInfo.title, name: trainerInfo.name }) +
       (gotExp ? ' ' + tr('battle.lost_still_got_exp') : '') + ' ' + tr('battle.heal_and_retry');
   }
-  const name = v.wild.name;
+  const name = battleName(v.wild);
   switch (v.outcome) {
     case 'won': return tr('battle.wild_won', { name });
     case 'caught': return tr('battle.wild_caught', { name });
@@ -3995,7 +3998,7 @@ function battleActionsHtml(v, me) {
   const menus = [['moves', tr('battle.moves')], ['switch', tr('battle.pokemon')], ['bag', tr('nav.bag')]];
   const shiftHint = v.shift_offer && !v.needs_switch ? `<div class="muted" style="margin-top:8px">${tr('battle.shift_offer')}</div>` : '';
   const tabs = v.needs_switch
-    ? `<div class="muted" style="margin-bottom:8px">${tr('battle.needs_switch', { name: esc(me.name), action: trainer ? tr('battle.give_up_lower') : tr('battle.flee_lower') })}</div>`
+    ? `<div class="muted" style="margin-bottom:8px">${tr('battle.needs_switch', { name: esc(battleName(me)), action: trainer ? tr('battle.give_up_lower') : tr('battle.flee_lower') })}</div>`
     : `<div class="battle-menu">
         ${menus.map(([k, label]) =>
           `<button class="ghost action bMenu${menu === k ? ' active' : ''}" data-menu="${k}">${label}</button>`).join('')}
@@ -4007,7 +4010,7 @@ function battleActionsHtml(v, me) {
     const defenderTypes = v.wild.types || [];
     body = megaButtonHtml(v) + `<div class="move-grid">${me.moves.map(m => `
       <button class="move-btn bMove" data-move="${esc(m.key)}" ${m.usable ? '' : 'disabled'}
-        style="border-left-color:${typeColor(m.type)}" title="${esc(m.name)}">
+        style="border-left-color:${typeColor(m.type)}" title="${esc(battleName(m))}">
         <strong>${esc(localizedName(m))}${moveEffectivenessBadge(m, defenderTypes)}</strong>
         <small>${esc(moveInfo(m))}</small>
         ${moveEffectsLine(m)}
@@ -4017,7 +4020,7 @@ function battleActionsHtml(v, me) {
     body = v.team.map(m => `
       <div class="row" style="padding:6px 0;border-top:1px solid var(--line)">
         ${m.sprite_url ? `<img class="sprite" style="width:58px;height:58px" src="${esc(m.sprite_url)}" alt="">` : ''}
-        <div class="grow"><strong>${esc(m.name)}</strong> <span class="muted">${esc(lvLabel(m))}</span> ${statusPill(m.status)}
+        <div class="grow"><strong>${esc(battleName(m))}</strong> <span class="muted">${esc(lvLabel(m))}</span> ${statusPill(m.status)}
           ${hpBar(m.current_hp, m.max_hp)}<span class="muted">${esc(m.current_hp)}/${esc(m.max_hp)} HP</span></div>
         <button class="ghost action bSwitch" data-target="${esc(m.owned_id)}"
           ${m.active || m.fainted ? 'disabled' : ''}>${m.fainted ? tr('battle.fainted') : m.active ? tr('battle.in_battle') : tr('battle.switch_in')}</button>
@@ -4050,7 +4053,7 @@ function battleMedicineHtml(v) {
   return `<div class="row" style="margin-top:10px">
       <label class="muted" for="bMedTarget">${tr('medicine.battle.target')}</label>
       <select id="bMedTarget" class="grow">${v.team.map(m => `<option value="${esc(m.owned_id)}" ${
-        m.owned_id === current ? 'selected' : ''}>${esc(m.name)} (${esc(m.current_hp)}/${esc(m.max_hp)} HP${
+        m.owned_id === current ? 'selected' : ''}>${esc(battleName(m))} (${esc(m.current_hp)}/${esc(m.max_hp)} HP${
         m.status ? ', ' + esc(statusLabel(m.status)) : ''}${m.fainted ? ', ' + tr('battle.fainted') : ''})</option>`).join('')}</select>
     </div>
     <div class="row" style="margin-top:6px">${meds.map(it => `
@@ -4066,7 +4069,7 @@ function openEnemySummary(w) {
   const overlay = $('#enemyOverlay');
   overlay.innerHTML = `<div class="pokemon-detail">
     <div class="row" style="justify-content:space-between;flex-wrap:nowrap">
-      <h2>${esc(w.name)} ${w.shiny ? shinyMark() : ''}</h2>
+      <h2>${esc(battleName(w))} ${w.shiny ? shinyMark() : ''}</h2>
       <button class="ghost action" id="closeEnemySummary">${tr('common.close')}</button>
     </div>
     <div class="detail-head">
@@ -4121,14 +4124,14 @@ function renderBattle() {
         ${v.kind === 'trainer' && v.trainer.sprite_url
           ? `<img class="battle-trainer-portrait" src="${esc(v.trainer.sprite_url)}" alt="">` : ''}
         <strong class="grow">${tr('battle.title', {
-          opponent: esc(isTrainerBattle(v) ? battleOpponentName(v) : w.name), turn: esc(v.turn),
+          opponent: esc(isTrainerBattle(v) ? battleOpponentName(v) : battleName(w)), turn: esc(v.turn),
         })}</strong>
         ${v.over ? '' : `<button class="ghost action" id="bHide" title="${tr('battle.hide_hint')}">${tr('battle.continue_later')}</button>`}
       </div>
       <div class="battle-field">
         <div class="battle-side" id="bEnemyInfo" style="cursor:pointer" title="${esc(tr('battle.enemy_summary_hint'))}">
           <div class="battle-info">
-            <strong>${esc(w.name)}</strong> ${w.shiny ? shinyMark() : ''} <span class="muted">${tr('common.level_short', { level: w.level })}</span>
+            <strong>${esc(battleName(w))}</strong> ${w.shiny ? shinyMark() : ''} <span class="muted">${tr('common.level_short', { level: w.level })}</span>
             <div>${(w.types || []).map(typePill).join('')}${megaPill(w)}${statusPill(w.status)}${abilityPill(w.ability_info)}</div>
             <div>${statStagePills(w.stat_stages)}</div>
             ${hpBar(w.current_hp, w.max_hp, true)}
@@ -4143,7 +4146,7 @@ function renderBattle() {
           ${me.sprite_url ? `<img class="sprite battle-sprite ${spriteAnim.own}" src="${esc(backSprite(me.sprite_url))}"
             data-front="${esc(me.sprite_url)}" alt="">` : ''}
           <div class="battle-info" style="text-align:right">
-            <strong>${esc(me.name)}</strong> <span class="muted">${esc(lvLabel(me))}</span>
+            <strong>${esc(battleName(me))}</strong> <span class="muted">${esc(lvLabel(me))}</span>
             <div>${(me.types || []).map(typePill).join('')}${megaPill(me)}${statusPill(me.status)}${abilityPill(me.ability_info)}${me.held_item_info
               ? `<span class="pill" title="${tr('battle.held_item_title')}">${esc(localizedName(me.held_item_info))}</span>` : ''}</div>
             <div>${statStagePills(me.stat_stages)}</div>
