@@ -105,7 +105,38 @@ def _species_name(species: dict[str, Any], lang: str) -> str:
     """Anzeigename fuer Fehlermeldungen (die `name`-Spalte ist der interne Slug)."""
     if lang == "de" and species.get("name_de"):
         return species["name_de"]
-    return species.get("name_en") or species.get("name_de") or species["name"]
+    return db.species_display_name(species, lang)
+
+
+def _move_label(key: Any, lang: str) -> str:
+    """Move name for error messages: translated when known, the raw key otherwise."""
+    from . import name_tables
+    move = moves_mod.all_moves().get(key) if isinstance(key, str) else None
+    if not move:
+        return str(key)
+    return (name_tables.lookup("moves", key, lang)
+            or (move.get("name_de") if lang == "de" else None) or move["name"])
+
+
+def _ability_label(key: Any, lang: str) -> str:
+    from . import abilities
+    return (abilities.label(key, lang) if isinstance(key, str) else None) or str(key)
+
+
+def _item_label(key: Any, lang: str) -> str:
+    return (held_items.label(key, lang) if isinstance(key, str) else None) or str(key)
+
+
+def _move_allowed(species: dict[str, Any], move: dict[str, Any], key: str, level: int) -> bool:
+    """The species can know this move at this level: by level-up (the level it learns it at has
+    been reached), as an egg move, or - as before - once a TM could teach it (`min_level`)."""
+    learned_at = moves_mod.learn_level(species, key)
+    if learned_at is not None and learned_at <= level:
+        return True
+    entry = moves_mod.learnset(species)
+    if entry and key in entry.get("egg", []):
+        return True
+    return move["min_level"] <= level
 
 
 def _int_in_range(value: Any, low: int, high: int) -> int | None:
@@ -141,10 +172,10 @@ def _mon_from_entry(entry: Any, lang: str) -> dict[str, Any]:
         }
         if ability not in known:
             raise _fail(lang, "error.pvp_code_unknown_ability",
-                        ability=ability, name=name)
+                        ability=_ability_label(ability, lang), name=name)
 
     if held_item is not None and (not isinstance(held_item, str) or held_items.get(held_item) is None):
-        raise _fail(lang, "error.pvp_code_unknown_item", item=held_item)
+        raise _fail(lang, "error.pvp_code_unknown_item", item=_item_label(held_item, lang))
 
     if not isinstance(move_keys, list) or not 1 <= len(move_keys) <= moves_mod.MAX_MOVES \
             or len(set(move_keys)) != len(move_keys):
@@ -157,8 +188,8 @@ def _mon_from_entry(entry: Any, lang: str) -> dict[str, Any]:
     known = moves_mod.all_moves()
     for key in move_keys:
         if not isinstance(key, str) or key not in known \
-                or known[key]["min_level"] > level:
-            raise _fail(lang, "error.pvp_code_unknown_move", move=str(key), name=name)
+                or not _move_allowed(species, known[key], key, level):
+            raise _fail(lang, "error.pvp_code_unknown_move", move=_move_label(key, lang), name=name)
 
     return {
         "species_id": species_id,
