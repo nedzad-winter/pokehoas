@@ -954,12 +954,14 @@ def _run_throw(row: dict[str, Any], user_id: str, actions: Actions, facts: Facts
 def _notify(user_id: str, result: dict[str, Any]) -> None:
     user = db.get_user(user_id) or {}
     lang = result["lang"]
+    species = db.query_one("SELECT * FROM species WHERE id = ?", (result["species_id"],))
+    name = db.species_display_name(species, lang) if species else result["name"]
     queue_notification({
         "title": i18n.t(lang, "auto_rules.notify.title"),
         "message": i18n.t(
             lang, "auto_rules.notify.message",
             player=user.get("display_name") or user.get("name") or user_id,
-            rule=result["rule_name"], name=result["name"], level=result["level"],
+            rule=result["rule_name"], name=name, level=result["level"],
             outcome=i18n.t(lang, f"auto_rules.outcome.{result['outcome']}"),
         ),
         "notification_id": f"pokehoas_auto_{user_id}_{result['encounter_id']}",
@@ -1012,7 +1014,7 @@ def execute(user_id: str, encounter: dict[str, Any], actions: Actions,
     }
     if rule is not None:
         result["log"].append(i18n.t(lang, "auto_rules.log.rule", rule=rule["name"],
-                                    name=facts.wild.name, level=row["level"]))
+                                    name=facts.wild.name_in(lang), level=row["level"]))
 
     if actions.mode == "skip":
         result.pop("lang")
@@ -1050,7 +1052,7 @@ def execute(user_id: str, encounter: dict[str, Any], actions: Actions,
         _record(user_id, rule, result)
     if actions.notify and result["outcome"] in HISTORY_OUTCOME:
         _notify(user_id, result)
-    result["message"] = i18n.t(lang, "auto_rules.result", name=result["name"],
+    result["message"] = i18n.t(lang, "auto_rules.result", name=facts.wild.name_in(lang),
                                level=result["level"],
                                outcome=i18n.t(lang, f"auto_rules.outcome.{result['outcome']}"))
     result.pop("lang")

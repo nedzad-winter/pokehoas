@@ -505,7 +505,7 @@
   "auto_rules.result": "{name} (Niv. {level}) : {outcome}",
   "auto_rules.rule_enabled": "active",
   "auto_rules.rules_title": "Mes règles",
-  "auto_rules.run_summary": "Les règles ont traité {handled} rencontres sur {total}.",
+  "auto_rules.run_summary": "Rencontres traitées par les règles : {handled} sur {total}.",
   "auto_rules.spent_today": "Dépensé aujourd'hui : {amount}",
   "auto_rules.team.current": "mon équipe dans l'ordre",
   "auto_rules.team.lineup": "une composition fixe",
