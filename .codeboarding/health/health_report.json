@@ -1,6 +1,6 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-11-11T18:51:15.935755+00:00",
+  "timestamp": "2026-11-11T19:03:04.543025+00:00",
   "overall_score": 0.9605475040257649,
   "check_summaries": [
     {
@@ -28,17 +28,6 @@
           ]
         }
       ]
-    },
-    {
-      "check_name": "circular_dependencies",
-      "description": "Detects circular dependencies between packages",
-      "languages": [],
-      "check_type": "circular_dependencies",
-      "cycles": [
-        "pokemon_encounter.app -> pokemon_encounter.app.api -> pokemon_encounter.app"
-      ],
-      "packages_checked": 4,
-      "packages_in_cycles": 2
     },
     {
       "check_name": "unused_code_diagnostics",
