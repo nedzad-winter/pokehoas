@@ -5,6 +5,7 @@
 # PokeHOAS – Pokémon for Home Assistant
 
 [![Open your Home Assistant instance and show the add add-on repository dialog with this repository pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fnedzad-winter%2Fpokehoas)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nedzadwinter)
 
 Your smart home is the tall grass. Every event in Home Assistant – a motion sensor, a
 door, a light switch, a person arriving at a zone – can spawn a wild Pokémon. Each
@@ -13,8 +14,6 @@ encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolv
 
 **Status: public beta (v1.5-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
-
-If you enjoy PokeHOAS, you can leave a tip on [Ko-fi](https://ko-fi.com/nedzadwinter) ☕ – thank you!
 
 ## Features
 
