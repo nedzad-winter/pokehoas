@@ -1,18 +1,33 @@
 {
   "repository_name": ".codeboarding-target",
-  "timestamp": "2026-11-11T12:07:09.802901+00:00",
-  "overall_score": 0.957429718875502,
+  "timestamp": "2026-11-11T18:51:15.935755+00:00",
+  "overall_score": 0.9605475040257649,
   "check_summaries": [
     {
       "check_name": "function_size",
       "description": "Checks that functions/methods do not exceed line count thresholds",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 1192,
-      "findings_count": 0,
-      "warning_count": 0,
-      "score": 1.0,
-      "finding_groups": []
+      "total_entities_checked": 1194,
+      "findings_count": 1,
+      "warning_count": 1,
+      "score": 0.9991624790619765,
+      "finding_groups": [
+        {
+          "severity": "warning",
+          "threshold": 150,
+          "description": "Functions exceeding 150.0 lines",
+          "entities": [
+            {
+              "entity_name": "pokemon_encounter.app.battle.use_move",
+              "file_path": "pokemon_encounter/app/battle.py",
+              "line_start": 1102,
+              "line_end": 1270,
+              "metric_value": 168
+            }
+          ]
+        }
+      ]
     },
     {
       "check_name": "circular_dependencies",
@@ -20,7 +35,7 @@
       "languages": [],
       "check_type": "circular_dependencies",
       "cycles": [
-        "pokemon_encounter.app.api -> pokemon_encounter.app -> pokemon_encounter.app.api"
+        "pokemon_encounter.app -> pokemon_encounter.app.api -> pokemon_encounter.app"
       ],
       "packages_checked": 4,
       "packages_in_cycles": 2
@@ -30,9 +45,9 @@
       "description": "Detects unused imports, variables, functions, and dead code via LSP diagnostics",
       "languages": [],
       "check_type": "standard",
-      "total_entities_checked": 53,
-      "findings_count": 53,
-      "warning_count": 25,
+      "total_entities_checked": 48,
+      "findings_count": 48,
+      "warning_count": 24,
       "score": 0.0,
       "finding_groups": [
         {
@@ -206,34 +221,6 @@
               "file_path": "pokemon_encounter/app/auth.py",
               "line_start": 76,
               "line_end": 76,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"ability_effects\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1796,
-              "line_end": 1796,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"winner\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 568,
-              "line_end": 568,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"encounter\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle_session.py",
-              "line_start": 447,
-              "line_end": 447,
-              "metric_value": 0.0
-            },
-            {
-              "entity_name": "[unused_variable] \"_level\" is not accessed",
-              "file_path": "pokemon_encounter/app/challenge.py",
-              "line_start": 119,
-              "line_end": 119,
               "metric_value": 0.0
             }
           ]
@@ -412,20 +399,6 @@
               "metric_value": 0.0
             }
           ]
-        },
-        {
-          "severity": "warning",
-          "threshold": 0,
-          "description": "Unused import statements that should be removed",
-          "entities": [
-            {
-              "entity_name": "[unused_import] Import \"ability_effects\" is not accessed",
-              "file_path": "pokemon_encounter/app/battle.py",
-              "line_start": 1796,
-              "line_end": 1796,
-              "metric_value": 0.0
-            }
-          ]
         }
       ]
     }
@@ -438,28 +411,16 @@
       "composite_risk_score": 100.0
     },
     {
-      "file_path": "pokemon_encounter/app/battle.py",
-      "total_findings": 3,
-      "warning_findings": 1,
-      "composite_risk_score": 35.0
-    },
-    {
       "file_path": "pokemon_encounter/app/auth.py",
       "total_findings": 2,
       "warning_findings": 1,
       "composite_risk_score": 25.0
     },
     {
-      "file_path": "pokemon_encounter/app/battle_session.py",
+      "file_path": "pokemon_encounter/app/battle.py",
       "total_findings": 1,
-      "warning_findings": 0,
-      "composite_risk_score": 10.0
-    },
-    {
-      "file_path": "pokemon_encounter/app/challenge.py",
-      "total_findings": 1,
-      "warning_findings": 0,
-      "composite_risk_score": 10.0
+      "warning_findings": 1,
+      "composite_risk_score": 15.0
     }
   ]
 }
