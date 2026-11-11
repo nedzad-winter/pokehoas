@@ -398,5 +398,5 @@ def grant_battle_evs(
         parts = ", ".join(
             i18n.t(lang, "evs.gain_part", amount=amount, stat=i18n.t(lang, f"iv.{stat}"))
             for stat, amount in per_member.items())
-        log.append(i18n.t(lang, "battle.log.evs_gained", name=member.name, gains=parts))
+        log.append(i18n.t(lang, "battle.log.evs_gained", name=member.name_in(lang), gains=parts))
     return gained
