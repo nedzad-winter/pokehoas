@@ -4929,7 +4929,8 @@ async function renderHistory() {
           <span class="pill">${esc(tr(HISTORY_KIND_KEY[b.kind] || b.kind))}</span>
           ${b.rule_name ? `<span class="pill" title="${esc(tr('history.rule_hint'))}">⚙ ${esc(b.rule_name)}</span>` : ''}
           <strong class="grow">${esc(tr('history.vs', {
-            opponent: b.opponent || tr('history.unknown_opponent') }))}</strong>
+            opponent: ((b.kind === 'wild' || b.kind === 'auto') && SPECIES_NAMES_BY_EN[b.opponent])
+              || b.opponent || tr('history.unknown_opponent') }))}</strong>
           <span class="pill">${esc(outcomeLabel(b.outcome))}</span>
         </div>
         <div class="muted">${esc(new Date(b.created_at).toLocaleString(jsLocale()))}</div>
