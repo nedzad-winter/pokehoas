@@ -14,6 +14,8 @@ encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolv
 **Status: public beta (v1.5-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
 
+If you enjoy PokeHOAS, you can leave a tip on [Ko-fi](https://ko-fi.com/nedzadwinter) ☕ – thank you!
+
 ## Features
 
 - **Triggers from your real house**: motion, door/window, lights & switches out of the box;
