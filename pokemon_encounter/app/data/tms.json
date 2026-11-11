@@ -893,6 +893,18 @@
       "number": 117,
       "move": "metal_sound",
       "price": 5000
+    },
+    {
+      "key": "tm_taunt",
+      "number": 118,
+      "move": "taunt",
+      "price": 5000
+    },
+    {
+      "key": "tm_dragon_cheer",
+      "number": 119,
+      "move": "dragon_cheer",
+      "price": 5000
     }
   ],
   "gym_tms": {

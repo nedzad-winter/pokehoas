@@ -2196,5 +2196,71 @@
   "category": "status",
   "min_level": 20,
   "trap": true
+ },
+ "rollout": {
+  "name": "Rollout",
+  "name_de": "Walzer",
+  "type": "rock",
+  "power": 30,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 10
+ },
+ "mimic": {
+  "name": "Mimic",
+  "name_de": "Mimikry",
+  "type": "normal",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 10,
+  "mimic": true
+ },
+ "double_hit": {
+  "name": "Double Hit",
+  "name_de": "Doppelschlag",
+  "type": "normal",
+  "power": 70,
+  "accuracy": 90,
+  "category": "physical",
+  "min_level": 20
+ },
+ "twin_beam": {
+  "name": "Twin Beam",
+  "name_de": "Doppelstrahl",
+  "type": "psychic",
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "min_level": 20
+ },
+ "hyper_drill": {
+  "name": "Hyper Drill",
+  "name_de": "Hyperbohrer",
+  "type": "normal",
+  "power": 100,
+  "accuracy": 100,
+  "category": "physical",
+  "min_level": 40
+ },
+ "taunt": {
+  "name": "Taunt",
+  "name_de": "Verhöhner",
+  "type": "dark",
+  "power": null,
+  "accuracy": 100,
+  "category": "status",
+  "min_level": 15,
+  "taunt": true
+ },
+ "dragon_cheer": {
+  "name": "Dragon Cheer",
+  "name_de": "Drachenschrei",
+  "type": "dragon",
+  "power": null,
+  "accuracy": null,
+  "category": "status",
+  "min_level": 20,
+  "crit_boost": 1
  }
 }

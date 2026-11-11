@@ -117,14 +117,16 @@ check(
     "Jede Attacke hat gueltigen Typ/Kategorie/Staerke",
     # power=None ist erlaubt (reine Status-Attacke, siehe STATUS_MOVE_SCORE_POWER) -
     # aber dann muss "status", "stat_changes", "heal", "reset_stats" (Nebel/Haze)
-    # ODER "trap" (Fester Blick/Spinnennetz, siehe roaming.py) gesetzt sein,
+    # "trap" (Fester Blick/Spinnennetz, siehe roaming.py), "mimic", "taunt" oder
+    # "crit_boost" (Mimikry, Verhoehner, Drachenschrei) gesetzt sein,
     # sonst waere sie komplett wirkungslos.
     all(m["type"] in battle.TYPE_CHART
         and m["category"] in ("physical", "special", "status")
         and m["name_de"]
         and (m["power"] > 0 if m["power"] is not None
              else bool(m.get("status")) or bool(m.get("stat_changes")) or bool(m.get("heal"))
-             or bool(m.get("reset_stats")) or bool(m.get("trap")))
+             or bool(m.get("reset_stats")) or bool(m.get("trap"))
+             or bool(m.get("mimic")) or bool(m.get("taunt")) or bool(m.get("crit_boost")))
         for m in all_moves.values()),
 )
 check(

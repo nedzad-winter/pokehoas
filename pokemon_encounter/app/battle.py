@@ -181,6 +181,7 @@ def status_verb(status: str, lang: str) -> str:
 # Damage per turn as a fraction of max HP.
 STATUS_TICK_FRACTION = {"poison": 1 / 8, "burn": 1 / 16, "curse": 1 / 4}
 TOXIC_MAX_TICKS = 15  # Capped at 15/16 max HP as in mainline games
+TAUNT_TURNS = 3  # turns the target can't use status moves (Taunt)
 
 # Only deviations from 1.0; everything not listed is neutral.
 TYPE_CHART: dict[str, dict[str, float]] = {
@@ -505,6 +506,7 @@ def _crit_stage(attacker: Combatant, move: dict[str, Any]) -> int:
     item = held_items.get(attacker.held_item)
     if item and item["effect"] == "crit_stage":
         stage += int(item.get("stages", 1))
+    stage += int(attacker.volatile.get("crit_boost", 0))  # Dragon Cheer
     return min(stage, len(CRIT_CHANCE) - 1)
 
 
@@ -1099,8 +1101,15 @@ def _move_had_no_effect(b: Battle, attacker: Combatant, defender: Combatant,
 
 def use_move(b: Battle, attacker: Combatant, defender: Combatant, move_key: str) -> None:
     move = moves_mod.get(move_key)
+    if move["power"] is None and attacker.volatile.get("taunt"):
+        # Taunt: no status moves while it lasts (see end_of_turn).
+        b.log.append(i18n.t(b.lang, "battle.log.taunt_blocked", who=who(attacker, b.lang),
+                             move=move_label(move, b.lang)))
+        return
     b.log.append(i18n.t(b.lang, "battle.log.use_move",
                          who=who(attacker, b.lang), move=move_label(move, b.lang)))
+    if not move.get("mimic"):
+        attacker.volatile["last_move"] = move_key  # what Mimic copies
 
     if held_items.effect_of(attacker.held_item) == "choice" and not attacker.choice_lock:
         attacker.choice_lock = move_key
@@ -1118,6 +1127,21 @@ def use_move(b: Battle, attacker: Combatant, defender: Combatant, move_key: str)
         # self-targeting moves that have no target in the type chart sense.
         if move.get("splash"):
             b.log.append(i18n.t(b.lang, "battle.log.splash", who=who(attacker, b.lang)))
+            return
+        if move.get("mimic"):
+            # Mimic: uses the move the target used last (the main games swap it
+            # into the Mimic slot, here it is simply used right away).
+            copied = defender.volatile.get("last_move")
+            if copied in (None, move_key) or copied not in moves_mod.all_moves():
+                b.log.append(i18n.t(b.lang, "battle.log.move_failed"))
+                return
+            use_move(b, attacker, defender, copied)
+            return
+        if move.get("crit_boost"):
+            # Dragon Cheer: +1 critical-hit stage, +2 for a Dragon-type user.
+            attacker.volatile["crit_boost"] = int(move["crit_boost"]) + (
+                1 if "dragon" in attacker.types else 0)
+            b.log.append(i18n.t(b.lang, "battle.log.crit_boosted", who=who(attacker, b.lang)))
             return
         heal_fraction = move.get("heal")
         if heal_fraction:
@@ -1145,6 +1169,10 @@ def use_move(b: Battle, attacker: Combatant, defender: Combatant, move_key: str)
             return
         if _type_effectiveness_for(move["type"], defender) == 0:
             _move_had_no_effect(b, attacker, defender, move)
+            return
+        if move.get("taunt"):
+            defender.volatile["taunt"] = TAUNT_TURNS
+            b.log.append(i18n.t(b.lang, "battle.log.taunted", who=who(defender, b.lang)))
             return
         if move.get("trap"):
             # Mean Look / Spider Web: a roamer can't run away any more (see
@@ -1249,6 +1277,8 @@ def _try_ability_cure_status(b: Battle, c: Combatant) -> None:
 
 def end_of_turn(b: Battle) -> None:
     for combatant in (b.active_mon, b.wild):
+        if combatant.volatile.get("taunt"):
+            combatant.volatile["taunt"] -= 1
         _tick_status(b, combatant)
     for combatant in (b.active_mon, b.wild):
         item = held_items.get(combatant.held_item)

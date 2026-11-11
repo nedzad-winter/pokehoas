@@ -569,6 +569,9 @@
   "ko": "HP가 절반이 되면 한 번 HP를 10 회복합니다.",
   "pl": "Leczy 10 HP jednorazowo, gdy HP spadnie do połowy."
  },
+ "oval_stone": {
+  "pl": "Dziwny, owalny kamień. Trzymany przez Happiny, które zdobywa poziom w dzień, powoduje ewolucję w Chansey."
+ },
  "paralyze_heal": {
   "pl": "Leczy paraliż. Statusy istnieją tylko w walce."
  },
@@ -663,6 +666,12 @@
   "ko": "포켓몬의 레벨을 1 올립니다. 포켓몬을 놓아주면 받을 수 있습니다(레벨 10마다 1개).",
   "pl": "Podnosi poziom Pokémona o 1. Nagroda za wypuszczenie Pokémona (1 za każde 10 poziomów).",
   "fr": "Augmente le niveau d'un Pokémon de 1. Récompense pour la libération d'un Pokémon (1 par tranche de 10 niveaux)."
+ },
+ "razor_claw": {
+  "pl": "Ostry pazur. Trzymany przez Sneasela, który zdobywa poziom w nocy, powoduje ewolucję w Weavile'a."
+ },
+ "razor_fang": {
+  "pl": "Ostry kieł. Trzymany przez Gligara, który zdobywa poziom w nocy, powoduje ewolucję w Gliscora."
  },
  "reaper_cloth": {
   "pl": "Zastępuje wymianę: Pokémony ewoluujące przy wymianie z tym przedmiotem ewoluują od razu."

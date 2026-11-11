@@ -462,6 +462,33 @@
       "description_de": "Entwicklungs-Item für einige neuere Pokémon."
     },
     {
+      "key": "oval_stone",
+      "category": "evolution",
+      "label": "Oval Stone",
+      "price": 100000,
+      "description": "Held by a Happiny that levels up during the day, it evolves into Chansey. No effect in battle.",
+      "label_de": "Ovaler Stein",
+      "description_de": "Von einem Wonneira getragen, das tagsüber aufsteigt: Es entwickelt sich zu Chaneira. Im Kampf ohne Wirkung."
+    },
+    {
+      "key": "razor_fang",
+      "category": "evolution",
+      "label": "Razor Fang",
+      "price": 100000,
+      "description": "Held by a Gligar that levels up at night, it evolves into Gliscor. No effect in battle.",
+      "label_de": "Scharfzahn",
+      "description_de": "Von einem Skorgla getragen, das nachts aufsteigt: Es entwickelt sich zu Skorgro. Im Kampf ohne Wirkung."
+    },
+    {
+      "key": "razor_claw",
+      "category": "evolution",
+      "label": "Razor Claw",
+      "price": 100000,
+      "description": "Held by a Sneasel that levels up at night, it evolves into Weavile. Raises the critical-hit rate by one stage.",
+      "label_de": "Scharfklaue",
+      "description_de": "Von einem Sniebel getragen, das nachts aufsteigt: Es entwickelt sich zu Snibunna. Erhöht die Volltrefferquote um eine Stufe."
+    },
+    {
       "key": "leftovers",
       "category": "held",
       "label": "Leftovers",

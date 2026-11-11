@@ -11,7 +11,7 @@ door, a light switch, a person arriving at a zone – can spawn a wild Pokémon.
 Home Assistant user gets their **own queue, team, Pokédex and bag** and handles the
 encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolve.
 
-**Status: public beta (v1.4.1-beta).** It is a hobby project and playable end to end;
+**Status: public beta (v1.5-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
 
 ## Features
@@ -922,6 +922,19 @@ Deliberately not yet decided, prepared in code as settings:
   comes from PokeAPI evolution chains (`app/evolution.py`).
   Level evolutions don't happen automatically: once the level is reached,
   the Pokémon menu (Team tab) shows an "Evolve" button.
+  Level-up evolutions that the games gate on something other than a level are modelled
+  too (`app/evolution.py`, conditions in `evolution.detail`): a **known move** (Lickitung
+  needs Rollout, Tangela/Yanma/Piloswine Ancient Power, Mime Jr./Bonsly Mimic, Aipom Double Hit,
+  Girafarig Twin Beam, Dunsparce Hyper Drill, Steenee Stomp, Poipole Dragon Pulse, Dipplin
+  Dragon Cheer, Clobbopus Taunt – any move the Pokémon has learned counts, selected or not),
+  a **species in the party** (Mantyke + Remoraid), a **held item and time of day** (Happiny +
+  Oval Stone by day, Gligar + Razor Fang and Sneasel + Razor Claw at night; the held item is
+  consumed) and **1,000 steps** (Pawmo, Bramblin, Rellor), which becomes a fixed level like
+  friendship does. These evolutions have no minimum level. The matching moves (Rollout, Mimic,
+  Double Hit, Twin Beam, Hyper Drill, Taunt, Dragon Cheer), TMs (Taunt, Dragon Cheer) and items
+  (Oval Stone, Razor Fang, Razor Claw – shop and held items) were added to the catalogs.
+  Double Hit and Twin Beam are single hits with the combined power; Rollout does not build
+  up; Mimic uses the target's last move at once; Taunt blocks status moves for 3 turns.
 
 ---
 

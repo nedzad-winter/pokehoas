@@ -636,5 +636,27 @@
     "effect": "mega_stone",
     "description": "Lets Diancie mega evolve into Mega Diancie in battle.",
     "description_de": "Lässt Diancie im Kampf zu Mega-Diancie megaentwickeln."
+  },
+  "oval_stone": {
+    "name": "Oval Stone",
+    "name_de": "Ovaler Stein",
+    "effect": "evolution",
+    "description": "Held by a Happiny that levels up during the day, it evolves into Chansey. No effect in battle.",
+    "description_de": "Von einem Wonneira getragen, das tagsüber aufsteigt: Es entwickelt sich zu Chaneira. Im Kampf ohne Wirkung."
+  },
+  "razor_fang": {
+    "name": "Razor Fang",
+    "name_de": "Scharfzahn",
+    "effect": "evolution",
+    "description": "Held by a Gligar that levels up at night, it evolves into Gliscor. No effect in battle.",
+    "description_de": "Von einem Skorgla getragen, das nachts aufsteigt: Es entwickelt sich zu Skorgro. Im Kampf ohne Wirkung."
+  },
+  "razor_claw": {
+    "name": "Razor Claw",
+    "name_de": "Scharfklaue",
+    "effect": "crit_stage",
+    "stages": 1,
+    "description": "Held by a Sneasel that levels up at night, it evolves into Weavile. Raises the critical-hit rate by one stage.",
+    "description_de": "Von einem Sniebel getragen, das nachts aufsteigt: Es entwickelt sich zu Snibunna. Erhöht die Volltrefferquote um eine Stufe."
   }
 }

@@ -19,7 +19,11 @@ automatically on level up: when a Pokemon reaches the level, the Pokemon menu
 (`evolve_by_level`, POST /api/team/{id}/evolve). This allows delaying an
 evolution - like the B button in the main games. Friendship evolutions are turned into level evolutions at a fixed level
 (`FRIENDSHIP_LEVEL_*`, the usual fan-game approach); other level evolutions
-without `min_level` (location, moves, ...) are (not yet) supported.
+without `min_level` are modelled where the condition is something the game can
+check: a known move (Lickitung + Rollout), a species in the party (Mantyke +
+Remoraid), a held item and time of day (Sneasel + Razor Claw at night). Walking
+1,000 steps (Pawmo, Bramblin, Rellor) becomes a fixed level like friendship does;
+location, weather, affection ... are (not yet) supported.
 """
 
 from __future__ import annotations
@@ -42,7 +46,7 @@ POKEAPI = "https://pokeapi.co/api/v2"
 DATA_DIR = Path(__file__).parent / "data"
 
 # Increment to reseed after an update (e.g., new generation).
-SEED_VERSION = "2"
+SEED_VERSION = "3"
 SEED_META_KEY = "evolutions_pokeapi"
 
 LINKING_CORD = "linking_cord"
@@ -58,6 +62,9 @@ POKEAPI_GENDER = {1: "female", 2: "male"}
 # base form earlier than a Pokemon that is already an evolution itself.
 FRIENDSHIP_LEVEL_BASE = 20
 FRIENDSHIP_LEVEL_EVOLVED = 35
+# Level evolutions without `min_level` only work with one of these conditions
+# in `detail`; without one the row stays unusable (condition not modelled).
+LEVELLESS_CONDITIONS = ("known_move", "party_species", "held_item", "time_of_day")
 
 # Nincada -> Ninjask/Shedinja (Gen 3): PokeAPI's evolution chain lists Shedinja
 # as a second, independent level-20 target next to Ninjask - but in the main
@@ -94,7 +101,8 @@ def rows_from_chain(chain_doc: dict[str, Any]) -> list[dict[str, Any]]:
     older methods (Magneton: level up at a magnetic field, Eevee -> Leafeon:
     level up near a moss rock) would otherwise show up next to the current one
     (Thunder Stone / Leaf Stone) as a second "level up" route.
-    Friendship evolutions become level evolutions (see FRIENDSHIP_LEVEL_*).
+    Friendship and step-count evolutions become level evolutions (see
+    FRIENDSHIP_LEVEL_*).
     """
     rows: dict[tuple, dict[str, Any]] = {}
 
@@ -124,10 +132,17 @@ def rows_from_chain(chain_doc: dict[str, Any]) -> list[dict[str, Any]]:
                     detail["gender"] = POKEAPI_GENDER[det["gender"]]
                 if det.get("time_of_day"):
                     detail["time_of_day"] = det["time_of_day"]
+                if trigger == "level-up" and det.get("known_move"):
+                    detail["known_move"] = _item_key(det["known_move"]["name"])
+                if trigger == "level-up" and det.get("party_species"):
+                    detail["party_species"] = det["party_species"]["name"]
                 min_level = det.get("min_level")
                 if trigger == "level-up" and det.get("min_happiness") and not min_level:
                     min_level = FRIENDSHIP_LEVEL_EVOLVED if has_pre_evolution else FRIENDSHIP_LEVEL_BASE
                     detail["friendship"] = True
+                elif trigger == "level-up" and det.get("min_steps") and not min_level:
+                    min_level = FRIENDSHIP_LEVEL_EVOLVED if has_pre_evolution else FRIENDSHIP_LEVEL_BASE
+                    detail["steps"] = True
                 key = (from_id, to_id, trigger, item_key)
                 if key not in rows:
                     rows[key] = {
@@ -507,16 +522,40 @@ def current_time_of_day(now: datetime | None = None) -> str:
     return "day" if DAY_START_HOUR <= hour < NIGHT_START_HOUR else "night"
 
 
+def _learned_moves(owned: dict[str, Any]) -> list[str]:
+    """Every move the Pokemon has learned (level-up, TM, egg) - what it can pick
+    its battle moves from, selected or not."""
+    from . import moves  # local import: moves imports tms lazily, keeps import order untouched
+
+    species = db.query_one("SELECT * FROM species WHERE id = ?", (owned["species_id"],))
+    return moves.owned_learned_moves(species, owned) if species else []
+
+
+def _has_party_species(owned: dict[str, Any], species_name: str) -> bool:
+    """Whether the owner's party holds a Pokemon of the PokeAPI species `species_name`."""
+    return db.query_one(
+        "SELECT 1 AS x FROM owned_pokemon o JOIN species s ON s.id = o.species_id "
+        "WHERE o.user_id = ? AND o.party_slot IS NOT NULL AND s.name = ?",
+        (owned["user_id"], species_name),
+    ) is not None
+
+
 def _level_condition_ok(owned: dict[str, Any], detail: dict[str, Any],
                         time_of_day: str | None = None) -> bool:
     """Like `_condition_ok`, plus conditions that occur in level evolutions:
-    held item and time of day. Unknown times of day (e.g. "dusk") count as not
-    met. Anything that `rows_from_chain` doesn't store (weather, move, stats,
-    ...) is not checked."""
+    held item, time of day, a known move and a species in the party. Unknown
+    times of day (e.g. "dusk") count as not met. Anything that `rows_from_chain`
+    doesn't store (weather, stats, ...) is not checked."""
     if not _condition_ok(owned, detail):
         return False
     held = detail.get("held_item")
     if held and owned.get("held_item") != held:
+        return False
+    move = detail.get("known_move")
+    if move and move not in _learned_moves(owned):
+        return False
+    partner = detail.get("party_species")
+    if partner and not _has_party_species(owned, partner):
         return False
     wanted = detail.get("time_of_day")
     return not wanted or wanted == (time_of_day or current_time_of_day())
@@ -540,7 +579,7 @@ def level_evolutions(owned: dict[str, Any], time_of_day: str | None = None) -> l
                ts.sprite_url AS to_sprite_url
         FROM evolution e JOIN species ts ON ts.id = e.to_species_id
         WHERE e.from_species_id = ?
-          {"" if free else "AND e.trigger_kind = 'level-up' AND e.min_level IS NOT NULL AND e.min_level <= ?"}
+          {"" if free else "AND e.trigger_kind = 'level-up' AND (e.min_level IS NULL OR e.min_level <= ?)"}
         ORDER BY e.to_species_id, e.min_level
         """,
         (owned["species_id"],) if free else (owned["species_id"], owned["level"]),
@@ -553,8 +592,12 @@ def level_evolutions(owned: dict[str, Any], time_of_day: str | None = None) -> l
         if (owned["species_id"] == NINCADA_SPECIES_ID
                 and row["to_species_id"] == SHEDINJA_SPECIES_ID):
             continue
-        if not free and not _level_condition_ok(owned, json.loads(row["detail"] or "{}"), time_of_day):
-            continue
+        detail = json.loads(row["detail"] or "{}")
+        if not free:
+            if row["min_level"] is None and not any(detail.get(k) for k in LEVELLESS_CONDITIONS):
+                continue  # level-up without any condition we can check: not supported
+            if not _level_condition_ok(owned, detail, time_of_day):
+                continue
         result[row["to_species_id"]] = {
             "to_species_id": row["to_species_id"],
             "to_name": _display_name(row, "to_"),
@@ -562,6 +605,7 @@ def level_evolutions(owned: dict[str, Any], time_of_day: str | None = None) -> l
             "to_name_en": row["to_name_en"],
             "to_sprite_url": row["to_sprite_url"],
             "min_level": row["min_level"],
+            "held_item": None if free else detail.get("held_item"),
         }
     return list(result.values())
 
@@ -581,9 +625,11 @@ def stage_of(species_id: int) -> int:
 
 
 def _evolve(owned: dict[str, Any], to_species_id: int, lang: str,
-            item_key: str | None = None, item_label: str = "") -> dict[str, Any]:
+            item_key: str | None = None, item_label: str = "",
+            consume_held: bool = False) -> dict[str, Any]:
     """Changes the species of an own Pokemon (shared for item and level
-    evolution): consumes the item if needed, recalculates stats (HP ratio
+    evolution): consumes the item if needed (`consume_held`: the held item the
+    evolution asked for, e.g. Razor Claw), recalculates stats (HP ratio
     preserved) and records the new species as caught in the Pokedex - all in
     one transaction."""
     user_id = owned["user_id"]
@@ -619,8 +665,9 @@ def _evolve(owned: dict[str, Any], to_species_id: int, lang: str,
             if cur.rowcount != 1:
                 raise EconomyError(409, i18n.t(lang, "error.item_not_in_bag", item=item_label))
         cur.execute(
-            "UPDATE owned_pokemon SET species_id = ?, current_hp = ? "
-            "WHERE id = ? AND user_id = ? AND species_id = ?",
+            "UPDATE owned_pokemon SET species_id = ?, current_hp = ?"
+            + (", held_item = NULL" if consume_held else "") +
+            " WHERE id = ? AND user_id = ? AND species_id = ?",
             (new_species["id"], new_hp, owned_id, user_id, owned["species_id"]),
         )
         if cur.rowcount != 1:
@@ -777,7 +824,7 @@ def evolve_by_level(user_id: str, owned_id: int, to_species_id: int | None = Non
     if len(candidates) > 1:
         raise EconomyError(400, i18n.t(lang, "error.evolution_choose_target"))
     to_species_id = candidates[0]["to_species_id"]
-    result = _evolve(owned, to_species_id, lang)
+    result = _evolve(owned, to_species_id, lang, consume_held=bool(candidates[0]["held_item"]))
     result["trigger"] = "level-up"
     if owned["species_id"] == NINCADA_SPECIES_ID and to_species_id == NINJASK_SPECIES_ID:
         result["shedinja"] = _spawn_shedinja(owned)
@@ -800,7 +847,8 @@ def evolve_many_by_level(user_id: str, owned_ids: list[int]) -> dict[str, Any]:
             continue
         to_species_id = candidates[0]["to_species_id"]
         try:
-            result = _evolve(owned, to_species_id, lang)
+            result = _evolve(owned, to_species_id, lang,
+                             consume_held=bool(candidates[0]["held_item"]))
         except EconomyError:
             skipped.append(owned_id)
             continue

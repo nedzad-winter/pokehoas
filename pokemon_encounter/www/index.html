@@ -5481,17 +5481,25 @@ async function renderAbilityDex(el) {
   drawAbilityDexResults();
 }
 
-const evolutionRequirement = transition => {
+const evolutionRequirement = (transition, species = []) => {
   const parts = [];
   if (transition.min_level) parts.push(tr('common.level_short', { level: transition.min_level }));
   if (transition.item) parts.push(transition.item.replaceAll('_', ' '));
   const labels = {
     gender: tr('admin.gender'), time_of_day: tr('evolution.time_of_day'),
     held_item: tr('evolution.holds'), trade_species: tr('evolution.trade_for'),
+    known_move: tr('evolution.known_move'), party_species: tr('evolution.party_species'),
   };
+  const readable = (value, table) => (NAME_TABLES[table] || {})[value] || String(value).replaceAll('_', ' ');
   Object.entries(transition.conditions || {}).forEach(([key, value]) => {
     if (key === 'friendship') parts.push(tr('evolution.friendship'));
-    else parts.push(`${labels[key] || key}: ${value}`);
+    else if (key === 'steps') parts.push(tr('evolution.steps'));
+    else if (key === 'known_move') parts.push(`${labels[key]}: ${readable(value, 'moves')}`);
+    else if (key === 'held_item') parts.push(`${labels[key]}: ${readable(value, 'items')}`);
+    else if (key === 'party_species') {
+      const mon = species.find(item => item.name === value);
+      parts.push(`${labels[key]}: ${mon ? speciesName(mon) : value}`);
+    } else parts.push(`${labels[key] || key}: ${value}`);
   });
   if (!parts.length) parts.push(
     transition.trigger === 'trade' ? tr('evolution.trade')
@@ -5513,7 +5521,7 @@ function evoLineHtml(line) {
     // duplication was the bug: "Squirtle -> Wartortle Wartortle -> Blastoise").
     const chained = edge.from_species_id === lastToId;
     if (!chained) html += `${html ? '</div>' : ''}<div class="evo-step">${monBox(from)}`;
-    html += `<div class="evo-arrow"><strong>→</strong><span class="muted">${esc(evolutionRequirement(edge))}</span></div>${monBox(to)}`;
+    html += `<div class="evo-arrow"><strong>→</strong><span class="muted">${esc(evolutionRequirement(edge, line.species || []))}</span></div>${monBox(to)}`;
     lastToId = edge.to_species_id;
   });
   return html + '</div>';

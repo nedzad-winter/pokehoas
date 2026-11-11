@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.5-beta
+
+Level-up evolutions that the games tie to something other than a level now work.
+
+- Evolutions that showed only "Level up" (no level) can now be triggered: Lickitung needs to know
+  Rollout, Tangela/Yanma/Piloswine Ancient Power, Mime Jr./Bonsly Mimic, Aipom Double Hit,
+  Girafarig Twin Beam, Dunsparce Hyper Drill, Steenee Stomp, Poipole Dragon Pulse, Dipplin Dragon
+  Cheer and Clobbopus Taunt. Mantyke needs a Remoraid in the party. Happiny (Oval Stone, day),
+  Gligar (Razor Fang, night) and Sneasel (Razor Claw, night) need to hold their item, which is
+  used up. Pawmo, Bramblin and Rellor (1,000 steps) evolve at a fixed level. The requirement is
+  shown in the evolution line.
+- New moves: Rollout, Mimic, Double Hit, Twin Beam, Hyper Drill, Taunt and Dragon Cheer, with the
+  real Gen 9 learnsets. Taunt blocks status moves for 3 turns, Mimic uses the target's last move
+  and Dragon Cheer raises the critical-hit stage.
+- New items: Oval Stone, Razor Fang and Razor Claw (shop and held item), TMs for Taunt and Dragon
+  Cheer. Everything is translated into all 8 languages.
+- The evolution data is reloaded from PokeAPI once on the first start after the update.
+
 ## 1.4.1-beta
 
 Another big thank you to **@vicdilou** for the item and battle translations. Merci !
