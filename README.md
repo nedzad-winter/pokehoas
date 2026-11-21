@@ -12,7 +12,7 @@ door, a light switch, a person arriving at a zone – can spawn a wild Pokémon.
 Home Assistant user gets their **own queue, team, Pokédex and bag** and handles the
 encounters in a web app inside the HA sidebar: battle, throw balls, catch, evolve.
 
-**Status: public beta (v1.5-beta).** It is a hobby project and playable end to end;
+**Status: public beta (v1.5.1-beta).** It is a hobby project and playable end to end;
 expect rough edges and please report them as issues.
 
 ## Features
@@ -175,8 +175,10 @@ mapping as [Region lock](#region-lock)); a species' generation is `species.gener
 `seed.GENERATION_BOUNDS`). The filter (`trainer_battle._generation_eligible`) is applied when the
 battle starts (`trainer_battle.start`) - if it leaves no eligible party member the challenge is
 rejected before it can start. The Gyms & League tab marks trainers your whole current party is
-ineligible for and disables the challenge button for them. This is checked only for gym/league
-battles, not PvP or wild encounters. Players who existed before the option were migrated to
+ineligible for and disables the challenge button for them. Once a player has cleared a region
+(every trainer there beaten, `achievements.region_cleared`), the limit no longer applies to that
+region's trainers - rematches are open to any team, under both `generation_limit` and
+`same_generation`. This is checked only for gym/league battles, not PvP or wild encounters. Players who existed before the option were migrated to
 `normal` (`db._migrate_gym_difficulty`), i.e. nothing changed for them.
 
 ## Training

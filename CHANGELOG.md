@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.1-beta
+
+- Gym difficulty "Generation limit" and "Same generation" no longer lock you out of rematches:
+  once you have cleared a region (champion beaten), its trainers are open to any team again.
+  Regions you have not cleared yet keep the limit. The setting's description says so.
+
 ## 1.5-beta
 
 Level-up evolutions that the games tie to something other than a level now work.

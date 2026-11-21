@@ -379,11 +379,13 @@ def start(trainer_id: str, user_id: str, owned_id: int | None = None,
         # restricts the fielded team to Pokemon from the trainer's own
         # generation or exactly one generation older, 'same_generation' to
         # exactly the trainer's (the league's) own generation - anything else
-        # sits this fight out. Not for training.
+        # sits this fight out. Not for training, and no longer once the player
+        # has cleared the trainer's region (rematches are open to any team).
         gen_limited = False
         trainer_gen = None
         gym_difficulty = None if is_training else db.user_gym_difficulty(user_id)
-        if gym_difficulty in GENERATION_GYM_DIFFICULTIES:
+        if (gym_difficulty in GENERATION_GYM_DIFFICULTIES
+                and not achievements.region_cleared(user_id, trainer["region"])):
             trainer_gen = trainers.generation_for_region(trainer["region"]) or 9
             species_ids = [row["species_id"] for row in rows]
             gens = {
@@ -647,6 +649,7 @@ def overview(user_id: str) -> dict[str, Any]:
     for region in trainers.regions():
         gen = trainers.generation_for_region(region["key"])
         unlocks = achievements.unlock_generation(region["key"], region_lock)
+        cleared = achievements.region_cleared(user_id, region["key"])
         items = []
         for t in trainers.all_trainers():
             if t["region"] != region["key"]:
@@ -662,8 +665,8 @@ def overview(user_id: str) -> dict[str, Any]:
                 "scaled": party_max > t["max_level"],
                 # 'generation_limit' / 'same_generation': no party member is
                 # eligible to fight this trainer (its generation, via the
-                # region) at all.
-                "gen_restricted": gen_limit_active and gen is not None
+                # region) at all. A cleared region lifts the limit (see start).
+                "gen_restricted": gen_limit_active and gen is not None and not cleared
                 and not any(_generation_eligible(gym_difficulty, gen, g) for g in party_generations),
                 # Items fuer den ERSTEN Sieg (Arenaleiter: TM + Baelle, siehe
                 # rewards.py) - danach gibt es nur noch Preisgeld.
@@ -687,7 +690,7 @@ def overview(user_id: str) -> dict[str, Any]:
             "unlocks_generation": unlocks,
             "unlock_active": unlocks is not None and unlocks in spawn_unlocked,
             "reward": rewards.build(rewards.region_items(region["key"]), lang),
-            "cleared": achievements.region_cleared(user_id, region["key"]),
+            "cleared": cleared,
             "trainers": items,
         })
     return {

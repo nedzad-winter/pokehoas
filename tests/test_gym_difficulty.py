@@ -267,6 +267,56 @@ check("overview: Gen-3-Trainer ist fuer Dana (kein Gen-3-Mitglied) 'gen_restrict
 check("overview: Gen-2-Trainer ist fuer Dana (Gen-2-Mitglied vorhanden) nicht 'gen_restricted'",
       by_id["gen2_gym"]["gen_restricted"] is False)
 
+# ---------------------------------------------------------------- Cleared region
+# Once a player has cleared a region (every trainer there beaten), the
+# generation limit no longer applies to that region's trainers - rematches are
+# open to any team, under 'generation_limit' AND 'same_generation'. Regions
+# that are not cleared yet keep the limit.
+from app import achievements  # noqa: E402
+
+eve = db.upsert_user("eve", "Eve")
+give_pokemon("eve", torchic, 1)  # Gen 3 only - too young for Kanto (Gen 1) and Johto (Gen 2)
+for mode in ("generation_limit", "same_generation"):
+    db.set_user_gym_difficulty("eve", mode)
+    try:
+        trainer_battle.start("gen1_gym", "eve")
+        check(f"{mode}: Gen-3-Team wird vor dem Regionsabschluss gegen Kanto abgelehnt", False)
+    except HTTPException as exc:
+        check(f"{mode}: Gen-3-Team wird vor dem Regionsabschluss gegen Kanto abgelehnt",
+              exc.status_code == 409, exc.detail)
+
+achievements.unlock("eve", achievements.trainer_key("gen1_gym"))  # Kanto cleared (its only trainer)
+check("Kanto gilt fuer Eve als abgeschlossen", achievements.region_cleared("eve", "kanto"))
+check("Johto gilt fuer Eve nicht als abgeschlossen", not achievements.region_cleared("eve", "johto"))
+
+give_pokemon("eve", pikachu, 2)  # Gen 1: would sit out under the limit - must fight once cleared
+for mode in ("generation_limit", "same_generation"):
+    db.set_user_gym_difficulty("eve", mode)
+    view = trainer_battle.start("gen1_gym", "eve")
+    check(f"{mode}: nach dem Regionsabschluss darf das ganze Team gegen Kanto antreten",
+          len(view["team"]) == 2 and not view["over"], len(view["team"]))
+    check(f"{mode}: nach dem Regionsabschluss keine Einschraenkung im Kampflog",
+          not any("sit this battle out" in line for line in view["log"]), view["log"])
+    trainer_battle.act(view["id"], "eve", {"action": "run"})
+
+    ov = trainer_battle.overview("eve")
+    by_id = {t["id"]: t for region in ov["regions"] for t in region["trainers"]}
+    check(f"{mode}: overview markiert den Trainer der abgeschlossenen Region nicht als 'gen_restricted'",
+          by_id["gen1_gym"]["gen_restricted"] is False)
+
+# Johto is not cleared: the limit still applies there.
+db.execute("DELETE FROM owned_pokemon WHERE user_id = 'eve' AND species_id = ?", (pikachu["id"],))
+db.set_user_gym_difficulty("eve", "same_generation")
+try:
+    trainer_battle.start("gen2_gym", "eve")
+    check("same_generation: nicht abgeschlossene Region (Johto) bleibt eingeschraenkt", False)
+except HTTPException as exc:
+    check("same_generation: nicht abgeschlossene Region (Johto) bleibt eingeschraenkt",
+          exc.status_code == 409, exc.detail)
+ov = trainer_battle.overview("eve")
+by_id = {t["id"]: t for region in ov["regions"] for t in region["trainers"]}
+check("overview: Johto-Trainer bleibt fuer Eve 'gen_restricted'", by_id["gen2_gym"]["gen_restricted"] is True)
+
 trainers._raw, trainers._trainers = _saved_raw, _saved_trainers
 
 print()
