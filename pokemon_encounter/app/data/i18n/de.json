@@ -1492,6 +1492,8 @@
   "team.box_sort_gen_desc": "Generation (9 → 1), dann Dex-Nr.",
   "team.box_sort_level_asc": "Level (niedrig → hoch)",
   "team.box_sort_level_desc": "Level (hoch → niedrig)",
+  "team.box_sort_recent_asc": "Älteste zuerst",
+  "team.box_sort_recent_desc": "Neueste zuerst",
   "team.box_stage": "Stufe {stage}",
   "team.box_unlock_selected": "Entsperren ({count})",
   "team.equip": "anlegen",

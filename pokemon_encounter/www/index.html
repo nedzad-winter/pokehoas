@@ -6139,6 +6139,8 @@ const boxCanEvolve = p => (p.level_evolutions || []).length > 0 || (p.item_evolu
 // simply leaves them out.
 const boxSelection = new Set();
 const boxSortLabels = () => ({
+  recent_desc: tr('team.box_sort_recent_desc'),
+  recent_asc: tr('team.box_sort_recent_asc'),
   level_desc: tr('team.box_sort_level_desc'), level_asc: tr('team.box_sort_level_asc'),
   dex_asc: tr('team.box_sort_dex_asc'), dex_desc: tr('team.box_sort_dex_desc'),
   gen_asc: tr('team.box_sort_gen_asc'), gen_desc: tr('team.box_sort_gen_desc'),
@@ -6151,6 +6153,9 @@ function boxSorted(box, view = boxView) {
   const gen = p => (p.species || p).generation || 0;
   const lvl = p => p.level ?? p.max_level ?? -1;
   const cmp = {
+    // Order of arrival in the collection (owned_pokemon.id grows with every catch or hatch).
+    recent_desc: (a, b) => (b.id ?? 0) - (a.id ?? 0),
+    recent_asc: (a, b) => (a.id ?? 0) - (b.id ?? 0),
     level_desc: (a, b) => lvl(b) - lvl(a),
     level_asc: (a, b) => lvl(a) - lvl(b),
     dex_asc: (a, b) => dex(a) - dex(b) || lvl(b) - lvl(a),
@@ -6198,7 +6203,7 @@ function boxFilterMatches(p, view) {
 // owned instance to read them from.
 function boxFilterControlsHtml(view, prefix, opts = {}) {
   return `${opts.search ? `<input type="search" class="grow" id="${prefix}FQuery" placeholder="${esc(tr('trade.search_placeholder'))}" value="${esc(view.query || '')}">` : ''}
-      <select id="${prefix}Sort"><option value="">${tr('team.box_sort_default')}</option>${Object.entries(boxSortLabels())
+      <select id="${prefix}Sort"><option value="">${tr('team.box_sort_default')}</option>${Object.entries(boxSortLabels()).filter(([k]) => !(opts.status && k.startsWith('recent_')))
         .map(([k, label]) => `<option value="${k}" ${view.sort === k ? 'selected' : ''}>${esc(label)}</option>`).join('')}</select>
       <select id="${prefix}FType"><option value="">${tr('pokedex.all_types')}</option>${TYPES
         .map(k => `<option value="${esc(k)}" ${view.type === k ? 'selected' : ''}>${esc(typeLabel(k))}</option>`).join('')}</select>
