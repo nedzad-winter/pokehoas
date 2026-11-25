@@ -357,6 +357,11 @@
     #battleOverlay .battle > .battle-confirm { grid-column: 1 / -1; }
     .battle-log { height: 240px; }
   }
+  /* Écrans de confirmation d'équipe : titre et boutons sur une seule ligne, même sur téléphone. */
+  #battleOverlay .battle > .battle-confirm-head { flex-wrap: nowrap; gap: 8px; }
+  #battleOverlay .battle > .battle-confirm-head .grow { min-width: 0; }
+  #battleOverlay .battle > .battle-confirm-head button.action,
+  #battleOverlay .battle > .battle-confirm-head button.ghost { white-space: nowrap; padding: 7px 10px; font-size: 13px; }
   .item-icon { width: 28px; height: 28px; image-rendering: pixelated; vertical-align: middle; margin-right: 6px; }
   .stat-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
   .stat-row .stat-name { width: 90px; color: var(--muted); font-size: 13px; }
@@ -3772,10 +3777,11 @@ function renderBattleConfirm() {
     ? battleConfirmAutoHeal.plan : null;
   el.innerHTML = `
     <div class="battle">
-      <div class="row">
+      <div class="row battle-confirm-head">
         <strong class="grow">${tr('battle.confirm_team_title')}</strong>
         <button class="ghost action" id="bConfirmPickTeam">${tr('battle.confirm_pick_team')}</button>
         <button class="ghost action" id="bConfirmCancel">${tr('battle.confirm_cancel')}</button>
+        <button class="action" id="bConfirmFight" ${party.length ? '' : 'disabled'}>${tr('battle.confirm_fight')}</button>
       </div>
       <div class="battle-confirm">
         ${battleConfirmOpponent && battleConfirmOpponent.team.length ? `<div class="card">
@@ -3790,9 +3796,6 @@ function renderBattleConfirm() {
         </div>` : ''}
         ${party.length ? party.map((p, i) => battleConfirmCard(p, i, party.length)).join('')
           : `<div class="card muted">${tr('team.no_pokemon_in_team')}</div>`}
-        <div class="row" style="margin-top:10px">
-          <button class="action grow" id="bConfirmFight" ${party.length ? '' : 'disabled'}>${tr('battle.confirm_fight')}</button>
-        </div>
       </div>
     </div>`;
   el.querySelectorAll('.bConfirmUp').forEach(btn => { btn.onclick = () => moveBattleConfirm(Number(btn.dataset.id), -1); });
@@ -3858,10 +3861,11 @@ function renderBattleConfirmPickerScreen() {
   const shown = boxSorted(battleConfirmRoster.filter(p => boxFilterMatches(p, battleConfirmPickView)), battleConfirmPickView);
   el.innerHTML = `
     <div class="battle">
-      <div class="row">
+      <div class="row battle-confirm-head">
         <strong class="grow">${tr('battle.pick_team_title')}</strong>
         <span class="muted">${battleConfirmSelected.size}/${battleConfirmPartySize}</span>
         <button class="ghost action" id="bPickCancel">${tr('battle.confirm_cancel')}</button>
+        <button class="action" id="bPickApply" ${battleConfirmSelected.size ? '' : 'disabled'}>${tr('battle.pick_team_apply')}</button>
       </div>
       <div class="battle-confirm">
         <div class="muted">${tr('battle.pick_team_hint', { max: battleConfirmPartySize })}</div>
@@ -3871,9 +3875,6 @@ function renderBattleConfirmPickerScreen() {
         </div>
         ${shown.length ? `<div class="box-grid">${shown.map(p => boxSlotHtml(p, true, battleConfirmSelected)).join('')}</div>`
           : `<div class="card muted">${tr('team.box_none_match')}</div>`}
-        <div class="row" style="margin-top:10px">
-          <button class="action grow" id="bPickApply" ${battleConfirmSelected.size ? '' : 'disabled'}>${tr('battle.pick_team_apply')}</button>
-        </div>
       </div>
     </div>`;
   wireBoxFilters(el, battleConfirmPickView, 'bcp', renderBattleConfirmPickerScreen);
