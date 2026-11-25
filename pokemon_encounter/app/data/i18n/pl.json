@@ -1492,6 +1492,8 @@
   "team.box_sort_gen_desc": "Generacja (9 → 1), potem nr Pokédexu",
   "team.box_sort_level_asc": "Poziom (rosnąco)",
   "team.box_sort_level_desc": "Poziom (malejąco)",
+  "team.box_sort_recent_asc": "Od najstarszych",
+  "team.box_sort_recent_desc": "Od najnowszych",
   "team.box_stage": "Etap {stage}",
   "team.box_unlock_selected": "Odblokuj ({count})",
   "team.equip": "załóż",
