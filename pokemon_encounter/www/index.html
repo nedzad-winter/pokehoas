@@ -4270,6 +4270,17 @@ try {
   const saved = JSON.parse(localStorage.getItem('poke_league_open') || 'null');
   if (Array.isArray(saved)) leagueOpen = new Set(saved);
 } catch (e) { /* corrupt value: fall back to the default */ }
+// In the league list the group heading already says "Gym leaders" / "Elite Four" / "Champion", so the
+// trainer's own title is only shown when it says something else (e.g. a rival).
+function leagueTrainerName(t, kind) {
+  const redundant = {
+    gym_leader: ['trainer.title.gym_leader_m', 'trainer.title.gym_leader_f'],
+    elite_four: ['trainer.title.elite_four'],
+    champion: ['trainer.title.champion'],
+  }[kind] || [];
+  return redundant.some(key => tr(key) === t.title) ? t.name : `${t.title} ${t.name}`;
+}
+
 function saveLeagueOpen() {
   try { localStorage.setItem('poke_league_open', JSON.stringify([...leagueOpen])); } catch (e) { /* storage unavailable */ }
 }
@@ -4313,13 +4324,13 @@ async function renderLeague() {
         groups.map(([kind, list]) => {
           const key = 'league:' + region.key + ':' + kind;
           const { items: page, page: pageNo, totalPages } = pageSlice(key, list);
-          return `<div class="muted" style="margin:6px 0">${esc(trainerKindLabel(kind))}</div>` +
+          return `<div class="muted" style="margin:6px 0"><strong>${esc(trainerKindLabel(kind))}</strong></div>` +
           page.map(t => `
             <div class="card trainer-card${t.defeated ? ' defeated' : ''}">
               <div class="row">
                 ${t.sprite_url ? `<img class="trainer-portrait" src="${esc(t.sprite_url)}" alt="" loading="lazy">` : ''}
                 <div class="grow">
-                  <strong>${esc(t.title)} ${esc(t.name)}</strong> ${t.defeated ? `<span class="pill" style="background:var(--ok);color:#fff">${tr('league.defeated')}</span>` : ''}
+                  <strong>${esc(leagueTrainerName(t, kind))}</strong> ${t.defeated ? `<span class="pill" style="background:var(--ok);color:#fff">${tr('league.defeated')}</span>` : ''}
                   ${t.type ? typePill(t.type) : ''}
                   <div class="muted">${tr('league.max_level', { level: t.max_level })} · ${tr('league.prize', { amount: esc(fmtMoney(t.prize)) })}${
                     t.scaled ? ' · ' + tr('league.scaled_hint', { level: t.max_level }) : ''}${
