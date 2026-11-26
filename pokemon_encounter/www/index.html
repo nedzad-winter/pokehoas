@@ -397,6 +397,11 @@
   .opp-balls span.down::after { background: #ccc; }
   /* --------------------------------------------------------- Box grid */
   .box-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; }
+  /* "Filters" menu of the box / picker filter bars: one button instead of a row of checkboxes. */
+  .filter-menu > summary { display: inline-block; cursor: pointer; list-style: none; padding: 6px 12px; border: 2px solid var(--ink); border-radius: var(--radius); font-weight: 700; }
+  .filter-menu > summary::-webkit-details-marker { display: none; }
+  .filter-menu[open] { flex-basis: 100%; }
+  .filter-menu-body { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 8px 2px; }
   .box-slot { text-align: center; cursor: pointer; padding: 8px 6px; position: relative; }
   .box-slot .fav-star { position: absolute; top: 2px; right: 4px; font-size: 15px; line-height: 1;
     color: var(--muted); opacity: .5; cursor: pointer; }
@@ -6211,14 +6216,14 @@ function boxFilterControlsHtml(view, prefix, opts = {}) {
         <option value="unseen" ${view.status === 'unseen' ? 'selected' : ''}>${tr('pokedex.status_undiscovered')}</option>
         <option value="not_owned" ${view.status === 'not_owned' ? 'selected' : ''}>${tr('pokedex.not_in_box_only')}</option>
       </select>` : ''}
-      <label><input type="checkbox" id="${prefix}FShiny" ${view.shiny ? 'checked' : ''}> ${tr('pokedex.shiny_only')}</label>
-      ${opts.favorite !== false ? `<label><input type="checkbox" id="${prefix}FFavorite" ${view.favorite ? 'checked' : ''}> ${tr('team.favorites_only')}</label>` : ''}
-      ${opts.locked ? `<label><input type="checkbox" id="${prefix}FLocked" ${view.locked ? 'checked' : ''}> ${tr('team.box_locked_only')}</label>` : ''} ${opts.duplicates ? `<label><input type="checkbox" id="${prefix}FDuplicates" ${view.duplicates ? 'checked' : ''}> ${tr('team.box_duplicates_only')}</label>` : ''}
+      ${filterMenuHtml(view, prefix, opts)}
+      
+      
       <select id="${prefix}FStage"><option value="">${tr('team.box_all_stages')}</option>${[1, 2, 3]
         .map(n => `<option value="${n}" ${view.stage === String(n) ? 'selected' : ''}>${esc(tr('team.box_stage', { stage: n }))}</option>`).join('')}</select>
       <select id="${prefix}FRarity"><option value="">${tr('team.box_all_rarities')}</option>${BOX_RARITY_TIERS
         .map(k => `<option value="${k}" ${view.rarity === k ? 'selected' : ''}>${esc(tr('rarity.' + k))}</option>`).join('')}</select>
-      ${opts.evolve ? `<label><input type="checkbox" id="${prefix}FEvolve" ${view.canEvolve ? 'checked' : ''}> ${tr('team.box_can_evolve')}</label>` : ''}
+      
       ${opts.minLevel !== false ? `<label>${tr('team.box_level_at_least')} <input type="number" id="${prefix}FLevel" min="1" step="1" style="width:5em" value="${esc(view.minLevel)}"></label>` : ''}
       <label><input type="checkbox" id="${prefix}FInvert" ${view.invert ? 'checked' : ''}> ${tr('team.box_invert_filter')}</label>`;
 }
@@ -6233,8 +6238,41 @@ function wireBoxFilters(root, view, prefix, onChange) {
   bind('FShiny', 'shiny', true); bind('FFavorite', 'favorite', true); bind('FLevel', 'minLevel');
   bind('FStage', 'stage'); bind('FRarity', 'rarity'); bind('FEvolve', 'canEvolve', true);
   bind('FLocked', 'locked', true); bind('FInvert', 'invert', true); bind('FDuplicates', 'duplicates', true);
+  const menu = root.querySelector('#' + prefix + 'FMenu');
+  if (menu) menu.ontoggle = () => { view.menuOpen = menu.open; };
   const query = root.querySelector('#' + prefix + 'FQuery');
   if (query) query.oninput = () => { view.query = query.value; onChange(); };
+}
+// One "Filters" menu for the yes/no filters (shiny, favorites, locked, duplicates, can evolve) instead of a
+// row of checkboxes. The checkbox ids are unchanged, so wireBoxFilters binds them as before. With fewer than
+// two of them (the Pokédex bar) the plain checkbox is kept.
+function filterMenuHtml(view, prefix, opts) {
+  const items = [
+    ['FShiny', view.shiny, 'pokedex.shiny_only', true],
+    ['FFavorite', view.favorite, 'team.favorites_only', opts.favorite !== false],
+    ['FLocked', view.locked, 'team.box_locked_only', !!opts.locked],
+    ['FDuplicates', view.duplicates, 'team.box_duplicates_only', !!opts.duplicates],
+    ['FEvolve', view.canEvolve, 'team.box_can_evolve', !!opts.evolve],
+  ].filter(item => item[3]);
+  const check = ([id, on, key]) => `<label><input type="checkbox" id="${prefix}${id}" ${on ? 'checked' : ''}> ${tr(key)}</label>`;
+  if (items.length < 2) return items.map(check).join('');
+  const active = items.filter(item => item[1]).length;
+  return `<details class="filter-menu" id="${prefix}FMenu" ${view.menuOpen ? 'open' : ''}>
+    <summary>${tr('team.box_filters')}${active ? ` (${active})` : ''}</summary>
+    <div class="filter-menu-body">${items.map(check).join('')}</div></details>`;
+}
+// Closes an open "Filters" menu when clicking anywhere outside of it.
+document.addEventListener('click', e => {
+  document.querySelectorAll('details.filter-menu[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; });
+});
+// The box is redrawn on every change: keep the search field focused (and its caret) while typing.
+function keepBoxSearchFocus() {
+  const active = document.activeElement;
+  const keep = active && active.id === 'boxFQuery' ? [active.selectionStart, active.selectionEnd] : null;
+  Promise.resolve(renderTeam()).then(() => {
+    const field = $('#boxFQuery');
+    if (keep && field) { field.focus(); field.setSelectionRange(keep[0], keep[1]); }
+  });
 }
 function boxGridHtml(box, locked) {
   if (!box.length) return `<div class="card muted">${tr('team.box_empty')}</div>`;
@@ -6249,7 +6287,7 @@ function boxGridHtml(box, locked) {
       <button class="ghost action" id="boxUnlockSel" disabled>${tr('team.box_unlock_selected', { count: 0 })}</button>
       <button class="action" id="boxReleaseSel" data-locked="${locked ? 1 : 0}" disabled>${tr('team.box_release_selected', { count: 0 })}</button>` : '';
   return `<div class="row card span-all" style="margin-bottom:10px">
-      ${boxFilterControlsHtml(boxView, 'box', { evolve: true, locked: true, duplicates: true })}
+      ${boxFilterControlsHtml(boxView, 'box', { search: true, evolve: true, locked: true, duplicates: true })}
       <span class="muted">${shown.length}/${box.length}</span>
       <button class="ghost action" id="boxSelToggle">${tr(boxView.select ? 'team.box_select_stop' : 'team.box_select_start')}</button>${selectTools}
     </div>
@@ -6348,7 +6386,7 @@ async function renderTeam() {
   if (teamView === 'box') {
     body.innerHTML = boxGridHtml(t.box, locked);
     if ($('#boxSort')) {
-      wireBoxFilters(body, boxView, 'box', () => renderTeam());
+      wireBoxFilters(body, boxView, 'box', keepBoxSearchFocus);
       $('#boxSelToggle').onclick = () => { boxView.select = !boxView.select; boxSelection.clear(); renderTeam(); };
     }
     body.querySelectorAll('.box-slot[data-id]').forEach(slot => {

@@ -1471,6 +1471,7 @@
   "team.box_evolve_selected_confirm": "지금 {count}마리를 진화시킬까요? 레벨 진화가 정확히 하나뿐이고 아이템이 필요 없는 포켓몬만 진화합니다.",
   "team.box_evolve_skipped": "{count}마리 건너뜀 (여러 선택지가 있거나 아이템이 필요함).",
   "team.box_evolved_many": "{count}마리가 진화했습니다.",
+  "team.box_filters": "필터",
   "team.box_invert_filter": "필터 반전",
   "team.box_level_at_least": "레벨 ≥",
   "team.box_lock_selected": "잠그기 ({count})",

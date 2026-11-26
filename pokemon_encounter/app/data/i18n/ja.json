@@ -1471,6 +1471,7 @@
   "team.box_evolve_selected_confirm": "今すぐ{count}匹を進化させますか？ レベルによる進化が1つだけで、アイテムが不要なポケモンだけが進化します。",
   "team.box_evolve_skipped": "{count}匹をスキップ（進化先が複数、またはアイテムが必要）。",
   "team.box_evolved_many": "{count}匹が進化しました。",
+  "team.box_filters": "フィルター",
   "team.box_invert_filter": "フィルターを反転",
   "team.box_level_at_least": "レベル ≥",
   "team.box_lock_selected": "ロック（{count}）",

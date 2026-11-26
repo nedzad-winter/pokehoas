@@ -1471,6 +1471,7 @@
   "team.box_evolve_selected_confirm": "Evolve {count} Pokémon now? Only Pokémon with exactly one level evolution (no item needed) are evolved.",
   "team.box_evolve_skipped": "{count} skipped (several options or an item needed).",
   "team.box_evolved_many": "{count} Pokémon evolved.",
+  "team.box_filters": "Filters",
   "team.box_invert_filter": "Invert filter",
   "team.box_level_at_least": "Level ≥",
   "team.box_lock_selected": "Lock ({count})",

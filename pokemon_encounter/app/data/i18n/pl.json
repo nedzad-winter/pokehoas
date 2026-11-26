@@ -1471,6 +1471,7 @@
   "team.box_evolve_selected_confirm": "Ewoluować teraz {count} Pokémonów? Ewoluują tylko te z dokładnie jedną ewolucją za poziom (bez przedmiotu).",
   "team.box_evolve_skipped": "Pominięto: {count} (kilka opcji lub potrzebny przedmiot).",
   "team.box_evolved_many": "Ewoluowało {count} Pokémonów.",
+  "team.box_filters": "Filtry",
   "team.box_invert_filter": "Odwróć filtr",
   "team.box_level_at_least": "Poziom ≥",
   "team.box_lock_selected": "Zablokuj ({count})",
