@@ -1471,6 +1471,7 @@
   "team.box_evolve_selected_confirm": "{count} Pokémon jetzt entwickeln? Entwickelt werden nur Pokémon mit genau einer Level-Entwicklung (ohne Item).",
   "team.box_evolve_skipped": "{count} übersprungen (mehrere Möglichkeiten oder Item nötig).",
   "team.box_evolved_many": "{count} Pokémon haben sich entwickelt.",
+  "team.box_filters": "Filter",
   "team.box_invert_filter": "Filter umkehren",
   "team.box_level_at_least": "Level ≥",
   "team.box_lock_selected": "Sperren ({count})",

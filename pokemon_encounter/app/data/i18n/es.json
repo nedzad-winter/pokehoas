@@ -1471,6 +1471,7 @@
   "team.box_evolve_selected_confirm": "¿Evolucionar {count} Pokémon ahora? Solo se evolucionan los Pokémon con exactamente una evolución por nivel (sin necesidad de objeto).",
   "team.box_evolve_skipped": "{count} omitidos (varias opciones o hace falta un objeto).",
   "team.box_evolved_many": "{count} Pokémon evolucionaron.",
+  "team.box_filters": "Filtros",
   "team.box_invert_filter": "Invertir filtro",
   "team.box_level_at_least": "Nivel ≥",
   "team.box_lock_selected": "Bloquear ({count})",
